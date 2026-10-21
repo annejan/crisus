@@ -184,7 +184,7 @@
 </header>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · laatst bijgewerkt 21 oktober, 16:05</p>
+  <p class="kicker">Lopende crisus · laatst bijgewerkt 21 oktober, 16:15</p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu.</p>
 
@@ -206,7 +206,7 @@
     <dt>Het lek</dt>
     <dd>Twee kritieke kwetsbaarheden in PHP zelf: <a href="https://www.cve.org/CVERecord?id=CVE-2026-109618" title="CVE-2026-109618 op cve.org">CVE-2026-109618</a> en <a href="https://www.cve.org/CVERecord?id=CVE-2026-109619" title="CVE-2026-109619 op cve.org">CVE-2026-109619</a>, ook wel &ldquo;php2shell&rdquo;. Elk lek met een bijnaam is erger dan een lek zonder.</dd>
     <dt>Hoe werkt het?</dt>
-    <dd><a href="https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w" title="PHP security advisory GHSA-w8hw-w9fx-j79w: RCE via OOM corruption">CVE-2026-109618</a>, &ldquo;RCE via OOM corruption&rdquo;: bij een geheugentekort springt PHP met <code>longjmp()</code> uit een request. Soms staat het geheugen dan half klaar. Het afsluiten van het request leest dat daarna toch. Een aanvaller dwingt dat tekort af met een slimme multipart-POST, nog voordat uw eigen code draait.<br>
+    <dd><a href="https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w" title="PHP security advisory GHSA-w8hw-w9fx-j79w: RCE via OOM corruption">CVE-2026-109618</a>, &ldquo;RCE via OOM corruption&rdquo;: bij een geheugentekort springt PHP met <code>longjmp()</code> uit een request. Soms staat het geheugen dan half klaar. Het afsluiten van het request leest dat daarna toch. Een aanvaller dwingt dat tekort af met een slimme multipart-POST, nog voordat uw eigen code draait. Volgens de <a href="https://calif.io/php2shell/" title="Calif Research: php2shell, a tale of two PHP remote vulnerabilities">write-up van de vinders</a> op twee manieren. E&eacute;n: PHP toetst <code>post_max_size</code> aan de opgegeven <code>Content-Length</code>, niet aan wat er echt binnenkomt. Een chunked verzoek zonder lengte glipt erlangs. Twee: een lege upload (<code>filename=""</code>) telt niet mee voor <code>max_file_uploads</code>, maar maakt wel zes <code>$_FILES</code>-items aan. Met geneste veldnamen als <code>files[a][b][c]</code> blaast een body van minder dan 8 MiB de standaardheap van 128 MiB op.<br><br>
     <a href="https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp" title="PHP security advisory GHSA-6wmf-4rv5-p3rp: RCE via stale global state">CVE-2026-109619</a>, &ldquo;RCE via stale global state&rdquo;: globale toestand van het ene request wijst nog naar vrijgegeven geheugen als het volgende request op dezelfde worker begint. Een use-after-free. Twee verzoeken na elkaar zijn genoeg.</dd>
     <dt>Welke opzet?</dt>
     <dd><strong>Apache met mod_php:</strong> volledige RCE bevestigd voor allebei, met de standaardinstellingen. <strong>PHP-FPM:</strong> RCE bevestigd via de sessievariant van CVE-2026-109619. FrankenPHP en LSAPI zijn volgens PHP vermoedelijk ook kwetsbaar.</dd>
@@ -215,7 +215,9 @@
     <dt>Wat kan een aanvaller?</dt>
     <dd>Met een eenvoudig POST-verzoek eigen code uitvoeren op uw server (remote code execution). Daarna is het hun server.</dd>
     <dt>Welke versies?</dt>
-    <dd>In elk geval <strong>alle versies vanaf PHP 5</strong>. Daarmee is alles waar PHP in zit vermoedelijk kwetsbaar: WordPress, Joomla, Drupal, Zabbix, Roundcube, maar ook de beheerpagina van uw router, NAS of printer.</dd>
+    <dd><strong>Alles vanaf PHP 5.4.0</strong>, en met de standaardinstellingen altijd uit te buiten. De vinders bevestigen RCE zonder inloggen op WordPress, Drupal, Joomla, MediaWiki, Roundcube, Magento, phpMyAdmin, Nextcloud, Laravel, Symfony en WHMCS. Staat uw favoriet er niet bij? Dan is hij niet getest. Niet veilig.</dd>
+    <dt>Wie vond het?</dt>
+    <dd>Calif, OpenAI en Wiz, samen met de PHP Foundation. De basis is oud. Stefan Esser vond in 2004 al een RCE via de geheugenlimiet. In 2020 meldde iemand het geheugentekort als <a href="https://bugs.php.net/bug.php?id=78876" title="PHP bug #78876">bug #78876</a>. In 2024 vond een <a href="https://ostif.org/php-audit-complete/" title="OSTIF: PHP audit complete">audit</a> het opnieuw. Niet gefixt: uitbuiting was &ldquo;niet bewezen&rdquo;. Inmiddels wel.</dd>
     <dt>Misbruik?</dt>
     <dd>Er is een openbare proof of concept. Cloudflare zegt al aanvallen te zien. Het NCSC en de PHP Foundation zien nog geen actief misbruik. Ga ervan uit dat Cloudflare gelijk heeft.</dd>
     <dt>Hoe groot?</dt>
@@ -247,7 +249,7 @@ rpm -qa | grep -i php        <span class="c"># Fedora, RHEL, openSUSE</span></co
         <pre><code>memory_limit = -1                   <span class="c"># CVE-2026-109618; begrens geheugen dan via cgroup of container</span>
 session.upload_progress.enabled = 0 <span class="c"># CVE-2026-109619, sessievariant; ook na de patch verstandig</span>
 fatal_error_backtraces = 0          <span class="c"># CVE-2026-109619, alleen PHP 8.5</span></code></pre>
-        Gebruikt uw site geen bestandsuploads of multipart-formulieren? Blokkeer <code>multipart/form-data</code> dan al v&oacute;&oacute;r PHP.</li>
+        Begrens de body al in de webserver: <code>LimitRequestBody 8388608</code> in Apache, <code>client_max_body_size 8m;</code> in nginx, of wat uw eigen <code>post_max_size</code> is. Die tellen de bytes die echt binnenkomen, ook bij chunked. Dat stopt truc &eacute;&eacute;n, niet truc twee. Gebruikt uw site geen bestandsuploads of multipart-formulieren? Blokkeer <code>multipart/form-data</code> dan al v&oacute;&oacute;r PHP.</li>
       <li><strong>Nu: patchen.</strong> Neem de pakketten van uw distributie (zie <a href="#patch-er-al" title="Is de patch er al voor mij? Per distributie, Windows en macOS">is de patch er al voor mij?</a>). Debian 13 heeft ze al. Installeer ze zodra ze er zijn:
         <pre><code>sudo apt update
 sudo apt install --only-upgrade $(dpkg -l | awk '/^ii  (lib)?php/{print $2}')
@@ -401,6 +403,9 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li><time datetime="2026-10-21T16:15+02:00">21 oktober 16:15</time>
+      <p>De vinders, Calif, OpenAI en Wiz, publiceren hun <a href="https://calif.io/php2shell/" title="Calif Research: php2shell, a tale of two PHP remote vulnerabilities">write-up</a>. Met een strip erbij. De trucs zijn verbluffend simpel: een verzoek zonder lengte en een berg lege uploads met geneste namen. Bevestigd op WordPress, Drupal, Joomla, Nextcloud, phpMyAdmin en nog zes andere.</p>
+      <p>Pijnlijk detail: het geheugentekort werd in 2020 al gemeld en in 2024 opnieuw gevonden. Het bleef liggen, want uitbuiting was &ldquo;niet bewezen&rdquo;. Dat is het nu wel. Er staan in de wereld vast nog meer bugs te wachten op hun bewijs. Wij gaan er niet over nadenken. Wij gaan slapen. Straks.</p></li>
     <li><time datetime="2026-10-21T16:05+02:00">21 oktober 16:05</time>
       <p>De patch is er. Nu de rest van de wereld nog. Debian heeft zijn pakket al, Ubuntu heeft het zijne gepubliceerd. De mirrors moeten bijkomen. Windows-builds staan klaar. Docker en Homebrew zijn nog bezig. Zie de <a href="#stand" title="Stand per platform">stand per platform</a>.</p>
       <p>Intussen gaan ook de overheden van Frankrijk en Finland deels op zwart. Ook goede doelen gaan offline: KWF, de Hartstichting, Oxfam Novib, Amnesty. Het UWV haalt een tool offline om je beter te melden. Wie vandaag beter wordt, moet dat morgen melden. NPO Start publiceert later en Pathé Thuis verhuurt geen films. Een goede middag voor een boek. Van papier.</p></li>
@@ -437,7 +442,8 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
   <ul class="bronnen" aria-labelledby="bronnen">
     <li><a href="https://www.php.net/archive/2026.php#2026-10-20-1" title="php.net: Upcoming Critical PHP Security Release">php.net: Upcoming Critical PHP Security Release</a>. De officiële aankondiging. Na 16:00 staan de gepatchte versies op <a href="https://www.php.net/" title="php.net">php.net</a>.</li>
     <li><a href="https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w" title="PHP security advisory GHSA-w8hw-w9fx-j79w: RCE via OOM corruption">PHP advisory GHSA-w8hw-w9fx-j79w</a> (CVE-2026-109618) en <a href="https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp" title="PHP security advisory GHSA-6wmf-4rv5-p3rp: RCE via stale global state">GHSA-6wmf-4rv5-p3rp</a> (CVE-2026-109619). De technische details, met noodmaatregelen.</li>
-    <li><a href="https://www.php.net/downloads.php" title="php.net: downloads">php.net: downloads</a>. De gepatchte versies.</li>
+    <li><a href="https://www.php.net/downloads.php" title="php.net: downloads">php.net: downloads</a>. De gepatchte versies. De <a href="https://www.php.net/archive/2026.php#2026-10-21-5" title="php.net: October 2026 Security Release">aankondiging</a> van de security release.</li>
+    <li><a href="https://calif.io/php2shell/" title="Calif Research: php2shell, a tale of two PHP remote vulnerabilities">Calif Research: php2shell</a>. De write-up van de vinders, met de techniek en een strip.</li>
     <li><a href="https://advisories.ncsc.nl/" title="NCSC security advisories">NCSC: Ernstige kwetsbaarheden in PHP: bereid je voor op patchen</a>.</li>
     <li><a href="https://www.rijksoverheid.nl/actueel/nieuws/2026/10/21/ncsc-ernstige-kwetsbaarheden-in-php" title="Rijksoverheid.nl: NCSC: Ernstige kwetsbaarheden in PHP">Rijksoverheid.nl: NCSC: Ernstige kwetsbaarheden in PHP</a>.</li>
     <li><a href="https://nos.nl/liveblog/2636066-websites-kwetsbaar-voor-softwarelek-rtl-nieuws-digid-en-mijnoverheid-uit-de-lucht" title="NOS liveblog over het PHP-lek">NOS: liveblog over het PHP-lek</a>. Wie er allemaal offline is.</li>
