@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-21T14:45:00+02:00">
-<meta property="article:modified_time" content="2026-10-21T20:15:00+02:00">
+<meta property="article:modified_time" content="2026-10-21T21:00:00+02:00">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Crisus · PHP Kwetsbaarheid">
 <meta name="twitter:description" content="Twee kritieke PHP-lekken, de patch is uit. Wat u moet doen, per platform, met bronnen. Satire, maar de feiten kloppen.">
@@ -22,7 +22,7 @@
 <link rel="alternate" hreflang="x-default" href="https://crisus.nl/">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/crisus.css?v=2">
+<link rel="stylesheet" href="/crisus.css?v=3">
 <script src="/klok.js?v=1" defer></script>
 <script type="application/ld+json">
 {
@@ -33,7 +33,7 @@
   "url": "https://crisus.nl/",
   "inLanguage": "nl",
   "datePublished": "2026-10-21T14:45:00+02:00",
-  "dateModified": "2026-10-21T20:15:00+02:00",
+  "dateModified": "2026-10-21T21:00:00+02:00",
   "coverageStartTime": "2026-10-20T22:00:00+02:00",
   "about": [
     {"@type": "Thing", "name": "CVE-2026-109618", "sameAs": "https://www.cve.org/CVERecord?id=CVE-2026-109618"},
@@ -66,7 +66,7 @@
 </header>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · <time datetime="2026-10-21T20:15:00+02:00">laatst bijgewerkt 21 oktober, 20:15</time></p>
+  <p class="kicker">Lopende crisus · <time datetime="2026-10-21T21:00:00+02:00">laatst bijgewerkt 21 oktober, 21:00</time></p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu.</p>
 
@@ -148,7 +148,7 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
   <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
   <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen nog even een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
 
-  <h3 id="stand">Stand per platform, 20:15</h3>
+  <h3 id="stand">Stand per platform, 21:00</h3>
   <ul class="status" aria-labelledby="stand">
     <li><b>php.net</b><span class="pill green">Gepubliceerd</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35 sinds 15:34.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">DSA-6574-1</a>: <code>php8.4 8.4.27-1~deb13u1</code>.</em></li>
@@ -156,7 +156,7 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
     <li><b>Ubuntu</b><span class="pill green">Fix beschikbaar</span><em>Eindelijk op de mirror: <code>8.5.4-0ubuntu1.5</code> (26.04), <code>8.5.9-0ubuntu2.1</code> (26.10) en <code>php8.3 8.3.6-0ubuntu0.24.04.13</code> (24.04). <code>apt update</code> en gaan.</em></li>
     <li><b>Windows</b><span class="pill green">Fix beschikbaar</span><em>8.5.12 staat op windows.php.net.</em></li>
     <li><b>Docker</b><span class="pill green">Fix beschikbaar</span><em>Sinds ongeveer 18:45 wijzen ook <code>8.4-apache</code>, <code>8.5-apache</code>, <code>8.4-fpm</code> en <code>latest</code> naar de gepatchte images. Pullen, opnieuw aanmaken, klaar.</em></li>
-    <li><b>Homebrew</b><span class="pill orange">Nog geen fix</span><em>Staat nog op 8.5.11. Uw Mac staat waarschijnlijk niet open naar internet. Hopen we.</em></li>
+    <li><b>Homebrew</b><span class="pill green">Fix beschikbaar</span><em>Nu ook 8.5.12. <code>brew upgrade php</code> en klaar.</em></li>
     <li><b>SUSE</b><span class="pill orange">Deels</span><em>SLES 15 SP7: <code>php8 &gt;= 8.3.36-150700.3.24.1</code>. De rest staat nog op <em>pending</em>. <a href="https://www.suse.com/security/cve/CVE-2026-109618.html" title="SUSE: CVE-2026-109618">CVE-pagina</a>.</em></li>
     <li><b>Red Hat</b><span class="pill orange">Nog geen fix</span><em>Er is een CVE-pagina, nog zonder pakketten.</em></li>
   </ul>
@@ -269,14 +269,16 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="diensten">Status van de diensten</h2>
   <ul class="status" aria-labelledby="diensten">
+    <li class="groot"><b>Overheid.nl</b><span class="pill red">Nog altijd uit</span><em><strong>De voordeur van de overheid zit dicht.</strong> DigiD.nl en MijnOverheid zijn al uren terug, het NCSC ook. De site waar alles van de overheid samenkomt nog niet. Binnenlandse Zaken weet niet wanneer. Ter vergelijking: crisus.nl is vandaag geen seconde dicht geweest.</em></li>
     <li><b>PHP</b><span class="pill orange">Nu installeren</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35. Nu nog installeren.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em>8.4.27-1~deb13u1 in trixie-security. Sneller dan deze update.</em></li>
     <li><b>Ubuntu</b><span class="pill green">Fix beschikbaar</span><em>De deur is open. Drie uur na de publicatie, maar wie telt.</em></li>
     <li><b>NPO</b><span class="pill orange">Deels</span><em>NPO.nl en NPO Start zijn terug. BNNVARA, Omroep MAX en KRO-NCRV nog niet. Kassa dus ook niet.</em></li>
-    <li><b>Pathé Thuis</b><span class="pill orange">Onduidelijk</span><em>De site laadt weer. Of de films het doen, zien wij zonder account niet. Popcorn op eigen risico.</em></li>
+    <li><b>Pathé Thuis</b><span class="pill green">Terug</span><em>Volgens een lezer draait het weer. Popcorn mag weer.</em></li>
     <li><b>NCSC.nl</b><span class="pill green">Terug</span><em>De site van het NCSC is er weer. Dan durven wij ook.</em></li>
     <li><b>MijnOverheid</b><span class="pill green">Terug</span><em>Sinds kort na 18:00. Uw post van de overheid wacht weer op u. Of u wilt of niet.</em></li>
     <li><b>ANWB.nl</b><span class="pill red">Preventief uit</span><em>Nog altijd. De Wegenwacht staat langs de kant. Motorkap open.</em></li>
+    <li><b>Voetbal</b><span class="pill orange">Deels</span><em>FC Twente is terug. FC Groningen nog niet. De KNVB staat nog in onderhoudsmodus.</em></li>
     <li><b>Docker</b><span class="pill green">Fix beschikbaar</span><em>Ook de zwevende tags als <code>8.4-apache</code> en <code>latest</code>. Wel uw containers opnieuw aanmaken.</em></li>
     <li><b>DigiD.nl</b><span class="pill green">Terug</span><em>De website en het inloggen werken allebei weer.</em></li>
     <li><b>Vlaanderen</b><span class="pill green">Terug</span><em>Als eerste uit, als eerste weer aan. Respect, nogmaals.</em></li>
@@ -284,7 +286,8 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><b>Crisus.nl</b><span class="pill green">Werkt</span><em>Geen PHP. Gewoon HTML. Zoals in 1997.</em></li>
     <li><b>Certificaten</b><span class="pill orange">Verstoord</span><em>Twee root-CA&rsquo;s deze week op staande voet ontslagen. Zelfs Node.js weet het al.</em></li>
     <li><b>Node.js</b><span class="pill orange">Update beschikbaar</span><em>Eigen security release vandaag. Ook gepatcht? Ook herstarten.</em></li>
-    <li><b>Linux KVM-hosts</b><span class="pill orange">Herstarten</span><em>PwnEscape, CVE-2026-99999. Een VM kan uitbreken naar de host. Nieuwe kernel en een reboot. VPS-klanten: dat doet uw provider.</em></li>
+    <li><b>Linux KVM-hosts</b><span class="pill orange">Herstarten</span><em>PwnEscape, CVE-2026-99999. Een VM kan uitbreken naar de host. Debian heeft de fix (DSA-6568-1). Nieuwe kernel en een reboot. VPS-klanten: dat doet uw provider.</em></li>
+    <li><b>GitLab (zelf beheerd)</b><span class="pill orange">Nu installeren</span><em>CVE-2026-110264, CVSS 10,0. Code uitvoeren zonder account. Fix in 19.5.1, 19.4.3, 19.3.6 en ouder tot 18.11.13.</em></li>
     <li><b>DNS</b><span class="pill green">Werkt</span><em>Het is altijd DNS. Vandaag niet. Nog niet.</em></li>
     <li><b>Koffie</b><span class="pill orange">Beperkt</span><em>Zie de update van 13:00.</em></li>
     <li><b>Paniek</b><span class="pill green">Onder controle</span><em>Er is een spreadsheet.</em></li>
@@ -292,6 +295,12 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li><time datetime="2026-10-21T21:00+02:00">21 oktober 21:00</time>
+      <p>Er komen er weer een paar bij. DigiD.nl en het NCSC zijn terug, en FC Twente ook. FC Groningen nog niet. Daarmee is het gelijkspel van vanmiddag voorbij: 1-0 voor Twente. De KNVB staat nog in onderhoudsmodus. De scheidsrechter kijkt de beelden nog terug.</p>
+      <p>Overheid.nl is volgens de NOS nog steeds offline. Een woordvoerder van Binnenlandse Zaken kan niet zeggen hoe lang dat duurt. Nog uit om 20:45: ANWB.nl, BNNVARA, Omroep MAX, KRO-NCRV, de Tweede Kamer, KWF en Amnesty.</p>
+      <p>Pathé Thuis is ook terug, meldt een lezer. Dank! De film van vanavond kan alsnog. Homebrew heeft nu ook PHP 8.5.12. Daarmee heeft elk groot platform uit ons lijstje de fix, behalve Red Hat. En voor PwnEscape heeft Debian een advisory uit: DSA-6568-1.</p>
+      <p>Nog even rondgekeken bij de vaste waarden. <strong>Boer zoekt vrouw</strong> ligt eruit: &ldquo;Omdat we een dringende beveiligingsupdate uitvoeren.&rdquo; Boer zoekt vrouw, vrouw zoekt website. Ook <strong>De Slimste Mens</strong> van KRO-NCRV is even niet zo slim. De <a href="https://www.rechtspraak.nl/organisatie-en-contact/organisatie/raad-voor-de-rechtspraak/nieuws/2026/10/enkele-rechtspraak-websites-vanwege-php-kwetsbaarheid-tijdelijk-offline" title="Rechtspraak: Enkele Rechtspraak-websites vanwege PHP-kwetsbaarheid tijdelijk offline">Rechtspraak</a> haalde Werkenbijderechtspraak.nl en MijnSSR offline. Rechtspraak.nl zelf draait geen PHP en bleef gewoon in de lucht. Net als wij. En GeenStijl heeft intussen een eigen PHP-liveblog. Concurrentie.</p>
+      <p>En omdat het vandaag toch al woensdag is: ook <a href="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/" title="GitLab Critical Patch Release: 19.5.1, 19.4.3, 19.3.6, 19.2.9, 19.1.9, 19.0.10, 18.11.13">GitLab</a> heeft een kritieke patch uit. CVE-2026-110264, CVSS 10,0: een gemaakte reguliere expressie laat iemand zonder account code uitvoeren op uw GitLab-server. Alle versies vanaf 7.0. Fix in 19.5.1, 19.4.3, 19.3.6 en terug tot 18.11.13. GitLab.com is al gepatcht. Draait u zelf GitLab: vanavond nog updaten. Een tien is het maximum. Dat hadden we vanmiddag al uitgelegd.</p></li>
     <li><time datetime="2026-10-21T20:03+02:00">21 oktober 20:03</time>
       <p><strong>Het Achtuurjournaal.</strong> Met een paar minuten vertraging, zoals het hoort. Goedenavond.</p>
       <ul>
@@ -401,6 +410,8 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><a href="https://www.vi.nl/nieuws/nederlandse-profclubs-halen-website-offline-vanwege-ernstige-beveiligingslekken" title="VI: Nederlandse profclubs halen website offline vanwege ernstige beveiligingslekken">VI: Nederlandse profclubs halen website offline</a>. Welke clubs, met de verklaring van FC Twente.</li>
     <li><a href="https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/" title="The PHP Foundation: Today's PHP Security Release, and How We're Strengthening PHP Security">The PHP Foundation: Today&rsquo;s PHP Security Release, and How We&rsquo;re Strengthening PHP Security</a>. Hoe de lekken gevonden zijn en waarom de fix zo lang duurde.</li>
     <li><a href="https://www.heise.de/en/news/PwnEscape-Critical-Linux-kernel-flaw-allows-VM-escape-11492399.html" title="heise online: PwnEscape, Critical Linux kernel flaw allows VM escape">heise: PwnEscape, Critical Linux kernel flaw allows VM escape</a>. Het Linux-lek van het Achtuurjournaal.</li>
+    <li><a href="https://www.rechtspraak.nl/organisatie-en-contact/organisatie/raad-voor-de-rechtspraak/nieuws/2026/10/enkele-rechtspraak-websites-vanwege-php-kwetsbaarheid-tijdelijk-offline" title="Rechtspraak: Enkele Rechtspraak-websites vanwege PHP-kwetsbaarheid tijdelijk offline">Rechtspraak: Enkele Rechtspraak-websites vanwege PHP-kwetsbaarheid tijdelijk offline</a>.</li>
+    <li><a href="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/" title="GitLab Critical Patch Release: 19.5.1, 19.4.3, 19.3.6, 19.2.9, 19.1.9, 19.0.10, 18.11.13">GitLab Critical Patch Release 19.5.1</a>. CVE-2026-110264 en elf andere fixes.</li>
     <li><a href="https://advisories.ncsc.nl/" title="NCSC security advisories">NCSC: Ernstige kwetsbaarheden in PHP: bereid je voor op patchen</a>.</li>
     <li><a href="https://www.rijksoverheid.nl/actueel/nieuws/2026/10/21/ncsc-ernstige-kwetsbaarheden-in-php" title="Rijksoverheid.nl: NCSC: Ernstige kwetsbaarheden in PHP">Rijksoverheid.nl: NCSC: Ernstige kwetsbaarheden in PHP</a>.</li>
     <li><a href="https://nos.nl/liveblog/2636066-websites-kwetsbaar-voor-softwarelek-rtl-nieuws-digid-en-mijnoverheid-uit-de-lucht" title="NOS liveblog over het PHP-lek">NOS: liveblog over het PHP-lek</a>. Wie er allemaal offline is.</li>
