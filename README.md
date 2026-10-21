@@ -13,6 +13,7 @@ CVE-2026-109619), updated through the day and the night after.
 |---|---|
 | `site/` | The site as served: `index.html`, `over/`, `404.html`, `crisus.css`, `klok.js`, `feed.xml` (RSS), `sitemap.xml`, `og.png`, `.htaccess` (strict CSP, headers) |
 | `tools/check.sh` | One round of source checks: news, php.net, distributions, Docker, offline sites |
+| `tools/headlines.py` | Headlines on the current topics since the last update (Security.NL, NOS, Tweakers, NCSC, heise) |
 | `tools/bump.py` | Set every "last updated" stamp at once and rebuild the feed |
 | `tools/feed.py` | Build `site/feed.xml` from the updates list; gives every update a permalink id |
 | `tools/og.py` | Render `site/og.png`, the link-preview image |
