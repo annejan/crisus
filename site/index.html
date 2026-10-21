@@ -22,7 +22,7 @@
 <link rel="alternate" hreflang="x-default" href="https://crisus.nl/">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/crisus.css?v=3">
+<link rel="stylesheet" href="/crisus.css?v=4">
 <script src="/klok.js?v=1" defer></script>
 <script type="application/ld+json">
 {
@@ -64,6 +64,19 @@
     </a>
   </div>
 </header>
+
+<nav class="spring" aria-label="Op deze pagina">
+  <ul>
+    <li><a href="#updates" title="Naar de laatste updates">Updates</a></li>
+    <li><a href="#wat" title="Wat is er aan de hand?">Wat speelt er</a></li>
+    <li><a href="#doen" title="Wat moet u doen?">Wat moet u doen</a></li>
+    <li><a href="#patch-er-al" title="Is de patch er al voor mij?">Is de patch er al</a></li>
+    <li><a href="#stand" title="Stand per platform">Per platform</a></li>
+    <li><a href="#diensten" title="Status van de diensten">Wie ligt eruit</a></li>
+    <li><a href="#bronnen" title="Bronnen">Bronnen</a></li>
+    <li><a href="#archief" title="Eerdere crisussen">Archief</a></li>
+  </ul>
+</nav>
 
 <main id="inhoud" class="wrap">
   <p class="kicker">Lopende crisus · <time datetime="2026-10-21T21:05:00+02:00">laatst bijgewerkt 21 oktober, 21:05</time></p>
@@ -299,7 +312,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><time datetime="2026-10-21T21:05+02:00">21 oktober 21:05</time>
       <p><strong>Het AH-effect.</strong> Waarom ging vandaag half Nederland uit voorzorg op zwart? Wij hebben een theorie. Die ligt in het schap.</p>
       <p>Op zondag 11 oktober haalde Ahold Delhaize na verdachte activiteit zijn systemen offline. De website, de app en de thuisbezorging van Albert Heijn lagen eruit. In de winkels raakten groente, fruit en zuivel op. Retailexperts schatten de gemiste omzet op 120 tot 150 miljoen euro, meldt <a href="https://www.iamexpat.nl/expat-info/dutch-news/albert-heijn-faces-150-million-sales-hit-after-cyberattack" title="IamExpat: Albert Heijn faces 150 million euros sales hit after cyberattack">IamExpat</a>. Online bestellen kan nog steeds niet, de bezorging moet vrijdag weer beginnen. Topman Frans Muller blijft erbij, aldus <a href="https://www.transport-online.nl/142223/ahold-delhaize-doet-aangifte-na-cyberaanval-albert-heijn-verwacht-vrijdag-thuisbezorging-te-hervatten/" title="Transport Online: Ahold Delhaize doet aangifte na cyberaanval">Transport Online</a>: &ldquo;Het onderzoek tot nu toe bevestigt dat dit de juiste beslissing was.&rdquo;</p>
-      <p>Tien dagen later lekt een kritiek PHP-lek uit. En geen IT-manager in Nederland wil de volgende lege schappen op zijn geweten. Dus: stekker eruit, nog v&oacute;&oacute;r de patch er is. Wij noemen dat het AH-effect. Bewijs hebben we niet, dit is een satiresite. Ahold zelf ziet geen verband tussen zijn hack en het PHP-lek. Maar de bonuskaart van de voorzichtigheid is vandaag flink gebruikt.</p></li>
+      <p>Tien dagen later lekt een kritiek PHP-lek uit. En geen IT-manager in Nederland wil verantwoordelijk zijn voor de volgende lege schappen. Dus: stekker eruit, nog v&oacute;&oacute;r de patch er is. Wij noemen dat het AH-effect. Bewijs hebben we niet, dit is een satiresite. Ahold zelf ziet geen verband tussen zijn hack en het PHP-lek. Maar de bonuskaart van de voorzichtigheid is vandaag flink gebruikt.</p></li>
     <li><time datetime="2026-10-21T21:00+02:00">21 oktober 21:00</time>
       <p>Er komen er weer een paar bij. DigiD.nl en het NCSC zijn terug, en FC Twente ook. FC Groningen nog niet. Daarmee is het gelijkspel van vanmiddag voorbij: 1-0 voor Twente. De KNVB staat nog in onderhoudsmodus. De scheidsrechter kijkt de beelden nog terug.</p>
       <p>Overheid.nl is volgens de NOS nog steeds offline. Een woordvoerder van Binnenlandse Zaken kan niet zeggen hoe lang dat duurt. Nog uit om 20:45: ANWB.nl, BNNVARA, Omroep MAX, KRO-NCRV, de Tweede Kamer, KWF en Amnesty.</p>
@@ -346,7 +359,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
       <p>Docker heeft de gepatchte images. Een beetje. De versietags staan er sinds 17:40: <code>8.5.12-apache</code>, <code>8.4.27-fpm-alpine</code> en de rest. Maar <code>php:8.4-apache</code>, <code>php:8.5-fpm</code> en <code>php:latest</code> wijzen nog naar het image van vanochtend. Wie nu <code>docker pull php:8.4-apache</code> doet, haalt keurig het lek binnen. Pin de versie. Dat is ook op een gewone dag een goed idee.</p>
       <p>SUSE heeft een <a href="https://www.suse.com/security/cve/CVE-2026-109618.html" title="SUSE: CVE-2026-109618">CVE-pagina</a>, met de fix voor SLES 15 SP7: <code>php8 &gt;= 8.3.36-150700.3.24.1</code>. Red Hat heeft een pagina, nog zonder pakketten. Debian 12 staat nog niet op de mirror.</p></li>
     <li><time datetime="2026-10-21T17:35+02:00">21 oktober 17:35</time>
-      <p><strong>Correctie.</strong> Om 17:15 schreven we dat de nieuwe PHP-bug een kwaadaardig PHP-script nodig heeft. Dat was te snel. Gevraagd hoe hij werkt, antwoordt de onderzoeker in <a href="https://fedi.katze.sh/@elise/117478725808527006" title="Fediverse-draad van @elise@fedi.katze.sh over een nieuwe PHP-bug">haar draad</a>: &ldquo;malicious data into benign code&rdquo;. Kwaadaardige data in gewone code dus. Dat kan dus mogelijk ook van buitenaf. Hoe precies, blijft geheim tot er een fix is. Wij houden php.net in de gaten.</p>
+      <p><strong>Correctie.</strong> Om 17:15 schreven we dat de nieuwe PHP-bug een kwaadaardig PHP-script nodig heeft. Dat was te snel. Gevraagd hoe hij werkt, antwoordt de onderzoeker in <a href="https://fedi.katze.sh/@elise/117478725808527006" title="Fediverse-draad van @elise@fedi.katze.sh over een nieuwe PHP-bug">de draad</a>: &ldquo;malicious data into benign code&rdquo;. Kwaadaardige data in gewone code dus. Dat kan dus mogelijk ook van buitenaf. Hoe precies, blijft geheim tot er een fix is. Wij houden php.net in de gaten.</p>
       <p>Verder roepen overheden wereldwijd op om te updaten, meldt de NOS. Onder meer de Amerikaanse NSA en de Japanse premier Takaichi. Als de NSA en de premier van Japan hetzelfde zeggen, is het heel ernstig of een deepfake. Het is het eerste.</p>
       <p>Debian 12: de <a href="https://security-tracker.debian.org/tracker/source-package/php8.2" title="Debian security tracker: php8.2">pakketpagina</a> noemt <code>8.2.35-1~deb12u1</code> in bookworm-security, met beide CVE&rsquo;s opgelost. De mirror heeft hem nog niet.</p></li>
     <li><time datetime="2026-10-21T17:25+02:00">21 oktober 17:25</time>
@@ -354,8 +367,8 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><time datetime="2026-10-21T17:20+02:00">21 oktober 17:20</time>
       <p>Debian 12 komt eraan. De <a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">security tracker</a> noemt <code>php8.2 8.2.35-1~deb12u1</code> gefixt. Op de mirror staat het nog niet. Dat kennen we nog van Ubuntu vanmiddag. Geduld is ook een beveiligingsmaatregel. Een matige, maar toch.</p></li>
     <li><time datetime="2026-10-21T17:15+02:00">21 oktober 17:15</time>
-      <p>&ldquo;Today is really a day for PHP.&rdquo; Een beveiligingsonderzoeker <a href="https://fedi.katze.sh/@elise/117478725808527006" title="Fediverse-draad van @elise@fedi.katze.sh over een nieuwe PHP-bug">meldt op de fediverse</a> een <em>andere</em> geheugenfout in PHP: een double free. Volgens haar werkt hij op 8.4.25, 8.5.10 en ook op de gepatchte 8.5.12. Ze heeft hem om 16:51 bij PHP gemeld. Een PoC van drie regels, de details houdt ze geheim tot er een fix is.</p>
-      <p>Wat we weten: niet veel. Het is &eacute;&eacute;n bron, nog geen CVE en nog geen advisory. <del>Haar PoC is een PHP-script: wie dat kan draaien, draait al code op uw server.</del> Gecorrigeerd om 17:35: volgens haar werkt het met kwaadaardige data in gewone code. Advies: patch gewoon naar 8.5.12, 8.4.27, 8.3.36 of 8.2.35. Die dichten de twee bekende lekken. Houd daarna php.net in de gaten. Wij doen dat ook. Met koffie.</p></li>
+      <p>&ldquo;Today is really a day for PHP.&rdquo; Een beveiligingsonderzoeker <a href="https://fedi.katze.sh/@elise/117478725808527006" title="Fediverse-draad van @elise@fedi.katze.sh over een nieuwe PHP-bug">meldt op de fediverse</a> een <em>andere</em> geheugenfout in PHP: een double free. Volgens de onderzoeker werkt hij op 8.4.25, 8.5.10 en ook op de gepatchte 8.5.12. De bug is om 16:51 bij PHP gemeld. Een PoC van drie regels, de details blijven geheim tot er een fix is.</p>
+      <p>Wat we weten: niet veel. Het is &eacute;&eacute;n bron, nog geen CVE en nog geen advisory. <del>De PoC is een PHP-script: wie dat kan draaien, draait al code op uw server.</del> Gecorrigeerd om 17:35: volgens de onderzoeker werkt het met kwaadaardige data in gewone code. Advies: patch gewoon naar 8.5.12, 8.4.27, 8.3.36 of 8.2.35. Die dichten de twee bekende lekken. Houd daarna php.net in de gaten. Wij doen dat ook. Met koffie.</p></li>
     <li><time datetime="2026-10-21T17:10+02:00">21 oktober 17:10</time>
       <p>De eerste grote sites komen terug. RTL en Tweakers zijn weer in de lucht, meldt de NOS. In onze steekproef van 17:05 is ook de Unie van Waterschappen terug. Het water staat weer onder controle. Nog uit: DigiD.nl, MijnOverheid, het NCSC, de Tweede Kamer, de KNVB, KWF en Amnesty.</p></li>
     <li><time datetime="2026-10-21T17:00+02:00">21 oktober 17:00</time>
@@ -363,7 +376,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
       <p>Dacht u: wij draaien Node.js, wij zijn veilig? Ook Node.js heeft vandaag <a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">security releases</a>: v26.12.1, v24.22.1 en v22.23.4. Acht lekken met de ernst <em>high</em>, waaronder een Brotli-decoder die met een out-of-bounds write code laat uitvoeren (CVE-2026-111497). Ook de eMudhra-CA wordt eruit gegooid. Het is een drukke woensdag voor iedereen. Behalve voor statische HTML.</p>
       <p>En Ubuntu is bij: de pakketten staan nu ook op de mirror, voor 26.04, 26.10 en 24.04. Debian heeft zijn DSA uit voor Debian 13. Debian 12 wacht nog. Zie de <a href="#stand" title="Stand per platform">stand per platform</a>.</p></li>
     <li><time datetime="2026-10-21T16:40+02:00">21 oktober 16:40</time>
-      <p>Het kabinet reageert. Minister Van Weel van Justitie en Veiligheid zegt dat het offline halen van al die websites &ldquo;impact heeft in onze digitale samenleving&rdquo;. Ook hij ziet nog geen actief misbruik. Wij kunnen de impact bevestigen: om 16:35 zijn RTL, DigiD.nl, MijnOverheid, het NCSC, de Tweede Kamer, de KNVB, KWF, Amnesty en de Unie van Waterschappen nog uit.</p>
+      <p>Het kabinet reageert. Minister Van Weel van Justitie en Veiligheid zegt dat het offline halen van al die websites &ldquo;impact heeft in onze digitale samenleving&rdquo;. Ook de minister ziet nog geen actief misbruik. Wij kunnen de impact bevestigen: om 16:35 zijn RTL, DigiD.nl, MijnOverheid, het NCSC, de Tweede Kamer, de KNVB, KWF, Amnesty en de Unie van Waterschappen nog uit.</p>
       <p>Verder weinig nieuws. De Ubuntu-mirror staat nog stil. Docker en Homebrew hebben nog niets. Red Hat, SUSE en de Debian-tracker hebben nog geen pagina. Het crisusteam heeft de pizza op en overweegt een tweede. Dat is crisusniveau 3,5. Daar hebben we geen vakje voor.</p></li>
     <li><time datetime="2026-10-21T16:30+02:00">21 oktober 16:30</time>
       <p>Een uur na de patch. Onze steekproef van 16:25: Vlaanderen.be en Tweakers zijn terug. RTL, DigiD.nl, MijnOverheid, het NCSC, de Tweede Kamer, de KNVB, KWF en Amnesty zijn nog uit. Patchen kost tijd. Testen nog meer. Weer aanzetten zonder testen kost het meest.</p>
