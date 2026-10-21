@@ -6,7 +6,7 @@
 <title>Crisus · PHP Kwetsbaarheid</title>
 <meta name="description" content="Twee kritieke lekken in PHP (CVE-2026-109618 en CVE-2026-109619): wat er speelt, welke versies kwetsbaar zijn, welke versies de fix hebben en wat u nu kunt doen. Met bronnen. Satire, maar de feiten kloppen.">
 <meta property="og:title" content="Crisus · PHP Kwetsbaarheid">
-<meta property="og:description" content="Twee kritieke PHP-lekken. De patch is uit: PHP 8.5.12, 8.4.27, 8.3.36 en 8.2.35. Updaten dus. Crisusniveau 3: de pizza is er.">
+<meta property="og:description" content="Twee kritieke PHP-lekken. De patch is uit: PHP 8.5.12, 8.4.27, 8.3.36 en 8.2.35. Updaten dus. Crisusniveau 2: er is een Signal-groep. En die is druk.">
 <meta property="og:url" content="https://crisus.nl/">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#ffd400">
@@ -184,18 +184,18 @@
 </header>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · laatst bijgewerkt 21 oktober, 17:20</p>
+  <p class="kicker">Lopende crisus · laatst bijgewerkt 21 oktober, 17:25</p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu.</p>
 
   <p class="klok" id="klok"><b>15:34</b><span>Sinds 21 oktober 15:34 (13:34 UTC) is de patch uit. Bijna een halfuur eerder dan gepland. Elke minuut op deze klok is een minuut zonder update. <a href="#patch-er-al" title="Is de patch er al voor mij?">Is de patch er al voor mij?</a></span></p>
 
   <section class="level" aria-labelledby="niveau">
-    <h2 id="niveau">Huidig crisusniveau: 3 van 5</h2>
+    <h2 id="niveau">Huidig crisusniveau: 2 van 5</h2>
     <ol>
       <li class="on"><b>1 · Rustig</b>Iemand leest de changelog</li>
-      <li class="on"><b>2 · Opletten</b>Er is een Signal-groep</li>
-      <li class="now" aria-current="step"><b>3 · Ernstig</b>De pizza is er. Nu de patch nog</li>
+      <li class="now" aria-current="step"><b>2 · Opletten</b>Er is een Signal-groep. Iedereen patcht. Niemand leest de groep</li>
+      <li><b>3 · Ernstig</b>De pizza is besteld</li>
       <li><b>4 · Zeer ernstig</b>De manager vraagt of het al werkt</li>
       <li><b>5 · Vrijdagmiddag</b>Iemand zegt: &ldquo;het is maar een kleine wijziging&rdquo;</li>
     </ol>
@@ -405,6 +405,8 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li><time datetime="2026-10-21T17:25+02:00">21 oktober 17:25</time>
+      <p>Het crisusniveau gaat naar 2. De patch is er, de grote distributies hebben pakketten en de eerste sites zijn terug. De pizza is op. Er wordt niet meer besteld. Wel blijven we opletten: de nieuwe, nog geheime PHP-bug van 17:15 is nog niet opgelost.</p></li>
     <li><time datetime="2026-10-21T17:20+02:00">21 oktober 17:20</time>
       <p>Debian 12 komt eraan. De <a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">security tracker</a> noemt <code>php8.2 8.2.35-1~deb12u1</code> gefixt. Op de mirror staat het nog niet. Dat kennen we nog van Ubuntu vanmiddag. Geduld is ook een beveiligingsmaatregel. Een matige, maar toch.</p></li>
     <li><time datetime="2026-10-21T17:15+02:00">21 oktober 17:15</time>
