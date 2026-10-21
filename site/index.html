@@ -184,7 +184,7 @@
 </header>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · laatst bijgewerkt 21 oktober, 16:40</p>
+  <p class="kicker">Lopende crisus · laatst bijgewerkt 21 oktober, 17:00</p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu.</p>
 
@@ -223,7 +223,7 @@
     <dt>Hoe groot?</dt>
     <dd>Ongeveer 70 procent van alle websites draait op PHP. Ook de uwe, waarschijnlijk. Ook als u denkt van niet.</dd>
     <dt>De patch</dt>
-    <dd><strong>Uit sinds 21 oktober 15:34.</strong> Gefixt in <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Elke oudere versie is kwetsbaar. PHP 8.1, 7 of ouder? Daarvoor komt geen patch van PHP. Alleen een upgrade.</dd>
+    <dd><strong>Uit sinds 21 oktober 15:34.</strong> Gefixt in <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Elke oudere versie is kwetsbaar. PHP 8.1, 8.0 of 7.4? Daarvoor komt geen release. Wel heeft het PHP-team voor <a href="https://github.com/php/php-src/tree/PHP-7.4-CVE-2026-109618-109619" title="php-src: branch PHP-7.4-CVE-2026-109618-109619">7.4</a>, <a href="https://github.com/php/php-src/tree/PHP-8.0-CVE-2026-109618-109619" title="php-src: branch PHP-8.0-CVE-2026-109618-109619">8.0</a> en <a href="https://github.com/php/php-src/tree/PHP-8.1-CVE-2026-109618-109619" title="php-src: branch PHP-8.1-CVE-2026-109618-109619">8.1</a> een &ldquo;minimal mitigation for EOL version&rdquo; als branch op GitHub gezet. Die moet u zelf bouwen. PHP 7.3 of ouder? Dan is er niets. Alleen een upgrade.</dd>
   </dl>
 
   <section class="doen" aria-labelledby="doen">
@@ -255,7 +255,7 @@ fatal_error_backtraces = 0          <span class="c"># CVE-2026-109619, alleen PH
 sudo apt install --only-upgrade $(dpkg -l | awk '/^ii  (lib)?php/{print $2}')
 sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</span></code></pre>
         Controleer met <code>php -v</code> dat u echt de nieuwe versie draait: 8.5.12, 8.4.27, 8.3.36, 8.2.35 of een distributiepakket met de CVE&rsquo;s in de changelog. Zet daarna pas PHP weer aan.</li>
-      <li><strong>Draait u PHP 7 of ouder?</strong> Upgrade naar PHP 8. Er komt geen patch. Ook niet als u het heel lief vraagt.</li>
+      <li><strong>Draait u PHP 8.1 of ouder?</strong> Upgrade naar PHP 8.2 of nieuwer. Voor <a href="https://github.com/php/php-src/tree/PHP-7.4-CVE-2026-109618-109619" title="php-src: branch PHP-7.4-CVE-2026-109618-109619">7.4</a>, <a href="https://github.com/php/php-src/tree/PHP-8.0-CVE-2026-109618-109619" title="php-src: branch PHP-8.0-CVE-2026-109618-109619">8.0</a> en <a href="https://github.com/php/php-src/tree/PHP-8.1-CVE-2026-109618-109619" title="php-src: branch PHP-8.1-CVE-2026-109618-109619">8.1</a> staat er een minimale fix op GitHub: zelf compileren, zelf testen, zelf verantwoordelijk. Wij zeiden eerder &ldquo;ook niet als u het heel lief vraagt&rdquo;. Blijkbaar heeft iemand het heel lief gevraagd. PHP 7.3 of ouder: echt niets.</li>
       <li><strong>Kijk terug.</strong> Zoek in uw logs naar vreemde POST-verzoeken van de afgelopen dagen. Vindt u iets? Ga er dan van uit dat de server niet meer van u is.</li>
       <li>Klik niet op links in e-mails over dit lek. Wij mailen nooit. Wij kunnen ook niet mailen: onze webmail draait op PHP.</li>
     </ol>
@@ -266,11 +266,12 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
   <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
   <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen nog even een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
 
-  <h3 id="stand">Stand per platform, 16:40</h3>
+  <h3 id="stand">Stand per platform, 17:00</h3>
   <ul class="status" aria-labelledby="stand">
     <li><b>php.net</b><span class="pill green">Gepubliceerd</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35 sinds 15:34.</em></li>
-    <li><b>Debian 13</b><span class="pill green">Pakket er</span><em><code>8.4.27-1~deb13u1</code> in trixie-security. Het pakket is er, de DSA nog niet. Installeren mag gewoon.</em></li>
-    <li><b>Ubuntu</b><span class="pill orange">Onderweg</span><em>Gepubliceerd: <code>8.5.4-0ubuntu1.5</code> (26.04) en <code>8.5.9-0ubuntu2.1</code> (26.10). Om 15:41 gepubliceerd, maar de security-mirror van Ubuntu is sinds 11:44 niet bijgewerkt. <code>apt update</code> ziet het dus nog niet. Ook om 16:40 niet.</em></li>
+    <li><b>Debian 13</b><span class="pill green">DSA uit</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">DSA-6574-1</a>: <code>php8.4 8.4.27-1~deb13u1</code>.</em></li>
+    <li><b>Debian 12</b><span class="pill orange">Nog niet</span><em>php8.2 in bookworm staat nog op kwetsbaar. Ook unstable nog.</em></li>
+    <li><b>Ubuntu</b><span class="pill green">Pakket er</span><em>Eindelijk op de mirror: <code>8.5.4-0ubuntu1.5</code> (26.04), <code>8.5.9-0ubuntu2.1</code> (26.10) en <code>php8.3 8.3.6-0ubuntu0.24.04.13</code> (24.04). <code>apt update</code> en gaan.</em></li>
     <li><b>Windows</b><span class="pill green">Builds er</span><em>8.5.12 staat op windows.php.net.</em></li>
     <li><b>Docker</b><span class="pill orange">Nog niet</span><em>Alleen RC-tags. De offici&euml;le images volgen. Een RC is geen release. Ook niet vandaag.</em></li>
     <li><b>Homebrew</b><span class="pill orange">Nog niet</span><em>Staat nog op 8.5.11. Uw Mac staat waarschijnlijk niet open naar internet. Hopen we.</em></li>
@@ -295,7 +296,7 @@ apt changelog php8.4 | grep -m3 -E 'CVE-2026-10961[89]'   <span class="c"># Debi
 apt list --upgradable 2&gt;/dev/null | grep -i php
 sudo pro fix CVE-2026-109618
 sudo pro fix CVE-2026-109619</code></pre>
-      <p><code>pro fix</code> zegt of uw systeem kwetsbaar is. Is de fix er, dan installeert hij hem meteen. Ubuntu geeft het lek de prioriteit <em>Critical</em>. De fix: <code>8.5.4-0ubuntu1.5</code> in 26.04 en <code>8.5.9-0ubuntu2.1</code> in 26.10. Het versienummer blijft 8.5.4: dat is een backport. De changelog noemt beide CVE&rsquo;s, dus <code>pro fix</code> en <code>apt changelog php8.5 | grep CVE-2026-10961</code> werken. Status per release: <a href="https://ubuntu.com/security/CVE-2026-109618" title="Ubuntu: CVE-2026-109618">ubuntu.com/security/CVE-2026-109618</a>.</p>
+      <p><code>pro fix</code> zegt of uw systeem kwetsbaar is. Is de fix er, dan installeert hij hem meteen. Ubuntu geeft het lek de prioriteit <em>Critical</em>. De fix: <code>8.5.4-0ubuntu1.5</code> in 26.04, <code>8.5.9-0ubuntu2.1</code> in 26.10 en <code>php8.3 8.3.6-0ubuntu0.24.04.13</code> in 24.04. Het versienummer blijft 8.5.4: dat is een backport. De changelog noemt beide CVE&rsquo;s, dus <code>pro fix</code> en <code>apt changelog php8.5 | grep CVE-2026-10961</code> werken. Status per release: <a href="https://ubuntu.com/security/CVE-2026-109618" title="Ubuntu: CVE-2026-109618">ubuntu.com/security/CVE-2026-109618</a>.</p>
       <p>Ubuntu 22.04 of ouder draait PHP 8.1 of 7.x. Fixes komen daar alleen via Ubuntu Pro, als ze komen. PHP uit de PPA <code>ondrej/php</code>? Dan komt de fix van de PPA.</p>
       </div>
     </details>
@@ -387,7 +388,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
   <ul class="status" aria-labelledby="diensten">
     <li><b>PHP</b><span class="pill orange">Patch uit</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35. Nu nog installeren.</em></li>
     <li><b>Debian 13</b><span class="pill green">Pakket er</span><em>8.4.27-1~deb13u1 in trixie-security. Sneller dan deze update.</em></li>
-    <li><b>Ubuntu</b><span class="pill orange">Onderweg</span><em>Pakket gepubliceerd, de mirror staat stil. Het pakket staat klaar, alleen de deur zit nog dicht.</em></li>
+    <li><b>Ubuntu</b><span class="pill green">Pakket er</span><em>De deur is open. Drie uur na de publicatie, maar wie telt.</em></li>
     <li><b>NPO Start</b><span class="pill orange">Vertraagd</span><em>Nieuwe afleveringen komen later. Wij raden de herhaling aan.</em></li>
     <li><b>Pathé Thuis</b><span class="pill red">Uit</span><em>Geen films vandaag. Deze pagina heeft wel een klok die oploopt. Bijna net zo spannend.</em></li>
     <li><b>NCSC.nl</b><span class="pill red">Preventief uit</span><em>Zelfs het NCSC. Zij verwijzen naar advisories.ncsc.nl.</em></li>
@@ -395,7 +396,8 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><b>Vlaanderen</b><span class="pill green">Terug</span><em>Als eerste uit, als eerste weer aan. Respect, nogmaals.</em></li>
     <li><b>Cloudflare</b><span class="pill orange">Noodverband</span><em>Firewallregels tegen de bekende aanvallen. Hun eigen woorden: &ldquo;a stopgap only&rdquo;.</em></li>
     <li><b>Crisus.nl</b><span class="pill green">Werkt</span><em>Geen PHP. Gewoon HTML. Zoals in 1997.</em></li>
-    <li><b>Certificaten</b><span class="pill orange">Verstoord</span><em>Twee root-CA&rsquo;s deze week op staande voet ontslagen.</em></li>
+    <li><b>Certificaten</b><span class="pill orange">Verstoord</span><em>Twee root-CA&rsquo;s deze week op staande voet ontslagen. Zelfs Node.js weet het al.</em></li>
+    <li><b>Node.js</b><span class="pill orange">Ook updaten</span><em>Eigen security release vandaag. Ook gepatcht? Ook herstarten.</em></li>
     <li><b>DNS</b><span class="pill green">Werkt</span><em>Het is altijd DNS. Vandaag niet. Nog niet.</em></li>
     <li><b>Koffie</b><span class="pill orange">Beperkt</span><em>Zie de update van 13:00.</em></li>
     <li><b>Paniek</b><span class="pill green">Onder controle</span><em>Er is een spreadsheet.</em></li>
@@ -403,6 +405,10 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li><time datetime="2026-10-21T17:00+02:00">21 oktober 17:00</time>
+      <p>Goed nieuws voor wie nog op een oude PHP zit. Op GitHub staan branches voor PHP <a href="https://github.com/php/php-src/tree/PHP-7.4-CVE-2026-109618-109619" title="php-src: branch PHP-7.4-CVE-2026-109618-109619">7.4</a>, <a href="https://github.com/php/php-src/tree/PHP-8.0-CVE-2026-109618-109619" title="php-src: branch PHP-8.0-CVE-2026-109618-109619">8.0</a> en <a href="https://github.com/php/php-src/tree/PHP-8.1-CVE-2026-109618-109619" title="php-src: branch PHP-8.1-CVE-2026-109618-109619">8.1</a> met een &ldquo;minimal mitigation for EOL version&rdquo;. Ze zijn op 18 oktober gemaakt door Arnaud Le Blanc en Ilija Tovilo van het PHP-team. Het is geen release. U moet zelf bouwen. Maar het is meer dan niets. En niets was wat we eerder beloofden.</p>
+      <p>Dacht u: wij draaien Node.js, wij zijn veilig? Ook Node.js heeft vandaag <a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">security releases</a>: v26.12.1, v24.22.1 en v22.23.4. Acht lekken met de ernst <em>high</em>, waaronder een Brotli-decoder die met een out-of-bounds write code laat uitvoeren (CVE-2026-111497). Ook de eMudhra-CA wordt eruit gegooid. Het is een drukke woensdag voor iedereen. Behalve voor statische HTML.</p>
+      <p>En Ubuntu is bij: de pakketten staan nu ook op de mirror, voor 26.04, 26.10 en 24.04. Debian heeft zijn DSA uit voor Debian 13. Debian 12 wacht nog. Zie de <a href="#stand" title="Stand per platform">stand per platform</a>.</p></li>
     <li><time datetime="2026-10-21T16:40+02:00">21 oktober 16:40</time>
       <p>Het kabinet reageert. Minister Van Weel van Justitie en Veiligheid zegt dat het offline halen van al die websites &ldquo;impact heeft in onze digitale samenleving&rdquo;. Ook hij ziet nog geen actief misbruik. Wij kunnen de impact bevestigen: om 16:35 zijn RTL, DigiD.nl, MijnOverheid, het NCSC, de Tweede Kamer, de KNVB, KWF, Amnesty en de Unie van Waterschappen nog uit.</p>
       <p>Verder weinig nieuws. De Ubuntu-mirror staat nog stil. Docker en Homebrew hebben nog niets. Red Hat, SUSE en de Debian-tracker hebben nog geen pagina. Het crisusteam heeft de pizza op en overweegt een tweede. Dat is crisusniveau 3,5. Daar hebben we geen vakje voor.</p></li>
@@ -450,6 +456,8 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><a href="https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w" title="PHP security advisory GHSA-w8hw-w9fx-j79w: RCE via OOM corruption">PHP advisory GHSA-w8hw-w9fx-j79w</a> (CVE-2026-109618) en <a href="https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp" title="PHP security advisory GHSA-6wmf-4rv5-p3rp: RCE via stale global state">GHSA-6wmf-4rv5-p3rp</a> (CVE-2026-109619). De technische details, met noodmaatregelen.</li>
     <li><a href="https://www.php.net/downloads.php" title="php.net: downloads">php.net: downloads</a>. De gepatchte versies. De <a href="https://www.php.net/archive/2026.php#2026-10-21-5" title="php.net: October 2026 Security Release">aankondiging</a> van de security release.</li>
     <li><a href="https://calif.io/php2shell/" title="Calif Research: php2shell, a tale of two PHP remote vulnerabilities">Calif Research: php2shell</a>. De write-up van de vinders, met de techniek en een strip.</li>
+    <li>De php-src-branches voor <a href="https://github.com/php/php-src/tree/PHP-7.4-CVE-2026-109618-109619" title="php-src: branch PHP-7.4-CVE-2026-109618-109619">7.4</a>, <a href="https://github.com/php/php-src/tree/PHP-8.0-CVE-2026-109618-109619" title="php-src: branch PHP-8.0-CVE-2026-109618-109619">8.0</a> en <a href="https://github.com/php/php-src/tree/PHP-8.1-CVE-2026-109618-109619" title="php-src: branch PHP-8.1-CVE-2026-109618-109619">8.1</a> met de minimale fix voor EOL-versies.</li>
+    <li><a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">Node.js: October 2026 security releases</a>. Ook vandaag.</li>
     <li><a href="https://advisories.ncsc.nl/" title="NCSC security advisories">NCSC: Ernstige kwetsbaarheden in PHP: bereid je voor op patchen</a>.</li>
     <li><a href="https://www.rijksoverheid.nl/actueel/nieuws/2026/10/21/ncsc-ernstige-kwetsbaarheden-in-php" title="Rijksoverheid.nl: NCSC: Ernstige kwetsbaarheden in PHP">Rijksoverheid.nl: NCSC: Ernstige kwetsbaarheden in PHP</a>.</li>
     <li><a href="https://nos.nl/liveblog/2636066-websites-kwetsbaar-voor-softwarelek-rtl-nieuws-digid-en-mijnoverheid-uit-de-lucht" title="NOS liveblog over het PHP-lek">NOS: liveblog over het PHP-lek</a>. Wie er allemaal offline is.</li>
