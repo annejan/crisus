@@ -6,7 +6,17 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Wed, 21 Oct 2026 22:00:00 +0200</lastBuildDate>
+  <lastBuildDate>Wed, 21 Oct 2026 23:00:00 +0200</lastBuildDate>
+  <item>
+    <title>21 oktober 23:00 · Er wordt geklopt.</title>
+    <link>https://crisus.nl/#u-20261021-2300</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-2300</guid>
+    <pubDate>Wed, 21 Oct 2026 23:00:00 +0200</pubDate>
+    <description><![CDATA[<p>Er wordt geklopt. Volgens <a href="https://www.security.nl/posting/958424/Misbruik+van+PHP2Shell-lek+gemeld%2C+DigiD+en+andere+sites+weer+online" title="Security.NL: Misbruik van PHP2Shell-lek gemeld, DigiD en andere sites weer online">Security.NL</a> zien meerdere beveiligingsbedrijven de eerste aanvalspogingen op PHP2Shell. Cloudflare ziet aanvalsverkeer tegen klanten, Hadrian spreekt van grootschalig misbruik, Patchstack en watchTowr melden actieve pogingen. Of het lukt, is onduidelijk. Bij minstens &eacute;&eacute;n bedrijf kwamen de aanvallers niet verder dan aankloppen. Het crisusniveau gaat terug naar 3: er is weer pizza besteld. Wie vanmiddag heeft gepatcht, kan rustig slapen. Wie niet: dit is het moment.</p>
+      <p>Security.NL meldt ook dat Overheid.nl weer online is. Wij keken om 22:15 en nog eens om 22:50. Daar stond: &ldquo;We zijn zo terug. Op dit moment vindt er onderhoud plaats.&rdquo; Het nieuws loopt dus voor op de overheid. Dat is ook een soort snelheid.</p>
+      <p>Verder: het NCSC heeft een eigen advisory uit, <a href="https://advisories.ncsc.nl/advisory?id=NCSC-2026-0443" title="NCSC-2026-0443: Kwetsbaarheden verholpen in PHP">NCSC-2026-0443</a>. En bij Albert Heijn kan een beperkte groep vaste klanten weer bestellen, meldt de <a href="https://nos.nl/l/2636102" title="NOS: Beperkte groep vaste klanten kan na cyberaanval weer bestelling plaatsen bij AH">NOS</a>. De rest moet nog even met een mandje. En KWF is terug online. Nog uit om 22:50: ANWB.nl, BNNVARA, Omroep MAX, Amnesty en Werkenbijderechtspraak.nl. De KNVB staat nog in onderhoudsmodus.</p>
+      <p>Liever kijken dan lezen? Ex-<a href="https://nl.wikipedia.org/wiki/Buro_Renkema" title="Wikipedia: Buro Renkema, het komediecollectief van onder anderen Arjen Lubach">Buro Renkema</a>-onderzoeker Arjen <a href="https://www.youtube.com/watch?v=A-Fcbe-cX7o" title="YouTube, Lubach: Internet stuk door lek in PHP">legt het in een paar minuten uit</a>: &ldquo;Internet stuk door lek in PHP&rdquo;. Duidelijker dan de meeste advisories, en met betere grappen dan de onze. Bijna.</p>]]></description>
+  </item>
   <item>
     <title>21 oktober 22:00 · De NOS sluit zijn liveblog.</title>
     <link>https://crisus.nl/#u-20261021-2200</link>
