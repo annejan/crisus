@@ -184,7 +184,7 @@
 </header>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · laatst bijgewerkt 21 oktober, 15:50</p>
+  <p class="kicker">Lopende crisus · laatst bijgewerkt 21 oktober, 16:05</p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu.</p>
 
@@ -264,6 +264,17 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
   <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
   <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen nog even een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
 
+  <h3 id="stand">Stand per platform, 16:05</h3>
+  <ul class="status" aria-labelledby="stand">
+    <li><b>php.net</b><span class="pill green">Gepubliceerd</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35 sinds 15:34.</em></li>
+    <li><b>Debian 13</b><span class="pill green">Pakket er</span><em><code>8.4.27-1~deb13u1</code> in trixie-security. De DSA volgt nog.</em></li>
+    <li><b>Ubuntu</b><span class="pill orange">Onderweg</span><em>Gepubliceerd: <code>8.5.4-0ubuntu1.5</code> (26.04) en <code>8.5.9-0ubuntu2.1</code> (26.10). De mirrors lopen nog achter.</em></li>
+    <li><b>Windows</b><span class="pill green">Builds er</span><em>8.5.12 staat op windows.php.net.</em></li>
+    <li><b>Docker</b><span class="pill orange">Nog niet</span><em>Alleen RC-tags. De offici&euml;le images volgen.</em></li>
+    <li><b>Homebrew</b><span class="pill orange">Nog niet</span><em>Staat nog op 8.5.11.</em></li>
+    <li><b>Red Hat, SUSE</b><span class="pill orange">Nog niets</span><em>Nog geen CVE-pagina. Zie hierboven: geen nieuws.</em></li>
+  </ul>
+
   <div class="platform">
     <details>
       <summary>Debian, Raspberry Pi OS <small>apt</small></summary>
@@ -282,7 +293,7 @@ apt changelog php8.4 | grep -m3 -E 'CVE-2026-10961[89]'   <span class="c"># Debi
 apt list --upgradable 2&gt;/dev/null | grep -i php
 sudo pro fix CVE-2026-109618
 sudo pro fix CVE-2026-109619</code></pre>
-      <p><code>pro fix</code> zegt of uw systeem kwetsbaar is. Is de fix er, dan installeert hij hem meteen. Ubuntu geeft het lek de prioriteit <em>Critical</em>. Om 15:50 stond PHP 8.5 in 26.04 en 26.10 nog op <em>Needs evaluation</em>, zonder pakket. Status per release: <a href="https://ubuntu.com/security/CVE-2026-109618" title="Ubuntu: CVE-2026-109618">ubuntu.com/security/CVE-2026-109618</a>.</p>
+      <p><code>pro fix</code> zegt of uw systeem kwetsbaar is. Is de fix er, dan installeert hij hem meteen. Ubuntu geeft het lek de prioriteit <em>Critical</em>. De fix: <code>8.5.4-0ubuntu1.5</code> in 26.04 en <code>8.5.9-0ubuntu2.1</code> in 26.10. Het versienummer blijft 8.5.4: dat is een backport. De changelog noemt beide CVE&rsquo;s, dus <code>pro fix</code> en <code>apt changelog php8.5 | grep CVE-2026-10961</code> werken. Status per release: <a href="https://ubuntu.com/security/CVE-2026-109618" title="Ubuntu: CVE-2026-109618">ubuntu.com/security/CVE-2026-109618</a>.</p>
       <p>Ubuntu 22.04 of ouder draait PHP 8.1 of 7.x. Fixes komen daar alleen via Ubuntu Pro, als ze komen. PHP uit de PPA <code>ondrej/php</code>? Dan komt de fix van de PPA.</p>
       </div>
     </details>
@@ -374,7 +385,9 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
   <ul class="status" aria-labelledby="diensten">
     <li><b>PHP</b><span class="pill orange">Patch uit</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35. Nu nog installeren.</em></li>
     <li><b>Debian 13</b><span class="pill green">Pakket er</span><em>8.4.27-1~deb13u1 in trixie-security. Sneller dan deze update.</em></li>
-    <li><b>Ubuntu</b><span class="pill orange">Needs evaluation</span><em>Wij ook.</em></li>
+    <li><b>Ubuntu</b><span class="pill orange">Onderweg</span><em>Pakket gepubliceerd. De mirrors moeten nog. Even geduld. Wij hebben er ook nog geen.</em></li>
+    <li><b>NPO Start</b><span class="pill orange">Vertraagd</span><em>Nieuwe afleveringen komen later. Wij raden de herhaling aan.</em></li>
+    <li><b>Pathé Thuis</b><span class="pill red">Uit</span><em>Geen films vandaag. Deze pagina heeft wel een klok die oploopt. Bijna net zo spannend.</em></li>
     <li><b>NCSC.nl</b><span class="pill red">Preventief uit</span><em>Zelfs het NCSC. Zij verwijzen naar advisories.ncsc.nl.</em></li>
     <li><b>DigiD.nl, MijnOverheid</b><span class="pill red">Preventief uit</span><em>Inloggen met DigiD werkt nog wel. Waar u dan op inlogt, is een andere vraag.</em></li>
     <li><b>Vlaanderen</b><span class="pill red">Preventief uit</span><em>Alle Vlaamse overheidssites. In &eacute;&eacute;n keer. Respect.</em></li>
@@ -388,6 +401,9 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li><time datetime="2026-10-21T16:05+02:00">21 oktober 16:05</time>
+      <p>De patch is er. Nu de rest van de wereld nog. Debian heeft zijn pakket al, Ubuntu heeft het zijne gepubliceerd. De mirrors moeten bijkomen. Windows-builds staan klaar. Docker en Homebrew zijn nog bezig. Zie de <a href="#stand" title="Stand per platform">stand per platform</a>.</p>
+      <p>Intussen gaan ook de overheden van Frankrijk en Finland deels op zwart. Ook goede doelen gaan offline: KWF, de Hartstichting, Oxfam Novib, Amnesty. Het UWV haalt een tool offline om je beter te melden. Wie vandaag beter wordt, moet dat morgen melden. NPO Start publiceert later en Pathé Thuis verhuurt geen films. Een goede middag voor een boek. Van papier.</p></li>
     <li><time datetime="2026-10-21T15:50+02:00">21 oktober 15:50</time>
       <p>Het crisusniveau gaat terug naar 3. De pizza is er. Debian 13 heeft al een pakket: <code>8.4.27-1~deb13u1</code>. Ubuntu staat nog op <em>Needs evaluation</em>. Wie Apache met mod_php draait: dat is precies de opzet waartegen de aanval bewezen is. Patchen, of PHP uit laten.</p></li>
     <li><time datetime="2026-10-21T15:34+02:00">21 oktober 15:34</time>
