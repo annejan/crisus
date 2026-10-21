@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-21T14:45:00+02:00">
-<meta property="article:modified_time" content="2026-10-21T19:45:00+02:00">
+<meta property="article:modified_time" content="2026-10-21T20:03:00+02:00">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Crisus · PHP Kwetsbaarheid">
 <meta name="twitter:description" content="Twee kritieke PHP-lekken, de patch is uit. Wat u moet doen, per platform, met bronnen. Satire, maar de feiten kloppen.">
@@ -33,7 +33,7 @@
   "url": "https://crisus.nl/",
   "inLanguage": "nl",
   "datePublished": "2026-10-21T14:45:00+02:00",
-  "dateModified": "2026-10-21T19:45:00+02:00",
+  "dateModified": "2026-10-21T20:03:00+02:00",
   "coverageStartTime": "2026-10-20T22:00:00+02:00",
   "about": [
     {"@type": "Thing", "name": "CVE-2026-109618", "sameAs": "https://www.cve.org/CVERecord?id=CVE-2026-109618"},
@@ -66,7 +66,7 @@
 </header>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · <time datetime="2026-10-21T19:45:00+02:00">laatst bijgewerkt 21 oktober, 19:45</time></p>
+  <p class="kicker">Lopende crisus · <time datetime="2026-10-21T20:03:00+02:00">laatst bijgewerkt 21 oktober, 20:03</time></p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu.</p>
 
@@ -282,6 +282,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><b>Crisus.nl</b><span class="pill green">Werkt</span><em>Geen PHP. Gewoon HTML. Zoals in 1997.</em></li>
     <li><b>Certificaten</b><span class="pill orange">Verstoord</span><em>Twee root-CA&rsquo;s deze week op staande voet ontslagen. Zelfs Node.js weet het al.</em></li>
     <li><b>Node.js</b><span class="pill orange">Ook updaten</span><em>Eigen security release vandaag. Ook gepatcht? Ook herstarten.</em></li>
+    <li><b>Linux KVM-hosts</b><span class="pill orange">Herstarten</span><em>PwnEscape, CVE-2026-99999. Een VM kan uitbreken naar de host. Nieuwe kernel en een reboot. VPS-klanten: dat doet uw provider.</em></li>
     <li><b>DNS</b><span class="pill green">Werkt</span><em>Het is altijd DNS. Vandaag niet. Nog niet.</em></li>
     <li><b>Koffie</b><span class="pill orange">Beperkt</span><em>Zie de update van 13:00.</em></li>
     <li><b>Paniek</b><span class="pill green">Onder controle</span><em>Er is een spreadsheet.</em></li>
@@ -289,6 +290,16 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li><time datetime="2026-10-21T20:03+02:00">21 oktober 20:03</time>
+      <p><strong>Het Achtuurjournaal.</strong> Met een paar minuten vertraging, zoals het hoort. Goedenavond.</p>
+      <ul>
+        <li><strong>Intussen bij de buren: PwnEscape.</strong> Een lek in de netwerkcode van de Linux-kernel laat een virtuele machine uitbreken naar de KVM-host eronder, meldt <a href="https://www.heise.de/en/news/PwnEscape-Critical-Linux-kernel-flaw-allows-VM-escape-11492399.html" title="heise online: PwnEscape, Critical Linux kernel flaw allows VM escape">heise</a>. Een kwaadwillende klant van een cloudprovider kan zo de host overnemen, en daarmee de VM&rsquo;s van alle andere klanten. CVE-2026-99999, CVSS 9,3. Het laatste vijfcijferige CVE-nummer van 2026. Ze hebben het mooiste nummer voor het engste lek bewaard.</li>
+        <li>Gevonden door pwn.ai, met AI, in drie dagen, voor minder dan 700 dollar aan tokens. De fix zit sinds 8 oktober in de kernel. Debian heeft hem: <code>6.12.113-1</code> voor Debian 13 en <code>6.1.190-1</code> voor Debian 12, zie de <a href="https://security-tracker.debian.org/tracker/CVE-2026-99999" title="Debian security tracker: CVE-2026-99999">tracker</a>. Netcup herstart zijn hosts al sinds het weekend.</li>
+        <li><strong>Wat moet u doen?</strong> Beheert u zelf een KVM-host: nieuwe kernel erop en herstarten. Huurt u een VPS: niets, dat doet uw provider. Wel even checken of uw VPS na een herstart vanzelf weer opstart. Daar komt u anders om drie uur &rsquo;s nachts achter.</li>
+        <li><strong>Binnenland: PHP.</strong> De patch is al vier uur uit. Debian, Ubuntu, Docker en SUSE zijn bij. Terug: RTL, Tweakers, MijnOverheid, NPO.nl en de Unie van Waterschappen. Nog uit: ANWB, BNNVARA, Omroep MAX, KRO-NCRV, DigiD.nl, het NCSC, de Tweede Kamer, de KNVB, KWF en Amnesty.</li>
+        <li><strong>Sport.</strong> FC Twente en FC Groningen spelen nog altijd zonder website. Het staat gelijk.</li>
+        <li><strong>Het weer.</strong> Buiig, met kans op patches. Morgen opklarend, behalve voor wie vanavond niet herstart.</li>
+      </ul></li>
     <li><time datetime="2026-10-21T19:45+02:00">21 oktober 19:45</time>
       <p>Nu iedereen weer een beetje rust heeft, begint het belangrijkste deel van elke crisis: wie krijgt de eer. OpenAI zegt volgens de NOS &ldquo;de afgelopen twee maanden een coalitie van beheerders, onderzoekers en beveiligingsproviders&rdquo; te hebben geleid. Wiz noemt de vondsten &ldquo;de ernstigste kwetsbaarheden die ooit in PHP zijn ontdekt, en wellicht zelfs in de geschiedenis van software&rdquo;. Wij noemen onszelf bescheiden de beste crisussite van Nederland. Er is er maar &eacute;&eacute;n.</p>
       <p>Wie is er terug? NPO.nl, zonder melding. Nog uit om 19:45: ANWB.nl, BNNVARA, Omroep MAX, KRO-NCRV, een paar onderdelen van Het Klokhuis, FC Twente en FC Groningen. Ook DigiD.nl, het NCSC, de Tweede Kamer, de KNVB, KWF en Amnesty. Het eerste uur na een patch is makkelijk. Het tweede uur is testen.</p></li>
@@ -387,6 +398,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><a href="https://fedi.katze.sh/@elise/117478725808527006" title="Fediverse-draad van @elise@fedi.katze.sh over een nieuwe PHP-bug">@elise@fedi.katze.sh</a> over een nieuwe, nog niet openbare PHP-bug. E&eacute;n bron, onbevestigd.</li>
     <li><a href="https://www.vi.nl/nieuws/nederlandse-profclubs-halen-website-offline-vanwege-ernstige-beveiligingslekken" title="VI: Nederlandse profclubs halen website offline vanwege ernstige beveiligingslekken">VI: Nederlandse profclubs halen website offline</a>. Welke clubs, met de verklaring van FC Twente.</li>
     <li><a href="https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/" title="The PHP Foundation: Today's PHP Security Release, and How We're Strengthening PHP Security">The PHP Foundation: Today&rsquo;s PHP Security Release, and How We&rsquo;re Strengthening PHP Security</a>. Hoe de lekken gevonden zijn en waarom de fix zo lang duurde.</li>
+    <li><a href="https://www.heise.de/en/news/PwnEscape-Critical-Linux-kernel-flaw-allows-VM-escape-11492399.html" title="heise online: PwnEscape, Critical Linux kernel flaw allows VM escape">heise: PwnEscape, Critical Linux kernel flaw allows VM escape</a>. Het Linux-lek van het Achtuurjournaal.</li>
     <li><a href="https://advisories.ncsc.nl/" title="NCSC security advisories">NCSC: Ernstige kwetsbaarheden in PHP: bereid je voor op patchen</a>.</li>
     <li><a href="https://www.rijksoverheid.nl/actueel/nieuws/2026/10/21/ncsc-ernstige-kwetsbaarheden-in-php" title="Rijksoverheid.nl: NCSC: Ernstige kwetsbaarheden in PHP">Rijksoverheid.nl: NCSC: Ernstige kwetsbaarheden in PHP</a>.</li>
     <li><a href="https://nos.nl/liveblog/2636066-websites-kwetsbaar-voor-softwarelek-rtl-nieuws-digid-en-mijnoverheid-uit-de-lucht" title="NOS liveblog over het PHP-lek">NOS: liveblog over het PHP-lek</a>. Wie er allemaal offline is.</li>
