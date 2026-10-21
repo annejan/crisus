@@ -44,6 +44,8 @@ in `site/`, the tooling in `tools/`.
   "Nog geen fix", "Nu installeren", "Update beschikbaar", "Terug", "Preventief uit",
   "Deels", "Onduidelijk", "Herstarten". No shorthand like "Pakket er".
 - No government (Rijksoverheid) house style. The footer says it is satire and to call 112.
+- REUSE: every file must be covered by `REUSE.toml` (MIT for code and config, CC-BY-4.0 for
+  pages, texts and images). After adding a file: `reuse lint`.
 - Strict CSP (`site/.htaccess`): no inline `<style>` or `<script>`, no `style=""`
   attributes. Styles go in `crisus.css`, the only script is `klok.js`.
 
