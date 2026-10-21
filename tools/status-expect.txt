@@ -1,0 +1,24 @@
+# site                          expected state on the page (up/out) — update when the page changes
+www.overheid.nl                 out
+www.anwb.nl                     out
+www.bnnvara.nl                  out
+www.omroepmax.nl                out
+www.knvb.nl                     out
+www.amnesty.nl                  out
+www.werkenbijderechtspraak.nl   out
+www.digid.nl                    up
+mijn.overheid.nl                up
+www.ncsc.nl                     up
+www.tweedekamer.nl              up
+www.rtl.nl                      up
+www.npo.nl                      up
+www.npostart.nl                 up
+www.kro-ncrv.nl                 up
+www.boerzoektvrouw.nl           up
+www.hetklokhuis.nl              up
+www.fctwente.nl                 up
+www.fcgroningen.nl              up
+www.kwf.nl                      up
+www.uvw.nl                      up
+www.vlaanderen.be               up
+www.ah.nl                       up
