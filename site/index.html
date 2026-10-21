@@ -188,7 +188,7 @@
 </header>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · laatst bijgewerkt 21 oktober, 18:25</p>
+  <p class="kicker">Lopende crisus · laatst bijgewerkt 21 oktober, 18:55</p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu.</p>
 
@@ -270,14 +270,14 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
   <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
   <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen nog even een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
 
-  <h3 id="stand">Stand per platform, 18:25</h3>
+  <h3 id="stand">Stand per platform, 18:55</h3>
   <ul class="status" aria-labelledby="stand">
     <li><b>php.net</b><span class="pill green">Gepubliceerd</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35 sinds 15:34.</em></li>
     <li><b>Debian 13</b><span class="pill green">DSA uit</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">DSA-6574-1</a>: <code>php8.4 8.4.27-1~deb13u1</code>.</em></li>
     <li><b>Debian 12</b><span class="pill green">Pakket er</span><em><code>php8.2 8.2.35-1~deb12u1</code> staat nu ook op de security-mirror. Unstable is nog kwetsbaar.</em></li>
     <li><b>Ubuntu</b><span class="pill green">Pakket er</span><em>Eindelijk op de mirror: <code>8.5.4-0ubuntu1.5</code> (26.04), <code>8.5.9-0ubuntu2.1</code> (26.10) en <code>php8.3 8.3.6-0ubuntu0.24.04.13</code> (24.04). <code>apt update</code> en gaan.</em></li>
     <li><b>Windows</b><span class="pill green">Builds er</span><em>8.5.12 staat op windows.php.net.</em></li>
-    <li><b>Docker</b><span class="pill orange">Let op de tag</span><em>Versietags zijn er: <code>8.5.12-apache</code>, <code>8.4.27-fpm</code> enzovoort. Maar <code>8.5-apache</code>, <code>8.4-fpm</code> en <code>latest</code> wijzen om 17:50 nog naar het image van vanochtend. Pin de versie.</em></li>
+    <li><b>Docker</b><span class="pill green">Images er</span><em>Sinds ongeveer 18:45 wijzen ook <code>8.4-apache</code>, <code>8.5-apache</code>, <code>8.4-fpm</code> en <code>latest</code> naar de gepatchte images. Pullen, opnieuw aanmaken, klaar.</em></li>
     <li><b>Homebrew</b><span class="pill orange">Nog niet</span><em>Staat nog op 8.5.11. Uw Mac staat waarschijnlijk niet open naar internet. Hopen we.</em></li>
     <li><b>SUSE</b><span class="pill orange">Deels</span><em>SLES 15 SP7: <code>php8 &gt;= 8.3.36-150700.3.24.1</code>. De rest staat nog op <em>pending</em>. <a href="https://www.suse.com/security/cve/CVE-2026-109618.html" title="SUSE: CVE-2026-109618">CVE-pagina</a>.</em></li>
     <li><b>Red Hat</b><span class="pill orange">Nog niets</span><em>Er is een CVE-pagina, nog zonder pakketten.</em></li>
@@ -411,6 +411,9 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li><time datetime="2026-10-21T18:55+02:00">21 oktober 18:55</time>
+      <p>Docker is bij. Rond 18:45 zijn ook de zwevende tags verzet: <code>php:8.4-apache</code> is nu hetzelfde image als <code>php:8.4.27-apache</code>, en <code>php:latest</code> hetzelfde als <code>php:8.5.12</code>. Wij hebben de digests vergeleken. Een container die al draait, blijft wel oud tot u hem opnieuw aanmaakt.</p>
+      <p>De PHP Foundation vertelt ook hoe de processen veranderen, aldus de NOS: het beveiligingsteam mag voortaan besluiten met een meerderheid van stemmen. Tot nu toe moest iedereen het eens zijn. Wie ooit een vereniging heeft gerund, weet hoe lang dat duurt. MijnOverheid is volgens de NOS ook officieel terug.</p></li>
     <li><time datetime="2026-10-21T18:25+02:00">21 oktober 18:25</time>
       <p>Zelfreflectie bij PHP. De PHP Foundation spreekt volgens de NOS van een &ldquo;structurele fout&rdquo;: de oplossing liet lang op zich wachten. Het beveiligingsteam werd het niet eens over de juiste fix en er zijn weinig ontwikkelaars met de benodigde kennis. De processen gaan op de schop. Een team dat het niet eens wordt over de oplossing: dat kennen wij. Wij noemen het een Signal-groep.</p>
       <p>Wiz zegt dat de lekken al ruim tien jaar in PHP zaten. Ze vonden ze met AI: &ldquo;de ernstigste kwetsbaarheden die ooit door AI zijn ontdekt&rdquo;. E&eacute;n onderzoeker deed in een week wat een topteam vroeger maanden kostte. Volgens Wiz werkt dat twee kanten op: criminelen kunnen het ook. Tien jaar, trouwens. Ongeveer zo lang als die ene WordPress-plugin niet is bijgewerkt.</p>
