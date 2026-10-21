@@ -1,0 +1,35 @@
+version = 1
+SPDX-PackageName = "crisus.nl"
+SPDX-PackageSupplier = "Anne Jan Brouwer"
+SPDX-PackageDownloadLocation = "https://crisus.nl/"
+
+# Code and configuration: MIT.
+[[annotations]]
+path = [
+    "tools/**",
+    "skills/**",
+    "site/**.css",
+    "site/**.js",
+    "site/.htaccess",
+    "site/robots.txt",
+    "site/sitemap.xml",
+    ".gitignore",
+    "REUSE.toml",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Anne Jan Brouwer"
+SPDX-License-Identifier = "MIT"
+
+# Pages, texts, the feed, the icon and the share image: CC-BY-4.0.
+# Short quotes from news sources and advisories are cited with a link to the source.
+[[annotations]]
+path = [
+    "site/**.html",
+    "site/feed.xml",
+    "site/favicon.svg",
+    "site/og.png",
+    "README.md",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Anne Jan Brouwer"
+SPDX-License-Identifier = "CC-BY-4.0"

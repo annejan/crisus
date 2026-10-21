@@ -33,4 +33,11 @@ tools/deploy.sh index.html sitemap.xml feed.xml
 The site is static on purpose: no PHP, no cookies, no trackers, nothing from third
 parties. During a PHP crisis that is the joke and the point.
 
+## License
+
+[REUSE](https://reuse.software/) compliant, see `REUSE.toml`: the code and
+configuration (`tools/`, `skills/`, CSS, JS, `.htaccess`) are MIT, the pages,
+texts, feed and images are CC-BY-4.0. Quotes from news sources and advisories
+are cited with a link to the source.
+
 © 2026 Anne Jan Brouwer.
