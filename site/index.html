@@ -184,7 +184,7 @@
 </header>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · laatst bijgewerkt 21 oktober, 16:30</p>
+  <p class="kicker">Lopende crisus · laatst bijgewerkt 21 oktober, 16:40</p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu.</p>
 
@@ -266,13 +266,13 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
   <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
   <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen nog even een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
 
-  <h3 id="stand">Stand per platform, 16:30</h3>
+  <h3 id="stand">Stand per platform, 16:40</h3>
   <ul class="status" aria-labelledby="stand">
     <li><b>php.net</b><span class="pill green">Gepubliceerd</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35 sinds 15:34.</em></li>
     <li><b>Debian 13</b><span class="pill green">Pakket er</span><em><code>8.4.27-1~deb13u1</code> in trixie-security. Het pakket is er, de DSA nog niet. Installeren mag gewoon.</em></li>
-    <li><b>Ubuntu</b><span class="pill orange">Onderweg</span><em>Gepubliceerd: <code>8.5.4-0ubuntu1.5</code> (26.04) en <code>8.5.9-0ubuntu2.1</code> (26.10). Om 15:41 gepubliceerd, maar de security-mirror van Ubuntu is sinds 11:44 niet bijgewerkt. <code>apt update</code> ziet het dus nog niet.</em></li>
+    <li><b>Ubuntu</b><span class="pill orange">Onderweg</span><em>Gepubliceerd: <code>8.5.4-0ubuntu1.5</code> (26.04) en <code>8.5.9-0ubuntu2.1</code> (26.10). Om 15:41 gepubliceerd, maar de security-mirror van Ubuntu is sinds 11:44 niet bijgewerkt. <code>apt update</code> ziet het dus nog niet. Ook om 16:40 niet.</em></li>
     <li><b>Windows</b><span class="pill green">Builds er</span><em>8.5.12 staat op windows.php.net.</em></li>
-    <li><b>Docker</b><span class="pill orange">Nog niet</span><em>Alleen RC-tags. De offici&euml;le images volgen.</em></li>
+    <li><b>Docker</b><span class="pill orange">Nog niet</span><em>Alleen RC-tags. De offici&euml;le images volgen. Een RC is geen release. Ook niet vandaag.</em></li>
     <li><b>Homebrew</b><span class="pill orange">Nog niet</span><em>Staat nog op 8.5.11. Uw Mac staat waarschijnlijk niet open naar internet. Hopen we.</em></li>
     <li><b>Red Hat, SUSE</b><span class="pill orange">Nog niets</span><em>Nog geen CVE-pagina. Zie hierboven: geen nieuws.</em></li>
   </ul>
@@ -403,6 +403,9 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li><time datetime="2026-10-21T16:40+02:00">21 oktober 16:40</time>
+      <p>Het kabinet reageert. Minister Van Weel van Justitie en Veiligheid zegt dat het offline halen van al die websites &ldquo;impact heeft in onze digitale samenleving&rdquo;. Ook hij ziet nog geen actief misbruik. Wij kunnen de impact bevestigen: om 16:35 zijn RTL, DigiD.nl, MijnOverheid, het NCSC, de Tweede Kamer, de KNVB, KWF, Amnesty en de Unie van Waterschappen nog uit.</p>
+      <p>Verder weinig nieuws. De Ubuntu-mirror staat nog stil. Docker en Homebrew hebben nog niets. Red Hat, SUSE en de Debian-tracker hebben nog geen pagina. Het crisusteam heeft de pizza op en overweegt een tweede. Dat is crisusniveau 3,5. Daar hebben we geen vakje voor.</p></li>
     <li><time datetime="2026-10-21T16:30+02:00">21 oktober 16:30</time>
       <p>Een uur na de patch. Onze steekproef van 16:25: Vlaanderen.be en Tweakers zijn terug. RTL, DigiD.nl, MijnOverheid, het NCSC, de Tweede Kamer, de KNVB, KWF en Amnesty zijn nog uit. Patchen kost tijd. Testen nog meer. Weer aanzetten zonder testen kost het meest.</p>
       <p>Gebruikt u Ubuntu? Ubuntu heeft de fix om 15:41 gepubliceerd, maar de security-mirror is sinds 11:44 niet bijgewerkt. <code>apt update</code> ziet het pakket dus nog niet. Laat PHP zolang uit. Of haal het pakket met de hand van Launchpad, als u weet wat u doet. Dat weet u. U leest deze site.</p></li>
