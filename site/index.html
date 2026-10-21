@@ -184,7 +184,7 @@
 </header>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · laatst bijgewerkt 21 oktober, 16:15</p>
+  <p class="kicker">Lopende crisus · laatst bijgewerkt 21 oktober, 16:30</p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu.</p>
 
@@ -266,14 +266,14 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
   <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
   <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen nog even een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
 
-  <h3 id="stand">Stand per platform, 16:05</h3>
+  <h3 id="stand">Stand per platform, 16:30</h3>
   <ul class="status" aria-labelledby="stand">
     <li><b>php.net</b><span class="pill green">Gepubliceerd</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35 sinds 15:34.</em></li>
-    <li><b>Debian 13</b><span class="pill green">Pakket er</span><em><code>8.4.27-1~deb13u1</code> in trixie-security. De DSA volgt nog.</em></li>
-    <li><b>Ubuntu</b><span class="pill orange">Onderweg</span><em>Gepubliceerd: <code>8.5.4-0ubuntu1.5</code> (26.04) en <code>8.5.9-0ubuntu2.1</code> (26.10). De mirrors lopen nog achter.</em></li>
+    <li><b>Debian 13</b><span class="pill green">Pakket er</span><em><code>8.4.27-1~deb13u1</code> in trixie-security. Het pakket is er, de DSA nog niet. Installeren mag gewoon.</em></li>
+    <li><b>Ubuntu</b><span class="pill orange">Onderweg</span><em>Gepubliceerd: <code>8.5.4-0ubuntu1.5</code> (26.04) en <code>8.5.9-0ubuntu2.1</code> (26.10). Om 15:41 gepubliceerd, maar de security-mirror van Ubuntu is sinds 11:44 niet bijgewerkt. <code>apt update</code> ziet het dus nog niet.</em></li>
     <li><b>Windows</b><span class="pill green">Builds er</span><em>8.5.12 staat op windows.php.net.</em></li>
     <li><b>Docker</b><span class="pill orange">Nog niet</span><em>Alleen RC-tags. De offici&euml;le images volgen.</em></li>
-    <li><b>Homebrew</b><span class="pill orange">Nog niet</span><em>Staat nog op 8.5.11.</em></li>
+    <li><b>Homebrew</b><span class="pill orange">Nog niet</span><em>Staat nog op 8.5.11. Uw Mac staat waarschijnlijk niet open naar internet. Hopen we.</em></li>
     <li><b>Red Hat, SUSE</b><span class="pill orange">Nog niets</span><em>Nog geen CVE-pagina. Zie hierboven: geen nieuws.</em></li>
   </ul>
 
@@ -387,12 +387,12 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
   <ul class="status" aria-labelledby="diensten">
     <li><b>PHP</b><span class="pill orange">Patch uit</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35. Nu nog installeren.</em></li>
     <li><b>Debian 13</b><span class="pill green">Pakket er</span><em>8.4.27-1~deb13u1 in trixie-security. Sneller dan deze update.</em></li>
-    <li><b>Ubuntu</b><span class="pill orange">Onderweg</span><em>Pakket gepubliceerd. De mirrors moeten nog. Even geduld. Wij hebben er ook nog geen.</em></li>
+    <li><b>Ubuntu</b><span class="pill orange">Onderweg</span><em>Pakket gepubliceerd, de mirror staat stil. Het pakket staat klaar, alleen de deur zit nog dicht.</em></li>
     <li><b>NPO Start</b><span class="pill orange">Vertraagd</span><em>Nieuwe afleveringen komen later. Wij raden de herhaling aan.</em></li>
     <li><b>Pathé Thuis</b><span class="pill red">Uit</span><em>Geen films vandaag. Deze pagina heeft wel een klok die oploopt. Bijna net zo spannend.</em></li>
     <li><b>NCSC.nl</b><span class="pill red">Preventief uit</span><em>Zelfs het NCSC. Zij verwijzen naar advisories.ncsc.nl.</em></li>
     <li><b>DigiD.nl, MijnOverheid</b><span class="pill red">Preventief uit</span><em>Inloggen met DigiD werkt nog wel. Waar u dan op inlogt, is een andere vraag.</em></li>
-    <li><b>Vlaanderen</b><span class="pill red">Preventief uit</span><em>Alle Vlaamse overheidssites. In &eacute;&eacute;n keer. Respect.</em></li>
+    <li><b>Vlaanderen</b><span class="pill green">Terug</span><em>Als eerste uit, als eerste weer aan. Respect, nogmaals.</em></li>
     <li><b>Cloudflare</b><span class="pill orange">Noodverband</span><em>Firewallregels tegen de bekende aanvallen. Hun eigen woorden: &ldquo;a stopgap only&rdquo;.</em></li>
     <li><b>Crisus.nl</b><span class="pill green">Werkt</span><em>Geen PHP. Gewoon HTML. Zoals in 1997.</em></li>
     <li><b>Certificaten</b><span class="pill orange">Verstoord</span><em>Twee root-CA&rsquo;s deze week op staande voet ontslagen.</em></li>
@@ -403,6 +403,9 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li><time datetime="2026-10-21T16:30+02:00">21 oktober 16:30</time>
+      <p>Een uur na de patch. Onze steekproef van 16:25: Vlaanderen.be en Tweakers zijn terug. RTL, DigiD.nl, MijnOverheid, het NCSC, de Tweede Kamer, de KNVB, KWF en Amnesty zijn nog uit. Patchen kost tijd. Testen nog meer. Weer aanzetten zonder testen kost het meest.</p>
+      <p>Gebruikt u Ubuntu? Ubuntu heeft de fix om 15:41 gepubliceerd, maar de security-mirror is sinds 11:44 niet bijgewerkt. <code>apt update</code> ziet het pakket dus nog niet. Laat PHP zolang uit. Of haal het pakket met de hand van Launchpad, als u weet wat u doet. Dat weet u. U leest deze site.</p></li>
     <li><time datetime="2026-10-21T16:15+02:00">21 oktober 16:15</time>
       <p>De vinders, Calif, OpenAI en Wiz, publiceren hun <a href="https://calif.io/php2shell/" title="Calif Research: php2shell, a tale of two PHP remote vulnerabilities">write-up</a>. Met een strip erbij. De trucs zijn verbluffend simpel: een verzoek zonder lengte en een berg lege uploads met geneste namen. Bevestigd op WordPress, Drupal, Joomla, Nextcloud, phpMyAdmin en nog zes andere.</p>
       <p>Pijnlijk detail: het geheugentekort werd in 2020 al gemeld en in 2024 opnieuw gevonden. Het bleef liggen, want uitbuiting was &ldquo;niet bewezen&rdquo;. Dat is het nu wel. Er staan in de wereld vast nog meer bugs te wachten op hun bewijs. Wij gaan er niet over nadenken. Wij gaan slapen. Straks.</p></li>
