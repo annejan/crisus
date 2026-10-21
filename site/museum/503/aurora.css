@@ -1,0 +1,46 @@
+/* 503 page while PHP is off (aurora, one of three that Apache picks per request): aurora and glass. A separate file, so strict CSPs (style-src 'self') allow it. */
+* { box-sizing: border-box; }
+:root { --bg: #0b0d1a; --text: #eef0ff; --muted: #b3b8d6; --glass: #ffffff14; --edge: #ffffff26; --accent: #9d8cff; --warn: #ffb547; }
+@media (prefers-color-scheme: light) {
+    :root { --bg: #eef0fb; --text: #1a1c2e; --muted: #4a5070; --glass: #ffffffb3; --edge: #ffffff; --accent: #5b46e0; --warn: #b86e00; }
+}
+html { background: var(--bg); }
+body {
+    margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; overflow-x: hidden;
+    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--text);
+}
+.sky { position: fixed; inset: 0; overflow: hidden; z-index: 0; }
+.sky i { position: absolute; width: 60vmax; height: 60vmax; border-radius: 50%; filter: blur(70px); opacity: .55; animation: drift 22s ease-in-out infinite alternate; }
+.sky i:nth-child(1) { background: #6d4aff; top: -25vmax; left: -15vmax; }
+.sky i:nth-child(2) { background: #00c2a8; bottom: -30vmax; right: -20vmax; animation-duration: 28s; animation-delay: -6s; }
+.sky i:nth-child(3) { background: #ff5c8a; top: 30%; left: 45%; width: 40vmax; height: 40vmax; opacity: .35; animation-duration: 18s; animation-delay: -3s; }
+main {
+    position: relative; z-index: 1; width: 100%; max-width: 560px; padding: 36px 32px 26px;
+    background: var(--glass); border: 1px solid var(--edge); border-radius: 22px;
+    backdrop-filter: blur(22px) saturate(140%); box-shadow: 0 30px 80px #0005;
+}
+.chip { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 18px; padding: 4px 12px 4px 10px; border-radius: 99px; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--warn); border: 1px solid currentColor; }
+.chip span { width: 8px; height: 8px; border-radius: 50%; background: currentColor; animation: pulse 1.6s ease-out infinite; }
+h1 {
+    margin: 0 0 12px; font-size: clamp(32px, 8vw, 48px); line-height: 1.1; letter-spacing: -.02em;
+    background: linear-gradient(90deg, #a594ff, #3ee0c6, #ff7aa2, #a594ff) 0 0 / 300% 100%;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: sheen 10s linear infinite;
+}
+@media (prefers-color-scheme: light) { h1 { background-image: linear-gradient(90deg, #4b32d6, #00806e, #c2185b, #4b32d6); } }
+p { margin: 10px 0; color: var(--muted); }
+.steps { list-style: none; margin: 24px 0; padding: 0; border-left: 2px solid var(--edge); }
+.steps li { position: relative; padding: 4px 0 12px 20px; color: var(--muted); }
+.steps li::before { content: ""; position: absolute; left: -7px; top: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--muted); }
+.steps li.done::before { background: var(--accent); border-color: var(--accent); }
+.steps li.now::before { background: var(--warn); border-color: var(--warn); animation: pulse 1.6s ease-out infinite; }
+.steps b { display: block; color: var(--text); font-size: 15px; }
+.small { font-size: 15px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover, a:focus-visible { color: var(--text); }
+.foot { margin-top: 20px; font-size: 13px; opacity: .8; }
+.lang { float: right; margin: 0; font-size: 14px; font-weight: 600; }
+@keyframes drift { to { transform: translate(12vmax, 8vmax) scale(1.15); } }
+@keyframes sheen { to { background-position: 300% 0; } }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--warn) 70%, transparent); } 100% { box-shadow: 0 0 0 10px transparent; } }
+@media (prefers-reduced-motion: reduce) { .sky i, h1, .chip span, .steps li.now::before { animation: none; } }

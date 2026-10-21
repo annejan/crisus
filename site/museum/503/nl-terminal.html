@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>PHP tijdelijk niet beschikbaar</title>
+<link rel="stylesheet" href="terminal.css">
+</head>
+<body>
+<main>
+<p class="lang"><a href="terminal.html" hreflang="en" lang="en">English</a></p>
+<div class="crt" aria-hidden="true">
+<div class="bar"><span></span><span></span><span></span><b>root@here: ~</b></div>
+<pre><span class="l"><i>$</i> php -r 'echo "hello world";'</span>
+<span class="l err">php: weigert te starten. Lek op afstand misbruikbaar, patch komt eraan.</span>
+<span class="l"><i>$</i> systemctl status php</span>
+<span class="l"><em>●</em> php.service - Hypertext Preprocessor</span>
+<span class="l">     Active: <em>inactive (in quarantaine)</em> sinds 21 okt 2026</span>
+<span class="l">      Reden: twee kritieke lekken, CVSS 9.2</span>
+<span class="l">  Oplossing: 21 okt 2026, 16:00 uur</span>
+<span class="l"><i>$</i> <u>█</u></span></pre>
+</div>
+<h1>PHP neemt even pauze</h1>
+<p>Dit deel van de site draait op PHP. Daarin zit een ernstig beveiligingslek dat vandaag wordt gedicht. Tot die tijd staat PHP hier uit. Alles wat geen PHP is, werkt gewoon.</p>
+<p>Meer informatie: de <a href="https://www.php.net/archive/2026.php#2026-10-20-1">beveiligingsmelding van PHP</a> (Engels).</p>
+<p class="foot">HTTP 503 &middot; de oplossing komt om 16:00 uur, PHP is kort daarna terug</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>PHP service temporarily unavailable</title>
+<link rel="stylesheet" href="terminal.css">
+</head>
+<body>
+<main>
+<p class="lang"><a href="nl-terminal.html" hreflang="nl" lang="nl">Nederlands</a></p>
+<div class="crt" aria-hidden="true">
+<div class="bar"><span></span><span></span><span></span><b>root@here: ~</b></div>
+<pre><span class="l"><i>$</i> php -r 'echo "hello world";'</span>
+<span class="l err">php: refusing to run. Remote code execution, patch pending.</span>
+<span class="l"><i>$</i> systemctl status php</span>
+<span class="l"><em>●</em> php.service - Hypertext Preprocessor</span>
+<span class="l">     Active: <em>inactive (quarantined)</em> since 21 Oct 2026</span>
+<span class="l">     Reason: two critical CVEs, CVSS 9.2</span>
+<span class="l">        Fix: 21 Oct 2026, 14:00 UTC (16:00 CEST)</span>
+<span class="l"><i>$</i> <u>█</u></span></pre>
+</div>
+<h1>PHP is taking a break</h1>
+<p>This part of the site runs on PHP, and PHP has a critical hole that gets fixed today. Until the fix is in, PHP stays switched off here. Everything that is not PHP still works.</p>
+<p>Details: the <a href="https://www.php.net/archive/2026.php#2026-10-20-1">PHP security announcement</a>.</p>
+<p class="foot">HTTP 503 &middot; the fix lands at 16:00 CEST, PHP is back soon after</p>
+</main>
+</body>
+</html>

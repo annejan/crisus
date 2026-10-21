@@ -28,8 +28,16 @@ path = [
     "site/feed.xml",
     "site/favicon.svg",
     "site/og.png",
+    "site/museum/503/*.jpg",
     "README.md",
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Anne Jan Brouwer"
 SPDX-License-Identifier = "CC-BY-4.0"
+
+# The museum's old exhibits (2019-2020): third-party images, shown as a historical record.
+[[annotations]]
+path = ["site/museum/oud/**"]
+precedence = "override"
+SPDX-FileCopyrightText = "Their respective owners"
+SPDX-License-Identifier = "LicenseRef-ThirdPartyArchive"

@@ -53,5 +53,6 @@ in `site/`, the tooling in `tools/`.
 
 Copy the page structure (tape, crisus level, facts, "Wat moet u doen?", per-platform
 status, status board, updates, sources, archive). Move the old incident to the
-"Eerdere crisussen" archive. Reset the feed: the old items can stay, they keep their
+"Eerdere crisussen" archive, and give it a vitrine in `site/museum/` (own material CC-BY;
+third-party images in `museum/oud/` under LicenseRef-ThirdPartyArchive, with their source). Reset the feed: the old items can stay, they keep their
 ids.

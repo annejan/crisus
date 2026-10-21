@@ -1,0 +1,38 @@
+/* 503 page while PHP is off (tape, one of three that Apache picks per request): caution tape. A separate file, so strict CSPs (style-src 'self') allow it. */
+* { box-sizing: border-box; }
+html { background: #1b1d21; }
+body {
+    margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; overflow: hidden;
+    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; color: #f1f3f5;
+    background: radial-gradient(circle at 50% 45%, #2b2f36, #121316 75%);
+}
+.tape {
+    position: fixed; left: -20vw; width: 140vw; display: flex; white-space: nowrap; z-index: 0;
+    padding: 10px 0; font: 800 clamp(14px, 2.2vw, 20px)/1 system-ui, sans-serif; letter-spacing: .12em;
+    color: #111; box-shadow: 0 6px 24px #0008;
+    background: #ffd43b;
+    border-block: 8px solid transparent;
+    border-image: repeating-linear-gradient(45deg, #111 0 14px, #ffd43b 14px 28px) 8;
+}
+.tape span { flex: none; padding-right: 0; animation: crawl 28s linear infinite; }
+.t1 { top: 12vh; transform: rotate(-8deg); }
+.t2 { bottom: 10vh; transform: rotate(6deg); }
+.t2 span { animation-direction: reverse; animation-duration: 34s; }
+main {
+    position: relative; z-index: 1; width: 100%; max-width: 560px; padding: 36px 32px 28px; text-align: center;
+    background: #24272ded; border: 1px solid #3a3f47; border-radius: 18px;
+    box-shadow: 0 30px 80px #000a; backdrop-filter: blur(4px);
+}
+.cone { width: 96px; height: 104px; margin: -86px auto 6px; display: block; filter: drop-shadow(0 10px 14px #0007); animation: wobble 3.2s ease-in-out infinite; transform-origin: 50% 95%; }
+h1 { margin: 0 0 12px; font-size: clamp(26px, 6vw, 36px); line-height: 1.2; }
+p { margin: 10px 0; color: #c3c9d1; }
+.when { margin: 22px 0; padding: 14px; border-radius: 12px; background: #ffd43b; color: #111; }
+.when b { display: block; font-size: 22px; }
+.when span { font-size: 14px; }
+a { color: #ffd43b; text-underline-offset: 3px; }
+a:hover, a:focus-visible { color: #fff; }
+.foot { margin-top: 20px; font-size: 13px; color: #8e96a0; }
+.lang { position: absolute; top: 14px; right: 18px; margin: 0; font-size: 14px; font-weight: 600; }
+@keyframes crawl { to { transform: translateX(-100%); } }
+@keyframes wobble { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+@media (prefers-reduced-motion: reduce) { .tape span, .cone { animation: none; } }

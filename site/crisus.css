@@ -173,3 +173,18 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 .rss svg { width: 15px; height: 15px; fill: currentColor; }
 .rss:hover, .rss:focus-visible { background: #d4520f; color: #fff; }
 @media (max-width: 520px) { .rss { padding: 6px 9px; font-size: 0; gap: 0; } .rss svg { width: 18px; height: 18px; } }
+
+/* the museum */
+.vitrines { margin: 24px 0 0; padding: 0; list-style: none; display: grid; gap: 22px; }
+.vitrine figure { margin: 0; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); box-shadow: 4px 4px 0 var(--line); }
+.vitrine img { display: block; width: auto; max-width: 100%; height: auto; max-height: 560px; margin: 0 auto; border-radius: 8px; border: 1px solid var(--line); }
+.vitrine .drie img { max-height: none; width: 100%; }
+.vitrine pre { margin: 0; }
+.vitrine figcaption { margin-top: 12px; }
+.vitrine figcaption time { display: block; color: var(--muted); font-size: 14px; }
+.vitrine figcaption b { display: block; font-size: 20px; margin: 2px 0 4px; }
+.vitrine figcaption p { margin: 4px 0; }
+.vitrine figcaption small { display: block; color: var(--muted); font-size: 13px; }
+.vitrine .drie { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.vitrine .drie a:hover img, .vitrine .drie a:focus-visible img { outline: 3px solid var(--yellow); }
+@media (max-width: 680px) { .vitrine .drie { grid-template-columns: 1fr; } }

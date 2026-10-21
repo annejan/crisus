@@ -8,8 +8,11 @@ DEST=annejan.com:www/sites/crisus.nl
 if [ $# -gt 0 ]; then
     scp -q "$@" "$DEST/"
 else
-    ssh annejan.com 'mkdir -p www/sites/crisus.nl/over'
+    ssh annejan.com 'mkdir -p www/sites/crisus.nl/over www/sites/crisus.nl/museum/oud www/sites/crisus.nl/museum/503'
     scp -q index.html 404.html crisus.css klok.js favicon.svg og.png robots.txt sitemap.xml feed.xml .htaccess "$DEST/"
     scp -q over/index.html "$DEST/over/index.html"
+    scp -q museum/index.html "$DEST/museum/index.html"
+    scp -q museum/oud/* "$DEST/museum/oud/"
+    scp -q museum/503/* "$DEST/museum/503/"
 fi
 curl -s https://crisus.nl/ | grep -o 'laatst bijgewerkt[^<]*'
