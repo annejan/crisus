@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crisus · PHP Kwetsbaarheid</title>
+<meta name="description" content="Twee kritieke lekken in PHP (CVE-2026-109618 en CVE-2026-109619): wat er speelt, welke versies kwetsbaar zijn, wanneer de patch komt en wat u nu kunt doen. Met bronnen. Satire, maar de feiten kloppen.">
+<meta property="og:title" content="Crisus · PHP Kwetsbaarheid">
+<meta property="og:description" content="Twee kritieke PHP-lekken, patch 21 oktober 16:00. Wat u nu kunt doen, met bronnen. Crisusniveau 4: de manager vraagt of het al werkt.">
+<meta property="og:url" content="https://crisus.nl/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#ffd400">
+<link rel="canonical" href="https://crisus.nl/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3 30 28H2z' fill='%23ffd400' stroke='%23111' stroke-width='2.5' stroke-linejoin='round'/%3E%3Cpath d='M16 12v8' stroke='%23111' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='24' r='1.8' fill='%23111'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #fafaf7; --card: #fff; --ink: #18181b; --muted: #55555c; --line: #e4e4de; --code: #ececea;
+    --yellow: #ffd400; --black: #111; --red: #c8102e; --orange: #c25e00; --green: #1f7a45;
+    --red-bg: #fde8eb; --orange-bg: #fff0dd; --green-bg: #e3f4ea;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--bg); }
+  body { margin: 0; color: var(--ink); background: var(--bg); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  a { color: inherit; text-underline-offset: 3px; }
+  a:hover, a:focus-visible { color: var(--red); }
+  :focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+  .skip { position: absolute; left: -999px; }
+  .skip:focus { left: 16px; top: 16px; z-index: 9; padding: 8px 12px; background: var(--card); }
+  .wrap { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 16px; }
+
+  /* warning tape */
+  .tape { overflow: hidden; background: repeating-linear-gradient(-45deg, var(--yellow) 0 22px, var(--black) 22px 44px); padding: 6px 0; }
+  .tape p { margin: 0; white-space: nowrap; background: var(--yellow); color: var(--black); font: 800 13px/26px system-ui, sans-serif; letter-spacing: .18em; }
+  .tape span { display: inline-block; padding-left: 100%; animation: tape 38s linear infinite; }
+
+  header { border-bottom: 1px solid var(--line); background: var(--card); }
+  .brand { display: flex; align-items: center; gap: 14px; padding: 18px 0; text-decoration: none; }
+  .brand svg { flex: none; width: 46px; height: 46px; }
+  .brand svg .glow { animation: siren 1.4s ease-in-out infinite; transform-origin: 50% 60%; transform-box: fill-box; }
+  .brand b { display: block; font-size: 28px; line-height: 1; letter-spacing: .12em; }
+  .brand small { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; line-height: 1.3; }
+
+  main { padding: 34px 0 10px; }
+  .kicker { margin: 0; color: var(--muted); font-size: 15px; }
+  h1 { margin: 4px 0 6px; font-size: clamp(34px, 7vw, 54px); line-height: 1.08; letter-spacing: -.02em; }
+  .lead { margin: 0 0 26px; font-size: 20px; color: var(--muted); }
+  h2 { margin: 48px 0 14px; font-size: 24px; line-height: 1.25; }
+  h3 { margin: 22px 0 6px; font-size: 18px; }
+  .note { color: var(--muted); font-size: 15px; }
+
+  /* the patch clock */
+  .klok { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; margin: 0 0 22px; padding: 16px 20px; border-radius: 14px; background: var(--black); color: #fff; }
+  .klok b { color: var(--yellow); font: 800 clamp(26px, 6vw, 36px)/1.1 ui-monospace, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .klok span { font-size: 15px; color: #d4d4d8; }
+  .klok a { color: #fff; }
+  .klok a:hover, .klok a:focus-visible { color: var(--yellow); }
+
+  /* crisis level */
+  .level { padding: 20px; border: 2px solid var(--black); border-radius: 14px; background: var(--card); box-shadow: 6px 6px 0 var(--black); }
+  .level h2 { margin: 0 0 12px; font-size: 18px; }
+  .level ol { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 0; padding: 0; list-style: none; }
+  .level li { padding: 10px 8px 9px; border-radius: 8px; background: var(--code); color: #6b6b70; font-size: 13px; line-height: 1.3; }
+  .level li b { display: block; font-size: 15px; color: inherit; }
+  .level .on { background: var(--orange-bg); color: #6a3400; }
+  .level .on b { color: var(--orange); }
+  .level .now { background: var(--orange); color: #fff; box-shadow: 0 0 0 3px var(--black); }
+  .level .now b { color: #fff; }
+
+  /* the facts */
+  .feiten { display: grid; grid-template-columns: 11em 1fr; margin: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--card); overflow: hidden; }
+  .feiten dt, .feiten dd { margin: 0; padding: 11px 18px; border-top: 1px solid var(--line); }
+  .feiten dt { font-weight: 650; }
+  .feiten dd { padding-left: 0; }
+  .feiten dt:first-of-type, .feiten dt:first-of-type + dd { border-top: 0; }
+  .feiten small { color: var(--muted); font-size: 14px; }
+
+  /* what to do */
+  .doen { margin-top: 30px; padding: 20px 22px; border-radius: 14px; background: var(--yellow); color: var(--black); }
+  .doen h2 { margin: 0 0 4px; font-size: 22px; }
+  .doen > p { margin: 0 0 8px; font-weight: 800; }
+  .doen ol { margin: 0; padding-left: 22px; }
+  .doen li { margin: 8px 0; }
+  .doen code { background: #ffffff8c; }
+  pre { margin: 8px 0 14px; padding: 14px 16px; overflow-x: auto; border-radius: 10px; background: var(--black); color: #e8e8e8; font: 14px/1.5 ui-monospace, Menlo, Consolas, monospace; }
+  pre .c { color: #9a9aa2; }
+  code { padding: 1px 5px; border-radius: 5px; background: var(--code); font: .88em ui-monospace, Menlo, Consolas, monospace; }
+  pre code, .doen pre code { padding: 0; background: none; font: inherit; }
+
+  /* is the patch there yet */
+  .let { padding: 12px 16px; border-left: 4px solid var(--orange); border-radius: 0 10px 10px 0; background: var(--orange-bg); }
+  .platform details { margin: 8px 0; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+  .platform summary { padding: 12px 18px; font-weight: 650; cursor: pointer; }
+  .platform summary small { margin-left: 8px; color: var(--muted); font-weight: 400; font-size: 14px; }
+  .platform details[open] summary { border-bottom: 1px solid var(--line); }
+  .platform .in { padding: 6px 18px 4px; }
+  .platform .in p { margin: 8px 0 12px; }
+
+  /* service status */
+  .status { margin: 0; padding: 0; list-style: none; border: 1px solid var(--line); border-radius: 14px; background: var(--card); overflow: hidden; }
+  .status li { display: grid; grid-template-columns: 11em 9.5em 1fr; gap: 12px; align-items: baseline; padding: 12px 18px; border-top: 1px solid var(--line); }
+  .status li:first-child { border-top: 0; }
+  .status b { font-weight: 650; }
+  .status em { font-style: normal; color: var(--muted); font-size: 15px; }
+  .pill { justify-self: start; padding: 1px 10px 2px; border-radius: 99px; font-size: 14px; font-weight: 650; white-space: nowrap; }
+  .pill::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 7px; border-radius: 50%; background: currentColor; vertical-align: 1px; }
+  .red { background: var(--red-bg); color: var(--red); }
+  .orange { background: var(--orange-bg); color: var(--orange); }
+  .green { background: var(--green-bg); color: var(--green); }
+
+  /* updates */
+  .updates { margin: 0; padding: 0; list-style: none; border-left: 3px solid var(--line); }
+  .updates li { position: relative; padding: 0 0 22px 22px; }
+  .updates li::before { content: ""; position: absolute; left: -9px; top: 6px; width: 15px; height: 15px; border-radius: 50%; background: var(--card); border: 3px solid var(--muted); }
+  .updates li:first-child::before { border-color: var(--red); background: var(--red); animation: ping 2s ease-out infinite; }
+  .updates time { display: block; font-weight: 700; }
+  .updates p { margin: 4px 0 0; }
+
+  .test { margin: 34px 0 0; padding: 14px 18px; border: 1px dashed var(--muted); border-radius: 12px; color: var(--muted); }
+  .test strong { color: var(--ink); }
+
+  .bronnen { padding-left: 22px; }
+  .bronnen li { margin: 6px 0; }
+
+  /* archive */
+  .archief { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+  .archief li { padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+  .archief time { display: block; color: var(--muted); font-size: 14px; }
+  .archief b { display: block; margin: 2px 0 4px; }
+  .archief p { margin: 0; font-size: 15px; }
+
+  footer { margin-top: 50px; padding: 24px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+  footer p { margin: 6px 0; }
+  footer strong { color: var(--ink); }
+
+  @keyframes tape { to { transform: translateX(-100%); } }
+  @keyframes siren { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+  @keyframes ping { 0% { box-shadow: 0 0 0 0 #c8102e88; } 100% { box-shadow: 0 0 0 12px #c8102e00; } }
+
+  @media (max-width: 680px) {
+    .level ol { grid-template-columns: 1fr; }
+    .feiten { grid-template-columns: 1fr; }
+    .feiten dd { padding: 0 18px 11px; border-top: 0; }
+    .status li { grid-template-columns: 1fr auto; gap: 2px 12px; }
+    .status em { grid-column: 1 / -1; }
+    .pill { justify-self: end; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tape span { padding-left: 16px; animation: none; }
+    .brand svg .glow, .updates li:first-child::before { animation: none; }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121214; --card: #1b1b1f; --ink: #ededee; --muted: #a8a8b0; --line: #2e2e34; --code: #26262b;
+      --red: #ff6b7f; --orange: #ffa94d; --green: #5fd38e;
+      --red-bg: #3a1219; --orange-bg: #3a2408; --green-bg: #0f2e1c;
+    }
+    .klok { background: #000; box-shadow: 0 0 0 1px var(--line); }
+    .level { border-color: var(--yellow); box-shadow: 6px 6px 0 var(--yellow); }
+    .level li { color: #9a9aa2; }
+    .level .on { color: #ffd3a3; }
+    .level .now { background: var(--orange); color: #1b1b1f; box-shadow: 0 0 0 3px var(--yellow); }
+    .level .now b { color: #1b1b1f; }
+    pre { background: #000; box-shadow: 0 0 0 1px var(--line); }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#inhoud">Meteen naar de crisus</a>
+
+<div class="tape" aria-hidden="true"><p><span>LET OP · CRISUS · BLIJF KALM · PATCH OM 16:00 · LET OP · CRISUS · RAAK NIETS AAN · NIET AAN LIKKEN · LET OP · CRISUS · ZELFS VLAANDEREN IS UIT · LET OP · CRISUS · DIT IS GEEN OEFENING · LET OP · CRISUS · BLIJF KALM · PATCH OM 16:00 · LET OP · CRISUS · NIET AAN LIKKEN · OOK NIET EVEN</span></p></div>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="/" title="Crisus: terug naar de crisus">
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <circle class="glow" cx="24" cy="28" r="22" fill="#ff3b3b33"/>
+        <path d="M24 5 45 42H3z" fill="#ffd400" stroke="#111" stroke-width="3.5" stroke-linejoin="round"/>
+        <path d="M24 17v12" stroke="#111" stroke-width="4.5" stroke-linecap="round"/>
+        <circle cx="24" cy="35.5" r="2.6" fill="#111"/>
+      </svg>
+      <span><b>CRISUS</b><small>Centrale Registratie van Incidenten, Storingen en Uitgebreid Schouderophalen</small></span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud" class="wrap">
+  <p class="kicker">Lopende crisus · laatst bijgewerkt 21 oktober, 15:30</p>
+  <h1>PHP Kwetsbaarheid</h1>
+  <p class="lead">Twee kritieke lekken in PHP. De patch komt vandaag om 16:00. Tot die tijd: niet in paniek raken, wel PHP uitzetten.</p>
+
+  <p class="klok" id="klok"><b>16:00</b><span>21 oktober, Nederlandse tijd (14:00 UTC): de geplande release van de gepatchte PHP-versies. Mogelijk eerder.</span></p>
+
+  <section class="level" aria-labelledby="niveau">
+    <h2 id="niveau">Huidig crisusniveau: 4 van 5</h2>
+    <ol>
+      <li class="on"><b>1 · Rustig</b>Iemand leest de changelog</li>
+      <li class="on"><b>2 · Opletten</b>Er is een Signal-groep</li>
+      <li class="on"><b>3 · Ernstig</b>De pizza is besteld</li>
+      <li class="now" aria-current="step"><b>4 · Zeer ernstig</b>De manager vraagt of het al werkt</li>
+      <li><b>5 · Vrijdagmiddag</b>Iemand zegt: &ldquo;het is maar een kleine wijziging&rdquo;</li>
+    </ol>
+  </section>
+
+  <h2 id="wat">Wat is er aan de hand?</h2>
+  <dl class="feiten" aria-labelledby="wat">
+    <dt>Het lek</dt>
+    <dd>Twee kritieke kwetsbaarheden in PHP zelf: <a href="https://www.cve.org/CVERecord?id=CVE-2026-109618" title="CVE-2026-109618 op cve.org">CVE-2026-109618</a> en <a href="https://www.cve.org/CVERecord?id=CVE-2026-109619" title="CVE-2026-109619 op cve.org">CVE-2026-109619</a>, ook wel &ldquo;php2shell&rdquo;. Elk lek met een bijnaam is erger dan een lek zonder.</dd>
+    <dt>Ernst</dt>
+    <dd>CVSS v4.0: <strong>9,2</strong> voor allebei. <small>Ter vergelijking: een tien is het maximum. Een negen is &ldquo;laat alles vallen&rdquo;.</small></dd>
+    <dt>Wat kan een aanvaller?</dt>
+    <dd>Met een eenvoudig POST-verzoek eigen code uitvoeren op uw server (remote code execution). Daarna is het hun server.</dd>
+    <dt>Welke versies?</dt>
+    <dd>In elk geval <strong>alle versies vanaf PHP 5</strong>. Daarmee is alles waar PHP in zit vermoedelijk kwetsbaar: WordPress, Joomla, Drupal, Zabbix, Roundcube, maar ook de beheerpagina van uw router, NAS of printer.</dd>
+    <dt>Misbruik?</dt>
+    <dd>Er is een openbare proof of concept. Cloudflare zegt al aanvallen te zien. Het NCSC en de PHP Foundation zien nog geen actief misbruik. Ga ervan uit dat Cloudflare gelijk heeft.</dd>
+    <dt>Hoe groot?</dt>
+    <dd>Ongeveer 70 procent van alle websites draait op PHP. Ook de uwe, waarschijnlijk. Ook als u denkt van niet.</dd>
+    <dt>De patch</dt>
+    <dd>Woensdag 21 oktober, 16:00 Nederlandse tijd (14:00 UTC). Mogelijk eerder, als de details eerder op straat liggen. Voor zover bekend <strong>alleen voor PHP 8</strong>. Draait u PHP 7 of ouder? Dan komt er voor u geen patch. Alleen een upgrade.</dd>
+  </dl>
+
+  <section class="doen" aria-labelledby="doen">
+    <h2 id="doen">Wat moet u doen?</h2>
+    <p>Ga naar binnen. Sluit ramen en poorten. Zet PHP uit.</p>
+    <ol>
+      <li><strong>Zoek uit waar u PHP draait.</strong> Ook op plekken waar u het niet verwacht.
+        <pre><code>php -v
+dpkg -l | grep -i php        <span class="c"># Debian, Ubuntu</span>
+rpm -qa | grep -i php        <span class="c"># Fedora, RHEL, openSUSE</span></code></pre></li>
+      <li><strong>Kunt u niet wachten tot 16:00? Zet PHP tijdelijk uit.</strong> Statische pagina's blijven gewoon werken. Voor Apache, bijvoorbeeld in een eigen <code>conf</code>:
+        <pre><code><span class="c"># Elk verzoek dat bij een PHP-bestand uitkomt krijgt een 503,</span>
+<span class="c"># v&oacute;&oacute;r PHP het ziet. Laat mod_php geladen, anders ziet</span>
+<span class="c"># de bezoeker uw broncode.</span>
+&lt;If "%{REQUEST_FILENAME} =~ m#\.(php[0-9]?|phtml|phar)$#i"&gt;
+    Redirect 503
+&lt;/If&gt;</code></pre>
+        Voor nginx, b&oacute;ven uw bestaande PHP-blok:
+        <pre><code>location ~* \.(php[0-9]?|phtml|phar)$ { return 503; }</code></pre>
+        Gebruikt u PHP-FPM? Zet de dienst dan ook stil: <code>systemctl stop php8.4-fpm</code>.<br>
+        Zit u achter Cloudflare? Hun firewallregels staan aan, ook voor gratis klanten. Cloudflare noemt het zelf &ldquo;a stopgap only&rdquo;. Een noodverband dus. Patchen moet nog steeds.</li>
+      <li><strong>Om 16:00: patchen.</strong> Wacht op de pakketten van uw distributie (zie <a href="#patch-er-al" title="Is de patch er al voor mij? Per distributie, Windows en macOS">is de patch er al voor mij?</a>). Installeer ze zodra ze er zijn:
+        <pre><code>sudo apt update
+sudo apt install --only-upgrade $(dpkg -l | awk '/^ii  (lib)?php/{print $2}')
+sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</span></code></pre>
+        Controleer met <code>php -v</code> dat u echt de nieuwe versie draait. Zet daarna pas PHP weer aan.</li>
+      <li><strong>Draait u PHP 7 of ouder?</strong> Upgrade naar PHP 8. Er komt geen patch. Ook niet als u het heel lief vraagt.</li>
+      <li><strong>Kijk terug.</strong> Zoek in uw logs naar vreemde POST-verzoeken van de afgelopen dagen. Vindt u iets? Ga er dan van uit dat de server niet meer van u is.</li>
+      <li>Klik niet op links in e-mails over dit lek. Wij mailen nooit. Wij kunnen ook niet mailen: onze webmail draait op PHP.</li>
+    </ol>
+  </section>
+
+  <h2 id="patch-er-al">Is de patch er al voor mij?</h2>
+  <p>De fix verschijnt om 16:00 op <a href="https://www.php.net/downloads.php" title="php.net: downloads">php.net</a>. Daarna bouwt uw distributie eigen pakketten. Dat duurt uren, soms dagen.</p>
+  <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
+  <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen tot na de release een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
+
+  <div class="platform">
+    <details>
+      <summary>Debian, Raspberry Pi OS <small>apt</small></summary>
+      <div class="in">
+<pre><code>sudo apt update
+apt list --upgradable 2&gt;/dev/null | grep -i php
+apt changelog php8.4 | grep -m3 -E 'CVE-2026-10961[89]'   <span class="c"># Debian 12: php8.2</span></code></pre>
+      <p>Geeft de laatste regel de CVE-nummers? Dan is de fix er. Installeer hem met <code>sudo apt upgrade</code>. Volg de <a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">Debian security tracker</a> en de <a href="https://www.debian.org/security/" title="Debian security advisories">DSA&rsquo;s</a>.</p>
+      <p>PHP van <code>packages.sury.org</code>? Dan komt de fix van Ond&#x159;ej Sur&yacute;, niet van Debian. Kijk met <code>apt-cache policy php8.4</code> waar uw PHP vandaan komt.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Ubuntu <small>apt, pro</small></summary>
+      <div class="in">
+<pre><code>sudo apt update
+apt list --upgradable 2&gt;/dev/null | grep -i php
+sudo pro fix CVE-2026-109618
+sudo pro fix CVE-2026-109619</code></pre>
+      <p><code>pro fix</code> zegt of uw systeem kwetsbaar is. Is de fix er, dan installeert hij hem meteen. Ubuntu geeft het lek de prioriteit <em>Critical</em>. Status per release: <a href="https://ubuntu.com/security/CVE-2026-109618" title="Ubuntu: CVE-2026-109618">ubuntu.com/security/CVE-2026-109618</a>.</p>
+      <p>Ubuntu 22.04 of ouder draait PHP 8.1 of 7.x. Fixes komen daar alleen via Ubuntu Pro, als ze komen. PHP uit de PPA <code>ondrej/php</code>? Dan komt de fix van de PPA.</p>
+      </div>
+    </details>
+    <details>
+      <summary>RHEL, AlmaLinux, Rocky, CentOS Stream, Fedora <small>dnf</small></summary>
+      <div class="in">
+<pre><code>sudo dnf check-update 'php*'
+sudo dnf updateinfo list --cve CVE-2026-109618     <span class="c"># RHEL en klonen</span>
+rpm -q --changelog php-cli | grep -m3 CVE-2026-10961   <span class="c"># na de update</span></code></pre>
+      <p>Fedora volgt php.net op de voet: daar mag u het versienummer wel vergelijken. Red Hat publiceert de status op de <a href="https://access.redhat.com/security/cve/CVE-2026-109618" title="Red Hat: CVE-2026-109618">CVE-pagina</a>. PHP uit de Remi-repository? Dan komt de fix van Remi. Meestal snel.</p>
+      </div>
+    </details>
+    <details>
+      <summary>openSUSE, SLES <small>zypper</small></summary>
+      <div class="in">
+<pre><code>sudo zypper refresh
+zypper list-patches --cve=CVE-2026-109618
+zypper list-patches --cve=CVE-2026-109619
+sudo zypper patch --cve=CVE-2026-109618</code></pre>
+      <p>Tumbleweed werkt zonder patches: <code>zypper lu | grep -i php</code> en daarna <code>sudo zypper dup</code>. Status: <a href="https://www.suse.com/security/cve/CVE-2026-109618.html" title="SUSE: CVE-2026-109618">SUSE CVE-pagina</a>.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Alpine, Arch <small>apk, pacman</small></summary>
+      <div class="in">
+<pre><code><span class="c"># Alpine</span>
+apk update
+apk version -l '&lt;' | grep -i php
+<span class="c"># Arch (checkupdates zit in pacman-contrib)</span>
+checkupdates | grep -i php
+sudo pacman -Syu</code></pre>
+      <p>Arch is rolling: <code>pacman -Syu</code> en klaar. Dat wist u al. U gebruikt immers Arch.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Docker <small>officiële php-images</small></summary>
+      <div class="in">
+<pre><code>docker pull php:8.4-apache
+docker run --rm php:8.4-apache php -v
+docker build --pull --no-cache -t mijn-app .   <span class="c"># eigen image</span></code></pre>
+      <p>De officiële images volgen php.net, meestal binnen enkele uren. Vergelijk <code>php -v</code> met de versie op php.net. Een container die al draait, blijft oud. Maak hem opnieuw aan. Een herstart is niet genoeg.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Windows <small>IIS, XAMPP, WampServer, Laragon</small></summary>
+      <div class="in">
+<pre><code>php -v
+choco outdated            <span class="c"># Chocolatey</span>
+choco upgrade php
+scoop status              <span class="c"># Scoop</span>
+scoop update php
+iisreset                  <span class="c"># IIS met FastCGI</span></code></pre>
+      <p>Windows-builds staan op <a href="https://windows.php.net/download/" title="windows.php.net: PHP voor Windows">windows.php.net</a>, meestal snel na de release. Vergelijk ze met uw <code>php -v</code>. Handmatig? Pak de nieuwe zip uit over uw PHP-map. Bewaar uw <code>php.ini</code>.</p>
+      <p>XAMPP, WampServer en Laragon lopen vaak achter. Vervang de PHP-map dan zelf. Staat XAMPP open naar internet? Dan heeft u twee problemen.</p>
+      </div>
+    </details>
+    <details>
+      <summary>macOS <small>Homebrew, MacPorts, Herd, MAMP</small></summary>
+      <div class="in">
+<pre><code>brew update
+brew outdated | grep -i php
+brew upgrade php                 <span class="c"># of php@8.3</span>
+brew services restart php
+sudo port selfupdate &amp;&amp; port outdated | grep -i php   <span class="c"># MacPorts</span></code></pre>
+      <p>macOS heeft sinds Monterey zelf geen PHP meer. Heeft u PHP, dan heeft u het zelf ge&iuml;nstalleerd. Laravel Herd en MAMP werkt u bij in de app. Die lopen soms een paar dagen achter.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Hosting, beheerpanelen, apparaten <small>cPanel, Plesk, NAS, router</small></summary>
+      <div class="in">
+      <p>Shared hosting, cPanel, Plesk of DirectAdmin: de update komt van uw hoster of paneel. Vraag uw hoster wanneer. Vraag het niet om 15:59.</p>
+      <p>NAS, router, firewall of printer met een webinterface: wacht op firmware van de fabrikant. Tot die tijd hoort die beheerpagina niet aan internet. Eigenlijk hoort hij daar nooit.</p>
+      </div>
+    </details>
+  </div>
+
+  <h3>Draait de nieuwe versie echt?</h3>
+  <p>Een ge&iuml;nstalleerd pakket is nog geen draaiend pakket. PHP-FPM en Apache houden de oude code in het geheugen tot u ze herstart.</p>
+<pre><code>php -v                         <span class="c"># de CLI</span>
+php-fpm8.4 -v                  <span class="c"># FPM is een apart programma (RHEL: php-fpm -v)</span>
+sudo needrestart -r l          <span class="c"># Debian, Ubuntu: wat draait nog oude code?</span>
+sudo dnf needs-restarting -s   <span class="c"># RHEL, Fedora</span>
+sudo zypper ps -s              <span class="c"># openSUSE</span>
+curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
+  <p>Toont die laatste regel een versienummer? Dan vertelt u het ook aan aanvallers. Zet <code>expose_php = Off</code> in uw <code>php.ini</code>.</p>
+  <p class="let"><strong>Pas als de CVE in de changelog staat en de dienst herstart is, bent u veilig.</strong> Zet dan pas PHP weer aan.</p>
+
+  <h2 id="diensten">Status van de diensten</h2>
+  <ul class="status" aria-labelledby="diensten">
+    <li><b>PHP</b><span class="pill red">Preventief uit</span><em>Komt terug na 16:00. Na de patch. Niet ervoor.</em></li>
+    <li><b>NCSC.nl</b><span class="pill red">Preventief uit</span><em>Zelfs het NCSC. Zij verwijzen naar advisories.ncsc.nl.</em></li>
+    <li><b>DigiD.nl, MijnOverheid</b><span class="pill red">Preventief uit</span><em>Inloggen met DigiD werkt nog wel. Waar u dan op inlogt, is een andere vraag.</em></li>
+    <li><b>Vlaanderen</b><span class="pill red">Preventief uit</span><em>Alle Vlaamse overheidssites. In &eacute;&eacute;n keer. Respect.</em></li>
+    <li><b>Cloudflare</b><span class="pill orange">Noodverband</span><em>Firewallregels tegen de bekende aanvallen. Hun eigen woorden: &ldquo;a stopgap only&rdquo;.</em></li>
+    <li><b>Crisus.nl</b><span class="pill green">Werkt</span><em>Geen PHP. Gewoon HTML. Zoals in 1997.</em></li>
+    <li><b>Certificaten</b><span class="pill orange">Verstoord</span><em>Twee root-CA&rsquo;s deze week op staande voet ontslagen.</em></li>
+    <li><b>DNS</b><span class="pill green">Werkt</span><em>Het is altijd DNS. Vandaag niet. Nog niet.</em></li>
+    <li><b>Koffie</b><span class="pill orange">Beperkt</span><em>Zie de update van 13:00.</em></li>
+    <li><b>Paniek</b><span class="pill green">Onder controle</span><em>Er is een spreadsheet.</em></li>
+  </ul>
+
+  <h2 id="updates">Updates</h2>
+  <ol class="updates" aria-labelledby="updates">
+    <li><time datetime="2026-10-21T15:30+02:00">21 oktober 15:30</time>
+      <p>Het crisusniveau gaat naar 4. Uit voorzorg offline: de sites van DigiD en MijnOverheid, RTL, de KNVB, de Unie van Waterschappen, een rij ziekenhuizen en de vluchtinformatie in de Schiphol-app. In Belgi&euml; gaan alle Vlaamse overheidssites op zwart, net als Smartschool. Crisus.nl is nog online. Het is de eerste keer dat wij betrouwbaarder zijn dan de overheid. We genieten ervan zolang het duurt.</p></li>
+    <li><time datetime="2026-10-21T15:07+02:00">21 oktober 15:07</time>
+      <p>Het NCSC noemt het lek &ldquo;geen aanval, maar een weeffout in de software&rdquo;. Ze roepen iedereen op de update direct te installeren: &ldquo;elke minuut telt&rdquo;. Wij noemen de weeffout voortaan PHP.</p></li>
+    <li><time datetime="2026-10-21T14:07+02:00">21 oktober 14:07</time>
+      <p>Cloudflare ziet al aanvallen en zet firewallregels aan voor al zijn klanten. Het NCSC en de PHP Foundation zien nog geen misbruik. E&eacute;n van de drie heeft het mis. Wij gaan uit van het ergste. Dat is ons vak.</p></li>
+    <li><time datetime="2026-10-21T14:45+02:00">21 oktober 14:45</time>
+      <p>De status is ongewijzigd. Er wordt gewacht op de patch. Het crisusteam staat paraat met <code>apt upgrade</code> al half getypt.</p>
+      <p>Het NCSC heeft zijn eigen website uit voorzorg offline gehaald. Wij hebben uit solidariteit overwogen hetzelfde te doen, maar crisus.nl draait geen PHP. Dus nee.</p></li>
+    <li><time datetime="2026-10-21T13:59+02:00">21 oktober 13:59</time>
+      <p>Het NCSC waarschuwt: bereid u voor op patchen. Er is een openbare proof of concept, maar nog geen actief misbruik. Alle versies vanaf PHP 5 zijn kwetsbaar. Zie de <a href="https://advisories.ncsc.nl/" title="NCSC security advisories">advisory</a>.</p></li>
+    <li><time datetime="2026-10-21T13:00+02:00">21 oktober 13:00</time>
+      <p>Meerdere diensten zijn nog preventief offline. Het netwerk werkt wel. De koffieautomaat draait geen PHP en is dus beschikbaar. Uit voorzorg is hij toch alvast leeggedronken.</p></li>
+    <li><time datetime="2026-10-21T12:15+02:00">21 oktober 12:15</time>
+      <p>Het crisusteam heeft overlegd over de agenda van het volgende crisusoverleg. Er komt een werkgroep. De werkgroep heeft een Signal-groep. De Signal-groep heeft 214 ongelezen berichten, waarvan 190 stickers.</p></li>
+    <li><time datetime="2026-10-21T09:30+02:00">21 oktober 09:30</time>
+      <p>Uit voorzorg staat PHP uit. Alles wat geen PHP is, werkt gewoon. Dat blijkt verrassend veel te zijn. Er komt een onderzoek naar de vraag waarom we eigenlijk nog PHP hebben.</p></li>
+    <li><time datetime="2026-10-20T21:35+02:00">20 oktober 21:35</time>
+      <p>Details over de lekken liggen al op straat, de CVE-nummers ook. Dat was niet de bedoeling. Het is wel precies wat lekken doen.</p></li>
+    <li><time datetime="2026-10-20T22:00+02:00">20 oktober</time>
+      <p>Het PHP-beveiligingsteam <a href="https://www.php.net/archive/2026.php#2026-10-20-1" title="php.net: Upcoming Critical PHP Security Release">kondigt</a> een kritieke beveiligingsrelease aan voor woensdag 21 oktober, 14:00 UTC. Twee lekken, allebei CVSS 9,2. Details volgen bij de release. Iedereen gaat slapen. Niemand slaapt.</p></li>
+  </ol>
+
+  <p class="test"><strong>Sirenetest:</strong> elke eerste maandag van de maand om 12:00 testen wij onze paniek. U hoeft niets te doen. Gewoon doorwerken.</p>
+
+  <h2 id="bronnen">Bronnen</h2>
+  <ul class="bronnen" aria-labelledby="bronnen">
+    <li><a href="https://www.php.net/archive/2026.php#2026-10-20-1" title="php.net: Upcoming Critical PHP Security Release">php.net: Upcoming Critical PHP Security Release</a>. De officiële aankondiging. Na 16:00 staan de gepatchte versies op <a href="https://www.php.net/" title="php.net">php.net</a>.</li>
+    <li><a href="https://advisories.ncsc.nl/" title="NCSC security advisories">NCSC: Ernstige kwetsbaarheden in PHP: bereid je voor op patchen</a>.</li>
+    <li><a href="https://www.rijksoverheid.nl/actueel/nieuws/2026/10/21/ncsc-ernstige-kwetsbaarheden-in-php" title="Rijksoverheid.nl: NCSC: Ernstige kwetsbaarheden in PHP">Rijksoverheid.nl: NCSC: Ernstige kwetsbaarheden in PHP</a>.</li>
+    <li><a href="https://nos.nl/liveblog/2636066-websites-kwetsbaar-voor-softwarelek-rtl-nieuws-digid-en-mijnoverheid-uit-de-lucht" title="NOS liveblog over het PHP-lek">NOS: liveblog over het PHP-lek</a>. Wie er allemaal offline is.</li>
+    <li><a href="https://watchtowr.com/intelligence/php-cve-2026-109618-faq/" title="watchTowr: FAQ over CVE-2026-109618 en CVE-2026-109619">watchTowr: FAQ over php2shell</a>.</li>
+  </ul>
+  <p class="note">Deze pagina is een grap. De feiten hierboven zijn dat niet. Twijfelt u? Dan wint de bron.</p>
+
+  <h2 id="archief">Eerdere crisussen</h2>
+  <ul class="archief" aria-labelledby="archief">
+    <li><time datetime="2024-07-19">19 juli 2024</time><b>Het Blauwe Scherm</b><p>Een update legt de halve wereld plat. Wij draaiden Linux. We hebben het er sindsdien nooit meer over gehad. Elke dag.</p></li>
+    <li><time datetime="2021-12">december 2021</time><b>Log4Shell</b><p>Een logbestand dat zelf code uitvoert. Wat kan er misgaan.</p></li>
+    <li><time datetime="2020">2020 tot 2021</time><b>Het coronadashboard</b><p>Nu een <a href="https://corona.crisus.nl/" title="Het Reichsoverheid-coronadashboard, als gedenkplaats">gedenkplaats</a>. Neem gerust een bloem mee.</p></li>
+    <li><time datetime="2020-07">juli 2020</time><b>PKIoverheid</b><p><a href="https://pki-uh-ohverheid.nl/" title="pki-uh-ohverheid.nl: the curious case of the Dangerous Delegated Responder Cert">The curious case of the Dangerous Delegated Responder Cert.</a></p></li>
+    <li><time datetime="2014-04">april 2014</time><b>Heartbleed</b><p>Het eerste lek met een eigen logo. Wij hebben er nog steeds een sticker van.</p></li>
+    <li><time datetime="2000-01-01">1 januari 2000</time><b>De millenniumbug</b><p>Er gebeurde niets. Graag gedaan.</p></li>
+  </ul>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Crisus.nl is satire.</strong> Deze site heeft niets te maken met de overheid, het NCSC of crisis.nl. De feiten op deze pagina komen uit de bronnen hierboven.</p>
+    <p>Bij echte nood: bel <strong>112</strong>. Echte crisisinformatie staat op <a href="https://crisis.nl/" title="crisis.nl: de echte crisisinformatie van de overheid">crisis.nl</a>.</p>
+    <p>Een grap van <a href="https://annejan.com/" title="Anne Jan Brouwer">annejan.com</a> · HTTP 200, tegen alle verwachtingen in</p>
+  </div>
+</footer>
+<script>
+// Counts down to the planned release; afterwards it counts up and points to
+// the check, since "planned" is not "released". Without JavaScript: 16:00.
+(function () {
+  var b = document.querySelector('#klok b'), span = document.querySelector('#klok span');
+  var t = Date.UTC(2026, 9, 21, 14, 0, 0), after = false;
+  function hms(s) { return Math.floor(s / 3600) + ':' + String(Math.floor(s / 60) % 60).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); }
+  function tick() {
+    var s = Math.round((t - Date.now()) / 1000);
+    if (s > 0) { b.textContent = 'nog ' + hms(s); }
+    else {
+      b.textContent = '16:00 + ' + hms(-s);
+      if (!after) {
+        after = true;
+        span.innerHTML = 'De release stond gepland voor 16:00. Gepland is nog geen gepatcht. Kijk op <a href="https://www.php.net/" title="php.net">php.net</a> of hij er is. Daarna: <a href="#patch-er-al" title="Is de patch er al voor mij?">is de patch er al voor mij?</a>';
+      }
+    }
+    setTimeout(tick, 1000);
+  }
+  tick();
+})();
+</script>
+</body>
+</html>
