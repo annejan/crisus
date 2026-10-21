@@ -188,3 +188,7 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 .vitrine .drie { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .vitrine .drie a:hover img, .vitrine .drie a:focus-visible img { outline: 3px solid var(--yellow); }
 @media (max-width: 680px) { .vitrine .drie { grid-template-columns: 1fr; } }
+
+/* the zo-meter in the big Overheid.nl row */
+.zometer { display: block; margin: 8px 0; padding: 8px 12px; border-radius: 8px; background: var(--card); font-weight: 700; }
+.zometer b { color: var(--red); font-variant-numeric: tabular-nums; }

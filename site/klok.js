@@ -9,3 +9,17 @@
   }
   tick();
 })();
+
+// The zo-meter: how long "We zijn zo terug" has lasted on overheid.nl, counted
+// from 20:27 on 21 October, when NOS reported the site still offline. The
+// element only exists while the site is down; without JavaScript it says "een tijdje".
+(function () {
+  var b = document.getElementById('zo'), t = Date.UTC(2026, 9, 21, 18, 27, 0);
+  if (!b) return;
+  function tick() {
+    var s = Math.max(0, Math.round((Date.now() - t) / 1000));
+    b.textContent = Math.floor(s / 3600) + ' uur, ' + (Math.floor(s / 60) % 60) + ' minuten en ' + (s % 60) + ' seconden';
+    setTimeout(tick, 1000);
+  }
+  tick();
+})();
