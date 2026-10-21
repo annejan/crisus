@@ -1,0 +1,17 @@
+ErrorDocument 404 /404.html
+# crisus.nl: everything comes from crisus.nl itself; the JSON-LD block is data, not script.
+Header always set Content-Security-Policy "default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+Header always set Cross-Origin-Opener-Policy "same-origin"
+# The page changes during a crisis: always revalidate. Versioned assets may be cached.
+<FilesMatch "\.(html|xml|txt)$">
+    Header set Cache-Control "no-cache"
+</FilesMatch>
+<FilesMatch "\.(css|js|svg)$">
+    Header set Cache-Control "public, max-age=86400"
+</FilesMatch>
+
+# the RSS feed
+<Files "feed.xml">
+    ForceType "application/rss+xml; charset=utf-8"
+</Files>

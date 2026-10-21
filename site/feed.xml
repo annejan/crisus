@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Crisus · PHP Kwetsbaarheid</title>
+  <link>https://crisus.nl/</link>
+  <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
+  <language>nl</language>
+  <lastBuildDate>Wed, 21 Oct 2026 22:00:00 +0200</lastBuildDate>
+  <item>
+    <title>21 oktober 22:00 · De NOS sluit zijn liveblog.</title>
+    <link>https://crisus.nl/#u-20261021-2200</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-2200</guid>
+    <pubDate>Wed, 21 Oct 2026 22:00:00 +0200</pubDate>
+    <description><![CDATA[<p>De NOS sluit zijn liveblog. Wij nog niet. Terug sinds 21:00: de Tweede Kamer, KRO-NCRV en Het Klokhuis. Boer zoekt vrouw is er ook weer: de boer kan weer zoeken. En FC Groningen is terug, dus het staat 1-1 tegen Twente.</p>
+      <p>Nog uit om 21:45: overheid.nl, ANWB.nl, BNNVARA, Omroep MAX, KWF, Amnesty en Werkenbijderechtspraak.nl. De KNVB staat nog in onderhoudsmodus.</p>
+      <p>Even nagerekend: de bug is ouder dan crisus.nl. Het oudste kwetsbare pad zit volgens de vinders al in PHP 5.4.0, uit maart 2012. Dit domein is pas sinds 2019 van ons. Wij waren er dus niet bij toen het misging. Wel toen het uitkwam.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 21:05 · Het AH-effect.</title>
+    <link>https://crisus.nl/#u-20261021-2105</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-2105</guid>
+    <pubDate>Wed, 21 Oct 2026 21:05:00 +0200</pubDate>
+    <description><![CDATA[<p><strong>Het AH-effect.</strong> Waarom ging vandaag half Nederland uit voorzorg op zwart? Wij hebben een theorie. Die ligt in het schap.</p>
+      <p>Op zondag 11 oktober haalde Ahold Delhaize na verdachte activiteit zijn systemen offline. De website, de app en de thuisbezorging van Albert Heijn lagen eruit. In de winkels raakten groente, fruit en zuivel op. Retailexperts schatten de gemiste omzet op 120 tot 150 miljoen euro, meldt <a href="https://www.iamexpat.nl/expat-info/dutch-news/albert-heijn-faces-150-million-sales-hit-after-cyberattack" title="IamExpat: Albert Heijn faces 150 million euros sales hit after cyberattack">IamExpat</a>. Online bestellen kan nog steeds niet, de bezorging moet vrijdag weer beginnen. Topman Frans Muller blijft erbij, aldus <a href="https://www.transport-online.nl/142223/ahold-delhaize-doet-aangifte-na-cyberaanval-albert-heijn-verwacht-vrijdag-thuisbezorging-te-hervatten/" title="Transport Online: Ahold Delhaize doet aangifte na cyberaanval">Transport Online</a>: &ldquo;Het onderzoek tot nu toe bevestigt dat dit de juiste beslissing was.&rdquo;</p>
+      <p>Tien dagen later lekt een kritiek PHP-lek uit. En geen IT-manager in Nederland wil verantwoordelijk zijn voor de volgende lege schappen. Dus: stekker eruit, nog v&oacute;&oacute;r de patch er is. Wij noemen dat het AH-effect. Bewijs hebben we niet, dit is een satiresite. Ahold zelf ziet geen verband tussen zijn hack en het PHP-lek. Maar de bonuskaart van de voorzichtigheid is vandaag flink gebruikt.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 21:00 · Er komen er weer een paar bij.</title>
+    <link>https://crisus.nl/#u-20261021-2100</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-2100</guid>
+    <pubDate>Wed, 21 Oct 2026 21:00:00 +0200</pubDate>
+    <description><![CDATA[<p>Er komen er weer een paar bij. DigiD.nl en het NCSC zijn terug, en FC Twente ook. FC Groningen nog niet. Daarmee is het gelijkspel van vanmiddag voorbij: 1-0 voor Twente. De KNVB staat nog in onderhoudsmodus. De scheidsrechter kijkt de beelden nog terug.</p>
+      <p>Overheid.nl is volgens de NOS nog steeds offline. Een woordvoerder van Binnenlandse Zaken kan niet zeggen hoe lang dat duurt. Nog uit om 20:45: ANWB.nl, BNNVARA, Omroep MAX, KRO-NCRV, de Tweede Kamer, KWF en Amnesty.</p>
+      <p>Pathé Thuis is ook terug, meldt een lezer. Dank! De film van vanavond kan alsnog. Homebrew heeft nu ook PHP 8.5.12. Daarmee heeft elk groot platform uit ons lijstje de fix, behalve Red Hat. En voor PwnEscape heeft Debian een advisory uit: DSA-6568-1.</p>
+      <p>Nog even rondgekeken bij de vaste waarden. <strong>Boer zoekt vrouw</strong> ligt eruit: &ldquo;Omdat we een dringende beveiligingsupdate uitvoeren.&rdquo; Boer zoekt vrouw, vrouw zoekt website. Ook <strong>De Slimste Mens</strong> van KRO-NCRV is even niet zo slim. De <a href="https://www.rechtspraak.nl/organisatie-en-contact/organisatie/raad-voor-de-rechtspraak/nieuws/2026/10/enkele-rechtspraak-websites-vanwege-php-kwetsbaarheid-tijdelijk-offline" title="Rechtspraak: Enkele Rechtspraak-websites vanwege PHP-kwetsbaarheid tijdelijk offline">Rechtspraak</a> haalde Werkenbijderechtspraak.nl en MijnSSR offline. Rechtspraak.nl zelf draait geen PHP en bleef gewoon in de lucht. Net als wij. En GeenStijl heeft intussen een eigen PHP-liveblog. Concurrentie.</p>
+      <p>En omdat het vandaag toch al woensdag is: ook <a href="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/" title="GitLab Critical Patch Release: 19.5.1, 19.4.3, 19.3.6, 19.2.9, 19.1.9, 19.0.10, 18.11.13">GitLab</a> heeft een kritieke patch uit. CVE-2026-110264, CVSS 10,0: een gemaakte reguliere expressie laat iemand zonder account code uitvoeren op uw GitLab-server. Alle versies vanaf 7.0. Fix in 19.5.1, 19.4.3, 19.3.6 en terug tot 18.11.13. GitLab.com is al gepatcht. Draait u zelf GitLab: vanavond nog updaten. Een tien is het maximum. Dat hadden we vanmiddag al uitgelegd.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 20:03 · Het Achtuurjournaal.</title>
+    <link>https://crisus.nl/#u-20261021-2003</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-2003</guid>
+    <pubDate>Wed, 21 Oct 2026 20:03:00 +0200</pubDate>
+    <description><![CDATA[<p><strong>Het Achtuurjournaal.</strong> Met een paar minuten vertraging, zoals het hoort. Goedenavond.</p>
+      <ul>
+        <li><strong>Intussen bij de buren: PwnEscape.</strong> Een lek in de netwerkcode van de Linux-kernel laat een virtuele machine uitbreken naar de KVM-host eronder, meldt <a href="https://www.heise.de/en/news/PwnEscape-Critical-Linux-kernel-flaw-allows-VM-escape-11492399.html" title="heise online: PwnEscape, Critical Linux kernel flaw allows VM escape">heise</a>. Een kwaadwillende klant van een cloudprovider kan zo de host overnemen, en daarmee de VM&rsquo;s van alle andere klanten. CVE-2026-99999, CVSS 9,3. Het laatste vijfcijferige CVE-nummer van 2026. Ze hebben het mooiste nummer voor het engste lek bewaard.</li>
+        <li>Gevonden door pwn.ai, met AI, in drie dagen, voor minder dan 700 dollar aan tokens. De fix zit sinds 8 oktober in de kernel. Debian heeft hem: <code>6.12.113-1</code> voor Debian 13 en <code>6.1.190-1</code> voor Debian 12, zie de <a href="https://security-tracker.debian.org/tracker/CVE-2026-99999" title="Debian security tracker: CVE-2026-99999">tracker</a>. Netcup herstart zijn hosts al sinds het weekend.</li>
+        <li><strong>Wat moet u doen?</strong> Beheert u zelf een KVM-host: nieuwe kernel erop en herstarten. Huurt u een VPS: niets, dat doet uw provider. Wel even checken of uw VPS na een herstart vanzelf weer opstart. Daar komt u anders om drie uur &rsquo;s nachts achter.</li>
+        <li><strong>Binnenland: PHP.</strong> De patch is al vier uur uit. Debian, Ubuntu, Docker en SUSE zijn bij. Terug: RTL, Tweakers, MijnOverheid, NPO.nl en de Unie van Waterschappen. Nog uit: ANWB, BNNVARA, Omroep MAX, KRO-NCRV, DigiD.nl, het NCSC, de Tweede Kamer, de KNVB, KWF en Amnesty.</li>
+        <li><strong>Sport.</strong> FC Twente en FC Groningen spelen nog altijd zonder website. Het staat gelijk.</li>
+        <li><strong>Het weer.</strong> Buiig, met kans op patches. Morgen opklarend, behalve voor wie vanavond niet herstart.</li>
+      </ul>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 19:45 · Nu iedereen weer een beetje rust heeft, begint het belangrijkste deel van elke crisis: wie krijgt de eer.</title>
+    <link>https://crisus.nl/#u-20261021-1945</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1945</guid>
+    <pubDate>Wed, 21 Oct 2026 19:45:00 +0200</pubDate>
+    <description><![CDATA[<p>Nu iedereen weer een beetje rust heeft, begint het belangrijkste deel van elke crisis: wie krijgt de eer. OpenAI zegt volgens de NOS &ldquo;de afgelopen twee maanden een coalitie van beheerders, onderzoekers en beveiligingsproviders&rdquo; te hebben geleid. Wiz noemt de vondsten &ldquo;de ernstigste kwetsbaarheden die ooit in PHP zijn ontdekt, en wellicht zelfs in de geschiedenis van software&rdquo;. Wij noemen onszelf bescheiden de beste crisussite van Nederland. Er is er maar &eacute;&eacute;n.</p>
+      <p>Wie is er terug? NPO.nl, zonder melding. Nog uit om 19:45: ANWB.nl, BNNVARA, Omroep MAX, KRO-NCRV, een paar onderdelen van Het Klokhuis, FC Twente en FC Groningen. Ook DigiD.nl, het NCSC, de Tweede Kamer, de KNVB, KWF en Amnesty. Het eerste uur na een patch is makkelijk. Het tweede uur is testen.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 19:40 · De tijdlijn wordt duidelijk.</title>
+    <link>https://crisus.nl/#u-20261021-1940</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1940</guid>
+    <pubDate>Wed, 21 Oct 2026 19:40:00 +0200</pubDate>
+    <description><![CDATA[<p>De tijdlijn wordt duidelijk. Het eerste lek is al op 11 augustus gevonden, het tweede op 24 augustus, meldt de NOS op basis van de <a href="https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/" title="The PHP Foundation: Today's PHP Security Release, and How We're Strengthening PHP Security">PHP Foundation</a>. Calif vond het eerste met OpenAI. Wiz, eigendom van Google, vond los daarvan het tweede. Allebei met AI. Tussen melding en patch zitten dus ruim twee maanden. Zo lang staat bij ons gemiddeld een pak melk in de deur van de koelkast. Ook niet goed.</p>
+      <p>De Foundation is eerlijk over de reden: het beveiligingsteam bedacht meerdere oplossingen, die elk iets anders braken. Het team besliste op consensus en kwam er niet uit. Het OOM-probleem was zelfs al in 2024 gezien, tijdens een audit, maar zonder bewijs dat het uit te buiten was. &ldquo;We won&rsquo;t pretend otherwise: the delay was a structural failure.&rdquo;</p>
+      <p>En de onderzoeker met de nieuwe, nog geheime bug van 17:15 <a href="https://fedi.katze.sh/@elise/117478725808527006" title="Fediverse-draad van @elise@fedi.katze.sh over een nieuwe PHP-bug">antwoordt</a> op de vraag naar maatregelen: &ldquo;don&rsquo;t worry about it kitten&rdquo;. Wij lezen dat als: geen paniek. Wij blijven wel opletten. Dat is ons vak.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 18:55 · Docker is bij.</title>
+    <link>https://crisus.nl/#u-20261021-1855</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1855</guid>
+    <pubDate>Wed, 21 Oct 2026 18:55:00 +0200</pubDate>
+    <description><![CDATA[<p>Docker is bij. Rond 18:45 zijn ook de zwevende tags verzet: <code>php:8.4-apache</code> is nu hetzelfde image als <code>php:8.4.27-apache</code>, en <code>php:latest</code> hetzelfde als <code>php:8.5.12</code>. Wij hebben de digests vergeleken. Een container die al draait, blijft wel oud tot u hem opnieuw aanmaakt.</p>
+      <p>De PHP Foundation vertelt ook hoe de processen veranderen, aldus de NOS: het beveiligingsteam mag voortaan besluiten met een meerderheid van stemmen. Tot nu toe moest iedereen het eens zijn. Wie ooit een vereniging heeft gerund, weet hoe lang dat duurt. MijnOverheid is volgens de NOS ook officieel terug.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 18:25 · Zelfreflectie bij PHP.</title>
+    <link>https://crisus.nl/#u-20261021-1825</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1825</guid>
+    <pubDate>Wed, 21 Oct 2026 18:25:00 +0200</pubDate>
+    <description><![CDATA[<p>Zelfreflectie bij PHP. De PHP Foundation spreekt volgens de NOS van een &ldquo;structurele fout&rdquo;: de oplossing liet lang op zich wachten. Het beveiligingsteam werd het niet eens over de juiste fix en er zijn weinig ontwikkelaars met de benodigde kennis. De processen gaan op de schop. Een team dat het niet eens wordt over de oplossing: dat kennen wij. Wij noemen het een Signal-groep.</p>
+      <p>Wiz zegt dat de lekken al ruim tien jaar in PHP zaten. Ze vonden ze met AI: &ldquo;de ernstigste kwetsbaarheden die ooit door AI zijn ontdekt&rdquo;. E&eacute;n onderzoeker deed in een week wat een topteam vroeger maanden kostte. Volgens Wiz werkt dat twee kanten op: criminelen kunnen het ook. Tien jaar, trouwens. Ongeveer zo lang als die ene WordPress-plugin niet is bijgewerkt.</p>
+      <p>En Debian 12 is bij: <code>php8.2 8.2.35-1~deb12u1</code> staat op de mirror.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 18:05 · MijnOverheid is terug.</title>
+    <link>https://crisus.nl/#u-20261021-1805</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1805</guid>
+    <pubDate>Wed, 21 Oct 2026 18:05:00 +0200</pubDate>
+    <description><![CDATA[<p>MijnOverheid is terug. Uw Berichtenbox ook, dus die blauwe envelop van de Belastingdienst is weer bereikbaar. Niet iedereen zal dit als goed nieuws ervaren. DigiD.nl, het NCSC, de Tweede Kamer, de KNVB, KWF en Amnesty zijn om 18:05 nog uit.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 18:00 · Een rondje langs Nederlandse vaste waarden.</title>
+    <link>https://crisus.nl/#u-20261021-1800</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1800</guid>
+    <pubDate>Wed, 21 Oct 2026 18:00:00 +0200</pubDate>
+    <description><![CDATA[<p>Een rondje langs Nederlandse vaste waarden. Om 17:55 zelf gecontroleerd, met wat er op hun eigen pagina staat:</p>
+      <ul>
+        <li><strong>ANWB.nl</strong>: &ldquo;preventief offline gehaald in verband met een PHP-beveiligingsupdate&rdquo;. De Wegenwacht staat zelf langs de kant van de weg. Motorkap open.</li>
+        <li><strong>BNNVARA</strong>, en daarmee <strong>Kassa</strong>: &ldquo;Er is een kritieke kwetsbaarheid ontdekt in PHP.&rdquo; Klagen over een website die het niet doet? Daarvoor gaat u normaal naar Kassa.</li>
+        <li><strong>Omroep MAX</strong>: &ldquo;Er is een beveiligingsprobleem bekendgemaakt in de software waarop deze website draait.&rdquo; Tijd voor MAX. Zonder website.</li>
+        <li><strong>KRO-NCRV</strong>: &ldquo;Omdat we een dringende beveiligingsupdate uitvoeren.&rdquo; En <strong>NPO.nl</strong> blijft dicht &ldquo;totdat we zeker weten dat alles veilig is&rdquo;.</li>
+        <li><strong>Het Klokhuis</strong>: een paar onderdelen offline vanwege &ldquo;een veiligheidsprobleem met de techniek&rdquo;. Wij kijken uit naar de aflevering waarin ze uitleggen hoe dat zit.</li>
+        <li>In het voetbal liggen onder meer <strong>FC Twente</strong>, <strong>FC Groningen</strong>, <strong>Fortuna Sittard</strong>, <strong>Willem II</strong>, <strong>De Graafschap</strong>, <strong>FC Dordrecht</strong>, <strong>Heracles</strong> en <strong>VVV-Venlo</strong> eruit, meldt <a href="https://www.vi.nl/nieuws/nederlandse-profclubs-halen-website-offline-vanwege-ernstige-beveiligingslekken" title="VI: Nederlandse profclubs halen website offline vanwege ernstige beveiligingslekken">VI</a>. FC Twente: &ldquo;vanwege een wereldwijd beveiligingslek bij websites die gebruikmaken van de programmeertaal PHP&rdquo;. Voor het eerst dit seizoen staan ze allemaal gelijk.</li>
+      </ul>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 17:50 · Docker heeft de gepatchte images.</title>
+    <link>https://crisus.nl/#u-20261021-1750</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1750</guid>
+    <pubDate>Wed, 21 Oct 2026 17:50:00 +0200</pubDate>
+    <description><![CDATA[<p>Docker heeft de gepatchte images. Een beetje. De versietags staan er sinds 17:40: <code>8.5.12-apache</code>, <code>8.4.27-fpm-alpine</code> en de rest. Maar <code>php:8.4-apache</code>, <code>php:8.5-fpm</code> en <code>php:latest</code> wijzen nog naar het image van vanochtend. Wie nu <code>docker pull php:8.4-apache</code> doet, haalt keurig het lek binnen. Pin de versie. Dat is ook op een gewone dag een goed idee.</p>
+      <p>SUSE heeft een <a href="https://www.suse.com/security/cve/CVE-2026-109618.html" title="SUSE: CVE-2026-109618">CVE-pagina</a>, met de fix voor SLES 15 SP7: <code>php8 &gt;= 8.3.36-150700.3.24.1</code>. Red Hat heeft een pagina, nog zonder pakketten. Debian 12 staat nog niet op de mirror.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 17:35 · Correctie.</title>
+    <link>https://crisus.nl/#u-20261021-1735</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1735</guid>
+    <pubDate>Wed, 21 Oct 2026 17:35:00 +0200</pubDate>
+    <description><![CDATA[<p><strong>Correctie.</strong> Om 17:15 schreven we dat de nieuwe PHP-bug een kwaadaardig PHP-script nodig heeft. Dat was te snel. Gevraagd hoe hij werkt, antwoordt de onderzoeker in <a href="https://fedi.katze.sh/@elise/117478725808527006" title="Fediverse-draad van @elise@fedi.katze.sh over een nieuwe PHP-bug">de draad</a>: &ldquo;malicious data into benign code&rdquo;. Kwaadaardige data in gewone code dus. Dat kan dus mogelijk ook van buitenaf. Hoe precies, blijft geheim tot er een fix is. Wij houden php.net in de gaten.</p>
+      <p>Verder roepen overheden wereldwijd op om te updaten, meldt de NOS. Onder meer de Amerikaanse NSA en de Japanse premier Takaichi. Als de NSA en de premier van Japan hetzelfde zeggen, is het heel ernstig of een deepfake. Het is het eerste.</p>
+      <p>Debian 12: de <a href="https://security-tracker.debian.org/tracker/source-package/php8.2" title="Debian security tracker: php8.2">pakketpagina</a> noemt <code>8.2.35-1~deb12u1</code> in bookworm-security, met beide CVE&rsquo;s opgelost. De mirror heeft hem nog niet.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 17:25 · Het crisusniveau gaat naar 2.</title>
+    <link>https://crisus.nl/#u-20261021-1725</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1725</guid>
+    <pubDate>Wed, 21 Oct 2026 17:25:00 +0200</pubDate>
+    <description><![CDATA[<p>Het crisusniveau gaat naar 2. De patch is er, de grote distributies hebben pakketten en de eerste sites zijn terug. De pizza is op. Er wordt niet meer besteld. Wel blijven we opletten: de nieuwe, nog geheime PHP-bug van 17:15 is nog niet opgelost.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 17:20 · Debian 12 komt eraan.</title>
+    <link>https://crisus.nl/#u-20261021-1720</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1720</guid>
+    <pubDate>Wed, 21 Oct 2026 17:20:00 +0200</pubDate>
+    <description><![CDATA[<p>Debian 12 komt eraan. De <a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">security tracker</a> noemt <code>php8.2 8.2.35-1~deb12u1</code> gefixt. Op de mirror staat het nog niet. Dat kennen we nog van Ubuntu vanmiddag. Geduld is ook een beveiligingsmaatregel. Een matige, maar toch.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 17:15 · “Today is really a day for PHP.” Een beveiligingsonderzoeker meldt op de fediverse een andere geheugenfout in …</title>
+    <link>https://crisus.nl/#u-20261021-1715</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1715</guid>
+    <pubDate>Wed, 21 Oct 2026 17:15:00 +0200</pubDate>
+    <description><![CDATA[<p>&ldquo;Today is really a day for PHP.&rdquo; Een beveiligingsonderzoeker <a href="https://fedi.katze.sh/@elise/117478725808527006" title="Fediverse-draad van @elise@fedi.katze.sh over een nieuwe PHP-bug">meldt op de fediverse</a> een <em>andere</em> geheugenfout in PHP: een double free. Volgens de onderzoeker werkt hij op 8.4.25, 8.5.10 en ook op de gepatchte 8.5.12. De bug is om 16:51 bij PHP gemeld. Een PoC van drie regels, de details blijven geheim tot er een fix is.</p>
+      <p>Wat we weten: niet veel. Het is &eacute;&eacute;n bron, nog geen CVE en nog geen advisory. <del>De PoC is een PHP-script: wie dat kan draaien, draait al code op uw server.</del> Gecorrigeerd om 17:35: volgens de onderzoeker werkt het met kwaadaardige data in gewone code. Advies: patch gewoon naar 8.5.12, 8.4.27, 8.3.36 of 8.2.35. Die dichten de twee bekende lekken. Houd daarna php.net in de gaten. Wij doen dat ook. Met koffie.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 17:10 · De eerste grote sites komen terug.</title>
+    <link>https://crisus.nl/#u-20261021-1710</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1710</guid>
+    <pubDate>Wed, 21 Oct 2026 17:10:00 +0200</pubDate>
+    <description><![CDATA[<p>De eerste grote sites komen terug. RTL en Tweakers zijn weer in de lucht, meldt de NOS. In onze steekproef van 17:05 is ook de Unie van Waterschappen terug. Het water staat weer onder controle. Nog uit: DigiD.nl, MijnOverheid, het NCSC, de Tweede Kamer, de KNVB, KWF en Amnesty.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 17:00 · Goed nieuws voor wie nog op een oude PHP zit.</title>
+    <link>https://crisus.nl/#u-20261021-1700</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1700</guid>
+    <pubDate>Wed, 21 Oct 2026 17:00:00 +0200</pubDate>
+    <description><![CDATA[<p>Goed nieuws voor wie nog op een oude PHP zit. Op GitHub staan branches voor PHP <a href="https://github.com/php/php-src/tree/PHP-7.4-CVE-2026-109618-109619" title="php-src: branch PHP-7.4-CVE-2026-109618-109619">7.4</a>, <a href="https://github.com/php/php-src/tree/PHP-8.0-CVE-2026-109618-109619" title="php-src: branch PHP-8.0-CVE-2026-109618-109619">8.0</a> en <a href="https://github.com/php/php-src/tree/PHP-8.1-CVE-2026-109618-109619" title="php-src: branch PHP-8.1-CVE-2026-109618-109619">8.1</a> met een &ldquo;minimal mitigation for EOL version&rdquo;. Ze zijn op 18 oktober gemaakt door Arnaud Le Blanc en Ilija Tovilo van het PHP-team. Het is geen release. U moet zelf bouwen. Maar het is meer dan niets. En niets was wat we eerder beloofden.</p>
+      <p>Dacht u: wij draaien Node.js, wij zijn veilig? Ook Node.js heeft vandaag <a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">security releases</a>: v26.12.1, v24.22.1 en v22.23.4. Acht lekken met de ernst <em>high</em>, waaronder een Brotli-decoder die met een out-of-bounds write code laat uitvoeren (CVE-2026-111497). Ook de eMudhra-CA wordt eruit gegooid. Het is een drukke woensdag voor iedereen. Behalve voor statische HTML.</p>
+      <p>En Ubuntu is bij: de pakketten staan nu ook op de mirror, voor 26.04, 26.10 en 24.04. Debian heeft zijn DSA uit voor Debian 13. Debian 12 wacht nog. Zie de <a href="https://crisus.nl/#stand" title="Stand per platform">stand per platform</a>.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 16:40 · Het kabinet reageert.</title>
+    <link>https://crisus.nl/#u-20261021-1640</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1640</guid>
+    <pubDate>Wed, 21 Oct 2026 16:40:00 +0200</pubDate>
+    <description><![CDATA[<p>Het kabinet reageert. Minister Van Weel van Justitie en Veiligheid zegt dat het offline halen van al die websites &ldquo;impact heeft in onze digitale samenleving&rdquo;. Ook de minister ziet nog geen actief misbruik. Wij kunnen de impact bevestigen: om 16:35 zijn RTL, DigiD.nl, MijnOverheid, het NCSC, de Tweede Kamer, de KNVB, KWF, Amnesty en de Unie van Waterschappen nog uit.</p>
+      <p>Verder weinig nieuws. De Ubuntu-mirror staat nog stil. Docker en Homebrew hebben nog niets. Red Hat, SUSE en de Debian-tracker hebben nog geen pagina. Het crisusteam heeft de pizza op en overweegt een tweede. Dat is crisusniveau 3,5. Daar hebben we geen vakje voor.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 16:30 · Een uur na de patch.</title>
+    <link>https://crisus.nl/#u-20261021-1630</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1630</guid>
+    <pubDate>Wed, 21 Oct 2026 16:30:00 +0200</pubDate>
+    <description><![CDATA[<p>Een uur na de patch. Onze steekproef van 16:25: Vlaanderen.be en Tweakers zijn terug. RTL, DigiD.nl, MijnOverheid, het NCSC, de Tweede Kamer, de KNVB, KWF en Amnesty zijn nog uit. Patchen kost tijd. Testen nog meer. Weer aanzetten zonder testen kost het meest.</p>
+      <p>Gebruikt u Ubuntu? Ubuntu heeft de fix om 15:41 gepubliceerd, maar de security-mirror is sinds 11:44 niet bijgewerkt. <code>apt update</code> ziet het pakket dus nog niet. Laat PHP zolang uit. Of haal het pakket met de hand van Launchpad, als u weet wat u doet. Dat weet u. U leest deze site.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 16:15 · De vinders, Calif, OpenAI en Wiz, publiceren hun write-up .</title>
+    <link>https://crisus.nl/#u-20261021-1615</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1615</guid>
+    <pubDate>Wed, 21 Oct 2026 16:15:00 +0200</pubDate>
+    <description><![CDATA[<p>De vinders, Calif, OpenAI en Wiz, publiceren hun <a href="https://calif.io/php2shell/" title="Calif Research: php2shell, a tale of two PHP remote vulnerabilities">write-up</a>. Met een strip erbij. De trucs zijn verbluffend simpel: een verzoek zonder lengte en een berg lege uploads met geneste namen. Bevestigd op WordPress, Drupal, Joomla, Nextcloud, phpMyAdmin en nog zes andere.</p>
+      <p>Pijnlijk detail: het geheugentekort werd in 2020 al gemeld en in 2024 opnieuw gevonden. Het bleef liggen, want uitbuiting was &ldquo;niet bewezen&rdquo;. Dat is het nu wel. Er staan in de wereld vast nog meer bugs te wachten op hun bewijs. Wij gaan er niet over nadenken. Wij gaan slapen. Straks.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 16:05 · De patch is er.</title>
+    <link>https://crisus.nl/#u-20261021-1605</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1605</guid>
+    <pubDate>Wed, 21 Oct 2026 16:05:00 +0200</pubDate>
+    <description><![CDATA[<p>De patch is er. Nu de rest van de wereld nog. Debian heeft zijn pakket al, Ubuntu heeft het zijne gepubliceerd. De mirrors moeten bijkomen. Windows-builds staan klaar. Docker en Homebrew zijn nog bezig. Zie de <a href="https://crisus.nl/#stand" title="Stand per platform">stand per platform</a>.</p>
+      <p>Intussen gaan ook de overheden van Frankrijk en Finland deels op zwart. Ook goede doelen gaan offline: KWF, de Hartstichting, Oxfam Novib, Amnesty. Het UWV haalt een tool offline om je beter te melden. Wie vandaag beter wordt, moet dat morgen melden. NPO Start publiceert later en Pathé Thuis verhuurt geen films. Een goede middag voor een boek. Van papier.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 15:50 · Het crisusniveau gaat terug naar 3.</title>
+    <link>https://crisus.nl/#u-20261021-1550</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1550</guid>
+    <pubDate>Wed, 21 Oct 2026 15:50:00 +0200</pubDate>
+    <description><![CDATA[<p>Het crisusniveau gaat terug naar 3. De pizza is er. Debian 13 heeft al een pakket: <code>8.4.27-1~deb13u1</code>. Ubuntu staat nog op <em>Needs evaluation</em>. Wie Apache met mod_php draait: dat is precies de opzet waartegen de aanval bewezen is. Patchen, of PHP uit laten.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 15:34 · De patch is uit.</title>
+    <link>https://crisus.nl/#u-20261021-1534</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1534</guid>
+    <pubDate>Wed, 21 Oct 2026 15:34:00 +0200</pubDate>
+    <description><![CDATA[<p>De patch is uit. Bijna een halfuur eerder dan gepland. PHP publiceert 8.5.12, 8.4.27, 8.3.36 en 8.2.35 met twee advisories: <a href="https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w" title="PHP security advisory GHSA-w8hw-w9fx-j79w: RCE via OOM corruption">RCE via OOM corruption</a> en <a href="https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp" title="PHP security advisory GHSA-6wmf-4rv5-p3rp: RCE via stale global state">RCE via stale global state</a>. De buildbots van alle distributies gaan tegelijk aan. Ergens in een datacenter wordt het warm.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 15:30 · Het crisusniveau gaat naar 4.</title>
+    <link>https://crisus.nl/#u-20261021-1530</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1530</guid>
+    <pubDate>Wed, 21 Oct 2026 15:30:00 +0200</pubDate>
+    <description><![CDATA[<p>Het crisusniveau gaat naar 4. Uit voorzorg offline: de sites van DigiD en MijnOverheid, RTL, de KNVB, de Unie van Waterschappen, een rij ziekenhuizen en de vluchtinformatie in de Schiphol-app. In Belgi&euml; gaan alle Vlaamse overheidssites op zwart, net als Smartschool. Crisus.nl is nog online. Het is de eerste keer dat wij betrouwbaarder zijn dan de overheid. We genieten ervan zolang het duurt.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 15:07 · Het NCSC noemt het lek “geen aanval, maar een weeffout in de software”.</title>
+    <link>https://crisus.nl/#u-20261021-1507</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1507</guid>
+    <pubDate>Wed, 21 Oct 2026 15:07:00 +0200</pubDate>
+    <description><![CDATA[<p>Het NCSC noemt het lek &ldquo;geen aanval, maar een weeffout in de software&rdquo;. Ze roepen iedereen op de update direct te installeren: &ldquo;elke minuut telt&rdquo;. Wij noemen de weeffout voortaan PHP.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 14:07 · Cloudflare ziet al aanvallen en zet firewallregels aan voor al zijn klanten.</title>
+    <link>https://crisus.nl/#u-20261021-1407</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1407</guid>
+    <pubDate>Wed, 21 Oct 2026 14:07:00 +0200</pubDate>
+    <description><![CDATA[<p>Cloudflare ziet al aanvallen en zet firewallregels aan voor al zijn klanten. Het NCSC en de PHP Foundation zien nog geen misbruik. E&eacute;n van de drie heeft het mis. Wij gaan uit van het ergste. Dat is ons vak.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 14:45 · De status is ongewijzigd.</title>
+    <link>https://crisus.nl/#u-20261021-1445</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1445</guid>
+    <pubDate>Wed, 21 Oct 2026 14:45:00 +0200</pubDate>
+    <description><![CDATA[<p>De status is ongewijzigd. Er wordt gewacht op de patch. Het crisusteam staat paraat met <code>apt upgrade</code> al half getypt.</p>
+      <p>Het NCSC heeft zijn eigen website uit voorzorg offline gehaald. Wij hebben uit solidariteit overwogen hetzelfde te doen, maar crisus.nl draait geen PHP. Dus nee.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 13:59 · Het NCSC waarschuwt: bereid u voor op patchen.</title>
+    <link>https://crisus.nl/#u-20261021-1359</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1359</guid>
+    <pubDate>Wed, 21 Oct 2026 13:59:00 +0200</pubDate>
+    <description><![CDATA[<p>Het NCSC waarschuwt: bereid u voor op patchen. Er is een openbare proof of concept, maar nog geen actief misbruik. Alle versies vanaf PHP 5 zijn kwetsbaar. Zie de <a href="https://advisories.ncsc.nl/" title="NCSC security advisories">advisory</a>.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 13:00 · Meerdere diensten zijn nog preventief offline.</title>
+    <link>https://crisus.nl/#u-20261021-1300</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1300</guid>
+    <pubDate>Wed, 21 Oct 2026 13:00:00 +0200</pubDate>
+    <description><![CDATA[<p>Meerdere diensten zijn nog preventief offline. Het netwerk werkt wel. De koffieautomaat draait geen PHP en is dus beschikbaar. Uit voorzorg is hij toch alvast leeggedronken.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 12:15 · Het crisusteam heeft overlegd over de agenda van het volgende crisusoverleg.</title>
+    <link>https://crisus.nl/#u-20261021-1215</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-1215</guid>
+    <pubDate>Wed, 21 Oct 2026 12:15:00 +0200</pubDate>
+    <description><![CDATA[<p>Het crisusteam heeft overlegd over de agenda van het volgende crisusoverleg. Er komt een werkgroep. De werkgroep heeft een Signal-groep. De Signal-groep heeft 214 ongelezen berichten, waarvan 190 stickers.</p>]]></description>
+  </item>
+  <item>
+    <title>21 oktober 09:30 · Uit voorzorg staat PHP uit.</title>
+    <link>https://crisus.nl/#u-20261021-0930</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261021-0930</guid>
+    <pubDate>Wed, 21 Oct 2026 09:30:00 +0200</pubDate>
+    <description><![CDATA[<p>Uit voorzorg staat PHP uit. Alles wat geen PHP is, werkt gewoon. Dat blijkt verrassend veel te zijn. Er komt een onderzoek naar de vraag waarom we eigenlijk nog PHP hebben.</p>]]></description>
+  </item>
+  <item>
+    <title>20 oktober 21:35 · Details over de lekken liggen al op straat, de CVE-nummers ook.</title>
+    <link>https://crisus.nl/#u-20261020-2135</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261020-2135</guid>
+    <pubDate>Tue, 20 Oct 2026 21:35:00 +0200</pubDate>
+    <description><![CDATA[<p>Details over de lekken liggen al op straat, de CVE-nummers ook. Dat was niet de bedoeling. Het is wel precies wat lekken doen.</p>]]></description>
+  </item>
+  <item>
+    <title>20 oktober · Het PHP-beveiligingsteam kondigt een kritieke beveiligingsrelease aan voor woensdag 21 oktober, 14:00 UTC.</title>
+    <link>https://crisus.nl/#u-20261020-2200</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261020-2200</guid>
+    <pubDate>Tue, 20 Oct 2026 22:00:00 +0200</pubDate>
+    <description><![CDATA[<p>Het PHP-beveiligingsteam <a href="https://www.php.net/archive/2026.php#2026-10-20-1" title="php.net: Upcoming Critical PHP Security Release">kondigt</a> een kritieke beveiligingsrelease aan voor woensdag 21 oktober, 14:00 UTC. Twee lekken, allebei CVSS 9,2. Details volgen bij de release. Iedereen gaat slapen. Niemand slaapt.</p>]]></description>
+  </item>
+</channel>
+</rss>
