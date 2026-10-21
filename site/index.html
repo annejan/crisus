@@ -114,6 +114,9 @@
   .updates li:first-child::before { border-color: var(--red); background: var(--red); animation: ping 2s ease-out infinite; }
   .updates time { display: block; font-weight: 700; }
   .updates p { margin: 4px 0 0; }
+  .updates ul { margin: 6px 0 0; padding-left: 20px; }
+  .updates ul li { padding: 0 0 4px; }
+  .updates ul li::before, .updates ul li:first-child::before { content: none; }
 
   del { color: var(--muted); }
   .test { margin: 34px 0 0; padding: 14px 18px; border: 1px dashed var(--muted); border-radius: 12px; color: var(--muted); }
@@ -185,7 +188,7 @@
 </header>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · laatst bijgewerkt 21 oktober, 17:50</p>
+  <p class="kicker">Lopende crisus · laatst bijgewerkt 21 oktober, 18:00</p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu.</p>
 
@@ -407,6 +410,16 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li><time datetime="2026-10-21T18:00+02:00">21 oktober 18:00</time>
+      <p>Een rondje langs Nederlandse vaste waarden. Om 17:55 zelf gecontroleerd, met wat er op hun eigen pagina staat:</p>
+      <ul>
+        <li><strong>ANWB.nl</strong>: &ldquo;preventief offline gehaald in verband met een PHP-beveiligingsupdate&rdquo;. De Wegenwacht staat zelf langs de kant van de weg. Motorkap open.</li>
+        <li><strong>BNNVARA</strong>, en daarmee <strong>Kassa</strong>: &ldquo;Er is een kritieke kwetsbaarheid ontdekt in PHP.&rdquo; Klagen over een website die het niet doet? Daarvoor gaat u normaal naar Kassa.</li>
+        <li><strong>Omroep MAX</strong>: &ldquo;Er is een beveiligingsprobleem bekendgemaakt in de software waarop deze website draait.&rdquo; Tijd voor MAX. Zonder website.</li>
+        <li><strong>KRO-NCRV</strong>: &ldquo;Omdat we een dringende beveiligingsupdate uitvoeren.&rdquo; En <strong>NPO.nl</strong> blijft dicht &ldquo;totdat we zeker weten dat alles veilig is&rdquo;.</li>
+        <li><strong>Het Klokhuis</strong>: een paar onderdelen offline vanwege &ldquo;een veiligheidsprobleem met de techniek&rdquo;. Wij kijken uit naar de aflevering waarin ze uitleggen hoe dat zit.</li>
+        <li>In het voetbal liggen onder meer <strong>FC Twente</strong>, <strong>FC Groningen</strong>, <strong>Fortuna Sittard</strong>, <strong>Willem II</strong>, <strong>De Graafschap</strong>, <strong>FC Dordrecht</strong>, <strong>Heracles</strong> en <strong>VVV-Venlo</strong> eruit, meldt <a href="https://www.vi.nl/nieuws/nederlandse-profclubs-halen-website-offline-vanwege-ernstige-beveiligingslekken" title="VI: Nederlandse profclubs halen website offline vanwege ernstige beveiligingslekken">VI</a>. FC Twente: &ldquo;vanwege een wereldwijd beveiligingslek bij websites die gebruikmaken van de programmeertaal PHP&rdquo;. Voor het eerst dit seizoen staan ze allemaal gelijk.</li>
+      </ul></li>
     <li><time datetime="2026-10-21T17:50+02:00">21 oktober 17:50</time>
       <p>Docker heeft de gepatchte images. Een beetje. De versietags staan er sinds 17:40: <code>8.5.12-apache</code>, <code>8.4.27-fpm-alpine</code> en de rest. Maar <code>php:8.4-apache</code>, <code>php:8.5-fpm</code> en <code>php:latest</code> wijzen nog naar het image van vanochtend. Wie nu <code>docker pull php:8.4-apache</code> doet, haalt keurig het lek binnen. Pin de versie. Dat is ook op een gewone dag een goed idee.</p>
       <p>SUSE heeft een <a href="https://www.suse.com/security/cve/CVE-2026-109618.html" title="SUSE: CVE-2026-109618">CVE-pagina</a>, met de fix voor SLES 15 SP7: <code>php8 &gt;= 8.3.36-150700.3.24.1</code>. Red Hat heeft een pagina, nog zonder pakketten. Debian 12 staat nog niet op de mirror.</p></li>
@@ -477,6 +490,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li>De php-src-branches voor <a href="https://github.com/php/php-src/tree/PHP-7.4-CVE-2026-109618-109619" title="php-src: branch PHP-7.4-CVE-2026-109618-109619">7.4</a>, <a href="https://github.com/php/php-src/tree/PHP-8.0-CVE-2026-109618-109619" title="php-src: branch PHP-8.0-CVE-2026-109618-109619">8.0</a> en <a href="https://github.com/php/php-src/tree/PHP-8.1-CVE-2026-109618-109619" title="php-src: branch PHP-8.1-CVE-2026-109618-109619">8.1</a> met de minimale fix voor EOL-versies.</li>
     <li><a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">Node.js: October 2026 security releases</a>. Ook vandaag.</li>
     <li><a href="https://fedi.katze.sh/@elise/117478725808527006" title="Fediverse-draad van @elise@fedi.katze.sh over een nieuwe PHP-bug">@elise@fedi.katze.sh</a> over een nieuwe, nog niet openbare PHP-bug. E&eacute;n bron, onbevestigd.</li>
+    <li><a href="https://www.vi.nl/nieuws/nederlandse-profclubs-halen-website-offline-vanwege-ernstige-beveiligingslekken" title="VI: Nederlandse profclubs halen website offline vanwege ernstige beveiligingslekken">VI: Nederlandse profclubs halen website offline</a>. Welke clubs, met de verklaring van FC Twente.</li>
     <li><a href="https://advisories.ncsc.nl/" title="NCSC security advisories">NCSC: Ernstige kwetsbaarheden in PHP: bereid je voor op patchen</a>.</li>
     <li><a href="https://www.rijksoverheid.nl/actueel/nieuws/2026/10/21/ncsc-ernstige-kwetsbaarheden-in-php" title="Rijksoverheid.nl: NCSC: Ernstige kwetsbaarheden in PHP">Rijksoverheid.nl: NCSC: Ernstige kwetsbaarheden in PHP</a>.</li>
     <li><a href="https://nos.nl/liveblog/2636066-websites-kwetsbaar-voor-softwarelek-rtl-nieuws-digid-en-mijnoverheid-uit-de-lucht" title="NOS liveblog over het PHP-lek">NOS: liveblog over het PHP-lek</a>. Wie er allemaal offline is.</li>
