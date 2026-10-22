@@ -14,7 +14,7 @@ FEEDS = {
     "NCSC": "https://advisories.ncsc.nl/rss/advisories",
     "heise": "https://www.heise.de/security/rss/news-atom.xml",
 }
-TOPICS = re.compile(r"\bphp|php2shell|pwnescape|gitlab|overheid\.nl|digid", re.I)
+TOPICS = re.compile(r"\bphp|php2shell|pwnescape|gitlab|overheid\.nl|digid|qnap|synology|pan-os|palo alto|fortinet|emudhra", re.I)
 ATOM = "{http://www.w3.org/2005/Atom}"
 
 

@@ -40,6 +40,9 @@ for t in re.findall(r"<a href=\"\d+\">([^<]+)</a>", sys.stdin.read()):
 echo "-- vendor advisories mentioning PHP2Shell"
 curl -s https://security.paloaltonetworks.com/rss.xml | grep -o -E '<title>[^<]*(PHP|10961[89])[^<]*' | sed 's/<title>/  paloalto: /' | head -3
 
+echo "-- QNAP: its advisory pages sit behind a bot check (HTTP 202), so QNAP comes in"
+echo "   through headlines.py (Security.NL was first). Fallback: python3 -I tools/headlines.py --hours 24 | grep -i qnap"
+
 echo "-- @elise (newest posts, any thread)"
 id=$(curl -s 'https://fedi.katze.sh/api/v1/accounts/lookup?acct=elise' | python3 -I -c 'import json,sys; print(json.load(sys.stdin)["id"])' 2>/dev/null)
 [ -n "$id" ] && curl -s "https://fedi.katze.sh/api/v1/accounts/$id/statuses?limit=5&exclude_reblogs=true" | python3 -I -c "
