@@ -6,7 +6,16 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Thu, 22 Oct 2026 15:00:00 +0200</lastBuildDate>
+  <lastBuildDate>Thu, 22 Oct 2026 16:00:00 +0200</lastBuildDate>
+  <item>
+    <title>22 oktober 16:00 · PHP is de onderbroek van het internet.</title>
+    <link>https://crisus.nl/#u-20261022-1600</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261022-1600</guid>
+    <pubDate>Thu, 22 Oct 2026 16:00:00 +0200</pubDate>
+    <description><![CDATA[<p><strong>PHP is de onderbroek van het internet.</strong> Dat zegt NOS-techjournalist Joost Schellevis in <a href="https://nos.nl/l/2636214" title="NOS: Podcast De Dag: de kwetsbaarheid van PHP, de onderbroek van het internet">De Dag</a>. Iedereen gebruikt hem, hij is belangrijk, maar normaal ziet niemand hem. Deze week zag iedereen hem. Er zat een gat in. Met dank aan AI, die het gat vond.</p>
+      <p>Ook mooi uit dezelfde aflevering: Tweakers ging woensdag zelf offline. Juist toen ze over het lek wilden schrijven. Hoofdredacteur Wout Funnekotter vreest dat het niet de laatste keer is. Wij ook. Daarom blijft deze pagina gewoon statisch. Geen PHP. Geen onderbroek. Alleen HTML.</p>
+      <p>Verder geen nieuws: geen nieuwe release, geen nieuwe advisory, en alle sites op ons bord staan er nog.</p>]]></description>
+  </item>
   <item>
     <title>22 oktober 15:00 · Het is nooit DNS.</title>
     <link>https://crisus.nl/#u-20261022-1500</link>
