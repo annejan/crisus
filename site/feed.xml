@@ -6,7 +6,15 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Thu, 22 Oct 2026 16:00:00 +0200</lastBuildDate>
+  <lastBuildDate>Thu, 22 Oct 2026 17:00:00 +0200</lastBuildDate>
+  <item>
+    <title>22 oktober 17:00 · Vanavond: de cybers, in de Angry Nerds Podcast .</title>
+    <link>https://crisus.nl/#u-20261022-1700</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261022-1700</guid>
+    <pubDate>Thu, 22 Oct 2026 17:00:00 +0200</pubDate>
+    <description><![CDATA[<p><strong>Vanavond: de cybers, in de <a href="https://www.youtube.com/c/angrynerdspodcast" title="Angry Nerds Podcast">Angry Nerds Podcast</a>.</strong> De <a href="/over/" title="Over crisus.nl">maker van deze pagina</a> schuift aan. Wie wil weten hoe het er achter de schermen aan toeging: de pizza, de koffie, de zo-meter en de spreadsheet. Zonder PHP. Met onderbroek.</p>
+      <p>En SUSE is bijna klaar: ook de php7-pakketten van SLES 15 hebben nu de fix, en Tumbleweed heeft 8.5.12. Alleen SLES 16 moet nog. Zie de <a href="https://crisus.nl/#stand" title="Stand per platform">stand per platform</a>.</p>]]></description>
+  </item>
   <item>
     <title>22 oktober 16:00 · PHP is de onderbroek van het internet.</title>
     <link>https://crisus.nl/#u-20261022-1600</link>

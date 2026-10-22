@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-21T14:45:00+02:00">
-<meta property="article:modified_time" content="2026-10-22T16:00:00+02:00">
+<meta property="article:modified_time" content="2026-10-22T17:00:00+02:00">
 <meta property="og:image" content="https://crisus.nl/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -39,7 +39,7 @@
   "url": "https://crisus.nl/",
   "inLanguage": "nl",
   "datePublished": "2026-10-21T14:45:00+02:00",
-  "dateModified": "2026-10-22T16:00:00+02:00",
+  "dateModified": "2026-10-22T17:00:00+02:00",
   "coverageStartTime": "2026-10-20T22:00:00+02:00",
   "about": [
     {"@type": "Thing", "name": "CVE-2026-109618", "sameAs": "https://www.cve.org/CVERecord?id=CVE-2026-109618"},
@@ -86,7 +86,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T16:00:00+02:00">laatst bijgewerkt 22 oktober, 16:00</time></p>
+  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T17:00:00+02:00">laatst bijgewerkt 22 oktober, 17:00</time></p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu.</p>
 
@@ -172,7 +172,7 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
   <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
   <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen nog even een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
 
-  <h3 id="stand">Stand per platform, 16:00</h3>
+  <h3 id="stand">Stand per platform, 17:00</h3>
   <ul class="status" aria-labelledby="stand">
     <li><b>php.net</b><span class="pill green">Gepubliceerd</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35 sinds 15:34.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">DSA-6574-1</a>: <code>php8.4 8.4.27-1~deb13u1</code>.</em></li>
@@ -181,7 +181,7 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
     <li><b>Windows</b><span class="pill green">Fix beschikbaar</span><em>8.5.12 staat op windows.php.net.</em></li>
     <li><b>Docker</b><span class="pill green">Fix beschikbaar</span><em>Sinds ongeveer 18:45 wijzen ook <code>8.4-apache</code>, <code>8.5-apache</code>, <code>8.4-fpm</code> en <code>latest</code> naar de gepatchte images. Pullen, opnieuw aanmaken, klaar.</em></li>
     <li><b>Homebrew</b><span class="pill green">Fix beschikbaar</span><em>Nu ook 8.5.12. <code>brew upgrade php</code> en klaar.</em></li>
-    <li><b>SUSE</b><span class="pill orange">Deels</span><em>Fix voor SLES 15 SP4 tot en met SP7 (php8), ook voor SAP en Web and Scripting. SP7: <code>php8 &gt;= 8.3.36-150700.3.24.1</code>. SLES 16 en php7 nog in de maak. <a href="https://www.suse.com/security/cve/CVE-2026-109618.html" title="SUSE: CVE-2026-109618">CVE-pagina</a>.</em></li>
+    <li><b>SUSE</b><span class="pill orange">Deels</span><em>Fix voor SLES 15 SP4 tot en met SP7, php8 en nu ook php7, ook voor SAP en Web and Scripting. SP7: <code>php8 &gt;= 8.3.36-150700.3.24.1</code>. Tumbleweed: 8.5.12. Alleen SLES 16 is nog in de maak. <a href="https://www.suse.com/security/cve/CVE-2026-109618.html" title="SUSE: CVE-2026-109618">CVE-pagina</a>.</em></li>
     <li><b>Red Hat</b><span class="pill green">Fix beschikbaar</span><em>Al sinds woensdagavond: RHSA-2026:87070 en verder, voor RHEL 8, 9 en 10. Zie de <a href="https://access.redhat.com/security/cve/cve-2026-109618" title="Red Hat: CVE-2026-109618">CVE-pagina</a>.</em></li>
   </ul>
 
@@ -329,6 +329,9 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261022-1700"><time datetime="2026-10-22T17:00+02:00">22 oktober 17:00</time>
+      <p><strong>Vanavond: de cybers, in de <a href="https://www.youtube.com/c/angrynerdspodcast" title="Angry Nerds Podcast">Angry Nerds Podcast</a>.</strong> De <a href="/over/" title="Over crisus.nl">maker van deze pagina</a> schuift aan. Wie wil weten hoe het er achter de schermen aan toeging: de pizza, de koffie, de zo-meter en de spreadsheet. Zonder PHP. Met onderbroek.</p>
+      <p>En SUSE is bijna klaar: ook de php7-pakketten van SLES 15 hebben nu de fix, en Tumbleweed heeft 8.5.12. Alleen SLES 16 moet nog. Zie de <a href="#stand" title="Stand per platform">stand per platform</a>.</p></li>
     <li id="u-20261022-1600"><time datetime="2026-10-22T16:00+02:00">22 oktober 16:00</time>
       <p><strong>PHP is de onderbroek van het internet.</strong> Dat zegt NOS-techjournalist Joost Schellevis in <a href="https://nos.nl/l/2636214" title="NOS: Podcast De Dag: de kwetsbaarheid van PHP, de onderbroek van het internet">De Dag</a>. Iedereen gebruikt hem, hij is belangrijk, maar normaal ziet niemand hem. Deze week zag iedereen hem. Er zat een gat in. Met dank aan AI, die het gat vond.</p>
       <p>Ook mooi uit dezelfde aflevering: Tweakers ging woensdag zelf offline. Juist toen ze over het lek wilden schrijven. Hoofdredacteur Wout Funnekotter vreest dat het niet de laatste keer is. Wij ook. Daarom blijft deze pagina gewoon statisch. Geen PHP. Geen onderbroek. Alleen HTML.</p>
@@ -529,6 +532,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><a href="https://kb.isc.org/docs/cve-2026-94300" title="ISC: CVE-2026-94300: Concurrent GSS-TSIG messages corrupt memory">ISC: CVE-2026-94300 in BIND 9</a> en <a href="https://www.debian.org/security/2026/dsa-6576" title="DSA-6576-1: bind9 security update">Debian DSA-6576-1</a>. Het is nog geen DNS.</li>
     <li><a href="https://www.phoronix.com/news/LKML-New-Trend-Vulnerabilities" title="Phoronix: Several Linux Kernel Vulnerabilities Accidentally Posted To Public Kernel Mailing List">Phoronix: Several Linux Kernel Vulnerabilities Accidentally Posted To Public Kernel Mailing List</a>.</li>
     <li><a href="https://nos.nl/l/2636214" title="NOS: Podcast De Dag: de kwetsbaarheid van PHP, de onderbroek van het internet">NOS, De Dag: de kwetsbaarheid van PHP, &lsquo;de onderbroek&rsquo; van het internet</a>. De podcast, voor wie liever luistert.</li>
+    <li><a href="https://www.youtube.com/c/angrynerdspodcast" title="Angry Nerds Podcast">Angry Nerds Podcast</a>. Vanavond over de cybers, met de maker van deze pagina.</li>
     <li><a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">Node.js: October 2026 security releases</a>. Ook vandaag.</li>
     <li><a href="https://fedi.katze.sh/@elise/117478725808527006" title="Fediverse-draad van @elise@fedi.katze.sh over een nieuwe PHP-bug">@elise@fedi.katze.sh</a> over een nieuwe, nog niet openbare PHP-bug. E&eacute;n bron, onbevestigd.</li>
     <li><a href="https://www.vi.nl/nieuws/nederlandse-profclubs-halen-website-offline-vanwege-ernstige-beveiligingslekken" title="VI: Nederlandse profclubs halen website offline vanwege ernstige beveiligingslekken">VI: Nederlandse profclubs halen website offline</a>. Welke clubs, met de verklaring van FC Twente.</li>
