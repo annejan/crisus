@@ -1,10 +1,12 @@
-// Counts up from the release at 15:34: every minute on it is a minute without
-// the update. Without JavaScript it just says 15:34.
+// Counts up from the release at 15:34, in days and hh:mm:ss: every minute on it
+// is a minute without the update. Without JavaScript it just says 15:34.
 (function () {
   var b = document.querySelector('#klok b'), t = Date.UTC(2026, 9, 21, 13, 34, 0);
   function tick() {
     var s = Math.max(0, Math.round((Date.now() - t) / 1000));
-    b.textContent = 'patch uit · ' + Math.floor(s / 3600) + ':' + String(Math.floor(s / 60) % 60).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
+    var d = Math.floor(s / 86400), hms = [Math.floor(s / 3600) % 24, Math.floor(s / 60) % 60, s % 60]
+      .map(function (n) { return String(n).padStart(2, '0'); }).join(':');
+    b.textContent = (d ? d + (d === 1 ? ' dag ' : ' dagen ') : '') + hms;
     setTimeout(tick, 1000);
   }
   tick();
@@ -22,4 +24,16 @@
     setTimeout(tick, 1000);
   }
   tick();
+})();
+
+// A link to an older update, or to a folded step, opens its <details> first and
+// then scrolls there: the browser cannot scroll to something that is folded away.
+(function () {
+  function unfold() {
+    var id = decodeURIComponent(location.hash.slice(1)), el = id && document.getElementById(id), folded = false;
+    for (var p = el; p; p = p.parentElement) if (p.tagName === 'DETAILS' && !p.open) { p.open = true; folded = true; }
+    if (folded) el.scrollIntoView();
+  }
+  unfold();
+  window.addEventListener('hashchange', unfold);
 })();

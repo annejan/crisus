@@ -100,6 +100,13 @@ pre code, .doen pre code { padding: 0; background: none; font: inherit; }
 /* updates */
 .updates { margin: 0; padding: 0; list-style: none; border-left: 3px solid var(--line); }
 .updates li { position: relative; padding: 0 0 22px 22px; }
+details.oud { margin-top: 4px; }
+details.oud > summary { display: inline-block; cursor: pointer; margin: 0 0 14px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); font-weight: 700; }
+details.oud[open] > summary { margin-bottom: 20px; }
+details.nood { display: inline; }
+details.nood > summary { cursor: pointer; }
+details.nood > summary strong { text-decoration: underline dotted; text-underline-offset: 3px; }
+details.nood[open] > summary { margin-bottom: 6px; }
 .updates li::before { content: ""; position: absolute; left: -9px; top: 6px; width: 15px; height: 15px; border-radius: 50%; background: var(--card); border: 3px solid var(--muted); }
 .updates li:first-child::before { border-color: var(--red); background: var(--red); animation: ping 2s ease-out infinite; }
 .updates time { display: block; font-weight: 700; }
@@ -192,3 +199,13 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 /* the zo-meter in the big Overheid.nl row */
 .zometer { display: block; margin: 8px 0; padding: 8px 12px; border-radius: 8px; background: var(--card); font-weight: 700; }
 .zometer b { color: var(--red); font-variant-numeric: tabular-nums; }
+
+/* "Is de patch er al voor mij?": folded until the next bug */
+details.patch { margin-top: 34px; }
+details.patch > summary { cursor: pointer; list-style: none; padding: 14px 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
+details.patch > summary::-webkit-details-marker { display: none; }
+details.patch > summary h2 { display: inline; margin: 0; }
+details.patch > summary h2::after { content: " \25B8"; color: var(--muted); }
+details.patch[open] > summary h2::after { content: " \25BE"; }
+details.patch > summary span { display: block; margin-top: 4px; color: var(--muted); font-size: 15px; }
+details.patch[open] > summary { margin-bottom: 14px; }
