@@ -1,5 +1,5 @@
 # site                          expected state on the page (up/out) — update when the page changes
-www.overheid.nl                 out
+www.overheid.nl                 up
 www.anwb.nl                     up
 www.bnnvara.nl                  up
 www.omroepmax.nl                out
