@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-21T14:45:00+02:00">
-<meta property="article:modified_time" content="2026-10-22T18:00:00+02:00">
+<meta property="article:modified_time" content="2026-10-22T22:00:00+02:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=4">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -39,7 +39,7 @@
   "url": "https://crisus.nl/",
   "inLanguage": "nl",
   "datePublished": "2026-10-21T14:45:00+02:00",
-  "dateModified": "2026-10-22T18:00:00+02:00",
+  "dateModified": "2026-10-22T22:00:00+02:00",
   "coverageStartTime": "2026-10-20T22:00:00+02:00",
   "about": [
     {"@type": "Thing", "name": "CVE-2026-109618", "sameAs": "https://www.cve.org/CVERecord?id=CVE-2026-109618"},
@@ -86,7 +86,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T18:00:00+02:00">laatst bijgewerkt 22 oktober, 18:00</time></p>
+  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T22:00:00+02:00">laatst bijgewerkt 22 oktober, 22:00</time></p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu. Het NCSC ziet de eerste geslaagde aanvallen.</p>
 
@@ -172,7 +172,7 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
   <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
   <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen nog even een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
 
-  <h3 id="stand">Stand per platform, 18:00</h3>
+  <h3 id="stand">Stand per platform, 22:00</h3>
   <ul class="status" aria-labelledby="stand">
     <li><b>php.net</b><span class="pill green">Gepubliceerd</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35 sinds 15:34.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">DSA-6574-1</a>: <code>php8.4 8.4.27-1~deb13u1</code>.</em></li>
@@ -309,7 +309,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><b>Voetbal</b><span class="pill orange">Deels</span><em>FC Twente en FC Groningen zijn terug. De KNVB staat nog in onderhoudsmodus.</em></li>
     <li><b>Docker</b><span class="pill green">Fix beschikbaar</span><em>Ook de zwevende tags als <code>8.4-apache</code> en <code>latest</code>. Wel uw containers opnieuw aanmaken.</em></li>
     <li><b>DigiD.nl</b><span class="pill green">Terug</span><em>De website en het inloggen werken allebei weer.</em></li>
-    <li><b>Tweede Kamer</b><span class="pill green">Terug</span><em>Om 01:55 even weg met &ldquo;503 Backend fetch failed&rdquo;, om 02:46 weer terug. Geen melding over PHP.</em></li>
+    <li><b>Tweede Kamer</b><span class="pill red">Weer uit</span><em>Om 21:55 weer &ldquo;503 Backend fetch failed&rdquo;. Gisternacht ook al, van 01:55 tot 02:46. Geen melding over PHP.</em></li>
     <li><b>Vlaanderen</b><span class="pill green">Terug</span><em>Als eerste uit, als eerste weer aan. Respect, nogmaals.</em></li>
     <li><b>Firewalls</b><span class="pill red">Nog geen fix</span><em>Palo Alto PAN-OS 10.2 tot en met 12.2 is kwetsbaar. Beheerinterface niet aan het internet. Cisco en Fortinet zoeken het nog uit.</em></li>
     <li><b>QNAP-NAS</b><span class="pill red">Nog geen fix</span><em>PHP2Shell zit ook in QTS en QuTS hero. Haal de NAS van het internet tot de update er is.</em></li>
@@ -329,6 +329,9 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261022-2200"><time datetime="2026-10-22T22:00+02:00">22 oktober 22:00</time>
+      <p>De Tweede Kamer is weer even weg. Om 21:55 geeft tweedekamer.nl opnieuw alleen &ldquo;503 Backend fetch failed&rdquo;. Net als gisternacht, toen het van 01:55 tot 02:46 duurde. Ook nu geen melding over PHP. Of het onderhoud is of iets anders, zegt de Kamer niet. Wij noteren het. De Kamer had vandaag zelf ook al <a href="#u-20261022-1300" title="Update van 13:00">vragen</a> over sites die offline gaan.</p>
+      <p>Verder blijft het rustig. Geen nieuwe release, geen nieuwe advisory.</p></li>
     <li id="u-20261022-1800"><time datetime="2026-10-22T18:00+02:00">22 oktober 18:00</time>
       <p><strong>Crisusniveau 4: de manager vraagt of het al werkt.</strong> Het NCSC ziet de eerste geslaagde aanvallen, meldt de <a href="https://nos.nl/l/2636225" title="NOS: Signalen bij Nationaal Cyber Security Centrum van misbruik PHP-lek">NOS</a>. &ldquo;We zien pogingen om de kwetsbaarheden te misbruiken en we krijgen de eerste signalen binnen dat dat met succes gebeurt.&rdquo; Eerder zag het NCSC dat nog niet. Wat de signalen precies zijn, zegt het NCSC niet. Het onderzoek kan maanden duren.</p>
       <p>De NOS telde zelf ook. Zeker 113.000 Nederlandse websites draaien aantoonbaar een gepatchte PHP. Ongeveer 145.000 sites draaien nog een oude versie. Die kunnen op een andere manier beschermd zijn, bijvoorbeeld met een backport van hun distributie, maar dat is van buitenaf niet te zien. Hoort uw site bij die 145.000? Dan weet u wat u vanavond doet.</p>

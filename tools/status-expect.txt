@@ -9,7 +9,7 @@ www.werkenbijderechtspraak.nl   up
 www.digid.nl                    up
 mijn.overheid.nl                up
 www.ncsc.nl                     up
-www.tweedekamer.nl              up
+www.tweedekamer.nl              out
 www.rtl.nl                      up
 www.npo.nl                      up
 www.npostart.nl                 up
