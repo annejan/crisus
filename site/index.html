@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-21T14:45:00+02:00">
-<meta property="article:modified_time" content="2026-10-22T12:00:00+02:00">
+<meta property="article:modified_time" content="2026-10-22T13:00:00+02:00">
 <meta property="og:image" content="https://crisus.nl/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -39,7 +39,7 @@
   "url": "https://crisus.nl/",
   "inLanguage": "nl",
   "datePublished": "2026-10-21T14:45:00+02:00",
-  "dateModified": "2026-10-22T12:00:00+02:00",
+  "dateModified": "2026-10-22T13:00:00+02:00",
   "coverageStartTime": "2026-10-20T22:00:00+02:00",
   "about": [
     {"@type": "Thing", "name": "CVE-2026-109618", "sameAs": "https://www.cve.org/CVERecord?id=CVE-2026-109618"},
@@ -86,7 +86,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T12:00:00+02:00">laatst bijgewerkt 22 oktober, 12:00</time></p>
+  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T13:00:00+02:00">laatst bijgewerkt 22 oktober, 13:00</time></p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu.</p>
 
@@ -171,7 +171,7 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
   <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
   <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen nog even een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
 
-  <h3 id="stand">Stand per platform, 12:00</h3>
+  <h3 id="stand">Stand per platform, 13:00</h3>
   <ul class="status" aria-labelledby="stand">
     <li><b>php.net</b><span class="pill green">Gepubliceerd</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35 sinds 15:34.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">DSA-6574-1</a>: <code>php8.4 8.4.27-1~deb13u1</code>.</em></li>
@@ -304,7 +304,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><b>Albert Heijn</b><span class="pill orange">Deels</span><em>Geen PHP-verhaal: een hack op 11 oktober. Een beperkte groep vaste klanten kan weer bestellen, aldus de NOS. Bezorging vanaf vrijdag.</em></li>
     <li><b>ANWB.nl</b><span class="pill green">Terug</span><em>De Wegenwacht rijdt weer. Motorkap dicht.</em></li>
     <li><b>Meld Misdaad Anoniem</b><span class="pill green">Terug</span><em>Om 09:46 weer in de lucht. Anoniem melden kan weer: 0800-7000.</em></li>
-    <li><b>NotuBiz</b><span class="pill orange">Deels</span><em>De site is er, maar raadsstukken van ruim honderd gemeenten, provincies en waterschappen zijn niet in te zien. Morgenochtend weer, zegt NotuBiz.</em></li>
+    <li><b>NotuBiz</b><span class="pill green">Terug</span><em>De raadsstukken van gemeenten, provincies en waterschappen zijn weer in te zien. &ldquo;Na grondig testen zijn alle systemen weer up and running.&rdquo;</em></li>
     <li><b>Voetbal</b><span class="pill orange">Deels</span><em>FC Twente en FC Groningen zijn terug. De KNVB staat nog in onderhoudsmodus.</em></li>
     <li><b>Docker</b><span class="pill green">Fix beschikbaar</span><em>Ook de zwevende tags als <code>8.4-apache</code> en <code>latest</code>. Wel uw containers opnieuw aanmaken.</em></li>
     <li><b>DigiD.nl</b><span class="pill green">Terug</span><em>De website en het inloggen werken allebei weer.</em></li>
@@ -327,6 +327,10 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261022-1300"><time datetime="2026-10-22T13:00+02:00">22 oktober 13:00</time>
+      <p>De overheid is weer helemaal open, meldt de <a href="https://nos.nl/l/2636196" title="NOS: Overheidspagina's weer online na PHP-lek, vooralsnog geen data gelekt of gestolen">NOS</a>. Ook de sites van het RIVM en NotuBiz zijn terug. &ldquo;Na grondig testen zijn alle systemen weer up and running,&rdquo; zegt NotuBiz. Wij hebben het nagekeken: de raadsstukken van Den Haag, Almere en Breda zijn weer in te zien. Alleen op de eigen site van NotuBiz staat nog een storingsmelding. Die is blijkbaar als laatste aan de beurt.</p>
+      <p>En het belangrijkste nieuws van vandaag is misschien wel een niet-nieuwsbericht. Er zijn in Nederland nog geen gevallen bekend van gelekte of gestolen gegevens door PHP2Shell, zegt de Autoriteit Persoonsgegevens tegen de NOS. Organisaties moeten een datalek daar melden. Nog geen melding is nog geen garantie. Wel een goed begin.</p>
+      <p>Dan de politiek. Kamerlid Kathmann wil van minister Van Weel weten welke overheidssites offline gingen, wat dat burgers kostte en of er een plan ligt voor de volgende keer, meldt <a href="https://www.security.nl/posting/958558/Kamervragen+over+offline+halen+van+overheidswebsites+wegens+PHP2Shell" title="Security.NL: Kamervragen over offline halen van overheidswebsites wegens PHP2Shell">Security.NL</a>. E&eacute;n van de sites die gisteren offline gingen, was trouwens die van de Tweede Kamer zelf.</p></li>
     <li id="u-20261022-1200"><time datetime="2026-10-22T12:00+02:00">22 oktober 12:00</time>
       <p><strong>Ook de firewall draait PHP.</strong> <a href="https://security.paloaltonetworks.com/CVE-2026-109618" title="Palo Alto Networks: Impact of Critical Vulnerabilities in PHP on Palo Alto Networks Products">Palo Alto Networks</a> meldt dat PAN-OS kwetsbaar is voor PHP2Shell: de versies 10.2, 11.1, 11.2, 12.1 en 12.2. Updates komen, maar wanneer is nog niet bekend. Het grootste risico loopt wie de beheerinterface van de firewall vanaf internet bereikbaar heeft. Dat moest al niet, en nu echt niet. Cisco en Fortinet zoeken nog uit of hun producten het lek hebben, meldt <a href="https://www.security.nl/posting/958521/Firewalls+Palo+Alto+Networks+kwetsbaar+voor+PHP2Shell%2C+Cisco+en+Fortinet+onderzoeken" title="Security.NL: Firewalls Palo Alto Networks kwetsbaar voor PHP2Shell, Cisco en Fortinet onderzoeken">Security.NL</a>. De muur om uw netwerk heeft dus zelf een gat. Wij zeggen het maar.</p>
       <p>Wat klopte er eigenlijk van alle geruchten? Alexandre Daubois, van het beveiligingsteam van PHP, <a href="https://daubois.dev/blog/cve-2026-109618-php2shell-rumors/" title="Alexandre Daubois: PHP2Shell rumors got wrong, from inside the PHP security team">zet het op een rij</a>. Over hoe erg het is had het internet gelijk. Over de details niet. De score is CVSS 9,2, geen 10,0 (die 9,2 stond hier al). Het lijstje met kwetsbare versies noemde ook PHP 6, een versie die nooit is uitgekomen. En het meest gedeelde advies, <code>session.upload_progress.enabled = Off</code>, hoort bij het andere lek, CVE-2026-109619. Tegen CVE-2026-109618 helpt het niet. Dus nogmaals: de enige echte fix is de update. Die raakt trouwens 390 bestanden. De melding kwam binnen op 27 augustus. Wie zich afvroeg waarom het zo lang duurde: daarom.</p>
@@ -504,6 +508,8 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><a href="https://security.paloaltonetworks.com/CVE-2026-109618" title="Palo Alto Networks: Impact of Critical Vulnerabilities in PHP on Palo Alto Networks Products">Palo Alto Networks: PHP2Shell in PAN-OS</a> en <a href="https://www.security.nl/posting/958521/Firewalls+Palo+Alto+Networks+kwetsbaar+voor+PHP2Shell%2C+Cisco+en+Fortinet+onderzoeken" title="Security.NL: Firewalls Palo Alto Networks kwetsbaar voor PHP2Shell, Cisco en Fortinet onderzoeken">Security.NL over Palo Alto, Cisco en Fortinet</a>.</li>
     <li><a href="https://daubois.dev/blog/cve-2026-109618-php2shell-rumors/" title="Alexandre Daubois: PHP2Shell rumors got wrong, from inside the PHP security team">Alexandre Daubois: PHP2Shell rumors got wrong</a>. Wat de geruchten goed en fout hadden, uitgelegd door iemand van het beveiligingsteam van PHP.</li>
     <li><a href="https://advisories.ncsc.nl/advisory?id=NCSC-2026-0447" title="NCSC-2026-0447: Kwetsbaarheden verholpen in GitLab">NCSC-2026-0447: Kwetsbaarheden verholpen in GitLab</a>.</li>
+    <li><a href="https://nos.nl/l/2636196" title="NOS: Overheidspagina's weer online na PHP-lek, vooralsnog geen data gelekt of gestolen">NOS: Overheidspagina&rsquo;s weer online na PHP-lek, vooralsnog geen data gelekt of gestolen</a>.</li>
+    <li><a href="https://www.security.nl/posting/958558/Kamervragen+over+offline+halen+van+overheidswebsites+wegens+PHP2Shell" title="Security.NL: Kamervragen over offline halen van overheidswebsites wegens PHP2Shell">Security.NL: Kamervragen over offline halen van overheidswebsites wegens PHP2Shell</a>.</li>
     <li><a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">Node.js: October 2026 security releases</a>. Ook vandaag.</li>
     <li><a href="https://fedi.katze.sh/@elise/117478725808527006" title="Fediverse-draad van @elise@fedi.katze.sh over een nieuwe PHP-bug">@elise@fedi.katze.sh</a> over een nieuwe, nog niet openbare PHP-bug. E&eacute;n bron, onbevestigd.</li>
     <li><a href="https://www.vi.nl/nieuws/nederlandse-profclubs-halen-website-offline-vanwege-ernstige-beveiligingslekken" title="VI: Nederlandse profclubs halen website offline vanwege ernstige beveiligingslekken">VI: Nederlandse profclubs halen website offline</a>. Welke clubs, met de verklaring van FC Twente.</li>

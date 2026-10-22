@@ -6,7 +6,16 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Thu, 22 Oct 2026 12:00:00 +0200</lastBuildDate>
+  <lastBuildDate>Thu, 22 Oct 2026 13:00:00 +0200</lastBuildDate>
+  <item>
+    <title>22 oktober 13:00 · De overheid is weer helemaal open, meldt de NOS .</title>
+    <link>https://crisus.nl/#u-20261022-1300</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261022-1300</guid>
+    <pubDate>Thu, 22 Oct 2026 13:00:00 +0200</pubDate>
+    <description><![CDATA[<p>De overheid is weer helemaal open, meldt de <a href="https://nos.nl/l/2636196" title="NOS: Overheidspagina's weer online na PHP-lek, vooralsnog geen data gelekt of gestolen">NOS</a>. Ook de sites van het RIVM en NotuBiz zijn terug. &ldquo;Na grondig testen zijn alle systemen weer up and running,&rdquo; zegt NotuBiz. Wij hebben het nagekeken: de raadsstukken van Den Haag, Almere en Breda zijn weer in te zien. Alleen op de eigen site van NotuBiz staat nog een storingsmelding. Die is blijkbaar als laatste aan de beurt.</p>
+      <p>En het belangrijkste nieuws van vandaag is misschien wel een niet-nieuwsbericht. Er zijn in Nederland nog geen gevallen bekend van gelekte of gestolen gegevens door PHP2Shell, zegt de Autoriteit Persoonsgegevens tegen de NOS. Organisaties moeten een datalek daar melden. Nog geen melding is nog geen garantie. Wel een goed begin.</p>
+      <p>Dan de politiek. Kamerlid Kathmann wil van minister Van Weel weten welke overheidssites offline gingen, wat dat burgers kostte en of er een plan ligt voor de volgende keer, meldt <a href="https://www.security.nl/posting/958558/Kamervragen+over+offline+halen+van+overheidswebsites+wegens+PHP2Shell" title="Security.NL: Kamervragen over offline halen van overheidswebsites wegens PHP2Shell">Security.NL</a>. E&eacute;n van de sites die gisteren offline gingen, was trouwens die van de Tweede Kamer zelf.</p>]]></description>
+  </item>
   <item>
     <title>22 oktober 12:00 · Ook de firewall draait PHP.</title>
     <link>https://crisus.nl/#u-20261022-1200</link>
