@@ -6,7 +6,15 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Thu, 22 Oct 2026 03:00:00 +0200</lastBuildDate>
+  <lastBuildDate>Thu, 22 Oct 2026 07:00:00 +0200</lastBuildDate>
+  <item>
+    <title>22 oktober 07:00 · Goedemorgen.</title>
+    <link>https://crisus.nl/#u-20261022-0700</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261022-0700</guid>
+    <pubDate>Thu, 22 Oct 2026 07:00:00 +0200</pubDate>
+    <description><![CDATA[<p>Goedemorgen. Overheid.nl is er nog altijd niet. Een woordvoerder van Binnenlandse Zaken weet volgens de <a href="https://nos.nl/l/2636165" title="NOS: Wekdienst 22/10">Wekdienst van de NOS</a> nog niet wanneer de site terugkomt. Meld Misdaad Anoniem is ook nog uit. Wie de zo-meter vannacht heeft gevolgd: die tikt nu door de tien uur heen. Zo.</p>
+      <p>Verder is het een rustige nacht geweest. Geen nieuwe PHP-release, geen nieuwe advisory en geen nieuws over PwnEscape of GitLab. Nog uit om 06:55: overheid.nl, Omroep MAX, Amnesty, Meld Misdaad Anoniem en Werkenbijderechtspraak.nl. De KNVB staat nog in onderhoudsmodus. Koffie?</p>]]></description>
+  </item>
   <item>
     <title>22 oktober 03:00 · De Tweede Kamer is terug.</title>
     <link>https://crisus.nl/#u-20261022-0300</link>
