@@ -6,7 +6,17 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Thu, 22 Oct 2026 11:00:00 +0200</lastBuildDate>
+  <lastBuildDate>Thu, 22 Oct 2026 12:00:00 +0200</lastBuildDate>
+  <item>
+    <title>22 oktober 12:00 · Ook de firewall draait PHP.</title>
+    <link>https://crisus.nl/#u-20261022-1200</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261022-1200</guid>
+    <pubDate>Thu, 22 Oct 2026 12:00:00 +0200</pubDate>
+    <description><![CDATA[<p><strong>Ook de firewall draait PHP.</strong> <a href="https://security.paloaltonetworks.com/CVE-2026-109618" title="Palo Alto Networks: Impact of Critical Vulnerabilities in PHP on Palo Alto Networks Products">Palo Alto Networks</a> meldt dat PAN-OS kwetsbaar is voor PHP2Shell: de versies 10.2, 11.1, 11.2, 12.1 en 12.2. Updates komen, maar wanneer is nog niet bekend. Het grootste risico loopt wie de beheerinterface van de firewall vanaf internet bereikbaar heeft. Dat moest al niet, en nu echt niet. Cisco en Fortinet zoeken nog uit of hun producten het lek hebben, meldt <a href="https://www.security.nl/posting/958521/Firewalls+Palo+Alto+Networks+kwetsbaar+voor+PHP2Shell%2C+Cisco+en+Fortinet+onderzoeken" title="Security.NL: Firewalls Palo Alto Networks kwetsbaar voor PHP2Shell, Cisco en Fortinet onderzoeken">Security.NL</a>. De muur om uw netwerk heeft dus zelf een gat. Wij zeggen het maar.</p>
+      <p>Wat klopte er eigenlijk van alle geruchten? Alexandre Daubois, van het beveiligingsteam van PHP, <a href="https://daubois.dev/blog/cve-2026-109618-php2shell-rumors/" title="Alexandre Daubois: PHP2Shell rumors got wrong, from inside the PHP security team">zet het op een rij</a>. Over hoe erg het is had het internet gelijk. Over de details niet. De score is CVSS 9,2, geen 10,0 (die 9,2 stond hier al). Het lijstje met kwetsbare versies noemde ook PHP 6, een versie die nooit is uitgekomen. En het meest gedeelde advies, <code>session.upload_progress.enabled = Off</code>, hoort bij het andere lek, CVE-2026-109619. Tegen CVE-2026-109618 helpt het niet. Dus nogmaals: de enige echte fix is de update. Die raakt trouwens 390 bestanden. De melding kwam binnen op 27 augustus. Wie zich afvroeg waarom het zo lang duurde: daarom.</p>
+      <p>Nog een tip van Daubois voor na de update. <code>memory_limit</code> is nu een zachte grens. Er is een nieuwe harde grens erbij, standaard twee keer zo hoog, en wie daaroverheen gaat, stopt met exit code 137. Ziet u na de update 137 in uw logs? Dan is dat de nieuwe grens die zijn werk doet. Geen aanval. En neemt uw site uploads aan? Beperk dan in de webserver hoeveel delen en headers per deel een upload mag hebben. Zijn les van deze week, voor de volgende keer: geloof de ernst, controleer de noodmaatregel, en vraag welk lek een vlag eigenlijk dichtzet voor u hem omzet.</p>
+      <p>En het NCSC heeft nu ook een advisory voor GitLab: <a href="https://advisories.ncsc.nl/advisory?id=NCSC-2026-0447" title="NCSC-2026-0447: Kwetsbaarheden verholpen in GitLab">NCSC-2026-0447</a>.</p>]]></description>
+  </item>
   <item>
     <title>22 oktober 11:00 · Heeft u een QNAP-NAS?</title>
     <link>https://crisus.nl/#u-20261022-1100</link>
