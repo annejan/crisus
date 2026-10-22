@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-21T14:45:00+02:00">
-<meta property="article:modified_time" content="2026-10-22T02:00:00+02:00">
+<meta property="article:modified_time" content="2026-10-22T03:00:00+02:00">
 <meta property="og:image" content="https://crisus.nl/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -39,7 +39,7 @@
   "url": "https://crisus.nl/",
   "inLanguage": "nl",
   "datePublished": "2026-10-21T14:45:00+02:00",
-  "dateModified": "2026-10-22T02:00:00+02:00",
+  "dateModified": "2026-10-22T03:00:00+02:00",
   "coverageStartTime": "2026-10-20T22:00:00+02:00",
   "about": [
     {"@type": "Thing", "name": "CVE-2026-109618", "sameAs": "https://www.cve.org/CVERecord?id=CVE-2026-109618"},
@@ -86,7 +86,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T02:00:00+02:00">laatst bijgewerkt 22 oktober, 02:00</time></p>
+  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T03:00:00+02:00">laatst bijgewerkt 22 oktober, 03:00</time></p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu.</p>
 
@@ -168,7 +168,7 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
   <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
   <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen nog even een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
 
-  <h3 id="stand">Stand per platform, 02:00</h3>
+  <h3 id="stand">Stand per platform, 03:00</h3>
   <ul class="status" aria-labelledby="stand">
     <li><b>php.net</b><span class="pill green">Gepubliceerd</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35 sinds 15:34.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">DSA-6574-1</a>: <code>php8.4 8.4.27-1~deb13u1</code>.</em></li>
@@ -304,7 +304,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><b>Voetbal</b><span class="pill orange">Deels</span><em>FC Twente en FC Groningen zijn terug. De KNVB staat nog in onderhoudsmodus.</em></li>
     <li><b>Docker</b><span class="pill green">Fix beschikbaar</span><em>Ook de zwevende tags als <code>8.4-apache</code> en <code>latest</code>. Wel uw containers opnieuw aanmaken.</em></li>
     <li><b>DigiD.nl</b><span class="pill green">Terug</span><em>De website en het inloggen werken allebei weer.</em></li>
-    <li><b>Tweede Kamer</b><span class="pill red">Weer uit</span><em>Om 01:55 geeft tweedekamer.nl alleen &ldquo;503 Backend fetch failed&rdquo;. Geen melding over PHP. Het kan ook gewoon nachtelijk onderhoud zijn.</em></li>
+    <li><b>Tweede Kamer</b><span class="pill green">Terug</span><em>Om 01:55 even weg met &ldquo;503 Backend fetch failed&rdquo;, om 02:46 weer terug. Geen melding over PHP.</em></li>
     <li><b>Vlaanderen</b><span class="pill green">Terug</span><em>Als eerste uit, als eerste weer aan. Respect, nogmaals.</em></li>
     <li><b>Cloudflare</b><span class="pill orange">Noodverband</span><em>Firewallregels tegen de bekende aanvallen. Hun eigen woorden: &ldquo;a stopgap only&rdquo;.</em></li>
     <li><b>Crisus.nl</b><span class="pill green">Werkt</span><em>Geen PHP. Gewoon HTML. Zoals in 1997.</em></li>
@@ -319,6 +319,9 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261022-0300"><time datetime="2026-10-22T03:00+02:00">22 oktober 03:00</time>
+      <p>De Tweede Kamer is terug. Om 02:46 staat tweedekamer.nl er weer gewoon, zonder foutmelding. De Guru heeft uitgemediteerd. Wat het was, zegt de Kamer niet. Wij houden het op een dutje.</p>
+      <p>Verder blijft het stil. Geen nieuwe PHP-release, geen nieuwe advisory en geen nieuws over PwnEscape of GitLab. Nog uit om 02:46: overheid.nl (&ldquo;We zijn zo terug&rdquo;), Omroep MAX, Amnesty, Meld Misdaad Anoniem en Werkenbijderechtspraak.nl. De KNVB staat nog in onderhoudsmodus.</p></li>
     <li id="u-20261022-0200"><time datetime="2026-10-22T02:00+02:00">22 oktober 02:00</time>
       <p>BNNVARA is terug, en daarmee <strong>Kassa</strong> en Joop. Om 01:45 staat de site er weer gewoon, zonder melding over PHP. Klagen over een website die het niet doet kan dus weer bij Kassa. Al stond Kassa deze keer zelf in de rij.</p>
       <p>Nog uit om 01:45: overheid.nl (nog altijd &ldquo;We zijn zo terug&rdquo;), Omroep MAX, Amnesty, Meld Misdaad Anoniem en Werkenbijderechtspraak.nl. De KNVB staat nog in onderhoudsmodus. Verder geen nieuws: geen nieuwe PHP-release en geen nieuwe advisory. Het is twee uur &rsquo;s nachts. Ook de crisus moet een keer slapen. Wij nog niet.</p>
