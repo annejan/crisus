@@ -6,7 +6,16 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Thu, 22 Oct 2026 01:00:00 +0200</lastBuildDate>
+  <lastBuildDate>Thu, 22 Oct 2026 02:00:00 +0200</lastBuildDate>
+  <item>
+    <title>22 oktober 02:00 · BNNVARA is terug, en daarmee Kassa en Joop.</title>
+    <link>https://crisus.nl/#u-20261022-0200</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261022-0200</guid>
+    <pubDate>Thu, 22 Oct 2026 02:00:00 +0200</pubDate>
+    <description><![CDATA[<p>BNNVARA is terug, en daarmee <strong>Kassa</strong> en Joop. Om 01:45 staat de site er weer gewoon, zonder melding over PHP. Klagen over een website die het niet doet kan dus weer bij Kassa. Al stond Kassa deze keer zelf in de rij.</p>
+      <p>Nog uit om 01:45: overheid.nl (nog altijd &ldquo;We zijn zo terug&rdquo;), Omroep MAX, Amnesty, Meld Misdaad Anoniem en Werkenbijderechtspraak.nl. De KNVB staat nog in onderhoudsmodus. Verder geen nieuws: geen nieuwe PHP-release en geen nieuwe advisory. Het is twee uur &rsquo;s nachts. Ook de crisus moet een keer slapen. Wij nog niet.</p>
+      <p>Om 01:55 ligt tweedekamer.nl er weer uit. Geen PHP-melding dit keer, alleen een kale foutpagina: &ldquo;503 Backend fetch failed&rdquo;, met eronder &ldquo;Guru Meditation&rdquo;. Zo heet een foutmelding van Varnish, naar de Amiga. Of het met PHP te maken heeft, zegt de Kamer niet. Het kan ook gewoon nachtelijk onderhoud zijn. Om twee uur &rsquo;s nachts vergadert de Kamer zelden. Wij kijken om 03:00 weer.</p>]]></description>
+  </item>
   <item>
     <title>22 oktober 01:00 · Nog niet iedereen is terug, meldt de NOS .</title>
     <link>https://crisus.nl/#u-20261022-0100</link>

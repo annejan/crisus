@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Set every "last updated" stamp on crisus.nl to HH:MM on a day (default: today):
 the visible kicker, its <time datetime>, article:modified_time, the JSON-LD
-dateModified and the sitemap lastmod, then rebuild feed.xml.
+dateModified, the "Stand per platform" heading and the sitemap lastmod, then
+rebuild feed.xml.
 Usage: python3 -I bump.py 20:15 [2026-10-22]"""
 import json, re, sys
 from pathlib import Path
@@ -24,6 +25,7 @@ subs = [
     (r'<meta property="article:modified_time" content="[^"]+">',
      f'<meta property="article:modified_time" content="{iso}">'),
     (r'"dateModified": "[^"]+"', f'"dateModified": "{iso}"'),
+    (r'<h3 id="stand">Stand per platform, [0-9:]+</h3>', f'<h3 id="stand">Stand per platform, {hhmm}</h3>'),
 ]
 for pat, new in subs:
     t, n = re.subn(pat, new, t)
