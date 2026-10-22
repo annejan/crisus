@@ -2,10 +2,10 @@
 www.overheid.nl                 up
 www.anwb.nl                     up
 www.bnnvara.nl                  up
-www.omroepmax.nl                out
+www.omroepmax.nl                up
 www.knvb.nl                     out
-www.amnesty.nl                  out
-www.werkenbijderechtspraak.nl   out
+www.amnesty.nl                  up
+www.werkenbijderechtspraak.nl   up
 www.digid.nl                    up
 mijn.overheid.nl                up
 www.ncsc.nl                     up

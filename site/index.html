@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-21T14:45:00+02:00">
-<meta property="article:modified_time" content="2026-10-22T07:20:00+02:00">
+<meta property="article:modified_time" content="2026-10-22T09:00:00+02:00">
 <meta property="og:image" content="https://crisus.nl/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -39,7 +39,7 @@
   "url": "https://crisus.nl/",
   "inLanguage": "nl",
   "datePublished": "2026-10-21T14:45:00+02:00",
-  "dateModified": "2026-10-22T07:20:00+02:00",
+  "dateModified": "2026-10-22T09:00:00+02:00",
   "coverageStartTime": "2026-10-20T22:00:00+02:00",
   "about": [
     {"@type": "Thing", "name": "CVE-2026-109618", "sameAs": "https://www.cve.org/CVERecord?id=CVE-2026-109618"},
@@ -86,7 +86,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T07:20:00+02:00">laatst bijgewerkt 22 oktober, 07:20</time></p>
+  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T09:00:00+02:00">laatst bijgewerkt 22 oktober, 09:00</time></p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu.</p>
 
@@ -168,7 +168,7 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
   <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
   <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen nog even een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
 
-  <h3 id="stand">Stand per platform, 07:20</h3>
+  <h3 id="stand">Stand per platform, 09:00</h3>
   <ul class="status" aria-labelledby="stand">
     <li><b>php.net</b><span class="pill green">Gepubliceerd</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35 sinds 15:34.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">DSA-6574-1</a>: <code>php8.4 8.4.27-1~deb13u1</code>.</em></li>
@@ -293,7 +293,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><b>PHP</b><span class="pill orange">Nu installeren</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35. Nu nog installeren.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em>8.4.27-1~deb13u1 in trixie-security. Sneller dan deze update.</em></li>
     <li><b>Ubuntu</b><span class="pill green">Fix beschikbaar</span><em>De deur is open. Drie uur na de publicatie, maar wie telt.</em></li>
-    <li><b>Omroepen</b><span class="pill orange">Deels</span><em>NPO.nl, NPO Start, KRO-NCRV en BNNVARA zijn terug, Boer zoekt vrouw en Kassa dus ook. Omroep MAX nog niet.</em></li>
+    <li><b>Omroepen</b><span class="pill green">Terug</span><em>NPO.nl, NPO Start, KRO-NCRV, BNNVARA en sinds vanochtend ook Omroep MAX zijn terug. Boer zoekt vrouw en Kassa dus ook.</em></li>
     <li><b>Pathé Thuis</b><span class="pill green">Terug</span><em>Volgens een lezer draait het weer. Popcorn mag weer.</em></li>
     <li><b>NCSC.nl</b><span class="pill green">Terug</span><em>De site van het NCSC is er weer. Dan durven wij ook.</em></li>
     <li><b>MijnOverheid</b><span class="pill green">Terug</span><em>Sinds kort na 18:00. Uw post van de overheid wacht weer op u. Of u wilt of niet.</em></li>
@@ -319,6 +319,9 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261022-0900"><time datetime="2026-10-22T09:00+02:00">22 oktober 09:00</time>
+      <p>De ochtendploeg is binnen. Om 08:46 zijn <strong>Omroep MAX</strong>, <strong>Amnesty</strong> en <strong>Werken bij de Rechtspraak</strong> terug, zonder melding over PHP. Tijd voor MAX. Nu met website. Alle omroepen op ons bord staan daarmee weer in de lucht.</p>
+      <p>Nog uit om 08:47: Meld Misdaad Anoniem (&ldquo;Momenteel zijn we even niet beschikbaar&rdquo;). De KNVB staat nog in onderhoudsmodus. Over PHP, PwnEscape en GitLab geen nieuws.</p></li>
     <li id="u-20261022-0720"><time datetime="2026-10-22T07:20+02:00">22 oktober 07:20</time>
       <p><strong>Overheid.nl is terug.</strong> Om 07:16 staat de homepage er weer: &ldquo;wegwijzer naar informatie en diensten van alle overheden&rdquo;. Geen &ldquo;We zijn zo terug&rdquo; meer. De zo-meter stopt op 10 uur en 49 minuten, gerekend vanaf 20:27 gisteravond. Nu weten we het eindelijk: bij de overheid duurt &ldquo;zo&rdquo; een nacht.</p>
       <p>Nog uit om 07:16: Omroep MAX, Amnesty, Meld Misdaad Anoniem en Werkenbijderechtspraak.nl. De KNVB staat nog in onderhoudsmodus.</p></li>
