@@ -16,20 +16,30 @@ in `site/`, the tooling in `tools/`.
    Ubuntu, Docker (including the floating tags), Homebrew, Red Hat, SUSE, Node and a
    sample of sites that went offline. For a site that seems back, read its content,
    not only the title: maintenance pages often keep a normal title.
-2. **Only with real news**, add an item at the top of `<ol class="updates">` in
+   Then `bash tools/php-deep.sh [since]`: new php-src advisories, release tags,
+   security-looking commits on the release branches, php.net news, CISA KEV,
+   oss-security and vendor advisories. That is where the next bug shows up first.
+   A commit that looks like a security fix is not news by itself: wait for an
+   advisory, a release or a reliable report before writing about it.
+2. **Winding down** (once the worst is over, the owner decides): publish only for
+   news about the bug itself, such as a new release or advisory, a bypass, confirmed
+   exploitation, a big vendor affected, or a new related bug. A site that goes down
+   for a while and comes back is not a reason on its own; fix its row with the next
+   real update. Fewer updates, but dig deeper for each one.
+3. **Only with real news**, add an item at the top of `<ol class="updates">` in
    `site/index.html`: `<li>` without an id (`feed.py` adds it), a `<time>` with the
    publish time, the facts from the source, and one dry Dutch joke. In a quiet hour:
    skip, change nothing.
-3. **Update the fixed blocks**, one by one, so nothing is stale: the tape, the lead,
+4. **Update the fixed blocks**, one by one, so nothing is stale: the tape, the lead,
    the clock text, the crisis level (and `og:description`), the facts under "Wat is er
    aan de hand?", "Wat moet u doen?", the "Stand per platform, HH:MM" heading and every
    row, every row of the status board, and the sources list.
-4. `python3 -I tools/bump.py HH:MM [YYYY-MM-DD]` sets every "last updated" stamp
+5. `python3 -I tools/bump.py HH:MM [YYYY-MM-DD]` sets every "last updated" stamp
    (visible, `<time datetime>`, `article:modified_time`, JSON-LD, sitemap) and rebuilds
    `site/feed.xml`.
-5. Check the HTML nesting (see `tools/check-html.py`), then publish on the hour:
+6. Check the HTML nesting (see `tools/check-html.py`), then publish on the hour:
    `tools/deploy.sh index.html sitemap.xml feed.xml`.
-6. Crisis level or fixed versions changed? `python3 -I tools/og.py --level N --versions "..."`
+7. Crisis level or fixed versions changed? `python3 -I tools/og.py --level N --versions "..."`
    and deploy `og.png` too. CSS changed? Raise `?v=` in `index.html`, `over/index.html`
    and `404.html` and deploy those with `crisus.css`.
 
