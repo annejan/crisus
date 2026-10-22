@@ -7,6 +7,7 @@ SPDX-PackageDownloadLocation = "https://crisus.nl/"
 [[annotations]]
 path = [
     "tools/**",
+    ".github/**",
     "skills/**",
     "site/**.css",
     "site/**.js",

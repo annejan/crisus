@@ -1,0 +1,57 @@
+# Every push: is the site still valid and within its own rules?
+name: Check
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    # Not ubuntu-latest: that moved to 26.04 and broke other repos' CI this week.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: REUSE
+        uses: fsfe/reuse-action@v5
+
+      - name: HTML nesting
+        run: |
+          for f in site/index.html site/404.html site/over/index.html site/museum/index.html; do
+            python3 -I tools/check-html.py "$f"
+          done
+
+      - name: Feed and sitemap are XML, the JSON-LD is JSON
+        run: |
+          python3 -I - <<'PY'
+          import json, re, xml.etree.ElementTree as ET
+          for f in ("site/feed.xml", "site/sitemap.xml"):
+              ET.parse(f)
+          for f in ("site/index.html", "site/over/index.html", "site/museum/index.html"):
+              for ld in re.findall(r'<script type="application/ld\+json">(.*?)</script>', open(f, encoding="utf-8").read(), re.S):
+                  json.loads(ld)
+          print("ok")
+          PY
+
+      - name: No inline script or style (the CSP forbids them)
+        run: |
+          if grep -n -E '<script>|<script[^>]*>[^<]|<style|style="| on[a-z]+="' site/*.html site/*/index.html | grep -v 'application/ld+json'; then
+            echo "inline script or style found"; exit 1
+          fi
+
+      - name: Every #anchor on the front page exists
+        run: |
+          python3 -I - <<'PY'
+          import re, sys
+          s = open("site/index.html", encoding="utf-8").read()
+          ids = set(re.findall(r'\sid="([^"]+)"', s))
+          missing = sorted({a for a in re.findall(r'href="#([^"]+)"', s)} - ids)
+          print("missing:", missing) if missing else print("ok")
+          sys.exit(1 if missing else 0)
+          PY
+
+      - name: The clock is valid JavaScript
+        run: node --check site/klok.js
