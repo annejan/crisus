@@ -6,7 +6,16 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Thu, 22 Oct 2026 13:00:00 +0200</lastBuildDate>
+  <lastBuildDate>Thu, 22 Oct 2026 14:00:00 +0200</lastBuildDate>
+  <item>
+    <title>22 oktober 14:00 · Kijk verder terug.</title>
+    <link>https://crisus.nl/#u-20261022-1400</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261022-1400</guid>
+    <pubDate>Thu, 22 Oct 2026 14:00:00 +0200</pubDate>
+    <description><![CDATA[<p><strong>Kijk verder terug.</strong> De eerste aanvallen met PHP2Shell waren er al op 17 oktober, meldt Amazon volgens <a href="https://www.security.nl/posting/958571/Amazon%3A+eerste+PHP2Shell-aanvallen+op+17+oktober+waargenomen" title="Security.NL: Amazon: eerste PHP2Shell-aanvallen op 17 oktober waargenomen">Security.NL</a>. Vier dagen voor de bekendmaking dus, op een honeypot van Amazon, vanaf een anoniem ip-adres. Hoe de aanvaller toen al wist wat er kon, weet Amazon niet. Wel spreekt Amazon nu van misbruik op grote schaal. Het advies: controleer uw PHP-servers op misbruik vanaf 17 oktober. Niet vanaf woensdag.</p>
+      <p>Het embargo was dus lek voordat het lek was. Dat is ook een soort record.</p>
+      <p>En SUSE is bijna bij. Volgens de <a href="https://www.suse.com/security/cve/CVE-2026-109618.html" title="SUSE: CVE-2026-109618">CVE-pagina</a> heeft nu ook SLES 15 SP4, SP5 en SP6 (LTSS) een fix, net als de SAP-versies en de module Web and Scripting. SLES 16 en de php7-pakketten zijn nog in de maak.</p>]]></description>
+  </item>
   <item>
     <title>22 oktober 13:00 · De overheid is weer helemaal open, meldt de NOS .</title>
     <link>https://crisus.nl/#u-20261022-1300</link>

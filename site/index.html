@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-21T14:45:00+02:00">
-<meta property="article:modified_time" content="2026-10-22T13:00:00+02:00">
+<meta property="article:modified_time" content="2026-10-22T14:00:00+02:00">
 <meta property="og:image" content="https://crisus.nl/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -39,7 +39,7 @@
   "url": "https://crisus.nl/",
   "inLanguage": "nl",
   "datePublished": "2026-10-21T14:45:00+02:00",
-  "dateModified": "2026-10-22T13:00:00+02:00",
+  "dateModified": "2026-10-22T14:00:00+02:00",
   "coverageStartTime": "2026-10-20T22:00:00+02:00",
   "about": [
     {"@type": "Thing", "name": "CVE-2026-109618", "sameAs": "https://www.cve.org/CVERecord?id=CVE-2026-109618"},
@@ -55,7 +55,7 @@
 <body>
 <a class="skip" href="#inhoud">Meteen naar de crisus</a>
 
-<div class="tape" aria-hidden="true"><p><span>LET OP · CRISUS · BLIJF KALM · PATCH IS UIT · UPDATEN · LET OP · CRISUS · RAAK NIETS AAN · NIET AAN LIKKEN · LET OP · CRISUS · QNAP-NAS VAN HET NET · FIREWALL OOK LEK · LET OP · CRISUS · OVERHEID.NL IS TERUG · ZO DUURDE EEN NACHT · LET OP · CRISUS · OOK JAVA · LET OP · CRISUS · VLAANDEREN IS TERUG · DE WEGENWACHT OOK · KASSA OOK · LET OP · CRISUS · HET AH-EFFECT · LET OP · CRISUS · ER WORDT AL GEKLOPT · PATCH NU · LET OP · CRISUS · DIT IS GEEN OEFENING · LET OP · CRISUS · BLIJF KALM · PATCH IS UIT · UPDATEN · LET OP · CRISUS · NIET AAN LIKKEN · OOK NIET EVEN</span></p></div>
+<div class="tape" aria-hidden="true"><p><span>LET OP · CRISUS · BLIJF KALM · PATCH IS UIT · UPDATEN · LET OP · CRISUS · RAAK NIETS AAN · NIET AAN LIKKEN · LET OP · CRISUS · QNAP-NAS VAN HET NET · FIREWALL OOK LEK · LET OP · CRISUS · KIJK TERUG TOT 17 OKTOBER · LET OP · CRISUS · OVERHEID.NL IS TERUG · ZO DUURDE EEN NACHT · LET OP · CRISUS · OOK JAVA · LET OP · CRISUS · VLAANDEREN IS TERUG · DE WEGENWACHT OOK · KASSA OOK · LET OP · CRISUS · HET AH-EFFECT · LET OP · CRISUS · ER WORDT AL GEKLOPT · PATCH NU · LET OP · CRISUS · DIT IS GEEN OEFENING · LET OP · CRISUS · BLIJF KALM · PATCH IS UIT · UPDATEN · LET OP · CRISUS · NIET AAN LIKKEN · OOK NIET EVEN</span></p></div>
 
 <header>
   <div class="wrap">
@@ -86,7 +86,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T13:00:00+02:00">laatst bijgewerkt 22 oktober, 13:00</time></p>
+  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T14:00:00+02:00">laatst bijgewerkt 22 oktober, 14:00</time></p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu.</p>
 
@@ -161,7 +161,7 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
       <li><strong>Heeft u een firewall van Palo Alto?</strong> Zorg dat de beheerinterface niet vanaf het internet bereikbaar is. Installeer de update van PAN-OS zodra die er is.</li>
       <li><strong>Heeft u een QNAP-NAS?</strong> Haal hem van het internet: zet port forwarding, UPnP, myQNAPcloud Link en de ingebouwde webserver uit. Van buitenaf erbij? Via een vpn. Installeer de update van QNAP zodra die er is.</li>
       <li><strong>Draait u Java?</strong> Werk <code>ca-certificates</code> bij als uw Java de certificaten van het systeem gebruikt. Anders de JDK zelf. Zie CVE-2026-91403 bij de bronnen.</li>
-      <li><strong>Kijk terug.</strong> Zoek in uw logs naar vreemde POST-verzoeken van de afgelopen dagen. Vindt u iets? Ga er dan van uit dat de server niet meer van u is.</li>
+      <li><strong>Kijk terug.</strong> Zoek in uw logs naar vreemde POST-verzoeken, terug tot en met 17 oktober. Toen zag Amazon de eerste aanvallen al. Vindt u iets? Ga er dan van uit dat de server niet meer van u is.</li>
       <li>Klik niet op links in e-mails over dit lek. Wij mailen nooit. Wij kunnen ook niet mailen: onze webmail draait op PHP.</li>
     </ol>
   </section>
@@ -171,7 +171,7 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
   <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
   <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen nog even een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
 
-  <h3 id="stand">Stand per platform, 13:00</h3>
+  <h3 id="stand">Stand per platform, 14:00</h3>
   <ul class="status" aria-labelledby="stand">
     <li><b>php.net</b><span class="pill green">Gepubliceerd</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35 sinds 15:34.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">DSA-6574-1</a>: <code>php8.4 8.4.27-1~deb13u1</code>.</em></li>
@@ -180,7 +180,7 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
     <li><b>Windows</b><span class="pill green">Fix beschikbaar</span><em>8.5.12 staat op windows.php.net.</em></li>
     <li><b>Docker</b><span class="pill green">Fix beschikbaar</span><em>Sinds ongeveer 18:45 wijzen ook <code>8.4-apache</code>, <code>8.5-apache</code>, <code>8.4-fpm</code> en <code>latest</code> naar de gepatchte images. Pullen, opnieuw aanmaken, klaar.</em></li>
     <li><b>Homebrew</b><span class="pill green">Fix beschikbaar</span><em>Nu ook 8.5.12. <code>brew upgrade php</code> en klaar.</em></li>
-    <li><b>SUSE</b><span class="pill orange">Deels</span><em>SLES 15 SP7: <code>php8 &gt;= 8.3.36-150700.3.24.1</code>. De rest staat nog op <em>pending</em>. <a href="https://www.suse.com/security/cve/CVE-2026-109618.html" title="SUSE: CVE-2026-109618">CVE-pagina</a>.</em></li>
+    <li><b>SUSE</b><span class="pill orange">Deels</span><em>Fix voor SLES 15 SP4 tot en met SP7 (php8), ook voor SAP en Web and Scripting. SP7: <code>php8 &gt;= 8.3.36-150700.3.24.1</code>. SLES 16 en php7 nog in de maak. <a href="https://www.suse.com/security/cve/CVE-2026-109618.html" title="SUSE: CVE-2026-109618">CVE-pagina</a>.</em></li>
     <li><b>Red Hat</b><span class="pill green">Fix beschikbaar</span><em>Al sinds woensdagavond: RHSA-2026:87070 en verder, voor RHEL 8, 9 en 10. Zie de <a href="https://access.redhat.com/security/cve/cve-2026-109618" title="Red Hat: CVE-2026-109618">CVE-pagina</a>.</em></li>
   </ul>
 
@@ -327,6 +327,10 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261022-1400"><time datetime="2026-10-22T14:00+02:00">22 oktober 14:00</time>
+      <p><strong>Kijk verder terug.</strong> De eerste aanvallen met PHP2Shell waren er al op 17 oktober, meldt Amazon volgens <a href="https://www.security.nl/posting/958571/Amazon%3A+eerste+PHP2Shell-aanvallen+op+17+oktober+waargenomen" title="Security.NL: Amazon: eerste PHP2Shell-aanvallen op 17 oktober waargenomen">Security.NL</a>. Vier dagen voor de bekendmaking dus, op een honeypot van Amazon, vanaf een anoniem ip-adres. Hoe de aanvaller toen al wist wat er kon, weet Amazon niet. Wel spreekt Amazon nu van misbruik op grote schaal. Het advies: controleer uw PHP-servers op misbruik vanaf 17 oktober. Niet vanaf woensdag.</p>
+      <p>Het embargo was dus lek voordat het lek was. Dat is ook een soort record.</p>
+      <p>En SUSE is bijna bij. Volgens de <a href="https://www.suse.com/security/cve/CVE-2026-109618.html" title="SUSE: CVE-2026-109618">CVE-pagina</a> heeft nu ook SLES 15 SP4, SP5 en SP6 (LTSS) een fix, net als de SAP-versies en de module Web and Scripting. SLES 16 en de php7-pakketten zijn nog in de maak.</p></li>
     <li id="u-20261022-1300"><time datetime="2026-10-22T13:00+02:00">22 oktober 13:00</time>
       <p>De overheid is weer helemaal open, meldt de <a href="https://nos.nl/l/2636196" title="NOS: Overheidspagina's weer online na PHP-lek, vooralsnog geen data gelekt of gestolen">NOS</a>. Ook de sites van het RIVM en NotuBiz zijn terug. &ldquo;Na grondig testen zijn alle systemen weer up and running,&rdquo; zegt NotuBiz. Wij hebben het nagekeken: de raadsstukken van Den Haag, Almere en Breda zijn weer in te zien. Alleen op de eigen site van NotuBiz staat nog een storingsmelding. Die is blijkbaar als laatste aan de beurt.</p>
       <p>En het belangrijkste nieuws van vandaag is misschien wel een niet-nieuwsbericht. Er zijn in Nederland nog geen gevallen bekend van gelekte of gestolen gegevens door PHP2Shell, zegt de Autoriteit Persoonsgegevens tegen de NOS. Organisaties moeten een datalek daar melden. Nog geen melding is nog geen garantie. Wel een goed begin.</p>
@@ -510,6 +514,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><a href="https://advisories.ncsc.nl/advisory?id=NCSC-2026-0447" title="NCSC-2026-0447: Kwetsbaarheden verholpen in GitLab">NCSC-2026-0447: Kwetsbaarheden verholpen in GitLab</a>.</li>
     <li><a href="https://nos.nl/l/2636196" title="NOS: Overheidspagina's weer online na PHP-lek, vooralsnog geen data gelekt of gestolen">NOS: Overheidspagina&rsquo;s weer online na PHP-lek, vooralsnog geen data gelekt of gestolen</a>.</li>
     <li><a href="https://www.security.nl/posting/958558/Kamervragen+over+offline+halen+van+overheidswebsites+wegens+PHP2Shell" title="Security.NL: Kamervragen over offline halen van overheidswebsites wegens PHP2Shell">Security.NL: Kamervragen over offline halen van overheidswebsites wegens PHP2Shell</a>.</li>
+    <li><a href="https://www.security.nl/posting/958571/Amazon%3A+eerste+PHP2Shell-aanvallen+op+17+oktober+waargenomen" title="Security.NL: Amazon: eerste PHP2Shell-aanvallen op 17 oktober waargenomen">Security.NL: Amazon: eerste PHP2Shell-aanvallen op 17 oktober waargenomen</a>. Kijk dus terug tot 17 oktober.</li>
     <li><a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">Node.js: October 2026 security releases</a>. Ook vandaag.</li>
     <li><a href="https://fedi.katze.sh/@elise/117478725808527006" title="Fediverse-draad van @elise@fedi.katze.sh over een nieuwe PHP-bug">@elise@fedi.katze.sh</a> over een nieuwe, nog niet openbare PHP-bug. E&eacute;n bron, onbevestigd.</li>
     <li><a href="https://www.vi.nl/nieuws/nederlandse-profclubs-halen-website-offline-vanwege-ernstige-beveiligingslekken" title="VI: Nederlandse profclubs halen website offline vanwege ernstige beveiligingslekken">VI: Nederlandse profclubs halen website offline</a>. Welke clubs, met de verklaring van FC Twente.</li>
