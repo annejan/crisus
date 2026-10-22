@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-21T14:45:00+02:00">
-<meta property="article:modified_time" content="2026-10-22T10:00:00+02:00">
+<meta property="article:modified_time" content="2026-10-22T11:00:00+02:00">
 <meta property="og:image" content="https://crisus.nl/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -39,7 +39,7 @@
   "url": "https://crisus.nl/",
   "inLanguage": "nl",
   "datePublished": "2026-10-21T14:45:00+02:00",
-  "dateModified": "2026-10-22T10:00:00+02:00",
+  "dateModified": "2026-10-22T11:00:00+02:00",
   "coverageStartTime": "2026-10-20T22:00:00+02:00",
   "about": [
     {"@type": "Thing", "name": "CVE-2026-109618", "sameAs": "https://www.cve.org/CVERecord?id=CVE-2026-109618"},
@@ -55,7 +55,7 @@
 <body>
 <a class="skip" href="#inhoud">Meteen naar de crisus</a>
 
-<div class="tape" aria-hidden="true"><p><span>LET OP · CRISUS · BLIJF KALM · PATCH IS UIT · UPDATEN · LET OP · CRISUS · RAAK NIETS AAN · NIET AAN LIKKEN · LET OP · CRISUS · OVERHEID.NL IS TERUG · ZO DUURDE EEN NACHT · LET OP · CRISUS · OOK JAVA · LET OP · CRISUS · VLAANDEREN IS TERUG · DE WEGENWACHT OOK · KASSA OOK · LET OP · CRISUS · HET AH-EFFECT · LET OP · CRISUS · ER WORDT AL GEKLOPT · PATCH NU · LET OP · CRISUS · DIT IS GEEN OEFENING · LET OP · CRISUS · BLIJF KALM · PATCH IS UIT · UPDATEN · LET OP · CRISUS · NIET AAN LIKKEN · OOK NIET EVEN</span></p></div>
+<div class="tape" aria-hidden="true"><p><span>LET OP · CRISUS · BLIJF KALM · PATCH IS UIT · UPDATEN · LET OP · CRISUS · RAAK NIETS AAN · NIET AAN LIKKEN · LET OP · CRISUS · QNAP-NAS VAN HET NET · LET OP · CRISUS · OVERHEID.NL IS TERUG · ZO DUURDE EEN NACHT · LET OP · CRISUS · OOK JAVA · LET OP · CRISUS · VLAANDEREN IS TERUG · DE WEGENWACHT OOK · KASSA OOK · LET OP · CRISUS · HET AH-EFFECT · LET OP · CRISUS · ER WORDT AL GEKLOPT · PATCH NU · LET OP · CRISUS · DIT IS GEEN OEFENING · LET OP · CRISUS · BLIJF KALM · PATCH IS UIT · UPDATEN · LET OP · CRISUS · NIET AAN LIKKEN · OOK NIET EVEN</span></p></div>
 
 <header>
   <div class="wrap">
@@ -86,7 +86,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T10:00:00+02:00">laatst bijgewerkt 22 oktober, 10:00</time></p>
+  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T11:00:00+02:00">laatst bijgewerkt 22 oktober, 11:00</time></p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu.</p>
 
@@ -158,6 +158,7 @@ sudo apt install --only-upgrade $(dpkg -l | awk '/^ii  (lib)?php/{print $2}')
 sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</span></code></pre>
         Controleer met <code>php -v</code> dat u echt de nieuwe versie draait: 8.5.12, 8.4.27, 8.3.36, 8.2.35 of een distributiepakket met de CVE&rsquo;s in de changelog. Zet daarna pas PHP weer aan.</li>
       <li><strong>Draait u PHP 8.1 of ouder?</strong> Upgrade naar PHP 8.2 of nieuwer. Voor <a href="https://github.com/php/php-src/tree/PHP-7.4-CVE-2026-109618-109619" title="php-src: branch PHP-7.4-CVE-2026-109618-109619">7.4</a>, <a href="https://github.com/php/php-src/tree/PHP-8.0-CVE-2026-109618-109619" title="php-src: branch PHP-8.0-CVE-2026-109618-109619">8.0</a> en <a href="https://github.com/php/php-src/tree/PHP-8.1-CVE-2026-109618-109619" title="php-src: branch PHP-8.1-CVE-2026-109618-109619">8.1</a> staat er een minimale fix op GitHub: zelf compileren, zelf testen, zelf verantwoordelijk. Wij zeiden eerder &ldquo;ook niet als u het heel lief vraagt&rdquo;. Blijkbaar heeft iemand het heel lief gevraagd. PHP 7.3 of ouder: echt niets.</li>
+      <li><strong>Heeft u een QNAP-NAS?</strong> Haal hem van het internet: zet port forwarding, UPnP, myQNAPcloud Link en de ingebouwde webserver uit. Van buitenaf erbij? Via een vpn. Installeer de update van QNAP zodra die er is.</li>
       <li><strong>Draait u Java?</strong> Werk <code>ca-certificates</code> bij als uw Java de certificaten van het systeem gebruikt. Anders de JDK zelf. Zie CVE-2026-91403 bij de bronnen.</li>
       <li><strong>Kijk terug.</strong> Zoek in uw logs naar vreemde POST-verzoeken van de afgelopen dagen. Vindt u iets? Ga er dan van uit dat de server niet meer van u is.</li>
       <li>Klik niet op links in e-mails over dit lek. Wij mailen nooit. Wij kunnen ook niet mailen: onze webmail draait op PHP.</li>
@@ -169,7 +170,7 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
   <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
   <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen nog even een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
 
-  <h3 id="stand">Stand per platform, 10:00</h3>
+  <h3 id="stand">Stand per platform, 11:00</h3>
   <ul class="status" aria-labelledby="stand">
     <li><b>php.net</b><span class="pill green">Gepubliceerd</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35 sinds 15:34.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">DSA-6574-1</a>: <code>php8.4 8.4.27-1~deb13u1</code>.</em></li>
@@ -307,6 +308,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><b>DigiD.nl</b><span class="pill green">Terug</span><em>De website en het inloggen werken allebei weer.</em></li>
     <li><b>Tweede Kamer</b><span class="pill green">Terug</span><em>Om 01:55 even weg met &ldquo;503 Backend fetch failed&rdquo;, om 02:46 weer terug. Geen melding over PHP.</em></li>
     <li><b>Vlaanderen</b><span class="pill green">Terug</span><em>Als eerste uit, als eerste weer aan. Respect, nogmaals.</em></li>
+    <li><b>QNAP-NAS</b><span class="pill red">Nog geen fix</span><em>PHP2Shell zit ook in QTS en QuTS hero. Haal de NAS van het internet tot de update er is.</em></li>
     <li><b>Cloudflare</b><span class="pill orange">Noodverband</span><em>Firewallregels tegen de bekende aanvallen. Hun eigen woorden: &ldquo;a stopgap only&rdquo;.</em></li>
     <li><b>Crisus.nl</b><span class="pill green">Werkt</span><em>Geen PHP. Gewoon HTML. Zoals in 1997.</em></li>
     <li><b>Certificaten</b><span class="pill orange">Verstoord</span><em>Twee root-CA&rsquo;s deze week op staande voet ontslagen. Node.js weet het al, Java nu ook.</em></li>
@@ -314,7 +316,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><b>Java</b><span class="pill orange">Update beschikbaar</span><em>CVE-2026-91403, CVSS 9.1: de eMudhra-certificaten. Ook de versies van dinsdag zijn kwetsbaar.</em></li>
     <li><b>Node.js</b><span class="pill orange">Update beschikbaar</span><em>Eigen security release vandaag. Ook gepatcht? Ook herstarten.</em></li>
     <li><b>Linux KVM-hosts</b><span class="pill orange">Herstarten</span><em>PwnEscape, CVE-2026-99999. Een VM kan uitbreken naar de host. Debian heeft de fix (DSA-6568-1). Nieuwe kernel en een reboot. VPS-klanten: dat doet uw provider.</em></li>
-    <li><b>GitLab (zelf beheerd)</b><span class="pill orange">Nu installeren</span><em>CVE-2026-110264, CVSS 10,0. Code uitvoeren zonder account. Fix in 19.5.1, 19.4.3, 19.3.6 en ouder tot 18.11.13.</em></li>
+    <li><b>GitLab (zelf beheerd)</b><span class="pill orange">Nu installeren</span><em>CVE-2026-110264, CVSS 10,0. Code uitvoeren zonder account. Alle versies vanaf 7.0. Fix in 19.5.1, 19.4.3, 19.3.6 en ouder tot 18.11.13. Nog geen aanvallen bekend.</em></li>
     <li><b>DNS</b><span class="pill green">Werkt</span><em>Het is altijd DNS. Vandaag niet. Nog niet.</em></li>
     <li><b>Koffie</b><span class="pill orange">Beperkt</span><em>Zie de update van 13:00.</em></li>
     <li><b>Paniek</b><span class="pill green">Onder controle</span><em>Er is een spreadsheet.</em></li>
@@ -322,6 +324,10 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261022-1100"><time datetime="2026-10-22T11:00+02:00">22 oktober 11:00</time>
+      <p><strong>Heeft u een QNAP-NAS? Haal hem van het internet.</strong> QNAP waarschuwt dat de PHP2Shell-lekken ook in zijn NAS-systemen zitten, meldt <a href="https://www.security.nl/posting/958512/QNAP+adviseert+offline+halen+NAS-systemen+wegens+PHP2Shell" title="Security.NL: QNAP adviseert offline halen NAS-systemen wegens PHP2Shell">Security.NL</a>. QTS en QuTS hero draaien op PHP. Een aanvaller kan er zonder account code op uitvoeren. QNAP noemt het kritiek en werkt aan updates, maar zegt niet wanneer die komen. Tot die tijd: zet port forwarding, UPnP, myQNAPcloud Link en de ingebouwde webserver uit. Moet u er toch van buitenaf bij? Gebruik een vpn. QNAP ziet volgens Security.NL al scans en aanvalspogingen.</p>
+      <p>Uw vakantiefoto&rsquo;s staan er misschien op. Uw back-up ook. Dan liever een dag geen toegang van buitenaf dan een NAS van iemand anders.</p>
+      <p>En GitLab: <a href="https://www.heise.de/news/GitLab-schliesst-kritische-Sicherheitsluecke-und-elf-weitere-Schwachstellen-11496485.html" title="heise online: GitLab schließt kritische Sicherheitslücke und elf weitere Schwachstellen">heise</a> zet de cijfers van CVE-2026-110264 nog even op een rij. CVSS 10,0, alle versies vanaf 7.0, en de fix zit ook in de oudere takken tot 18.11.13. Aanvallen zijn nog niet bekend. Dat is het moment om te updaten. Niet daarna.</p></li>
     <li id="u-20261022-1000"><time datetime="2026-10-22T10:00+02:00">22 oktober 10:00</time>
       <p><strong>Een derde bug, en is de patch incompleet?</strong> Dat kopt <a href="https://tweakers.net/nieuws/253620/securityexperts-vinden-derde-bug-in-php-en-claimen-dat-patch-incompleet-is.html" title="Tweakers: Securityexperts vinden derde bug in PHP en claimen dat patch incompleet is">Tweakers</a> vanochtend. De claims dat 8.5.12 nog kwetsbaar is, gaan volgens <a href="https://ma.ttias.be/php-cve-2026-109618-patch/" title="ma.ttias.be: PHP CVE-2026-109618 and CVE-2026-109619: how to apply the patches">ma.ttias.be</a> allemaal terug op &eacute;&eacute;n onderzoeker: dezelfde die woensdag al over een <em>andere</em> geheugenfout in PHP postte. Die noemt het zelf een <a href="https://fedi.katze.sh/@elise/117480160480660575" title="@elise@fedi.katze.sh: different vuln, been around for a while">&ldquo;different vuln, been around for a while&rdquo;</a>. Een gat in de fix van woensdag is het dus niet. Het beveiligingsteam van PHP weet ervan. Om 09:25 is er geen nieuwe advisory, geen nieuwe release en geen vervolg op de fix in php-src. Dus: de patch van woensdag blijft nodig, en tegen PHP2Shell is hij genoeg. Komt er een derde patch, dan staat hij hier.</p>
       <p><strong>Is het eigenlijk wel zo erg?</strong> <a href="https://eliastaylor.com/noexploit/" title="Elias Taylor: There isn&rsquo;t an easy exploit for this PHP vulnerability">Elias Taylor</a> denkt van niet: &ldquo;There isn&rsquo;t an easy exploit for this PHP vulnerability.&rdquo; Volgens Taylor staan er op GitHub duizenden &ldquo;PoC&rsquo;s&rdquo;, maar werkt geen ervan tegen een gewone PHP-installatie. Veel ervan zetten eerst zelf een lek op de server en bewijzen dan dat de server lek is. Met dank aan de LLM die ze schreef. Ook <a href="https://www.heise.de/news/php2shell-Updates-trudeln-ein-viele-Webseiten-offline-Angriffe-laufen-11496366.html" title="heise online: php2shell: Updates trudeln ein, viele Webseiten offline, Angriffe laufen">heise</a> schrijft vanochtend: &ldquo;Erfolgreiche Exploits sind bislang nicht belegt.&rdquo; Wel ziet Cloudflare volgens heise miljoenen pogingen, en Amazon spreekt van misbruik op grote schaal. Ook melden securitybedrijven volgens <a href="https://www.security.nl/posting/958424/Misbruik+van+PHP2Shell-lek+gemeld%2C+DigiD+en+andere+sites+weer+online" title="Security.NL: Misbruik van PHP2Shell-lek gemeld, DigiD en andere sites weer online">Security.NL</a> aanvalspogingen. Proberen is nog geen binnenkomen. Maar ook Taylor schrijft: &ldquo;You should patch your servers anyway.&rdquo; Wij ook.</p>
@@ -485,6 +491,8 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><a href="https://www.theregister.com/security/2026/10/22/php-blames-supply-chain-security-biz-chainguard-for-putting-huge-chunks-of-the-web-at-risk/5304611" title="The Register: PHP blames supply chain security biz Chainguard for putting huge chunks of the web at risk">The Register: PHP blames supply chain security biz Chainguard</a>. Wie er vroeg was met de fix, en waarom.</li>
     <li><a href="https://eliastaylor.com/noexploit/" title="Elias Taylor: There isn&rsquo;t an easy exploit for this PHP vulnerability">Elias Taylor: There isn&rsquo;t an easy exploit for this PHP vulnerability</a>. Een tegengeluid, met hetzelfde advies: patchen.</li>
     <li><a href="https://www.heise.de/news/php2shell-Updates-trudeln-ein-viele-Webseiten-offline-Angriffe-laufen-11496366.html" title="heise online: php2shell: Updates trudeln ein, viele Webseiten offline, Angriffe laufen">heise: php2shell: Updates trudeln ein, viele Webseiten offline, Angriffe laufen</a>. De stand in Duitsland, en wat er bekend is over aanvallen.</li>
+    <li><a href="https://www.security.nl/posting/958512/QNAP+adviseert+offline+halen+NAS-systemen+wegens+PHP2Shell" title="Security.NL: QNAP adviseert offline halen NAS-systemen wegens PHP2Shell">Security.NL: QNAP adviseert offline halen NAS-systemen wegens PHP2Shell</a>. Ook uw NAS draait PHP.</li>
+    <li><a href="https://www.heise.de/news/GitLab-schliesst-kritische-Sicherheitsluecke-und-elf-weitere-Schwachstellen-11496485.html" title="heise online: GitLab schließt kritische Sicherheitslücke und elf weitere Schwachstellen">heise: GitLab schließt kritische Sicherheitslücke</a>. De details van CVE-2026-110264.</li>
     <li><a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">Node.js: October 2026 security releases</a>. Ook vandaag.</li>
     <li><a href="https://fedi.katze.sh/@elise/117478725808527006" title="Fediverse-draad van @elise@fedi.katze.sh over een nieuwe PHP-bug">@elise@fedi.katze.sh</a> over een nieuwe, nog niet openbare PHP-bug. E&eacute;n bron, onbevestigd.</li>
     <li><a href="https://www.vi.nl/nieuws/nederlandse-profclubs-halen-website-offline-vanwege-ernstige-beveiligingslekken" title="VI: Nederlandse profclubs halen website offline vanwege ernstige beveiligingslekken">VI: Nederlandse profclubs halen website offline</a>. Welke clubs, met de verklaring van FC Twente.</li>

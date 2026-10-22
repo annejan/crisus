@@ -6,7 +6,16 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Thu, 22 Oct 2026 10:00:00 +0200</lastBuildDate>
+  <lastBuildDate>Thu, 22 Oct 2026 11:00:00 +0200</lastBuildDate>
+  <item>
+    <title>22 oktober 11:00 · Heeft u een QNAP-NAS?</title>
+    <link>https://crisus.nl/#u-20261022-1100</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261022-1100</guid>
+    <pubDate>Thu, 22 Oct 2026 11:00:00 +0200</pubDate>
+    <description><![CDATA[<p><strong>Heeft u een QNAP-NAS? Haal hem van het internet.</strong> QNAP waarschuwt dat de PHP2Shell-lekken ook in zijn NAS-systemen zitten, meldt <a href="https://www.security.nl/posting/958512/QNAP+adviseert+offline+halen+NAS-systemen+wegens+PHP2Shell" title="Security.NL: QNAP adviseert offline halen NAS-systemen wegens PHP2Shell">Security.NL</a>. QTS en QuTS hero draaien op PHP. Een aanvaller kan er zonder account code op uitvoeren. QNAP noemt het kritiek en werkt aan updates, maar zegt niet wanneer die komen. Tot die tijd: zet port forwarding, UPnP, myQNAPcloud Link en de ingebouwde webserver uit. Moet u er toch van buitenaf bij? Gebruik een vpn. QNAP ziet volgens Security.NL al scans en aanvalspogingen.</p>
+      <p>Uw vakantiefoto&rsquo;s staan er misschien op. Uw back-up ook. Dan liever een dag geen toegang van buitenaf dan een NAS van iemand anders.</p>
+      <p>En GitLab: <a href="https://www.heise.de/news/GitLab-schliesst-kritische-Sicherheitsluecke-und-elf-weitere-Schwachstellen-11496485.html" title="heise online: GitLab schließt kritische Sicherheitslücke und elf weitere Schwachstellen">heise</a> zet de cijfers van CVE-2026-110264 nog even op een rij. CVSS 10,0, alle versies vanaf 7.0, en de fix zit ook in de oudere takken tot 18.11.13. Aanvallen zijn nog niet bekend. Dat is het moment om te updaten. Niet daarna.</p>]]></description>
+  </item>
   <item>
     <title>22 oktober 10:00 · Een derde bug, en is de patch incompleet?</title>
     <link>https://crisus.nl/#u-20261022-1000</link>
