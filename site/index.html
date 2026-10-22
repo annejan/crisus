@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-21T14:45:00+02:00">
-<meta property="article:modified_time" content="2026-10-22T14:00:00+02:00">
+<meta property="article:modified_time" content="2026-10-22T15:00:00+02:00">
 <meta property="og:image" content="https://crisus.nl/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -39,7 +39,7 @@
   "url": "https://crisus.nl/",
   "inLanguage": "nl",
   "datePublished": "2026-10-21T14:45:00+02:00",
-  "dateModified": "2026-10-22T14:00:00+02:00",
+  "dateModified": "2026-10-22T15:00:00+02:00",
   "coverageStartTime": "2026-10-20T22:00:00+02:00",
   "about": [
     {"@type": "Thing", "name": "CVE-2026-109618", "sameAs": "https://www.cve.org/CVERecord?id=CVE-2026-109618"},
@@ -55,7 +55,7 @@
 <body>
 <a class="skip" href="#inhoud">Meteen naar de crisus</a>
 
-<div class="tape" aria-hidden="true"><p><span>LET OP · CRISUS · BLIJF KALM · PATCH IS UIT · UPDATEN · LET OP · CRISUS · RAAK NIETS AAN · NIET AAN LIKKEN · LET OP · CRISUS · QNAP-NAS VAN HET NET · FIREWALL OOK LEK · LET OP · CRISUS · KIJK TERUG TOT 17 OKTOBER · LET OP · CRISUS · OVERHEID.NL IS TERUG · ZO DUURDE EEN NACHT · LET OP · CRISUS · OOK JAVA · LET OP · CRISUS · VLAANDEREN IS TERUG · DE WEGENWACHT OOK · KASSA OOK · LET OP · CRISUS · HET AH-EFFECT · LET OP · CRISUS · ER WORDT AL GEKLOPT · PATCH NU · LET OP · CRISUS · DIT IS GEEN OEFENING · LET OP · CRISUS · BLIJF KALM · PATCH IS UIT · UPDATEN · LET OP · CRISUS · NIET AAN LIKKEN · OOK NIET EVEN</span></p></div>
+<div class="tape" aria-hidden="true"><p><span>LET OP · CRISUS · BLIJF KALM · PATCH IS UIT · UPDATEN · LET OP · CRISUS · RAAK NIETS AAN · NIET AAN LIKKEN · LET OP · CRISUS · QNAP-NAS VAN HET NET · FIREWALL OOK LEK · LET OP · CRISUS · KIJK TERUG TOT 17 OKTOBER · LET OP · CRISUS · HET IS NOG GEEN DNS · LET OP · CRISUS · OVERHEID.NL IS TERUG · ZO DUURDE EEN NACHT · LET OP · CRISUS · OOK JAVA · LET OP · CRISUS · VLAANDEREN IS TERUG · DE WEGENWACHT OOK · KASSA OOK · LET OP · CRISUS · HET AH-EFFECT · LET OP · CRISUS · ER WORDT AL GEKLOPT · PATCH NU · LET OP · CRISUS · DIT IS GEEN OEFENING · LET OP · CRISUS · BLIJF KALM · PATCH IS UIT · UPDATEN · LET OP · CRISUS · NIET AAN LIKKEN · OOK NIET EVEN</span></p></div>
 
 <header>
   <div class="wrap">
@@ -86,7 +86,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T14:00:00+02:00">laatst bijgewerkt 22 oktober, 14:00</time></p>
+  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T15:00:00+02:00">laatst bijgewerkt 22 oktober, 15:00</time></p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu.</p>
 
@@ -158,6 +158,7 @@ sudo apt install --only-upgrade $(dpkg -l | awk '/^ii  (lib)?php/{print $2}')
 sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</span></code></pre>
         Controleer met <code>php -v</code> dat u echt de nieuwe versie draait: 8.5.12, 8.4.27, 8.3.36, 8.2.35 of een distributiepakket met de CVE&rsquo;s in de changelog. Zet daarna pas PHP weer aan.</li>
       <li><strong>Draait u PHP 8.1 of ouder?</strong> Upgrade naar PHP 8.2 of nieuwer. Voor <a href="https://github.com/php/php-src/tree/PHP-7.4-CVE-2026-109618-109619" title="php-src: branch PHP-7.4-CVE-2026-109618-109619">7.4</a>, <a href="https://github.com/php/php-src/tree/PHP-8.0-CVE-2026-109618-109619" title="php-src: branch PHP-8.0-CVE-2026-109618-109619">8.0</a> en <a href="https://github.com/php/php-src/tree/PHP-8.1-CVE-2026-109618-109619" title="php-src: branch PHP-8.1-CVE-2026-109618-109619">8.1</a> staat er een minimale fix op GitHub: zelf compileren, zelf testen, zelf verantwoordelijk. Wij zeiden eerder &ldquo;ook niet als u het heel lief vraagt&rdquo;. Blijkbaar heeft iemand het heel lief gevraagd. PHP 7.3 of ouder: echt niets.</li>
+      <li><strong>Draait u BIND?</strong> Update naar 9.20.30 of 9.21.27, of naar het pakket van uw distributie. Zit u nog op 9.18? Die krijgt geen fix meer.</li>
       <li><strong>Heeft u een firewall van Palo Alto?</strong> Zorg dat de beheerinterface niet vanaf het internet bereikbaar is. Installeer de update van PAN-OS zodra die er is.</li>
       <li><strong>Heeft u een QNAP-NAS?</strong> Haal hem van het internet: zet port forwarding, UPnP, myQNAPcloud Link en de ingebouwde webserver uit. Van buitenaf erbij? Via een vpn. Installeer de update van QNAP zodra die er is.</li>
       <li><strong>Draait u Java?</strong> Werk <code>ca-certificates</code> bij als uw Java de certificaten van het systeem gebruikt. Anders de JDK zelf. Zie CVE-2026-91403 bij de bronnen.</li>
@@ -171,7 +172,7 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
   <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
   <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen nog even een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
 
-  <h3 id="stand">Stand per platform, 14:00</h3>
+  <h3 id="stand">Stand per platform, 15:00</h3>
   <ul class="status" aria-labelledby="stand">
     <li><b>php.net</b><span class="pill green">Gepubliceerd</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35 sinds 15:34.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">DSA-6574-1</a>: <code>php8.4 8.4.27-1~deb13u1</code>.</em></li>
@@ -318,15 +319,21 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><b>Pillensites</b><span class="pill red">Offline gehaald</span><em>30 sites met nepmedicijnen en harddrugs, door de politie. Die komen niet terug. Medicijnen koopt u bij de apotheek.</em></li>
     <li><b>Java</b><span class="pill orange">Update beschikbaar</span><em>CVE-2026-91403, CVSS 9.1: de eMudhra-certificaten. Ook de versies van dinsdag zijn kwetsbaar.</em></li>
     <li><b>Node.js</b><span class="pill orange">Update beschikbaar</span><em>Eigen security release vandaag. Ook gepatcht? Ook herstarten.</em></li>
+    <li><b>Linux-kernel (ksmbd)</b><span class="pill red">Nog geen fix</span><em>Lekken per ongeluk op de openbare mailinglijst, twee met CVSS 9,0. Gebruikt u ksmbd? Kijk of het moet.</em></li>
     <li><b>Linux KVM-hosts</b><span class="pill orange">Herstarten</span><em>PwnEscape, CVE-2026-99999. Een VM kan uitbreken naar de host. Debian heeft de fix (DSA-6568-1). Nieuwe kernel en een reboot. VPS-klanten: dat doet uw provider.</em></li>
     <li><b>GitLab (zelf beheerd)</b><span class="pill orange">Nu installeren</span><em>CVE-2026-110264, CVSS 10,0. Code uitvoeren zonder account. Alle versies vanaf 7.0. Fix in 19.5.1, 19.4.3, 19.3.6 en ouder tot 18.11.13. Nog geen aanvallen bekend. NCSC: NCSC-2026-0447.</em></li>
-    <li><b>DNS</b><span class="pill green">Werkt</span><em>Het is altijd DNS. Vandaag niet. Nog niet.</em></li>
-    <li><b>Koffie</b><span class="pill orange">Beperkt</span><em>Zie de update van 13:00.</em></li>
+    <li><b>DNS</b><span class="pill orange">Update beschikbaar</span><em>Het is altijd DNS. Nog niet helemaal. BIND 9: CVE-2026-94300, CVSS 8,1. Fix in 9.20.30 en 9.21.27. Debian: DSA-6576-1.</em></li>
+    <li><b>Koffie</b><span class="pill green">Werkt</span><em>Verse bonen van <a href="https://wereldkoffie.eu/" title="Wereldkoffie">Wereldkoffie</a>. Het crisusteam is weer operationeel.</em></li>
     <li><b>Paniek</b><span class="pill green">Onder controle</span><em>Er is een spreadsheet.</em></li>
   </ul>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261022-1500"><time datetime="2026-10-22T15:00+02:00">22 oktober 15:00</time>
+      <p><strong>Het is nooit DNS. Het is nog geen DNS.</strong> Maar het scheelt weinig. ISC, de makers van BIND, de DNS-server die een groot deel van het internet draait, heeft <a href="https://kb.isc.org/docs/cve-2026-94300" title="ISC: CVE-2026-94300: Concurrent GSS-TSIG messages corrupt memory">CVE-2026-94300</a> gepubliceerd. CVSS 8,1. Wie een eerder ondertekend GSS-TSIG-bericht onderschept en terugspeelt, kan het geheugen van <code>named</code> beschadigen en mogelijk zelf code uitvoeren. GSS-TSIG is de Kerberos-handtekening op DNS-verkeer, die u vooral tegenkomt bij Active Directory. Een noodmaatregel is er niet. Misbruik is nog niet bekend.</p>
+      <p>De fix: BIND 9.20.30 of 9.21.27. Kwetsbaar is alles vanaf 9.11.0. De 9.18-reeks staat wel in de lijst, maar krijgt geen fix meer: dat wordt upgraden naar 9.20. Debian heeft hem al, met nog drie andere BIND-lekken: <a href="https://www.debian.org/security/2026/dsa-6576" title="DSA-6576-1: bind9 security update">DSA-6576-1</a>. En wie vond het? ISC zelf, en daarnaast Dave Aitel van OpenAI. Ook dit lek kwam dus uit de AI-hoek. Het is een drukke week voor iedereen die software maakt in C.</p>
+      <p><strong>En het embargo van de Linux-kernel lekt ook.</strong> Per ongeluk, dit keer. Het Zero Day Initiative van Trend Micro stuurde vannacht een reeks kwetsbaarheden naar de openbare kernel-mailinglijst, in plaats van naar de besloten securitylijst, meldt <a href="https://www.phoronix.com/news/LKML-New-Trend-Vulnerabilities" title="Phoronix: Several Linux Kernel Vulnerabilities Accidentally Posted To Public Kernel Mailing List">Phoronix</a>. Greg Kroah-Hartman vroeg bij elk bericht beleefd of dat wel de bedoeling was. Twee ervan hebben CVSS 9,0: code uitvoeren op afstand via ksmbd, de SMB-server in de kernel, en via SMB Direct. Een fix in de hoofdtak is er nog niet. Gebruikt u ksmbd? Kijk met <code>lsmod | grep ksmbd</code> of hij geladen is, en of u hem echt nodig hebt. De meeste Linux-fileservers draaien Samba, dat is iets anders.</p>
+      <p><strong>En dan iets wat wel gewoon werkt: koffie.</strong> <a href="https://wereldkoffie.eu/" title="Wereldkoffie">Wereldkoffie</a> heeft verse bonen geleverd. Het eerste systeem dat vandaag zonder patch weer volledig draait. Het crisusteam is weer operationeel.</p></li>
     <li id="u-20261022-1400"><time datetime="2026-10-22T14:00+02:00">22 oktober 14:00</time>
       <p><strong>Kijk verder terug.</strong> De eerste aanvallen met PHP2Shell waren er al op 17 oktober, meldt Amazon volgens <a href="https://www.security.nl/posting/958571/Amazon%3A+eerste+PHP2Shell-aanvallen+op+17+oktober+waargenomen" title="Security.NL: Amazon: eerste PHP2Shell-aanvallen op 17 oktober waargenomen">Security.NL</a>. Vier dagen voor de bekendmaking dus, op een honeypot van Amazon, vanaf een anoniem ip-adres. Hoe de aanvaller toen al wist wat er kon, weet Amazon niet. Wel spreekt Amazon nu van misbruik op grote schaal. Het advies: controleer uw PHP-servers op misbruik vanaf 17 oktober. Niet vanaf woensdag.</p>
       <p>Het embargo was dus lek voordat het lek was. Dat is ook een soort record.</p>
@@ -515,6 +522,8 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><a href="https://nos.nl/l/2636196" title="NOS: Overheidspagina's weer online na PHP-lek, vooralsnog geen data gelekt of gestolen">NOS: Overheidspagina&rsquo;s weer online na PHP-lek, vooralsnog geen data gelekt of gestolen</a>.</li>
     <li><a href="https://www.security.nl/posting/958558/Kamervragen+over+offline+halen+van+overheidswebsites+wegens+PHP2Shell" title="Security.NL: Kamervragen over offline halen van overheidswebsites wegens PHP2Shell">Security.NL: Kamervragen over offline halen van overheidswebsites wegens PHP2Shell</a>.</li>
     <li><a href="https://www.security.nl/posting/958571/Amazon%3A+eerste+PHP2Shell-aanvallen+op+17+oktober+waargenomen" title="Security.NL: Amazon: eerste PHP2Shell-aanvallen op 17 oktober waargenomen">Security.NL: Amazon: eerste PHP2Shell-aanvallen op 17 oktober waargenomen</a>. Kijk dus terug tot 17 oktober.</li>
+    <li><a href="https://kb.isc.org/docs/cve-2026-94300" title="ISC: CVE-2026-94300: Concurrent GSS-TSIG messages corrupt memory">ISC: CVE-2026-94300 in BIND 9</a> en <a href="https://www.debian.org/security/2026/dsa-6576" title="DSA-6576-1: bind9 security update">Debian DSA-6576-1</a>. Het is nog geen DNS.</li>
+    <li><a href="https://www.phoronix.com/news/LKML-New-Trend-Vulnerabilities" title="Phoronix: Several Linux Kernel Vulnerabilities Accidentally Posted To Public Kernel Mailing List">Phoronix: Several Linux Kernel Vulnerabilities Accidentally Posted To Public Kernel Mailing List</a>.</li>
     <li><a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">Node.js: October 2026 security releases</a>. Ook vandaag.</li>
     <li><a href="https://fedi.katze.sh/@elise/117478725808527006" title="Fediverse-draad van @elise@fedi.katze.sh over een nieuwe PHP-bug">@elise@fedi.katze.sh</a> over een nieuwe, nog niet openbare PHP-bug. E&eacute;n bron, onbevestigd.</li>
     <li><a href="https://www.vi.nl/nieuws/nederlandse-profclubs-halen-website-offline-vanwege-ernstige-beveiligingslekken" title="VI: Nederlandse profclubs halen website offline vanwege ernstige beveiligingslekken">VI: Nederlandse profclubs halen website offline</a>. Welke clubs, met de verklaring van FC Twente.</li>

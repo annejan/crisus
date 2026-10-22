@@ -6,7 +6,17 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Thu, 22 Oct 2026 14:00:00 +0200</lastBuildDate>
+  <lastBuildDate>Thu, 22 Oct 2026 15:00:00 +0200</lastBuildDate>
+  <item>
+    <title>22 oktober 15:00 · Het is nooit DNS.</title>
+    <link>https://crisus.nl/#u-20261022-1500</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261022-1500</guid>
+    <pubDate>Thu, 22 Oct 2026 15:00:00 +0200</pubDate>
+    <description><![CDATA[<p><strong>Het is nooit DNS. Het is nog geen DNS.</strong> Maar het scheelt weinig. ISC, de makers van BIND, de DNS-server die een groot deel van het internet draait, heeft <a href="https://kb.isc.org/docs/cve-2026-94300" title="ISC: CVE-2026-94300: Concurrent GSS-TSIG messages corrupt memory">CVE-2026-94300</a> gepubliceerd. CVSS 8,1. Wie een eerder ondertekend GSS-TSIG-bericht onderschept en terugspeelt, kan het geheugen van <code>named</code> beschadigen en mogelijk zelf code uitvoeren. GSS-TSIG is de Kerberos-handtekening op DNS-verkeer, die u vooral tegenkomt bij Active Directory. Een noodmaatregel is er niet. Misbruik is nog niet bekend.</p>
+      <p>De fix: BIND 9.20.30 of 9.21.27. Kwetsbaar is alles vanaf 9.11.0. De 9.18-reeks staat wel in de lijst, maar krijgt geen fix meer: dat wordt upgraden naar 9.20. Debian heeft hem al, met nog drie andere BIND-lekken: <a href="https://www.debian.org/security/2026/dsa-6576" title="DSA-6576-1: bind9 security update">DSA-6576-1</a>. En wie vond het? ISC zelf, en daarnaast Dave Aitel van OpenAI. Ook dit lek kwam dus uit de AI-hoek. Het is een drukke week voor iedereen die software maakt in C.</p>
+      <p><strong>En het embargo van de Linux-kernel lekt ook.</strong> Per ongeluk, dit keer. Het Zero Day Initiative van Trend Micro stuurde vannacht een reeks kwetsbaarheden naar de openbare kernel-mailinglijst, in plaats van naar de besloten securitylijst, meldt <a href="https://www.phoronix.com/news/LKML-New-Trend-Vulnerabilities" title="Phoronix: Several Linux Kernel Vulnerabilities Accidentally Posted To Public Kernel Mailing List">Phoronix</a>. Greg Kroah-Hartman vroeg bij elk bericht beleefd of dat wel de bedoeling was. Twee ervan hebben CVSS 9,0: code uitvoeren op afstand via ksmbd, de SMB-server in de kernel, en via SMB Direct. Een fix in de hoofdtak is er nog niet. Gebruikt u ksmbd? Kijk met <code>lsmod | grep ksmbd</code> of hij geladen is, en of u hem echt nodig hebt. De meeste Linux-fileservers draaien Samba, dat is iets anders.</p>
+      <p><strong>En dan iets wat wel gewoon werkt: koffie.</strong> <a href="https://wereldkoffie.eu/" title="Wereldkoffie">Wereldkoffie</a> heeft verse bonen geleverd. Het eerste systeem dat vandaag zonder patch weer volledig draait. Het crisusteam is weer operationeel.</p>]]></description>
+  </item>
   <item>
     <title>22 oktober 14:00 · Kijk verder terug.</title>
     <link>https://crisus.nl/#u-20261022-1400</link>
