@@ -3,9 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Crisus · PHP Kwetsbaarheid</title>
-<meta name="description" content="Twee kritieke lekken in PHP (CVE-2026-109618 en CVE-2026-109619): wat er speelt, welke versies kwetsbaar zijn, welke versies de fix hebben en wat u nu kunt doen. Met bronnen. Satire, maar de feiten kloppen.">
-<meta property="og:title" content="Crisus · PHP Kwetsbaarheid">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<title>Crisus · PHP Kwetsbaarheid (PHP2Shell, CVE-2026-109618)</title>
+<meta name="description" content="PHP2Shell: twee kritieke lekken in PHP (CVE-2026-109618 en CVE-2026-109619). Kwetsbare versies, de fix per platform en wat u nu doet. Satire, maar de feiten kloppen.">
+<meta property="og:title" content="Crisus · PHP Kwetsbaarheid (PHP2Shell, CVE-2026-109618)">
 <meta property="og:description" content="Twee kritieke PHP-lekken. De patch is uit: PHP 8.5.12, 8.4.27, 8.3.36 en 8.2.35. Updaten dus. Crisusniveau 3: genoeg pizza gehad, er wordt Thais besteld. Het NCSC ziet geslaagd misbruik, dus patchen.">
 <meta property="og:url" content="https://crisus.nl/">
 <meta property="og:type" content="article">
@@ -19,7 +20,7 @@
 <meta property="og:image:alt" content="Crisus: PHP Kwetsbaarheid. Gefixt in 8.5.12, 8.4.27, 8.3.36 en 8.2.35. Crisusniveau 3 van 5.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://crisus.nl/og.png?v=5">
-<meta name="twitter:title" content="Crisus · PHP Kwetsbaarheid">
+<meta name="twitter:title" content="Crisus · PHP Kwetsbaarheid (PHP2Shell, CVE-2026-109618)">
 <meta name="twitter:description" content="Twee kritieke PHP-lekken, de patch is uit. Wat u moet doen, per platform, met bronnen. Satire, maar de feiten kloppen.">
 <meta name="theme-color" content="#ffd400">
 <link rel="canonical" href="https://crisus.nl/">
@@ -28,15 +29,18 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="alternate" type="application/rss+xml" title="Crisus: alle updates" href="https://crisus.nl/feed.xml">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/crisus.css?v=9">
+<link rel="stylesheet" href="/crisus.css?v=10">
 <script src="/klok.js?v=4" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LiveBlogPosting",
   "headline": "PHP Kwetsbaarheid",
+  "alternativeHeadline": "PHP2Shell: CVE-2026-109618 en CVE-2026-109619",
   "description": "Twee kritieke lekken in PHP (CVE-2026-109618 en CVE-2026-109619): wat er speelt, welke versies de fix hebben en wat u nu kunt doen. Satire, maar de feiten kloppen.",
   "url": "https://crisus.nl/",
+  "mainEntityOfPage": "https://crisus.nl/",
+  "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-21T14:45:00+02:00",
   "dateModified": "2026-10-22T23:30:00+02:00",
@@ -48,8 +52,68 @@
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
   "publisher": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
   "genre": "satire",
+  "keywords": ["PHP2Shell", "PHP", "CVE-2026-109618", "CVE-2026-109619", "kwetsbaarheid", "remote code execution", "NCSC"],
+  "liveBlogUpdate": [
+    {"@type": "BlogPosting", "headline": "Ook buiten Nederland.", "datePublished": "2026-10-22T23:30:00+02:00", "url": "https://crisus.nl/#u-20261022-2330"},
+    {"@type": "BlogPosting", "headline": "De Tweede Kamer is terug.", "datePublished": "2026-10-22T23:00:00+02:00", "url": "https://crisus.nl/#u-20261022-2300"},
+    {"@type": "BlogPosting", "headline": "De Tweede Kamer is weer even weg.", "datePublished": "2026-10-22T22:00:00+02:00", "url": "https://crisus.nl/#u-20261022-2200"},
+    {"@type": "BlogPosting", "headline": "Crisusniveau 4: de manager vraagt of het al werkt.", "datePublished": "2026-10-22T18:00:00+02:00", "url": "https://crisus.nl/#u-20261022-1800"},
+    {"@type": "BlogPosting", "headline": "Vanavond: de cybers, in de Angry Nerds Podcast .", "datePublished": "2026-10-22T17:00:00+02:00", "url": "https://crisus.nl/#u-20261022-1700"},
+    {"@type": "BlogPosting", "headline": "PHP is de onderbroek van het internet.", "datePublished": "2026-10-22T16:00:00+02:00", "url": "https://crisus.nl/#u-20261022-1600"},
+    {"@type": "BlogPosting", "headline": "Het is nooit DNS.", "datePublished": "2026-10-22T15:00:00+02:00", "url": "https://crisus.nl/#u-20261022-1500"},
+    {"@type": "BlogPosting", "headline": "Kijk verder terug.", "datePublished": "2026-10-22T14:00:00+02:00", "url": "https://crisus.nl/#u-20261022-1400"},
+    {"@type": "BlogPosting", "headline": "De overheid is weer helemaal open, meldt de NOS .", "datePublished": "2026-10-22T13:00:00+02:00", "url": "https://crisus.nl/#u-20261022-1300"},
+    {"@type": "BlogPosting", "headline": "Ook de firewall draait PHP.", "datePublished": "2026-10-22T12:00:00+02:00", "url": "https://crisus.nl/#u-20261022-1200"},
+    {"@type": "BlogPosting", "headline": "Heeft u een QNAP-NAS?", "datePublished": "2026-10-22T11:00:00+02:00", "url": "https://crisus.nl/#u-20261022-1100"},
+    {"@type": "BlogPosting", "headline": "Een derde bug, en is de patch incompleet?", "datePublished": "2026-10-22T10:00:00+02:00", "url": "https://crisus.nl/#u-20261022-1000"},
+    {"@type": "BlogPosting", "headline": "De ochtendploeg is binnen.", "datePublished": "2026-10-22T09:00:00+02:00", "url": "https://crisus.nl/#u-20261022-0900"},
+    {"@type": "BlogPosting", "headline": "Overheid.nl is terug.", "datePublished": "2026-10-22T07:20:00+02:00", "url": "https://crisus.nl/#u-20261022-0720"},
+    {"@type": "BlogPosting", "headline": "Goedemorgen.", "datePublished": "2026-10-22T07:00:00+02:00", "url": "https://crisus.nl/#u-20261022-0700"},
+    {"@type": "BlogPosting", "headline": "De Tweede Kamer is terug.", "datePublished": "2026-10-22T03:00:00+02:00", "url": "https://crisus.nl/#u-20261022-0300"},
+    {"@type": "BlogPosting", "headline": "BNNVARA is terug, en daarmee Kassa en Joop.", "datePublished": "2026-10-22T02:00:00+02:00", "url": "https://crisus.nl/#u-20261022-0200"},
+    {"@type": "BlogPosting", "headline": "Nog niet iedereen is terug, meldt de NOS .", "datePublished": "2026-10-22T01:00:00+02:00", "url": "https://crisus.nl/#u-20261022-0100"},
+    {"@type": "BlogPosting", "headline": "ANWB.nl is terug.", "datePublished": "2026-10-22T00:00:00+02:00", "url": "https://crisus.nl/#u-20261022-0000"},
+    {"@type": "BlogPosting", "headline": "Er wordt geklopt.", "datePublished": "2026-10-21T23:00:00+02:00", "url": "https://crisus.nl/#u-20261021-2300"},
+    {"@type": "BlogPosting", "headline": "De NOS sluit zijn liveblog.", "datePublished": "2026-10-21T22:00:00+02:00", "url": "https://crisus.nl/#u-20261021-2200"},
+    {"@type": "BlogPosting", "headline": "Het AH-effect.", "datePublished": "2026-10-21T21:05:00+02:00", "url": "https://crisus.nl/#u-20261021-2105"},
+    {"@type": "BlogPosting", "headline": "Er komen er weer een paar bij.", "datePublished": "2026-10-21T21:00:00+02:00", "url": "https://crisus.nl/#u-20261021-2100"},
+    {"@type": "BlogPosting", "headline": "Het Achtuurjournaal.", "datePublished": "2026-10-21T20:03:00+02:00", "url": "https://crisus.nl/#u-20261021-2003"},
+    {"@type": "BlogPosting", "headline": "Nu iedereen weer een beetje rust heeft, begint het belangrijkste deel van elke crisis: wie krijgt de eer.", "datePublished": "2026-10-21T19:45:00+02:00", "url": "https://crisus.nl/#u-20261021-1945"},
+    {"@type": "BlogPosting", "headline": "De tijdlijn wordt duidelijk.", "datePublished": "2026-10-21T19:40:00+02:00", "url": "https://crisus.nl/#u-20261021-1940"},
+    {"@type": "BlogPosting", "headline": "Docker is bij.", "datePublished": "2026-10-21T18:55:00+02:00", "url": "https://crisus.nl/#u-20261021-1855"},
+    {"@type": "BlogPosting", "headline": "Zelfreflectie bij PHP.", "datePublished": "2026-10-21T18:25:00+02:00", "url": "https://crisus.nl/#u-20261021-1825"},
+    {"@type": "BlogPosting", "headline": "MijnOverheid is terug.", "datePublished": "2026-10-21T18:05:00+02:00", "url": "https://crisus.nl/#u-20261021-1805"},
+    {"@type": "BlogPosting", "headline": "Een rondje langs Nederlandse vaste waarden.", "datePublished": "2026-10-21T18:00:00+02:00", "url": "https://crisus.nl/#u-20261021-1800"},
+    {"@type": "BlogPosting", "headline": "Docker heeft de gepatchte images.", "datePublished": "2026-10-21T17:50:00+02:00", "url": "https://crisus.nl/#u-20261021-1750"},
+    {"@type": "BlogPosting", "headline": "Correctie.", "datePublished": "2026-10-21T17:35:00+02:00", "url": "https://crisus.nl/#u-20261021-1735"},
+    {"@type": "BlogPosting", "headline": "Het crisusniveau gaat naar 2.", "datePublished": "2026-10-21T17:25:00+02:00", "url": "https://crisus.nl/#u-20261021-1725"},
+    {"@type": "BlogPosting", "headline": "Debian 12 komt eraan.", "datePublished": "2026-10-21T17:20:00+02:00", "url": "https://crisus.nl/#u-20261021-1720"},
+    {"@type": "BlogPosting", "headline": "“Today is really a day for PHP.” Een beveiligingsonderzoeker meldt op de fediverse een andere geheugenfout in …", "datePublished": "2026-10-21T17:15:00+02:00", "url": "https://crisus.nl/#u-20261021-1715"},
+    {"@type": "BlogPosting", "headline": "De eerste grote sites komen terug.", "datePublished": "2026-10-21T17:10:00+02:00", "url": "https://crisus.nl/#u-20261021-1710"},
+    {"@type": "BlogPosting", "headline": "Goed nieuws voor wie nog op een oude PHP zit.", "datePublished": "2026-10-21T17:00:00+02:00", "url": "https://crisus.nl/#u-20261021-1700"},
+    {"@type": "BlogPosting", "headline": "Het kabinet reageert.", "datePublished": "2026-10-21T16:40:00+02:00", "url": "https://crisus.nl/#u-20261021-1640"},
+    {"@type": "BlogPosting", "headline": "Een uur na de patch.", "datePublished": "2026-10-21T16:30:00+02:00", "url": "https://crisus.nl/#u-20261021-1630"},
+    {"@type": "BlogPosting", "headline": "De vinders, Calif, OpenAI en Wiz, publiceren hun write-up .", "datePublished": "2026-10-21T16:15:00+02:00", "url": "https://crisus.nl/#u-20261021-1615"},
+    {"@type": "BlogPosting", "headline": "De patch is er.", "datePublished": "2026-10-21T16:05:00+02:00", "url": "https://crisus.nl/#u-20261021-1605"},
+    {"@type": "BlogPosting", "headline": "Het crisusniveau gaat terug naar 3.", "datePublished": "2026-10-21T15:50:00+02:00", "url": "https://crisus.nl/#u-20261021-1550"},
+    {"@type": "BlogPosting", "headline": "De patch is uit.", "datePublished": "2026-10-21T15:34:00+02:00", "url": "https://crisus.nl/#u-20261021-1534"},
+    {"@type": "BlogPosting", "headline": "Het crisusniveau gaat naar 4.", "datePublished": "2026-10-21T15:30:00+02:00", "url": "https://crisus.nl/#u-20261021-1530"},
+    {"@type": "BlogPosting", "headline": "Het NCSC noemt het lek “geen aanval, maar een weeffout in de software”.", "datePublished": "2026-10-21T15:07:00+02:00", "url": "https://crisus.nl/#u-20261021-1507"},
+    {"@type": "BlogPosting", "headline": "Cloudflare ziet al aanvallen en zet firewallregels aan voor al zijn klanten.", "datePublished": "2026-10-21T14:07:00+02:00", "url": "https://crisus.nl/#u-20261021-1407"},
+    {"@type": "BlogPosting", "headline": "De status is ongewijzigd.", "datePublished": "2026-10-21T14:45:00+02:00", "url": "https://crisus.nl/#u-20261021-1445"},
+    {"@type": "BlogPosting", "headline": "Het NCSC waarschuwt: bereid u voor op patchen.", "datePublished": "2026-10-21T13:59:00+02:00", "url": "https://crisus.nl/#u-20261021-1359"},
+    {"@type": "BlogPosting", "headline": "Meerdere diensten zijn nog preventief offline.", "datePublished": "2026-10-21T13:00:00+02:00", "url": "https://crisus.nl/#u-20261021-1300"},
+    {"@type": "BlogPosting", "headline": "Het crisusteam heeft overlegd over de agenda van het volgende crisusoverleg.", "datePublished": "2026-10-21T12:15:00+02:00", "url": "https://crisus.nl/#u-20261021-1215"},
+    {"@type": "BlogPosting", "headline": "Uit voorzorg staat PHP uit.", "datePublished": "2026-10-21T09:30:00+02:00", "url": "https://crisus.nl/#u-20261021-0930"},
+    {"@type": "BlogPosting", "headline": "Details over de lekken liggen al op straat, de CVE-nummers ook.", "datePublished": "2026-10-20T21:35:00+02:00", "url": "https://crisus.nl/#u-20261020-2135"},
+    {"@type": "BlogPosting", "headline": "Het PHP-beveiligingsteam kondigt een kritieke beveiligingsrelease aan voor woensdag 21 oktober, 14:00 UTC.", "datePublished": "2026-10-20T22:00:00+02:00", "url": "https://crisus.nl/#u-20261020-2200"}
+  ],
   "isAccessibleForFree": true
 }
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebSite", "name": "Crisus", "alternateName": ["crisus.nl", "Centrale Registratie van Incidenten, Storingen en Uitgebreid Schouderophalen"], "url": "https://crisus.nl/", "inLanguage": "nl",
+ "publisher": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"}}
 </script>
 </head>
 <body>

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Build feed.xml (RSS 2.0) from the updates list in index.html.
 Every <li> in <ol class="updates"> (the open list and the older one) becomes an item; each gets a stable
-id="u-YYYYMMDD-HHMM" (added to index.html if missing) for its permalink.
+id="u-YYYYMMDD-HHMM" (added to index.html if missing) for its permalink. The same items go into the
+"liveBlogUpdate" list of the JSON-LD on the front page.
 Usage: python3 -I feed.py   (bump.py runs it too)"""
-import email.utils, html, re
+import email.utils, html, json, re
 from datetime import datetime
 from pathlib import Path
 
@@ -71,13 +72,22 @@ if old:   # write the later list first, so the earlier offsets stay valid
     t = t[:main[0]] + block(done[:OPEN], "    ") + t[main[1]:]
 else:
     t = t[:main[0]] + block(done, "    ") + t[main[1]:]
+
+# The same updates as "liveBlogUpdate" in the JSON-LD (headline, time and permalink; the text stays in the page).
+updates = [{"@type": "BlogPosting", "headline": title.split(" · ", 1)[1], "datePublished": dt.isoformat(),
+            "url": f"https://crisus.nl/#{uid}"} for uid, title, dt, body in entries]
+ld = "\n".join("    " + json.dumps(u, ensure_ascii=False) + ("," if i < len(updates) - 1 else "")
+               for i, u in enumerate(updates))
+t, n = re.subn(r'"liveBlogUpdate": \[.*?\n  \]', lambda m: f'"liveBlogUpdate": [\n{ld}\n  ]', t, count=1, flags=re.S)
+assert n == 1, "no liveBlogUpdate list in the JSON-LD"
+json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', t, re.S).group(1))
 page.write_text(t, encoding="utf-8")
 
 def x(s): return html.escape(s, quote=False)
 newest = max(e[2] for e in entries)
 out = ['<?xml version="1.0" encoding="UTF-8"?>',
        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">', "<channel>",
-       "  <title>Crisus · PHP Kwetsbaarheid</title>",
+       "  <title>Crisus · PHP Kwetsbaarheid (PHP2Shell, CVE-2026-109618)</title>",
        "  <link>https://crisus.nl/</link>",
        '  <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>',
        "  <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>",

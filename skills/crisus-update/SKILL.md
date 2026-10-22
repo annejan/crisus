@@ -31,12 +31,13 @@ in `site/`, the tooling in `tools/`.
    publish time, the facts from the source, and one dry Dutch joke. In a quiet hour:
    skip, change nothing.
 4. **Update the fixed blocks**, one by one, so nothing is stale: the tape, the lead,
-   the clock text, the crisis level (and `og:description`), the facts under "Wat is er
+   the clock text, the crisis level (and `og:description`; the `<title>`, `og:title` and
+   `meta description` name the bug, keep them current too), the facts under "Wat is er
    aan de hand?", "Wat moet u doen?", the "Stand per platform, HH:MM" heading and every
    row, every row of the status board, and the sources list.
 5. `python3 -I tools/bump.py HH:MM [YYYY-MM-DD]` sets every "last updated" stamp
    (visible, `<time datetime>`, `article:modified_time`, JSON-LD, sitemap) and rebuilds
-   `site/feed.xml`.
+   `site/feed.xml` and the `liveBlogUpdate` list in the JSON-LD (one line per update).
 6. Check the HTML nesting (see `tools/check-html.py`), then publish on the hour:
    `tools/deploy.sh index.html sitemap.xml feed.xml`.
 7. Crisis level or fixed versions changed? `python3 -I tools/og.py --level N --versions "..."`
