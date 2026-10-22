@@ -6,7 +6,16 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Thu, 22 Oct 2026 17:00:00 +0200</lastBuildDate>
+  <lastBuildDate>Thu, 22 Oct 2026 18:00:00 +0200</lastBuildDate>
+  <item>
+    <title>22 oktober 18:00 · Crisusniveau 4: de manager vraagt of het al werkt.</title>
+    <link>https://crisus.nl/#u-20261022-1800</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261022-1800</guid>
+    <pubDate>Thu, 22 Oct 2026 18:00:00 +0200</pubDate>
+    <description><![CDATA[<p><strong>Crisusniveau 4: de manager vraagt of het al werkt.</strong> Het NCSC ziet de eerste geslaagde aanvallen, meldt de <a href="https://nos.nl/l/2636225" title="NOS: Signalen bij Nationaal Cyber Security Centrum van misbruik PHP-lek">NOS</a>. &ldquo;We zien pogingen om de kwetsbaarheden te misbruiken en we krijgen de eerste signalen binnen dat dat met succes gebeurt.&rdquo; Eerder zag het NCSC dat nog niet. Wat de signalen precies zijn, zegt het NCSC niet. Het onderzoek kan maanden duren.</p>
+      <p>De NOS telde zelf ook. Zeker 113.000 Nederlandse websites draaien aantoonbaar een gepatchte PHP. Ongeveer 145.000 sites draaien nog een oude versie. Die kunnen op een andere manier beschermd zijn, bijvoorbeeld met een backport van hun distributie, maar dat is van buitenaf niet te zien. Hoort uw site bij die 145.000? Dan weet u wat u vanavond doet.</p>
+      <p>Hebt u al gepatcht? Kijk dan ook terug: in uw logs, vanaf 17 oktober. Gepatcht is niet hetzelfde als niet binnengeweest.</p>]]></description>
+  </item>
   <item>
     <title>22 oktober 17:00 · Vanavond: de cybers, in de Angry Nerds Podcast .</title>
     <link>https://crisus.nl/#u-20261022-1700</link>
