@@ -31,6 +31,7 @@ path = [
     "site/og.png",
     "site/museum/503/*.jpg",
     "README.md",
+    "CONTRIBUTING.md",
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Anne Jan Brouwer"

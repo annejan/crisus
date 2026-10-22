@@ -1,4 +1,6 @@
-# Every push: is the site still valid and within its own rules?
+# Every push and pull request: is the site still valid and within its own rules?
+# Pull requests from forks run with a read-only token and no secrets (pull_request,
+# never pull_request_target). The actions are pinned to a commit; Dependabot bumps them.
 name: Check
 
 on:
@@ -13,10 +15,12 @@ jobs:
     # Not ubuntu-latest: that moved to 26.04 and broke other repos' CI this week.
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: REUSE
-        uses: fsfe/reuse-action@v5
+        uses: fsfe/reuse-action@676e2d560c9a403aa252096d99fcab3e1132b0f5 # v6.0.0
 
       - name: HTML nesting
         run: |
