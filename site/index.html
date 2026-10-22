@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-21T14:45:00+02:00">
-<meta property="article:modified_time" content="2026-10-22T23:00:00+02:00">
+<meta property="article:modified_time" content="2026-10-22T23:30:00+02:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=5">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -39,7 +39,7 @@
   "url": "https://crisus.nl/",
   "inLanguage": "nl",
   "datePublished": "2026-10-21T14:45:00+02:00",
-  "dateModified": "2026-10-22T23:00:00+02:00",
+  "dateModified": "2026-10-22T23:30:00+02:00",
   "coverageStartTime": "2026-10-20T22:00:00+02:00",
   "about": [
     {"@type": "Thing", "name": "CVE-2026-109618", "sameAs": "https://www.cve.org/CVERecord?id=CVE-2026-109618"},
@@ -86,7 +86,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T23:00:00+02:00">laatst bijgewerkt 22 oktober, 23:00</time></p>
+  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T23:30:00+02:00">laatst bijgewerkt 22 oktober, 23:30</time></p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu. Het NCSC ziet de eerste geslaagde aanvallen.</p>
 
@@ -172,7 +172,7 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
   <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
   <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen nog even een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
 
-  <h3 id="stand">Stand per platform, 23:00</h3>
+  <h3 id="stand">Stand per platform, 23:30</h3>
   <ul class="status" aria-labelledby="stand">
     <li><b>php.net</b><span class="pill green">Gepubliceerd</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35 sinds 15:34.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">DSA-6574-1</a>: <code>php8.4 8.4.27-1~deb13u1</code>.</em></li>
@@ -311,12 +311,12 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><b>DigiD.nl</b><span class="pill green">Terug</span><em>De website en het inloggen werken allebei weer.</em></li>
     <li><b>Tweede Kamer</b><span class="pill green">Terug</span><em>Twee keer kort weg met &ldquo;503 Backend fetch failed&rdquo;: gisternacht van 01:55 tot 02:46, vanavond van 21:55 tot uiterlijk 22:27. Geen melding over PHP.</em></li>
     <li><b>Vlaanderen</b><span class="pill green">Terug</span><em>Als eerste uit, als eerste weer aan. Respect, nogmaals.</em></li>
-    <li><b>Firewalls</b><span class="pill red">Nog geen fix</span><em>Palo Alto PAN-OS 10.2 tot en met 12.2 is kwetsbaar. Beheerinterface niet aan het internet. Cisco en Fortinet zoeken het nog uit.</em></li>
+    <li><b>Firewalls</b><span class="pill red">Nog geen fix</span><em>Palo Alto PAN-OS 10.2 tot en met 12.2 is kwetsbaar. Beheerinterface niet aan het internet. Cisco heeft een advisory en zoekt nog uit. Fortinet heeft updates uitgebracht.</em></li>
     <li><b>QNAP-NAS</b><span class="pill red">Nog geen fix</span><em>PHP2Shell zit ook in QTS en QuTS hero. Haal de NAS van het internet tot de update er is.</em></li>
     <li><b>Cloudflare</b><span class="pill orange">Noodverband</span><em>Firewallregels tegen de bekende aanvallen. Hun eigen woorden: &ldquo;a stopgap only&rdquo;.</em></li>
     <li><b>Crisus.nl</b><span class="pill green">Werkt</span><em>Geen PHP. Gewoon HTML. Zoals in 1997.</em></li>
     <li><b>Certificaten</b><span class="pill orange">Verstoord</span><em>Twee root-CA&rsquo;s deze week op staande voet ontslagen. Node.js weet het al, Java nu ook.</em></li>
-    <li><b>Pillensites</b><span class="pill red">Offline gehaald</span><em>30 sites met nepmedicijnen en harddrugs, door de politie. Die komen niet terug. Medicijnen koopt u bij de apotheek.</em></li>
+    <li><b>Pillensites</b><span class="pill green">Offline gehaald</span><em>30 sites met nepmedicijnen en harddrugs, door de politie. Die komen niet terug. Medicijnen koopt u bij de apotheek.</em></li>
     <li><b>Java</b><span class="pill orange">Update beschikbaar</span><em>CVE-2026-91403, CVSS 9.1: de eMudhra-certificaten. Ook de versies van dinsdag zijn kwetsbaar.</em></li>
     <li><b>Node.js</b><span class="pill orange">Update beschikbaar</span><em>Eigen security release vandaag. Ook gepatcht? Ook herstarten.</em></li>
     <li><b>Linux-kernel (ksmbd)</b><span class="pill red">Nog geen fix</span><em>Lekken per ongeluk op de openbare mailinglijst, twee met CVSS 9,0. Gebruikt u ksmbd? Kijk of het moet.</em></li>
@@ -329,6 +329,10 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261022-2330"><time datetime="2026-10-22T23:30+02:00">22 oktober 23:30</time>
+      <p><strong>Ook buiten Nederland.</strong> In het Verenigd Koninkrijk gingen dozijnen overheidsdiensten uit de lucht door PHP2Shell, meldt <a href="https://www.theregister.com/security/2026/10/22/php2shell-puts-dozens-of-uk-government-services-out-of-service/5304840" title="The Register: PHP2Shell puts dozens of UK government services out of service">The Register</a>. Het is dus niet alleen bij ons zo.</p>
+      <p>De leveranciers volgen. Cisco heeft een <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq" title="Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026">advisory</a> uit en zoekt nog uit welke producten het lek hebben. Fortinet bracht buiten de vaste planning updates uit, meldt <a href="https://www.heise.de/news/Ausserplanmaessige-Fortinet-Updates-Details-Fehlanzeige-aber-dringend-11497171.html" title="heise: Dringend updaten! Fortinet-Updates außer der Reihe">heise</a>, maar zegt er weinig bij. Vier woorden, ongeveer: dringend, dringend, nu, updaten.</p>
+      <p>En eMudhra stopt met SSL/TLS-certificaten, meldt <a href="https://thehackernews.com/2026/10/emudhra-to-exit-global-ssltls-business.html" title="The Hacker News: eMudhra to Exit Global SSL/TLS Business After 8 Intermediate CA Keys Found Easily Guessable">The Hacker News</a>. De sleutels van acht tussencertificaten bleken &ldquo;<a href="https://xkcd.com/221/" title="xkcd: Random Number">easily guessable</a>&rdquo;. Hoe makkelijk? Beveiligingsonderzoeker Scott Helme haalde alle acht privésleutels in minder dan een seconde uit de publieke certificaten, <a href="https://thehackernews.com/2026/10/eight-emudhra-ca-keys-compromised.html" title="The Hacker News: Eight eMudhra CA Keys Compromised">schreef The Hacker News</a> eerder deze week. E&eacute;n van de sleutels is het getal 4. De andere zeven zijn ook hele getallen onder de 256. Gekozen met een eerlijke dobbelsteenworp, dus. Gegarandeerd willekeurig. Voor een bedrijf dat certificaten verkoopt, is dat ongeveer het ergste wat er in een kop kan staan. Het rijtje is daarmee compleet, met z&rsquo;n vieren: Node.js, Java, Debian en nu de CA zelf.</p></li>
     <li id="u-20261022-2300"><time datetime="2026-10-22T23:00+02:00">22 oktober 23:00</time>
       <p>De Tweede Kamer is terug. Om 22:27 staat tweedekamer.nl er weer gewoon. Wat het was? Wij hebben gezocht: geen melding van de Kamer, geen nieuwsbericht, niets. Wat we wel weten: twee keer dezelfde foutpagina, &ldquo;503 Backend fetch failed&rdquo;, twee keer rond vijf voor heel. Gisternacht om 01:55, vanavond om 21:55.</p>
       <p>Onze theorie, nadrukkelijk zonder bron: de Guru die op die foutpagina staat, mediteert elke avond om vijf voor heel. Een andere theorie, ook zonder bron: een oude Windows-server die om tien uur zijn dagelijkse herstart doet. Dat verklaart vanavond. Gisternacht om twee uur niet. Tenzij hij die nacht ook updates installeerde. Tot de Kamer iets anders zegt, houden wij het op allebei. Zeg het niet tegen de Griffie.</p>
@@ -552,6 +556,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><a href="https://nos.nl/l/2636225" title="NOS: Signalen bij Nationaal Cyber Security Centrum van misbruik PHP-lek">NOS: Signalen bij Nationaal Cyber Security Centrum van misbruik PHP-lek</a>. Met de telling van 113.000 en 145.000 sites.</li>
     <li><a href="https://www.retecool.com/bericht-van-dennis-php/" title="Retecool: Bericht van Dennis: PHP">Retecool: Bericht van Dennis: PHP</a>. Satire, net als hier. Maar dan in hoofdletters.</li>
     <li><a href="https://www.openwall.com/lists/oss-security/2026/10/22/13" title="oss-security: Unofficial backports for CVE-2026-109618 / CVE-2026-109619 to EOL PHP 7.3 and 5.4/5.3">oss-security</a>: onofficiële backports naar PHP 7.3, 5.4 en 5.3. De <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" title="CISA: Known Exploited Vulnerabilities Catalog">KEV-lijst</a> van CISA. En de commits van <a href="https://github.com/php/php-src/commits/PHP-8.5" title="php-src: commits op PHP-8.5">php-src</a>.</li>
+    <li><a href="https://www.theregister.com/security/2026/10/22/php2shell-puts-dozens-of-uk-government-services-out-of-service/5304840" title="The Register: PHP2Shell puts dozens of UK government services out of service">The Register</a>: PHP2Shell puts dozens of UK government services out of service. Cisco: <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq" title="Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026">advisory</a>. <a href="https://www.heise.de/news/Ausserplanmaessige-Fortinet-Updates-Details-Fehlanzeige-aber-dringend-11497171.html" title="heise: Dringend updaten! Fortinet-Updates außer der Reihe">heise</a> over Fortinet. <a href="https://thehackernews.com/2026/10/emudhra-to-exit-global-ssltls-business.html" title="The Hacker News: eMudhra to Exit Global SSL/TLS Business After 8 Intermediate CA Keys Found Easily Guessable">The Hacker News</a> over eMudhra.</li>
     <li><a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">Node.js: October 2026 security releases</a>. Ook vandaag.</li>
     <li><a href="https://fedi.katze.sh/@elise/117478725808527006" title="Fediverse-draad van @elise@fedi.katze.sh over een nieuwe PHP-bug">@elise@fedi.katze.sh</a> over een nieuwe, nog niet openbare PHP-bug. E&eacute;n bron, onbevestigd.</li>
     <li><a href="https://www.vi.nl/nieuws/nederlandse-profclubs-halen-website-offline-vanwege-ernstige-beveiligingslekken" title="VI: Nederlandse profclubs halen website offline vanwege ernstige beveiligingslekken">VI: Nederlandse profclubs halen website offline</a>. Welke clubs, met de verklaring van FC Twente.</li>
@@ -592,7 +597,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <p><strong>Crisus.nl is satire.</strong> Deze site heeft niets te maken met de overheid, het NCSC of crisis.nl. De feiten op deze pagina komen uit de bronnen hierboven.</p>
     <p>Bij echte nood: bel <strong>112</strong>. Echte crisisinformatie staat op <a href="https://crisis.nl/" title="crisis.nl: de echte crisisinformatie van de overheid">crisis.nl</a>.</p>
     <p>Een grap van <a href="https://annejan.com/" title="Anne Jan Brouwer">annejan.com</a> · HTTP 200, tegen alle verwachtingen in</p>
-    <p><a href="/over/" title="Over crisus.nl, disclaimer en privacy">Over, disclaimer en privacy</a> · <a href="/museum/" title="Het Crisus-museum">Museum</a> · <a href="/feed.xml" title="RSS-feed met alle updates van crisus.nl">RSS</a> · Geen cookies, geen trackers · &copy; 2026 Anne Jan Brouwer</p>
+    <p><a href="/over/" title="Over crisus.nl, disclaimer en privacy">Over, disclaimer en privacy</a> · <a href="/museum/" title="Het Crisus-museum">Museum</a> · <a href="/feed.xml" title="RSS-feed met alle updates van crisus.nl">RSS</a> · <a href="https://github.com/annejan/crisus" title="De broncode van crisus.nl op GitHub">Broncode</a> · Geen cookies, geen trackers · &copy; 2026 Anne Jan Brouwer</p>
   </div>
 </footer>
 </body>
