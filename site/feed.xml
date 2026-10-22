@@ -6,7 +6,21 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Thu, 22 Oct 2026 22:00:00 +0200</lastBuildDate>
+  <lastBuildDate>Thu, 22 Oct 2026 23:00:00 +0200</lastBuildDate>
+  <item>
+    <title>22 oktober 23:00 · De Tweede Kamer is terug.</title>
+    <link>https://crisus.nl/#u-20261022-2300</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261022-2300</guid>
+    <pubDate>Thu, 22 Oct 2026 23:00:00 +0200</pubDate>
+    <description><![CDATA[<p>De Tweede Kamer is terug. Om 22:27 staat tweedekamer.nl er weer gewoon. Wat het was? Wij hebben gezocht: geen melding van de Kamer, geen nieuwsbericht, niets. Wat we wel weten: twee keer dezelfde foutpagina, &ldquo;503 Backend fetch failed&rdquo;, twee keer rond vijf voor heel. Gisternacht om 01:55, vanavond om 21:55.</p>
+      <p>Onze theorie, nadrukkelijk zonder bron: de Guru die op die foutpagina staat, mediteert elke avond om vijf voor heel. Een andere theorie, ook zonder bron: een oude Windows-server die om tien uur zijn dagelijkse herstart doet. Dat verklaart vanavond. Gisternacht om twee uur niet. Tenzij hij die nacht ook updates installeerde. Tot de Kamer iets anders zegt, houden wij het op allebei. Zeg het niet tegen de Griffie.</p>
+      <p><strong>Terugkijken:</strong> deze crisus heeft nu zijn eigen podcastaflevering. <a href="https://www.youtube.com/watch?v=4-cZxyKKE1E" title="Angry Nerds 320 - Crisus.nl">Angry Nerds 320</a> heet gewoon &ldquo;Crisus.nl&rdquo;. Bijna twee uur over de cybers, met de maker van deze pagina aan tafel. Over PHP, de eMudhra-certificaten en hoe zo&rsquo;n statusbord eigenlijk tot stand komt. Spoiler: met koffie.</p>
+      <p><strong>Uit de diepere bronnen.</strong> Op <a href="https://www.openwall.com/lists/oss-security/2026/10/22/13" title="oss-security: Unofficial backports for CVE-2026-109618 / CVE-2026-109619 to EOL PHP 7.3 and 5.4/5.3">oss-security</a> delen mensen onofficiële backports van de fix voor PHP 7.3, en zelfs voor 5.4 en 5.3, voor Amazon Linux. PHP 5.3 is uit 2009. Het draait blijkbaar nog ergens. Het krijgt nu dus ook nog een patch. Van een vrijwilliger.</p>
+      <p>In <a href="https://github.com/php/php-src/commits/PHP-8.5" title="php-src: commits op PHP-8.5">php-src</a> kwamen vandaag nog meer geheugenfixes binnen voor 8.4 en 8.5: &ldquo;JIT: Fix use-after-free in ASSIGN_DIM_OP with CONCAT&rdquo;, &ldquo;GC double-frees the SimpleXMLElement properties table&rdquo; en een lek in de HTTP-wrapper. Een advisory hoort er (nog) niet bij, dus officieel is het geen nieuws. Maar wie de commits leest, ziet de volgende release al aankomen.</p>
+      <p>En PHP2Shell staat nog niet op de <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" title="CISA: Known Exploited Vulnerabilities Catalog">KEV-lijst</a> van de Amerikaanse CISA, de lijst van lekken die aantoonbaar worden misbruikt. Ook al ziet het NCSC al geslaagde aanvallen. Komt hij erop, dan leest u het hier.</p>
+      <p>En dan de stem van het volk. Dennis, de vaste briefschrijver van <a href="https://www.retecool.com/bericht-van-dennis-php/" title="Retecool: Bericht van Dennis: PHP">Retecool</a>, heeft ook een mening: &ldquo;PHP LEK!!! OF PEEHAAPEE ZOALS DIE DESKUNDIGEN DAT NOEMEN!!!&rdquo; En: &ldquo;Hoe kan een taal lekken?? Ik spreek al mijn hele leven Nederlands en daar is nog nooit wat uitgelopen.&rdquo; Over open source heeft Dennis ook een voorstel: &ldquo;Linda zegt dat PHP gratis is. GRATIS??? Nou waarom maken ze er dan niet gewoon TWEE???&rdquo; Ook satire. Collega&rsquo;s.</p>
+      <p><strong>Crisusniveau terug naar 3.</strong> Besluit van de crisusmanager. De meeste sites zijn terug, de grote distributies hebben hun pakketten en de manager vraagt niet meer of het al werkt. Wel ziet het NCSC geslaagde aanvallen, dus helemaal rustig is het niet. Niveau 3 dus, maar dit keer zonder pizza. Daar hebben we na twee dagen wel genoeg van gehad. Er wordt Thais besteld.</p>]]></description>
+  </item>
   <item>
     <title>22 oktober 22:00 · De Tweede Kamer is weer even weg.</title>
     <link>https://crisus.nl/#u-20261022-2200</link>
