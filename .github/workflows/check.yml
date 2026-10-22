@@ -42,7 +42,7 @@ jobs:
             echo "inline script or style found"; exit 1
           fi
 
-      - name: Every #anchor on the front page exists
+      - name: "Every #anchor on the front page exists"
         run: |
           python3 -I - <<'PY'
           import re, sys
