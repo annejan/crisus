@@ -16,7 +16,11 @@ echo "== Docker/Homebrew/RH/SUSE"
 curl -s 'https://hub.docker.com/v2/repositories/library/php/tags?page_size=6&name=8.5.12' | python3 -I -c "import sys,json; print('docker',[r['name'] for r in json.load(sys.stdin).get('results',[])][:6])"
 for tg in 8.5-apache 8.4-apache 8.4-fpm latest; do printf '%s %s  ' $tg "$(curl -s https://hub.docker.com/v2/repositories/library/php/tags/$tg | python3 -I -c 'import sys,json; print(json.load(sys.stdin).get("last_updated","?")[:16])')"; done; echo "(floating tags: 07:xx = still old)"
 curl -s https://formulae.brew.sh/api/formula/php.json | python3 -I -c "import sys,json; print('brew',json.load(sys.stdin)['versions']['stable'])"
-curl -s -o /dev/null -L -w 'rh %{http_code} ' https://access.redhat.com/security/cve/CVE-2026-109618; curl -s -o /dev/null -w 'suse %{http_code}\n' https://www.suse.com/security/cve/CVE-2026-109618.html
+# Red Hat: the errata (RHSA) that fix the CVE; SUSE: how many products have it released.
+curl -s 'https://access.redhat.com/hydra/rest/securitydata/csaf.json?cve=CVE-2026-109618' \
+  | python3 -I -c 'import json,sys; a=json.load(sys.stdin); print("rh", len(a), "RHSA:", " ".join(sorted(x["RHSA"] for x in a)))'
+curl -s https://www.suse.com/security/cve/CVE-2026-109618.html \
+  | python3 -I -c 'import re,sys,collections; t=re.sub(r"<[^>]+>"," ",sys.stdin.read()); print("suse", dict(collections.Counter(re.findall(r"\b(Released|Pending|In progress)\b", t))))'
 echo "== Node distro"; echo "debian trixie nodejs: $(pkg http://security.debian.org/debian-security/dists/trixie-security/main/binary-amd64/Packages.xz nodejs)  ubuntu resolute-security nodejs: $(pkg http://security.ubuntu.com/ubuntu/dists/resolute-security/main/binary-amd64/Packages.xz nodejs)"
 echo "== sites"
 for u in https://www.digid.nl/ https://mijn.overheid.nl/ https://www.ncsc.nl/ https://www.tweedekamer.nl/ https://www.knvb.nl/ https://www.kwf.nl/ https://www.amnesty.nl/; do
