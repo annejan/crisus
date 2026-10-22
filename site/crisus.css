@@ -189,7 +189,7 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 .vitrine pre { margin: 0; }
 .vitrine figcaption { margin-top: 12px; }
 .vitrine figcaption time { display: block; color: var(--muted); font-size: 14px; }
-.vitrine figcaption b { display: block; font-size: 20px; margin: 2px 0 4px; }
+.vitrine figcaption h2 { display: block; font-size: 20px; line-height: 1.25; margin: 2px 0 4px; }
 .vitrine figcaption p { margin: 4px 0; }
 .vitrine figcaption small { display: block; color: var(--muted); font-size: 13px; }
 .vitrine .drie { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }

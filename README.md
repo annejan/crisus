@@ -16,7 +16,7 @@ CVE-2026-109619), updated through the day and the night after.
 | `tools/check.sh` | One round of source checks: news, php.net, distributions, Docker, offline sites |
 | `tools/headlines.py` | Headlines on the current topics since the last update (Security.NL, NOS, Tweakers, NCSC, heise) |
 | `tools/bump.py` | Set every "last updated" stamp at once and rebuild the feed |
-| `tools/feed.py` | Build `site/feed.xml` from the updates list; gives every update a permalink id |
+| `tools/feed.py` | Build `site/feed.xml` and the JSON-LD `liveBlogUpdate` list from the updates; gives every update a permalink id |
 | `tools/og.py` | Render `site/og.png`, the link-preview image |
 | `tools/check-html.py` | Check that tags nest properly |
 | `tools/deploy.sh` | Copy `site/` to the web server |
