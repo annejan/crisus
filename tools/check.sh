@@ -30,3 +30,9 @@ echo "== elise thread (newest)"; curl -s -A 'Mozilla/5.0' https://fedi.katze.sh/
 import sys,json,re,html
 d=json.load(sys.stdin); s=[x for x in d.get('descendants',[]) if x['account']['acct']=='elise']
 for x in s[-3:]: print(x['created_at'][:16], re.sub(r'\s+',' ',html.unescape(re.sub(r'<[^>]+>',' ',x['content'])))[:160])"
+# The round is open about itself: the front page says when it last looked
+# ("laatste controle HH:MM"). Only in the round's own environment, where deploys go
+# through the rsync key; a manual check changes nothing.
+if [ -n "${CRISUS_RSYNC:-}" ]; then
+    python3 -I "$(dirname "$0")/controle.py" >/dev/null && "$(dirname "$0")/deploy.sh" controle.js >/dev/null && echo "== controle.js deployed"
+fi

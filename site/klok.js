@@ -108,7 +108,9 @@
   var d = m[1].split('-'), time = el.querySelector('time');
   time.setAttribute('datetime', c.at);
   time.textContent = (m[1] === vandaag ? '' : Number(d[2]) + ' ' + MAANDEN[d[1] - 1] + ', ') + m[2];
-  el.querySelector('.uitslag').textContent = c.nieuws ? 'nieuwe update' : 'niets nieuws';
+  // A round with news bumps the page after it looked: then the stamp says so too
+  var bijgewerkt = Date.parse(document.querySelector('.kicker time').getAttribute('datetime'));
+  el.querySelector('.uitslag').textContent = c.nieuws || bijgewerkt >= Date.parse(c.at) ? 'nieuwe update' : 'niets nieuws';
   el.hidden = false;
 })();
 

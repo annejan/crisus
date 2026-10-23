@@ -30,9 +30,10 @@ in `site/`, the tooling in `tools/`.
    `site/index.html`: `<li>` without an id (`feed.py` adds it), a `<time>` with the
    publish time, the facts from the source, and one dry Dutch joke. In a quiet hour:
    skip, change nothing.
-   **Every round, news or not:** `python3 -I tools/controle.py [HH:MM] [--nieuws]` and
-   `tools/deploy.sh controle.js`. That fills "laatste controle HH:MM, niets nieuws" on the
-   front page; `site/controle.js` is not in git, so a quiet hour needs no commit.
+   `tools/check.sh` (in the round, with `CRISUS_RSYNC` set) also writes and deploys
+   `site/controle.js`: "laatste controle HH:MM" on the front page, "niets nieuws" or,
+   when the page was bumped after it, "nieuwe update". Not in git, so a quiet hour
+   needs no commit.
 4. **Update the fixed blocks**, one by one, so nothing is stale: the tape, the lead,
    the clock text, the crisis level (and `og:description`; the `<title>`, `og:title` and
    `meta description` name the bug, keep them current too), the facts under "Wat is er
