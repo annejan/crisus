@@ -24,7 +24,7 @@ jobs:
 
       - name: HTML nesting
         run: |
-          for f in site/index.html site/404.html site/over/index.html site/museum/index.html; do
+          for f in site/index.html site/404.html site/over/index.html site/museum/index.html site/php/index.html site/en/index.html site/uk/index.html; do
             python3 -I tools/check-html.py "$f"
           done
 
@@ -34,7 +34,7 @@ jobs:
           import json, re, xml.etree.ElementTree as ET
           for f in ("site/feed.xml", "site/sitemap.xml"):
               ET.parse(f)
-          for f in ("site/index.html", "site/over/index.html", "site/museum/index.html"):
+          for f in ("site/index.html", "site/over/index.html", "site/museum/index.html", "site/php/index.html", "site/en/index.html", "site/uk/index.html"):
               for ld in re.findall(r'<script type="application/ld\+json">(.*?)</script>', open(f, encoding="utf-8").read(), re.S):
                   json.loads(ld)
           print("ok")

@@ -87,7 +87,7 @@ def x(s): return html.escape(s, quote=False)
 newest = max(e[2] for e in entries)
 out = ['<?xml version="1.0" encoding="UTF-8"?>',
        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">', "<channel>",
-       "  <title>Crisus · PHP Kwetsbaarheid (PHP2Shell, CVE-2026-109618)</title>",
+       f"  <title>{x(re.search(r'<title>(.*?)</title>', t).group(1))}</title>",
        "  <link>https://crisus.nl/</link>",
        '  <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>',
        "  <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>",
