@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title>Crisus · Geen crisus. Alleen de gebruikelijke.</title>
+  <title>Crisus · Geen nieuwe crisus. Wel een oorlog.</title>
   <link>https://crisus.nl/</link>
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
@@ -13,7 +13,7 @@
     <guid isPermaLink="true">https://crisus.nl/#u-20261023-2300</guid>
     <pubDate>Fri, 23 Oct 2026 23:00:00 +0200</pubDate>
     <description><![CDATA[<p><strong>PHP2Shell is afgesloten.</strong> De patch is uit, de sites zijn terug en de ergste drukte is voorbij. Alles van die crisus, met alle updates, staat op <a href="/php/" title="Crisus: PHP2Shell, afgesloten">crisus.nl/php</a>. Eén ding blijft: de vervolgbug CVE-2026-115560 krijgt pas een fix in de volgende gewone release. Zet tot dan <code>session.upload_progress.enabled = 0</code>, volgens <a href="https://www.php.net/archive/2026.php#2026-10-23-1" title="php.net: Informational advisory: Session upload progress">php.net</a>.</p>
-      <p>Het crisusniveau gaat naar 0. Het crisusteam ruimt de pizzadozen op en zet de brom weer aan.</p>]]></description>
+      <p>Het crisusniveau blijft op 2: opletten. Er is een oorlog, er komt wind en PHP heeft nog een staartje. Het crisusteam ruimt de pizzadozen op en zet de brom weer aan.</p>]]></description>
   </item>
 </channel>
 </rss>
