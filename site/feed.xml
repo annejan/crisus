@@ -6,7 +6,16 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Fri, 23 Oct 2026 13:00:00 +0200</lastBuildDate>
+  <lastBuildDate>Fri, 23 Oct 2026 16:00:00 +0200</lastBuildDate>
+  <item>
+    <title>23 oktober 16:00 · Ook de oude RHEL 7 is kwetsbaar.</title>
+    <link>https://crisus.nl/#u-20261023-1600</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261023-1600</guid>
+    <pubDate>Fri, 23 Oct 2026 16:00:00 +0200</pubDate>
+    <description><![CDATA[<p><strong>Ook de oude RHEL 7 is kwetsbaar.</strong> Red Hat heeft zijn <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-013" title="Red Hat: RHSB-2026-013, PHP2Shell">bulletin</a> bijgewerkt. RHEL 7, met PHP 5.4.16, is in de standaardinstelling kwetsbaar voor CVE-2026-109619. Een fix staat er nog niet bij. RHEL 6 is ook getroffen, maar valt &ldquo;buiten de support&rdquo;. Daar komt dus niets. Dat ziet u ook in de <a href="https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-109619.json" title="Red Hat: VEX-data voor CVE-2026-109619">VEX-data</a> van Red Hat. Op <a href="https://www.openwall.com/lists/oss-security/2026/10/23/3" title="oss-security: correctie over PHP 5.4.16 (EL7) en 5.3.3 (EL6)">oss-security</a> wees iemand erop. Eerder stond RHEL 7 nog als &ldquo;niet getroffen&rdquo; te boek.</p>
+      <p>Het andere lek, CVE-2026-109618, zit volgens Red Hat niet in PHP 5.4. Die code kwam pas met PHP 7.3. Daarmee stellen we ons vak &ldquo;Welke versies?&rdquo; bij: CVE-2026-109619 gaat terug tot PHP 5.4.0, CVE-2026-109618 tot PHP 7.3.0.</p>
+      <p>Draait u nog CentOS 7 of iets anders op PHP 5.4? Dan helpt dezelfde regel als bij de vervolgbug van vanmiddag: <code>session.upload_progress.enabled = 0</code> in <code>php.ini</code>, niet via <code>ini_set()</code>. Een volledige oplossing is dat niet. Dat is een upgrade. CentOS 7 kreeg sinds juni 2024 geen updates meer. Daar verandert vandaag niets aan.</p>]]></description>
+  </item>
   <item>
     <title>23 oktober 13:00 · Daar is de vervolgbug.</title>
     <link>https://crisus.nl/#u-20261023-1300</link>
