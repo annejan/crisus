@@ -1,12 +1,12 @@
 #!/bin/bash
 # Deploy crisus.nl: everything in site/ to the static-sites root on the web box.
 # Usage: tools/deploy.sh            (all files)
-#        tools/deploy.sh index.html sitemap.xml feed.xml   (just these)
+#        tools/deploy.sh index.html uk/index.html   (just these, paths relative to site/)
 set -euo pipefail
 cd "$(dirname "$0")/../site"
 DEST=annejan.com:www/sites/crisus.nl
 if [ $# -gt 0 ]; then
-    scp -q "$@" "$DEST/"
+    for f in "$@"; do scp -q "$f" "$DEST/$f"; done
 else
     ssh annejan.com 'mkdir -p www/sites/crisus.nl/over www/sites/crisus.nl/museum/oud www/sites/crisus.nl/museum/503 www/sites/crisus.nl/php www/sites/crisus.nl/en www/sites/crisus.nl/uk'
     scp -q index.html 404.html crisus.css klok.js favicon.svg og.png robots.txt sitemap.xml feed.xml .htaccess "$DEST/"
