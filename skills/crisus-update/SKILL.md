@@ -103,3 +103,11 @@ Keep the war block factual: no jokes there.
   page language (nl, en, uk plurals).
 - **Winter time:** from 25 October 2026 the offset is `+01:00`. `bump.py` works it out
   itself (Europe/Amsterdam); write `<time datetime>` of new items with the right offset too.
+
+## The weather
+
+`bash tools/storm.sh` lists the KNMI warnings for the Netherlands (via Meteoalarm) and ends
+with `STORM: geen|geel|ORANJE|ROOD`. Yellow is "Op de radar" material. **Orange or red is a
+possible new crisis:** check the KNMI and the NOS, tell the owner at once, and prepare a
+storm front page (archive the rest page state first if needed) but let the owner decide
+before it goes live.
