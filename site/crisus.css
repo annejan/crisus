@@ -229,6 +229,7 @@ details.patch[open] > summary { margin-bottom: 14px; }
 .talen a[aria-current] { background: var(--black); color: var(--yellow); }
 .afgesloten { margin: 18px 0; padding: 14px 18px; border: 2px solid var(--black); border-radius: 12px; background: var(--yellow); color: var(--black); }
 .afgesloten a { color: var(--black); }
+.vandaag[hidden] { display: none; }
 .vandaag { display: inline-block; margin: 0 0 22px; padding: 6px 12px; border-radius: 8px; background: var(--yellow); color: var(--black); font-weight: 700; }
 .vandaag a { color: var(--black); }
 .bouwbord { margin: 22px 0 0; padding: 16px 20px; border: 4px solid var(--black); border-radius: 6px; background: var(--yellow); color: var(--black); font-weight: 700; font-size: 18px; }
