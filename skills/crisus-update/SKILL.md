@@ -95,7 +95,9 @@ click), three clocks for Russia's war against Ukraine (Crimea 20 Feb 2014, Donba
 12 Apr 2014, full-scale invasion 24 Feb 2022 05:00 Kyiv), "Op de radar", "Wat moet u
 doen?" and the list of earlier crises. It exists in Dutch (`/`), English (`/en/`) and
 Ukrainian (`/uk/`); only the Dutch page has the update list, the feed and `bump.py`.
-Keep the war block factual: no jokes there.
+Keep the war block factual: no jokes there. Give it room and respect: nothing playful (the
+bouwbord, the vaste waarden, jokes) directly next to it. For the owner this is not abstract:
+they have been to Ukraine three times, each time to Kharkiv.
 
 - **Closing a crisis:** `python3 -I tools/archive.py <slug> "<closing text>" [END-ISO]`
   freezes the front page as `site/<slug>/index.html` (URLs, JSON-LD coverageEndTime,
