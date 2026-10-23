@@ -10,6 +10,10 @@ Header always set Cross-Origin-Opener-Policy "same-origin"
 <FilesMatch "\.(css|js|svg)$">
     Header set Cache-Control "public, max-age=86400"
 </FilesMatch>
+# The stamp of the hourly round changes every hour and has no ?v=.
+<Files "controle.js">
+    Header set Cache-Control "no-cache"
+</Files>
 
 # the RSS feed
 <Files "feed.xml">

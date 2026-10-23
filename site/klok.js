@@ -1,5 +1,6 @@
-// Clocks: every <b data-since="ISO time"> counts up from that moment, in days and
-// hh:mm:ss. Without JavaScript the element keeps the text it has in the page.
+// Clocks: every element with data-since="ISO time" counts up from that moment, and
+// every element with data-until counts down to it, in days and hh:mm:ss. Without
+// JavaScript the element keeps the text it has in the page.
 (function () {
   var lang = (document.documentElement.lang || 'nl').slice(0, 2);
   function days(d) {
@@ -11,10 +12,10 @@
     return d + (d === 1 ? ' dag ' : ' dagen ');
   }
   function start(b) {
-    var t = Date.parse(b.getAttribute('data-since'));
+    var since = b.hasAttribute('data-since'), t = Date.parse(b.getAttribute(since ? 'data-since' : 'data-until'));
     if (isNaN(t)) return;
     function tick() {
-      var s = Math.max(0, Math.round((Date.now() - t) / 1000));
+      var s = Math.max(0, Math.round((since ? Date.now() - t : t - Date.now()) / 1000));
       var d = Math.floor(s / 86400), hms = [Math.floor(s / 3600) % 24, Math.floor(s / 60) % 60, s % 60]
         .map(function (n) { return String(n).padStart(2, '0'); }).join(':');
       b.textContent = (d ? days(d) : '') + hms;
@@ -22,7 +23,7 @@
     }
     tick();
   }
-  var els = document.querySelectorAll('b[data-since]');
+  var els = document.querySelectorAll('[data-since], [data-until]');
   for (var i = 0; i < els.length; i++) start(els[i]);
 })();
 
@@ -93,4 +94,56 @@
     btn.setAttribute('aria-pressed', 'true');
     btn.textContent = btn.getAttribute('data-on');
   });
+})();
+
+// The hourly round: controle.js (written by tools/controle.py, not in git) says when
+// the last round looked and whether it found news. Without it the line stays hidden.
+(function () {
+  var el = document.getElementById('controle'), c = window.crisusControle;
+  var m = c && /^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2})/.exec(c.at);
+  if (!el || !m) return;
+  var MAANDEN = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli',
+                 'augustus', 'september', 'oktober', 'november', 'december'];
+  var vandaag = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Amsterdam' }).format(new Date());
+  var d = m[1].split('-'), time = el.querySelector('time');
+  time.setAttribute('datetime', c.at);
+  time.textContent = (m[1] === vandaag ? '' : Number(d[2]) + ' ' + MAANDEN[d[1] - 1] + ', ') + m[2];
+  el.querySelector('.uitslag').textContent = c.nieuws ? 'nieuwe update' : 'niets nieuws';
+  el.hidden = false;
+})();
+
+// On the anniversary of an earlier crisus (a full date in the archive list), say so
+// at the top of the page.
+(function () {
+  var el = document.getElementById('vandaag');
+  if (!el) return;
+  var nu = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Amsterdam' }).format(new Date());
+  var items = document.querySelectorAll('.archief li');
+  for (var i = 0; i < items.length; i++) {
+    var dt = items[i].querySelector('time').getAttribute('datetime'), jaren = nu.slice(0, 4) - dt.slice(0, 4);
+    if (dt.length !== 10 || dt.slice(5) !== nu.slice(5) || jaren < 1) continue;
+    var a = document.createElement('a');
+    a.href = '#archief';
+    a.textContent = items[i].querySelector('b').textContent;
+    el.textContent = 'Vandaag ' + jaren + ' jaar geleden: ';
+    el.appendChild(a);
+    el.appendChild(document.createTextNode('.'));
+    el.hidden = false;
+    return;
+  }
+})();
+
+// The next Patch Tuesday: the second Tuesday of the month, today included.
+(function () {
+  var el = document.getElementById('patchdinsdag');
+  if (!el) return;
+  var MAANDEN = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli',
+                 'augustus', 'september', 'oktober', 'november', 'december'];
+  var n = new Date(), vandaag = new Date(n.getFullYear(), n.getMonth(), n.getDate());
+  function tweede(j, m) { var d = new Date(j, m, 1); d.setDate(1 + (9 - d.getDay()) % 7 + 7); return d; }
+  var pd = tweede(vandaag.getFullYear(), vandaag.getMonth());
+  if (pd < vandaag) pd = tweede(vandaag.getFullYear(), vandaag.getMonth() + 1);
+  var dagen = Math.round((pd - vandaag) / 86400000);
+  el.textContent = pd.getDate() + ' ' + MAANDEN[pd.getMonth()] +
+    (dagen === 0 ? ', vandaag' : dagen === 1 ? ', morgen' : ', over ' + dagen + ' dagen');
 })();

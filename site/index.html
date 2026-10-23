@@ -31,8 +31,9 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="alternate" type="application/rss+xml" title="Crisus: alle updates" href="https://crisus.nl/feed.xml">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/crisus.css?v=11">
-<script src="/klok.js?v=5" defer></script>
+<link rel="stylesheet" href="/crisus.css?v=12">
+<script src="/controle.js" defer></script>
+<script src="/klok.js?v=6" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -94,9 +95,10 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Geen nieuwe crisus · <time datetime="2026-10-23T22:50:00+02:00">laatst bijgewerkt 23 oktober, 22:50</time></p>
+  <p class="kicker">Geen nieuwe crisus · <time datetime="2026-10-23T22:50:00+02:00">laatst bijgewerkt 23 oktober, 22:50</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
   <h1>Geen nieuwe crisus. Wel een oorlog.</h1>
   <p class="lead">Op internet is er op dit moment geen nieuwe crisus. Wel is er een oorlog: Rusland voert die al sinds 2014 tegen Oekra&iuml;ne. Nederland is officieel niet in oorlog. Betrokken is het wel, en op zijn laatst sinds MH17. Daarom staat het crisusniveau op 3.</p>
+  <p class="vandaag" id="vandaag" hidden></p>
 
   <section class="level" aria-labelledby="niveau">
     <h2 id="niveau">Huidig crisusniveau: 3 van 5</h2>
@@ -110,6 +112,17 @@
     </ol>
     <p class="brom"><button id="brom" type="button" hidden aria-pressed="false" data-on="Brom uit" data-off="Brom aan">Brom aan</button> Het geluid van een gewone dag: 50 hertz, net als het stroomnet. Zacht, en pas als u klikt.</p>
   </section>
+
+  <p class="bouwbord">Het internet is al <b data-since="2026-10-23T22:50:00+02:00">sinds 23 oktober</b> zonder nieuwe crisus. <span>Vorige: <a href="/php/" title="Crisus: PHP2Shell, afgesloten">PHP2Shell</a>. Bij een nieuwe gaat dit bord plechtig terug naar 0.</span></p>
+
+  <h2 id="bord">Vaste waarden</h2>
+  <ul class="bord" aria-labelledby="bord">
+    <li><b>Stroomnet</b><span>50 Hz, ongeveer</span></li>
+    <li><b>Millenniumbug</b><span>Nog steeds niets</span></li>
+    <li><b>Volgende Patch Tuesday</b><span id="patchdinsdag">De tweede dinsdag van de maand</span></li>
+    <li><b>Tot het jaar-2038-probleem</b><span data-until="2038-01-19T03:14:08Z">19 januari 2038</span></li>
+    <li><b>crisus.nl</b><span>HTTP 200</span></li>
+  </ul>
 
   <h2 id="oorlog">De oorlog duurt voort</h2>
   <p>Rusland voert sinds 2014 oorlog tegen Oekra&iuml;ne. Die oorlog is niet voorbij. Deze klokken lopen door tot hij dat wel is.</p>
@@ -155,6 +168,7 @@
     <li><a href="https://en.wikipedia.org/wiki/Siege_of_Sloviansk" title="Wikipedia: Siege of Sloviansk">Wikipedia: Siege of Sloviansk</a>. 12 april 2014, het begin van de oorlog in de Donbas.</li>
     <li><a href="https://nl.wikipedia.org/wiki/Malaysia_Airlines-vlucht_17" title="Wikipedia: Malaysia Airlines-vlucht 17">Wikipedia: Malaysia Airlines-vlucht 17</a>. 17 juli 2014, 298 doden, onder wie 196 Nederlanders, en het vonnis van 2022.</li>
     <li><a href="https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine" title="Wikipedia: Russian invasion of Ukraine">Wikipedia: Russian invasion of Ukraine</a>. 24 februari 2022, kort voor 05:00 Kyiv-tijd.</li>
+    <li><a href="https://en.wikipedia.org/wiki/Utility_frequency" title="Wikipedia: Utility frequency">Wikipedia: Utility frequency</a>. Het Europese stroomnet draait op 50 Hz. <a href="https://en.wikipedia.org/wiki/Patch_Tuesday" title="Wikipedia: Patch Tuesday">Patch Tuesday</a>: de tweede dinsdag van de maand. <a href="https://en.wikipedia.org/wiki/Year_2038_problem" title="Wikipedia: Year 2038 problem">Het jaar-2038-probleem</a>: op 19 januari 2038 om 03:14:08 UTC loopt een 32-bits Unix-tijd over.</li>
     <li><a href="https://meteoalarm.org/en/live/region/NL" title="Meteoalarm: waarschuwingen voor Nederland">Meteoalarm</a> en het <a href="https://nos.nl/artikel/2636248-herfstweer-komt-op-gang-veel-wind-dit-weekend-mogelijk-met-eerste-storm" title="NOS: Herfstweer komt op gang, veel wind dit weekend">NOS-weerbericht</a> voor de wind.</li>
     <li><a href="https://www.php.net/archive/2026.php#2026-10-23-1" title="php.net: Informational advisory: Session upload progress">php.net: Informational advisory: Session upload progress</a>. De vervolgbug.</li>
     <li><a href="https://www.theregister.com/security/2026/10/23/theres-a-third-php2shell-bug-but-it-wont-get-an-emergency-fix/5305208" title="The Register: There's a third PHP2Shell bug, but it won't get an emergency fix">The Register: There&rsquo;s a third PHP2Shell bug</a>. De PHP Foundation en Mandiant over de stand van het misbruik.</li>

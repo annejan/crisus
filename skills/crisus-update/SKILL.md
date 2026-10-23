@@ -30,6 +30,9 @@ in `site/`, the tooling in `tools/`.
    `site/index.html`: `<li>` without an id (`feed.py` adds it), a `<time>` with the
    publish time, the facts from the source, and one dry Dutch joke. In a quiet hour:
    skip, change nothing.
+   **Every round, news or not:** `python3 -I tools/controle.py [HH:MM] [--nieuws]` and
+   `tools/deploy.sh controle.js`. That fills "laatste controle HH:MM, niets nieuws" on the
+   front page; `site/controle.js` is not in git, so a quiet hour needs no commit.
 4. **Update the fixed blocks**, one by one, so nothing is stale: the tape, the lead,
    the clock text, the crisis level (and `og:description`; the `<title>`, `og:title` and
    `meta description` name the bug, keep them current too), the facts under "Wat is er
@@ -99,8 +102,13 @@ Keep the war block factual: no jokes there.
   banner, "Crisusniveau bij het afsluiten"). Add the date range of its update ids to
   `ARCHIVES` in `site/klok.js`, so old `/#u-...` links go on to the archive; add it to the
   list of earlier crises, the sitemap and `tools/deploy.sh`. PHP2Shell lives at `/php/`.
-- **Clocks:** any `<b data-since="ISO">` in a page counts up (klok.js), with day words per
-  page language (nl, en, uk plurals).
+- **Clocks:** any element with `data-since="ISO"` counts up and `data-until` counts down
+  (klok.js), with day words per page language (nl, en, uk plurals). The yellow
+  "bouwbord" counts days without a new crisus since the last one closed: on a new crisus,
+  set its `data-since` to the closing time of that one, and its "Vorige" link.
+- **Vaste waarden** (`#bord`): only values that stay true or are computed (Patch Tuesday,
+  the 2038 countdown). "Vandaag N jaar geleden" comes by itself from full dates in the
+  archive list.
 - **Winter time:** from 25 October 2026 the offset is `+01:00`. `bump.py` works it out
   itself (Europe/Amsterdam); write `<time datetime>` of new items with the right offset too.
 
