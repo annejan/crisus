@@ -83,3 +83,23 @@ status, status board, updates, sources, archive). Move the old incident to the
 "Eerdere crisussen" archive, and give it a vitrine in `site/museum/` (own material CC-BY;
 third-party images in `museum/oud/` under LicenseRef-ThirdPartyArchive, with their source). Reset the feed: the old items can stay, they keep their
 ids.
+
+## Between crises: the rest page
+
+Since 2026-10-23 the front page is a **rest page** when nothing acute is going on:
+crisis level 0 ("Business as usual", with an optional 50 Hz hum that only plays on a
+click), three clocks for Russia's war against Ukraine (Crimea 20 Feb 2014, Donbas
+12 Apr 2014, full-scale invasion 24 Feb 2022 05:00 Kyiv), "Op de radar", "Wat moet u
+doen?" and the list of earlier crises. It exists in Dutch (`/`), English (`/en/`) and
+Ukrainian (`/uk/`); only the Dutch page has the update list, the feed and `bump.py`.
+Keep the war block factual: no jokes there.
+
+- **Closing a crisis:** `python3 -I tools/archive.py <slug> "<closing text>" [END-ISO]`
+  freezes the front page as `site/<slug>/index.html` (URLs, JSON-LD coverageEndTime,
+  banner, "Crisusniveau bij het afsluiten"). Add the date range of its update ids to
+  `ARCHIVES` in `site/klok.js`, so old `/#u-...` links go on to the archive; add it to the
+  list of earlier crises, the sitemap and `tools/deploy.sh`. PHP2Shell lives at `/php/`.
+- **Clocks:** any `<b data-since="ISO">` in a page counts up (klok.js), with day words per
+  page language (nl, en, uk plurals).
+- **Winter time:** from 25 October 2026 the offset is `+01:00`. `bump.py` works it out
+  itself (Europe/Amsterdam); write `<time datetime>` of new items with the right offset too.
