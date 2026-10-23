@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-21T14:45:00+02:00">
-<meta property="article:modified_time" content="2026-10-22T23:30:00+02:00">
+<meta property="article:modified_time" content="2026-10-23T11:00:00+02:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=5">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -43,7 +43,7 @@
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-21T14:45:00+02:00",
-  "dateModified": "2026-10-22T23:30:00+02:00",
+  "dateModified": "2026-10-23T11:00:00+02:00",
   "coverageStartTime": "2026-10-20T22:00:00+02:00",
   "about": [
     {"@type": "Thing", "name": "CVE-2026-109618", "sameAs": "https://www.cve.org/CVERecord?id=CVE-2026-109618"},
@@ -54,6 +54,7 @@
   "genre": "satire",
   "keywords": ["PHP2Shell", "PHP", "CVE-2026-109618", "CVE-2026-109619", "kwetsbaarheid", "remote code execution", "NCSC"],
   "liveBlogUpdate": [
+    {"@type": "BlogPosting", "headline": "Er wordt nog steeds geklopt, maar de deur houdt.", "datePublished": "2026-10-23T11:00:00+02:00", "url": "https://crisus.nl/#u-20261023-1100"},
     {"@type": "BlogPosting", "headline": "Ook buiten Nederland.", "datePublished": "2026-10-22T23:30:00+02:00", "url": "https://crisus.nl/#u-20261022-2330"},
     {"@type": "BlogPosting", "headline": "De Tweede Kamer is terug.", "datePublished": "2026-10-22T23:00:00+02:00", "url": "https://crisus.nl/#u-20261022-2300"},
     {"@type": "BlogPosting", "headline": "De Tweede Kamer is weer even weg.", "datePublished": "2026-10-22T22:00:00+02:00", "url": "https://crisus.nl/#u-20261022-2200"},
@@ -150,7 +151,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · <time datetime="2026-10-22T23:30:00+02:00">laatst bijgewerkt 22 oktober, 23:30</time></p>
+  <p class="kicker">Lopende crisus · <time datetime="2026-10-23T11:00:00+02:00">laatst bijgewerkt 23 oktober, 11:00</time></p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu. Het NCSC ziet de eerste geslaagde aanvallen.</p>
 
@@ -169,6 +170,11 @@
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261023-1100"><time datetime="2026-10-23T11:00+02:00">23 oktober 11:00</time>
+      <p><strong>Er wordt nog steeds geklopt, maar de deur houdt.</strong> Aanvallers proberen met PHP2Shell servers in te lijven bij Potassium, een variant van het Mirai-botnet, meldt <a href="https://thehackernews.com/2026/10/php2shell-exploit-attempts-hit-millions.html" title="The Hacker News: PHP2Shell Exploit Attempts Hit Millions as Attackers Try to Deploy Mirai Malware">The Hacker News</a> op basis van onderzoek van Sophos en Arctic Wolf. Dat lukte niet. Ook Previdian, Wordfence en Hunt.io zien veel pogingen en nog geen enkele geslaagde aanval. Hunt.io zag 123 servers aangevallen worden en geen ervan viel. Het lek blijkt lastiger uit te buiten dan gedacht. Mirai is Japans voor &ldquo;toekomst&rdquo;. Voorlopig blijft het daarbij.</p>
+      <p>Toch geen reden om te wachten. Censys telt op 23 oktober nog 34,4 miljoen kwetsbare PHP-diensten. Dat is bijna twee keer zoveel als Nederland inwoners heeft.</p>
+      <p><strong>En de blauwe busjes rijden weer.</strong> Albert Heijn bezorgt sinds vrijdagochtend weer boodschappen, voor het eerst in bijna twee weken, meldt <a href="https://www.nu.nl/economie/6414130/albert-heijn-bezorgt-na-bijna-twee-weken-weer-boodschappen.html" title="NU.nl: Albert Heijn bezorgt na bijna twee weken weer boodschappen">NU.nl</a>. Geen PHP-verhaal: dat was de hack van 11 oktober. Het AH-effect is daarmee officieel voorbij. De stekker mag er weer in. Wel eerst patchen.</p>
+      <p>Verder geen nieuwe release, geen nieuwe advisory en PHP2Shell staat nog niet op de <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" title="CISA: Known Exploited Vulnerabilities Catalog">KEV-lijst</a> van CISA. De distributies ruimen de laatste hoekjes op. Red Hat patchte vannacht ook php:7.4 voor de oude RHEL 8.6 en 8.8 (<a href="https://access.redhat.com/errata/RHSA-2026:88532" title="Red Hat: RHSA-2026:88532">RHSA-2026:88532</a> en <a href="https://access.redhat.com/errata/RHSA-2026:88533" title="Red Hat: RHSA-2026:88533">88533</a>). SUSE heeft nu een fix voor SLES 16.0. Alleen 16.1 en 16.2 moeten nog, volgens de <a href="https://www.suse.com/security/cve/CVE-2026-109618.html" title="SUSE: CVE-2026-109618">CVE-pagina</a>.</p></li>
     <li id="u-20261022-2330"><time datetime="2026-10-22T23:30+02:00">22 oktober 23:30</time>
       <p><strong>Ook buiten Nederland.</strong> In het Verenigd Koninkrijk gingen dozijnen overheidsdiensten uit de lucht door PHP2Shell, meldt <a href="https://www.theregister.com/security/2026/10/22/php2shell-puts-dozens-of-uk-government-services-out-of-service/5304840" title="The Register: PHP2Shell puts dozens of UK government services out of service">The Register</a>. Het is dus niet alleen bij ons zo.</p>
       <p>De leveranciers volgen. Cisco heeft een <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq" title="Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026">advisory</a> uit en zoekt nog uit welke producten het lek hebben. Fortinet bracht buiten de vaste planning updates uit, meldt <a href="https://www.heise.de/news/Ausserplanmaessige-Fortinet-Updates-Details-Fehlanzeige-aber-dringend-11497171.html" title="heise: Dringend updaten! Fortinet-Updates außer der Reihe">heise</a>, maar zegt er weinig bij. Vier woorden, ongeveer: dringend, dringend, nu, updaten.</p>
@@ -189,13 +195,13 @@
       <p><strong>Crisusniveau 4: de manager vraagt of het al werkt.</strong> Het NCSC ziet de eerste geslaagde aanvallen, meldt de <a href="https://nos.nl/l/2636225" title="NOS: Signalen bij Nationaal Cyber Security Centrum van misbruik PHP-lek">NOS</a>. &ldquo;We zien pogingen om de kwetsbaarheden te misbruiken en we krijgen de eerste signalen binnen dat dat met succes gebeurt.&rdquo; Eerder zag het NCSC dat nog niet. Wat de signalen precies zijn, zegt het NCSC niet. Het onderzoek kan maanden duren.</p>
       <p>De NOS telde zelf ook. Zeker 113.000 Nederlandse websites draaien aantoonbaar een gepatchte PHP. Ongeveer 145.000 sites draaien nog een oude versie. Die kunnen op een andere manier beschermd zijn, bijvoorbeeld met een backport van hun distributie, maar dat is van buitenaf niet te zien. Hoort uw site bij die 145.000? Dan weet u wat u vanavond doet.</p>
       <p>Hebt u al gepatcht? Kijk dan ook terug: in uw logs, vanaf 17 oktober. Gepatcht is niet hetzelfde als niet binnengeweest.</p></li>
-    <li id="u-20261022-1700"><time datetime="2026-10-22T17:00+02:00">22 oktober 17:00</time>
-      <p><strong>Vanavond: de cybers, in de <a href="https://www.youtube.com/c/angrynerdspodcast" title="Angry Nerds Podcast">Angry Nerds Podcast</a>.</strong> De <a href="/over/" title="Over crisus.nl">maker van deze pagina</a> schuift aan. Wie wil weten hoe het er achter de schermen aan toeging: de pizza, de koffie, de zo-meter en de spreadsheet. Zonder PHP. Met onderbroek.</p>
-      <p>En SUSE is bijna klaar: ook de php7-pakketten van SLES 15 hebben nu de fix, en Tumbleweed heeft 8.5.12. Alleen SLES 16 moet nog. Zie de <a href="#stand" title="Stand per platform">stand per platform</a>.</p></li>
   </ol>
   <details class="oud">
     <summary>Oudere updates</summary>
     <ol class="updates oud">
+      <li id="u-20261022-1700"><time datetime="2026-10-22T17:00+02:00">22 oktober 17:00</time>
+      <p><strong>Vanavond: de cybers, in de <a href="https://www.youtube.com/c/angrynerdspodcast" title="Angry Nerds Podcast">Angry Nerds Podcast</a>.</strong> De <a href="/over/" title="Over crisus.nl">maker van deze pagina</a> schuift aan. Wie wil weten hoe het er achter de schermen aan toeging: de pizza, de koffie, de zo-meter en de spreadsheet. Zonder PHP. Met onderbroek.</p>
+      <p>En SUSE is bijna klaar: ook de php7-pakketten van SLES 15 hebben nu de fix, en Tumbleweed heeft 8.5.12. Alleen SLES 16 moet nog. Zie de <a href="#stand" title="Stand per platform">stand per platform</a>.</p></li>
       <li id="u-20261022-1600"><time datetime="2026-10-22T16:00+02:00">22 oktober 16:00</time>
       <p><strong>PHP is de onderbroek van het internet.</strong> Dat zegt NOS-techjournalist Joost Schellevis in <a href="https://nos.nl/l/2636214" title="NOS: Podcast De Dag: de kwetsbaarheid van PHP, de onderbroek van het internet">De Dag</a>. Iedereen gebruikt hem, hij is belangrijk, maar normaal ziet niemand hem. Deze week zag iedereen hem. Er zat een gat in. Met dank aan AI, die het gat vond.</p>
       <p>Ook mooi uit dezelfde aflevering: Tweakers ging woensdag zelf offline. Juist toen ze over het lek wilden schrijven. Hoofdredacteur Wout Funnekotter vreest dat het niet de laatste keer is. Wij ook. Daarom blijft deze pagina gewoon statisch. Geen PHP. Geen onderbroek. Alleen HTML.</p>
@@ -390,9 +396,9 @@
     <dt>Wie vond het?</dt>
     <dd>Calif, OpenAI en Wiz, samen met de PHP Foundation. De basis is oud. Stefan Esser vond in 2004 al een RCE via de geheugenlimiet. In 2020 meldde iemand het geheugentekort als <a href="https://bugs.php.net/bug.php?id=78876" title="PHP bug #78876">bug #78876</a>. In 2024 vond een <a href="https://ostif.org/php-audit-complete/" title="OSTIF: PHP audit complete">audit</a> het opnieuw. Niet gefixt: uitbuiting was &ldquo;niet bewezen&rdquo;. Inmiddels wel.</dd>
     <dt>Misbruik?</dt>
-    <dd><strong>Ja, er wordt geklopt.</strong> Volgens <a href="https://www.security.nl/posting/958424/Misbruik+van+PHP2Shell-lek+gemeld%2C+DigiD+en+andere+sites+weer+online" title="Security.NL: Misbruik van PHP2Shell-lek gemeld, DigiD en andere sites weer online">Security.NL</a> zien meerdere beveiligingsbedrijven aanvalspogingen. Cloudflare ziet aanvalsverkeer tegen klanten, Hadrian spreekt van grootschalig misbruik, Patchstack en watchTowr melden actieve pogingen. Of het lukt, is onduidelijk: bij minstens &eacute;&eacute;n bedrijf kwamen de aanvallers niet verder dan aankloppen. Wie gepatcht heeft, doet niet open.</dd>
+    <dd><strong>Ja, er wordt geklopt.</strong> Volgens <a href="https://www.security.nl/posting/958424/Misbruik+van+PHP2Shell-lek+gemeld%2C+DigiD+en+andere+sites+weer+online" title="Security.NL: Misbruik van PHP2Shell-lek gemeld, DigiD en andere sites weer online">Security.NL</a> zien meerdere beveiligingsbedrijven aanvalspogingen. Cloudflare ziet aanvalsverkeer tegen klanten, Hadrian spreekt van grootschalig misbruik, Patchstack en watchTowr melden actieve pogingen. Of het lukt, is onduidelijk: bij minstens &eacute;&eacute;n bedrijf kwamen de aanvallers niet verder dan aankloppen. Een Mirai-botnet probeert het ook, nog zonder succes: een geslaagde aanval in het wild is nog niet gezien, aldus <a href="https://thehackernews.com/2026/10/php2shell-exploit-attempts-hit-millions.html" title="The Hacker News: PHP2Shell Exploit Attempts Hit Millions as Attackers Try to Deploy Mirai Malware">The Hacker News</a>. Wie gepatcht heeft, doet niet open.</dd>
     <dt>Hoe groot?</dt>
-    <dd>Ongeveer 70 procent van alle websites draait op PHP. Ook de uwe, waarschijnlijk. Ook als u denkt van niet.</dd>
+    <dd>Ongeveer 70 procent van alle websites draait op PHP. Ook de uwe, waarschijnlijk. Ook als u denkt van niet. Censys telt op 23 oktober nog 34,4 miljoen kwetsbare PHP-diensten.</dd>
     <dt>De patch</dt>
     <dd><strong>Uit sinds 21 oktober 15:34.</strong> Gefixt in <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Elke oudere versie is kwetsbaar. PHP 8.1, 8.0 of 7.4? Daarvoor komt geen release. Wel heeft het PHP-team voor <a href="https://github.com/php/php-src/tree/PHP-7.4-CVE-2026-109618-109619" title="php-src: branch PHP-7.4-CVE-2026-109618-109619">7.4</a>, <a href="https://github.com/php/php-src/tree/PHP-8.0-CVE-2026-109618-109619" title="php-src: branch PHP-8.0-CVE-2026-109618-109619">8.0</a> en <a href="https://github.com/php/php-src/tree/PHP-8.1-CVE-2026-109618-109619" title="php-src: branch PHP-8.1-CVE-2026-109618-109619">8.1</a> een &ldquo;minimal mitigation for EOL version&rdquo; als branch op GitHub gezet. Die moet u zelf bouwen. PHP 7.3 of ouder? Dan is er niets. Alleen een upgrade.</dd>
   </dl>
@@ -407,7 +413,7 @@
     <li><b>Pathé Thuis</b><span class="pill green">Terug</span><em>Volgens een lezer draait het weer. Popcorn mag weer.</em></li>
     <li><b>NCSC.nl</b><span class="pill green">Terug</span><em>De site van het NCSC is er weer. Dan durven wij ook.</em></li>
     <li><b>MijnOverheid</b><span class="pill green">Terug</span><em>Sinds kort na 18:00. Uw post van de overheid wacht weer op u. Of u wilt of niet.</em></li>
-    <li><b>Albert Heijn</b><span class="pill orange">Deels</span><em>Geen PHP-verhaal: een hack op 11 oktober. Een beperkte groep vaste klanten kan weer bestellen, aldus de NOS. Bezorging vanaf vrijdag.</em></li>
+    <li><b>Albert Heijn</b><span class="pill orange">Deels</span><em>Geen PHP-verhaal: een hack op 11 oktober. Bezorgt sinds vrijdagochtend weer, voor het eerst in bijna twee weken, aldus <a href="https://www.nu.nl/economie/6414130/albert-heijn-bezorgt-na-bijna-twee-weken-weer-boodschappen.html" title="NU.nl: Albert Heijn bezorgt na bijna twee weken weer boodschappen">NU.nl</a>. Online bestellen kon woensdag alleen een eerste groep vaste klanten.</em></li>
     <li><b>ANWB.nl</b><span class="pill green">Terug</span><em>De Wegenwacht rijdt weer. Motorkap dicht.</em></li>
     <li><b>Meld Misdaad Anoniem</b><span class="pill green">Terug</span><em>Om 09:46 weer in de lucht. Anoniem melden kan weer: 0800-7000.</em></li>
     <li><b>NotuBiz</b><span class="pill green">Terug</span><em>De raadsstukken van gemeenten, provincies en waterschappen zijn weer in te zien. &ldquo;Na grondig testen zijn alle systemen weer up and running.&rdquo;</em></li>
@@ -477,7 +483,7 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
   <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
   <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen nog even een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
 
-  <h3 id="stand">Stand per platform, 23:30</h3>
+  <h3 id="stand">Stand per platform, 11:00</h3>
   <ul class="status" aria-labelledby="stand">
     <li><b>php.net</b><span class="pill green">Gepubliceerd</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35 sinds 15:34.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">DSA-6574-1</a>: <code>php8.4 8.4.27-1~deb13u1</code>.</em></li>
@@ -486,8 +492,8 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
     <li><b>Windows</b><span class="pill green">Fix beschikbaar</span><em>8.5.12 staat op windows.php.net.</em></li>
     <li><b>Docker</b><span class="pill green">Fix beschikbaar</span><em>Sinds ongeveer 18:45 wijzen ook <code>8.4-apache</code>, <code>8.5-apache</code>, <code>8.4-fpm</code> en <code>latest</code> naar de gepatchte images. Pullen, opnieuw aanmaken, klaar.</em></li>
     <li><b>Homebrew</b><span class="pill green">Fix beschikbaar</span><em>Nu ook 8.5.12. <code>brew upgrade php</code> en klaar.</em></li>
-    <li><b>SUSE</b><span class="pill orange">Deels</span><em>Fix voor SLES 15 SP4 tot en met SP7, php8 en nu ook php7, ook voor SAP en Web and Scripting. SP7: <code>php8 &gt;= 8.3.36-150700.3.24.1</code>. Tumbleweed: 8.5.12. Alleen SLES 16 is nog in de maak. <a href="https://www.suse.com/security/cve/CVE-2026-109618.html" title="SUSE: CVE-2026-109618">CVE-pagina</a>.</em></li>
-    <li><b>Red Hat</b><span class="pill green">Fix beschikbaar</span><em>Al sinds woensdagavond: RHSA-2026:87070 en verder, voor RHEL 8, 9 en 10. Zie de <a href="https://access.redhat.com/security/cve/cve-2026-109618" title="Red Hat: CVE-2026-109618">CVE-pagina</a>.</em></li>
+    <li><b>SUSE</b><span class="pill orange">Deels</span><em>Fix voor SLES 15 SP4 tot en met SP7, php8 en nu ook php7, ook voor SAP en Web and Scripting. SP7: <code>php8 &gt;= 8.3.36-150700.3.24.1</code>. Tumbleweed: 8.5.12. SLES 16.0: <code>php8 &gt;= 8.4.27-160000.1.1</code>. Alleen SLES 16.1 en 16.2 moeten nog. <a href="https://www.suse.com/security/cve/CVE-2026-109618.html" title="SUSE: CVE-2026-109618">CVE-pagina</a>.</em></li>
+    <li><b>Red Hat</b><span class="pill green">Fix beschikbaar</span><em>Al sinds woensdagavond: RHSA-2026:87070 en verder, voor RHEL 8, 9 en 10. Sinds vrijdag 04:30 ook php:7.4 voor RHEL 8.6 en 8.8. Zie de <a href="https://access.redhat.com/security/cve/cve-2026-109618" title="Red Hat: CVE-2026-109618">CVE-pagina</a>.</em></li>
   </ul>
 
   <div class="platform">
@@ -636,6 +642,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
     <li><a href="https://www.rechtspraak.nl/organisatie-en-contact/organisatie/raad-voor-de-rechtspraak/nieuws/2026/10/enkele-rechtspraak-websites-vanwege-php-kwetsbaarheid-tijdelijk-offline" title="Rechtspraak: Enkele Rechtspraak-websites vanwege PHP-kwetsbaarheid tijdelijk offline">Rechtspraak: Enkele Rechtspraak-websites vanwege PHP-kwetsbaarheid tijdelijk offline</a>.</li>
     <li><a href="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/" title="GitLab Critical Patch Release: 19.5.1, 19.4.3, 19.3.6, 19.2.9, 19.1.9, 19.0.10, 18.11.13">GitLab Critical Patch Release 19.5.1</a>. CVE-2026-110264 en elf andere fixes.</li>
     <li><a href="https://www.iamexpat.nl/expat-info/dutch-news/albert-heijn-faces-150-million-sales-hit-after-cyberattack" title="IamExpat: Albert Heijn faces 150 million euros sales hit after cyberattack">IamExpat: Albert Heijn faces 150 million euros sales hit</a> en <a href="https://www.transport-online.nl/142223/ahold-delhaize-doet-aangifte-na-cyberaanval-albert-heijn-verwacht-vrijdag-thuisbezorging-te-hervatten/" title="Transport Online: Ahold Delhaize doet aangifte na cyberaanval">Transport Online: Ahold Delhaize doet aangifte</a>. Het AH-incident.</li>
+    <li><a href="https://thehackernews.com/2026/10/php2shell-exploit-attempts-hit-millions.html" title="The Hacker News: PHP2Shell Exploit Attempts Hit Millions as Attackers Try to Deploy Mirai Malware">The Hacker News: PHP2Shell Exploit Attempts Hit Millions</a>. Veel pogingen, ook door een Mirai-botnet, en nog geen geslaagde aanval in het wild. Met de telling van Censys: 34,4 miljoen kwetsbare PHP-diensten op 23 oktober.</li>
     <li><a href="https://www.security.nl/posting/958424/Misbruik+van+PHP2Shell-lek+gemeld%2C+DigiD+en+andere+sites+weer+online" title="Security.NL: Misbruik van PHP2Shell-lek gemeld, DigiD en andere sites weer online">Security.NL: Misbruik van PHP2Shell-lek gemeld</a>. Wie welke aanvalspogingen ziet.</li>
     <li><a href="https://advisories.ncsc.nl/advisory?id=NCSC-2026-0443" title="NCSC-2026-0443: Kwetsbaarheden verholpen in PHP">NCSC-2026-0443: Kwetsbaarheden verholpen in PHP</a>.</li>
     <li><a href="https://www.youtube.com/watch?v=A-Fcbe-cX7o" title="YouTube, Lubach: Internet stuk door lek in PHP">Lubach: Internet stuk door lek in PHP</a> (YouTube). De uitleg voor wie liever kijkt.</li>

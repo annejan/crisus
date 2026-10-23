@@ -6,7 +6,17 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Thu, 22 Oct 2026 23:30:00 +0200</lastBuildDate>
+  <lastBuildDate>Fri, 23 Oct 2026 11:00:00 +0200</lastBuildDate>
+  <item>
+    <title>23 oktober 11:00 · Er wordt nog steeds geklopt, maar de deur houdt.</title>
+    <link>https://crisus.nl/#u-20261023-1100</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261023-1100</guid>
+    <pubDate>Fri, 23 Oct 2026 11:00:00 +0200</pubDate>
+    <description><![CDATA[<p><strong>Er wordt nog steeds geklopt, maar de deur houdt.</strong> Aanvallers proberen met PHP2Shell servers in te lijven bij Potassium, een variant van het Mirai-botnet, meldt <a href="https://thehackernews.com/2026/10/php2shell-exploit-attempts-hit-millions.html" title="The Hacker News: PHP2Shell Exploit Attempts Hit Millions as Attackers Try to Deploy Mirai Malware">The Hacker News</a> op basis van onderzoek van Sophos en Arctic Wolf. Dat lukte niet. Ook Previdian, Wordfence en Hunt.io zien veel pogingen en nog geen enkele geslaagde aanval. Hunt.io zag 123 servers aangevallen worden en geen ervan viel. Het lek blijkt lastiger uit te buiten dan gedacht. Mirai is Japans voor &ldquo;toekomst&rdquo;. Voorlopig blijft het daarbij.</p>
+      <p>Toch geen reden om te wachten. Censys telt op 23 oktober nog 34,4 miljoen kwetsbare PHP-diensten. Dat is bijna twee keer zoveel als Nederland inwoners heeft.</p>
+      <p><strong>En de blauwe busjes rijden weer.</strong> Albert Heijn bezorgt sinds vrijdagochtend weer boodschappen, voor het eerst in bijna twee weken, meldt <a href="https://www.nu.nl/economie/6414130/albert-heijn-bezorgt-na-bijna-twee-weken-weer-boodschappen.html" title="NU.nl: Albert Heijn bezorgt na bijna twee weken weer boodschappen">NU.nl</a>. Geen PHP-verhaal: dat was de hack van 11 oktober. Het AH-effect is daarmee officieel voorbij. De stekker mag er weer in. Wel eerst patchen.</p>
+      <p>Verder geen nieuwe release, geen nieuwe advisory en PHP2Shell staat nog niet op de <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" title="CISA: Known Exploited Vulnerabilities Catalog">KEV-lijst</a> van CISA. De distributies ruimen de laatste hoekjes op. Red Hat patchte vannacht ook php:7.4 voor de oude RHEL 8.6 en 8.8 (<a href="https://access.redhat.com/errata/RHSA-2026:88532" title="Red Hat: RHSA-2026:88532">RHSA-2026:88532</a> en <a href="https://access.redhat.com/errata/RHSA-2026:88533" title="Red Hat: RHSA-2026:88533">88533</a>). SUSE heeft nu een fix voor SLES 16.0. Alleen 16.1 en 16.2 moeten nog, volgens de <a href="https://www.suse.com/security/cve/CVE-2026-109618.html" title="SUSE: CVE-2026-109618">CVE-pagina</a>.</p>]]></description>
+  </item>
   <item>
     <title>22 oktober 23:30 · Ook buiten Nederland.</title>
     <link>https://crisus.nl/#u-20261022-2330</link>
