@@ -107,8 +107,9 @@ they have been to Ukraine three times, each time to Kharkiv.
   list of earlier crises, the sitemap and `tools/deploy.sh`. PHP2Shell lives at `/php/`.
 - **Clocks:** any element with `data-since="ISO"` counts up and `data-until` counts down
   (klok.js), with day words per page language (nl, en, uk plurals). The yellow
-  "bouwbord" counts days without a new crisus since the last one closed: on a new crisus,
-  set its `data-since` to the closing time of that one, and its "Vorige" link.
+  "bouwbord" counts the time without a new crisus since the fix of the last one came out
+  (PHP2Shell: the patch, 21 Oct 15:34): on a new crisus, set its `data-since` and link to
+  the moment its fix was out.
 - **Vaste waarden** (`#bord`): only values that stay true or are computed (Patch Tuesday,
   the 2038 countdown). "Vandaag N jaar geleden" comes by itself from full dates in the
   archive list.
