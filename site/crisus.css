@@ -216,7 +216,7 @@ details.patch[open] > summary { margin-bottom: 14px; }
 .brom { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 14px 0 0; color: var(--muted); font-size: 15px; }
 .brom button { padding: 6px 14px; border: 2px solid var(--black); border-radius: 8px; background: var(--yellow); color: var(--black); font: 700 14px/1.2 system-ui, sans-serif; cursor: pointer; }
 .brom button[aria-pressed="true"] { background: var(--black); color: var(--yellow); }
-.klokken { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 14px; }
+.klokken { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 0 0 14px; }
 .klokken .klok { flex-direction: column; align-items: flex-start; gap: 6px; margin: 0; }
 .klokken .klok b { font-size: clamp(20px, 3.2vw, 26px); }
 .klokken .klok .wat { color: #fff; font-weight: 700; font-size: 15px; }
