@@ -6,7 +6,16 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Fri, 23 Oct 2026 11:00:00 +0200</lastBuildDate>
+  <lastBuildDate>Fri, 23 Oct 2026 13:00:00 +0200</lastBuildDate>
+  <item>
+    <title>23 oktober 13:00 · Daar is de vervolgbug.</title>
+    <link>https://crisus.nl/#u-20261023-1300</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261023-1300</guid>
+    <pubDate>Fri, 23 Oct 2026 13:00:00 +0200</pubDate>
+    <description><![CDATA[<p><strong>Daar is de vervolgbug. Een kleintje.</strong> PHP meldt een derde lek, CVE-2026-115560, in de voortgang van sessie-uploads, schrijft <a href="https://www.php.net/archive/2026.php#2026-10-23-1" title="php.net: Informational advisory: Session upload progress">php.net</a>. Een patch komt pas met de volgende gewone release. Het advies voor iedereen: zet <code>session.upload_progress.enabled = 0</code> tot die release er is. Wie dat al deed na woensdag, hoeft niets te doen. Die instelling stond al als noodmaatregel in het advisory voor CVE-2026-109619.</p>
+      <p>Volgens PHP is de kans klein. Het lek speelt alleen bij een ongebruikelijke combinatie: een applicatie die midden in een verzoek van sessie-opslagformaat wisselt, met de uploadvoortgang nog aan. Daarom geen spoedrelease, maar een gewone. Het volledige advisory volgt bij die release. Wie zijn sessieformaat halverwege omgooit, heeft volgens ons ook andere problemen.</p>
+      <p>Ook de politiek schrijft weer. Minister Van Weel van Justitie en Veiligheid stuurde de Kamer een brief, meldt <a href="https://www.security.nl/posting/958740/Minister%3A+maatschappelijke+impact+van+PHP-lekken+nog+onduidelijk" title="Security.NL: Minister: maatschappelijke impact van PHP-lekken nog onduidelijk">Security.NL</a>. De maatschappelijke impact is &ldquo;op dit moment niet duidelijk&rdquo;. Wel vindt de minister het goed dat zoveel organisaties hun sites uit voorzorg offline haalden. Verdere signalen van misbruik vindt de minister &ldquo;aannemelijk&rdquo;. Zie ons <a href="https://crisus.nl/#u-20261023-1100" title="Update van 23 oktober 11:00">bericht van 11:00</a>.</p>]]></description>
+  </item>
   <item>
     <title>23 oktober 11:00 · Er wordt nog steeds geklopt, maar de deur houdt.</title>
     <link>https://crisus.nl/#u-20261023-1100</link>

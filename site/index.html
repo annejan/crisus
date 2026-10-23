@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-21T14:45:00+02:00">
-<meta property="article:modified_time" content="2026-10-23T11:00:00+02:00">
+<meta property="article:modified_time" content="2026-10-23T13:00:00+02:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=5">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -43,7 +43,7 @@
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-21T14:45:00+02:00",
-  "dateModified": "2026-10-23T11:00:00+02:00",
+  "dateModified": "2026-10-23T13:00:00+02:00",
   "coverageStartTime": "2026-10-20T22:00:00+02:00",
   "about": [
     {"@type": "Thing", "name": "CVE-2026-109618", "sameAs": "https://www.cve.org/CVERecord?id=CVE-2026-109618"},
@@ -54,6 +54,7 @@
   "genre": "satire",
   "keywords": ["PHP2Shell", "PHP", "CVE-2026-109618", "CVE-2026-109619", "kwetsbaarheid", "remote code execution", "NCSC"],
   "liveBlogUpdate": [
+    {"@type": "BlogPosting", "headline": "Daar is de vervolgbug.", "datePublished": "2026-10-23T13:00:00+02:00", "url": "https://crisus.nl/#u-20261023-1300"},
     {"@type": "BlogPosting", "headline": "Er wordt nog steeds geklopt, maar de deur houdt.", "datePublished": "2026-10-23T11:00:00+02:00", "url": "https://crisus.nl/#u-20261023-1100"},
     {"@type": "BlogPosting", "headline": "Ook buiten Nederland.", "datePublished": "2026-10-22T23:30:00+02:00", "url": "https://crisus.nl/#u-20261022-2330"},
     {"@type": "BlogPosting", "headline": "De Tweede Kamer is terug.", "datePublished": "2026-10-22T23:00:00+02:00", "url": "https://crisus.nl/#u-20261022-2300"},
@@ -151,7 +152,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Lopende crisus · <time datetime="2026-10-23T11:00:00+02:00">laatst bijgewerkt 23 oktober, 11:00</time></p>
+  <p class="kicker">Lopende crisus · <time datetime="2026-10-23T13:00:00+02:00">laatst bijgewerkt 23 oktober, 13:00</time></p>
   <h1>PHP Kwetsbaarheid</h1>
   <p class="lead">Twee kritieke lekken in PHP. De patch is uit: PHP <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Niet in paniek raken. Wel updaten. Nu. Het NCSC ziet de eerste geslaagde aanvallen.</p>
 
@@ -170,6 +171,10 @@
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261023-1300"><time datetime="2026-10-23T13:00+02:00">23 oktober 13:00</time>
+      <p><strong>Daar is de vervolgbug. Een kleintje.</strong> PHP meldt een derde lek, CVE-2026-115560, in de voortgang van sessie-uploads, schrijft <a href="https://www.php.net/archive/2026.php#2026-10-23-1" title="php.net: Informational advisory: Session upload progress">php.net</a>. Een patch komt pas met de volgende gewone release. Het advies voor iedereen: zet <code>session.upload_progress.enabled = 0</code> tot die release er is. Wie dat al deed na woensdag, hoeft niets te doen. Die instelling stond al als noodmaatregel in het advisory voor CVE-2026-109619.</p>
+      <p>Volgens PHP is de kans klein. Het lek speelt alleen bij een ongebruikelijke combinatie: een applicatie die midden in een verzoek van sessie-opslagformaat wisselt, met de uploadvoortgang nog aan. Daarom geen spoedrelease, maar een gewone. Het volledige advisory volgt bij die release. Wie zijn sessieformaat halverwege omgooit, heeft volgens ons ook andere problemen.</p>
+      <p>Ook de politiek schrijft weer. Minister Van Weel van Justitie en Veiligheid stuurde de Kamer een brief, meldt <a href="https://www.security.nl/posting/958740/Minister%3A+maatschappelijke+impact+van+PHP-lekken+nog+onduidelijk" title="Security.NL: Minister: maatschappelijke impact van PHP-lekken nog onduidelijk">Security.NL</a>. De maatschappelijke impact is &ldquo;op dit moment niet duidelijk&rdquo;. Wel vindt de minister het goed dat zoveel organisaties hun sites uit voorzorg offline haalden. Verdere signalen van misbruik vindt de minister &ldquo;aannemelijk&rdquo;. Zie ons <a href="#u-20261023-1100" title="Update van 23 oktober 11:00">bericht van 11:00</a>.</p></li>
     <li id="u-20261023-1100"><time datetime="2026-10-23T11:00+02:00">23 oktober 11:00</time>
       <p><strong>Er wordt nog steeds geklopt, maar de deur houdt.</strong> Aanvallers proberen met PHP2Shell servers in te lijven bij Potassium, een variant van het Mirai-botnet, meldt <a href="https://thehackernews.com/2026/10/php2shell-exploit-attempts-hit-millions.html" title="The Hacker News: PHP2Shell Exploit Attempts Hit Millions as Attackers Try to Deploy Mirai Malware">The Hacker News</a> op basis van onderzoek van Sophos en Arctic Wolf. Dat lukte niet. Ook Previdian, Wordfence en Hunt.io zien veel pogingen en nog geen enkele geslaagde aanval. Hunt.io zag 123 servers aangevallen worden en geen ervan viel. Het lek blijkt lastiger uit te buiten dan gedacht. Mirai is Japans voor &ldquo;toekomst&rdquo;. Voorlopig blijft het daarbij.</p>
       <p>Toch geen reden om te wachten. Censys telt op 23 oktober nog 34,4 miljoen kwetsbare PHP-diensten. Dat is bijna twee keer zoveel als Nederland inwoners heeft.</p>
@@ -191,14 +196,14 @@
     <li id="u-20261022-2200"><time datetime="2026-10-22T22:00+02:00">22 oktober 22:00</time>
       <p>De Tweede Kamer is weer even weg. Om 21:55 geeft tweedekamer.nl opnieuw alleen &ldquo;503 Backend fetch failed&rdquo;. Net als gisternacht, toen het van 01:55 tot 02:46 duurde. Ook nu geen melding over PHP. Of het onderhoud is of iets anders, zegt de Kamer niet. Wij noteren het. De Kamer had vandaag zelf ook al <a href="#u-20261022-1300" title="Update van 13:00">vragen</a> over sites die offline gaan.</p>
       <p>Verder blijft het rustig. Geen nieuwe release, geen nieuwe advisory.</p></li>
-    <li id="u-20261022-1800"><time datetime="2026-10-22T18:00+02:00">22 oktober 18:00</time>
-      <p><strong>Crisusniveau 4: de manager vraagt of het al werkt.</strong> Het NCSC ziet de eerste geslaagde aanvallen, meldt de <a href="https://nos.nl/l/2636225" title="NOS: Signalen bij Nationaal Cyber Security Centrum van misbruik PHP-lek">NOS</a>. &ldquo;We zien pogingen om de kwetsbaarheden te misbruiken en we krijgen de eerste signalen binnen dat dat met succes gebeurt.&rdquo; Eerder zag het NCSC dat nog niet. Wat de signalen precies zijn, zegt het NCSC niet. Het onderzoek kan maanden duren.</p>
-      <p>De NOS telde zelf ook. Zeker 113.000 Nederlandse websites draaien aantoonbaar een gepatchte PHP. Ongeveer 145.000 sites draaien nog een oude versie. Die kunnen op een andere manier beschermd zijn, bijvoorbeeld met een backport van hun distributie, maar dat is van buitenaf niet te zien. Hoort uw site bij die 145.000? Dan weet u wat u vanavond doet.</p>
-      <p>Hebt u al gepatcht? Kijk dan ook terug: in uw logs, vanaf 17 oktober. Gepatcht is niet hetzelfde als niet binnengeweest.</p></li>
   </ol>
   <details class="oud">
     <summary>Oudere updates</summary>
     <ol class="updates oud">
+      <li id="u-20261022-1800"><time datetime="2026-10-22T18:00+02:00">22 oktober 18:00</time>
+      <p><strong>Crisusniveau 4: de manager vraagt of het al werkt.</strong> Het NCSC ziet de eerste geslaagde aanvallen, meldt de <a href="https://nos.nl/l/2636225" title="NOS: Signalen bij Nationaal Cyber Security Centrum van misbruik PHP-lek">NOS</a>. &ldquo;We zien pogingen om de kwetsbaarheden te misbruiken en we krijgen de eerste signalen binnen dat dat met succes gebeurt.&rdquo; Eerder zag het NCSC dat nog niet. Wat de signalen precies zijn, zegt het NCSC niet. Het onderzoek kan maanden duren.</p>
+      <p>De NOS telde zelf ook. Zeker 113.000 Nederlandse websites draaien aantoonbaar een gepatchte PHP. Ongeveer 145.000 sites draaien nog een oude versie. Die kunnen op een andere manier beschermd zijn, bijvoorbeeld met een backport van hun distributie, maar dat is van buitenaf niet te zien. Hoort uw site bij die 145.000? Dan weet u wat u vanavond doet.</p>
+      <p>Hebt u al gepatcht? Kijk dan ook terug: in uw logs, vanaf 17 oktober. Gepatcht is niet hetzelfde als niet binnengeweest.</p></li>
       <li id="u-20261022-1700"><time datetime="2026-10-22T17:00+02:00">22 oktober 17:00</time>
       <p><strong>Vanavond: de cybers, in de <a href="https://www.youtube.com/c/angrynerdspodcast" title="Angry Nerds Podcast">Angry Nerds Podcast</a>.</strong> De <a href="/over/" title="Over crisus.nl">maker van deze pagina</a> schuift aan. Wie wil weten hoe het er achter de schermen aan toeging: de pizza, de koffie, de zo-meter en de spreadsheet. Zonder PHP. Met onderbroek.</p>
       <p>En SUSE is bijna klaar: ook de php7-pakketten van SLES 15 hebben nu de fix, en Tumbleweed heeft 8.5.12. Alleen SLES 16 moet nog. Zie de <a href="#stand" title="Stand per platform">stand per platform</a>.</p></li>
@@ -400,7 +405,7 @@
     <dt>Hoe groot?</dt>
     <dd>Ongeveer 70 procent van alle websites draait op PHP. Ook de uwe, waarschijnlijk. Ook als u denkt van niet. Censys telt op 23 oktober nog 34,4 miljoen kwetsbare PHP-diensten.</dd>
     <dt>De patch</dt>
-    <dd><strong>Uit sinds 21 oktober 15:34.</strong> Gefixt in <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Elke oudere versie is kwetsbaar. PHP 8.1, 8.0 of 7.4? Daarvoor komt geen release. Wel heeft het PHP-team voor <a href="https://github.com/php/php-src/tree/PHP-7.4-CVE-2026-109618-109619" title="php-src: branch PHP-7.4-CVE-2026-109618-109619">7.4</a>, <a href="https://github.com/php/php-src/tree/PHP-8.0-CVE-2026-109618-109619" title="php-src: branch PHP-8.0-CVE-2026-109618-109619">8.0</a> en <a href="https://github.com/php/php-src/tree/PHP-8.1-CVE-2026-109618-109619" title="php-src: branch PHP-8.1-CVE-2026-109618-109619">8.1</a> een &ldquo;minimal mitigation for EOL version&rdquo; als branch op GitHub gezet. Die moet u zelf bouwen. PHP 7.3 of ouder? Dan is er niets. Alleen een upgrade.</dd>
+    <dd><strong>Uit sinds 21 oktober 15:34.</strong> Gefixt in <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Elke oudere versie is kwetsbaar. PHP 8.1, 8.0 of 7.4? Daarvoor komt geen release. Wel heeft het PHP-team voor <a href="https://github.com/php/php-src/tree/PHP-7.4-CVE-2026-109618-109619" title="php-src: branch PHP-7.4-CVE-2026-109618-109619">7.4</a>, <a href="https://github.com/php/php-src/tree/PHP-8.0-CVE-2026-109618-109619" title="php-src: branch PHP-8.0-CVE-2026-109618-109619">8.0</a> en <a href="https://github.com/php/php-src/tree/PHP-8.1-CVE-2026-109618-109619" title="php-src: branch PHP-8.1-CVE-2026-109618-109619">8.1</a> een &ldquo;minimal mitigation for EOL version&rdquo; als branch op GitHub gezet. Die moet u zelf bouwen. PHP 7.3 of ouder? Dan is er niets. Alleen een upgrade. Voor de vervolgbug CVE-2026-115560 komt de fix met de volgende gewone release. Tot dan raadt <a href="https://www.php.net/archive/2026.php#2026-10-23-1" title="php.net: Informational advisory: Session upload progress">php.net</a> aan <code>session.upload_progress.enabled = 0</code> te zetten.</dd>
   </dl>
 
   <h2 id="diensten">Status van de diensten</h2>
@@ -467,6 +472,9 @@ fatal_error_backtraces = 0          <span class="c"># CVE-2026-109619, alleen PH
 sudo apt install --only-upgrade $(dpkg -l | awk '/^ii  (lib)?php/{print $2}')
 sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</span></code></pre>
         Controleer met <code>php -v</code> dat u echt de nieuwe versie draait: 8.5.12, 8.4.27, 8.3.36, 8.2.35 of een distributiepakket met de CVE&rsquo;s in de changelog. Zet daarna pas PHP weer aan.</li>
+      <li><strong>Zet de uploadvoortgang van sessies uit.</strong> Voor de vervolgbug CVE-2026-115560 is er nog geen patch. PHP raadt iedereen aan dit in <code>php.ini</code> of de FPM-pool te zetten en daarna elke worker te herstarten. Niet via <code>ini_set()</code> of <code>.user.ini</code>. Volgens <a href="https://www.php.net/archive/2026.php#2026-10-23-1" title="php.net: Informational advisory: Session upload progress">php.net</a>:
+        <pre><code>session.upload_progress.enabled = 0</code></pre>
+        Stond het al uit sinds woensdag? Laat het zo tot de volgende release.</li>
       <li><strong>Draait u PHP 8.1 of ouder?</strong> Upgrade naar PHP 8.2 of nieuwer. Voor <a href="https://github.com/php/php-src/tree/PHP-7.4-CVE-2026-109618-109619" title="php-src: branch PHP-7.4-CVE-2026-109618-109619">7.4</a>, <a href="https://github.com/php/php-src/tree/PHP-8.0-CVE-2026-109618-109619" title="php-src: branch PHP-8.0-CVE-2026-109618-109619">8.0</a> en <a href="https://github.com/php/php-src/tree/PHP-8.1-CVE-2026-109618-109619" title="php-src: branch PHP-8.1-CVE-2026-109618-109619">8.1</a> staat er een minimale fix op GitHub: zelf compileren, zelf testen, zelf verantwoordelijk. Wij zeiden eerder &ldquo;ook niet als u het heel lief vraagt&rdquo;. Blijkbaar heeft iemand het heel lief gevraagd. PHP 7.3 of ouder: echt niets.</li>
       <li><strong>Draait u BIND?</strong> Update naar 9.20.30 of 9.21.27, of naar het pakket van uw distributie. Zit u nog op 9.18? Die krijgt geen fix meer.</li>
       <li><strong>Heeft u een firewall van Palo Alto?</strong> Zorg dat de beheerinterface niet vanaf het internet bereikbaar is. Installeer de update van PAN-OS zodra die er is.</li>
@@ -478,12 +486,12 @@ sudo systemctl restart apache2 php8.4-fpm   <span class="c"># of wat u draait</s
   </section>
 
   <details class="patch">
-    <summary><h2 id="patch-er-al">Is de patch er al voor mij?</h2><span>Ja, voor bijna iedereen. Ingeklapt tot de volgende bug. Klik voor de stand per platform en hoe u het controleert.</span></summary>
+    <summary><h2 id="patch-er-al">Is de patch er al voor mij?</h2><span>Voor PHP2Shell: ja, voor bijna iedereen. Voor de kleine vervolgbug CVE-2026-115560 nog niet: die fix komt met de volgende gewone release. Tot dan: <code>session.upload_progress.enabled = 0</code>. Klik voor de stand per platform en hoe u het controleert.</span></summary>
   <p>De fix staat sinds 15:34 op <a href="https://www.php.net/downloads.php" title="php.net: downloads">php.net</a>: <strong>8.5.12, 8.4.27, 8.3.36 en 8.2.35</strong>. Nu bouwen de distributies hun pakketten. Dat duurt uren, soms dagen. De buildbots draaien. Wij kijken mee.</p>
   <p class="let"><strong>Let op: distributies backporten.</strong> Debian en Red Hat zetten de fix vaak in hun eigen versie, zonder het versienummer van php.net over te nemen. Vergelijk dus niet uw <code>php -v</code> met php.net. Zoek de CVE-nummers in de changelog van uw pakket. Staan ze erin, dan zit de fix erin.</p>
   <p class="note">De CVE-pagina&rsquo;s van de distributies hieronder kunnen nog even een 404 geven. Dat is geen goed nieuws. Het is helemaal geen nieuws.</p>
 
-  <h3 id="stand">Stand per platform, 11:00</h3>
+  <h3 id="stand">Stand per platform, 13:00</h3>
   <ul class="status" aria-labelledby="stand">
     <li><b>php.net</b><span class="pill green">Gepubliceerd</span><em>8.5.12, 8.4.27, 8.3.36, 8.2.35 sinds 15:34.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-109618" title="Debian security tracker: CVE-2026-109618">DSA-6574-1</a>: <code>php8.4 8.4.27-1~deb13u1</code>.</em></li>
@@ -608,6 +616,7 @@ curl -sI https://uw-site.nl | grep -i x-powered-by</code></pre>
   <ul class="bronnen" aria-labelledby="bronnen">
     <li><a href="https://www.php.net/archive/2026.php#2026-10-20-1" title="php.net: Upcoming Critical PHP Security Release">php.net: Upcoming Critical PHP Security Release</a>. De officiële aankondiging. Na 16:00 staan de gepatchte versies op <a href="https://www.php.net/" title="php.net">php.net</a>.</li>
     <li><a href="https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w" title="PHP security advisory GHSA-w8hw-w9fx-j79w: RCE via OOM corruption">PHP advisory GHSA-w8hw-w9fx-j79w</a> (CVE-2026-109618) en <a href="https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp" title="PHP security advisory GHSA-6wmf-4rv5-p3rp: RCE via stale global state">GHSA-6wmf-4rv5-p3rp</a> (CVE-2026-109619). De technische details, met noodmaatregelen.</li>
+    <li><a href="https://www.php.net/archive/2026.php#2026-10-23-1" title="php.net: Informational advisory: Session upload progress">php.net: Informational advisory: Session upload progress</a>. De vervolgbug CVE-2026-115560 en het advies om de uploadvoortgang van sessies uit te zetten.</li>
     <li><a href="https://www.php.net/downloads.php" title="php.net: downloads">php.net: downloads</a>. De gepatchte versies. De <a href="https://www.php.net/archive/2026.php#2026-10-21-5" title="php.net: October 2026 Security Release">aankondiging</a> van de security release.</li>
     <li><a href="https://calif.io/php2shell/" title="Calif Research: php2shell, a tale of two PHP remote vulnerabilities">Calif Research: php2shell</a>. De write-up van de vinders, met de techniek en een strip.</li>
     <li>De php-src-branches voor <a href="https://github.com/php/php-src/tree/PHP-7.4-CVE-2026-109618-109619" title="php-src: branch PHP-7.4-CVE-2026-109618-109619">7.4</a>, <a href="https://github.com/php/php-src/tree/PHP-8.0-CVE-2026-109618-109619" title="php-src: branch PHP-8.0-CVE-2026-109618-109619">8.0</a> en <a href="https://github.com/php/php-src/tree/PHP-8.1-CVE-2026-109618-109619" title="php-src: branch PHP-8.1-CVE-2026-109618-109619">8.1</a> met de minimale fix voor EOL-versies.</li>
