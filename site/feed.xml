@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title>Crisus · Geen nieuwe crisus. Wel een oorlog.</title>
+  <title>Crisus · HTTP2Shell: kritiek lek in Brotli (CVE-2026-111497)</title>
   <link>https://crisus.nl/</link>
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Fri, 23 Oct 2026 22:50:00 +0200</lastBuildDate>
+  <lastBuildDate>Sat, 24 Oct 2026 21:00:00 +0200</lastBuildDate>
+  <item>
+    <title>24 oktober 21:00 · Een nieuwe crisus: HTTP2Shell.</title>
+    <link>https://crisus.nl/#u-20261024-2100</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261024-2100</guid>
+    <pubDate>Sat, 24 Oct 2026 21:00:00 +0200</pubDate>
+    <description><![CDATA[<p><strong>Een nieuwe crisus: HTTP2Shell.</strong> Woensdag stond het nog als bijzin in ons <a href="/php/#u-20261021-1700" title="Crisus: PHP2Shell, 21 oktober 17:00">PHP-verhaal</a>: ook Node.js had security releases, met een lek in de Brotli-decoder. Die bijzin is gegroeid. Het lek, CVE-2026-111497, zit niet in Node.js maar in Brotli zelf, de compressie van Google. En Brotli zit overal. Ook in Python: requests, urllib3, httpx, aiohttp en Scrapy gebruiken het vanzelf zodra het pakket <code>brotli</code> of <code>brotlicffi</code> er is, schrijft <a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido</a>. Dat pakket wordt ruim 82 miljoen keer per maand gedownload. Google geeft het lek een 9,2.</p>
+      <p>Het werkt twee kanten op. Een kwaadwillende client kan een server aanvallen. En een kwaadwillende server elke client die gecomprimeerde antwoorden aanneemt. Codex Security van OpenAI vond het al in februari. De fix stond toen al in de code van Brotli. Niemand zag dat het een beveiligingslek was. Eerst heette het Node2Shell, nu HTTP2Shell. Een lek met een bijnaam is erger dan een lek zonder. Over een lek met twee bijnamen vergadert het crisusteam nog.</p>
+      <p>Misbruik is nog niet gezien. Wel kregen onderzoekers het volgens Aikido werkend tegen een gewone Node.js 24.22.0. De fixes zijn er sinds woensdag en donderdag, en Debian heeft sinds gisteravond <a href="https://lists.debian.org/debian-security-announce/2026/msg00498.html" title="DSA-6582-1: brotli security update">DSA-6582-1</a>. Het crisusniveau blijft 3: ernstig. Het crisusteam had de pizzadozen net opgeruimd.</p>]]></description>
+  </item>
   <item>
     <title>23 oktober 22:50 · PHP2Shell is afgesloten.</title>
     <link>https://crisus.nl/#u-20261023-2250</link>

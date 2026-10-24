@@ -119,7 +119,7 @@ they have been to Ukraine three times, each time to Kharkiv.
   (crisus.js), with day words per page language (nl, en, uk plurals). The yellow
   "bouwbord" counts the time without a new crisus since the fix of the last one came out
   (PHP2Shell: the patch, 21 Oct 15:34): on a new crisus, set its `data-since` and link to
-  the moment its fix was out.
+  the moment its fix was out. During a crisus the bord stands still on "0 dagen" (no clock).
 - **Vaste waarden** (`#bord`): only values that stay true or are computed (Patch Tuesday,
   the 2038 countdown). "Vandaag N jaar geleden" comes by itself from full dates in the
   archive list.
@@ -129,7 +129,9 @@ they have been to Ukraine three times, each time to Kharkiv.
 ## The weather
 
 `bash tools/storm.sh` lists the KNMI warnings for the Netherlands (via Meteoalarm) and ends
-with `STORM: geen|geel|ORANJE|ROOD`. Yellow is "Op de radar" material. **Orange or red is a
+with `STORM: geen|geel|ORANJE|ROOD`. That line counts land only; the coastal waters
+(Texel, IJmuiden and so on, marked "(zee)") are often orange for days and get their own
+`ZEE:` line, which is radar material at most. Yellow is "Op de radar" material. **Orange or red is a
 possible new crisis:** check the KNMI and the NOS, tell the owner at once, and prepare a
 storm front page (archive the rest page state first if needed) but let the owner decide
 before it goes live.

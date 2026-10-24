@@ -4,24 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<title>Crisus · Geen nieuwe crisus. Wel een oorlog.</title>
-<meta name="description" content="Crisus.nl: geen nieuwe crisus op internet, wel een oorlog. Rusland voert die sinds 2014 tegen Oekraïne, de klokken lopen door. Satire, maar de feiten kloppen.">
-<meta property="og:title" content="Crisus · Geen nieuwe crisus. Wel een oorlog.">
-<meta property="og:description" content="Geen nieuwe crisus, wel een oorlog. Crisusniveau 3: ernstig, de status quo sinds 2001. De oorlog in Oekraïne duurt voort, er komt wind en PHP heeft nog een vervolgbug.">
+<title>Crisus · HTTP2Shell: kritiek lek in Brotli (CVE-2026-111497)</title>
+<meta name="description" content="Crisus.nl: HTTP2Shell (CVE-2026-111497), een kritiek lek in de Brotli-decoder van Google. Het zit in Node.js, Python, Bun, Envoy en Istio. De patch is uit. Satire, maar de feiten kloppen.">
+<meta property="og:title" content="Crisus · HTTP2Shell: kritiek lek in Brotli">
+<meta property="og:description" content="Crisusniveau 3: ernstig. HTTP2Shell, een kritiek lek in Brotli, zit in Node.js, in Python en waarschijnlijk in uw HTTP-client. De patch is uit sinds 21 oktober.">
 <meta property="og:url" content="https://crisus.nl/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-23T22:50:00+02:00">
-<meta property="article:modified_time" content="2026-10-24T12:18:00+02:00">
+<meta property="article:modified_time" content="2026-10-24T21:00:00+02:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=6">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Crisus: geen nieuwe crisus, wel een oorlog. Crisusniveau 3 van 5: ernstig.">
+<meta property="og:image:alt" content="Crisus: HTTP2Shell, kritiek lek in Brotli. Crisusniveau 3 van 5: ernstig.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://crisus.nl/og.png?v=6">
-<meta name="twitter:title" content="Crisus · Geen nieuwe crisus. Wel een oorlog.">
-<meta name="twitter:description" content="Geen nieuwe crisus, wel een oorlog in Oekraïne. Satire, maar de feiten kloppen.">
+<meta name="twitter:title" content="Crisus · HTTP2Shell: kritiek lek in Brotli">
+<meta name="twitter:description" content="HTTP2Shell: een kritiek lek in Brotli, in Node.js, Python en uw HTTP-client. De patch is uit. Satire, maar de feiten kloppen.">
 <meta name="theme-color" content="#ffd400">
 <link rel="canonical" href="https://crisus.nl/">
 <link rel="alternate" hreflang="nl" href="https://crisus.nl/">
@@ -38,20 +38,22 @@
 {
   "@context": "https://schema.org",
   "@type": "LiveBlogPosting",
-  "headline": "Geen nieuwe crisus. Wel een oorlog.",
-  "description": "Geen nieuwe crisus op internet, wel een oorlog: die van Rusland tegen Oekraïne. Satire, maar de feiten kloppen.",
+  "headline": "HTTP2Shell: kritiek lek in Brotli",
+  "description": "HTTP2Shell (CVE-2026-111497): een kritiek lek in de Brotli-decoder van Google, in Node.js, Python, Bun, Envoy en Istio. Satire, maar de feiten kloppen.",
   "url": "https://crisus.nl/",
   "mainEntityOfPage": "https://crisus.nl/",
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-23T22:50:00+02:00",
-  "dateModified": "2026-10-24T12:18:00+02:00",
+  "dateModified": "2026-10-24T21:00:00+02:00",
   "coverageStartTime": "2026-10-23T22:50:00+02:00",
+  "about": {"@type": "Thing", "name": "CVE-2026-111497", "alternateName": ["HTTP2Shell", "Node2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-111497"},
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
   "publisher": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
   "genre": "satire",
-  "keywords": ["crisus", "status", "Oekraïne", "business as usual"],
+  "keywords": ["crisus", "HTTP2Shell", "Node2Shell", "Brotli", "CVE-2026-111497", "Node.js", "Python"],
   "liveBlogUpdate": [
+    {"@type": "BlogPosting", "headline": "Een nieuwe crisus: HTTP2Shell.", "datePublished": "2026-10-24T21:00:00+02:00", "url": "https://crisus.nl/#u-20261024-2100"},
     {"@type": "BlogPosting", "headline": "PHP2Shell is afgesloten.", "datePublished": "2026-10-23T22:50:00+02:00", "url": "https://crisus.nl/#u-20261023-2250"}
   ],
   "isAccessibleForFree": true
@@ -62,9 +64,9 @@
  "publisher": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"}}
 </script>
 </head>
-<body class="rust">
-<a class="skip" href="#inhoud">Meteen naar de stand</a>
-<div class="tape" aria-hidden="true"><p><span>ERNSTIG · STATUS QUO SINDS 2001 · GEEN NIEUWE CRISUS · WEL EEN OORLOG · UPDATEN KAN ALTIJD · BACK-UP OOK · LET OP · CRISUS · 50 HZ · DE OORLOG DUURT VOORT · ERNSTIG · STATUS QUO SINDS 2001 · GEEN NIEUWE CRISUS · WEL EEN OORLOG · UPDATEN KAN ALTIJD · BACK-UP OOK · LET OP · CRISUS · 50 HZ · DE OORLOG DUURT VOORT ·</span></p></div>
+<body>
+<a class="skip" href="#inhoud">Meteen naar de crisus</a>
+<div class="tape" aria-hidden="true"><p><span>LET OP · CRISUS · BLIJF KALM · PATCH IS UIT · UPDATEN · LET OP · CRISUS · PAK NIETS UIT · OOK GEEN PAKKETJES · LET OP · CRISUS · ZIT OOK IN PYTHON · LET OP · CRISUS · HET WERKT TWEE KANTEN OP · LET OP · CRISUS · GZIP IS OOK GOED · LET OP · CRISUS · BLIJF KALM · PATCH IS UIT · UPDATEN · LET OP · CRISUS · PAK NIETS UIT · OOK GEEN PAKKETJES · LET OP · CRISUS · ZIT OOK IN PYTHON · LET OP · CRISUS · HET WERKT TWEE KANTEN OP · LET OP · CRISUS · GZIP IS OOK GOED ·</span></p></div>
 
 <header>
   <div class="wrap">
@@ -84,21 +86,24 @@
 
 <nav class="spring" aria-label="Op deze pagina">
   <ul>
-    <li><a href="#niveau" title="Het crisusniveau">Niveau</a></li>
-    <li><a href="#oorlog" title="De oorlog in Oekraïne">Oorlog</a></li>
-    <li><a href="#updates" title="De laatste updates">Updates</a></li>
-    <li><a href="#radar" title="Op de radar">Op de radar</a></li>
+    <li><a href="#updates" title="Naar de laatste updates">Updates</a></li>
+    <li><a href="#wat" title="Wat is er aan de hand?">Wat speelt er</a></li>
     <li><a href="#doen" title="Wat moet u doen?">Wat te doen</a></li>
-    <li><a href="#archief" title="Eerdere crisussen">Eerdere crisussen</a></li>
+    <li><a href="#stand" title="Stand per platform">Platforms</a></li>
+    <li><a href="#oorlog" title="De oorlog in Oekraïne">Oorlog</a></li>
+    <li><a href="#radar" title="Op de radar">Op de radar</a></li>
+    <li><a href="#bronnen" title="Bronnen">Bronnen</a></li>
     <li><a href="/museum/" title="Het Crisus-museum: alle eerdere crisussen">Museum</a></li>
   </ul>
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Geen nieuwe crisus · <time datetime="2026-10-24T12:18:00+02:00">laatst bijgewerkt 24 oktober, 12:18</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
-  <h1>Geen nieuwe crisus. Wel een oorlog.</h1>
-  <p class="lead">Op internet is er op dit moment geen nieuwe crisus. Wel is er een oorlog: Rusland voert die al sinds 2014 tegen Oekra&iuml;ne. Nederland is officieel niet in oorlog. Betrokken is het wel, en op zijn laatst sinds MH17. Daarom staat het crisusniveau op 3.</p>
+  <p class="kicker">Crisus · <time datetime="2026-10-24T21:00:00+02:00">laatst bijgewerkt 24 oktober, 21:00</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <h1>Brotli Kwetsbaarheid</h1>
+  <p class="lead">Een kritiek lek in Brotli, de compressie van Google: HTTP2Shell. Brotli zit in Node.js, in Python, in Bun, Envoy en Istio, en waarschijnlijk ook in iets van u. De patch is uit: Brotli <strong>1.2.1</strong>, Node.js <strong>26.12.1, 24.22.1 en 22.23.4</strong>. Niet in paniek raken. Wel updaten.</p>
   <p class="vandaag" id="vandaag" hidden></p>
+
+  <p class="klok" id="klok"><b data-since="2026-10-21T21:27:00+02:00">21:27</b><span>Sinds 21 oktober 21:27 (19:27 UTC) is de fix van Brotli zelf uit. Node.js had hem dezelfde dag al. Elke minuut op deze klok is een minuut zonder update. <a href="#stand" title="Is de patch er al voor mij?">Is de patch er al voor mij?</a></span></p>
 
   <section class="level" aria-labelledby="niveau">
     <h2 id="niveau">Huidig crisusniveau: 3 van 5</h2>
@@ -106,13 +111,90 @@
       <li class="on"><b>0 · Business as usual</b>Alles bromt. 50 Hz. Altijd.</li>
       <li class="on"><b>1 · Rustig</b>Iemand leest de changelog</li>
       <li class="on"><b>2 · Opletten</b>Er is een Signal-groep</li>
-      <li class="now" aria-current="step"><b>3 · Ernstig</b>Status quo sinds 2001</li>
+      <li class="now" aria-current="step"><b>3 · Ernstig</b>Genoeg pizza gehad. Er wordt Thais besteld.</li>
       <li><b>4 · Zeer ernstig</b>De manager vraagt of het al werkt</li>
       <li><b>5 · Vrijdagmiddag</b>Iemand zegt: &ldquo;het is maar een kleine wijziging&rdquo;</li>
     </ol>
-    <p class="brom"><button id="brom" type="button" hidden aria-pressed="false" data-on="Brom uit" data-off="Brom aan">Brom aan</button> Het geluid van een gewone dag: 50 hertz, net als het stroomnet. Zacht, en pas als u klikt.</p>
   </section>
 
+  <p class="bouwbord">Het internet is al <b>0 dagen</b> zonder nieuwe crisus. <span>Plechtig teruggezet op 24 oktober om 21:00. Eerlijk is eerlijk: HTTP2Shell kwam op dezelfde woensdag als <a href="/php/" title="Crisus: PHP2Shell, afgesloten">PHP2Shell</a>. De vorige stand van 3 dagen en 5 uur klopte dus nooit. Wij hadden het druk.</span></p>
+
+  <h2 id="updates">Updates</h2>
+  <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261024-2100"><time datetime="2026-10-24T21:00+02:00">24 oktober 21:00</time>
+      <p><strong>Een nieuwe crisus: HTTP2Shell.</strong> Woensdag stond het nog als bijzin in ons <a href="/php/#u-20261021-1700" title="Crisus: PHP2Shell, 21 oktober 17:00">PHP-verhaal</a>: ook Node.js had security releases, met een lek in de Brotli-decoder. Die bijzin is gegroeid. Het lek, CVE-2026-111497, zit niet in Node.js maar in Brotli zelf, de compressie van Google. En Brotli zit overal. Ook in Python: requests, urllib3, httpx, aiohttp en Scrapy gebruiken het vanzelf zodra het pakket <code>brotli</code> of <code>brotlicffi</code> er is, schrijft <a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido</a>. Dat pakket wordt ruim 82 miljoen keer per maand gedownload. Google geeft het lek een 9,2.</p>
+      <p>Het werkt twee kanten op. Een kwaadwillende client kan een server aanvallen. En een kwaadwillende server elke client die gecomprimeerde antwoorden aanneemt. Codex Security van OpenAI vond het al in februari. De fix stond toen al in de code van Brotli. Niemand zag dat het een beveiligingslek was. Eerst heette het Node2Shell, nu HTTP2Shell. Een lek met een bijnaam is erger dan een lek zonder. Over een lek met twee bijnamen vergadert het crisusteam nog.</p>
+      <p>Misbruik is nog niet gezien. Wel kregen onderzoekers het volgens Aikido werkend tegen een gewone Node.js 24.22.0. De fixes zijn er sinds woensdag en donderdag, en Debian heeft sinds gisteravond <a href="https://lists.debian.org/debian-security-announce/2026/msg00498.html" title="DSA-6582-1: brotli security update">DSA-6582-1</a>. Het crisusniveau blijft 3: ernstig. Het crisusteam had de pizzadozen net opgeruimd.</p></li>
+    <li id="u-20261023-2250"><time datetime="2026-10-23T22:50+02:00">23 oktober 22:50</time>
+      <p><strong>PHP2Shell is afgesloten.</strong> De patch is uit, de sites zijn terug en de ergste drukte is voorbij. PHP zakt naar crisusniveau 2, en daarmee is het geen eigen crisus meer. Daarom heeft crisus.nl vanaf nu deze nieuwe voorpagina. Alles van die crisus, met alle updates, staat op <a href="/php/" title="Crisus: PHP2Shell, afgesloten">crisus.nl/php</a>. Eén ding blijft: de vervolgbug CVE-2026-115560 krijgt pas een fix in de volgende gewone release. Zet tot dan <code>session.upload_progress.enabled = 0</code>, volgens <a href="https://www.php.net/archive/2026.php#2026-10-23-1" title="php.net: Informational advisory: Session upload progress">php.net</a>.</p>
+      <p>Nog wel even opletten. Volgens Mandiant werken sommige openbare exploits echt, tegen een standaardinstallatie met mod_php, niet tegen PHP-FPM, meldt <a href="https://www.theregister.com/security/2026/10/23/theres-a-third-php2shell-bug-but-it-wont-get-an-emergency-fix/5305208" title="The Register: There's a third PHP2Shell bug, but it won't get an emergency fix">The Register</a>. Een geslaagde aanval is nog niet bevestigd, zegt de PHP Foundation. Draait u mod_php en heeft u nog niet gepatcht? Dan is dit uw laatste herinnering.</p>
+      <p>Het crisusniveau staat op 3: ernstig, de status quo sinds 2001. Er is een oorlog, er komt wind en PHP heeft nog een staartje. Het crisusteam ruimt de pizzadozen op en zet de brom weer aan.</p></li>
+  </ol>
+
+  <h2 id="wat">Wat is er aan de hand?</h2>
+  <dl class="feiten" aria-labelledby="wat">
+    <dt>Het lek</dt>
+    <dd>Een out-of-bounds write in de Brotli-decoder van Google: <a href="https://www.cve.org/CVERecord?id=CVE-2026-111497" title="CVE-2026-111497 op cve.org">CVE-2026-111497</a>, ook wel HTTP2Shell, eerst Node2Shell. Brotli is de compressie achter <code>Content-Encoding: br</code>. Kleiner dan gzip. Sinds deze week ook gevaarlijker.</dd>
+    <dt>Hoe werkt het?</dt>
+    <dd>De functie <code>DecodeBlockTypeAndLength()</code> geeft alleen ja of nee terug. Nee kan twee dingen betekenen: de invoer is kapot, of er moet nog meer invoer komen. De decoder kan die twee niet uit elkaar houden en gaat door met een ongeldige toestand. Dan schrijft hij buiten zijn eigen geheugen. De <a href="https://github.com/google/brotli/commit/0ed4268a4401abcb44720963" title="google/brotli: commit 0ed4268">fix</a> geeft kapotte invoer een eigen foutcode: -17.</dd>
+    <dt>Welke kant op?</dt>
+    <dd>Allebei. Een server die Brotli uitpakt, is kwetsbaar voor een kwaadwillende client. Een client die Brotli uitpakt, is kwetsbaar voor een kwaadwillende server. Dat is bijna elke HTTP-client: die vraagt er zelf om, met <code>Accept-Encoding: br</code>.</dd>
+    <dt>Ernst</dt>
+    <dd>CVSS v4.0: <strong>9,2</strong>, van Google in het CVE-record. Node.js noemt het <em>high</em>. Ubuntu zegt <em>medium</em>. Drie partijen, drie meningen. Bij alle drie is patchen het antwoord.</dd>
+    <dt>Wat kan een aanvaller?</dt>
+    <dd>Met een gecomprimeerd bericht het geheugen beschadigen, gegevens lekken, het programma laten crashen en mogelijk eigen code uitvoeren.</dd>
+    <dt>Welke versies?</dt>
+    <dd>Brotli <strong>1.0.3 tot en met 1.2.0</strong>. Elk programma met een eigen kopie van Brotli moet dus zelf updaten.</dd>
+    <dt>Wie zit erin?</dt>
+    <dd>Node.js, met een eigen kopie. De Python-pakketten <code>brotli</code> en <code>brotlicffi</code>, en via die pakketten requests, urllib3, httpx, aiohttp en Scrapy. Ook als uw code nergens <code>import brotli</code> zegt. Volgens <a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido</a> ook Bun, Envoy en Istio. Niet geraakt: Apache met <code>mod_brotli</code> en nginx, want die pakken standaard niets uit. Die comprimeren alleen.</dd>
+    <dt>Wie vond het?</dt>
+    <dd>Codex Security van OpenAI, volgens de <a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">advisory van Node.js</a>, al in februari. Brotli repareerde de fout toen al, maar zag hem niet als beveiligingslek. Dus kwam er toen geen release. Wel nu.</dd>
+    <dt>Misbruik?</dt>
+    <dd><strong>Nog niet gezien.</strong> Wel kregen onderzoekers het werkend tegen een ongewijzigde Node.js 24.22.0, schrijft Aikido. Dat is geen goed nieuws. Het is nog geen slecht nieuws.</dd>
+    <dt>Ziet mijn scanner het?</dt>
+    <dd>Sinds kort. Op 23 oktober koppelden de databases het lek nog niet aan de Python-pakketten, aldus Aikido. Sinds 23 oktober 21:08 noemt <a href="https://github.com/advisories/GHSA-9v8h-qqgm-4m35" title="GitHub advisory GHSA-9v8h-qqgm-4m35: Brotli out-of-bounds write (Node2Shell)">GHSA-9v8h-qqgm-4m35</a> van GitHub ze wel. Dependabot zou ze nu dus moeten zien. Gebruikt u pip-audit of Safety? Kijk dan zelf.</dd>
+    <dt>De patch</dt>
+    <dd><strong>Uit sinds 21 oktober.</strong> Brotli <strong>1.2.1</strong>, voor oudere lijnen 1.1.1 en 1.0.10. Node.js <strong>26.12.1, 24.22.1 en 22.23.4</strong>. Node.js 20 of ouder? Daarvoor komt niets meer: einde levensduur sinds 30 april. Python: <code>brotli</code> 1.2.1 en <code>brotlicffi</code> 1.2.1.0. Bun: 1.4.4.</dd>
+  </dl>
+
+  <section class="doen" aria-labelledby="doen">
+    <h2 id="doen">Wat moet u doen?</h2>
+    <p>Blijf binnen. Pak niets uit.</p>
+    <ol>
+      <li><strong>Zoek uit waar u Brotli heeft.</strong> Ook op plekken waar u het niet verwacht. Kijk in elke virtualenv en elk container-image apart.
+        <pre><code>node -v
+pip list 2&gt;/dev/null | grep -iE '^brotli'
+dpkg -l | grep -i brotli        <span class="c"># Debian, Ubuntu</span>
+rpm -qa | grep -i brotli        <span class="c"># Fedora, RHEL, openSUSE</span></code></pre></li>
+      <li><strong>Node.js:</strong> update naar 26.12.1, 24.22.1 of 22.23.4. De officiële Docker-images <code>node:24.22.1</code> en verder staan er sinds 22 oktober. Maak uw containers opnieuw aan, een herstart is niet genoeg. Nog op Node.js 20? Dan is dit een goed moment.</li>
+      <li><strong>Python:</strong> staat <code>brotli</code> of <code>brotlicffi</code> in de lijst? Werk het bij, en zet de nieuwe versie ook in uw lockfile.
+        <pre><code>pip install --upgrade 'brotli&gt;=1.2.1'           <span class="c"># als u brotli heeft</span>
+pip install --upgrade 'brotlicffi&gt;=1.2.1.0'     <span class="c"># als u brotlicffi heeft</span></code></pre></li>
+      <li><strong>Het systeempakket:</strong> Debian 13 heeft <code>1.1.0-2+deb13u1</code>, Debian 12 heeft <code>1.0.9-2+deb12u1</code>. De Node.js van Debian gebruikt die systeembibliotheek. Updaten en daarna herstarten:
+        <pre><code>sudo apt update
+sudo apt install --only-upgrade libbrotli1
+sudo needrestart -r l          <span class="c"># wat draait nog oude code?</span></code></pre></li>
+      <li><details class="nood"><summary><strong>Kunt u nog niet updaten?</strong></summary> Dan noemt <a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido</a> drie noodmaatregelen. Een: haal <code>brotli</code> en <code>brotlicffi</code> weg. HTTP-clients vallen dan terug op gzip. Twee: weiger verzoeken met <code>Content-Encoding: br</code> al in de proxy. Drie: haal <code>br</code> uit <code>Accept-Encoding</code> &eacute;n weiger Brotli-antwoorden v&oacute;&oacute;r het uitpakken. Alleen de header aanpassen is niet genoeg: een kwaadwillende server stuurt toch Brotli.</details></li>
+      <li>Klik niet op links in e-mails over dit lek. Wij mailen nooit. En als we het deden, dan met gzip.</li>
+    </ol>
+  </section>
+
+  <h2 id="stand">Stand per platform, 21:00</h2>
+  <ul class="status" aria-labelledby="stand">
+    <li><b>Brotli</b><span class="pill green">Fix beschikbaar</span><em>1.2.1, 1.1.1 en 1.0.10, sinds 21 oktober 21:27.</em></li>
+    <li><b>Node.js</b><span class="pill orange">Nu installeren</span><em>26.12.1, 24.22.1 en 22.23.4, sinds 21 oktober. Gepatcht? Ook herstarten.</em></li>
+    <li><b>Node.js 20 en ouder</b><span class="pill red">Nog geen fix</span><em>En die komt ook niet. Einde levensduur sinds 30 april.</em></li>
+    <li><b>Python</b><span class="pill green">Fix beschikbaar</span><em><code>brotli</code> 1.2.1 en <code>brotlicffi</code> 1.2.1.0 op PyPI, sinds 22 oktober.</em></li>
+    <li><b>Docker</b><span class="pill green">Fix beschikbaar</span><em><code>node:24.22.1</code> en de andere gepatchte tags sinds 22 oktober 04:40. Containers opnieuw aanmaken.</em></li>
+    <li><b>Bun</b><span class="pill green">Fix beschikbaar</span><em>1.4.4, sinds 22 oktober.</em></li>
+    <li><b>Envoy, Istio</b><span class="pill green">Fix beschikbaar</span><em>Envoy 1.40.0, 1.39.3, 1.38.6 en 1.37.8. Istio 1.31.2, 1.30.6 en 1.29.9, al is 1.29 zelf einde levensduur.</em></li>
+    <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://lists.debian.org/debian-security-announce/2026/msg00498.html" title="DSA-6582-1: brotli security update">DSA-6582-1</a>: <code>brotli 1.1.0-2+deb13u1</code>, sinds 23 oktober.</em></li>
+    <li><b>Debian 12</b><span class="pill green">Fix beschikbaar</span><em>DLA-4855-1: <code>brotli 1.0.9-2+deb12u1</code>. Unstable is nog kwetsbaar.</em></li>
+    <li><b>Ubuntu</b><span class="pill orange">Onduidelijk</span><em>Bij elke release staat nog &ldquo;Needs evaluation&rdquo;, zie de <a href="https://ubuntu.com/security/CVE-2026-111497" title="Ubuntu: CVE-2026-111497">CVE-pagina</a>. Ubuntu denkt nog na.</em></li>
+    <li><b>Apache, nginx</b><span class="pill green">Werkt</span><em>Die comprimeren alleen, ze pakken niets uit. Inpakken is veilig. Uitpakken is het probleem. Zoals bij elke verhuizing.</em></li>
+    <li><b>Crisus.nl</b><span class="pill green">Werkt</span><em>Geen Node, geen Python. Gewoon HTML. Zoals in 1997.</em></li>
+    <li><b>Paniek</b><span class="pill green">Onder controle</span><em>Er is weer een spreadsheet. Dezelfde.</em></li>
+  </ul>
 
   <h2 id="oorlog">De oorlog duurt voort</h2>
   <p>Rusland voert sinds 2014 oorlog tegen Oekra&iuml;ne. Die oorlog is niet voorbij. Deze klokken lopen door tot hij dat wel is.</p>
@@ -124,25 +206,16 @@
   </div>
   <p class="note">Wilt u iets doen? Steun Oekra&iuml;ne, bijvoorbeeld via <a href="https://www.aidtoukraine.nl/" title="Aid to Ukraine">Aid to Ukraine</a>.</p>
 
-  <h2 id="updates">Updates</h2>
-  <ol class="updates" aria-labelledby="updates">
-    <li id="u-20261023-2250"><time datetime="2026-10-23T22:50+02:00">23 oktober 22:50</time>
-      <p><strong>PHP2Shell is afgesloten.</strong> De patch is uit, de sites zijn terug en de ergste drukte is voorbij. PHP zakt naar crisusniveau 2, en daarmee is het geen eigen crisus meer. Daarom heeft crisus.nl vanaf nu deze nieuwe voorpagina. Alles van die crisus, met alle updates, staat op <a href="/php/" title="Crisus: PHP2Shell, afgesloten">crisus.nl/php</a>. Eén ding blijft: de vervolgbug CVE-2026-115560 krijgt pas een fix in de volgende gewone release. Zet tot dan <code>session.upload_progress.enabled = 0</code>, volgens <a href="https://www.php.net/archive/2026.php#2026-10-23-1" title="php.net: Informational advisory: Session upload progress">php.net</a>.</p>
-      <p>Nog wel even opletten. Volgens Mandiant werken sommige openbare exploits echt, tegen een standaardinstallatie met mod_php, niet tegen PHP-FPM, meldt <a href="https://www.theregister.com/security/2026/10/23/theres-a-third-php2shell-bug-but-it-wont-get-an-emergency-fix/5305208" title="The Register: There's a third PHP2Shell bug, but it won't get an emergency fix">The Register</a>. Een geslaagde aanval is nog niet bevestigd, zegt de PHP Foundation. Draait u mod_php en heeft u nog niet gepatcht? Dan is dit uw laatste herinnering.</p>
-      <p>Het crisusniveau staat op 3: ernstig, de status quo sinds 2001. Er is een oorlog, er komt wind en PHP heeft nog een staartje. Het crisusteam ruimt de pizzadozen op en zet de brom weer aan.</p></li>
-  </ol>
-
   <h2 id="radar">Op de radar</h2>
   <ul class="radar">
     <li><b>CVE&rsquo;s</b> Het aantal nieuwe CVE&rsquo;s groeit exponentieel. Sinds mei komt er elke maand zo&rsquo;n 22 procent bij: elke drie &agrave; vier maanden een verdubbeling, rekenen wij uit met de cijfers van de <a href="https://cve.0xosprey.com/" title="CVE Tracker: nieuwe CVE's per dag, week en maand">CVE Tracker</a>. Die komen uit de officiële CVE-lijst. Op een logaritmische schaal is het een rechte lijn. In september waren het er 14.934, drie keer zoveel als een jaar eerder. Dit jaar zijn het er al 86.344, bijna twee keer zoveel als in heel 2025. De <a href="https://nvd.nist.gov/" title="NVD: de National Vulnerability Database van NIST">NVD</a> telt hetzelfde. Het R-getal van de bugs staat ruim boven 1. Het is een <a href="https://superspreading.party/" title="Superspreading Party">superspreading party</a>.</li>
-    <li><b>Wind</b> Het KNMI geeft dit weekend code geel voor zware windstoten, zie <a href="https://meteoalarm.org/en/live/region/NL" title="Meteoalarm: waarschuwingen voor Nederland">Meteoalarm</a>. Of het een officiële storm wordt, is volgens de <a href="https://nos.nl/artikel/2636248-herfstweer-komt-op-gang-veel-wind-dit-weekend-mogelijk-met-eerste-storm" title="NOS: Herfstweer komt op gang, veel wind dit weekend">NOS</a> nog onzeker. Tuinstoelen naar binnen.</li>
-    <li><b>Wintertijd</b> Zondag 25 oktober om 03:00 wordt het 02:00. Dat uur komt twee keer. Uw cronjobs ook.</li>
+    <li><b>Ruby</b> Vier geheugenfouten in de reguliere expressies van Ruby, gevonden door GitLab. Ze raken apps die een regex bouwen uit invoer van buiten, bijvoorbeeld met <code>Regexp.new</code>. De fix zit in Ruby 4.0.9, 3.4.12 en 3.3.13, volgens <a href="https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/" title="ruby-lang.org: Regexp fixes for GitLab CVEs">ruby-lang.org</a>. <code>Regexp.timeout</code> helpt niet. E&eacute;n van de vier, CVE-2026-110264, kreeg bij GitLab een 10,0. Een regex van een vreemde: dat was al nooit een goed idee.</li>
+    <li><b>Wind</b> Het KNMI geeft vanaf vanavond code geel voor zware windstoten aan de kust, in het noorden en in Limburg. Op zee is het code oranje, zie <a href="https://meteoalarm.org/en/live/region/NL" title="Meteoalarm: waarschuwingen voor Nederland">Meteoalarm</a>. Tuinstoelen naar binnen.</li>
+    <li><b>Wintertijd</b> Vannacht om 03:00 wordt het 02:00. Dat uur komt twee keer. Uw cronjobs ook.</li>
     <li><b>PHP</b> De fix voor CVE-2026-115560 komt met de volgende gewone release. Tot dan staat de uploadvoortgang van sessies uit, als het goed is.</li>
     <li><b>WICCON</b> Donderdag 29 en vrijdag 30 oktober is <a href="https://wiccon.nl/" title="WICCON 2026: cybersecurityconferentie van WICCA">WICCON 2026</a> in De Lichtfabriek in Haarlem. Twee dagen cybersecurity, met alleen vrouwelijke sprekers. Breekt er die week een crisus uit, dan zitten de mensen die hem oplossen in Haarlem.</li>
     <li><b>Patch Tuesday</b> Dinsdag 10 november. Zoals elke maand.</li>
   </ul>
-
-  <p class="bouwbord">Het internet is al <b data-since="2026-10-21T15:34:00+02:00">sinds 21 oktober</b> zonder nieuwe crisus. <span>Geteld vanaf de patch voor <a href="/php/#u-20261021-1534" title="Crisus: de PHP2Shell-patch is uit, 21 oktober 15:34">PHP2Shell</a>, 21 oktober 15:34. Laatste escalatie: <a href="/php/#u-20261022-1800" title="Crisus: crisusniveau 4, het NCSC ziet de eerste geslaagde aanvallen">22 oktober 18:00, niveau 4</a>. Bij een nieuwe crisus gaat dit bord plechtig terug naar 0.</span></p>
 
   <h2 id="bord">Vaste waarden</h2>
   <ul class="bord" aria-labelledby="bord">
@@ -153,29 +226,26 @@
     <li><b>crisus.nl</b><span>HTTP 200</span></li>
   </ul>
 
-  <section class="doen" aria-labelledby="doen">
-    <h2 id="doen">Wat moet u doen?</h2>
-    <p>Niets bijzonders. Dat is het bijzondere.</p>
-    <ol>
-      <li><strong>Updaten.</strong> Dat kan altijd, ook als er niets aan de hand is. Juist dan.</li>
-      <li><strong>Een back-up maken.</strong> En er eentje terugzetten. Een back-up die u nooit heeft teruggezet, is een hoop.</li>
-      <li><strong>Een wachtwoordmanager en tweestapsverificatie.</strong> Bijvoorbeeld <a href="https://qtpass.org/" title="QtPass: een grafische schil om pass">QtPass</a>, met <code>pass</code> en GPG eronder.</li>
-      <li><strong>De brom aanzetten.</strong> Als het u te stil is.</li>
-    </ol>
-  </section>
-
   <h2 id="bronnen">Bronnen</h2>
   <ul class="bronnen" aria-labelledby="bronnen">
+    <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-111497" title="CVE-2026-111497 op cve.org">CVE-2026-111497</a>: &ldquo;Out-of-Bounds Write in Google Brotli Decoder&rdquo;, gepubliceerd door Google op 22 oktober, CVSS v4.0 9,2.</li>
+    <li><a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">Node.js: October 2026 security releases</a>. De fix in 26.12.1, 24.22.1 en 22.23.4, en wie het lek meldde.</li>
+    <li><a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell)</a>. Waarom Python geraakt is, de noodmaatregelen en de stand bij Bun, Envoy en Istio.</li>
+    <li><a href="https://github.com/advisories/GHSA-9v8h-qqgm-4m35" title="GitHub advisory GHSA-9v8h-qqgm-4m35: Brotli out-of-bounds write (Node2Shell)">GitHub: GHSA-9v8h-qqgm-4m35</a>, voor de PyPI-pakketten <code>brotli</code> en <code>brotlicffi</code>.</li>
+    <li><a href="https://github.com/google/brotli/commit/0ed4268a4401abcb44720963" title="google/brotli: commit 0ed4268">google/brotli: de fix</a> en de <a href="https://github.com/google/brotli/releases" title="google/brotli: releases">releases</a> 1.2.1, 1.1.1 en 1.0.10.</li>
+    <li><a href="https://lists.debian.org/debian-security-announce/2026/msg00498.html" title="DSA-6582-1: brotli security update">Debian DSA-6582-1</a> en de <a href="https://security-tracker.debian.org/tracker/CVE-2026-111497" title="Debian security tracker: CVE-2026-111497">Debian security tracker</a>. <a href="https://ubuntu.com/security/CVE-2026-111497" title="Ubuntu: CVE-2026-111497">Ubuntu: CVE-2026-111497</a>.</li>
+    <li><a href="https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/" title="ruby-lang.org: Regexp fixes for GitLab CVEs">ruby-lang.org: Regexp fixes for GitLab CVEs</a>.</li>
     <li><a href="https://en.wikipedia.org/wiki/Annexation_of_Crimea_by_the_Russian_Federation" title="Wikipedia: Annexation of Crimea by the Russian Federation">Wikipedia: Annexation of Crimea</a>. Over de wet van 2015 die 20 februari 2014 als begin van de bezetting vastlegt, en de medaille.</li>
     <li><a href="https://en.wikipedia.org/wiki/Siege_of_Sloviansk" title="Wikipedia: Siege of Sloviansk">Wikipedia: Siege of Sloviansk</a>. 12 april 2014, het begin van de oorlog in de Donbas.</li>
     <li><a href="https://nl.wikipedia.org/wiki/Malaysia_Airlines-vlucht_17" title="Wikipedia: Malaysia Airlines-vlucht 17">Wikipedia: Malaysia Airlines-vlucht 17</a>. 17 juli 2014, 298 doden, onder wie 196 Nederlanders, en het vonnis van 2022.</li>
     <li><a href="https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine" title="Wikipedia: Russian invasion of Ukraine">Wikipedia: Russian invasion of Ukraine</a>. 24 februari 2022, kort voor 05:00 Kyiv-tijd.</li>
     <li><a href="https://en.wikipedia.org/wiki/Utility_frequency" title="Wikipedia: Utility frequency">Wikipedia: Utility frequency</a>. Het Europese stroomnet draait op 50 Hz. <a href="https://en.wikipedia.org/wiki/Patch_Tuesday" title="Wikipedia: Patch Tuesday">Patch Tuesday</a>: de tweede dinsdag van de maand. <a href="https://en.wikipedia.org/wiki/Year_2038_problem" title="Wikipedia: Year 2038 problem">Het jaar-2038-probleem</a>: op 19 januari 2038 om 03:14:08 UTC loopt een 32-bits Unix-tijd over.</li>
     <li><a href="https://cve.0xosprey.com/" title="CVE Tracker: nieuwe CVE's per dag, week en maand">CVE Tracker</a>, met de <a href="https://cve.0xosprey.com/data.json" title="CVE Tracker: de ruwe cijfers">ruwe cijfers</a> uit de officiële CVE-lijst (CVEProject/cvelistV5), stand 24 oktober. De groei per maand van mei tot en met september en de verdubbelingstijd rekenden wij zelf uit. De <a href="https://nvd.nist.gov/" title="NVD: de National Vulnerability Database van NIST">NVD</a> telt voor september 2026 15.074 nieuwe CVE&rsquo;s en voor september 2025 4.537.</li>
-    <li><a href="https://meteoalarm.org/en/live/region/NL" title="Meteoalarm: waarschuwingen voor Nederland">Meteoalarm</a> en het <a href="https://nos.nl/artikel/2636248-herfstweer-komt-op-gang-veel-wind-dit-weekend-mogelijk-met-eerste-storm" title="NOS: Herfstweer komt op gang, veel wind dit weekend">NOS-weerbericht</a> voor de wind.</li>
-    <li><a href="https://www.php.net/archive/2026.php#2026-10-23-1" title="php.net: Informational advisory: Session upload progress">php.net: Informational advisory: Session upload progress</a>. De vervolgbug.</li>
+    <li><a href="https://meteoalarm.org/en/live/region/NL" title="Meteoalarm: waarschuwingen voor Nederland">Meteoalarm</a> voor de wind.</li>
+    <li><a href="https://www.php.net/archive/2026.php#2026-10-23-1" title="php.net: Informational advisory: Session upload progress">php.net: Informational advisory: Session upload progress</a>. De vervolgbug van PHP2Shell.</li>
     <li><a href="https://www.theregister.com/security/2026/10/23/theres-a-third-php2shell-bug-but-it-wont-get-an-emergency-fix/5305208" title="The Register: There's a third PHP2Shell bug, but it won't get an emergency fix">The Register: There&rsquo;s a third PHP2Shell bug</a>. De PHP Foundation en Mandiant over de stand van het misbruik.</li>
   </ul>
+  <p class="note">Deze pagina is een grap. De feiten hierboven zijn dat niet. Twijfelt u? Dan wint de bron.</p>
 
   <h2 id="archief">Eerdere crisussen</h2>
   <p class="note">Alles van vroeger, met de originele beelden en de 503-pagina&rsquo;s, hangt in <a href="/museum/" title="Het Crisus-museum">het Crisus-museum</a>.</p>
