@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Render site/og.png (1200x630), the image link previews show.
-Usage: python3 -I tools/og.py [--title T] [--sub S] [--versions V] [--level N]
+Usage: python3 -I tools/og.py [--title T] [--sub S] [--versions V] [--level N] [--out NAME]
+An archived crisus gets its own image, e.g. --out og-php.png, so it keeps its preview.
 Fonts: Noto Sans and Source Code Pro (openSUSE paths; pass --fonts DIR to change)."""
 import argparse
 from pathlib import Path
@@ -14,6 +15,7 @@ ap.add_argument("--versions", default="8.5.12 · 8.4.27 · 8.3.36 · 8.2.35")
 ap.add_argument("--level", type=int, default=2)
 ap.add_argument("--tape", default="LET OP · CRISUS · BLIJF KALM · PATCH IS UIT · UPDATEN")
 ap.add_argument("--sans", default="/usr/share/fonts/truetype/NotoSans")
+ap.add_argument("--out", default="og.png", help="file name in site/")
 ap.add_argument("--mono", default="/usr/share/fonts/texlive-sourcecodepro/SourceCodePro-Bold.otf")
 a = ap.parse_args()
 
@@ -60,6 +62,6 @@ d.text((850, 440), "Crisusniveau", font=f(R, 26), fill=MU)
 d.text((850, 474), f"{a.level} van 5", font=f(B, 52), fill=OR)
 
 d.text((70, 590), "crisus.nl · satire, maar de feiten kloppen", font=f(R, 22), fill=MU)
-out = Path(__file__).resolve().parent.parent / "site" / "og.png"
+out = Path(__file__).resolve().parent.parent / "site" / a.out
 im.save(out, optimize=True)
 print(out, im.size)

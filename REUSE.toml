@@ -29,6 +29,7 @@ path = [
     "site/feed.xml",
     "site/favicon.svg",
     "site/og.png",
+    "site/og-php.png",
     "site/museum/503/*.jpg",
     "README.md",
     "CONTRIBUTING.md",
