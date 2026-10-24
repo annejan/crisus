@@ -133,6 +133,10 @@
 
   <h2 id="wat">Wat is er aan de hand?</h2>
   <dl class="feiten" aria-labelledby="wat">
+    <dt>Wat is Brotli?</dt>
+    <dd>Een manier om gegevens kleiner te maken, net als zip en gzip. Jyrki Alakuijala en Zolt&aacute;n Szabadka van Google bedachten het in 2013, eerst om webfonts kleiner te maken. Het is genoemd naar het Zwitserse broodje <i lang="gsw">Br&ouml;tli</i>. Sinds 2016 is het een internetstandaard: <a href="https://www.rfc-editor.org/rfc/rfc7932" title="RFC 7932: Brotli Compressed Data Format">RFC 7932</a>.</dd>
+    <dt>Waarom zit het overal in?</dt>
+    <dd>Omdat het werkt. Een webpagina met Brotli is meestal kleiner dan met gzip, en dus sneller binnen. Sinds 2016 en 2017 kunnen alle grote browsers het. Webservers en CDN&rsquo;s als Cloudflare en Amazon CloudFront sturen het mee, en een webfont in WOFF2 is altijd Brotli. Wie iets van internet haalt, krijgt dus vaak Brotli terug en moet het uitpakken. Daarom zit de decoder in Node.js (sinds versie 11.7), in de HTTP-clients van Python en in curl. Klein broodje, grote bakkerij.</dd>
     <dt>Het lek</dt>
     <dd>Een out-of-bounds write in de Brotli-decoder van Google: <a href="https://www.cve.org/CVERecord?id=CVE-2026-111497" title="CVE-2026-111497 op cve.org">CVE-2026-111497</a>, ook wel HTTP2Shell, eerst Node2Shell. Brotli is de compressie achter <code>Content-Encoding: br</code>. Kleiner dan gzip. Sinds deze week ook gevaarlijker.</dd>
     <dt>Hoe werkt het?</dt>
@@ -233,6 +237,7 @@ sudo needrestart -r l          <span class="c"># wat draait nog oude code?</span
     <li><a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell)</a>. Waarom Python geraakt is, de noodmaatregelen en de stand bij Bun, Envoy en Istio.</li>
     <li><a href="https://github.com/advisories/GHSA-9v8h-qqgm-4m35" title="GitHub advisory GHSA-9v8h-qqgm-4m35: Brotli out-of-bounds write (Node2Shell)">GitHub: GHSA-9v8h-qqgm-4m35</a>, voor de PyPI-pakketten <code>brotli</code> en <code>brotlicffi</code>.</li>
     <li><a href="https://github.com/google/brotli/commit/0ed4268a4401abcb44720963" title="google/brotli: commit 0ed4268">google/brotli: de fix</a> en de <a href="https://github.com/google/brotli/releases" title="google/brotli: releases">releases</a> 1.2.1, 1.1.1 en 1.0.10.</li>
+    <li><a href="https://en.wikipedia.org/wiki/Brotli" title="Wikipedia: Brotli">Wikipedia: Brotli</a>. Wie het bedacht, de naam, de browsers en wie het gebruikt. De standaard: <a href="https://www.rfc-editor.org/rfc/rfc7932" title="RFC 7932: Brotli Compressed Data Format">RFC 7932</a>.</li>
     <li><a href="https://lists.debian.org/debian-security-announce/2026/msg00498.html" title="DSA-6582-1: brotli security update">Debian DSA-6582-1</a> en de <a href="https://security-tracker.debian.org/tracker/CVE-2026-111497" title="Debian security tracker: CVE-2026-111497">Debian security tracker</a>. <a href="https://ubuntu.com/security/CVE-2026-111497" title="Ubuntu: CVE-2026-111497">Ubuntu: CVE-2026-111497</a>.</li>
     <li><a href="https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/" title="ruby-lang.org: Regexp fixes for GitLab CVEs">ruby-lang.org: Regexp fixes for GitLab CVEs</a>.</li>
     <li><a href="https://en.wikipedia.org/wiki/Annexation_of_Crimea_by_the_Russian_Federation" title="Wikipedia: Annexation of Crimea by the Russian Federation">Wikipedia: Annexation of Crimea</a>. Over de wet van 2015 die 20 februari 2014 als begin van de bezetting vastlegt, en de medaille.</li>
