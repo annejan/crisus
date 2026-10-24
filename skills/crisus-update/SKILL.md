@@ -74,6 +74,15 @@ refused, carry on with the next step and say so at the end.
 - Strict CSP (`site/.htaccess`): no inline `<style>` or `<script>`, no `style=""`
   attributes. Styles go in `crisus.css`, the only script is `crisus.js`.
 
+## Running jokes
+
+- **The pizza is gone.** No pizza and no food in new text any more, also not on the crisis
+  ladder. Old updates and the archive at `/php/` stay as they are.
+- **The spreadsheet.** The crisus team keeps one spreadsheet with a tab per crisus. A new
+  crisus gets a tab (HTTP2Shell sits next to PHP2Shell and Log4Shell). The first tab is
+  still called Millennium.
+- **The 2Shell counter** in Vaste waarden (see "Between crises").
+
 ## A public repository
 
 The repository is public, so pull requests and issues can come in.
@@ -125,8 +134,10 @@ they have been to Ukraine three times, each time to Kharkiv.
   (PHP2Shell: the patch, 21 Oct 15:34): on a new crisus, set its `data-since` and link to
   the moment its fix was out. During a crisus the bord stands still on "0 dagen" (no clock).
 - **Vaste waarden** (`#bord`): only values that stay true or are computed (Patch Tuesday,
-  the 2038 countdown). "Vandaag N jaar geleden" comes by itself from full dates in the
-  archive list.
+  the 2038 countdown), plus one counter: "Lekken met 2Shell in de naam" for the current
+  month (October 2026: 3, PHP2Shell, Node2Shell, HTTP2Shell). Every new nickname counts,
+  also a second name for the same bug. A new month starts again at 0. "Vandaag N jaar geleden" comes by
+  itself from full dates in the archive list.
 - **Winter time:** from 25 October 2026 the offset is `+01:00`. `bump.py` works it out
   itself (Europe/Amsterdam); write `<time datetime>` of new items with the right offset too.
 
