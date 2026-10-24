@@ -57,5 +57,5 @@ jobs:
           sys.exit(1 if missing else 0)
           PY
 
-      - name: The clock is valid JavaScript
-        run: node --check site/klok.js
+      - name: Valid JavaScript
+        run: node --check site/crisus.js
