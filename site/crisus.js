@@ -1,3 +1,5 @@
+// crisus.js: everything the site does in the browser.
+
 // Clocks: every element with data-since="ISO time" counts up from that moment, and
 // every element with data-until counts down to it, in days and hh:mm:ss. Without
 // JavaScript the element keeps the text it has in the page.
