@@ -9,7 +9,7 @@ cd "$(dirname "$0")/../site"
 DEST=annejan.com:www/sites/crisus.nl
 if [ -n "${CRISUS_RSYNC:-}" ]; then
     if [ $# -gt 0 ]; then files=("$@"); else
-        files=(index.html 404.html crisus.css klok.js favicon.svg og.png robots.txt sitemap.xml feed.xml .htaccess
+        files=(index.html 404.html crisus.css crisus.js favicon.svg og.png robots.txt sitemap.xml feed.xml .htaccess
                over/index.html php/index.html en/index.html uk/index.html museum/index.html museum/oud museum/503)
     fi
     rsync -aR --chmod=D755,F644 "${files[@]}" "$CRISUS_RSYNC"
