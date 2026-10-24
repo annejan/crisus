@@ -12,7 +12,7 @@ CVE-2026-109619), updated through the day and the night after.
 | Path | What |
 |---|---|
 | `site/museum/` | The Crisus-museum: every crisus since 24 June 2019, and the 503 pages of PHP2Shell |
-| `site/` | The site as served: `index.html`, `over/`, `404.html`, `crisus.css`, `klok.js`, `feed.xml` (RSS), `sitemap.xml`, `og.png`, `.htaccess` (strict CSP, headers) |
+| `site/` | The site as served: `index.html`, `over/`, `404.html`, `crisus.css`, `crisus.js`, `feed.xml` (RSS), `sitemap.xml`, `og.png`, `.htaccess` (strict CSP, headers) |
 | `tools/check.sh` | One round of source checks: news, php.net, distributions, Docker, offline sites |
 | `tools/headlines.py` | Headlines on the current topics since the last update (Security.NL, NOS, Tweakers, NCSC, heise) |
 | `tools/bump.py` | Set every "last updated" stamp at once and rebuild the feed |

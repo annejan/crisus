@@ -62,7 +62,7 @@ in `site/`, the tooling in `tools/`.
 - REUSE: every file must be covered by `REUSE.toml` (MIT for code and config, CC-BY-4.0 for
   pages, texts and images). After adding a file: `reuse lint`.
 - Strict CSP (`site/.htaccess`): no inline `<style>` or `<script>`, no `style=""`
-  attributes. Styles go in `crisus.css`, the only script is `klok.js`.
+  attributes. Styles go in `crisus.css`, the only script is `crisus.js`.
 
 ## A public repository
 
@@ -75,10 +75,10 @@ The repository is public, so pull requests and issues can come in.
 - A pull request with a correction is a source like any other: check it against the
   primary source before the owner merges, and say what you found.
 - CI (`.github/workflows/check.yml`) runs on every push and pull request: REUSE, HTML
-  nesting, XML and JSON-LD, the CSP rules, the anchors and `klok.js`. Keep it green;
+  nesting, XML and JSON-LD, the CSP rules, the anchors and `crisus.js`. Keep it green;
   run the same checks locally before a push.
 - The updates list keeps the newest five open; `feed.py` moves the rest into
-  `<details class="oud">`. A link to an older update unfolds it (`klok.js`).
+  `<details class="oud">`. A link to an older update unfolds it (`crisus.js`).
 
 ## A new crisus
 
@@ -103,10 +103,10 @@ they have been to Ukraine three times, each time to Kharkiv.
 - **Closing a crisis:** `python3 -I tools/archive.py <slug> "<closing text>" [END-ISO]`
   freezes the front page as `site/<slug>/index.html` (URLs, JSON-LD coverageEndTime,
   banner, "Crisusniveau bij het afsluiten"). Add the date range of its update ids to
-  `ARCHIVES` in `site/klok.js`, so old `/#u-...` links go on to the archive; add it to the
+  `ARCHIVES` in `site/crisus.js`, so old `/#u-...` links go on to the archive; add it to the
   list of earlier crises, the sitemap and `tools/deploy.sh`. PHP2Shell lives at `/php/`.
 - **Clocks:** any element with `data-since="ISO"` counts up and `data-until` counts down
-  (klok.js), with day words per page language (nl, en, uk plurals). The yellow
+  (crisus.js), with day words per page language (nl, en, uk plurals). The yellow
   "bouwbord" counts the time without a new crisus since the fix of the last one came out
   (PHP2Shell: the patch, 21 Oct 15:34): on a new crisus, set its `data-since` and link to
   the moment its fix was out.

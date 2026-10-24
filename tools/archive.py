@@ -5,7 +5,7 @@ The copy keeps every update and its anchors; its URLs (canonical, og:url,
 JSON-LD, the update permalinks) move to https://crisus.nl/<slug>/, the live blog
 gets a coverageEndTime and a banner says the crisis is closed. bump.py and feed.py
 keep working on the front page only. Old links to https://crisus.nl/#u-... are sent
-on to the archive by klok.js.
+on to the archive by crisus.js.
 
 Usage: tools/archive.py SLUG "closing text" [END-ISO]
        tools/archive.py php "PHP2Shell is gepatcht." 2026-10-23T22:00:00+02:00
@@ -52,8 +52,6 @@ assert s.count(a) == 1
 s = s.replace(a, a + banner, 1)
 # The level is the one it ended on
 s = s.replace('<h2 id="niveau">Huidig crisusniveau: ', '<h2 id="niveau">Crisusniveau bij het afsluiten: ', 1)
-# klok.js v5 reads the clocks from data-since
-s = s.replace('<script src="/klok.js?v=4" defer></script>', '<script src="/klok.js?v=5" defer></script>')
 
 out = site / slug / "index.html"
 out.parent.mkdir(exist_ok=True)
