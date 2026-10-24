@@ -31,9 +31,9 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="alternate" type="application/rss+xml" title="Crisus: alle updates" href="https://crisus.nl/feed.xml">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/crisus.css?v=14">
+<link rel="stylesheet" href="/crisus.css?v=15">
 <script src="/controle.js" defer></script>
-<script src="/crisus.js?v=2" defer></script>
+<script src="/crisus.js?v=3" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -215,7 +215,7 @@ sudo needrestart -r l          <span class="c"># wat draait nog oude code?</span
     <li><b>CVE&rsquo;s</b> Het aantal nieuwe CVE&rsquo;s groeit exponentieel. Sinds mei komt er elke maand zo&rsquo;n 22 procent bij: elke drie &agrave; vier maanden een verdubbeling, rekenen wij uit met de cijfers van de <a href="https://cve.0xosprey.com/" title="CVE Tracker: nieuwe CVE's per dag, week en maand">CVE Tracker</a>. Die komen uit de officiële CVE-lijst. Op een logaritmische schaal is het een rechte lijn. In september waren het er 14.934, drie keer zoveel als een jaar eerder. Dit jaar zijn het er al 86.344, bijna twee keer zoveel als in heel 2025. De <a href="https://nvd.nist.gov/" title="NVD: de National Vulnerability Database van NIST">NVD</a> telt hetzelfde. Het R-getal van de bugs staat ruim boven 1. Het is een <a href="https://superspreading.party/" title="Superspreading Party">superspreading party</a>.</li>
     <li><b>Ruby</b> Vier geheugenfouten in de reguliere expressies van Ruby, gevonden door GitLab. Ze raken apps die een regex bouwen uit invoer van buiten, bijvoorbeeld met <code>Regexp.new</code>. De fix zit in Ruby 4.0.9, 3.4.12 en 3.3.13, volgens <a href="https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/" title="ruby-lang.org: Regexp fixes for GitLab CVEs">ruby-lang.org</a>. <code>Regexp.timeout</code> helpt niet. E&eacute;n van de vier, CVE-2026-110264, kreeg bij GitLab een 10,0. Een regex van een vreemde: dat was al nooit een goed idee.</li>
     <li><b>Wind</b> Het KNMI geeft vanaf vanavond code geel voor zware windstoten aan de kust, in het noorden en in Limburg. Op zee is het code oranje, zie <a href="https://meteoalarm.org/en/live/region/NL" title="Meteoalarm: waarschuwingen voor Nederland">Meteoalarm</a>. Tuinstoelen naar binnen.</li>
-    <li><b>Wintertijd</b> Vannacht om 03:00 wordt het 02:00. Dat uur komt twee keer. Uw cronjobs ook.</li>
+    <li data-rood="2026-10-25T02:00:00+02:00/2026-10-25T03:00:00+01:00"><b>Wintertijd</b> Vannacht om 03:00 wordt het 02:00. Dat uur komt twee keer. Uw cronjobs ook.<span class="nu" hidden> Nu bezig: dit vak staat op rood tot het echt 03:00 is. De tweede keer.</span></li>
     <li><b>PHP</b> De fix voor CVE-2026-115560 komt met de volgende gewone release. Tot dan staat de uploadvoortgang van sessies uit, als het goed is.</li>
     <li><b>WICCON</b> Donderdag 29 en vrijdag 30 oktober is <a href="https://wiccon.nl/" title="WICCON 2026: cybersecurityconferentie van WICCA">WICCON 2026</a> in De Lichtfabriek in Haarlem. Twee dagen cybersecurity, met alleen vrouwelijke sprekers. Breekt er die week een crisus uit, dan zitten de mensen die hem oplossen in Haarlem.</li>
     <li><b>Patch Tuesday</b> Dinsdag 10 november. Zoals elke maand.</li>

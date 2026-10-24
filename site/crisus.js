@@ -152,24 +152,58 @@
     (dagen === 0 ? ', vandaag' : dagen === 1 ? ', morgen' : ', over ' + dagen + ' dagen');
 })();
 
-// The night the clocks go back (last Sunday of October, 03:00 CEST becomes 02:00 CET):
-// from the first 02:00 until the real, second 03:00 (00:00-02:00 UTC) the level goes to
-// red. Only on the live pages, not in the archive. ?wintertijd shows it any time.
+// Red for a while: an element with data-rood="START/END" (ISO) gets the class "rood"
+// in that window, and shows its .nu text. Winter time: from 02:00 summer time until
+// it is really 03:00, the second time round.
+(function () {
+  var els = document.querySelectorAll('[data-rood]');
+  if (!els.length) return;
+  function kijk() {
+    var nu = Date.now();
+    for (var i = 0; i < els.length; i++) {
+      var p = els[i].getAttribute('data-rood').split('/');
+      var aan = nu >= Date.parse(p[0]) && nu < Date.parse(p[1]);
+      els[i].classList.toggle('rood', aan);
+      var t = els[i].querySelector('.nu');
+      if (t) t.hidden = !aan;
+    }
+  }
+  kijk();
+  setInterval(kijk, 30000);
+})();
+
+// The nights the clocks change, both on the last Sunday of the month at 01:00 UTC.
+// October, back: from the first 02:00 until the real, second 03:00 (00:00-02:00 UTC).
+// March, forward: 02:00 becomes 03:00, so the first hour of summer time (01:00-02:00 UTC)
+// is spent looking for the lost one. Then the level goes to red, 5 of 5. Only on the
+// live pages, not in the archive. ?wintertijd and ?zomertijd show it any time.
 (function () {
   var h = document.getElementById('niveau'), lis = document.querySelectorAll('.level ol li');
   if (!h || lis.length !== 6 || /^\/(php|museum)\//.test(location.pathname)) return;
-  var nu = new Date(), j = nu.getUTCFullYear(), zo = new Date(Date.UTC(j, 9, 31));
-  zo.setUTCDate(31 - zo.getUTCDay());
-  var van = zo.getTime(), tot = van + 2 * 3600000;
-  if (!(nu >= van && nu < tot) && !/[?&]wintertijd\b/.test(location.search)) return;
+  function zondag(j, m) { var d = new Date(Date.UTC(j, m + 1, 0)); d.setUTCDate(d.getUTCDate() - d.getUTCDay()); return d.getTime(); }
+  var nu = Date.now(), j = new Date(nu).getUTCFullYear(), u = 3600000;
+  var winter = zondag(j, 9), zomer = zondag(j, 2) + u;
+  var welke = /[?&]wintertijd\b/.test(location.search) || (nu >= winter && nu < winter + 2 * u) ? 'winter'
+            : /[?&]zomertijd\b/.test(location.search) || (nu >= zomer && nu < zomer + u) ? 'zomer' : null;
+  if (!welke) return;
   var T = {
-    nl: ['Huidig crisusniveau: 5 van 5. Wintertijd.',
-         'Om 3 uur is het weer 2 uur. Het crisusteam beleeft dit uur twee keer en snapt het nog steeds niet. Bij het echte 3 uur, het tweede, zakt het niveau vanzelf terug.'],
-    en: ['Current crisis level: 5 of 5. The clocks go back.',
-         'At 3 o’clock it is 2 o’clock again. The crisis team lives through this hour twice and still does not get it. At the real 3 o’clock, the second one, the level drops back by itself.'],
-    uk: ['Поточний рівень кризи: 5 з 5. Перехід на зимовий час.',
-         'О третій знову друга. Кризова команда проживає цю годину двічі й досі нічого не розуміє. О справжній третій, другій за ліком, рівень повернеться сам.']
-  }[(document.documentElement.lang || 'nl').slice(0, 2)] || null;
+    winter: {
+      nl: ['Huidig crisusniveau: 5 van 5. Wintertijd.',
+           'Om 3 uur is het weer 2 uur. Het crisusteam beleeft dit uur twee keer en snapt het nog steeds niet. Bij het echte 3 uur, het tweede, zakt het niveau vanzelf terug.'],
+      en: ['Current crisis level: 5 of 5. The clocks go back.',
+           'At 3 o’clock it is 2 o’clock again. The crisis team lives through this hour twice and still does not get it. At the real 3 o’clock, the second one, the level drops back by itself.'],
+      uk: ['Поточний рівень кризи: 5 з 5. Перехід на зимовий час.',
+           'О третій знову друга. Кризова команда проживає цю годину двічі й досі нічого не розуміє. О справжній третій, другій за ліком, рівень повернеться сам.']
+    },
+    zomer: {
+      nl: ['Huidig crisusniveau: 5 van 5. Zomertijd.',
+           'Om 2 uur was het ineens 3 uur. Het uur daartussen is weg. Het crisusteam zoekt het nog. Om 4 uur geeft het de zoektocht op en zakt het niveau vanzelf terug.'],
+      en: ['Current crisis level: 5 of 5. The clocks go forward.',
+           'At 2 o’clock it was suddenly 3 o’clock. The hour in between is gone. The crisis team is still looking for it. At 4 o’clock it gives up and the level drops back by itself.'],
+      uk: ['Поточний рівень кризи: 5 з 5. Перехід на літній час.',
+           'О другій раптом стала третя. Година між ними зникла. Кризова команда досі її шукає. О четвертій пошуки припиняться, і рівень повернеться сам.']
+    }
+  }[welke][(document.documentElement.lang || 'nl').slice(0, 2)] || null;
   if (!T) return;
   for (var i = 0; i < 6; i++) {
     lis[i].className = i < 5 ? 'on' : 'now';
