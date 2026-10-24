@@ -12,6 +12,11 @@ in `site/`, the tooling in `tools/`.
 
 ## A round
 
+The round already runs in `~/crisus`. Run each command on its own: no `cd`, no `&&`,
+`;` or `|` chains. The permission rules refuse a chain as a whole (and always refuse
+`cd` followed by `git`), so `git pull -q --rebase` goes first, alone. If one command is
+refused, carry on with the next step and say so at the end.
+
 1. **Check the sources.** `bash tools/check.sh` prints NOS, php.net, NCSC, Debian,
    Ubuntu, Docker (including the floating tags), Homebrew, Red Hat, SUSE, Node and a
    sample of sites that went offline. For a site that seems back, read its content,
