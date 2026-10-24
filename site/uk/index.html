@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<title>Crisus · Нової кризи немає. Але триває війна.</title>
-<meta name="description" content="Crisus.nl: нової кризи в інтернеті немає, але триває війна. Росія веде її проти України з 2014 року, годинники йдуть. Сатира, але факти правдиві.">
-<meta property="og:title" content="Crisus · Нової кризи немає. Але триває війна.">
-<meta property="og:description" content="Нової кризи немає, але триває війна. Рівень кризи 3: серйозно, статус-кво з 2001 року. Війна в Україні триває.">
+<title>Crisus · HTTP2Shell: критична вразливість у Brotli (CVE-2026-111497)</title>
+<meta name="description" content="Crisus.nl: HTTP2Shell (CVE-2026-111497), критична вразливість у декодері Brotli від Google. Вона є в Node.js, Python, Bun, Envoy та Istio. Виправлення вже вийшло. Сатира, але факти правдиві.">
+<meta property="og:title" content="Crisus · HTTP2Shell: критична вразливість у Brotli">
+<meta property="og:description" content="Рівень кризи 3: серйозно. HTTP2Shell, критична вразливість у Brotli, є в Node.js, у Python і, найімовірніше, у вашому HTTP-клієнті. Виправлення вийшло 21 жовтня.">
 <meta property="og:url" content="https://crisus.nl/uk/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Crisus">
@@ -15,7 +15,7 @@
 <meta property="og:image" content="https://crisus.nl/og.png?v=7">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Crisus: нової кризи немає, але триває війна. Рівень кризи 3 з 5.">
+<meta property="og:image:alt" content="Crisus: HTTP2Shell, критична вразливість у Brotli. Рівень кризи 3 з 5: серйозно.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://crisus.nl/og.png?v=7">
 <meta name="theme-color" content="#ffd400">
@@ -28,15 +28,15 @@
 <link rel="stylesheet" href="/crisus.css?v=15">
 <script src="/crisus.js?v=3" defer></script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "Нової кризи немає. Але триває війна.", "url": "https://crisus.nl/uk/", "inLanguage": "uk",
- "description": "Нової кризи в інтернеті немає, але триває війна Росії проти України. Сатира, але факти правдиві.",
+{"@context": "https://schema.org", "@type": "WebPage", "name": "HTTP2Shell: критична вразливість у Brotli", "url": "https://crisus.nl/uk/", "inLanguage": "uk",
+ "description": "HTTP2Shell (CVE-2026-111497), критична вразливість у декодері Brotli, і що з цим робити. Сатира, але факти правдиві.",
  "isPartOf": {"@type": "WebSite", "name": "Crisus", "url": "https://crisus.nl/"},
  "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"}}
 </script>
 </head>
-<body class="rust">
+<body>
 <a class="skip" href="#inhoud">Одразу до стану</a>
-<div class="tape" aria-hidden="true"><p><span>СЕРЙОЗНО · СТАТУС-КВО З 2001 РОКУ · НОВОЇ КРИЗИ НЕМАЄ · АЛЕ ТРИВАЄ ВІЙНА · ОНОВЛЮЙТЕСЯ · РЕЗЕРВНУ КОПІЮ ТЕЖ · УВАГА · CRISUS · 50 ГЦ · ВІЙНА ТРИВАЄ · СЕРЙОЗНО · СТАТУС-КВО З 2001 РОКУ · НОВОЇ КРИЗИ НЕМАЄ · АЛЕ ТРИВАЄ ВІЙНА · ОНОВЛЮЙТЕСЯ · РЕЗЕРВНУ КОПІЮ ТЕЖ · УВАГА · CRISUS · 50 ГЦ · ВІЙНА ТРИВАЄ ·</span></p></div>
+<div class="tape" aria-hidden="true"><p><span>УВАГА · CRISUS · БЕЗ ПАНІКИ · ВИПРАВЛЕННЯ ВИЙШЛО · ОНОВЛЮЙТЕСЯ · УВАГА · CRISUS · НІЧОГО НЕ РОЗПАКОВУЙТЕ · НАВІТЬ ПОСИЛКИ · УВАГА · CRISUS · І В PYTHON ТЕЖ · УВАГА · CRISUS · ЦЕ ПРАЦЮЄ В ОБИДВА БОКИ · УВАГА · CRISUS · GZIP ТЕЖ ПІДІЙДЕ · УВАГА · CRISUS · БЕЗ ПАНІКИ · ВИПРАВЛЕННЯ ВИЙШЛО · ОНОВЛЮЙТЕСЯ · УВАГА · CRISUS · НІЧОГО НЕ РОЗПАКОВУЙТЕ · НАВІТЬ ПОСИЛКИ · УВАГА · CRISUS · І В PYTHON ТЕЖ · УВАГА · CRISUS · ЦЕ ПРАЦЮЄ В ОБИДВА БОКИ · УВАГА · CRISUS · GZIP ТЕЖ ПІДІЙДЕ ·</span></p></div>
 
 <header>
   <div class="wrap">
@@ -56,17 +56,20 @@
 <nav class="spring" aria-label="На цій сторінці">
   <ul>
     <li><a href="#niveau" title="Рівень кризи">Рівень</a></li>
-    <li><a href="#oorlog" title="Війна в Україні">Війна</a></li>
-    <li><a href="#updates" title="Останнє оновлення">Оновлення</a></li>
+    <li><a href="#wat" title="Що відбувається?">Що відбувається</a></li>
     <li><a href="#doen" title="Що вам робити?">Що робити</a></li>
+    <li><a href="#stand" title="Стан за платформами">Платформи</a></li>
+    <li><a href="#oorlog" title="Війна в Україні">Війна</a></li>
+    <li><a href="#bronnen" title="Джерела">Джерела</a></li>
   </ul>
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="afgesloten"><strong>Оновлення, 24 жовтня:</strong> почалася нова криза. HTTP2Shell (CVE-2026-111497) — критична вразливість у декодері Brotli, який використовують Node.js, Python та інші програми. Виправлення вже вийшло. Подробиці нідерландською — на <a href="/" title="Crisus: de actuele stand">нідерландській сторінці</a>.</p>
-  <p class="kicker">Нової кризи немає · <time datetime="2026-10-23T22:50:00+02:00">оновлено 23 жовтня, 22:50</time></p>
-  <h1>Нової кризи немає. Але триває війна.</h1>
-  <p class="lead">В інтернеті зараз нової кризи немає. Але триває війна: Росія веде її проти України з 2014 року. Офіційно Нідерланди не воюють. Але вони причетні, щонайпізніше від MH17. Тому рівень кризи становить 3.</p>
+  <p class="kicker">Crisus · <time datetime="2026-10-24T21:00:00+02:00">стан на 24 жовтня, 21:00</time> · <a href="/" title="Crisus: de actuele stand (нідерландською)">щогодинні оновлення нідерландською</a></p>
+  <h1>HTTP2Shell: критична вразливість у Brotli</h1>
+  <p class="lead">Критична вразливість у Brotli, алгоритмі стиснення від Google: HTTP2Shell. Brotli є в Node.js, у Python, у Bun, Envoy та Istio, і, найімовірніше, у чомусь, чим користуєтеся ви. Виправлення вже вийшло: Brotli <strong>1.2.1</strong>, Node.js <strong>26.12.1, 24.22.1 і 22.23.4</strong>. Без паніки. Але оновіться.</p>
+
+  <p class="klok" id="klok"><b data-since="2026-10-21T21:27:00+02:00">21:27</b><span>Виправлення самого Brotli вийшло 21 жовтня о 19:27 UTC. Node.js отримав його того ж дня. Кожна хвилина на цьому годиннику — це хвилина без оновлення. <a href="#stand" title="Чи вже є виправлення для мене?">Чи вже є виправлення для мене?</a></span></p>
 
   <section class="level" aria-labelledby="niveau">
     <h2 id="niveau">Поточний рівень кризи: 3 з 5</h2>
@@ -78,8 +81,68 @@
       <li><b>4 · Дуже серйозно</b>Керівник питає, чи вже працює</li>
       <li><b>5 · Пʼятниця по обіді</b>Хтось каже: &laquo;це лише маленька зміна&raquo;</li>
     </ol>
-    <p class="brom"><button id="brom" type="button" hidden aria-pressed="false" data-on="Вимкнути гудіння" data-off="Увімкнути гудіння">Увімкнути гудіння</button> Звук звичайного дня: 50 герц, як в електромережі. Тихо і лише після натискання.</p>
   </section>
+
+  <h2 id="wat">Що відбувається?</h2>
+  <dl class="feiten" aria-labelledby="wat">
+    <dt>Що таке Brotli?</dt>
+    <dd>Спосіб зменшувати дані, як zip і gzip. Юркі Алакуйяла та Золтан Сабадка з Google створили його 2013 року, спершу для вебшрифтів. Назва походить від швейцарської булочки <i lang="gsw">Br&ouml;tli</i>. З 2016 року це інтернет-стандарт: <a href="https://www.rfc-editor.org/rfc/rfc7932" title="RFC 7932: Brotli Compressed Data Format">RFC 7932</a>. Його підтримують усі великі браузери, його надсилають CDN, а вебшрифт у форматі WOFF2 завжди стиснутий Brotli. Тож усе, що завантажує щось з інтернету, часто отримує у відповідь Brotli і мусить його розпакувати.</dd>
+    <dt>Вразливість</dt>
+    <dd>Запис поза межами буфера в декодері Brotli від Google: <a href="https://www.cve.org/CVERecord?id=CVE-2026-111497" title="CVE-2026-111497 на cve.org">CVE-2026-111497</a>, також відома як HTTP2Shell, спершу Node2Shell. Декодер не відрізняє пошкоджені вхідні дані від даних, які ще не надійшли повністю, продовжує роботу в неправильному стані й записує поза межами виділеної йому памʼяті. <a href="https://github.com/google/brotli/commit/0ed4268a4401abcb44720963" title="google/brotli: коміт 0ed4268">Виправлення</a> присвоює пошкодженим даним окремий код помилки: -17.</dd>
+    <dt>У який бік?</dt>
+    <dd>В обидва боки. Сервер, який розпаковує Brotli, вразливий до зловмисного клієнта. Клієнт, який розпаковує Brotli, вразливий до зловмисного сервера. А це майже кожен HTTP-клієнт: він сам просить Brotli заголовком <code>Accept-Encoding: br</code>.</dd>
+    <dt>Наскільки серйозно?</dt>
+    <dd>CVSS v4.0 <strong>9,2</strong> від Google у записі CVE. Node.js називає її <em>high</em>. Ubuntu каже <em>medium</em>. Три сторони, три думки. Відповідь у всіх трьох одна: оновлюватися. Одним стиснутим повідомленням зловмисник може пошкодити памʼять, спричинити витік даних чи збій програми і, можливо, виконати власний код.</dd>
+    <dt>Які версії?</dt>
+    <dd>Brotli <strong>від 1.0.3 до 1.2.0 включно</strong>. Кожна програма з власною копією Brotli мусить оновитися сама.</dd>
+    <dt>Кого це стосується?</dt>
+    <dd>Node.js, який має власну копію. Python-пакетів <code>brotli</code> і <code>brotlicffi</code>, а через них requests, urllib3, httpx, aiohttp і Scrapy, навіть якщо у вашому коді ніде немає <code>import brotli</code>. За даними <a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido</a>, також Bun, Envoy та Istio. Не стосується Apache з <code>mod_brotli</code> і nginx: типово вони лише стискають.</dd>
+    <dt>Хто її знайшов?</dt>
+    <dd>Codex Security від OpenAI, згідно з <a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">бюлетенем Node.js</a>, ще в лютому. Тоді розробники Brotli виправили код, але не вважали це вразливістю. Тому релізу тоді не було. Тепер є.</dd>
+    <dt>Чи є атаки?</dt>
+    <dd><strong>Поки не помічено</strong> (The Hacker News, 22 жовтня). Проте, за даними Imperva, які наводить Aikido, дослідники змогли успішно атакувати незмінений Node.js 24.22.0. Це не добра новина. Але поки й не погана.</dd>
+    <dt>Чи бачить її мій сканер?</dt>
+    <dd>Віднедавна так. З 23 жовтня, 21:08 за центральноєвропейським літнім часом, бюлетень GitHub <a href="https://github.com/advisories/GHSA-9v8h-qqgm-4m35" title="GitHub advisory GHSA-9v8h-qqgm-4m35: Brotli out-of-bounds write (Node2Shell)">GHSA-9v8h-qqgm-4m35</a> називає й Python-пакети, тож Dependabot тепер має їх бачити. Користуєтеся pip-audit або Safety? Перевірте самі.</dd>
+  </dl>
+
+  <section class="doen" aria-labelledby="doen">
+    <h2 id="doen">Що вам робити?</h2>
+    <p>Залишайтеся вдома. Нічого не розпаковуйте.</p>
+    <ol>
+      <li><strong>Зʼясуйте, де у вас є Brotli.</strong> Також там, де ви його не очікуєте. Перевірте кожне віртуальне середовище й кожен образ контейнера окремо.
+        <pre><code>node -v
+pip list 2&gt;/dev/null | grep -iE '^brotli'
+dpkg -l | grep -i brotli        <span class="c"># Debian, Ubuntu</span>
+rpm -qa | grep -i brotli        <span class="c"># Fedora, RHEL, openSUSE</span></code></pre></li>
+      <li><strong>Node.js:</strong> оновіться до 26.12.1, 24.22.1 або 22.23.4. Офіційні Docker-образи <code>node:24.22.1</code> і новіші доступні з 22 жовтня. Створіть контейнери заново, перезапуску недостатньо. Досі на Node.js 20? Тоді саме час.</li>
+      <li><strong>Python:</strong> є у списку <code>brotli</code> або <code>brotlicffi</code>? Оновіть і запишіть нову версію також у lock-файл.
+        <pre><code>pip install --upgrade 'brotli&gt;=1.2.1'           <span class="c"># якщо у вас brotli</span>
+pip install --upgrade 'brotlicffi&gt;=1.2.1.0'     <span class="c"># якщо у вас brotlicffi</span></code></pre></li>
+      <li><strong>Системний пакет:</strong> у Debian 13 це <code>1.1.0-2+deb13u1</code>, у Debian 12 — <code>1.0.9-2+deb12u1</code>. Node.js з Debian використовує саме цю системну бібліотеку. Оновіть і перезапустіть:
+        <pre><code>sudo apt update
+sudo apt install --only-upgrade libbrotli1
+sudo needrestart -r l          <span class="c"># що ще працює на старому коді?</span></code></pre></li>
+      <li><details class="nood"><summary><strong>Поки не можете оновитися?</strong></summary> <a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido</a> радить три тимчасові заходи. Перший: видаліть <code>brotli</code> і <code>brotlicffi</code>, тоді HTTP-клієнти перейдуть на gzip. Другий: відхиляйте запити з <code>Content-Encoding: br</code> уже на проксі. Третій: приберіть <code>br</code> з <code>Accept-Encoding</code> <em>і</em> відхиляйте відповіді з Brotli ще до розпакування. Змінити лише заголовок недостатньо: зловмисний сервер однаково надішле Brotli.</details></li>
+      <li>Не переходьте за посиланнями в листах про цю вразливість. Ми ніколи не надсилаємо листів. А якби й надсилали, то лише стиснуті gzip.</li>
+    </ol>
+  </section>
+
+  <h2 id="stand">Стан за платформами, 24 жовтня, 21:00</h2>
+  <ul class="status" aria-labelledby="stand">
+    <li><b>Brotli</b><span class="pill green">Є виправлення</span><em>1.2.1, 1.1.1 і 1.0.10, з 21 жовтня.</em></li>
+    <li><b>Node.js</b><span class="pill orange">Встановіть зараз</span><em>26.12.1, 24.22.1 і 22.23.4, з 21 жовтня. Оновили? Перезапустіть.</em></li>
+    <li><b>Node.js 20 і старіші</b><span class="pill red">Виправлення немає</span><em>І не буде. Підтримку припинено 30 квітня.</em></li>
+    <li><b>Python</b><span class="pill green">Є виправлення</span><em><code>brotli</code> 1.2.1 і <code>brotlicffi</code> 1.2.1.0 на PyPI, з 22 жовтня.</em></li>
+    <li><b>Docker</b><span class="pill green">Є виправлення</span><em><code>node:24.22.1</code> та інші виправлені теги з 22 жовтня. Створіть контейнери заново.</em></li>
+    <li><b>Bun</b><span class="pill green">Є виправлення</span><em>1.4.4, з 22 жовтня.</em></li>
+    <li><b>Envoy, Istio</b><span class="pill green">Є виправлення</span><em>Envoy 1.40.0, 1.39.3, 1.38.6 і 1.37.8. Istio 1.31.2, 1.30.6 і 1.29.9, хоча підтримку самої гілки 1.29 вже припинено.</em></li>
+    <li><b>Debian 13</b><span class="pill green">Є виправлення</span><em><a href="https://lists.debian.org/debian-security-announce/2026/msg00498.html" title="DSA-6582-1: brotli security update">DSA-6582-1</a>: <code>brotli 1.1.0-2+deb13u1</code>, з 23 жовтня.</em></li>
+    <li><b>Debian 12</b><span class="pill green">Є виправлення</span><em>DLA-4855-1: <code>brotli 1.0.9-2+deb12u1</code>. Гілка unstable досі вразлива.</em></li>
+    <li><b>Ubuntu</b><span class="pill orange">Незрозуміло</span><em>Для кожного релізу досі стоїть &laquo;Needs evaluation&raquo;, див. <a href="https://ubuntu.com/security/CVE-2026-111497" title="Ubuntu: CVE-2026-111497">сторінку CVE</a>. Ubuntu ще думає.</em></li>
+    <li><b>Apache, nginx</b><span class="pill green">Працює</span><em>Вони лише стискають і нічого не розпаковують. Пакувати безпечно. Розпаковувати — ось у чому проблема. Як і під час кожного переїзду.</em></li>
+    <li><b>Crisus.nl</b><span class="pill green">Працює</span><em>Ні Node, ні Python. Просто HTML. Як у 1997 році.</em></li>
+  </ul>
+  <p class="note">Це скорочена версія. Оновлення, радар і попередні кризи є на <a href="/" title="Crisus: de actuele stand (нідерландською)">нідерландській сторінці</a>. Попередню кризу, PHP2Shell, закрито: <a href="/php/" title="Crisus: PHP2Shell, закрито (нідерландською)">crisus.nl/php</a> (нідерландською).</p>
 
   <h2 id="oorlog">Війна триває</h2>
   <p>Росія веде війну проти України з 2014 року. Ця війна не закінчилася. Ці годинники йдуть, доки вона не закінчиться.</p>
@@ -91,26 +154,15 @@
   </div>
   <p class="note">Хочете допомогти? Підтримайте Україну, наприклад через <a href="https://www.aidtoukraine.nl/en/" title="Aid to Ukraine">Aid to Ukraine</a>.</p>
 
-  <h2 id="updates">Оновлення</h2>
-  <ol class="updates">
-    <li><time datetime="2026-10-23T22:50+02:00">23 жовтня, 22:50</time>
-      <p><strong>PHP2Shell закрито.</strong> Виправлення вийшло, сайти повернулися, найгірше минуло. PHP опускається до рівня кризи 2, тож це вже не окрема криза. Тому crisus.nl тепер має цю нову головну сторінку. Уся криза з усіма оновленнями лишається на <a href="/php/" title="Crisus: PHP2Shell, закрито (нідерландською)">crisus.nl/php</a> (нідерландською). Лишилося одне: наступну помилку CVE-2026-115560 виправлять у найближчому звичайному релізі. До того часу встановіть <code>session.upload_progress.enabled = 0</code>, радить <a href="https://www.php.net/archive/2026.php#2026-10-23-1" title="php.net: Informational advisory: Session upload progress">php.net</a>.</p>
-      <p>Але пильності не втрачайте. За даними Mandiant, деякі публічні експлойти справді працюють проти стандартного mod_php, але не проти PHP-FPM, пише <a href="https://www.theregister.com/security/2026/10/23/theres-a-third-php2shell-bug-but-it-wont-get-an-emergency-fix/5305208" title="The Register: There's a third PHP2Shell bug, but it won't get an emergency fix">The Register</a>. Успішних атак поки не підтверджено, каже PHP Foundation. Працюєте на mod_php і ще не оновилися? Це останнє нагадування.</p></li>
-  </ol>
-
-  <section class="doen" aria-labelledby="doen">
-    <h2 id="doen">Що вам робити?</h2>
-    <p>Нічого особливого. У цьому й особливість.</p>
-    <ol>
-      <li><strong>Оновлюйтеся.</strong> Будь-коли, навіть коли нічого не відбувається. Саме тоді.</li>
-      <li><strong>Зробіть резервну копію.</strong> І хоч раз відновіть її. Копія, яку ви жодного разу не відновлювали, є лише надією.</li>
-      <li><strong>Менеджер паролів і двофакторна автентифікація.</strong> Наприклад, <a href="https://qtpass.org/" title="QtPass: графічний інтерфейс для pass">QtPass</a>, з <code>pass</code> і GPG під капотом.</li>
-      <li><strong>Увімкніть гудіння.</strong> Якщо вам надто тихо.</li>
-    </ol>
-  </section>
-
   <h2 id="bronnen">Джерела</h2>
   <ul class="bronnen" aria-labelledby="bronnen">
+    <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-111497" title="CVE-2026-111497 на cve.org">CVE-2026-111497</a>: &laquo;Out-of-Bounds Write in Google Brotli Decoder&raquo;, опубліковано Google 22 жовтня, CVSS v4.0 9,2.</li>
+    <li><a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">Node.js: October 2026 security releases</a>. Виправлення в 26.12.1, 24.22.1 і 22.23.4 та хто повідомив про вразливість (англійською).</li>
+    <li><a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell)</a>. Чому вразливий Python, тимчасові заходи та стан Bun, Envoy й Istio (англійською).</li>
+    <li><a href="https://github.com/advisories/GHSA-9v8h-qqgm-4m35" title="GitHub advisory GHSA-9v8h-qqgm-4m35: Brotli out-of-bounds write (Node2Shell)">GitHub: GHSA-9v8h-qqgm-4m35</a>, для пакетів PyPI <code>brotli</code> і <code>brotlicffi</code>.</li>
+    <li><a href="https://github.com/google/brotli/commit/0ed4268a4401abcb44720963" title="google/brotli: коміт 0ed4268">google/brotli: виправлення</a> і <a href="https://github.com/google/brotli/releases" title="google/brotli: releases">релізи</a> 1.2.1, 1.1.1 та 1.0.10.</li>
+    <li><a href="https://en.wikipedia.org/wiki/Brotli" title="Wikipedia: Brotli">Wikipedia: Brotli</a> (англійською). Хто створив, назва, браузери і хто використовує. Стандарт: <a href="https://www.rfc-editor.org/rfc/rfc7932" title="RFC 7932: Brotli Compressed Data Format">RFC 7932</a>.</li>
+    <li><a href="https://lists.debian.org/debian-security-announce/2026/msg00498.html" title="DSA-6582-1: brotli security update">Debian DSA-6582-1</a> і <a href="https://security-tracker.debian.org/tracker/CVE-2026-111497" title="Debian security tracker: CVE-2026-111497">Debian security tracker</a>. <a href="https://ubuntu.com/security/CVE-2026-111497" title="Ubuntu: CVE-2026-111497">Ubuntu: CVE-2026-111497</a>.</li>
     <li><a href="https://uk.wikipedia.org/wiki/Анексія_Криму_(2014)" title="Вікіпедія: Анексія Криму (2014)">Вікіпедія: Анексія Криму (2014)</a> і <a href="https://en.wikipedia.org/wiki/2014_Russian_annexation_of_Crimea" title="Wikipedia: 2014 Russian annexation of Crimea">англійською</a>. Закон 2015 року, що визначає 20 лютого 2014 року початком окупації, і медаль.</li>
     <li><a href="https://uk.wikipedia.org/wiki/Бої_за_Слов%27янськ_(2014)" title="Вікіпедія: Бої за Словʼянськ (2014)">Вікіпедія: Бої за Словʼянськ (2014)</a>. 12 квітня 2014 року, початок війни на Донбасі.</li>
     <li><a href="https://uk.wikipedia.org/wiki/MH17" title="Вікіпедія: MH17">Вікіпедія: MH17</a>. 17 липня 2014 року, 298 загиблих, серед них 196 громадян Нідерландів, і вирок 2022 року.</li>
