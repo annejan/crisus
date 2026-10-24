@@ -8,6 +8,7 @@ t=sys.stdin.read(); t=re.sub(r"<(script|style|nav|footer).*?</\1>","",t,flags=re
 print("\n".join(l.strip() for l in t.splitlines() if len(l.strip())>2))'; }
 date +%H:%M
 python3 -I "$(dirname "$0")/headlines.py"   # Security.NL, NOS, Tweakers, NCSC, heise: topic headlines since the last update
+python3 -I "$(dirname "$0")/cves.py"        # new CVEs scored 7.0 or higher (CNA/CISA scores), the critical ones first
 echo "== php.net"; curl -s 'https://www.php.net/releases/index.php?json&max=1&version=8' | grep -o '"[0-9.]*":{"announcement' | head -1; curl -s https://www.php.net/archive/2026.php | grep -o 'id="2026-1[0-2]-[0-9-]*"' | head -1
 echo "== NCSC"; curl -sL -A 'Mozilla/5.0' https://advisories.ncsc.nl/ | txt | grep -m3 -i -E 'php|websitebericht'
 echo "== Debian"; curl -s https://security-tracker.debian.org/tracker/CVE-2026-109618 | txt | tr '\n' ' ' | grep -o -E 'php8\.2 .{0,160}' | head -1; echo; echo "bookworm-security php8.2-cli: $(pkg http://security.debian.org/debian-security/dists/bookworm-security/main/binary-amd64/Packages.xz php8.2-cli)"; curl -s https://www.debian.org/security/ | grep -o 'DSA-[0-9-]* [^<]*' | head -3 | tr '\n' ';'; echo
