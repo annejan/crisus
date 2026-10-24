@@ -151,3 +151,34 @@
   el.textContent = pd.getDate() + ' ' + MAANDEN[pd.getMonth()] +
     (dagen === 0 ? ', vandaag' : dagen === 1 ? ', morgen' : ', over ' + dagen + ' dagen');
 })();
+
+// The night the clocks go back (last Sunday of October, 03:00 CEST becomes 02:00 CET):
+// from the first 02:00 until the real, second 03:00 (00:00-02:00 UTC) the level goes to
+// red. Only on the live pages, not in the archive. ?wintertijd shows it any time.
+(function () {
+  var h = document.getElementById('niveau'), lis = document.querySelectorAll('.level ol li');
+  if (!h || lis.length !== 6 || /^\/(php|museum)\//.test(location.pathname)) return;
+  var nu = new Date(), j = nu.getUTCFullYear(), zo = new Date(Date.UTC(j, 9, 31));
+  zo.setUTCDate(31 - zo.getUTCDay());
+  var van = zo.getTime(), tot = van + 2 * 3600000;
+  if (!(nu >= van && nu < tot) && !/[?&]wintertijd\b/.test(location.search)) return;
+  var T = {
+    nl: ['Huidig crisusniveau: 5 van 5. Wintertijd.',
+         'Om 3 uur is het weer 2 uur. Het crisusteam beleeft dit uur twee keer en snapt het nog steeds niet. Bij het echte 3 uur, het tweede, zakt het niveau vanzelf terug.'],
+    en: ['Current crisis level: 5 of 5. The clocks go back.',
+         'At 3 o’clock it is 2 o’clock again. The crisis team lives through this hour twice and still does not get it. At the real 3 o’clock, the second one, the level drops back by itself.'],
+    uk: ['Поточний рівень кризи: 5 з 5. Перехід на зимовий час.',
+         'О третій знову друга. Кризова команда проживає цю годину двічі й досі нічого не розуміє. О справжній третій, другій за ліком, рівень повернеться сам.']
+  }[(document.documentElement.lang || 'nl').slice(0, 2)] || null;
+  if (!T) return;
+  for (var i = 0; i < 6; i++) {
+    lis[i].className = i < 5 ? 'on' : 'now';
+    if (i < 5) lis[i].removeAttribute('aria-current'); else lis[i].setAttribute('aria-current', 'step');
+  }
+  h.textContent = T[0];
+  var p = document.createElement('p');
+  p.className = 'wintertijd';
+  p.textContent = T[1];
+  h.parentNode.classList.add('rood');
+  h.parentNode.appendChild(p);
+})();

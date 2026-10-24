@@ -249,3 +249,14 @@ details.patch[open] > summary { margin-bottom: 14px; }
   .radar li { background: var(--card); }
   .talen a[aria-current] { background: var(--yellow); color: var(--black); }
 }
+
+/* The night the clocks go back: crisus.js turns the level red for two hours */
+.level.rood { box-shadow: 6px 6px 0 var(--red); }
+.level.rood .on { background: var(--red-bg); color: var(--red); }
+.level.rood .on b { color: var(--red); }
+.level.rood .now { background: var(--red); color: #fff; }
+.level.rood .now b { color: #fff; }
+.level .wintertijd { margin: 12px 0 0; font-weight: 600; color: var(--red); }
+@media (prefers-color-scheme: dark) {
+  .level.rood .now, .level.rood .now b { color: #1b1b1f; }
+}
