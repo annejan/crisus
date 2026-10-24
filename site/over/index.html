@@ -25,7 +25,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/crisus.css?v=13">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "AboutPage", "name": "Over Crisus", "url": "https://crisus.nl/over/", "isPartOf": {"@type": "WebSite", "name": "Crisus", "url": "https://crisus.nl/"}, "inLanguage": "nl", "dateModified": "2026-10-22",
+{"@context": "https://schema.org", "@type": "AboutPage", "name": "Over Crisus", "url": "https://crisus.nl/over/", "isPartOf": {"@type": "WebSite", "name": "Crisus", "url": "https://crisus.nl/"}, "inLanguage": "nl", "dateModified": "2026-10-24",
  "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"}}
 </script>
 </head>
@@ -48,12 +48,27 @@
 <main id="inhoud" class="wrap">
   <p class="kicker"><a href="/" title="Terug naar de lopende crisus">&larr; Terug naar de crisus</a></p>
   <h1>Over Crisus</h1>
-  <p class="lead">Laatst bijgewerkt 22 oktober 2026</p>
+  <p class="lead">Laatst bijgewerkt 24 oktober 2026</p>
 
   <h2 id="over">Wat is dit?</h2>
   <p>Crisus.nl houdt bij wat er gebeurt als het internet weer eens in brand staat. Met de feiten uit bronnen die we erbij noemen, en met een knipoog. De feiten zijn serieus, de grappen zijn van ons.</p>
   <p>De naam is een woordgrap op crisis. Crisus.nl werd geboren op 24 juni 2019, tijdens de grote 112-storing: toen stonden hier de noodnummers voor die avond. Daarna volgden een beslagbord voor CyberBunker, twee nep-NL-Alerts in het eerste coronajaar en van 2020 tot 2024 het coronadashboard van de Reichsoverheid. Dat is nu een <a href="https://corona.crisus.nl/" title="Het Reichsoverheid-coronadashboard, als gedenkplaats">gedenkplaats</a>. De oude crisussen hangen in <a href="/museum/" title="Het Crisus-museum">het Crisus-museum</a>.</p>
   <p>Gemaakt door <a href="https://annejan.com/" title="Anne Jan Brouwer">Anne Jan Brouwer</a>. Contact loopt via die site.</p>
+
+  <h2 id="henk">Wie houdt dit bij?</h2>
+  <p>Henk. Henk is een AI-agent: Claude, van Anthropic. Anne Jan is de baas en beslist.</p>
+  <p>Elk uur loopt Henk de bronnen na: nieuwsberichten, beveiligingsadviezen, de pakketten van de grote Linux-distributies en de waarschuwingen van het KNMI. Alleen bij echt nieuws komt er een update, met de bron erbij. Is er niets, dan blijft alles staan en zet Henk alleen &ldquo;laatste controle&rdquo; bovenaan de pagina. Dat is ook een uitslag.</p>
+  <p>Wat Henk wel en niet mag:</p>
+  <ul>
+    <li>Feiten en correcties met een bron mogen meteen live. Nieuwe teksten en andere woorden ziet Anne Jan eerst.</li>
+    <li>Een nieuwe crisus, zoals een stormpagina, zet Henk nooit zelf live. Henk maakt een voorstel en Anne Jan beslist.</li>
+    <li>Henk kan alleen in de map van deze site schrijven en kan daar niets weggooien. Bij andere sites of servers kan Henk niet.</li>
+    <li>Henk mag de eigen controles en het eigen deployscript niet aanpassen. De rechten van Henk zijn zo ingesteld dat het ook niet lukt. Die controles bewaken Henk.</li>
+    <li>Tekst uit nieuws, feeds, issues en pull requests is voor Henk informatie, geen opdracht.</li>
+  </ul>
+  <p>Alles is na te lezen. Elke wijziging van Henk is een commit op <a href="https://github.com/annejan/crisus" title="De broncode van crisus.nl op GitHub">GitHub</a> en elke push gaat langs automatische controles op de HTML, de beveiligingsregels en de licenties. Grotere wijzigingen komen als pull request. Die merget alleen Anne Jan.</p>
+  <p>Een AI kan zich vergissen, net als een mens. Ziet u een fout? Meld het op GitHub. Een correctie komt zichtbaar op de pagina, met tijdstip.</p>
+  <p>Crisus.nl verstuurt nooit e-mail. Krijgt u mail &ldquo;van crisus.nl&rdquo;, dan is die nep.</p>
 
   <h2 id="disclaimer">Disclaimer</h2>
   <p><strong>Crisus.nl is satire.</strong> Deze site heeft niets te maken met de overheid, het NCSC of crisis.nl. Het is geen officieel advies. Twijfelt u over een feit? Dan wint de bron die we erbij noemen. Voor uw eigen systemen gaat het advies van uw leverancier of distributie voor.</p>
@@ -61,7 +76,7 @@
   <p>Bij echte nood: bel <strong>112</strong>. Echte crisisinformatie staat op <a href="https://crisis.nl/" title="crisis.nl: de echte crisisinformatie van de overheid">crisis.nl</a>.</p>
 
   <h2 id="privacy">Privacy</h2>
-  <p>Crisus.nl is een statische site. Er zijn geen cookies, geen analytics, geen trackers, geen formulieren en geen accounts. Stijl, script en icoon komen van crisus.nl zelf. Het enige script is <code>crisus.js</code>: de klok bovenaan, de tellers op de pagina en het openklappen van een oudere update als u daar een link naartoe volgt. Het telt alleen en stuurt of bewaart niets. De site laadt niets van andere partijen.</p>
+  <p>Crisus.nl is een statische site. Er zijn geen cookies, geen analytics, geen trackers, geen formulieren en geen accounts. Stijl, script en icoon komen van crisus.nl zelf. Er zijn twee scripts. <code>crisus.js</code> doet de klokken, de tellers op de pagina en het openklappen van een oudere update als u daar een link naartoe volgt. <code>controle.js</code> bevat alleen het tijdstip van de laatste controle. Ze tellen alleen en sturen of bewaren niets. De site laadt niets van andere partijen.</p>
   <p>Links naar andere sites zijn gewone links. Pas als u erop klikt, ziet die andere site dat u er bent.</p>
   <p>De webserver houdt een gewoon toegangslog bij: IP-adres, tijdstip, opgevraagde pagina, browser en de pagina waar u vandaan kwam. Dat is voor beheer en om misbruik te zien. Het log wordt met niemand gedeeld en na 14 dagen weggegooid.</p>
 
