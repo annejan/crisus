@@ -92,7 +92,7 @@
     <dt>У який бік?</dt>
     <dd>В обидва боки. Сервер, який розпаковує Brotli, вразливий до зловмисного клієнта. Клієнт, який розпаковує Brotli, вразливий до зловмисного сервера. А це майже кожен HTTP-клієнт: він сам просить Brotli заголовком <code>Accept-Encoding: br</code>.</dd>
     <dt>Наскільки серйозно?</dt>
-    <dd>CVSS v4.0 <strong>9,2</strong> від Google у записі CVE. Node.js називає її <em>high</em>. Ubuntu каже <em>medium</em>. Три сторони, три думки. Відповідь у всіх трьох одна: оновлюватися. Одним стиснутим повідомленням зловмисник може пошкодити памʼять, спричинити витік даних чи збій програми і, можливо, виконати власний код.</dd>
+    <dd>CVSS v4.0 <strong>9,2</strong> від Google у записі CVE. Node.js називає її <em>high</em>. Ubuntu каже <em>medium</em>. Нідерландський <a href="https://www.ncsc.nl/alerts/kwetsbaarheid-in-google-brotli-decoder-in-nodejs-update-nu" title="NCSC: Kwetsbaarheid in Google Brotli-decoder in Node.js: update nu">NCSC</a>: імовірність зловживання середня, шкода велика. Чотири сторони, чотири думки. Відповідь у всіх чотирьох одна: оновлюватися. Одним стиснутим повідомленням зловмисник може пошкодити памʼять, спричинити витік даних чи збій програми і, можливо, виконати власний код.</dd>
     <dt>Які версії?</dt>
     <dd>Brotli <strong>від 1.0.3 до 1.2.0 включно</strong>. Кожна програма з власною копією Brotli мусить оновитися сама.</dd>
     <dt>Кого це стосується?</dt>
@@ -100,7 +100,7 @@
     <dt>Хто її знайшов?</dt>
     <dd>Codex Security від OpenAI, згідно з <a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">бюлетенем Node.js</a>, ще в лютому. Тоді розробники Brotli виправили код, але не вважали це вразливістю. Тому релізу тоді не було. Тепер є.</dd>
     <dt>Чи є атаки?</dt>
-    <dd><strong>Поки не помічено</strong> (The Hacker News, 22 жовтня). Проте, за даними Imperva, які наводить Aikido, дослідники змогли успішно атакувати незмінений Node.js 24.22.0. Це не добра новина. Але поки й не погана.</dd>
+    <dd><strong>Поки не помічено</strong> (The Hacker News, 22 жовтня). Нідерландський NCSC 23 жовтня також повідомив, що &laquo;доказів активного використання немає&raquo;. Проте, за даними Imperva, які наводить Aikido, дослідники змогли успішно атакувати незмінений Node.js 24.22.0. Це не добра новина. Але поки й не погана.</dd>
     <dt>Чи бачить її мій сканер?</dt>
     <dd>Віднедавна так. З 23 жовтня, 21:08 за центральноєвропейським літнім часом, бюлетень GitHub <a href="https://github.com/advisories/GHSA-9v8h-qqgm-4m35" title="GitHub advisory GHSA-9v8h-qqgm-4m35: Brotli out-of-bounds write (Node2Shell)">GHSA-9v8h-qqgm-4m35</a> називає й Python-пакети, тож Dependabot тепер має їх бачити. Користуєтеся pip-audit або Safety? Перевірте самі.</dd>
   </dl>
@@ -159,6 +159,7 @@ sudo needrestart -r l          <span class="c"># що ще працює на с�
     <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-111497" title="CVE-2026-111497 на cve.org">CVE-2026-111497</a>: &laquo;Out-of-Bounds Write in Google Brotli Decoder&raquo;, опубліковано Google 22 жовтня, CVSS v4.0 9,2.</li>
     <li><a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">Node.js: October 2026 security releases</a>. Виправлення в 26.12.1, 24.22.1 і 22.23.4 та хто повідомив про вразливість (англійською).</li>
     <li><a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell)</a>. Чому вразливий Python, тимчасові заходи та стан Bun, Envoy й Istio (англійською).</li>
+    <li><a href="https://www.ncsc.nl/alerts/kwetsbaarheid-in-google-brotli-decoder-in-nodejs-update-nu" title="NCSC: Kwetsbaarheid in Google Brotli-decoder in Node.js: update nu">NCSC: Kwetsbaarheid in Google Brotli-decoder in Node.js: update nu</a> (нідерландською), 23 жовтня, бюлетень <a href="https://advisories.ncsc.nl/2026/ncsc-2026-0453.html" title="NCSC-2026-0453">NCSC-2026-0453</a>.</li>
     <li><a href="https://github.com/advisories/GHSA-9v8h-qqgm-4m35" title="GitHub advisory GHSA-9v8h-qqgm-4m35: Brotli out-of-bounds write (Node2Shell)">GitHub: GHSA-9v8h-qqgm-4m35</a>, для пакетів PyPI <code>brotli</code> і <code>brotlicffi</code>.</li>
     <li><a href="https://github.com/google/brotli/commit/0ed4268a4401abcb44720963" title="google/brotli: коміт 0ed4268">google/brotli: виправлення</a> і <a href="https://github.com/google/brotli/releases" title="google/brotli: releases">релізи</a> 1.2.1, 1.1.1 та 1.0.10.</li>
     <li><a href="https://en.wikipedia.org/wiki/Brotli" title="Wikipedia: Brotli">Wikipedia: Brotli</a> (англійською). Хто створив, назва, браузери і хто використовує. Стандарт: <a href="https://www.rfc-editor.org/rfc/rfc7932" title="RFC 7932: Brotli Compressed Data Format">RFC 7932</a>.</li>
