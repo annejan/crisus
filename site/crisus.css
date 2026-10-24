@@ -224,6 +224,10 @@ details.patch[open] > summary { margin-bottom: 14px; }
 .radar { padding-left: 0; list-style: none; }
 .radar li { margin: 0 0 10px; padding: 12px 16px; border-left: 4px solid var(--yellow); background: var(--card); border-radius: 0 10px 10px 0; }
 .radar b { display: block; }
+.radar li.rood { border-left-color: var(--red); background: var(--red-bg); color: var(--red); }
+.radar li.rood b { color: var(--red); }
+.radar .nu[hidden] { display: none; }
+.radar .nu { font-weight: 700; }
 .talen { display: flex; gap: 4px; margin-left: auto; }
 .talen a { padding: 5px 8px; border-radius: 6px; font: 700 13px/1 system-ui, sans-serif; text-decoration: none; color: var(--muted); }
 .talen a[aria-current] { background: var(--black); color: var(--yellow); }

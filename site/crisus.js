@@ -151,3 +151,23 @@
   el.textContent = pd.getDate() + ' ' + MAANDEN[pd.getMonth()] +
     (dagen === 0 ? ', vandaag' : dagen === 1 ? ', morgen' : ', over ' + dagen + ' dagen');
 })();
+
+// Red for a while: an element with data-rood="START/END" (ISO) gets the class "rood"
+// in that window, and shows its .nu text. Winter time: from 02:00 summer time until
+// it is really 03:00, the second time round.
+(function () {
+  var els = document.querySelectorAll('[data-rood]');
+  if (!els.length) return;
+  function kijk() {
+    var nu = Date.now();
+    for (var i = 0; i < els.length; i++) {
+      var p = els[i].getAttribute('data-rood').split('/');
+      var aan = nu >= Date.parse(p[0]) && nu < Date.parse(p[1]);
+      els[i].classList.toggle('rood', aan);
+      var t = els[i].querySelector('.nu');
+      if (t) t.hidden = !aan;
+    }
+  }
+  kijk();
+  setInterval(kijk, 30000);
+})();
