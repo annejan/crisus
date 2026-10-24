@@ -119,6 +119,15 @@ click), three clocks for Russia's war against Ukraine (Crimea 20 Feb 2014, Donba
 12 Apr 2014, full-scale invasion 24 Feb 2022 05:00 Kyiv), "Op de radar", "Wat moet u
 doen?" and the list of earlier crises. It exists in Dutch (`/`), English (`/en/`) and
 Ukrainian (`/uk/`); only the Dutch page has the update list, the feed and `bump.py`.
+
+**During a crisus** `/en/` and `/uk/` carry a short version of it: title, lead, clock, level,
+"What is going on?", "What should you do?", the status per platform, then the war block
+and the sources. No update list: a note and the kicker link to the Dutch page. When a
+round changes a fact in one of those blocks (versions, a platform's status, the level,
+exploitation), change it in all three languages in the same commit, and set the
+"status of …" stamp in their kickers. A new crisus or the rest page: rebuild both from the
+Dutch page. The Ukrainian text is written by Claude; keep it plain and correct, and say in
+the PR when it changed, so the owner can have it read by a native speaker.
 Keep the war block factual: no jokes there. Give it room and respect: nothing playful (the
 bouwbord, the vaste waarden, jokes) directly next to it. For the owner this is not abstract:
 they have been to Ukraine three times, each time to Kharkiv.
