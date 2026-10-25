@@ -6,7 +6,15 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Sat, 24 Oct 2026 21:00:00 +0200</lastBuildDate>
+  <lastBuildDate>Sun, 25 Oct 2026 18:30:00 +0100</lastBuildDate>
+  <item>
+    <title>25 oktober 18:30 · Ook Microsoft.</title>
+    <link>https://crisus.nl/#u-20261025-1830</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261025-1830</guid>
+    <pubDate>Sun, 25 Oct 2026 18:30:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>Ook Microsoft.</strong> Vandaag, op een zondag en buiten Patch Tuesday om, bracht Microsoft updates uit voor HTTP2Shell: .NET 8, 9 en 10, de release candidate van .NET 11, PowerShell 7.4, 7.5 en 7.6 en Visual Studio 2019, 2022 en 2026. Dat staat in de <a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-111497" title="Microsoft Security Update Guide: CVE-2026-111497">Security Update Guide</a>. Microsoft noemt het kritiek, met een 8,1. Misbruikt: nee. Openbaar bekend: ja. De updates komen via de gewone kanalen, schrijft een .NET-ontwikkelaar op <a href="https://github.com/dotnet/runtime/issues/136422#issuecomment-6400646760" title="dotnet/runtime #136422: Does CVE-2026-111497 affect System.IO.Compression.Brotli?">GitHub</a>. Een update op zondag. Zo erg is het dus.</p>
+      <p>Ook de projecten met een eigen kopie van Brotli updaten. Het Ruby-gem <code>brotli</code> heeft sinds 0.9.1 de fix, de PHP-extensie <code>brotli</code> sinds 0.21.1. ClickHouse, libjxl, NanaZip en YDB hebben hem ook. Bij 7-Zip-zstd, DuckDB, Apache Arrow, WOFF2 en de UEFI-firmware EDK2 staat het nog open. Het lijstje komt van <a href="https://broccoli2shell.com/" title="Broccoli2Shell: CVE-2026-111497 in Brotli">broccoli2shell.com</a>, een onafhankelijke site die het lek naar een groente noemt. Beveiligingsonderzoeker Juliano Rizzo vindt Node2Shell namelijk een slechte naam: &ldquo;I&rsquo;m calling it Broccoli&rdquo;, zo citeert de site. Dat is bijnaam nummer drie voor &eacute;&eacute;n lek, en de 2Shell-teller staat op 4. Groente telt niet als eten, besloot het crisusteam.</p>]]></description>
+  </item>
   <item>
     <title>24 oktober 21:00 · Een nieuwe crisus: HTTP2Shell.</title>
     <link>https://crisus.nl/#u-20261024-2100</link>

@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-23T22:50:00+02:00">
-<meta property="article:modified_time" content="2026-10-25T00:13:00+02:00">
+<meta property="article:modified_time" content="2026-10-25T18:30:00+01:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=7">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,14 +45,15 @@
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-23T22:50:00+02:00",
-  "dateModified": "2026-10-25T00:13:00+02:00",
+  "dateModified": "2026-10-25T18:30:00+01:00",
   "coverageStartTime": "2026-10-23T22:50:00+02:00",
-  "about": {"@type": "Thing", "name": "CVE-2026-111497", "alternateName": ["HTTP2Shell", "Node2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-111497"},
+  "about": {"@type": "Thing", "name": "CVE-2026-111497", "alternateName": ["HTTP2Shell", "Node2Shell", "Broccoli2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-111497"},
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
   "publisher": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
   "genre": "satire",
   "keywords": ["crisus", "HTTP2Shell", "Node2Shell", "Brotli", "CVE-2026-111497", "Node.js", "Python"],
   "liveBlogUpdate": [
+    {"@type": "BlogPosting", "headline": "Ook Microsoft.", "datePublished": "2026-10-25T18:30:00+01:00", "url": "https://crisus.nl/#u-20261025-1830"},
     {"@type": "BlogPosting", "headline": "Een nieuwe crisus: HTTP2Shell.", "datePublished": "2026-10-24T21:00:00+02:00", "url": "https://crisus.nl/#u-20261024-2100"},
     {"@type": "BlogPosting", "headline": "PHP2Shell is afgesloten.", "datePublished": "2026-10-23T22:50:00+02:00", "url": "https://crisus.nl/#u-20261023-2250"}
   ],
@@ -98,7 +99,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-10-25T00:13:00+02:00">laatst bijgewerkt 25 oktober, 00:13</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <p class="kicker">Crisus · <time datetime="2026-10-25T18:30:00+01:00">laatst bijgewerkt 25 oktober, 18:30</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
   <h1>HTTP2Shell: kritiek lek in Brotli</h1>
   <p class="lead">Een kritiek lek in Brotli, de compressie van Google: HTTP2Shell. Brotli zit in Node.js, in Python, in Bun, Envoy en Istio, en waarschijnlijk ook in iets van u. De patch is uit: Brotli <strong>1.2.1</strong>, Node.js <strong>26.12.1, 24.22.1 en 22.23.4</strong>. Niet in paniek raken. Wel updaten.</p>
   <p class="vandaag" id="vandaag" hidden></p>
@@ -121,6 +122,9 @@
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261025-1830"><time datetime="2026-10-25T18:30+01:00">25 oktober 18:30</time>
+      <p><strong>Ook Microsoft.</strong> Vandaag, op een zondag en buiten Patch Tuesday om, bracht Microsoft updates uit voor HTTP2Shell: .NET 8, 9 en 10, de release candidate van .NET 11, PowerShell 7.4, 7.5 en 7.6 en Visual Studio 2019, 2022 en 2026. Dat staat in de <a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-111497" title="Microsoft Security Update Guide: CVE-2026-111497">Security Update Guide</a>. Microsoft noemt het kritiek, met een 8,1. Misbruikt: nee. Openbaar bekend: ja. De updates komen via de gewone kanalen, schrijft een .NET-ontwikkelaar op <a href="https://github.com/dotnet/runtime/issues/136422#issuecomment-6400646760" title="dotnet/runtime #136422: Does CVE-2026-111497 affect System.IO.Compression.Brotli?">GitHub</a>. Een update op zondag. Zo erg is het dus.</p>
+      <p>Ook de projecten met een eigen kopie van Brotli updaten. Het Ruby-gem <code>brotli</code> heeft sinds 0.9.1 de fix, de PHP-extensie <code>brotli</code> sinds 0.21.1. ClickHouse, libjxl, NanaZip en YDB hebben hem ook. Bij 7-Zip-zstd, DuckDB, Apache Arrow, WOFF2 en de UEFI-firmware EDK2 staat het nog open. Het lijstje komt van <a href="https://broccoli2shell.com/" title="Broccoli2Shell: CVE-2026-111497 in Brotli">broccoli2shell.com</a>, een onafhankelijke site die het lek naar een groente noemt. Beveiligingsonderzoeker Juliano Rizzo vindt Node2Shell namelijk een slechte naam: &ldquo;I&rsquo;m calling it Broccoli&rdquo;, zo citeert de site. Dat is bijnaam nummer drie voor &eacute;&eacute;n lek, en de 2Shell-teller staat op 4. Groente telt niet als eten, besloot het crisusteam.</p></li>
     <li id="u-20261024-2100"><time datetime="2026-10-24T21:00+02:00">24 oktober 21:00</time>
       <p><strong>Een nieuwe crisus: HTTP2Shell.</strong> Woensdag stond het nog als bijzin in ons <a href="/php/#u-20261021-1700" title="Crisus: PHP2Shell, 21 oktober 17:00">PHP-verhaal</a>: ook Node.js had security releases, met een lek in de Brotli-decoder. Die bijzin is gegroeid. Het lek, CVE-2026-111497, zit niet in Node.js maar in Brotli zelf, de compressie van Google. En Brotli zit overal. Ook in Python: requests, urllib3, httpx, aiohttp en Scrapy gebruiken het vanzelf zodra het pakket <code>brotli</code> of <code>brotlicffi</code> er is, schrijft <a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido</a>. Dat pakket wordt ruim 82 miljoen keer per maand gedownload. Google geeft het lek een 9,2.</p>
       <p>Het werkt twee kanten op. Een kwaadwillende client kan een server aanvallen. En een kwaadwillende server elke client die gecomprimeerde antwoorden aanneemt. Codex Security van OpenAI vond het al in februari. De fix stond toen al in de code van Brotli. Niemand zag dat het een beveiligingslek was. Eerst heette het Node2Shell, nu HTTP2Shell. Een lek met een bijnaam is erger dan een lek zonder. Over een lek met twee bijnamen vergadert het crisusteam nog.</p>
@@ -138,7 +142,7 @@
     <dt>Waarom zit het overal in?</dt>
     <dd>Omdat het werkt. Een webpagina met Brotli is meestal kleiner dan met gzip, en dus sneller binnen. Sinds 2016 en 2017 kunnen alle grote browsers het. Webservers en CDN&rsquo;s als Cloudflare en Amazon CloudFront sturen het mee, en een webfont in WOFF2 is altijd Brotli. Wie iets van internet haalt, krijgt dus vaak Brotli terug en moet het uitpakken. Daarom zit de decoder in Node.js (sinds versie 11.7), in de HTTP-clients van Python en in curl. Klein bestand, groot bereik.</dd>
     <dt>Het lek</dt>
-    <dd>Een out-of-bounds write in de Brotli-decoder van Google: <a href="https://www.cve.org/CVERecord?id=CVE-2026-111497" title="CVE-2026-111497 op cve.org">CVE-2026-111497</a>, ook wel HTTP2Shell, eerst Node2Shell. Brotli is de compressie achter <code>Content-Encoding: br</code>. Kleiner dan gzip. Sinds deze week ook gevaarlijker.</dd>
+    <dd>Een out-of-bounds write in de Brotli-decoder van Google: <a href="https://www.cve.org/CVERecord?id=CVE-2026-111497" title="CVE-2026-111497 op cve.org">CVE-2026-111497</a>, ook wel HTTP2Shell, eerst Node2Shell, en sinds kort ook Broccoli2Shell. Brotli is de compressie achter <code>Content-Encoding: br</code>. Kleiner dan gzip. Sinds deze week ook gevaarlijker.</dd>
     <dt>Hoe werkt het?</dt>
     <dd>De functie <code>DecodeBlockTypeAndLength()</code> geeft alleen ja of nee terug. Nee kan twee dingen betekenen: de invoer is kapot, of er moet nog meer invoer komen. De decoder kan die twee niet uit elkaar houden en gaat door met een ongeldige toestand. Dan schrijft hij buiten zijn eigen geheugen. De <a href="https://github.com/google/brotli/commit/0ed4268a4401abcb44720963" title="google/brotli: commit 0ed4268">fix</a> geeft kapotte invoer een eigen foutcode: -17.</dd>
     <dt>Welke kant op?</dt>
@@ -150,15 +154,15 @@
     <dt>Welke versies?</dt>
     <dd>Brotli <strong>1.0.3 tot en met 1.2.0</strong>. Elk programma met een eigen kopie van Brotli moet dus zelf updaten.</dd>
     <dt>Wie zit erin?</dt>
-    <dd>Node.js, met een eigen kopie. De Python-pakketten <code>brotli</code> en <code>brotlicffi</code>, en via die pakketten requests, urllib3, httpx, aiohttp en Scrapy. Ook als uw code nergens <code>import brotli</code> zegt. Volgens <a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido</a> ook Bun, Envoy en Istio. Niet geraakt: Apache met <code>mod_brotli</code> en nginx, want die pakken standaard niets uit. Die comprimeren alleen.</dd>
+    <dd>Node.js, met een eigen kopie. De Python-pakketten <code>brotli</code> en <code>brotlicffi</code>, en via die pakketten requests, urllib3, httpx, aiohttp en Scrapy. Ook als uw code nergens <code>import brotli</code> zegt. Volgens <a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido</a> ook Bun, Envoy en Istio. Volgens <a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-111497" title="Microsoft Security Update Guide: CVE-2026-111497">Microsoft</a> ook .NET, PowerShell en Visual Studio. En elk project met een eigen kopie, van het Ruby-gem tot 7-Zip-zstd, zie <a href="https://broccoli2shell.com/" title="Broccoli2Shell: CVE-2026-111497 in Brotli">broccoli2shell.com</a>. Niet geraakt: Apache met <code>mod_brotli</code> en nginx, want die pakken standaard niets uit. Die comprimeren alleen.</dd>
     <dt>Wie vond het?</dt>
     <dd>Codex Security van OpenAI, volgens de <a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">advisory van Node.js</a>, al in februari. Brotli repareerde de fout toen al, maar zag hem niet als beveiligingslek. Dus kwam er toen geen release. Wel nu.</dd>
     <dt>Misbruik?</dt>
-    <dd><strong>Nog niet gezien</strong> (The Hacker News, 22 oktober). Ook het NCSC kent op 23 oktober &ldquo;geen bewijs van actief misbruik&rdquo;. Wel kregen onderzoekers het werkend tegen een ongewijzigde Node.js 24.22.0, volgens Imperva, meldt Aikido. Dat is geen goed nieuws. Het is nog geen slecht nieuws.</dd>
+    <dd><strong>Nog niet gezien</strong> (The Hacker News, 22 oktober). Ook het NCSC kent op 23 oktober &ldquo;geen bewijs van actief misbruik&rdquo;. Wel kregen onderzoekers het werkend tegen een ongewijzigde Node.js 24.22.0, volgens Imperva, meldt Aikido. Dat is geen goed nieuws. Het is nog geen slecht nieuws. Microsoft zegt op 25 oktober: niet misbruikt, wel openbaar bekend.</dd>
     <dt>Ziet mijn scanner het?</dt>
     <dd>Sinds kort. Op 23 oktober koppelden de databases het lek nog niet aan de Python-pakketten, aldus Aikido. Sinds 23 oktober 21:08 noemt <a href="https://github.com/advisories/GHSA-9v8h-qqgm-4m35" title="GitHub advisory GHSA-9v8h-qqgm-4m35: Brotli out-of-bounds write (Node2Shell)">GHSA-9v8h-qqgm-4m35</a> van GitHub ze wel. Dependabot zou ze nu dus moeten zien. Gebruikt u pip-audit of Safety? Kijk dan zelf.</dd>
     <dt>De patch</dt>
-    <dd><strong>Uit sinds 21 oktober.</strong> Brotli <strong>1.2.1</strong>, voor oudere lijnen 1.1.1 en 1.0.10. Node.js <strong>26.12.1, 24.22.1 en 22.23.4</strong>. Node.js 20 of ouder? Daarvoor komt niets meer: einde levensduur sinds 30 april. Python: <code>brotli</code> 1.2.1 en <code>brotlicffi</code> 1.2.1.0. Bun: 1.4.4.</dd>
+    <dd><strong>Uit sinds 21 oktober.</strong> Brotli <strong>1.2.1</strong>, voor oudere lijnen 1.1.1 en 1.0.10. Node.js <strong>26.12.1, 24.22.1 en 22.23.4</strong>. Node.js 20 of ouder? Daarvoor komt niets meer: einde levensduur sinds 30 april. Python: <code>brotli</code> 1.2.1 en <code>brotlicffi</code> 1.2.1.0. Bun: 1.4.4. Sinds 25 oktober ook .NET, PowerShell en Visual Studio.</dd>
   </dl>
 
   <section class="doen" aria-labelledby="doen">
@@ -183,7 +187,7 @@ sudo needrestart -r l          <span class="c"># wat draait nog oude code?</span
     </ol>
   </section>
 
-  <h2 id="stand">Stand per platform, 21:00</h2>
+  <h2 id="stand">Stand per platform, 18:30</h2>
   <ul class="status" aria-labelledby="stand">
     <li><b>Brotli</b><span class="pill green">Fix beschikbaar</span><em>1.2.1, 1.1.1 en 1.0.10, sinds 21 oktober 21:27.</em></li>
     <li><b>Node.js</b><span class="pill orange">Nu installeren</span><em>26.12.1, 24.22.1 en 22.23.4, sinds 21 oktober. Gepatcht? Ook herstarten.</em></li>
@@ -192,6 +196,9 @@ sudo needrestart -r l          <span class="c"># wat draait nog oude code?</span
     <li><b>Docker</b><span class="pill green">Fix beschikbaar</span><em><code>node:24.22.1</code> en de andere gepatchte tags sinds 22 oktober 04:40. Containers opnieuw aanmaken.</em></li>
     <li><b>Bun</b><span class="pill green">Fix beschikbaar</span><em>1.4.4, sinds 22 oktober.</em></li>
     <li><b>Envoy, Istio</b><span class="pill green">Fix beschikbaar</span><em>Envoy 1.40.0, 1.39.3, 1.38.6 en 1.37.8. Istio 1.31.2, 1.30.6 en 1.29.9, al is 1.29 zelf einde levensduur.</em></li>
+    <li><b>.NET, PowerShell</b><span class="pill orange">Nu installeren</span><em>.NET SDK 8.0.427, 9.0.320 en 10.0.403, PowerShell 7.4.22, 7.5.13 en 7.6.9, sinds 25 oktober.</em></li>
+    <li><b>Visual Studio</b><span class="pill green">Update beschikbaar</span><em>2019 16.11.61, 2022 17.14.43 en 2026 18.11.2, sinds 25 oktober.</em></li>
+    <li><b>Ruby, PHP</b><span class="pill green">Fix beschikbaar</span><em>Het gem <code>brotli</code> 0.9.1 en de PHP-extensie <code>brotli</code> 0.21.1, allebei met Brotli 1.2.1.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://lists.debian.org/debian-security-announce/2026/msg00498.html" title="DSA-6582-1: brotli security update">DSA-6582-1</a>: <code>brotli 1.1.0-2+deb13u1</code>, sinds 23 oktober.</em></li>
     <li><b>Debian 12</b><span class="pill green">Fix beschikbaar</span><em>DLA-4855-1: <code>brotli 1.0.9-2+deb12u1</code>. Unstable is nog kwetsbaar.</em></li>
     <li><b>Ubuntu</b><span class="pill orange">Onduidelijk</span><em>Bij elke release staat nog &ldquo;Needs evaluation&rdquo;, zie de <a href="https://ubuntu.com/security/CVE-2026-111497" title="Ubuntu: CVE-2026-111497">CVE-pagina</a>. Ubuntu denkt nog na.</em></li>
@@ -228,7 +235,7 @@ sudo needrestart -r l          <span class="c"># wat draait nog oude code?</span
     <li><b>Millenniumbug</b><span>Nog steeds niets</span></li>
     <li><b>Volgende Patch Tuesday</b><span id="patchdinsdag">De tweede dinsdag van de maand</span></li>
     <li><b>Tot het jaar-2038-probleem</b><span data-until="2038-01-19T03:14:08Z">19 januari 2038</span></li>
-    <li><b>Lekken met 2Shell in de naam, oktober</b><span>3: PHP2Shell, Node2Shell, HTTP2Shell</span></li>
+    <li><b>Lekken met 2Shell in de naam, oktober</b><span>4: PHP2Shell, Node2Shell, HTTP2Shell, Broccoli2Shell</span></li>
     <li><b>crisus.nl</b><span>HTTP 200</span></li>
   </ul>
 
@@ -236,6 +243,8 @@ sudo needrestart -r l          <span class="c"># wat draait nog oude code?</span
   <ul class="bronnen" aria-labelledby="bronnen">
     <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-111497" title="CVE-2026-111497 op cve.org">CVE-2026-111497</a>: &ldquo;Out-of-Bounds Write in Google Brotli Decoder&rdquo;, gepubliceerd door Google op 22 oktober, CVSS v4.0 9,2.</li>
     <li><a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">Node.js: October 2026 security releases</a>. De fix in 26.12.1, 24.22.1 en 22.23.4, en wie het lek meldde.</li>
+    <li><a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-111497" title="Microsoft Security Update Guide: CVE-2026-111497">Microsoft Security Update Guide: CVE-2026-111497</a>. .NET, PowerShell en Visual Studio, 25 oktober. Plus <a href="https://github.com/dotnet/runtime/issues/136422" title="dotnet/runtime #136422">dotnet/runtime #136422</a>.</li>
+    <li><a href="https://broccoli2shell.com/" title="Broccoli2Shell: CVE-2026-111497 in Brotli">broccoli2shell.com</a>: een onafhankelijk overzicht, met de projecten die een eigen kopie van Brotli hebben. Daarnaast zelf nagekeken bij <a href="https://github.com/miyucy/brotli/issues/64" title="miyucy/brotli #64">het Ruby-gem</a>, <a href="https://github.com/kjdev/php-ext-brotli/releases/tag/0.21.1" title="php-ext-brotli 0.21.1">de PHP-extensie</a> en <a href="https://github.com/mcmilk/7-Zip-zstd/issues/579" title="7-Zip-zstd #579">7-Zip-zstd</a>.</li>
     <li><a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell)</a>. Waarom Python geraakt is, de noodmaatregelen en de stand bij Bun, Envoy en Istio.</li>
     <li><a href="https://www.ncsc.nl/alerts/kwetsbaarheid-in-google-brotli-decoder-in-nodejs-update-nu" title="NCSC: Kwetsbaarheid in Google Brotli-decoder in Node.js: update nu">NCSC: Kwetsbaarheid in Google Brotli-decoder in Node.js: update nu</a>, 23 oktober, met advisory <a href="https://advisories.ncsc.nl/2026/ncsc-2026-0453.html" title="NCSC-2026-0453">NCSC-2026-0453</a>.</li>
     <li><a href="https://github.com/advisories/GHSA-9v8h-qqgm-4m35" title="GitHub advisory GHSA-9v8h-qqgm-4m35: Brotli out-of-bounds write (Node2Shell)">GitHub: GHSA-9v8h-qqgm-4m35</a>, voor de PyPI-pakketten <code>brotli</code> en <code>brotlicffi</code>.</li>
