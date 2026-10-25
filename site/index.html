@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-23T22:50:00+02:00">
-<meta property="article:modified_time" content="2026-10-25T18:30:00+01:00">
+<meta property="article:modified_time" content="2026-10-25T18:46:00+01:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=7">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,7 +45,7 @@
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-23T22:50:00+02:00",
-  "dateModified": "2026-10-25T18:30:00+01:00",
+  "dateModified": "2026-10-25T18:46:00+01:00",
   "coverageStartTime": "2026-10-23T22:50:00+02:00",
   "about": {"@type": "Thing", "name": "CVE-2026-111497", "alternateName": ["HTTP2Shell", "Node2Shell", "Broccoli2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-111497"},
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
@@ -99,7 +99,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-10-25T18:30:00+01:00">laatst bijgewerkt 25 oktober, 18:30</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <p class="kicker">Crisus · <time datetime="2026-10-25T18:46:00+01:00">laatst bijgewerkt 25 oktober, 18:46</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
   <h1>HTTP2Shell: kritiek lek in Brotli</h1>
   <p class="lead">Een kritiek lek in Brotli, de compressie van Google: HTTP2Shell. Brotli zit in Node.js, in Python, in Bun, Envoy en Istio, en waarschijnlijk ook in iets van u. De patch is uit: Brotli <strong>1.2.1</strong>, Node.js <strong>26.12.1, 24.22.1 en 22.23.4</strong>. Niet in paniek raken. Wel updaten.</p>
   <p class="vandaag" id="vandaag" hidden></p>
@@ -161,6 +161,8 @@
     <dd><strong>Nog niet gezien</strong> (The Hacker News, 22 oktober). Ook het NCSC kent op 23 oktober &ldquo;geen bewijs van actief misbruik&rdquo;. Wel kregen onderzoekers het werkend tegen een ongewijzigde Node.js 24.22.0, volgens Imperva, meldt Aikido. Dat is geen goed nieuws. Het is nog geen slecht nieuws. Microsoft zegt op 25 oktober: niet misbruikt, wel openbaar bekend.</dd>
     <dt>Ziet mijn scanner het?</dt>
     <dd>Sinds kort. Op 23 oktober koppelden de databases het lek nog niet aan de Python-pakketten, aldus Aikido. Sinds 23 oktober 21:08 noemt <a href="https://github.com/advisories/GHSA-9v8h-qqgm-4m35" title="GitHub advisory GHSA-9v8h-qqgm-4m35: Brotli out-of-bounds write (Node2Shell)">GHSA-9v8h-qqgm-4m35</a> van GitHub ze wel. Dependabot zou ze nu dus moeten zien. Gebruikt u pip-audit of Safety? Kijk dan zelf.</dd>
+    <dt>Moet het eruit?</dt>
+    <dd>Bugsink, een foutentracker voor Sentry-berichten, denkt van wel. Klaas van Schelven noemt Brotli &ldquo;in such a state of disrepair&rdquo; en schrijft over de beheerders: &ldquo;they&rsquo;re not serious people&rdquo;, in <a href="https://www.bugsink.com/blog/bye-bye-brotli/" title="Bugsink: Bye Bye Brotli? Google's Compression Library Is a Security Mess">Bye Bye Brotli?</a>. Bugsink krijgt een <a href="https://github.com/bugsink/bugsink/pull/568" title="bugsink #568: FEATURE_BROTLI: allow disabling request decoding">instelling</a> om het uitpakken van Brotli uit te zetten, nog niet in een release. Sentry kreeg de <a href="https://github.com/getsentry/sentry-python/issues/8118" title="sentry-python #8118: Stop using brotli">vraag</a> om Brotli te laten vallen. Die vraag staat nog open. Wat u niet uitpakt, kan u ook niet raken.</dd>
     <dt>De patch</dt>
     <dd><strong>Uit sinds 21 oktober.</strong> Brotli <strong>1.2.1</strong>, voor oudere lijnen 1.1.1 en 1.0.10. Node.js <strong>26.12.1, 24.22.1 en 22.23.4</strong>. Node.js 20 of ouder? Daarvoor komt niets meer: einde levensduur sinds 30 april. Python: <code>brotli</code> 1.2.1 en <code>brotlicffi</code> 1.2.1.0. Bun: 1.4.4. Sinds 25 oktober ook .NET, PowerShell en Visual Studio.</dd>
   </dl>
