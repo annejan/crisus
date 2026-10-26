@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-23T22:50:00+02:00">
-<meta property="article:modified_time" content="2026-10-26T16:00:00+01:00">
+<meta property="article:modified_time" content="2026-10-26T17:01:00+01:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=7">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,7 +45,7 @@
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-23T22:50:00+02:00",
-  "dateModified": "2026-10-26T16:00:00+01:00",
+  "dateModified": "2026-10-26T17:01:00+01:00",
   "coverageStartTime": "2026-10-23T22:50:00+02:00",
   "about": {"@type": "Thing", "name": "CVE-2026-111497", "alternateName": ["HTTP2Shell", "Node2Shell", "Broccoli2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-111497"},
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
@@ -101,7 +101,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-10-26T16:00:00+01:00">laatst bijgewerkt 26 oktober, 16:00</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <p class="kicker">Crisus · <time datetime="2026-10-26T17:01:00+01:00">laatst bijgewerkt 26 oktober, 17:01</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
   <h1>HTTP2Shell: kritiek lek in Brotli</h1>
   <p class="lead">Een kritiek lek in Brotli, de compressie van Google: HTTP2Shell. Brotli zit in Node.js, in Python, in Bun, Envoy en Istio, en waarschijnlijk ook in iets van u. De patch is uit: Brotli <strong>1.2.1</strong>, Node.js <strong>26.12.1, 24.22.1 en 22.23.4</strong>. Niet in paniek raken. Wel updaten.</p>
   <p class="vandaag" id="vandaag" hidden></p>
@@ -235,6 +235,7 @@ sudo needrestart -r l          <span class="c"># wat draait nog oude code?</span
     <li><b>Tailscale</b> Een onderzoeker meldt elf problemen in Tailscale SSH en <code>tailscale serve</code>. Het gaat vooral om wat er gebeurt nadat iemand al binnen mag: soms mag een sessie meer dan de lokale gebruiker. Tailscale onderzoekt het, raadt niet aan SSH overal uit te zetten en belooft een advisory met patches, schrijft VP Engineering Mike Shaver op <a href="https://www.reddit.com/r/Tailscale/comments/1xeoj1l/recent_tailscale_vulnerability_reports/" title="r/Tailscale: Recent Tailscale vulnerability reports">Reddit</a>. Er is nog geen CVE en geen fix, en geen misbruik bekend. Tailscale noemt het &ldquo;a rough week for security teams&rdquo;. Wij noemen het oktober.</li>
     <li><b>eMudhra</b> De acht tussencertificaten met de raadbare sleutels (&eacute;&eacute;n daarvan was <a href="/php/#u-20261022-2330" title="PHP2Shell-archief: eMudhra, 22 oktober">het getal 4</a>) zijn al geblokkeerd. Dinsdag 27 oktober haalt Chrome ook de root eruit, emSign ECC Root CA &ndash; G3, meldt <a href="https://www.csoonline.com/article/4238338/google-mozilla-revoke-emudhra-intermediates-after-private-key-compromise.html" title="CSO Online: Google, Mozilla revoke eMudhra intermediates after private key compromise">CSO Online</a>. Een certificaat onder die root werkt dan niet meer in Chrome. Vier was dus toch niet willekeurig genoeg.</li>
     <li><b>PHP</b> De fix voor CVE-2026-115560 komt met de volgende gewone release. Tot dan staat de uploadvoortgang van sessies uit, als het goed is. Op Hacker News zette iemand een bitcoinsleutel op een server met een PHP van v&oacute;&oacute;r de lekken: <a href="https://news.ycombinator.com/item?id=50224916" title="Hacker News: Show HN: Steal My Bitcoin">Steal My Bitcoin</a>. Een dag lang lukte het niemand. Dat kon ook niet: tot zondagmiddag stuurde de server alleen HTML, en dan komt PHP2Shell nooit langs, gaf de maker toe. Nu er een .php-pagina staat, denkt onderzoeker LiveOverflow dat hij w&eacute;l te kraken is. Een dag zonder hack zegt dus vooral iets over de dag.</li>
+    <li><b>AVG</b> De EU-lidstaten willen dat bedrijven persoonsgegevens mogen gebruiken om AI te trainen, zonder het te vragen. Ze maakten woensdag hun positie op over de Digital Omnibus, een wijziging van de AVG. Volgens <a href="https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies" title="noyb: EU member states approve digital expropriation of Europeans for AI companies">noyb</a> geldt AI-training dan automatisch als gerechtvaardigd belang, ook voor oude gegevens. Max Schrems noemt het &ldquo;het grootste cadeau dat EU-lidstaten ooit aan Amerikaanse Big Tech hebben gegeven&rdquo;, meldt <a href="https://www.security.nl/posting/959029/EU-lidstaten+voor+het+trainen+van+AI+op+gegevens+van+EU-burgers" title="Security.NL: EU-lidstaten voor het trainen van AI op gegevens van EU-burgers">Security.NL</a>. Het is nog geen wet: eerst het Europees Parlement, dan de onderhandelingen. Toestemming is er dus al. Alleen niet van u.</li>
     <li><b>WICCON</b> Donderdag 29 en vrijdag 30 oktober is <a href="https://wiccon.nl/" title="WICCON 2026: cybersecurityconferentie van WICCA">WICCON 2026</a> in De Lichtfabriek in Haarlem. Twee dagen cybersecurity, met alleen vrouwelijke sprekers. Breekt er die week een crisus uit, dan zitten de mensen die hem oplossen in Haarlem.</li>
     <li><b>Patch Tuesday</b> Dinsdag 10 november. Zoals elke maand.</li>
   </ul>
