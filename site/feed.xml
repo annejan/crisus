@@ -6,7 +6,15 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Mon, 26 Oct 2026 16:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Mon, 26 Oct 2026 21:00:00 +0100</lastBuildDate>
+  <item>
+    <title>26 oktober 21:00 · PHP2Shell: Cisco en Palo Alto zijn verder.</title>
+    <link>https://crisus.nl/#u-20261026-2100</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261026-2100</guid>
+    <pubDate>Mon, 26 Oct 2026 21:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>PHP2Shell: Cisco en Palo Alto zijn verder.</strong> Cisco werkte vanavond zijn <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq" title="Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026">advisory</a> voor de zevende keer bij. Geraakt zijn Expressway en Expressway Select (fix in 15.5.21), Duo Access Gateway (fix in 3.2.0) en Ultra-Reliable Wireless Backhaul. Nog in onderzoek: de Portal Builder van ISE, SD-AVC en Unified Industrial Wireless Software. IOS, IOS XE, Meraki, de Secure Firewalls en Webex zijn niet geraakt. Wat niet in de lijst staat, is volgens Cisco ook niet geraakt. Voor Ultra-Reliable Wireless Backhaul komt de fix, versie 27.1.1, in februari 2027. Ultra-betrouwbaar is iets anders dan ultra-snel.</p>
+      <p>Palo Alto Networks heeft de eerste fixes voor PAN-OS uit, staat in zijn <a href="https://security.paloaltonetworks.com/CVE-2026-109618" title="Palo Alto Networks: Impact of Critical Vulnerabilities in PHP on Palo Alto Networks Products">advisory</a>: 10.2.18-h13, 11.1.4-h38, 11.1.6-h40, 11.1.10-h36, 11.1.13-h16, 11.1.16-h4 en 11.2.10-h16. De andere hotfixes, ook alle voor 12.1 en 12.2, komen tussen 27 en 30 oktober. Misbruik tegen zijn eigen producten heeft Palo Alto nog niet gezien. De beheerinterface hoort intussen nog steeds niet aan het internet.</p>]]></description>
+  </item>
   <item>
     <title>26 oktober 16:00 · Ook PHP op Windows.</title>
     <link>https://crisus.nl/#u-20261026-1600</link>

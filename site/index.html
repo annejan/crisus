@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-23T22:50:00+02:00">
-<meta property="article:modified_time" content="2026-10-26T17:50:00+01:00">
+<meta property="article:modified_time" content="2026-10-26T21:00:00+01:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=7">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,7 +45,7 @@
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-23T22:50:00+02:00",
-  "dateModified": "2026-10-26T17:50:00+01:00",
+  "dateModified": "2026-10-26T21:00:00+01:00",
   "coverageStartTime": "2026-10-23T22:50:00+02:00",
   "about": {"@type": "Thing", "name": "CVE-2026-111497", "alternateName": ["HTTP2Shell", "Node2Shell", "Broccoli2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-111497"},
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
@@ -53,6 +53,7 @@
   "genre": "satire",
   "keywords": ["crisus", "HTTP2Shell", "Node2Shell", "Brotli", "CVE-2026-111497", "Node.js", "Python"],
   "liveBlogUpdate": [
+    {"@type": "BlogPosting", "headline": "PHP2Shell: Cisco en Palo Alto zijn verder.", "datePublished": "2026-10-26T21:00:00+01:00", "url": "https://crisus.nl/#u-20261026-2100"},
     {"@type": "BlogPosting", "headline": "Ook PHP op Windows.", "datePublished": "2026-10-26T16:00:00+01:00", "url": "https://crisus.nl/#u-20261026-1600"},
     {"@type": "BlogPosting", "headline": "PHP2Shell: nu wel bevestigd.", "datePublished": "2026-10-26T11:00:00+01:00", "url": "https://crisus.nl/#u-20261026-1100"},
     {"@type": "BlogPosting", "headline": "Ook Microsoft.", "datePublished": "2026-10-25T18:30:00+01:00", "url": "https://crisus.nl/#u-20261025-1830"},
@@ -101,7 +102,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-10-26T17:50:00+01:00">laatst bijgewerkt 26 oktober, 17:50</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <p class="kicker">Crisus · <time datetime="2026-10-26T21:00:00+01:00">laatst bijgewerkt 26 oktober, 21:00</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
   <h1>HTTP2Shell: kritiek lek in Brotli</h1>
   <p class="lead">Een kritiek lek in Brotli, de compressie van Google: HTTP2Shell. Brotli zit in Node.js, in Python, in Bun, Envoy en Istio, en waarschijnlijk ook in iets van u. De patch is uit: Brotli <strong>1.2.1</strong>, Node.js <strong>26.12.1, 24.22.1 en 22.23.4</strong>. Niet in paniek raken. Wel updaten.</p>
   <p class="vandaag" id="vandaag" hidden></p>
@@ -124,6 +125,9 @@
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261026-2100"><time datetime="2026-10-26T21:00+01:00">26 oktober 21:00</time>
+      <p><strong>PHP2Shell: Cisco en Palo Alto zijn verder.</strong> Cisco werkte vanavond zijn <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq" title="Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026">advisory</a> voor de zevende keer bij. Geraakt zijn Expressway en Expressway Select (fix in 15.5.21), Duo Access Gateway (fix in 3.2.0) en Ultra-Reliable Wireless Backhaul. Nog in onderzoek: de Portal Builder van ISE, SD-AVC en Unified Industrial Wireless Software. IOS, IOS XE, Meraki, de Secure Firewalls en Webex zijn niet geraakt. Wat niet in de lijst staat, is volgens Cisco ook niet geraakt. Voor Ultra-Reliable Wireless Backhaul komt de fix, versie 27.1.1, in februari 2027. Ultra-betrouwbaar is iets anders dan ultra-snel.</p>
+      <p>Palo Alto Networks heeft de eerste fixes voor PAN-OS uit, staat in zijn <a href="https://security.paloaltonetworks.com/CVE-2026-109618" title="Palo Alto Networks: Impact of Critical Vulnerabilities in PHP on Palo Alto Networks Products">advisory</a>: 10.2.18-h13, 11.1.4-h38, 11.1.6-h40, 11.1.10-h36, 11.1.13-h16, 11.1.16-h4 en 11.2.10-h16. De andere hotfixes, ook alle voor 12.1 en 12.2, komen tussen 27 en 30 oktober. Misbruik tegen zijn eigen producten heeft Palo Alto nog niet gezien. De beheerinterface hoort intussen nog steeds niet aan het internet.</p></li>
     <li id="u-20261026-1600"><time datetime="2026-10-26T16:00+01:00">26 oktober 16:00</time>
       <p><strong>Ook PHP op Windows.</strong> In de Windows-builds van PHP zit Brotli, en daarmee HTTP2Shell. Vanmiddag kwamen er nieuwe builds: 8.5.12-1, 8.4.27-1, 8.3.36-1 en 8.2.35-1, met Brotli 1.2.1, meldt <a href="https://news-web.php.net/php.announce/514" title="php.announce: Updated PHP Windows builds for Brotli security fix">php.announce</a>. De weg naar het lek loopt via de cURL-extensie, als die antwoorden zelf uitpakt. Dat staat in cURL standaard uit, maar applicaties en HTTP-bibliotheken kunnen het aanzetten. PHP raadt iedereen op Windows aan de nieuwe builds te nemen. De versie van PHP zelf verandert niet: de <code>-1</code> betekent alleen een nieuwe build. <code>php -v</code> zegt dus hetzelfde als gisteren. Het versienummer liegt niet. Het zegt alleen niet alles.</p>
       <p><strong>PHP2Shell in de fabriek.</strong> Ook de industrie loopt haar spullen na, meldt <a href="https://www.securityweek.com/industrial-vendors-check-products-for-php2shell-vulnerabilities/" title="SecurityWeek: Industrial Vendors Check Products for PHP2Shell Vulnerabilities">SecurityWeek</a>. Bij Siemens is de RUGGEDCOM APE1808 met PAN-OS van Palo Alto geraakt. Voor de patch moet u de klantenservice bellen, staat in <a href="https://cert-portal.siemens.com/productcert/html/ssa-566512.html" title="Siemens SSA-566512: PHP2Shell Vulnerabilities in Palo Alto Networks PAN-OS on RUGGEDCOM APE1808 Devices">SSA-566512</a>. Schneider Electric heeft drie producten geraakt, ABB zijn MES-installaties met DokuWiki en dochter B&amp;R het procesbesturingssysteem APROL. Belden heeft voor de routersoftware NetModule NRSW nog geen fix en raadt aan de webinterface uit te zetten. Johnson Controls, HMS Networks en Wibu-Systems hebben updates. Rockwell Automation en Hitachi Energy zoeken het nog uit. Moxa is al klaar: <a href="https://www.moxa.com/en/support/product-support/security-advisory/mpsa-260001-moxa%E2%80%99s-response-regarding-cve-2026-109618-and-cve-2026-109619-in-php" title="Moxa MPSA-260001: response regarding CVE-2026-109618 and CVE-2026-109619 in PHP">niets geraakt</a>. PHP draait dus ook in de fabriekshal. Daar zet niemand de lopende band stil voor een update op maandagmiddag.</p></li>
@@ -281,6 +285,7 @@ sudo needrestart -r l          <span class="c"># wat draait nog oude code?</span
     <li><a href="https://www.php.net/archive/2026.php#2026-10-23-1" title="php.net: Informational advisory: Session upload progress">php.net: Informational advisory: Session upload progress</a>. De vervolgbug van PHP2Shell.</li>
     <li><a href="https://www.theregister.com/security/2026/10/23/theres-a-third-php2shell-bug-but-it-wont-get-an-emergency-fix/5305208" title="The Register: There's a third PHP2Shell bug, but it won't get an emergency fix">The Register: There&rsquo;s a third PHP2Shell bug</a>. De PHP Foundation en Mandiant over de stand van het misbruik.</li>
     <li><a href="https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/" title="BleepingComputer: PHP2Shell security flaws now successfully exploited in the wild">BleepingComputer: PHP2Shell security flaws now successfully exploited in the wild</a>. De honeypots van Adel Karimi en de bevestiging door Marcus Hutchins.</li>
+    <li><a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq" title="Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026">Cisco: Vulnerabilities in PHP Affecting Cisco Products</a>, versie 1.7, 26 oktober. En <a href="https://security.paloaltonetworks.com/CVE-2026-109618" title="Palo Alto Networks: Impact of Critical Vulnerabilities in PHP on Palo Alto Networks Products">Palo Alto Networks: PHP2Shell in PAN-OS</a>, bijgewerkt 26 oktober.</li>
   </ul>
   <p class="note">Deze pagina is een grap. De feiten hierboven zijn dat niet. Twijfelt u? Dan wint de bron.</p>
 
