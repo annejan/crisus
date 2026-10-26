@@ -6,7 +6,15 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Sun, 25 Oct 2026 18:30:00 +0100</lastBuildDate>
+  <lastBuildDate>Mon, 26 Oct 2026 11:00:00 +0100</lastBuildDate>
+  <item>
+    <title>26 oktober 11:00 · PHP2Shell: nu wel bevestigd.</title>
+    <link>https://crisus.nl/#u-20261026-1100</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261026-1100</guid>
+    <pubDate>Mon, 26 Oct 2026 11:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>PHP2Shell: nu wel bevestigd.</strong> Vrijdag zei de PHP Foundation nog dat een geslaagde aanval niet bevestigd was. Nu is hij dat wel. Adel Karimi, die bij Perplexity aanvallen opspoort, zag op 24 oktober in drie honeypots 35 keer een shell opstarten, meldt <a href="https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/" title="BleepingComputer: PHP2Shell security flaws now successfully exploited in the wild">BleepingComputer</a>. De lokservers draaiden PHP 8.4.26 met Apache en mod_php, de opstelling waar Mandiant al voor waarschuwde. Twee aanvallers kwamen binnen. Ze keken wie ze waren, probeerden bestanden weg te zetten en wilden iets ophalen. Een tweede stap zag de onderzoeker niet. Marcus Hutchins van Expel noemt het &ldquo;by far the highest quality confirmation of in-the-wild php2shell exploitation I&rsquo;ve seen so far&rdquo;.</p>
+      <p>PHP2Shell blijft afgesloten. De patch is er al sinds 21 oktober: 8.5.12, 8.4.27, 8.3.36 en 8.2.35. Draait u mod_php en nog een oudere versie? Dan was vrijdag uw laatste herinnering. Dit is de eerste aanmaning.</p>]]></description>
+  </item>
   <item>
     <title>25 oktober 18:30 · Ook Microsoft.</title>
     <link>https://crisus.nl/#u-20261025-1830</link>
