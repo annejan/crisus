@@ -66,7 +66,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-10-26T17:50:00+01:00">status of 26 October, 17:50</time> · <a href="/" title="Crisus: de actuele stand (in Dutch)">hourly updates in Dutch</a></p>
+  <p class="kicker">Crisus · <time datetime="2026-10-26T22:25:00+01:00">status of 26 October, 22:25</time> · <a href="/" title="Crisus: de actuele stand (in Dutch)">hourly updates in Dutch</a></p>
   <h1>HTTP2Shell: critical bug in Brotli</h1>
   <p class="lead">A critical bug in Brotli, Google&rsquo;s compression: HTTP2Shell. Brotli is in Node.js, in Python, in Bun, Envoy and Istio, and probably in something of yours. The patch is out: Brotli <strong>1.2.1</strong>, Node.js <strong>26.12.1, 24.22.1 and 22.23.4</strong>. Don&rsquo;t panic. Do update.</p>
 
@@ -128,7 +128,7 @@ sudo needrestart -r l          <span class="c"># what still runs old code?</span
     </ol>
   </section>
 
-  <h2 id="stand">Status per platform, 26 October 17:50</h2>
+  <h2 id="stand">Status per platform, 26 October 22:25</h2>
   <ul class="status" aria-labelledby="stand">
     <li><b>Brotli</b><span class="pill green">Fix available</span><em>1.2.1, 1.1.1 and 1.0.10, since 21 October.</em></li>
     <li><b>Node.js</b><span class="pill orange">Install now</span><em>26.12.1, 24.22.1 and 22.23.4, since 21 October. Patched? Restart too.</em></li>
@@ -149,7 +149,7 @@ sudo needrestart -r l          <span class="c"># what still runs old code?</span
     <li><b>Fedora</b><span class="pill orange">Partial</span><em>Brotli 1.2.1 in Rawhide and ELN. For Fedora 43, 44 and 45 the update is waiting, but not stable yet.</em></li>
     <li><b>Red Hat</b><span class="pill red">No fix</span><em>RHEL 8, 9 and 10 say &ldquo;Affected&rdquo;, see the <a href="https://access.redhat.com/security/cve/CVE-2026-111497" title="Red Hat: CVE-2026-111497">CVE page</a>. Only the Red Hat Hardened Images have Brotli 1.2.1.</em></li>
     <li><b>SUSE</b><span class="pill orange">Partial</span><em>openSUSE Tumbleweed has Brotli 1.2.1, see the <a href="https://www.suse.com/security/cve/CVE-2026-111497.html" title="SUSE: CVE-2026-111497">CVE page</a>. SUSE Linux Enterprise does not yet.</em></li>
-    <li><b>Ubuntu</b><span class="pill orange">Unclear</span><em>Every release still says &ldquo;Needs evaluation&rdquo;, see the <a href="https://ubuntu.com/security/CVE-2026-111497" title="Ubuntu: CVE-2026-111497">CVE page</a>. Ubuntu is still thinking.</em></li>
+    <li><b>Ubuntu</b><span class="pill green">Fix available</span><em><a href="https://ubuntu.com/security/notices/USN-8956-1" title="USN-8956-1: Brotli vulnerability">USN-8956-1</a>: 22.04, 24.04, 26.04 and 26.10, since 26 October. Not yet for 20.04 and older (ESM).</em></li>
     <li><b>Apache, nginx</b><span class="pill green">Works</span><em>They only compress, they unpack nothing. Packing is safe. Unpacking is the problem. As with every house move.</em></li>
     <li><b>Crisus.nl</b><span class="pill green">Works</span><em>No Node, no Python. Just HTML. Like in 1997.</em></li>
   </ul>
