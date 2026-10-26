@@ -6,7 +6,15 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Mon, 26 Oct 2026 11:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Mon, 26 Oct 2026 16:00:00 +0100</lastBuildDate>
+  <item>
+    <title>26 oktober 16:00 · Ook PHP op Windows.</title>
+    <link>https://crisus.nl/#u-20261026-1600</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261026-1600</guid>
+    <pubDate>Mon, 26 Oct 2026 16:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>Ook PHP op Windows.</strong> In de Windows-builds van PHP zit Brotli, en daarmee HTTP2Shell. Vanmiddag kwamen er nieuwe builds: 8.5.12-1, 8.4.27-1, 8.3.36-1 en 8.2.35-1, met Brotli 1.2.1, meldt <a href="https://news-web.php.net/php.announce/514" title="php.announce: Updated PHP Windows builds for Brotli security fix">php.announce</a>. De weg naar het lek loopt via de cURL-extensie, als die antwoorden zelf uitpakt. Dat staat in cURL standaard uit, maar applicaties en HTTP-bibliotheken kunnen het aanzetten. PHP raadt iedereen op Windows aan de nieuwe builds te nemen. De versie van PHP zelf verandert niet: de <code>-1</code> betekent alleen een nieuwe build. <code>php -v</code> zegt dus hetzelfde als gisteren. Het versienummer liegt niet. Het zegt alleen niet alles.</p>
+      <p><strong>PHP2Shell in de fabriek.</strong> Ook de industrie loopt haar spullen na, meldt <a href="https://www.securityweek.com/industrial-vendors-check-products-for-php2shell-vulnerabilities/" title="SecurityWeek: Industrial Vendors Check Products for PHP2Shell Vulnerabilities">SecurityWeek</a>. Bij Siemens is de RUGGEDCOM APE1808 met PAN-OS van Palo Alto geraakt. Voor de patch moet u de klantenservice bellen, staat in <a href="https://cert-portal.siemens.com/productcert/html/ssa-566512.html" title="Siemens SSA-566512: PHP2Shell Vulnerabilities in Palo Alto Networks PAN-OS on RUGGEDCOM APE1808 Devices">SSA-566512</a>. Schneider Electric heeft drie producten geraakt, ABB zijn MES-installaties met DokuWiki en dochter B&amp;R het procesbesturingssysteem APROL. Belden heeft voor de routersoftware NetModule NRSW nog geen fix en raadt aan de webinterface uit te zetten. Johnson Controls, HMS Networks en Wibu-Systems hebben updates. Rockwell Automation en Hitachi Energy zoeken het nog uit. Moxa is al klaar: <a href="https://www.moxa.com/en/support/product-support/security-advisory/mpsa-260001-moxa%E2%80%99s-response-regarding-cve-2026-109618-and-cve-2026-109619-in-php" title="Moxa MPSA-260001: response regarding CVE-2026-109618 and CVE-2026-109619 in PHP">niets geraakt</a>. PHP draait dus ook in de fabriekshal. Daar zet niemand de lopende band stil voor een update op maandagmiddag.</p>]]></description>
+  </item>
   <item>
     <title>26 oktober 11:00 · PHP2Shell: nu wel bevestigd.</title>
     <link>https://crisus.nl/#u-20261026-1100</link>
