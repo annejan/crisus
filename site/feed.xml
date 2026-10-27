@@ -6,7 +6,14 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Tue, 27 Oct 2026 15:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Tue, 27 Oct 2026 22:00:00 +0100</lastBuildDate>
+  <item>
+    <title>27 oktober 22:00 · PHP2Shell: Cisco is uitgezocht.</title>
+    <link>https://crisus.nl/#u-20261027-2200</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261027-2200</guid>
+    <pubDate>Tue, 27 Oct 2026 22:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>PHP2Shell: Cisco is uitgezocht.</strong> Cisco werkte vanavond zijn <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq" title="Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026">advisory</a> voor de achtste keer bij, en nu staat er &ldquo;Final&rdquo; bij. Twee producten die nog in onderzoek waren, blijken geraakt: de Portal Builder van ISE en Unified Industrial Wireless Software. SD-AVC is niet geraakt. Voor de Portal Builder is er geen fix. Daar staat alleen: &ldquo;Offline for remediation&rdquo;. De fix voor Ultra-Reliable Wireless Backhaul en Unified Industrial Wireless Software, versie 27.1.1, schuift op van februari naar maart 2027. Ook dat is volgens Cisco een schatting. Tot dan is er een workaround, die in de bugmelding staat. Bij die twee moet een aanvaller eerst als beheerder inloggen, en daarom geeft Cisco ze een 6,6. Expressway (15.5.21) en Duo Access Gateway (3.2.0) hadden hun fix al. Misbruik tegen zijn eigen producten heeft Cisco niet gezien. Ultra-betrouwbaar was al niet ultra-snel. Nu is het ook nog een maand later.</p>]]></description>
+  </item>
   <item>
     <title>27 oktober 15:00 · PHP2Shell: ook Citrix NetScaler.</title>
     <link>https://crisus.nl/#u-20261027-1500</link>
