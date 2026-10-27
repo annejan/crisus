@@ -6,7 +6,16 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Tue, 27 Oct 2026 01:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Tue, 27 Oct 2026 15:00:00 +0100</lastBuildDate>
+  <item>
+    <title>27 oktober 15:00 · PHP2Shell: ook Citrix NetScaler.</title>
+    <link>https://crisus.nl/#u-20261027-1500</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261027-1500</guid>
+    <pubDate>Tue, 27 Oct 2026 15:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>PHP2Shell: ook Citrix NetScaler.</strong> Ook NetScaler ADC en NetScaler Gateway zijn geraakt, want de beheerportal draait PHP. Sinds vandaag zijn er fixes, staat in advisory <a href="https://support.citrix.com/external/article/CTX697263" title="Citrix: Security Advisory for CVE-2026-109618 and CVE-2026-109619 (CTX697263)">CTX697263</a>: 14.1-73.49 en 13.1-64.32, en voor de FIPS-versies 14.1-73.49 FIPS en 13.1.37.286. Citrix vraagt klanten die zo snel mogelijk te installeren. Wie de clouddiensten van Citrix gebruikt, hoeft niets te doen. Volgens <a href="https://www.security.nl/posting/959263/Citrix+NetScaler+en+Palo+Alto+Networks+patchen+PHP2Shell-lekken" title="Security.NL: Citrix NetScaler en Palo Alto Networks patchen PHP2Shell-lekken">Security.NL</a> waarschuwt onderzoeker Kevin Beaumont dat NetScaler geen ASLR heeft, een beveiliging die misbruik van PHP2Shell lastiger maakt. NetScaler en een kritiek lek: het crisusteam heeft daar een vaste map voor.</p>
+      <p>Ook Palo Alto Networks is verder. Er zijn nu fixes voor PAN-OS 12.2 (12.2.4-h1), 12.1 (12.1.7-h11) en twee extra voor 10.2 (10.2.13-h27 en 10.2.16-h12), staat in de <a href="https://security.paloaltonetworks.com/CVE-2026-109618" title="Palo Alto Networks: Impact of Critical Vulnerabilities in PHP on Palo Alto Networks Products">advisory</a>. De laatste hotfixes komen uiterlijk 30 oktober. Misbruik tegen zijn eigen producten heeft Palo Alto nog steeds niet gezien.</p>
+      <p>En de rest van het internet? Het aantal kwetsbare machines aan het internet is in een paar dagen met zo&rsquo;n 67 procent gedaald, meldt <a href="https://www.wiz.io/blog/php2shell-exploitation-so-far" title="Wiz: PHP2Shell: Exploitation Attempts and Remediation Trends">Wiz</a>. Een week na de bekendmaking is minder dan 53 procent van de getroffen organisaties nog kwetsbaar. Een geslaagde aanval van begin tot eind zag Wiz zelf nog niet. Wel hoorde het van partners over exploits die tegen allerlei systemen werken. Bijna de helft is dus klaar. De andere helft leest dit hopelijk.</p>]]></description>
+  </item>
   <item>
     <title>27 oktober 01:00 · PHP2Shell staat op de KEV-lijst.</title>
     <link>https://crisus.nl/#u-20261027-0100</link>
