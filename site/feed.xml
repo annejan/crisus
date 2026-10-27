@@ -6,7 +6,15 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Mon, 26 Oct 2026 21:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Tue, 27 Oct 2026 01:00:00 +0100</lastBuildDate>
+  <item>
+    <title>27 oktober 01:00 · PHP2Shell staat op de KEV-lijst.</title>
+    <link>https://crisus.nl/#u-20261027-0100</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261027-0100</guid>
+    <pubDate>Tue, 27 Oct 2026 01:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>PHP2Shell staat op de KEV-lijst.</strong> De Amerikaanse CISA zette gisteravond beide lekken, CVE-2026-109618 en CVE-2026-109619, op de <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" title="CISA: Known Exploited Vulnerabilities Catalog">KEV-lijst</a>, de lijst van lekken die aantoonbaar worden misbruikt. Dat staat in een <a href="https://www.cisa.gov/news-events/alerts/2026/10/26/cisa-adds-two-known-exploited-vulnerabilities-catalog" title="CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog">alert</a> van 26 oktober. Amerikaanse federale diensten moeten het uiterlijk 29 oktober verhelpen. Dat is drie dagen. Bij beide lekken staat in de catalogus ook forensische triage: de diensten moeten nagaan of er al iemand binnen was voordat de patch erop ging. Of ransomwarebendes het lek gebruiken, weet CISA nog niet. Op <a href="/php/#u-20261022-2300" title="PHP2Shell-archief: 22 oktober 23:00">crisus.nl/php</a> schreven we: komt hij erop, dan leest u het hier. Hier leest u het.</p>
+      <p>De patch is er sinds 21 oktober: 8.5.12, 8.4.27, 8.3.36 en 8.2.35. Kan een systeem niet meteen worden bijgewerkt? Haal het dan van het net tot de patch erop zit, zegt CISA in zijn <a href="https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching" title="CISA: Critical Vulnerabilities in PHP Require Immediate Patching">eerdere alert</a>. Dit is de tweede aanmaning.</p>]]></description>
+  </item>
   <item>
     <title>26 oktober 21:00 · PHP2Shell: Cisco en Palo Alto zijn verder.</title>
     <link>https://crisus.nl/#u-20261026-2100</link>
