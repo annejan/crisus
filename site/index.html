@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-23T22:50:00+02:00">
-<meta property="article:modified_time" content="2026-10-27T22:00:00+01:00">
+<meta property="article:modified_time" content="2026-10-27T22:15:00+01:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=7">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,7 +45,7 @@
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-23T22:50:00+02:00",
-  "dateModified": "2026-10-27T22:00:00+01:00",
+  "dateModified": "2026-10-27T22:15:00+01:00",
   "coverageStartTime": "2026-10-23T22:50:00+02:00",
   "about": {"@type": "Thing", "name": "CVE-2026-111497", "alternateName": ["HTTP2Shell", "Node2Shell", "Broccoli2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-111497"},
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
@@ -53,6 +53,7 @@
   "genre": "satire",
   "keywords": ["crisus", "HTTP2Shell", "Node2Shell", "Brotli", "CVE-2026-111497", "Node.js", "Python"],
   "liveBlogUpdate": [
+    {"@type": "BlogPosting", "headline": "HTTP2Shell: Red Hat heeft de fix.", "datePublished": "2026-10-27T22:15:00+01:00", "url": "https://crisus.nl/#u-20261027-2215"},
     {"@type": "BlogPosting", "headline": "PHP2Shell: Cisco is uitgezocht.", "datePublished": "2026-10-27T22:00:00+01:00", "url": "https://crisus.nl/#u-20261027-2200"},
     {"@type": "BlogPosting", "headline": "PHP2Shell: ook Citrix NetScaler.", "datePublished": "2026-10-27T15:00:00+01:00", "url": "https://crisus.nl/#u-20261027-1500"},
     {"@type": "BlogPosting", "headline": "PHP2Shell staat op de KEV-lijst.", "datePublished": "2026-10-27T01:00:00+01:00", "url": "https://crisus.nl/#u-20261027-0100"},
@@ -105,7 +106,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-10-27T22:00:00+01:00">laatst bijgewerkt 27 oktober, 22:00</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <p class="kicker">Crisus · <time datetime="2026-10-27T22:15:00+01:00">laatst bijgewerkt 27 oktober, 22:15</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
   <h1>HTTP2Shell: kritiek lek in Brotli</h1>
   <p class="lead">Een kritiek lek in Brotli, de compressie van Google: HTTP2Shell. Brotli zit in Node.js, in Python, in Bun, Envoy en Istio, en waarschijnlijk ook in iets van u. De patch is uit: Brotli <strong>1.2.1</strong>, Node.js <strong>26.12.1, 24.22.1 en 22.23.4</strong>. Niet in paniek raken. Wel updaten.</p>
   <p class="vandaag" id="vandaag" hidden></p>
@@ -128,6 +129,9 @@
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261027-2215"><time datetime="2026-10-27T22:15+01:00">27 oktober 22:15</time>
+      <p><strong>HTTP2Shell: Red Hat heeft de fix.</strong> Red Hat bracht gisteravond fixes uit voor Brotli in RHEL 8, 9 en 10: <a href="https://access.redhat.com/errata/RHSA-2026:90501" title="Red Hat: RHSA-2026:90501, brotli security update (RHEL 8)">RHSA-2026:90501</a> (<code>brotli 1.0.6-5.el8_10</code>), <a href="https://access.redhat.com/errata/RHSA-2026:90495" title="Red Hat: RHSA-2026:90495, brotli security update (RHEL 9)">RHSA-2026:90495</a> (<code>1.0.9-10.el9_8.1</code>) en <a href="https://access.redhat.com/errata/RHSA-2026:90449" title="Red Hat: RHSA-2026:90449, brotli security update (RHEL 10)">RHSA-2026:90449</a> (<code>1.1.0-8.el10_2.1</code>), alle drie met de ernst &ldquo;important&rdquo;. Helemaal klaar is Red Hat nog niet: Node.js 24 en 26 als module op RHEL 8 en 9 staan op de <a href="https://access.redhat.com/security/cve/CVE-2026-111497" title="Red Hat: CVE-2026-111497">CVE-pagina</a> nog op &ldquo;Affected&rdquo;, want Node.js heeft zijn eigen Brotli. Het Zwitserse broodje is in Raleigh eindelijk afgebakken.</p>
+      <p>Ook Fedora is verder. Sinds gisteravond is Brotli 1.2.1 een stabiele update voor Fedora 45 (<a href="https://bodhi.fedoraproject.org/updates/FEDORA-2026-6a639d1308" title="Fedora: FEDORA-2026-6a639d1308, brotli-1.2.1-1.fc45">FEDORA-2026-6a639d1308</a>). Voor Fedora 43 en 44 zit de update nog in de testfase.</p></li>
     <li id="u-20261027-2200"><time datetime="2026-10-27T22:00+01:00">27 oktober 22:00</time>
       <p><strong>PHP2Shell: Cisco is uitgezocht.</strong> Cisco werkte vanavond zijn <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq" title="Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026">advisory</a> voor de achtste keer bij, en nu staat er &ldquo;Final&rdquo; bij. Twee producten die nog in onderzoek waren, blijken geraakt: de Portal Builder van ISE en Unified Industrial Wireless Software. SD-AVC is niet geraakt. Voor de Portal Builder is er geen fix. Daar staat alleen: &ldquo;Offline for remediation&rdquo;. De fix voor Ultra-Reliable Wireless Backhaul en Unified Industrial Wireless Software, versie 27.1.1, schuift op van februari naar maart 2027. Ook dat is volgens Cisco een schatting. Tot dan is er een workaround, die in de bugmelding staat. Bij die twee moet een aanvaller eerst als beheerder inloggen, en daarom geeft Cisco ze een 6,6. Expressway (15.5.21) en Duo Access Gateway (3.2.0) hadden hun fix al. Misbruik tegen zijn eigen producten heeft Cisco niet gezien. Ultra-betrouwbaar was al niet ultra-snel. Nu is het ook nog een maand later.</p></li>
     <li id="u-20261027-1500"><time datetime="2026-10-27T15:00+01:00">27 oktober 15:00</time>
@@ -213,7 +217,7 @@ sudo needrestart -r l          <span class="c"># wat draait nog oude code?</span
     </ol>
   </section>
 
-  <h2 id="stand">Stand per platform, 22:25</h2>
+  <h2 id="stand">Stand per platform, 22:15</h2>
   <ul class="status" aria-labelledby="stand">
     <li><b>Brotli</b><span class="pill green">Fix beschikbaar</span><em>1.2.1, 1.1.1 en 1.0.10, sinds 21 oktober 21:27.</em></li>
     <li><b>Node.js</b><span class="pill orange">Nu installeren</span><em>26.12.1, 24.22.1 en 22.23.4, sinds 21 oktober. Gepatcht? Ook herstarten.</em></li>
@@ -231,8 +235,8 @@ sudo needrestart -r l          <span class="c"># wat draait nog oude code?</span
     <li><b>Debian 12</b><span class="pill green">Fix beschikbaar</span><em>DLA-4855-1: <code>brotli 1.0.9-2+deb12u1</code>. Unstable is nog kwetsbaar.</em></li>
     <li><b>Alpine</b><span class="pill green">Fix beschikbaar</span><em><code>brotli 1.2.1-r0</code> in edge, 3.24 en 3.23, <code>1.1.1-r0</code> in 3.22 en 3.21.</em></li>
     <li><b>Amazon Linux 2023</b><span class="pill green">Fix beschikbaar</span><em><a href="https://alas.aws.amazon.com/AL2023/ALAS2023-2026-3334.html" title="Amazon Linux: ALAS2023-2026-3334">ALAS2023-2026-3334</a>: <code>brotli 1.1.0-1.amzn2023.0.2</code>, sinds 24 oktober.</em></li>
-    <li><b>Fedora</b><span class="pill orange">Deels</span><em>Brotli 1.2.1 in Rawhide en ELN. Voor Fedora 43, 44 en 45 staat de update klaar, maar nog niet als stabiel.</em></li>
-    <li><b>Red Hat</b><span class="pill red">Nog geen fix</span><em>RHEL 8, 9 en 10 staan op &ldquo;Affected&rdquo;, zie de <a href="https://access.redhat.com/security/cve/CVE-2026-111497" title="Red Hat: CVE-2026-111497">CVE-pagina</a>. Alleen de Red Hat Hardened Images hebben Brotli 1.2.1.</em></li>
+    <li><b>Fedora</b><span class="pill orange">Deels</span><em>Brotli 1.2.1 in Rawhide en ELN, en sinds 26 oktober stabiel voor Fedora 45 (<a href="https://bodhi.fedoraproject.org/updates/FEDORA-2026-6a639d1308" title="Fedora: FEDORA-2026-6a639d1308, brotli-1.2.1-1.fc45">FEDORA-2026-6a639d1308</a>). Voor Fedora 43 en 44 staat de update klaar, maar nog niet als stabiel.</em></li>
+    <li><b>Red Hat</b><span class="pill green">Fix beschikbaar</span><em><a href="https://access.redhat.com/errata/RHSA-2026:90449" title="Red Hat: RHSA-2026:90449, brotli security update (RHEL 10)">RHSA-2026:90449</a> voor RHEL 10 (<code>brotli 1.1.0-8.el10_2.1</code>), <a href="https://access.redhat.com/errata/RHSA-2026:90495" title="Red Hat: RHSA-2026:90495, brotli security update (RHEL 9)">RHSA-2026:90495</a> voor RHEL 9 (<code>1.0.9-10.el9_8.1</code>) en <a href="https://access.redhat.com/errata/RHSA-2026:90501" title="Red Hat: RHSA-2026:90501, brotli security update (RHEL 8)">RHSA-2026:90501</a> voor RHEL 8 (<code>1.0.6-5.el8_10</code>), sinds 26 oktober. Node.js 24 en 26 als module op RHEL 8 en 9 nog niet, zie de <a href="https://access.redhat.com/security/cve/CVE-2026-111497" title="Red Hat: CVE-2026-111497">CVE-pagina</a>.</em></li>
     <li><b>SUSE</b><span class="pill orange">Deels</span><em>openSUSE Tumbleweed heeft Brotli 1.2.1, zie de <a href="https://www.suse.com/security/cve/CVE-2026-111497.html" title="SUSE: CVE-2026-111497">CVE-pagina</a>. Voor SUSE Linux Enterprise nog niet.</em></li>
     <li><b>Ubuntu</b><span class="pill green">Fix beschikbaar</span><em><a href="https://ubuntu.com/security/notices/USN-8956-1" title="USN-8956-1: Brotli vulnerability">USN-8956-1</a>: 22.04, 24.04, 26.04 en 26.10, sinds 26 oktober. Voor 20.04 en ouder (ESM) nog niet.</em></li>
     <li><b>Apache, nginx</b><span class="pill green">Werkt</span><em>Die comprimeren alleen, ze pakken niets uit. Inpakken is veilig. Uitpakken is het probleem. Zoals bij elke verhuizing.</em></li>

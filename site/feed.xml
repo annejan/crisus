@@ -6,7 +6,15 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Tue, 27 Oct 2026 22:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Tue, 27 Oct 2026 22:15:00 +0100</lastBuildDate>
+  <item>
+    <title>27 oktober 22:15 · HTTP2Shell: Red Hat heeft de fix.</title>
+    <link>https://crisus.nl/#u-20261027-2215</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261027-2215</guid>
+    <pubDate>Tue, 27 Oct 2026 22:15:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>HTTP2Shell: Red Hat heeft de fix.</strong> Red Hat bracht gisteravond fixes uit voor Brotli in RHEL 8, 9 en 10: <a href="https://access.redhat.com/errata/RHSA-2026:90501" title="Red Hat: RHSA-2026:90501, brotli security update (RHEL 8)">RHSA-2026:90501</a> (<code>brotli 1.0.6-5.el8_10</code>), <a href="https://access.redhat.com/errata/RHSA-2026:90495" title="Red Hat: RHSA-2026:90495, brotli security update (RHEL 9)">RHSA-2026:90495</a> (<code>1.0.9-10.el9_8.1</code>) en <a href="https://access.redhat.com/errata/RHSA-2026:90449" title="Red Hat: RHSA-2026:90449, brotli security update (RHEL 10)">RHSA-2026:90449</a> (<code>1.1.0-8.el10_2.1</code>), alle drie met de ernst &ldquo;important&rdquo;. Helemaal klaar is Red Hat nog niet: Node.js 24 en 26 als module op RHEL 8 en 9 staan op de <a href="https://access.redhat.com/security/cve/CVE-2026-111497" title="Red Hat: CVE-2026-111497">CVE-pagina</a> nog op &ldquo;Affected&rdquo;, want Node.js heeft zijn eigen Brotli. Het Zwitserse broodje is in Raleigh eindelijk afgebakken.</p>
+      <p>Ook Fedora is verder. Sinds gisteravond is Brotli 1.2.1 een stabiele update voor Fedora 45 (<a href="https://bodhi.fedoraproject.org/updates/FEDORA-2026-6a639d1308" title="Fedora: FEDORA-2026-6a639d1308, brotli-1.2.1-1.fc45">FEDORA-2026-6a639d1308</a>). Voor Fedora 43 en 44 zit de update nog in de testfase.</p>]]></description>
+  </item>
   <item>
     <title>27 oktober 22:00 · PHP2Shell: Cisco is uitgezocht.</title>
     <link>https://crisus.nl/#u-20261027-2200</link>
