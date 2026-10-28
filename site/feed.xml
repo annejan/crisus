@@ -6,7 +6,17 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Wed, 28 Oct 2026 12:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Wed, 28 Oct 2026 19:00:00 +0100</lastBuildDate>
+  <item>
+    <title>28 oktober 19:00 · PHP2Shell: 25 servers overgenomen.</title>
+    <link>https://crisus.nl/#u-20261028-1900</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261028-1900</guid>
+    <pubDate>Wed, 28 Oct 2026 19:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>PHP2Shell: 25 servers overgenomen.</strong> Een aanvaller kreeg met PHP2Shell 25 servers in handen, tot en met root, schrijft het Isra&euml;lische beveiligingsbedrijf <a href="https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers" title="Dream: Chained PHP2Shell Exploit Roots 25 Servers">Dream</a>. Het gaat om 24 firewalls aan de rand van een netwerk en &eacute;&eacute;n centrale beheerserver, in de Verenigde Staten, Japan, Taiwan en Zuid-Korea. Welk merk firewall het is, zegt Dream niet. De fabrikant is ingelicht. De aanvaller koppelde de twee PHP-lekken aan Fragnesia (CVE-2026-46300), een lek in de Linux-kernel, om van de webserver root te worden. Dat ging met &eacute;&eacute;n HTTPS-verzoek, zonder in te loggen. Dream vond het materiaal van de aanvaller op 25 oktober. Vandaag nam <a href="https://thehackernews.com/2026/10/php2shell-attack-roots-25-servers.html" title="The Hacker News: PHP2Shell Attack Roots 25 Servers, Breaches U.S. Government-Affiliated Network">The Hacker News</a> het verhaal over.</p>
+      <p>Het begon met zo&rsquo;n 19.000 firewalls aan het internet, gevonden met de zoekmachine FOFA. Na filteren op land en versie bleven er 240 over. Daarvan werden er automatisch 24 overgenomen. Bij 22 bleef het bij een webshell, die er volgens Dream misschien nog steeds staat. Bij een organisatie die aan de Amerikaanse overheid hangt, ging de aanvaller verder: twee firewalls op 23 en 24 oktober, en minder dan 90 minuten later ook de centrale beheerserver. Daar ontsleutelde de aanvaller het wachtwoord van een LDAP-serviceaccount en haalde alle gebruikers en groepen op. Ook werd geprobeerd wachtwoorden te raden, een achterdeuraccount te maken en SAML-sleutels te stelen. Of dat lukte, kon Dream niet nagaan.</p>
+      <p>Een groep noemt Dream niet. Wel wijzen de sporen naar China: de doelwitlanden, FOFA, tijdstempels in UTC+8 en Chineestalige prompts. In het materiaal stonden ook Claude Code en een scanplatform met DeepSeek en Kimi. Dat AI de exploit schreef, kan Dream niet bewijzen. Volledig automatisch was het in elk geval niet. Het advies: patchen, en ervan uitgaan dat de aanvaller nog binnen kan zijn. De patch is er sinds 21 oktober. CISA vroeg op 26 oktober al om forensische triage. Nu weten we waarom.</p>
+      <p>En Cisco werkte zijn <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq" title="Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026">advisory</a> voor de negende keer bij. De fix voor Ultra-Reliable Wireless Backhaul en Unified Industrial Wireless Software, versie 27.1.1, komt nu in november 2026, en niet meer in maart 2027. Misbruik tegen zijn eigen producten heeft Cisco nog steeds niet gezien. Ultra-snel is het nog niet. Wel sneller.</p>]]></description>
+  </item>
   <item>
     <title>28 oktober 12:00 · PHP2Shell: misbruik bij Palo Alto.</title>
     <link>https://crisus.nl/#u-20261028-1200</link>

@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-23T22:50:00+02:00">
-<meta property="article:modified_time" content="2026-10-28T14:50:00+01:00">
+<meta property="article:modified_time" content="2026-10-28T19:00:00+01:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=7">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,7 +45,7 @@
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-23T22:50:00+02:00",
-  "dateModified": "2026-10-28T14:50:00+01:00",
+  "dateModified": "2026-10-28T19:00:00+01:00",
   "coverageStartTime": "2026-10-23T22:50:00+02:00",
   "about": {"@type": "Thing", "name": "CVE-2026-111497", "alternateName": ["HTTP2Shell", "Node2Shell", "Broccoli2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-111497"},
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
@@ -53,6 +53,7 @@
   "genre": "satire",
   "keywords": ["crisus", "HTTP2Shell", "Node2Shell", "Brotli", "CVE-2026-111497", "Node.js", "Python"],
   "liveBlogUpdate": [
+    {"@type": "BlogPosting", "headline": "PHP2Shell: 25 servers overgenomen.", "datePublished": "2026-10-28T19:00:00+01:00", "url": "https://crisus.nl/#u-20261028-1900"},
     {"@type": "BlogPosting", "headline": "PHP2Shell: misbruik bij Palo Alto.", "datePublished": "2026-10-28T12:00:00+01:00", "url": "https://crisus.nl/#u-20261028-1200"},
     {"@type": "BlogPosting", "headline": "HTTP2Shell: Red Hat heeft de fix.", "datePublished": "2026-10-27T22:15:00+01:00", "url": "https://crisus.nl/#u-20261027-2215"},
     {"@type": "BlogPosting", "headline": "PHP2Shell: Cisco is uitgezocht.", "datePublished": "2026-10-27T22:00:00+01:00", "url": "https://crisus.nl/#u-20261027-2200"},
@@ -107,7 +108,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-10-28T14:50:00+01:00">laatst bijgewerkt 28 oktober, 14:50</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <p class="kicker">Crisus · <time datetime="2026-10-28T19:00:00+01:00">laatst bijgewerkt 28 oktober, 19:00</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
   <h1>HTTP2Shell: kritiek lek in Brotli</h1>
   <p class="lead">Een kritiek lek in Brotli, de compressie van Google: HTTP2Shell. Brotli zit in Node.js, in Python, in Bun, Envoy en Istio, en waarschijnlijk ook in iets van u. De patch is uit: Brotli <strong>1.2.1</strong>, Node.js <strong>26.12.1, 24.22.1 en 22.23.4</strong>. Niet in paniek raken. Wel updaten.</p>
   <p class="vandaag" id="vandaag" hidden></p>
@@ -130,6 +131,11 @@
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261028-1900"><time datetime="2026-10-28T19:00+01:00">28 oktober 19:00</time>
+      <p><strong>PHP2Shell: 25 servers overgenomen.</strong> Een aanvaller kreeg met PHP2Shell 25 servers in handen, tot en met root, schrijft het Isra&euml;lische beveiligingsbedrijf <a href="https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers" title="Dream: Chained PHP2Shell Exploit Roots 25 Servers">Dream</a>. Het gaat om 24 firewalls aan de rand van een netwerk en &eacute;&eacute;n centrale beheerserver, in de Verenigde Staten, Japan, Taiwan en Zuid-Korea. Welk merk firewall het is, zegt Dream niet. De fabrikant is ingelicht. De aanvaller koppelde de twee PHP-lekken aan Fragnesia (CVE-2026-46300), een lek in de Linux-kernel, om van de webserver root te worden. Dat ging met &eacute;&eacute;n HTTPS-verzoek, zonder in te loggen. Dream vond het materiaal van de aanvaller op 25 oktober. Vandaag nam <a href="https://thehackernews.com/2026/10/php2shell-attack-roots-25-servers.html" title="The Hacker News: PHP2Shell Attack Roots 25 Servers, Breaches U.S. Government-Affiliated Network">The Hacker News</a> het verhaal over.</p>
+      <p>Het begon met zo&rsquo;n 19.000 firewalls aan het internet, gevonden met de zoekmachine FOFA. Na filteren op land en versie bleven er 240 over. Daarvan werden er automatisch 24 overgenomen. Bij 22 bleef het bij een webshell, die er volgens Dream misschien nog steeds staat. Bij een organisatie die aan de Amerikaanse overheid hangt, ging de aanvaller verder: twee firewalls op 23 en 24 oktober, en minder dan 90 minuten later ook de centrale beheerserver. Daar ontsleutelde de aanvaller het wachtwoord van een LDAP-serviceaccount en haalde alle gebruikers en groepen op. Ook werd geprobeerd wachtwoorden te raden, een achterdeuraccount te maken en SAML-sleutels te stelen. Of dat lukte, kon Dream niet nagaan.</p>
+      <p>Een groep noemt Dream niet. Wel wijzen de sporen naar China: de doelwitlanden, FOFA, tijdstempels in UTC+8 en Chineestalige prompts. In het materiaal stonden ook Claude Code en een scanplatform met DeepSeek en Kimi. Dat AI de exploit schreef, kan Dream niet bewijzen. Volledig automatisch was het in elk geval niet. Het advies: patchen, en ervan uitgaan dat de aanvaller nog binnen kan zijn. De patch is er sinds 21 oktober. CISA vroeg op 26 oktober al om forensische triage. Nu weten we waarom.</p>
+      <p>En Cisco werkte zijn <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq" title="Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026">advisory</a> voor de negende keer bij. De fix voor Ultra-Reliable Wireless Backhaul en Unified Industrial Wireless Software, versie 27.1.1, komt nu in november 2026, en niet meer in maart 2027. Misbruik tegen zijn eigen producten heeft Cisco nog steeds niet gezien. Ultra-snel is het nog niet. Wel sneller.</p></li>
     <li id="u-20261028-1200"><time datetime="2026-10-28T12:00+01:00">28 oktober 12:00</time>
       <p><strong>PHP2Shell: misbruik bij Palo Alto.</strong> Nu ziet Palo Alto Networks wel misbruik tegen zijn eigen producten. &ldquo;Active exploitation has been observed targeting the Palo Alto Networks management interface exposed to the internet&rdquo;, staat in de <a href="https://security.paloaltonetworks.com/CVE-2026-109618" title="Palo Alto Networks: Impact of Critical Vulnerabilities in PHP on Palo Alto Networks Products">advisory</a>. Het gaat om de beheerinterface van PAN-OS: de webinterface en de XML API. GlobalProtect is niet geraakt. Palo Alto stuurde klanten ook een waarschuwing, meldt <a href="https://www.security.nl/posting/959363/Palo+Alto+Networks+meldt+misbruik+van+PHP2Shell-lekken+in+firewall-interface" title="Security.NL: Palo Alto Networks meldt misbruik van PHP2Shell-lekken in firewall-interface">Security.NL</a>. Sinds gisteren noemt Palo Alto het lek kritiek, met de hoogste urgentie.</p>
       <p>Vandaag kwamen er drie fixes bij voor 11.2: 11.2.7-h23, 11.2.13-h4 en 11.2.16-h1. Zes hotfixes komen nog: 10.2.10-h42 en 12.1.4-h13 op 29 oktober, 10.2.7-h39, 11.1.7-h12, 11.2.4-h23 en 12.1.10-h3 op 30 oktober. Wie Threat Prevention heeft, kan de aanval tot dan tegenhouden met Threat ID 543004. Wij schreven het al eerder: de beheerinterface hoort niet aan het internet. Nu staat er iemand aan de andere kant.</p></li>
@@ -309,8 +315,9 @@ sudo needrestart -r l          <span class="c"># wat draait nog oude code?</span
     <li><a href="https://www.php.net/archive/2026.php#2026-10-23-1" title="php.net: Informational advisory: Session upload progress">php.net: Informational advisory: Session upload progress</a>. De vervolgbug van PHP2Shell.</li>
     <li><a href="https://www.theregister.com/security/2026/10/23/theres-a-third-php2shell-bug-but-it-wont-get-an-emergency-fix/5305208" title="The Register: There's a third PHP2Shell bug, but it won't get an emergency fix">The Register: There&rsquo;s a third PHP2Shell bug</a>. De PHP Foundation en Mandiant over de stand van het misbruik.</li>
     <li><a href="https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/" title="BleepingComputer: PHP2Shell security flaws now successfully exploited in the wild">BleepingComputer: PHP2Shell security flaws now successfully exploited in the wild</a>. De honeypots van Adel Karimi en de bevestiging door Marcus Hutchins.</li>
-    <li><a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq" title="Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026">Cisco: Vulnerabilities in PHP Affecting Cisco Products</a>, versie 1.8 (Final), 27 oktober. En <a href="https://security.paloaltonetworks.com/CVE-2026-109618" title="Palo Alto Networks: Impact of Critical Vulnerabilities in PHP on Palo Alto Networks Products">Palo Alto Networks: PHP2Shell in PAN-OS</a>, bijgewerkt 28 oktober, met misbruik van de beheerinterface. <a href="https://www.security.nl/posting/959363/Palo+Alto+Networks+meldt+misbruik+van+PHP2Shell-lekken+in+firewall-interface" title="Security.NL: Palo Alto Networks meldt misbruik van PHP2Shell-lekken in firewall-interface">Security.NL: Palo Alto Networks meldt misbruik van PHP2Shell-lekken</a>, 28 oktober.</li>
+    <li><a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq" title="Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026">Cisco: Vulnerabilities in PHP Affecting Cisco Products</a>, versie 1.9 (Final), 28 oktober. En <a href="https://security.paloaltonetworks.com/CVE-2026-109618" title="Palo Alto Networks: Impact of Critical Vulnerabilities in PHP on Palo Alto Networks Products">Palo Alto Networks: PHP2Shell in PAN-OS</a>, bijgewerkt 28 oktober, met misbruik van de beheerinterface. <a href="https://www.security.nl/posting/959363/Palo+Alto+Networks+meldt+misbruik+van+PHP2Shell-lekken+in+firewall-interface" title="Security.NL: Palo Alto Networks meldt misbruik van PHP2Shell-lekken in firewall-interface">Security.NL: Palo Alto Networks meldt misbruik van PHP2Shell-lekken</a>, 28 oktober.</li>
     <li><a href="https://support.citrix.com/external/article/CTX697263" title="Citrix: Security Advisory for CVE-2026-109618 and CVE-2026-109619 (CTX697263)">Citrix: CTX697263</a>, fixes voor NetScaler ADC en Gateway op 27 oktober. <a href="https://www.wiz.io/blog/php2shell-exploitation-so-far" title="Wiz: PHP2Shell: Exploitation Attempts and Remediation Trends">Wiz: PHP2Shell: Exploitation Attempts and Remediation Trends</a>, 27 oktober.</li>
+    <li><a href="https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers" title="Dream: Chained PHP2Shell Exploit Roots 25 Servers">Dream: Chained PHP2Shell Exploit Roots 25 Servers</a>, 26 oktober. De keten met Fragnesia, de 25 servers en het netwerk dat aan de Amerikaanse overheid hangt. Overgenomen door <a href="https://thehackernews.com/2026/10/php2shell-attack-roots-25-servers.html" title="The Hacker News: PHP2Shell Attack Roots 25 Servers, Breaches U.S. Government-Affiliated Network">The Hacker News</a>, 28 oktober.</li>
   </ul>
   <p class="note">Deze pagina is een grap. De feiten hierboven zijn dat niet. Twijfelt u? Dan wint de bron.</p>
 
