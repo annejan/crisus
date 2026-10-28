@@ -6,7 +6,15 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Tue, 27 Oct 2026 22:15:00 +0100</lastBuildDate>
+  <lastBuildDate>Wed, 28 Oct 2026 12:00:00 +0100</lastBuildDate>
+  <item>
+    <title>28 oktober 12:00 · PHP2Shell: misbruik bij Palo Alto.</title>
+    <link>https://crisus.nl/#u-20261028-1200</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261028-1200</guid>
+    <pubDate>Wed, 28 Oct 2026 12:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>PHP2Shell: misbruik bij Palo Alto.</strong> Nu ziet Palo Alto Networks wel misbruik tegen zijn eigen producten. &ldquo;Active exploitation has been observed targeting the Palo Alto Networks management interface exposed to the internet&rdquo;, staat in de <a href="https://security.paloaltonetworks.com/CVE-2026-109618" title="Palo Alto Networks: Impact of Critical Vulnerabilities in PHP on Palo Alto Networks Products">advisory</a>. Het gaat om de beheerinterface van PAN-OS: de webinterface en de XML API. GlobalProtect is niet geraakt. Palo Alto stuurde klanten ook een waarschuwing, meldt <a href="https://www.security.nl/posting/959363/Palo+Alto+Networks+meldt+misbruik+van+PHP2Shell-lekken+in+firewall-interface" title="Security.NL: Palo Alto Networks meldt misbruik van PHP2Shell-lekken in firewall-interface">Security.NL</a>. Sinds gisteren noemt Palo Alto het lek kritiek, met de hoogste urgentie.</p>
+      <p>Vandaag kwamen er drie fixes bij voor 11.2: 11.2.7-h23, 11.2.13-h4 en 11.2.16-h1. Zes hotfixes komen nog: 10.2.10-h42 en 12.1.4-h13 op 29 oktober, 10.2.7-h39, 11.1.7-h12, 11.2.4-h23 en 12.1.10-h3 op 30 oktober. Wie Threat Prevention heeft, kan de aanval tot dan tegenhouden met Threat ID 543004. Wij schreven het al eerder: de beheerinterface hoort niet aan het internet. Nu staat er iemand aan de andere kant.</p>]]></description>
+  </item>
   <item>
     <title>27 oktober 22:15 · HTTP2Shell: Red Hat heeft de fix.</title>
     <link>https://crisus.nl/#u-20261027-2215</link>
