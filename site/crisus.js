@@ -247,7 +247,8 @@
     if (mode === 'wiccon') {
       var team = document.createElement('span');
       team.className = 'team';
-      team.textContent = '\ud83d\udc69\u200d\ud83d\udcbb\ud83d\udc69\ud83c\udffd\u200d\ud83d\udcbb\ud83d\udc69\ud83c\udfff\u200d\ud83d\udcbb\ud83d\udc69\ud83c\udffc\u200d\ud83d\udcbb';
+      // Four women technologists with two black cats running along.
+      team.textContent = '\ud83d\udc69\u200d\ud83d\udcbb\ud83d\udc08\u200d\u2b1b\ud83d\udc69\ud83c\udffd\u200d\ud83d\udcbb\ud83d\udc69\ud83c\udfff\u200d\ud83d\udcbb\ud83d\udc08\u200d\u2b1b\ud83d\udc69\ud83c\udffc\u200d\ud83d\udcbb';
       box.appendChild(team);
     }
     document.body.appendChild(box);
