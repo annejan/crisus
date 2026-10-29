@@ -6,7 +6,14 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Wed, 28 Oct 2026 19:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Thu, 29 Oct 2026 05:45:00 +0100</lastBuildDate>
+  <item>
+    <title>29 oktober 05:45 · HTTP2Shell wordt misbruikt.</title>
+    <link>https://crisus.nl/#u-20261029-0545</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261029-0545</guid>
+    <pubDate>Thu, 29 Oct 2026 05:45:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>HTTP2Shell wordt misbruikt.</strong> De Amerikaanse CISA zette CVE-2026-111497, het lek in de Brotli-decoder, op 27 oktober op de <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" title="CISA: Known Exploited Vulnerabilities Catalog">KEV-lijst</a>, staat in een <a href="https://www.cisa.gov/news-events/alerts/2026/10/27/cisa-adds-two-known-exploited-vulnerabilities-catalog" title="CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog">alert</a>. Dat is de lijst van lekken die aantoonbaar worden misbruikt. Ook het Italiaanse CSIRT meldt misbruik, schrijft <a href="https://www.security.nl/posting/959389/Node2Shell-kwetsbaarheid+in+Brotli-decoder+actief+misbruikt+bij+aanvallen" title="Security.NL: Node2Shell-kwetsbaarheid in Brotli-decoder actief misbruikt bij aanvallen">Security.NL</a>. Hoe en tegen wie, zegt CISA niet. Amerikaanse federale diensten moeten het uiterlijk 10 november verhelpen. Of ransomwarebendes het lek gebruiken, weet CISA nog niet. Het NCSC zegt het kort: <a href="https://www.ncsc.nl/alerts/kwetsbaarheid-in-google-brotli-decoder-in-nodejs-update-nu" title="NCSC: Kwetsbaarheid in Google Brotli-decoder in Node.js: update nu">update nu</a>. Bij &ldquo;Misbruik?&rdquo; stond hier een week lang &ldquo;nog niet gezien&rdquo;. Dat hield een week.</p>]]></description>
+  </item>
   <item>
     <title>28 oktober 19:00 · PHP2Shell: 25 servers overgenomen.</title>
     <link>https://crisus.nl/#u-20261028-1900</link>

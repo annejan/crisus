@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-23T22:50:00+02:00">
-<meta property="article:modified_time" content="2026-10-29T05:39:00+01:00">
+<meta property="article:modified_time" content="2026-10-29T05:45:00+01:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=7">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,7 +45,7 @@
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-23T22:50:00+02:00",
-  "dateModified": "2026-10-29T05:39:00+01:00",
+  "dateModified": "2026-10-29T05:45:00+01:00",
   "coverageStartTime": "2026-10-23T22:50:00+02:00",
   "about": {"@type": "Thing", "name": "CVE-2026-111497", "alternateName": ["HTTP2Shell", "Node2Shell", "Broccoli2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-111497"},
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
@@ -53,6 +53,7 @@
   "genre": "satire",
   "keywords": ["crisus", "HTTP2Shell", "Node2Shell", "Brotli", "CVE-2026-111497", "Node.js", "Python"],
   "liveBlogUpdate": [
+    {"@type": "BlogPosting", "headline": "HTTP2Shell wordt misbruikt.", "datePublished": "2026-10-29T05:45:00+01:00", "url": "https://crisus.nl/#u-20261029-0545"},
     {"@type": "BlogPosting", "headline": "PHP2Shell: 25 servers overgenomen.", "datePublished": "2026-10-28T19:00:00+01:00", "url": "https://crisus.nl/#u-20261028-1900"},
     {"@type": "BlogPosting", "headline": "PHP2Shell: misbruik bij Palo Alto.", "datePublished": "2026-10-28T12:00:00+01:00", "url": "https://crisus.nl/#u-20261028-1200"},
     {"@type": "BlogPosting", "headline": "HTTP2Shell: Red Hat heeft de fix.", "datePublished": "2026-10-27T22:15:00+01:00", "url": "https://crisus.nl/#u-20261027-2215"},
@@ -108,7 +109,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-10-29T05:39:00+01:00">laatst bijgewerkt 29 oktober, 05:39</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <p class="kicker">Crisus · <time datetime="2026-10-29T05:45:00+01:00">laatst bijgewerkt 29 oktober, 05:45</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
   <h1>HTTP2Shell: kritiek lek in Brotli</h1>
   <p class="lead">Een kritiek lek in Brotli, de compressie van Google: HTTP2Shell. Brotli zit in Node.js, in Python, in Bun, Envoy en Istio, en waarschijnlijk ook in iets van u. De patch is uit: Brotli <strong>1.2.1</strong>, Node.js <strong>26.12.1, 24.22.1 en 22.23.4</strong>. Niet in paniek raken. Wel updaten.</p>
   <p class="vandaag" id="vandaag" hidden></p>
@@ -131,6 +132,8 @@
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261029-0545"><time datetime="2026-10-29T05:45+01:00">29 oktober 05:45</time>
+      <p><strong>HTTP2Shell wordt misbruikt.</strong> De Amerikaanse CISA zette CVE-2026-111497, het lek in de Brotli-decoder, op 27 oktober op de <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" title="CISA: Known Exploited Vulnerabilities Catalog">KEV-lijst</a>, staat in een <a href="https://www.cisa.gov/news-events/alerts/2026/10/27/cisa-adds-two-known-exploited-vulnerabilities-catalog" title="CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog">alert</a>. Dat is de lijst van lekken die aantoonbaar worden misbruikt. Ook het Italiaanse CSIRT meldt misbruik, schrijft <a href="https://www.security.nl/posting/959389/Node2Shell-kwetsbaarheid+in+Brotli-decoder+actief+misbruikt+bij+aanvallen" title="Security.NL: Node2Shell-kwetsbaarheid in Brotli-decoder actief misbruikt bij aanvallen">Security.NL</a>. Hoe en tegen wie, zegt CISA niet. Amerikaanse federale diensten moeten het uiterlijk 10 november verhelpen. Of ransomwarebendes het lek gebruiken, weet CISA nog niet. Het NCSC zegt het kort: <a href="https://www.ncsc.nl/alerts/kwetsbaarheid-in-google-brotli-decoder-in-nodejs-update-nu" title="NCSC: Kwetsbaarheid in Google Brotli-decoder in Node.js: update nu">update nu</a>. Bij &ldquo;Misbruik?&rdquo; stond hier een week lang &ldquo;nog niet gezien&rdquo;. Dat hield een week.</p></li>
     <li id="u-20261028-1900"><time datetime="2026-10-28T19:00+01:00">28 oktober 19:00</time>
       <p><strong>PHP2Shell: 25 servers overgenomen.</strong> Een aanvaller kreeg met PHP2Shell 25 servers in handen, tot en met root, schrijft het Isra&euml;lische beveiligingsbedrijf <a href="https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers" title="Dream: Chained PHP2Shell Exploit Roots 25 Servers">Dream</a>. Het gaat om 24 firewalls aan de rand van een netwerk en &eacute;&eacute;n centrale beheerserver, in de Verenigde Staten, Japan, Taiwan en Zuid-Korea. Welk merk firewall het is, zegt Dream niet. De fabrikant is ingelicht. De aanvaller koppelde de twee PHP-lekken aan Fragnesia (CVE-2026-46300), een lek in de Linux-kernel, om van de webserver root te worden. Dat ging met &eacute;&eacute;n HTTPS-verzoek, zonder in te loggen. Dream vond het materiaal van de aanvaller op 25 oktober. Vandaag nam <a href="https://thehackernews.com/2026/10/php2shell-attack-roots-25-servers.html" title="The Hacker News: PHP2Shell Attack Roots 25 Servers, Breaches U.S. Government-Affiliated Network">The Hacker News</a> het verhaal over.</p>
       <p>Het begon met zo&rsquo;n 19.000 firewalls aan het internet, gevonden met de zoekmachine FOFA. Na filteren op land en versie bleven er 240 over. Daarvan werden er automatisch 24 overgenomen. Bij 22 bleef het bij een webshell, die er volgens Dream misschien nog steeds staat. Bij een organisatie die aan de Amerikaanse overheid hangt, ging de aanvaller verder: twee firewalls op 23 en 24 oktober, en minder dan 90 minuten later ook de centrale beheerserver. Daar ontsleutelde de aanvaller het wachtwoord van een LDAP-serviceaccount en haalde alle gebruikers en groepen op. Ook werd geprobeerd wachtwoorden te raden, een achterdeuraccount te maken en SAML-sleutels te stelen. Of dat lukte, kon Dream niet nagaan.</p>
@@ -196,7 +199,7 @@
     <dt>Wie vond het?</dt>
     <dd>Codex Security van OpenAI, volgens de <a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">advisory van Node.js</a>, al in februari. Brotli repareerde de fout toen al, maar zag hem niet als beveiligingslek. Dus kwam er toen geen release. Wel nu.</dd>
     <dt>Misbruik?</dt>
-    <dd><strong>Nog niet gezien</strong> (The Hacker News, 22 oktober). Ook het NCSC kent op 23 oktober &ldquo;geen bewijs van actief misbruik&rdquo;. Wel kregen onderzoekers het werkend tegen een ongewijzigde Node.js 24.22.0, volgens Imperva, meldt Aikido. Dat is geen goed nieuws. Het is nog geen slecht nieuws. Microsoft zegt op 25 oktober: niet misbruikt, wel openbaar bekend.</dd>
+    <dd><strong>Ja.</strong> De Amerikaanse CISA zette het lek op 27 oktober op de <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" title="CISA: Known Exploited Vulnerabilities Catalog">KEV-lijst</a>, de lijst van lekken die aantoonbaar worden misbruikt (<a href="https://www.cisa.gov/news-events/alerts/2026/10/27/cisa-adds-two-known-exploited-vulnerabilities-catalog" title="CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog">alert</a>). Ook het Italiaanse CSIRT meldt misbruik, schrijft <a href="https://www.security.nl/posting/959389/Node2Shell-kwetsbaarheid+in+Brotli-decoder+actief+misbruikt+bij+aanvallen" title="Security.NL: Node2Shell-kwetsbaarheid in Brotli-decoder actief misbruikt bij aanvallen">Security.NL</a>. Hoe en tegen wie, zegt CISA niet. Tot dan was het &ldquo;nog niet gezien&rdquo; (The Hacker News, 22 oktober; het NCSC op 23 oktober).</dd>
     <dt>Ziet mijn scanner het?</dt>
     <dd>Sinds kort. Op 23 oktober koppelden de databases het lek nog niet aan de Python-pakketten, aldus Aikido. Sinds 23 oktober 21:08 noemt <a href="https://github.com/advisories/GHSA-9v8h-qqgm-4m35" title="GitHub advisory GHSA-9v8h-qqgm-4m35: Brotli out-of-bounds write (Node2Shell)">GHSA-9v8h-qqgm-4m35</a> van GitHub ze wel. Dependabot zou ze nu dus moeten zien. Gebruikt u pip-audit of Safety? Kijk dan zelf.</dd>
     <dt>Moet het eruit?</dt>
@@ -295,6 +298,7 @@ sudo needrestart -r l          <span class="c"># wat draait nog oude code?</span
   <h2 id="bronnen">Bronnen</h2>
   <ul class="bronnen" aria-labelledby="bronnen">
     <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-111497" title="CVE-2026-111497 op cve.org">CVE-2026-111497</a>: &ldquo;Out-of-Bounds Write in Google Brotli Decoder&rdquo;, gepubliceerd door Google op 22 oktober, CVSS v4.0 9,2.</li>
+    <li><a href="https://www.cisa.gov/news-events/alerts/2026/10/27/cisa-adds-two-known-exploited-vulnerabilities-catalog" title="CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog">CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog</a>, 27 oktober. HTTP2Shell op de KEV-lijst: aantoonbaar misbruikt, deadline 10 november.</li>
     <li><a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">Node.js: October 2026 security releases</a>. De fix in 26.12.1, 24.22.1 en 22.23.4, en wie het lek meldde.</li>
     <li><a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-111497" title="Microsoft Security Update Guide: CVE-2026-111497">Microsoft Security Update Guide: CVE-2026-111497</a>. .NET, PowerShell en Visual Studio, 25 oktober. Plus <a href="https://github.com/dotnet/runtime/issues/136422" title="dotnet/runtime #136422">dotnet/runtime #136422</a>.</li>
     <li><a href="https://news-web.php.net/php.announce/514" title="php.announce: Updated PHP Windows builds for Brotli security fix">php.announce: Updated PHP Windows builds for Brotli security fix</a>, 26 oktober. De Windows-builds van PHP met Brotli 1.2.1.</li>
