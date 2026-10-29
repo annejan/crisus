@@ -219,13 +219,15 @@
 
 // Easter egg (29 October 2026, the Binance drain): type "boe" or "binance", or click
 // the headline or the logo three times, and a ghost floats across the page taking the bitcoins.
+// Type "wiccon", or keep the WICCON radar item in view (WICCON 2026, 29 and 30 October),
+// and a team chases it off instead.
 // Only classes are set here; the motion is in crisus.css (the CSP allows no inline
 // style), and prefers-reduced-motion keeps it still.
 (function () {
-  function spook() {
+  function spook(mode) {
     if (document.querySelector('.spook')) return;
     var box = document.createElement('div');
-    box.className = 'spook';
+    box.className = mode ? 'spook ' + mode : 'spook';
     box.setAttribute('aria-hidden', 'true');
     for (var i = 0; i < 5; i++) {
       var c = document.createElement('span');
@@ -241,16 +243,37 @@
     b.textContent = '💰';
     g.appendChild(b);
     box.appendChild(g);
+    if (mode === 'wiccon') {
+      var team = document.createElement('span');
+      team.className = 'team';
+      team.textContent = '\ud83d\udc69\u200d\ud83d\udcbb\ud83d\udc69\ud83c\udffd\u200d\ud83d\udcbb\ud83d\udc69\ud83c\udfff\u200d\ud83d\udcbb\ud83d\udc69\ud83c\udffc\u200d\ud83d\udcbb';
+      box.appendChild(team);
+    }
     document.body.appendChild(box);
     setTimeout(function () { box.remove(); }, 7000);
   }
+  // The WICCON radar item: whoever keeps it in view for 4 s (at least 90% of it) gets the
+  // chase, once per visit. The same on a phone and with a mouse.
+  Array.prototype.forEach.call(document.querySelectorAll('ul.radar li > b'), function (b) {
+    if (b.textContent !== 'WICCON' || !('IntersectionObserver' in window)) return;
+    var seen;
+    var watch = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        clearTimeout(seen);
+        if (!e.isIntersecting) return;
+        seen = setTimeout(function () { watch.disconnect(); spook('wiccon'); }, 4000);
+      });
+    }, { threshold: 0.9 });
+    watch.observe(b.parentNode);
+  });
   var typed = '';
   document.addEventListener('keydown', function (e) {
     var t = e.target;
     if (e.ctrlKey || e.metaKey || e.altKey || e.key.length !== 1) return;
     if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
     typed = (typed + e.key.toLowerCase()).slice(-7);
-    if (/(boe|binance)$/.test(typed)) { typed = ''; spook(); }
+    if (/wiccon$/.test(typed)) { typed = ''; spook('wiccon'); }
+    else if (/(boe|binance)$/.test(typed)) { typed = ''; spook(); }
   });
   // Three quick clicks on the headline, or on the logo when it links to this very page
   // (one click on that logo still reloads, after a short wait for a second one).

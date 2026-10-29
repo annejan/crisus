@@ -300,9 +300,19 @@ details.patch[open] > summary { margin-bottom: 14px; }
 @keyframes geest-golft { from { transform: translateY(-48px) rotate(-10deg) scale(.95); } to { transform: translateY(48px) rotate(8deg) scale(1.05); } }
 @keyframes geest-flakkert { 0% { opacity: .75; } 40% { opacity: .45; } 55% { opacity: .8; } 100% { opacity: .55; } }
 @keyframes buit-erbij { to { opacity: 1; } }
+/* "wiccon": no theft this time. The coins stay, the ghost flees left, and a team of
+   four comes in from the right after it. */
+.spook.wiccon .munt { animation: none; }
+.spook.wiccon .buit { display: none; }
+.spook.wiccon .geest { left: 70%; animation: geest-vlucht 3.2s ease-in forwards, geest-golft .45s ease-in-out infinite alternate, geest-flakkert .6s ease-in-out infinite alternate; }
+.team { position: absolute; bottom: 18%; left: 110%; z-index: 1; font-size: 44px; line-height: 1; white-space: nowrap; letter-spacing: 6px; animation: team-gaat 5.5s cubic-bezier(.3, .1, .5, 1) forwards; }
+@keyframes geest-vlucht { from { left: 70%; } to { left: -20%; } }
+@keyframes team-gaat { from { left: 110%; } to { left: -60%; } }
 @media (prefers-reduced-motion: reduce) {
   .geest { left: 45%; opacity: .7; animation: none; }
   .munt { display: none; }
   .buit { opacity: 1; animation: none; }
   .spook::before, .spook::after { display: none; }
+  .spook.wiccon .geest { left: 5%; }
+  .team { left: 35%; animation: none; }
 }
