@@ -6,7 +6,15 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Thu, 29 Oct 2026 16:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Thu, 29 Oct 2026 21:00:00 +0100</lastBuildDate>
+  <item>
+    <title>29 oktober 21:00 · PHP2Shell: de 25 servers waren van Palo Alto.</title>
+    <link>https://crisus.nl/#u-20261029-2100</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261029-2100</guid>
+    <pubDate>Thu, 29 Oct 2026 21:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>PHP2Shell: de 25 servers waren van Palo Alto.</strong> Dream noemt nu wel het merk. Het ging om firewalls met PAN-OS van Palo Alto Networks, de takken 12.1 en 12.2, met daarin PHP 8.0.30, staat in de bijgewerkte <a href="https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers" title="Dream: Chained PHP2Shell Exploit Roots 25 Servers">blog</a> van 29 oktober. Dream onderzoekt het samen met Palo Alto. Het onderzoeksteam van Palo Alto zelf, <a href="https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/" title="Unit 42: PHP2Shell (CVE-2026-109618 en CVE-2026-109619)">Unit 42</a>, schrijft dat het de tools van de aanvaller zelf heeft nagelopen en de resultaten bevestigt. Op 25 oktober kon Unit 42 nog niet bevestigen dat de aanvallen via PHP2Shell binnenkwamen. Volgens Dream is de exploit geen kopie van een bekende, maar speciaal voor PAN-OS gebouwd. Van eerste verbinding tot root duurt het minder dan een kwartier, meldt ook <a href="https://www.theregister.com/security/2026/10/29/suspected-chinese-attackers-built-a-custom-php2shell-exploit-and-rooted-25-servers/5306456" title="The Register: Suspected Chinese attackers built a custom PHP2Shell exploit and rooted 25 servers">The Register</a>. CISA en de FBI wilden niet reageren.</p>
+      <p>Fixes voor 12.1 en 12.2 staan in de <a href="https://security.paloaltonetworks.com/CVE-2026-109618" title="Palo Alto Networks: Impact of Critical Vulnerabilities in PHP on Palo Alto Networks Products">advisory</a>. Het advies blijft: patchen, de beheerinterface van het internet halen en ervan uitgaan dat de aanvaller er nog zit. Wie een firewall koopt, krijgt er een webserver bij. En dus ook PHP.</p>]]></description>
+  </item>
   <item>
     <title>29 oktober 16:00 · PHP2Shell: ook Fragnesia op de KEV-lijst.</title>
     <link>https://crisus.nl/#u-20261029-1600</link>
