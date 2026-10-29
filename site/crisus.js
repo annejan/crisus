@@ -218,7 +218,7 @@
 })();
 
 // Easter egg (29 October 2026, the Binance drain): type "boe" or "binance", or click
-// the page title three times, and a ghost floats across the page taking the bitcoins.
+// the headline or the logo three times, and a ghost floats across the page taking the bitcoins.
 // Only classes are set here; the motion is in crisus.css (the CSP allows no inline
 // style), and prefers-reduced-motion keeps it still.
 (function () {
@@ -252,11 +252,25 @@
     typed = (typed + e.key.toLowerCase()).slice(-7);
     if (/(boe|binance)$/.test(typed)) { typed = ''; spook(); }
   });
+  // Three quick clicks on the headline, or on the logo when it links to this very page
+  // (one click on that logo still reloads, after a short wait for a second one).
   var h = document.querySelector('h1'), n = 0, timer;
   if (h) h.addEventListener('click', function () {
     n++;
     clearTimeout(timer);
     timer = setTimeout(function () { n = 0; }, 800);
     if (n === 3) { n = 0; spook(); }
+  });
+  var logo = document.querySelector('a.brand'), clicks = 0, wait;
+  if (logo) logo.addEventListener('click', function (e) {
+    if (logo.pathname !== location.pathname || e.ctrlKey || e.metaKey || e.shiftKey || e.button) return;
+    e.preventDefault();
+    clicks++;
+    clearTimeout(wait);
+    if (clicks === 3) { clicks = 0; spook(); return; }
+    wait = setTimeout(function () {
+      location.href = logo.href;
+      clicks = 0;
+    }, 600);
   });
 })();
