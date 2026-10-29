@@ -252,7 +252,7 @@
       box.appendChild(team);
     }
     document.body.appendChild(box);
-    setTimeout(function () { box.remove(); }, 7000);
+    setTimeout(function () { box.remove(); }, 8000);
   }
   // The WICCON radar item: whoever keeps it in view for 4 s (at least 90% of it) gets the
   // chase, once per visit. The same on a phone and with a mouse.
