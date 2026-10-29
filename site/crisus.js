@@ -216,3 +216,47 @@
   h.parentNode.classList.add('rood');
   h.parentNode.appendChild(p);
 })();
+
+// Easter egg (29 October 2026, the Binance drain): type "boe" or "binance", or click
+// the page title three times, and a ghost floats across the page taking the bitcoins.
+// Only classes are set here; the motion is in crisus.css (the CSP allows no inline
+// style), and prefers-reduced-motion keeps it still.
+(function () {
+  function spook() {
+    if (document.querySelector('.spook')) return;
+    var box = document.createElement('div');
+    box.className = 'spook';
+    box.setAttribute('aria-hidden', 'true');
+    for (var i = 0; i < 5; i++) {
+      var c = document.createElement('span');
+      c.className = 'munt munt' + i;
+      c.textContent = '₿';
+      box.appendChild(c);
+    }
+    var g = document.createElement('span');
+    g.className = 'geest';
+    g.textContent = '👻';
+    var b = document.createElement('span');
+    b.className = 'buit';
+    b.textContent = '💰';
+    g.appendChild(b);
+    box.appendChild(g);
+    document.body.appendChild(box);
+    setTimeout(function () { box.remove(); }, 7000);
+  }
+  var typed = '';
+  document.addEventListener('keydown', function (e) {
+    var t = e.target;
+    if (e.ctrlKey || e.metaKey || e.altKey || e.key.length !== 1) return;
+    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+    typed = (typed + e.key.toLowerCase()).slice(-7);
+    if (/(boe|binance)$/.test(typed)) { typed = ''; spook(); }
+  });
+  var h = document.querySelector('h1'), n = 0, timer;
+  if (h) h.addEventListener('click', function () {
+    n++;
+    clearTimeout(timer);
+    timer = setTimeout(function () { n = 0; }, 800);
+    if (n === 3) { n = 0; spook(); }
+  });
+})();
