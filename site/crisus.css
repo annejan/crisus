@@ -274,19 +274,17 @@ details.patch[open] > summary { margin-bottom: 14px; }
 .munt2 { left: 48%; top: 34%; animation-delay: 2.9s; }
 .munt3 { left: 66%; top: 24%; animation-delay: 3.8s; }
 .munt4 { left: 84%; top: 32%; animation-delay: 4.7s; }
-.geest { position: absolute; top: 24%; left: -10%; font-size: 64px; line-height: 1; animation: geest-zweeft 6s linear forwards; }
+.geest { position: absolute; top: 24%; left: -10%; font-size: 64px; line-height: 1; opacity: .7; filter: drop-shadow(0 0 10px rgba(200, 220, 255, .8));
+  animation: geest-gaat 6s linear forwards, geest-golft .75s ease-in-out infinite alternate, geest-flakkert 1.3s ease-in-out infinite alternate; }
 .buit { position: absolute; right: -14px; bottom: -4px; font-size: 26px; opacity: 0; animation: buit-erbij .3s 1.2s forwards; }
 @keyframes munt-weg { to { opacity: 0; transform: translateY(-24px) scale(.3); } }
-@keyframes geest-zweeft {
-  0% { left: -10%; transform: translateY(0) rotate(-6deg); }
-  25% { transform: translateY(-14px) rotate(4deg); }
-  50% { transform: translateY(10px) rotate(-4deg); }
-  75% { transform: translateY(-10px) rotate(5deg); }
-  100% { left: 110%; transform: translateY(0) rotate(0); }
-}
+@keyframes geest-gaat { from { left: -10%; } to { left: 110%; } }
+/* Up and down while it goes across: ease-in-out back and forth makes a wave. */
+@keyframes geest-golft { from { transform: translateY(-48px) rotate(-10deg) scale(.95); } to { transform: translateY(48px) rotate(8deg) scale(1.05); } }
+@keyframes geest-flakkert { 0% { opacity: .75; } 40% { opacity: .45; } 55% { opacity: .8; } 100% { opacity: .55; } }
 @keyframes buit-erbij { to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) {
-  .geest { left: 45%; animation: none; }
+  .geest { left: 45%; opacity: .7; animation: none; }
   .munt { display: none; }
   .buit { opacity: 1; animation: none; }
 }
