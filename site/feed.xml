@@ -6,7 +6,15 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Thu, 29 Oct 2026 10:45:00 +0100</lastBuildDate>
+  <lastBuildDate>Thu, 29 Oct 2026 16:00:00 +0100</lastBuildDate>
+  <item>
+    <title>29 oktober 16:00 · PHP2Shell: ook Fragnesia op de KEV-lijst.</title>
+    <link>https://crisus.nl/#u-20261029-1600</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261029-1600</guid>
+    <pubDate>Thu, 29 Oct 2026 16:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>PHP2Shell: ook Fragnesia op de KEV-lijst.</strong> De Amerikaanse CISA zette gisteren CVE-2026-46300, het lek in de Linux-kernel dat ook Fragnesia heet, op de <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" title="CISA: Known Exploited Vulnerabilities Catalog">KEV-lijst</a>. Dat staat in een <a href="https://www.cisa.gov/news-events/alerts/2026/10/28/cisa-adds-two-known-exploited-vulnerabilities-catalog" title="CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog">alert</a> van 28 oktober. In de catalogus staat erbij waarom: het lek &ldquo;can be chained with&rdquo; CVE-2026-109618 en CVE-2026-109619, om webshells in PHP te zetten en opdrachten als root uit te voeren. Dat is de keten die <a href="https://crisus.nl/#u-20261028-1900" title="28 oktober 19:00: PHP2Shell, 25 servers overgenomen">Dream</a> beschreef. Meer over de aanvallen kon een woordvoerder van CISA niet geven, meldt <a href="https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/" title="BleepingComputer: CISA warns of Fragnesia Linux flaw chained in PHP2Shell attacks">BleepingComputer</a>. Amerikaanse federale diensten moeten het uiterlijk 31 oktober verhelpen. Ook hier vraagt CISA om forensische triage. Of ransomwarebendes het lek gebruiken, weet CISA nog niet.</p>
+      <p>Voor de twee PHP-lekken liep de termijn vandaag af. De patch is er sinds 21 oktober: 8.5.12, 8.4.27, 8.3.36 en 8.2.35. Voor de kernel noemt de catalogus acht fixes in de stabiele takken. Een nieuwe kernel werkt pas na een herstart. Dit is de derde aanmaning. Deze keer met herstart.</p>]]></description>
+  </item>
   <item>
     <title>29 oktober 10:45 · HTTP2Shell: ook Fortinet.</title>
     <link>https://crisus.nl/#u-20261029-1045</link>

@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-23T22:50:00+02:00">
-<meta property="article:modified_time" content="2026-10-29T15:26:00+01:00">
+<meta property="article:modified_time" content="2026-10-29T16:00:00+01:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=7">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,7 +45,7 @@
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-23T22:50:00+02:00",
-  "dateModified": "2026-10-29T15:26:00+01:00",
+  "dateModified": "2026-10-29T16:00:00+01:00",
   "coverageStartTime": "2026-10-23T22:50:00+02:00",
   "about": {"@type": "Thing", "name": "CVE-2026-111497", "alternateName": ["HTTP2Shell", "Node2Shell", "Broccoli2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-111497"},
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
@@ -53,6 +53,7 @@
   "genre": "satire",
   "keywords": ["crisus", "HTTP2Shell", "Node2Shell", "Brotli", "CVE-2026-111497", "Node.js", "Python"],
   "liveBlogUpdate": [
+    {"@type": "BlogPosting", "headline": "PHP2Shell: ook Fragnesia op de KEV-lijst.", "datePublished": "2026-10-29T16:00:00+01:00", "url": "https://crisus.nl/#u-20261029-1600"},
     {"@type": "BlogPosting", "headline": "HTTP2Shell: ook Fortinet.", "datePublished": "2026-10-29T10:45:00+01:00", "url": "https://crisus.nl/#u-20261029-1045"},
     {"@type": "BlogPosting", "headline": "HTTP2Shell wordt misbruikt.", "datePublished": "2026-10-29T05:45:00+01:00", "url": "https://crisus.nl/#u-20261029-0545"},
     {"@type": "BlogPosting", "headline": "PHP2Shell: 25 servers overgenomen.", "datePublished": "2026-10-28T19:00:00+01:00", "url": "https://crisus.nl/#u-20261028-1900"},
@@ -110,7 +111,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-10-29T15:26:00+01:00">laatst bijgewerkt 29 oktober, 15:26</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <p class="kicker">Crisus · <time datetime="2026-10-29T16:00:00+01:00">laatst bijgewerkt 29 oktober, 16:00</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
   <h1>HTTP2Shell: kritiek lek in Brotli</h1>
   <p class="lead">Een kritiek lek in Brotli, de compressie van Google: HTTP2Shell. Brotli zit in Node.js, in Python, in Bun, Envoy en Istio, en waarschijnlijk ook in iets van u. De patch is uit: Brotli <strong>1.2.1</strong>, Node.js <strong>26.12.1, 24.22.1 en 22.23.4</strong>. Niet in paniek raken. Wel updaten.</p>
   <p class="vandaag" id="vandaag" hidden></p>
@@ -133,6 +134,9 @@
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261029-1600"><time datetime="2026-10-29T16:00+01:00">29 oktober 16:00</time>
+      <p><strong>PHP2Shell: ook Fragnesia op de KEV-lijst.</strong> De Amerikaanse CISA zette gisteren CVE-2026-46300, het lek in de Linux-kernel dat ook Fragnesia heet, op de <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" title="CISA: Known Exploited Vulnerabilities Catalog">KEV-lijst</a>. Dat staat in een <a href="https://www.cisa.gov/news-events/alerts/2026/10/28/cisa-adds-two-known-exploited-vulnerabilities-catalog" title="CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog">alert</a> van 28 oktober. In de catalogus staat erbij waarom: het lek &ldquo;can be chained with&rdquo; CVE-2026-109618 en CVE-2026-109619, om webshells in PHP te zetten en opdrachten als root uit te voeren. Dat is de keten die <a href="#u-20261028-1900" title="28 oktober 19:00: PHP2Shell, 25 servers overgenomen">Dream</a> beschreef. Meer over de aanvallen kon een woordvoerder van CISA niet geven, meldt <a href="https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/" title="BleepingComputer: CISA warns of Fragnesia Linux flaw chained in PHP2Shell attacks">BleepingComputer</a>. Amerikaanse federale diensten moeten het uiterlijk 31 oktober verhelpen. Ook hier vraagt CISA om forensische triage. Of ransomwarebendes het lek gebruiken, weet CISA nog niet.</p>
+      <p>Voor de twee PHP-lekken liep de termijn vandaag af. De patch is er sinds 21 oktober: 8.5.12, 8.4.27, 8.3.36 en 8.2.35. Voor de kernel noemt de catalogus acht fixes in de stabiele takken. Een nieuwe kernel werkt pas na een herstart. Dit is de derde aanmaning. Deze keer met herstart.</p></li>
     <li id="u-20261029-1045"><time datetime="2026-10-29T10:45+01:00">29 oktober 10:45</time>
       <p><strong>HTTP2Shell: ook Fortinet.</strong> Fortinet zette het Brotli-lek op 26 oktober in een eigen advisory, <a href="https://fortiguard.fortinet.com/psirt/FG-IR-26-187" title="Fortinet PSIRT: FG-IR-26-187, Node2Shell CVEs">FG-IR-26-187</a>, en noemt het kritiek: CVSS 9,8. Ruim veertig producten staan op &ldquo;wordt onderzocht&rdquo;, waaronder FortiOS, FortiProxy en FortiMail. Gefixte versies zijn er nog niet, een workaround ook niet. Misbruik tegen zijn eigen producten heeft Fortinet niet gezien. Een paar producten, zoals FortiADC, staan zowel bij &ldquo;wordt onderzocht&rdquo; als bij &ldquo;niet geraakt&rdquo;. Schr&ouml;dingers firewall.</p></li>
     <li id="u-20261029-0545"><time datetime="2026-10-29T05:45+01:00">29 oktober 05:45</time>
@@ -328,6 +332,7 @@ sudo needrestart -r l          <span class="c"># wat draait nog oude code?</span
     <li><a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq" title="Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026">Cisco: Vulnerabilities in PHP Affecting Cisco Products</a>, versie 1.9 (Final), 28 oktober. En <a href="https://security.paloaltonetworks.com/CVE-2026-109618" title="Palo Alto Networks: Impact of Critical Vulnerabilities in PHP on Palo Alto Networks Products">Palo Alto Networks: PHP2Shell in PAN-OS</a>, bijgewerkt 28 oktober, met misbruik van de beheerinterface. <a href="https://www.security.nl/posting/959363/Palo+Alto+Networks+meldt+misbruik+van+PHP2Shell-lekken+in+firewall-interface" title="Security.NL: Palo Alto Networks meldt misbruik van PHP2Shell-lekken in firewall-interface">Security.NL: Palo Alto Networks meldt misbruik van PHP2Shell-lekken</a>, 28 oktober.</li>
     <li><a href="https://support.citrix.com/external/article/CTX697263" title="Citrix: Security Advisory for CVE-2026-109618 and CVE-2026-109619 (CTX697263)">Citrix: CTX697263</a>, fixes voor NetScaler ADC en Gateway op 27 oktober. <a href="https://www.wiz.io/blog/php2shell-exploitation-so-far" title="Wiz: PHP2Shell: Exploitation Attempts and Remediation Trends">Wiz: PHP2Shell: Exploitation Attempts and Remediation Trends</a>, 27 oktober.</li>
     <li><a href="https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers" title="Dream: Chained PHP2Shell Exploit Roots 25 Servers">Dream: Chained PHP2Shell Exploit Roots 25 Servers</a>, 26 oktober. De keten met Fragnesia, de 25 servers en het netwerk dat aan de Amerikaanse overheid hangt. Overgenomen door <a href="https://thehackernews.com/2026/10/php2shell-attack-roots-25-servers.html" title="The Hacker News: PHP2Shell Attack Roots 25 Servers, Breaches U.S. Government-Affiliated Network">The Hacker News</a>, 28 oktober.</li>
+    <li><a href="https://www.cisa.gov/news-events/alerts/2026/10/28/cisa-adds-two-known-exploited-vulnerabilities-catalog" title="CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog">CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog</a>, 28 oktober. Fragnesia (CVE-2026-46300) op de KEV-lijst, volgens de catalogus te koppelen aan PHP2Shell, deadline 31 oktober. Uitgelegd door <a href="https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/" title="BleepingComputer: CISA warns of Fragnesia Linux flaw chained in PHP2Shell attacks">BleepingComputer</a>, 29 oktober.</li>
   </ul>
   <p class="note">Deze pagina is een grap. De feiten hierboven zijn dat niet. Twijfelt u? Dan wint de bron.</p>
 
