@@ -232,7 +232,8 @@
     for (var i = 0; i < 5; i++) {
       var c = document.createElement('span');
       c.className = 'munt munt' + i;
-      c.textContent = '₿';
+      // The bitcoins, or for WICCON the pumpkins the team leaves behind.
+      c.textContent = mode === 'wiccon' ? '\ud83c\udf83' : '\u20bf';
       box.appendChild(c);
     }
     var g = document.createElement('span');

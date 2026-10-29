@@ -300,12 +300,19 @@ details.patch[open] > summary { margin-bottom: 14px; }
 @keyframes geest-golft { from { transform: translateY(-48px) rotate(-10deg) scale(.95); } to { transform: translateY(48px) rotate(8deg) scale(1.05); } }
 @keyframes geest-flakkert { 0% { opacity: .75; } 40% { opacity: .45; } 55% { opacity: .8; } 100% { opacity: .55; } }
 @keyframes buit-erbij { to { opacity: 1; } }
-/* "wiccon": no theft this time. The coins stay, the ghost flees left, and a team of
-   four comes in from the right after it. */
-.spook.wiccon .munt { animation: none; }
+/* "wiccon": no theft this time. The ghost flees left, a team of four comes in from the
+   right after it, and lights a pumpkin wherever it passes (the team crosses at an even
+   speed, 110% to -60% in 5.5 s, so each pumpkin pops up as the team reaches it). */
+.spook.wiccon .munt { opacity: 0; transform: scale(.2); filter: drop-shadow(0 0 10px rgba(255, 140, 0, .9)); animation: pompoen-aan .4s ease-out forwards; }
+.spook.wiccon .munt4 { animation-delay: .85s; }
+.spook.wiccon .munt3 { animation-delay: 1.4s; }
+.spook.wiccon .munt2 { animation-delay: 2s; }
+.spook.wiccon .munt1 { animation-delay: 2.6s; }
+.spook.wiccon .munt0 { animation-delay: 3.2s; }
+@keyframes pompoen-aan { 60% { opacity: 1; transform: scale(1.3); } to { opacity: 1; transform: scale(1); } }
 .spook.wiccon .buit { display: none; }
 .spook.wiccon .geest { left: 70%; animation: geest-vlucht 3.2s ease-in forwards, geest-golft .45s ease-in-out infinite alternate, geest-flakkert .6s ease-in-out infinite alternate; }
-.team { position: absolute; bottom: 18%; left: 110%; z-index: 1; font-size: 44px; line-height: 1; white-space: nowrap; letter-spacing: 6px; animation: team-gaat 5.5s cubic-bezier(.3, .1, .5, 1) forwards; }
+.team { position: absolute; bottom: 18%; left: 110%; z-index: 1; font-size: 44px; line-height: 1; white-space: nowrap; letter-spacing: 6px; animation: team-gaat 5.5s linear forwards; }
 @keyframes geest-vlucht { from { left: 70%; } to { left: -20%; } }
 @keyframes team-gaat { from { left: 110%; } to { left: -60%; } }
 @media (prefers-reduced-motion: reduce) {
@@ -315,4 +322,5 @@ details.patch[open] > summary { margin-bottom: 14px; }
   .spook::before, .spook::after { display: none; }
   .spook.wiccon .geest { left: 5%; }
   .team { left: 35%; animation: none; }
+  .spook.wiccon .munt { display: block; opacity: 1; transform: none; animation: none; }
 }
