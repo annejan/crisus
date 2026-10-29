@@ -6,7 +6,14 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Thu, 29 Oct 2026 05:45:00 +0100</lastBuildDate>
+  <lastBuildDate>Thu, 29 Oct 2026 10:45:00 +0100</lastBuildDate>
+  <item>
+    <title>29 oktober 10:45 · HTTP2Shell: ook Fortinet.</title>
+    <link>https://crisus.nl/#u-20261029-1045</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261029-1045</guid>
+    <pubDate>Thu, 29 Oct 2026 10:45:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>HTTP2Shell: ook Fortinet.</strong> Fortinet zette het Brotli-lek op 26 oktober in een eigen advisory, <a href="https://fortiguard.fortinet.com/psirt/FG-IR-26-187" title="Fortinet PSIRT: FG-IR-26-187, Node2Shell CVEs">FG-IR-26-187</a>, en noemt het kritiek: CVSS 9,8. Ruim veertig producten staan op &ldquo;wordt onderzocht&rdquo;, waaronder FortiOS, FortiProxy en FortiMail. Gefixte versies zijn er nog niet, een workaround ook niet. Misbruik tegen zijn eigen producten heeft Fortinet niet gezien. Een paar producten, zoals FortiADC, staan zowel bij &ldquo;wordt onderzocht&rdquo; als bij &ldquo;niet geraakt&rdquo;. Schr&ouml;dingers firewall.</p>]]></description>
+  </item>
   <item>
     <title>29 oktober 05:45 · HTTP2Shell wordt misbruikt.</title>
     <link>https://crisus.nl/#u-20261029-0545</link>
