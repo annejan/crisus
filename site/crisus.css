@@ -277,6 +277,23 @@ details.patch[open] > summary { margin-bottom: 14px; }
 .geest { position: absolute; top: 24%; left: -10%; font-size: 64px; line-height: 1; opacity: .7; filter: drop-shadow(0 0 10px rgba(200, 220, 255, .8));
   animation: geest-gaat 6s linear forwards, geest-golft .75s ease-in-out infinite alternate, geest-flakkert 1.3s ease-in-out infinite alternate; }
 .buit { position: absolute; right: -14px; bottom: -4px; font-size: 26px; opacity: 0; animation: buit-erbij .3s 1.2s forwards; }
+/* Fog rising from the bottom while the ghost goes: two layers of soft clouds on the
+   overlay itself, behind the ghost and the coins, at different speeds. */
+.munt, .geest { z-index: 1; }
+.spook::before, .spook::after { content: ""; position: absolute; left: -10%; right: -10%; bottom: -20%; height: 75%; z-index: 0; pointer-events: none; opacity: 0;
+  background:
+    radial-gradient(ellipse 30% 40% at 15% 70%, rgba(220, 225, 235, .55), transparent 70%),
+    radial-gradient(ellipse 35% 45% at 45% 80%, rgba(210, 215, 230, .5), transparent 70%),
+    radial-gradient(ellipse 30% 40% at 75% 65%, rgba(225, 230, 240, .55), transparent 70%),
+    radial-gradient(ellipse 40% 35% at 95% 85%, rgba(205, 210, 225, .45), transparent 70%);
+  filter: blur(18px); animation: mist-op 7s ease-out forwards; }
+.spook::after { left: -20%; right: 0; animation-duration: 6s; animation-delay: .6s; }
+@keyframes mist-op {
+  0% { opacity: 0; transform: translateY(35%); }
+  30% { opacity: .9; }
+  75% { opacity: .6; }
+  100% { opacity: 0; transform: translateY(-25%); }
+}
 @keyframes munt-weg { to { opacity: 0; transform: translateY(-24px) scale(.3); } }
 @keyframes geest-gaat { from { left: -10%; } to { left: 110%; } }
 /* Up and down while it goes across: ease-in-out back and forth makes a wave. */
@@ -287,4 +304,5 @@ details.patch[open] > summary { margin-bottom: 14px; }
   .geest { left: 45%; opacity: .7; animation: none; }
   .munt { display: none; }
   .buit { opacity: 1; animation: none; }
+  .spook::before, .spook::after { display: none; }
 }
