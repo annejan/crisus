@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-23T22:50:00+02:00">
-<meta property="article:modified_time" content="2026-10-29T23:30:00+01:00">
+<meta property="article:modified_time" content="2026-10-30T00:04:00+01:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=7">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,7 +45,7 @@
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-23T22:50:00+02:00",
-  "dateModified": "2026-10-29T23:30:00+01:00",
+  "dateModified": "2026-10-30T00:04:00+01:00",
   "coverageStartTime": "2026-10-23T22:50:00+02:00",
   "about": {"@type": "Thing", "name": "CVE-2026-111497", "alternateName": ["HTTP2Shell", "Node2Shell", "Broccoli2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-111497"},
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
@@ -114,7 +114,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-10-29T23:30:00+01:00">laatst bijgewerkt 29 oktober, 23:30</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <p class="kicker">Crisus · <time datetime="2026-10-30T00:04:00+01:00">laatst bijgewerkt 30 oktober, 00:04</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
   <h1>HTTP2Shell: kritiek lek in Brotli</h1>
   <p class="lead">Een kritiek lek in Brotli, de compressie van Google: HTTP2Shell. Brotli zit in Node.js, in Python, in Bun, Envoy en Istio, en waarschijnlijk ook in iets van u. De patch is uit: Brotli <strong>1.2.1</strong>, Node.js <strong>26.12.1, 24.22.1 en 22.23.4</strong>. Niet in paniek raken. Wel updaten.</p>
   <p class="vandaag" id="vandaag" hidden></p>
@@ -300,7 +300,7 @@ sudo needrestart -r l          <span class="c"># wat draait nog oude code?</span
     <li><b>GoAhead</b> In GoAhead, de ingebouwde webserver van EmbedThis voor het beheer van apparaten, zitten drie fouten in de TLS-afhandeling, <a href="https://foxio.io/blog/choose-your-backend-three-tls-bugs-in-goahead" title="FoxIO: Choose Your Backend: Three TLS Bugs in GoAhead">schrijft FoxIO</a>. De ernstigste (CVE-2026-115881, kritiek): GoAhead laadt de lijst met ingetrokken certificaten wel, maar controleert er niet tegen. Een ingetrokken clientcertificaat komt dus gewoon binnen. EmbedThis publiceerde op 12 oktober <a href="https://github.com/embedthis/goahead/security/advisories" title="GoAhead: beveiligingsadviezen op GitHub">elf beveiligingsadviezen</a> tegelijk, waaronder een inlog die bij BF1-gehashte wachtwoorden elk wachtwoord goedvindt (CVE-2026-115888). Versie 6.1.1 repareert alles. Die stond al sinds 2 augustus klaar; waarom, hoorde de rest van de wereld op 12 oktober. Misbruik is niet bekend. Volgens FoxIO zit GoAhead in honderden miljoenen apparaten. Die krijgen hun update zoals altijd: ooit, misschien.</li>
     <li><b>UEFI</b> In EDK II, de open UEFI-code van het TianoCore-project waar de meeste serverfirmware op voortbouwt, zit een lek in het opstarten via het netwerk (PXE): <a href="https://github.com/tianocore/edk2/security/advisories/GHSA-99cj-7hg9-mp4m" title="TianoCore: Pre-boot RCE in EDK II PXE driver (GHSA-99cj-7hg9-mp4m)">CVE-2026-97631</a>, CVSS 9,5. Wie een server bereikt terwijl die via het netwerk opstart, kan met &eacute;&eacute;n te groot ICMP-foutbericht eigen code laten draaien, nog v&oacute;&oacute;r Secure Boot iets heeft gecontroleerd. Een machine die alleen van schijf opstart, heeft er geen last van. Gevonden door Alex Matrosov (Anthropic) en Dan Holmes-Mitra (Google). De fix staat sinds 15 oktober in EDK II. Op 26 oktober zag <a href="https://pulse.infra-trust.org/october-2026/" title="InfraTrust Pulse: October 2026">InfraTrust</a> nog geen firmware-update van een fabrikant. Tot die er is: zet PXE uit waar het niet nodig is. Nu moeten de fabrikanten van servers en moederborden er nog firmware van maken, en de beheerders die firmware nog installeren. Dat laatste is het deel dat jaren duurt.</li>
     <li><b>AVG</b> De EU-lidstaten willen dat bedrijven persoonsgegevens mogen gebruiken om AI te trainen, zonder het te vragen. Ze maakten woensdag hun positie op over de Digital Omnibus, een wijziging van de AVG. Volgens <a href="https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies" title="noyb: EU member states approve digital expropriation of Europeans for AI companies">noyb</a> geldt AI-training dan automatisch als gerechtvaardigd belang, ook voor oude gegevens. Max Schrems noemt het &ldquo;het grootste cadeau dat EU-lidstaten ooit aan Amerikaanse Big Tech hebben gegeven&rdquo;, meldt <a href="https://www.security.nl/posting/959029/EU-lidstaten+voor+het+trainen+van+AI+op+gegevens+van+EU-burgers" title="Security.NL: EU-lidstaten voor het trainen van AI op gegevens van EU-burgers">Security.NL</a>. Het is nog geen wet: eerst het Europees Parlement, dan de onderhandelingen. Toestemming is er dus al. Alleen niet van u.</li>
-    <li><b>WICCON</b> Vandaag om 10:00 begint <a href="https://wiccon.nl/" title="WICCON 2026: cybersecurityconferentie van WICCA">WICCON 2026</a> in De Lichtfabriek in Haarlem, morgen gaat het door. Twee dagen cybersecurity, met alleen vrouwelijke sprekers. Breekt er deze week een crisus uit, dan zitten de mensen die hem oplossen in Haarlem.</li>
+    <li><b>WICCON</b> Vandaag is de tweede en laatste dag van <a href="https://wiccon.nl/" title="WICCON 2026: cybersecurityconferentie van WICCA">WICCON 2026</a> in De Lichtfabriek in Haarlem. Twee dagen cybersecurity, met alleen vrouwelijke sprekers. Breekt er deze week een crisus uit, dan zitten de mensen die hem oplossen in Haarlem.</li>
     <li><b>Patch Tuesday</b> Dinsdag 10 november. Zoals elke maand.</li>
   </ul>
 
