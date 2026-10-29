@@ -6,7 +6,14 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Thu, 29 Oct 2026 21:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Thu, 29 Oct 2026 22:30:00 +0100</lastBuildDate>
+  <item>
+    <title>29 oktober 22:30 · PHP2Shell: het waren Palo Alto-firewalls.</title>
+    <link>https://crisus.nl/#u-20261029-2230</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261029-2230</guid>
+    <pubDate>Thu, 29 Oct 2026 22:30:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>PHP2Shell: het waren Palo Alto-firewalls.</strong> Dream werkte zijn <a href="https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers" title="Dream: Chained PHP2Shell exploit roots 25 servers">blog</a> op 29 oktober bij. De 24 firewalls aan de rand van het netwerk draaien PAN-OS van Palo Alto Networks, versies 12.1 en 12.2. <a href="https://crisus.nl/#u-20261028-1900" title="28 oktober 19:00">Gisteren</a> schreven we hier nog dat Dream het merk niet noemde. Dream werkt nu samen met Palo Alto. Unit 42, het onderzoeksteam van Palo Alto, controleerde de gereedschappen en de uitkomsten zelf en volgt de aanvaller als CL-UNK-1280, schrijft Dream. Het advies: de nieuwe PAN-OS-versies installeren (zie de <a href="https://security.paloaltonetworks.com/CVE-2026-109618" title="Palo Alto Networks: Impact of Critical Vulnerabilities in PHP on Palo Alto Networks Products">advisory</a>), de beheerinterface niet aan het internet, en het wachtwoord van het LDAP-serviceaccount op de firewall vervangen. Zo wordt een anonieme firewall toch nog beroemd.</p>]]></description>
+  </item>
   <item>
     <title>29 oktober 21:00 · PHP2Shell: de 25 servers waren van Palo Alto.</title>
     <link>https://crisus.nl/#u-20261029-2100</link>
