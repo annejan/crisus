@@ -250,9 +250,32 @@
       // Four women technologists with two black cats running along.
       team.textContent = '\ud83d\udc69\u200d\ud83d\udcbb\ud83d\udc08\u200d\u2b1b\ud83d\udc69\ud83c\udffd\u200d\ud83d\udcbb\ud83d\udc69\ud83c\udfff\u200d\ud83d\udcbb\ud83d\udc08\u200d\u2b1b\ud83d\udc69\ud83c\udffc\u200d\ud83d\udcbb';
       box.appendChild(team);
+      // And a witch on a broom above them, leading the chase from the air.
+      var heks = document.createElement('span');
+      heks.className = 'heks';
+      heks.textContent = '\ud83e\uddd9\ud83c\udffd\u200d\u2640\ufe0f\ud83e\uddf9';
+      box.appendChild(heks);
+      var flits = document.createElement('span');
+      flits.className = 'bliksem';
+      box.appendChild(flits);
+      // The night around it: a full moon, four bats and the name at the end.
+      var maan = document.createElement('span');
+      maan.className = 'maan';
+      maan.textContent = '\ud83c\udf15';
+      box.appendChild(maan);
+      for (var v = 0; v < 4; v++) {
+        var bat = document.createElement('span');
+        bat.className = 'vleermuis vleermuis' + v;
+        bat.textContent = '\ud83e\udd87';
+        box.appendChild(bat);
+      }
+      var fin = document.createElement('span');
+      fin.className = 'finale';
+      fin.textContent = 'WICCON 2026';
+      box.appendChild(fin);
     }
     document.body.appendChild(box);
-    setTimeout(function () { box.remove(); }, 8000);
+    setTimeout(function () { box.remove(); }, mode === 'wiccon' ? 15500 : 8000);
   }
   // The WICCON radar item: whoever keeps it in view for 4 s (at least 90% of it) gets the
   // chase, once per visit. The same on a phone and with a mouse.

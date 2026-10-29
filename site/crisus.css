@@ -300,28 +300,69 @@ details.patch[open] > summary { margin-bottom: 14px; }
 @keyframes geest-golft { from { transform: translateY(-48px) rotate(-10deg) scale(.95); } to { transform: translateY(48px) rotate(8deg) scale(1.05); } }
 @keyframes geest-flakkert { 0% { opacity: .75; } 40% { opacity: .45; } 55% { opacity: .8; } 100% { opacity: .55; } }
 @keyframes buit-erbij { to { opacity: 1; } }
-/* "wiccon": no theft this time. The ghost flees left, a team of four comes in from the
-   right after it, and lights a pumpkin wherever it passes (the team crosses at an even
-   speed, 110% to -122% in 7.5 s, wide enough to leave a phone screen, so each pumpkin
-   pops up as the team reaches it). */
-.spook.wiccon .munt { opacity: 0; transform: scale(.2); filter: drop-shadow(0 0 10px rgba(255, 140, 0, .9)); animation: pompoen-aan .4s ease-out forwards; }
-.spook.wiccon .munt4 { animation-delay: .85s; }
-.spook.wiccon .munt3 { animation-delay: 1.4s; }
-.spook.wiccon .munt2 { animation-delay: 2s; }
-.spook.wiccon .munt1 { animation-delay: 2.6s; }
-.spook.wiccon .munt0 { animation-delay: 3.2s; }
-@keyframes pompoen-aan { 60% { opacity: 1; transform: scale(1.3); } to { opacity: 1; transform: scale(1); } }
+/* "wiccon": a 15 s night scene. The screen darkens, fog rises and a full moon comes up;
+   the ghost floats in, grows and hovers; bats flutter across; a witch swoops in on a
+   broom; the team (with black cats) storms in and lights a pumpkin wherever it passes;
+   the ghost flees, and "WICCON 2026" glows before the night lifts. The team crosses at
+   an even speed (110% to -162% in 8.8 s from 6 s), so each pumpkin lights as it arrives. */
+.spook.wiccon { animation: nacht 15s ease-in-out forwards; }
+@keyframes nacht { 0% { background: rgba(25, 0, 45, 0); } 12%, 85% { background: rgba(25, 0, 45, .6); } 100% { background: rgba(25, 0, 45, 0); } }
+@keyframes mist-dik { 0% { opacity: 0; transform: translateY(40%); } 20%, 80% { opacity: 1; } 100% { opacity: 0; transform: translateY(-10%); } }
+.spook.wiccon::before { animation: mist-dik 14s ease-out forwards; }
+.spook.wiccon::after { animation: mist-dik 13s ease-out 1s forwards; }
 .spook.wiccon .buit { display: none; }
-.spook.wiccon .geest { left: 70%; animation: geest-vlucht 3.2s ease-in forwards, geest-golft .45s ease-in-out infinite alternate, geest-flakkert .6s ease-in-out infinite alternate; }
-.team { position: absolute; bottom: 18%; left: 110%; z-index: 1; font-size: 44px; line-height: 1; white-space: nowrap; letter-spacing: 6px; animation: team-gaat 7.5s linear forwards; }
-@keyframes geest-vlucht { from { left: 70%; } to { left: -20%; } }
-@keyframes team-gaat { from { left: 110%; } to { left: -122%; } }
+.spook.wiccon .geest { left: -15%; top: 30%; font-size: 110px;
+  animation: geest-wiccon 10s ease-in-out forwards, geest-golft .7s ease-in-out infinite alternate, geest-flakkert .9s ease-in-out infinite alternate; }
+@keyframes geest-wiccon {
+  0% { left: -15%; font-size: 80px; }
+  25% { left: 52%; font-size: 130px; }
+  45% { left: 44%; font-size: 120px; }
+  65% { left: 56%; font-size: 130px; }
+  75% { left: 50%; font-size: 120px; }
+  100% { left: -35%; font-size: 60px; }
+}
+/* Lightning, twice, as night falls. */
+.bliksem { position: absolute; inset: 0; z-index: 3; background: #fff; opacity: 0; animation: bliksem 4s linear .8s forwards; }
+@keyframes bliksem { 0%, 4%, 9%, 52%, 56%, 100% { opacity: 0; } 2%, 6% { opacity: .85; } 54% { opacity: .6; } }
+.maan { position: absolute; top: 5%; right: 7%; z-index: 1; font-size: 96px; line-height: 1; opacity: 0;
+  filter: drop-shadow(0 0 30px rgba(255, 240, 180, .9)); animation: maan-op 15s ease-out forwards; }
+@keyframes maan-op { 0% { opacity: 0; transform: translateY(120px); } 15%, 88% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; } }
+.vleermuis { position: absolute; z-index: 1; left: 110%; font-size: 44px; line-height: 1; animation: vleer 5s linear forwards, fladder .18s ease-in-out infinite alternate; }
+.vleermuis0 { top: 18%; animation-delay: 2s, 0s; }
+.vleermuis1 { top: 40%; animation-delay: 2.8s, 0s; animation-duration: 4s, .15s; }
+.vleermuis2 { top: 12%; animation-delay: 3.5s, 0s; animation-duration: 6s, .2s; }
+.vleermuis3 { top: 55%; animation-delay: 4.4s, 0s; animation-duration: 4.5s, .16s; }
+@keyframes vleer { 0% { left: 110%; margin-top: 0; } 25% { margin-top: -60px; } 50% { margin-top: 40px; } 75% { margin-top: -30px; } 100% { left: -15%; margin-top: 20px; } }
+@keyframes fladder { from { transform: scaleY(1); } to { transform: scaleY(.55); } }
+.spook.wiccon .munt { font-size: 60px; opacity: 0; transform: scale(.2); filter: drop-shadow(0 0 14px rgba(255, 140, 0, .95)); animation: pompoen-aan .5s ease-out forwards, pompoen-weg 1s ease-in 14s forwards; }
+.spook.wiccon .munt4 { animation-delay: 6.85s, 14s; }
+.spook.wiccon .munt3 { animation-delay: 7.4s, 14s; }
+.spook.wiccon .munt2 { animation-delay: 8s, 14s; }
+.spook.wiccon .munt1 { animation-delay: 8.6s, 14s; }
+.spook.wiccon .munt0 { animation-delay: 9.2s, 14s; }
+@keyframes pompoen-aan { 60% { opacity: 1; transform: scale(1.4); } to { opacity: 1; transform: scale(1); } }
+@keyframes pompoen-weg { to { opacity: 0; } }
+.heks { position: absolute; top: 8%; left: 110%; z-index: 1; font-size: 80px; line-height: 1; white-space: nowrap;
+  animation: heks-vliegt 7s ease-in-out 4s forwards, heks-duikt .9s ease-in-out infinite alternate; }
+@keyframes heks-vliegt { 0% { left: 110%; top: 8%; } 40% { left: 55%; top: 30%; } 60% { left: 40%; top: 12%; } 100% { left: -60%; top: 22%; } }
+@keyframes heks-duikt { from { transform: translateY(-30px) rotate(-12deg); } to { transform: translateY(50px) rotate(10deg); } }
+.team { position: absolute; bottom: 12%; left: 110%; z-index: 1; font-size: 72px; line-height: 1; white-space: nowrap; letter-spacing: 6px; animation: team-gaat 8.8s linear 6s forwards; }
+@keyframes team-gaat { from { left: 110%; } to { left: -162%; } }
+.finale { position: absolute; top: 40%; left: 0; right: 0; z-index: 2; text-align: center; color: #ff9a1f; opacity: 0;
+  font: 900 clamp(48px, 11vw, 160px)/1 system-ui, sans-serif; letter-spacing: .04em;
+  text-shadow: 0 0 18px #a64dff, 0 0 42px #a64dff, 0 0 4px #000; animation: finale 4.5s ease-in-out 10.3s forwards; }
+@keyframes finale { 0% { opacity: 0; transform: scale(.6); } 25% { opacity: 1; transform: scale(1.08); } 75% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.3); } }
 @media (prefers-reduced-motion: reduce) {
   .geest { left: 45%; opacity: .7; animation: none; }
   .munt { display: none; }
   .buit { opacity: 1; animation: none; }
   .spook::before, .spook::after { display: none; }
-  .spook.wiccon .geest { left: 5%; }
-  .team { left: 35%; animation: none; }
+  .spook.wiccon { animation: none; background: rgba(25, 0, 45, .5); }
+  .spook.wiccon .geest { left: 5%; font-size: 80px; animation: none; }
+  .team { left: 25%; animation: none; }
+  .heks { left: 60%; animation: none; }
+  .maan { opacity: 1; animation: none; }
+  .vleermuis, .bliksem { display: none; }
+  .finale { opacity: 1; animation: none; }
   .spook.wiccon .munt { display: block; opacity: 1; transform: none; animation: none; }
 }
