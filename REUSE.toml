@@ -30,6 +30,7 @@ path = [
     "site/favicon.svg",
     "site/og.png",
     "site/og-php.png",
+    "site/og-brotli.png",
     "site/museum/503/*.jpg",
     "README.md",
     "CONTRIBUTING.md",

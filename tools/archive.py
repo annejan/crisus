@@ -41,7 +41,7 @@ assert s.count(a) == 1
 s = s.replace(a, f'  "coverageEndTime": "{end}",\n{a}', 1)
 # Title and kicker say so
 s = re.sub(r"<title>Crisus · ", "<title>Crisus (afgesloten) · ", s, count=1)
-s, n = re.subn(r'<p class="kicker">Lopende crisus · ', '<p class="kicker">Afgesloten crisus · ', s, count=1)
+s, n = re.subn(r'<p class="kicker">(?:Lopende crisus|Crisus) · ', '<p class="kicker">Afgesloten crisus · ', s, count=1)
 assert n == 1
 # The banner, right under <main>
 banner = (f'  <p class="afgesloten"><strong>Deze crisus is afgesloten.</strong> {closing} '
