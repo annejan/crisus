@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<title>Crisus · HTTP2Shell: critical bug in Brotli (CVE-2026-111497)</title>
-<meta name="description" content="Crisus.nl: HTTP2Shell (CVE-2026-111497), a critical bug in Google's Brotli decoder. It is in Node.js, Python, Bun, Envoy and Istio. The patch is out. Satire, but the facts are right.">
-<meta property="og:title" content="Crisus · HTTP2Shell: critical bug in Brotli">
-<meta property="og:description" content="Crisis level 3: serious. HTTP2Shell, a critical bug in Brotli, is in Node.js, in Python and probably in your HTTP client. The patch has been out since 21 October.">
+<title>Crisus · TCP2Shell: a hole in Linux&rsquo;s TCP code (CVE-2026-98432)</title>
+<meta name="description" content="Crisus.nl: TCP2Shell (CVE-2026-98432), a bug in the Linux kernel's TCP code. Remote root, according to Anthropic, on servers with MPTCP. Ubuntu and Red Hat have no fix yet. Satire, but the facts are right.">
+<meta property="og:title" content="Crisus · TCP2Shell: a hole in Linux&rsquo;s TCP code">
+<meta property="og:description" content="Crisis level 3: serious. TCP2Shell, a bug in Linux&rsquo;s TCP code: remote root on servers with MPTCP, which Go 1.24 turns on by default. Ubuntu and Red Hat have no fix yet.">
 <meta property="og:url" content="https://crisus.nl/en/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="en_GB">
-<meta property="og:image" content="https://crisus.nl/og.png?v=7">
+<meta property="og:image" content="https://crisus.nl/og.png?v=8">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Crisus: HTTP2Shell, critical bug in Brotli. Crisis level 3 of 5: serious.">
+<meta property="og:image:alt" content="Crisus: TCP2Shell, a hole in Linux&rsquo;s TCP code. Crisis level 3 of 5: serious.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://crisus.nl/og.png?v=7">
+<meta name="twitter:image" content="https://crisus.nl/og.png?v=8">
 <meta name="theme-color" content="#ffd400">
 <link rel="canonical" href="https://crisus.nl/en/">
 <link rel="alternate" hreflang="nl" href="https://crisus.nl/">
@@ -28,15 +28,15 @@
 <link rel="stylesheet" href="/crisus.css?v=23">
 <script src="/crisus.js?v=11" defer></script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "HTTP2Shell: critical bug in Brotli", "url": "https://crisus.nl/en/", "inLanguage": "en",
- "description": "HTTP2Shell (CVE-2026-111497), a critical bug in the Brotli decoder, and what to do about it. Satire, but the facts are right.",
+{"@context": "https://schema.org", "@type": "WebPage", "name": "TCP2Shell: a hole in Linux's TCP code", "url": "https://crisus.nl/en/", "inLanguage": "en",
+ "description": "TCP2Shell (CVE-2026-98432), a bug in the Linux kernel's TCP code: remote root on servers with MPTCP, and what to do about it. Satire, but the facts are right.",
  "isPartOf": {"@type": "WebSite", "name": "Crisus", "url": "https://crisus.nl/"},
  "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"}}
 </script>
 </head>
 <body>
 <a class="skip" href="#inhoud">Skip to the status</a>
-<div class="tape" aria-hidden="true"><p><span>CAUTION · CRISUS · STAY CALM · THE PATCH IS OUT · UPDATE · CAUTION · CRISUS · DO NOT UNPACK ANYTHING · NOT EVEN PARCELS · CAUTION · CRISUS · IN PYTHON TOO · CAUTION · CRISUS · IT CUTS BOTH WAYS · CAUTION · CRISUS · GZIP IS FINE TOO · CAUTION · CRISUS · STAY CALM · THE PATCH IS OUT · UPDATE · CAUTION · CRISUS · DO NOT UNPACK ANYTHING · NOT EVEN PARCELS · CAUTION · CRISUS · IN PYTHON TOO · CAUTION · CRISUS · IT CUTS BOTH WAYS · CAUTION · CRISUS · GZIP IS FINE TOO ·</span></p></div>
+<div class="tape" aria-hidden="true"><p><span>CAUTION · CRISUS · STAY CALM · TCP2SHELL · CAUTION · CRISUS · NO KERNEL FOR UBUNTU · NOT YET · CAUTION · CRISUS · IP OPTIONS OFF · CAUTION · CRISUS · GO SPEAKS MPTCP · CAUTION · CRISUS · IT IS A RACE · CAUTION · CRISUS · STAY CALM · TCP2SHELL · CAUTION · CRISUS · NO KERNEL FOR UBUNTU · NOT YET · CAUTION · CRISUS · IP OPTIONS OFF · CAUTION · CRISUS · GO SPEAKS MPTCP · CAUTION · CRISUS · IT IS A RACE · </span></p></div>
 
 <header>
   <div class="wrap">
@@ -66,11 +66,11 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-10-26T22:25:00+01:00">status of 26 October, 22:25</time> · <a href="/" title="Crisus: de actuele stand (in Dutch)">hourly updates in Dutch</a></p>
-  <h1>HTTP2Shell: critical bug in Brotli</h1>
-  <p class="lead">A critical bug in Brotli, Google&rsquo;s compression: HTTP2Shell. Brotli is in Node.js, in Python, in Bun, Envoy and Istio, and probably in something of yours. The patch is out: Brotli <strong>1.2.1</strong>, Node.js <strong>26.12.1, 24.22.1 and 22.23.4</strong>. Don&rsquo;t panic. Do update.</p>
+  <p class="kicker">Crisus · <time datetime="2026-10-30T12:02:00+01:00">status of 30 October, 12:02</time> · <a href="/" title="Crisus: de actuele stand (in Dutch)">hourly updates in Dutch</a></p>
+  <h1>TCP2Shell: a hole in Linux&rsquo;s TCP code</h1>
+  <p class="lead">A bug in the way the Linux kernel sets up a TCP connection: TCP2Shell. According to Anthropic, an attacker can use it to get root remotely, without logging in, on a server with MPTCP. Debian, SUSE and Oracle have the fix, Ubuntu and Red Hat <strong>not yet</strong>. Don&rsquo;t panic. Do add a firewall rule.</p>
 
-  <p class="klok" id="klok"><b data-since="2026-10-21T21:27:00+02:00">21:27</b><span>Brotli&rsquo;s own fix has been out since 21 October, 19:27 UTC. Node.js had it the same day. Every minute on this clock is a minute without an update. <a href="#stand" title="Is the patch there for me?">Is the patch there for me?</a></span></p>
+  <p class="klok" id="klok"><b data-since="2026-10-15T00:00:00+02:00">15.10.2026</b><span>Since 15 October the fix has been in the kernel. Ubuntu and Red Hat do not ship it yet. Every minute on this clock is a minute with a firewall rule. <a href="#stand" title="Is the fix there for me?">Is the fix there for me?</a></span></p>
 
   <section class="level" aria-labelledby="niveau">
     <h2 id="niveau">Current crisis level: 3 of 5</h2>
@@ -87,72 +87,55 @@
 
   <h2 id="wat">What is going on?</h2>
   <dl class="feiten" aria-labelledby="wat">
-    <dt>What is Brotli?</dt>
-    <dd>A way to make data smaller, like zip and gzip. Jyrki Alakuijala and Zolt&aacute;n Szabadka of Google designed it in 2013, at first for web fonts. It is named after a Swiss bread roll, the <i lang="gsw">Br&ouml;tli</i>. Since 2016 it is an internet standard: <a href="https://www.rfc-editor.org/rfc/rfc7932" title="RFC 7932: Brotli Compressed Data Format">RFC 7932</a>. Every major browser speaks it, CDNs send it, and a WOFF2 web font is always Brotli. So whatever fetches something from the internet often gets Brotli back and has to unpack it.</dd>
     <dt>The bug</dt>
-    <dd>An out-of-bounds write in Google&rsquo;s Brotli decoder: <a href="https://www.cve.org/CVERecord?id=CVE-2026-111497" title="CVE-2026-111497 on cve.org">CVE-2026-111497</a>, also called HTTP2Shell, first Node2Shell. The decoder cannot tell broken input from input that is not complete yet, goes on in an invalid state and writes outside its own memory. The <a href="https://github.com/google/brotli/commit/0ed4268a4401abcb44720963" title="google/brotli: commit 0ed4268">fix</a> gives broken input its own error code: -17.</dd>
-    <dt>Which way?</dt>
-    <dd>Both. A server that unpacks Brotli is open to a malicious client. A client that unpacks Brotli is open to a malicious server. That is almost every HTTP client: it asks for Brotli itself, with <code>Accept-Encoding: br</code>.</dd>
-    <dt>How bad?</dt>
-    <dd>CVSS v4.0 <strong>9.2</strong>, from Google in the CVE record. Node.js calls it <em>high</em>. Ubuntu says <em>medium</em>. The Dutch <a href="https://www.ncsc.nl/alerts/kwetsbaarheid-in-google-brotli-decoder-in-nodejs-update-nu" title="NCSC: Kwetsbaarheid in Google Brotli-decoder in Node.js: update nu">NCSC</a>: likelihood medium, impact high. Four parties, four opinions. All four answer: patch. An attacker can corrupt memory with one compressed message, leak data, crash the program and possibly run their own code.</dd>
+    <dd><a href="https://www.cve.org/CVERecord?id=CVE-2026-98432" title="CVE-2026-98432 on cve.org">CVE-2026-98432</a>: a use-after-free in the kernel&rsquo;s IPv4 TCP code. While setting up a connection with IP options (Record Route or Timestamp), the kernel can read memory that has just been freed, if a retransmitted SYN is handled on another CPU at the same time. It has been there since kernel 4.4, from 2016. IPv6 is not affected.</dd>
+    <dt>What is MPTCP?</dt>
+    <dd>Multipath TCP: one connection over several network paths at once, for example wifi and 4G on a phone. If one path drops, the connection carries on over the other. It is an extension of TCP (<a href="https://www.rfc-editor.org/rfc/rfc8684" title="RFC 8684: TCP Extensions for Multipath Operation with Multiple Addresses">RFC 8684</a>). Apple has used it on iPhones since 2013, among other things for Siri, and Linux has supported it since kernel 5.6 (<a href="https://www.mptcp.dev/" title="Multipath TCP for Linux">mptcp.dev</a>, <a href="https://en.wikipedia.org/wiki/Multipath_TCP" title="Wikipedia: Multipath TCP">Wikipedia</a>). To the rest of the internet it looks like ordinary TCP. Two roads to Rome. For an attacker too.</dd>
+    <dt>Why is it on?</dt>
+    <dd>MPTCP lives in the kernel, but a program has to ask for it. Almost no program does. Except anything written in Go: since Go 1.24, from February 2025, a Go server asks the kernel for MPTCP by default, say the <a href="https://go.dev/doc/go1.24" title="Go 1.24 Release Notes">release notes</a>. The programmer does not have to do anything, and usually does not know. Go itself is not vulnerable. It just opens the door to the part of the kernel that is.</dd>
+    <dt>What can an attacker do?</dt>
+    <dd>Anthropic&rsquo;s Frontier Red Team wrote on 27 October that an unreleased Claude model built a working exploit with it: remote, without logging in, root on a server with an MPTCP listener (<a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" title="Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude">Anthropic</a>). Leaking a kernel pointer took 48 minutes, the shell another five. The exploit has not been published. Whether it also works without MPTCP is not clear. Yes, Claude is related to the author of this page. We have not talked about it at home yet.</dd>
+    <dt>Severity</dt>
+    <dd>CVSS 9.8, from the kernel&rsquo;s CVE team. Red Hat says 8.1, &ldquo;Important&rdquo;: the race is hard to win. Feedly says 5.9. Three parties, three numbers. All three: update.</dd>
     <dt>Which versions?</dt>
-    <dd>Brotli <strong>1.0.3 up to and including 1.2.0</strong>. Every program with its own copy of Brotli has to update by itself.</dd>
-    <dt>Who has it?</dt>
-    <dd>Node.js, with its own copy. The Python packages <code>brotli</code> and <code>brotlicffi</code>, and through them requests, urllib3, httpx, aiohttp and Scrapy, even if your code never says <code>import brotli</code>. According to <a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido</a> also Bun, Envoy and Istio. Not affected: Apache with <code>mod_brotli</code> and nginx, because by default they only compress.</dd>
-    <dt>Who found it?</dt>
-    <dd>OpenAI&rsquo;s Codex Security, says the <a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">Node.js advisory</a>, back in February. Brotli fixed the code then, but did not see it as a security bug. So there was no release then. There is now.</dd>
+    <dd>Everything from 4.4. The fix is in 5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 and 7.3.</dd>
     <dt>Exploited?</dt>
-    <dd><strong>Yes.</strong> On 27 October the US CISA added the bug to its <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" title="CISA: Known Exploited Vulnerabilities Catalog">KEV catalog</a>, the list of vulnerabilities known to be exploited (<a href="https://www.cisa.gov/news-events/alerts/2026/10/27/cisa-adds-two-known-exploited-vulnerabilities-catalog" title="CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog">alert</a>). Italy&rsquo;s CSIRT reports exploitation too, writes <a href="https://www.security.nl/posting/959389/Node2Shell-kwetsbaarheid+in+Brotli-decoder+actief+misbruikt+bij+aanvallen" title="Security.NL: Node2Shell-kwetsbaarheid in Brotli-decoder actief misbruikt bij aanvallen">Security.NL</a>. CISA does not say how or against whom. Before that it was &ldquo;not seen yet&rdquo; (The Hacker News, 22 October; the Dutch NCSC on 23 October).</dd>
-    <dt>Does my scanner see it?</dt>
-    <dd>Since recently. Since 23 October, 21:08 CEST, <a href="https://github.com/advisories/GHSA-9v8h-qqgm-4m35" title="GitHub advisory GHSA-9v8h-qqgm-4m35: Brotli out-of-bounds write (Node2Shell)">GHSA-9v8h-qqgm-4m35</a> on GitHub names the Python packages, so Dependabot should see them now. Using pip-audit or Safety? Check by hand.</dd>
+    <dd><strong>Not seen yet.</strong> The bug is not in CISA&rsquo;s KEV catalog, and Anthropic&rsquo;s exploit is not public.</dd>
+    <dt>Why TCP2Shell?</dt>
+    <dd>The bug has no name of its own. After PHP2Shell and HTTP2Shell, the crisis team could not go back.</dd>
   </dl>
 
   <section class="doen" aria-labelledby="doen">
     <h2 id="doen">What should you do?</h2>
-    <p>Stay indoors. Do not unpack anything.</p>
+    <p>Stay indoors. Keep the door locked.</p>
     <ol>
-      <li><strong>Find out where you have Brotli.</strong> Also where you do not expect it. Check every virtualenv and every container image on its own.
-        <pre><code>node -v
-pip list 2&gt;/dev/null | grep -iE '^brotli'
-dpkg -l | grep -i brotli        <span class="c"># Debian, Ubuntu</span>
-rpm -qa | grep -i brotli        <span class="c"># Fedora, RHEL, openSUSE</span></code></pre></li>
-      <li><strong>Node.js:</strong> update to 26.12.1, 24.22.1 or 22.23.4. The official Docker images <code>node:24.22.1</code> and up have been there since 22 October. Recreate your containers, a restart is not enough. Still on Node.js 20? Then this is a good moment.</li>
-      <li><strong>Python:</strong> is <code>brotli</code> or <code>brotlicffi</code> in the list? Upgrade it, and put the new version in your lockfile too.
-        <pre><code>pip install --upgrade 'brotli&gt;=1.2.1'           <span class="c"># if you have brotli</span>
-pip install --upgrade 'brotlicffi&gt;=1.2.1.0'     <span class="c"># if you have brotlicffi</span></code></pre></li>
-      <li><strong>The system package:</strong> Debian 13 has <code>1.1.0-2+deb13u1</code>, Debian 12 has <code>1.0.9-2+deb12u1</code>. Debian&rsquo;s Node.js uses that system library. Update, then restart:
-        <pre><code>sudo apt update
-sudo apt install --only-upgrade libbrotli1
-sudo needrestart -r l          <span class="c"># what still runs old code?</span></code></pre></li>
-      <li><details class="nood"><summary><strong>Cannot update yet?</strong></summary> Then <a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido</a> lists three stopgaps. One: remove <code>brotli</code> and <code>brotlicffi</code>; HTTP clients fall back to gzip. Two: refuse requests with <code>Content-Encoding: br</code> at the proxy. Three: take <code>br</code> out of <code>Accept-Encoding</code> <em>and</em> refuse Brotli responses before unpacking. Changing the header alone is not enough: a malicious server sends Brotli anyway.</details></li>
-      <li>Do not click links in emails about this bug. We never email. And if we did, it would be gzipped.</li>
+      <li><strong>Check whether your kernel has the fix.</strong> Debian 13 has <code>6.12.113-1</code>, Debian 12 <code>6.1.190-1</code>. Update and reboot, or the old kernel keeps running:
+        <pre><code>uname -r
+sudo apt update &amp;&amp; sudo apt full-upgrade
+sudo reboot</code></pre></li>
+      <li><strong>No fix yet?</strong> (Ubuntu, Red Hat, the default kernel of Amazon Linux 2023.) Then keep out TCP packets with IPv4 options. Normal traffic does not use them; <a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a> already recommends filtering them. This rule comes from <a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF</a>:
+        <pre><code>sudo nft add table ip cve_2026_98432
+sudo nft add chain ip cve_2026_98432 pre '{ type filter hook prerouting priority -300; }'
+sudo nft add rule ip cve_2026_98432 pre meta l4proto tcp ip hdrlength gt 5 counter drop</code></pre>
+        It is gone after a reboot unless you make it persistent. Does your network use CIPSO labels (SELinux or Smack with NetLabel)? Then don&rsquo;t, those need the options.</li>
+      <li><strong>Running services in Go?</strong> Turn MPTCP off until the kernel is updated, and restart the service:
+        <pre><code>GODEBUG=multipathtcp=0          <span class="c"># Go 1.24 and later</span>
+sudo ss -lnMp                   <span class="c"># which processes listen with MPTCP?</span></code></pre></li>
+      <li>Do not click links in e-mails about this bug. We never send e-mail. And if we did, it would go over a single path.</li>
     </ol>
   </section>
 
-  <h2 id="stand">Status per platform, 29 October 10:45</h2>
+  <h2 id="stand">Status per platform, 30 October 12:02</h2>
   <ul class="status" aria-labelledby="stand">
-    <li><b>Brotli</b><span class="pill green">Fix available</span><em>1.2.1, 1.1.1 and 1.0.10, since 21 October.</em></li>
-    <li><b>Node.js</b><span class="pill orange">Install now</span><em>26.12.1, 24.22.1 and 22.23.4, since 21 October. Patched? Restart too.</em></li>
-    <li><b>Node.js 20 and older</b><span class="pill red">No fix</span><em>And none is coming. End of life since 30 April.</em></li>
-    <li><b>Python</b><span class="pill green">Fix available</span><em><code>brotli</code> 1.2.1 and <code>brotlicffi</code> 1.2.1.0 on PyPI, since 22 October.</em></li>
-    <li><b>Docker</b><span class="pill green">Fix available</span><em><code>node:24.22.1</code> and the other patched tags since 22 October. Recreate your containers.</em></li>
-    <li><b>Bun</b><span class="pill green">Fix available</span><em>1.4.4, since 22 October.</em></li>
-    <li><b>Envoy, Istio</b><span class="pill green">Fix available</span><em>Envoy 1.40.0, 1.39.3, 1.38.6 and 1.37.8. Istio 1.31.2, 1.30.6 and 1.29.9, although 1.29 itself is end of life.</em></li>
-    <li><b>Java</b><span class="pill green">Fix available</span><em><a href="https://github.com/hyperxpro/Brotli4j/security/advisories/GHSA-x524-jrqf-vwq6" title="Brotli4j: GHSA-x524-jrqf-vwq6">brotli4j</a> 1.24.0, with Brotli 1.2.1, since 24 October. Netty uses it.</em></li>
-    <li><b>.NET, PowerShell</b><span class="pill orange">Install now</span><em>.NET SDK 8.0.427, 9.0.320 and 10.0.403, PowerShell 7.4.22, 7.5.13 and 7.6.9, since 25 October, says <a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-111497" title="Microsoft Security Update Guide: CVE-2026-111497">Microsoft</a>.</em></li>
-    <li><b>Visual Studio</b><span class="pill green">Update available</span><em>2019 16.11.61, 2022 17.14.43 and 2026 18.11.2, since 25 October.</em></li>
-    <li><b>Ruby, PHP</b><span class="pill green">Fix available</span><em>The <code>brotli</code> gem 0.9.1 and the PHP extension <code>brotli</code> 0.21.1, both with Brotli 1.2.1.</em></li>
-    <li><b>PHP on Windows</b><span class="pill orange">Install now</span><em>8.5.12-1, 8.4.27-1, 8.3.36-1 and 8.2.35-1 on windows.php.net, with Brotli 1.2.1, since 26 October, says <a href="https://news-web.php.net/php.announce/514" title="php.announce: Updated PHP Windows builds for Brotli security fix">PHP</a>. Same version, new build.</em></li>
-    <li><b>Debian 13</b><span class="pill green">Fix available</span><em><a href="https://lists.debian.org/debian-security-announce/2026/msg00498.html" title="DSA-6582-1: brotli security update">DSA-6582-1</a>: <code>brotli 1.1.0-2+deb13u1</code>, since 23 October.</em></li>
-    <li><b>Debian 12</b><span class="pill green">Fix available</span><em>DLA-4855-1: <code>brotli 1.0.9-2+deb12u1</code>. Unstable is still vulnerable.</em></li>
-    <li><b>Alpine</b><span class="pill green">Fix available</span><em><code>brotli 1.2.1-r0</code> in edge, 3.24 and 3.23, <code>1.1.1-r0</code> in 3.22 and 3.21.</em></li>
-    <li><b>Amazon Linux 2023</b><span class="pill green">Fix available</span><em><a href="https://alas.aws.amazon.com/AL2023/ALAS2023-2026-3334.html" title="Amazon Linux: ALAS2023-2026-3334">ALAS2023-2026-3334</a>: <code>brotli 1.1.0-1.amzn2023.0.2</code>, since 24 October.</em></li>
-    <li><b>Fedora</b><span class="pill orange">Partial</span><em>Brotli 1.2.1 in Rawhide and ELN, and stable for Fedora 45 since 26 October (<a href="https://bodhi.fedoraproject.org/updates/FEDORA-2026-6a639d1308" title="Fedora: FEDORA-2026-6a639d1308, brotli-1.2.1-1.fc45">FEDORA-2026-6a639d1308</a>). For Fedora 43 and 44 the update is waiting, but not stable yet.</em></li>
-    <li><b>Red Hat</b><span class="pill green">Fix available</span><em><a href="https://access.redhat.com/errata/RHSA-2026:90449" title="Red Hat: RHSA-2026:90449, brotli security update (RHEL 10)">RHSA-2026:90449</a> for RHEL 10 (<code>brotli 1.1.0-8.el10_2.1</code>), <a href="https://access.redhat.com/errata/RHSA-2026:90495" title="Red Hat: RHSA-2026:90495, brotli security update (RHEL 9)">RHSA-2026:90495</a> for RHEL 9 (<code>1.0.9-10.el9_8.1</code>) and <a href="https://access.redhat.com/errata/RHSA-2026:90501" title="Red Hat: RHSA-2026:90501, brotli security update (RHEL 8)">RHSA-2026:90501</a> for RHEL 8 (<code>1.0.6-5.el8_10</code>), since 26 October. Not yet the Node.js 24 and 26 modules on RHEL 8 and 9, see the <a href="https://access.redhat.com/security/cve/CVE-2026-111497" title="Red Hat: CVE-2026-111497">CVE page</a>.</em></li>
-    <li><b>SUSE</b><span class="pill orange">Partial</span><em>openSUSE Tumbleweed has Brotli 1.2.1, see the <a href="https://www.suse.com/security/cve/CVE-2026-111497.html" title="SUSE: CVE-2026-111497">CVE page</a>. SUSE Linux Enterprise does not yet.</em></li>
-    <li><b>Ubuntu</b><span class="pill green">Fix available</span><em><a href="https://ubuntu.com/security/notices/USN-8956-1" title="USN-8956-1: Brotli vulnerability">USN-8956-1</a>: 22.04, 24.04, 26.04 and 26.10, since 26 October. Not yet for 20.04 and older (ESM).</em></li>
-    <li><b>Fortinet</b><span class="pill red">No fix</span><em><a href="https://fortiguard.fortinet.com/psirt/FG-IR-26-187" title="Fortinet PSIRT: FG-IR-26-187, Node2Shell CVEs">FG-IR-26-187</a>: since 26 October Fortinet has been investigating over forty products, including FortiOS, FortiProxy and FortiMail. No fixed versions yet.</em></li>
-    <li><b>Apache, nginx</b><span class="pill green">Works</span><em>They only compress, they unpack nothing. Packing is safe. Unpacking is the problem. As with every house move.</em></li>
+    <li><b>Linux</b><span class="pill green">Fix available</span><em>5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 and 7.3, since 15 October.</em></li>
+    <li><b>Debian 13</b><span class="pill green">Fix available</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">DSA-6568-1</a>: <code>linux 6.12.113-1</code>.</em></li>
+    <li><b>Debian 12</b><span class="pill green">Fix available</span><em>DLA-4841-1: <code>linux 6.1.190-1</code>.</em></li>
+    <li><b>Ubuntu</b><span class="pill red">No fix</span><em>20.04 up to and including 26.10 say &ldquo;work in progress&rdquo;, see the <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE page</a>.</em></li>
+    <li><b>Red Hat</b><span class="pill red">No fix</span><em>RHEL 8, 9 and 10 say &ldquo;Affected&rdquo;, &ldquo;Important&rdquo; (8.1), see the <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE page</a>. RHEL 6 and 7 are not affected.</em></li>
+    <li><b>SUSE</b><span class="pill orange">Partial</span><em>Most products have a fix, a few are still on the way, see the <a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">CVE page</a>.</em></li>
+    <li><b>Oracle Linux</b><span class="pill green">Fix available</span><em>The UEK kernels, <a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">ELSA-2026-500397</a> and later.</em></li>
+    <li><b>Amazon Linux 2023</b><span class="pill orange">Partial</span><em>Only the 6.12 (ALAS2023-2026-3335) and 6.18 (ALAS2023-2026-3251) kernels, see <a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">ALAS</a>. Not the default kernel yet.</em></li>
+    <li><b>Go</b><span class="pill orange">Restart</span><em>Since 1.24 MPTCP is on by default for listeners. <code>GODEBUG=multipathtcp=0</code> turns it off, see the <a href="https://go.dev/doc/godebug" title="Go: GODEBUG settings">GODEBUG docs</a>.</em></li>
     <li><b>Crisus.nl</b><span class="pill green">Works</span><em>No Node, no Python. Just HTML. Like in 1997.</em></li>
   </ul>
   <p class="note">This is the short version. The updates, the radar and the earlier crises are on the <a href="/" title="Crisus: de actuele stand (in Dutch)">Dutch page</a>. The previous crisis, PHP2Shell, is closed: <a href="/php/" title="Crisus: PHP2Shell, closed (in Dutch)">crisus.nl/php</a> (in Dutch).</p>
@@ -169,19 +152,19 @@ sudo needrestart -r l          <span class="c"># what still runs old code?</span
 
   <h2 id="bronnen">Sources</h2>
   <ul class="bronnen" aria-labelledby="bronnen">
-    <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-111497" title="CVE-2026-111497 on cve.org">CVE-2026-111497</a>: &ldquo;Out-of-Bounds Write in Google Brotli Decoder&rdquo;, published by Google on 22 October, CVSS v4.0 9.2.</li>
-    <li><a href="https://www.cisa.gov/news-events/alerts/2026/10/27/cisa-adds-two-known-exploited-vulnerabilities-catalog" title="CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog">CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog</a>, 27 October. HTTP2Shell in the KEV catalog: known to be exploited, deadline 10 November.</li>
-    <li><a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">Node.js: October 2026 security releases</a>. The fix in 26.12.1, 24.22.1 and 22.23.4, and who reported the bug.</li>
-    <li><a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell)</a>. Why Python is affected, the stopgaps and the status of Bun, Envoy and Istio.</li>
-    <li><a href="https://www.ncsc.nl/alerts/kwetsbaarheid-in-google-brotli-decoder-in-nodejs-update-nu" title="NCSC: Kwetsbaarheid in Google Brotli-decoder in Node.js: update nu">NCSC: Kwetsbaarheid in Google Brotli-decoder in Node.js: update nu</a> (Dutch), 23 October, with advisory <a href="https://advisories.ncsc.nl/2026/ncsc-2026-0453.html" title="NCSC-2026-0453">NCSC-2026-0453</a>.</li>
-    <li><a href="https://github.com/advisories/GHSA-9v8h-qqgm-4m35" title="GitHub advisory GHSA-9v8h-qqgm-4m35: Brotli out-of-bounds write (Node2Shell)">GitHub: GHSA-9v8h-qqgm-4m35</a>, for the PyPI packages <code>brotli</code> and <code>brotlicffi</code>.</li>
-    <li><a href="https://github.com/google/brotli/commit/0ed4268a4401abcb44720963" title="google/brotli: commit 0ed4268">google/brotli: the fix</a> and the <a href="https://github.com/google/brotli/releases" title="google/brotli: releases">releases</a> 1.2.1, 1.1.1 and 1.0.10.</li>
-    <li><a href="https://en.wikipedia.org/wiki/Brotli" title="Wikipedia: Brotli">Wikipedia: Brotli</a>. Who designed it, the name, the browsers and who uses it. The standard: <a href="https://www.rfc-editor.org/rfc/rfc7932" title="RFC 7932: Brotli Compressed Data Format">RFC 7932</a>.</li>
-    <li><a href="https://lists.debian.org/debian-security-announce/2026/msg00498.html" title="DSA-6582-1: brotli security update">Debian DSA-6582-1</a> and the <a href="https://security-tracker.debian.org/tracker/CVE-2026-111497" title="Debian security tracker: CVE-2026-111497">Debian security tracker</a>. <a href="https://ubuntu.com/security/CVE-2026-111497" title="Ubuntu: CVE-2026-111497">Ubuntu: CVE-2026-111497</a>.</li>
-    <li><a href="https://en.wikipedia.org/wiki/Annexation_of_Crimea_by_the_Russian_Federation" title="Wikipedia: Annexation of Crimea by the Russian Federation">Wikipedia: Annexation of Crimea</a>. The 2015 law that sets 20 February 2014 as the start of the occupation, and the medal.</li>
-    <li><a href="https://en.wikipedia.org/wiki/Siege_of_Sloviansk" title="Wikipedia: Siege of Sloviansk">Wikipedia: Siege of Sloviansk</a>. 12 April 2014, the start of the war in Donbas.</li>
-    <li><a href="https://en.wikipedia.org/wiki/Malaysia_Airlines_Flight_17" title="Wikipedia: Malaysia Airlines Flight 17">Wikipedia: Malaysia Airlines Flight 17</a>. 17 July 2014, 298 dead, 196 of them Dutch, and the 2022 verdict.</li>
-    <li><a href="https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine" title="Wikipedia: Russian invasion of Ukraine">Wikipedia: Russian invasion of Ukraine</a>. 24 February 2022, just before 05:00 Kyiv time.</li>
+    <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-98432" title="CVE-2026-98432 on cve.org">CVE-2026-98432</a> The record from the kernel&rsquo;s CVE team, CVSS 9.8.</li>
+    <li><a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" title="Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude">Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude</a>, 27 October. The exploit on servers with MPTCP.</li>
+    <li><a href="https://go.dev/doc/go1.24" title="Go 1.24 Release Notes">Go 1.24 Release Notes</a>. ListenConfig uses MPTCP by default on Linux.</li>
+    <li><a href="https://go.dev/doc/godebug" title="Go: GODEBUG settings">Go: GODEBUG</a>. <code>multipathtcp=0</code> turns it off.</li>
+    <li><a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF: how to block the Linux TCP bug</a>. The nftables rule and its side effects.</li>
+    <li><a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a>. Why IP options may be dropped at the edge.</li>
+    <li><a href="https://www.rfc-editor.org/rfc/rfc8684" title="RFC 8684: TCP Extensions for Multipath Operation with Multiple Addresses">RFC 8684</a>. What MPTCP is.</li>
+    <li><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">Debian security tracker</a>: DSA-6568-1 and DLA-4841-1.</li>
+    <li><a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">Ubuntu: CVE-2026-98432</a>: still work in progress.</li>
+    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Important, 8.1, no fix yet.</li>
+    <li><a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">SUSE: CVE-2026-98432</a>: most products have the fix.</li>
+    <li><a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">Oracle Linux: CVE-2026-98432</a>: the UEK kernels.</li>
+    <li><a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">Amazon Linux: CVE-2026-98432</a>: the 6.12 and 6.18 kernels.</li>
   </ul>
 </main>
 

@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<title>Crisus · HTTP2Shell: критична вразливість у Brotli (CVE-2026-111497)</title>
-<meta name="description" content="Crisus.nl: HTTP2Shell (CVE-2026-111497), критична вразливість у декодері Brotli від Google. Вона є в Node.js, Python, Bun, Envoy та Istio. Виправлення вже вийшло. Сатира, але факти правдиві.">
-<meta property="og:title" content="Crisus · HTTP2Shell: критична вразливість у Brotli">
-<meta property="og:description" content="Рівень кризи 3: серйозно. HTTP2Shell, критична вразливість у Brotli, є в Node.js, у Python і, найімовірніше, у вашому HTTP-клієнті. Виправлення вийшло 21 жовтня.">
+<title>Crisus · TCP2Shell: вразливість у TCP-коді Linux (CVE-2026-98432)</title>
+<meta name="description" content="Crisus.nl: TCP2Shell (CVE-2026-98432), вразливість у TCP-коді ядра Linux. За даними Anthropic, вона дає віддалений root на серверах із MPTCP. В Ubuntu і Red Hat виправлення ще немає. Сатира, але факти правдиві.">
+<meta property="og:title" content="Crisus · TCP2Shell: вразливість у TCP-коді Linux">
+<meta property="og:description" content="Рівень кризи 3: серйозно. TCP2Shell, вразливість у TCP-коді Linux: віддалений root на серверах із MPTCP, який Go 1.24 вмикає за замовчуванням. В Ubuntu і Red Hat виправлення ще немає.">
 <meta property="og:url" content="https://crisus.nl/uk/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="uk_UA">
-<meta property="og:image" content="https://crisus.nl/og.png?v=7">
+<meta property="og:image" content="https://crisus.nl/og.png?v=8">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Crisus: HTTP2Shell, критична вразливість у Brotli. Рівень кризи 3 з 5: серйозно.">
+<meta property="og:image:alt" content="Crisus: TCP2Shell, вразливість у TCP-коді Linux. Рівень кризи 3 з 5: серйозно.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://crisus.nl/og.png?v=7">
+<meta name="twitter:image" content="https://crisus.nl/og.png?v=8">
 <meta name="theme-color" content="#ffd400">
 <link rel="canonical" href="https://crisus.nl/uk/">
 <link rel="alternate" hreflang="nl" href="https://crisus.nl/">
@@ -28,15 +28,15 @@
 <link rel="stylesheet" href="/crisus.css?v=23">
 <script src="/crisus.js?v=11" defer></script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "HTTP2Shell: критична вразливість у Brotli", "url": "https://crisus.nl/uk/", "inLanguage": "uk",
- "description": "HTTP2Shell (CVE-2026-111497), критична вразливість у декодері Brotli, і що з цим робити. Сатира, але факти правдиві.",
+{"@context": "https://schema.org", "@type": "WebPage", "name": "TCP2Shell: вразливість у TCP-коді Linux", "url": "https://crisus.nl/uk/", "inLanguage": "uk",
+ "description": "TCP2Shell (CVE-2026-98432), вразливість у TCP-коді ядра Linux: віддалений root на серверах із MPTCP, і що з цим робити. Сатира, але факти правдиві.",
  "isPartOf": {"@type": "WebSite", "name": "Crisus", "url": "https://crisus.nl/"},
  "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"}}
 </script>
 </head>
 <body>
 <a class="skip" href="#inhoud">Одразу до стану</a>
-<div class="tape" aria-hidden="true"><p><span>УВАГА · CRISUS · БЕЗ ПАНІКИ · ВИПРАВЛЕННЯ ВИЙШЛО · ОНОВЛЮЙТЕСЯ · УВАГА · CRISUS · НІЧОГО НЕ РОЗПАКОВУЙТЕ · НАВІТЬ ПОСИЛКИ · УВАГА · CRISUS · І В PYTHON ТЕЖ · УВАГА · CRISUS · ЦЕ ПРАЦЮЄ В ОБИДВА БОКИ · УВАГА · CRISUS · GZIP ТЕЖ ПІДІЙДЕ · УВАГА · CRISUS · БЕЗ ПАНІКИ · ВИПРАВЛЕННЯ ВИЙШЛО · ОНОВЛЮЙТЕСЯ · УВАГА · CRISUS · НІЧОГО НЕ РОЗПАКОВУЙТЕ · НАВІТЬ ПОСИЛКИ · УВАГА · CRISUS · І В PYTHON ТЕЖ · УВАГА · CRISUS · ЦЕ ПРАЦЮЄ В ОБИДВА БОКИ · УВАГА · CRISUS · GZIP ТЕЖ ПІДІЙДЕ ·</span></p></div>
+<div class="tape" aria-hidden="true"><p><span>УВАГА · CRISUS · БЕЗ ПАНІКИ · TCP2SHELL · УВАГА · CRISUS · ЯДРА ДЛЯ UBUNTU ЩЕ НЕМАЄ · УВАГА · CRISUS · IP-ОПЦІЇ ЗАКРИТО · УВАГА · CRISUS · GO ГОВОРИТЬ MPTCP · УВАГА · CRISUS · ЦЕ ГОНКА · УВАГА · CRISUS · БЕЗ ПАНІКИ · TCP2SHELL · УВАГА · CRISUS · ЯДРА ДЛЯ UBUNTU ЩЕ НЕМАЄ · УВАГА · CRISUS · IP-ОПЦІЇ ЗАКРИТО · УВАГА · CRISUS · GO ГОВОРИТЬ MPTCP · УВАГА · CRISUS · ЦЕ ГОНКА · </span></p></div>
 
 <header>
   <div class="wrap">
@@ -65,11 +65,11 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-10-26T22:25:00+01:00">стан на 26 жовтня, 22:25</time> · <a href="/" title="Crisus: de actuele stand (нідерландською)">щогодинні оновлення нідерландською</a></p>
-  <h1>HTTP2Shell: критична вразливість у Brotli</h1>
-  <p class="lead">Критична вразливість у Brotli, алгоритмі стиснення від Google: HTTP2Shell. Brotli є в Node.js, у Python, у Bun, Envoy та Istio, і, найімовірніше, у чомусь, чим користуєтеся ви. Виправлення вже вийшло: Brotli <strong>1.2.1</strong>, Node.js <strong>26.12.1, 24.22.1 і 22.23.4</strong>. Без паніки. Але оновіться.</p>
+  <p class="kicker">Crisus · <time datetime="2026-10-30T12:02:00+01:00">стан на 30 жовтня, 12:02</time> · <a href="/" title="Crisus: de actuele stand (нідерландською)">щогодинні оновлення нідерландською</a></p>
+  <h1>TCP2Shell: вразливість у TCP-коді Linux</h1>
+  <p class="lead">Вразливість у тому, як ядро Linux встановлює TCP-зʼєднання: TCP2Shell. За даними Anthropic, зловмисник може з її допомогою віддалено отримати root, без входу в систему, на сервері з MPTCP. Debian, SUSE і Oracle вже мають виправлення, Ubuntu і Red Hat <strong>ще ні</strong>. Без паніки. Але додайте правило до брандмауера.</p>
 
-  <p class="klok" id="klok"><b data-since="2026-10-21T21:27:00+02:00">21:27</b><span>Виправлення самого Brotli вийшло 21 жовтня о 19:27 UTC. Node.js отримав його того ж дня. Кожна хвилина на цьому годиннику — це хвилина без оновлення. <a href="#stand" title="Чи вже є виправлення для мене?">Чи вже є виправлення для мене?</a></span></p>
+  <p class="klok" id="klok"><b data-since="2026-10-15T00:00:00+02:00">15.10.2026</b><span>З 15 жовтня виправлення є в ядрі. Ubuntu і Red Hat його ще не постачають. Кожна хвилина на цьому годиннику є хвилиною з правилом у брандмауері. <a href="#stand" title="Чи є виправлення для мене?">Чи є виправлення для мене?</a></span></p>
 
   <section class="level" aria-labelledby="niveau">
     <h2 id="niveau">Поточний рівень кризи: 3 з 5</h2>
@@ -86,72 +86,55 @@
 
   <h2 id="wat">Що відбувається?</h2>
   <dl class="feiten" aria-labelledby="wat">
-    <dt>Що таке Brotli?</dt>
-    <dd>Спосіб зменшувати дані, як zip і gzip. Юркі Алакуйяла та Золтан Сабадка з Google створили його 2013 року, спершу для вебшрифтів. Назва походить від швейцарської булочки <i lang="gsw">Br&ouml;tli</i>. З 2016 року це інтернет-стандарт: <a href="https://www.rfc-editor.org/rfc/rfc7932" title="RFC 7932: Brotli Compressed Data Format">RFC 7932</a>. Його підтримують усі великі браузери, його надсилають CDN, а вебшрифт у форматі WOFF2 завжди стиснутий Brotli. Тож усе, що завантажує щось з інтернету, часто отримує у відповідь Brotli і мусить його розпакувати.</dd>
     <dt>Вразливість</dt>
-    <dd>Запис поза межами буфера в декодері Brotli від Google: <a href="https://www.cve.org/CVERecord?id=CVE-2026-111497" title="CVE-2026-111497 на cve.org">CVE-2026-111497</a>, також відома як HTTP2Shell, спершу Node2Shell. Декодер не відрізняє пошкоджені вхідні дані від даних, які ще не надійшли повністю, продовжує роботу в неправильному стані й записує поза межами виділеної йому памʼяті. <a href="https://github.com/google/brotli/commit/0ed4268a4401abcb44720963" title="google/brotli: коміт 0ed4268">Виправлення</a> присвоює пошкодженим даним окремий код помилки: -17.</dd>
-    <dt>У який бік?</dt>
-    <dd>В обидва боки. Сервер, який розпаковує Brotli, вразливий до зловмисного клієнта. Клієнт, який розпаковує Brotli, вразливий до зловмисного сервера. А це майже кожен HTTP-клієнт: він сам просить Brotli заголовком <code>Accept-Encoding: br</code>.</dd>
-    <dt>Наскільки серйозно?</dt>
-    <dd>CVSS v4.0 <strong>9,2</strong> від Google у записі CVE. Node.js називає її <em>high</em>. Ubuntu каже <em>medium</em>. Нідерландський <a href="https://www.ncsc.nl/alerts/kwetsbaarheid-in-google-brotli-decoder-in-nodejs-update-nu" title="NCSC: Kwetsbaarheid in Google Brotli-decoder in Node.js: update nu">NCSC</a>: імовірність зловживання середня, шкода велика. Чотири сторони, чотири думки. Відповідь у всіх чотирьох одна: оновлюватися. Одним стиснутим повідомленням зловмисник може пошкодити памʼять, спричинити витік даних чи збій програми і, можливо, виконати власний код.</dd>
+    <dd><a href="https://www.cve.org/CVERecord?id=CVE-2026-98432" title="CVE-2026-98432 on cve.org">CVE-2026-98432</a>: use-after-free у коді ядра для IPv4 TCP. Під час встановлення зʼєднання з IP-опціями (Record Route або Timestamp) ядро може прочитати памʼять, яку щойно звільнено, якщо повторно надісланий SYN одночасно обробляється на іншому процесорі. Вона існує з ядра 4.4, тобто з 2016 року. IPv6 не вражено.</dd>
+    <dt>Що таке MPTCP?</dt>
+    <dd>Multipath TCP: одне зʼєднання одразу через кілька мережевих шляхів, наприклад wifi і 4G на телефоні. Якщо один шлях зникає, зʼєднання продовжується через інший. Це розширення TCP (<a href="https://www.rfc-editor.org/rfc/rfc8684" title="RFC 8684: TCP Extensions for Multipath Operation with Multiple Addresses">RFC 8684</a>). Apple використовує його на iPhone з 2013 року, зокрема для Siri, а Linux підтримує його з ядра 5.6 (<a href="https://www.mptcp.dev/" title="Multipath TCP for Linux">mptcp.dev</a>, <a href="https://en.wikipedia.org/wiki/Multipath_TCP" title="Wikipedia: Multipath TCP">Wikipedia</a>). Для решти інтернету це виглядає як звичайний TCP. Дві дороги до Рима. І для зловмисника теж.</dd>
+    <dt>Чому воно увімкнене?</dt>
+    <dd>MPTCP є в ядрі, але програма має сама його попросити. Майже жодна програма цього не робить. Окрім усього, що написано на Go: починаючи з Go 1.24, що вийшов у лютому 2025 року, сервер на Go за замовчуванням просить у ядра MPTCP, як зазначено в <a href="https://go.dev/doc/go1.24" title="Go 1.24 Release Notes">примітках до випуску</a>. Програмісту нічого не треба робити, і зазвичай він про це навіть не знає. Сам Go не вразливий. Він лише відчиняє двері до тієї частини ядра, яка вразлива.</dd>
+    <dt>Що може зловмисник?</dt>
+    <dd>Frontier Red Team компанії Anthropic 27 жовтня написала, що ще не випущена модель Claude створила з її допомогою робочий експлойт: віддалено, без входу в систему, root на сервері з MPTCP-слухачем (<a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" title="Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude">Anthropic</a>). Витік вказівника ядра зайняв 48 хвилин, оболонка ще пʼять. Експлойт не опубліковано. Чи працює це без MPTCP, невідомо. Так, Claude є родичем автора цієї сторінки. Вдома ми про це ще не говорили.</dd>
+    <dt>Серйозність</dt>
+    <dd>CVSS 9,8 від команди CVE ядра. Red Hat каже 8,1, &laquo;Important&raquo;: гонку важко виграти. Feedly каже 5,9. Три сторони, три числа. Усі три: оновлюйте.</dd>
     <dt>Які версії?</dt>
-    <dd>Brotli <strong>від 1.0.3 до 1.2.0 включно</strong>. Кожна програма з власною копією Brotli мусить оновитися сама.</dd>
-    <dt>Кого це стосується?</dt>
-    <dd>Node.js, який має власну копію. Python-пакетів <code>brotli</code> і <code>brotlicffi</code>, а через них requests, urllib3, httpx, aiohttp і Scrapy, навіть якщо у вашому коді ніде немає <code>import brotli</code>. За даними <a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido</a>, також Bun, Envoy та Istio. Не стосується Apache з <code>mod_brotli</code> і nginx: типово вони лише стискають.</dd>
-    <dt>Хто її знайшов?</dt>
-    <dd>Codex Security від OpenAI, згідно з <a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">бюлетенем Node.js</a>, ще в лютому. Тоді розробники Brotli виправили код, але не вважали це вразливістю. Тому релізу тоді не було. Тепер є.</dd>
+    <dd>Усе, починаючи з 4.4. Виправлення є у 5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 і 7.3.</dd>
     <dt>Чи є атаки?</dt>
-    <dd><strong>Так.</strong> 27 жовтня американське агентство CISA додало вразливість до <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" title="CISA: Known Exploited Vulnerabilities Catalog">каталогу KEV</a>, переліку вразливостей, які доведено використовуються в атаках (<a href="https://www.cisa.gov/news-events/alerts/2026/10/27/cisa-adds-two-known-exploited-vulnerabilities-catalog" title="CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog">повідомлення</a>). Про атаки повідомляє також італійський CSIRT, пише <a href="https://www.security.nl/posting/959389/Node2Shell-kwetsbaarheid+in+Brotli-decoder+actief+misbruikt+bij+aanvallen" title="Security.NL: Node2Shell-kwetsbaarheid in Brotli-decoder actief misbruikt bij aanvallen">Security.NL</a>. Як і проти кого, CISA не уточнює. До того атак &laquo;поки не помічено&raquo; (The Hacker News, 22 жовтня; нідерландський NCSC, 23 жовтня).</dd>
-    <dt>Чи бачить її мій сканер?</dt>
-    <dd>Віднедавна так. З 23 жовтня, 21:08 за центральноєвропейським літнім часом, бюлетень GitHub <a href="https://github.com/advisories/GHSA-9v8h-qqgm-4m35" title="GitHub advisory GHSA-9v8h-qqgm-4m35: Brotli out-of-bounds write (Node2Shell)">GHSA-9v8h-qqgm-4m35</a> називає й Python-пакети, тож Dependabot тепер має їх бачити. Користуєтеся pip-audit або Safety? Перевірте самі.</dd>
+    <dd><strong>Поки не помічено.</strong> Вразливості немає в каталозі KEV агентства CISA, а експлойт Anthropic не оприлюднено.</dd>
+    <dt>Чому TCP2Shell?</dt>
+    <dd>Власної назви вразливість не має. Після PHP2Shell і HTTP2Shell команда кризи вже не могла зупинитися.</dd>
   </dl>
 
   <section class="doen" aria-labelledby="doen">
     <h2 id="doen">Що вам робити?</h2>
-    <p>Залишайтеся вдома. Нічого не розпаковуйте.</p>
+    <p>Залишайтеся вдома. Тримайте двері зачиненими.</p>
     <ol>
-      <li><strong>Зʼясуйте, де у вас є Brotli.</strong> Також там, де ви його не очікуєте. Перевірте кожне віртуальне середовище й кожен образ контейнера окремо.
-        <pre><code>node -v
-pip list 2&gt;/dev/null | grep -iE '^brotli'
-dpkg -l | grep -i brotli        <span class="c"># Debian, Ubuntu</span>
-rpm -qa | grep -i brotli        <span class="c"># Fedora, RHEL, openSUSE</span></code></pre></li>
-      <li><strong>Node.js:</strong> оновіться до 26.12.1, 24.22.1 або 22.23.4. Офіційні Docker-образи <code>node:24.22.1</code> і новіші доступні з 22 жовтня. Створіть контейнери заново, перезапуску недостатньо. Досі на Node.js 20? Тоді саме час.</li>
-      <li><strong>Python:</strong> є у списку <code>brotli</code> або <code>brotlicffi</code>? Оновіть і запишіть нову версію також у lock-файл.
-        <pre><code>pip install --upgrade 'brotli&gt;=1.2.1'           <span class="c"># якщо у вас brotli</span>
-pip install --upgrade 'brotlicffi&gt;=1.2.1.0'     <span class="c"># якщо у вас brotlicffi</span></code></pre></li>
-      <li><strong>Системний пакет:</strong> у Debian 13 це <code>1.1.0-2+deb13u1</code>, у Debian 12 — <code>1.0.9-2+deb12u1</code>. Node.js з Debian використовує саме цю системну бібліотеку. Оновіть і перезапустіть:
-        <pre><code>sudo apt update
-sudo apt install --only-upgrade libbrotli1
-sudo needrestart -r l          <span class="c"># що ще працює на старому коді?</span></code></pre></li>
-      <li><details class="nood"><summary><strong>Поки не можете оновитися?</strong></summary> <a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido</a> радить три тимчасові заходи. Перший: видаліть <code>brotli</code> і <code>brotlicffi</code>, тоді HTTP-клієнти перейдуть на gzip. Другий: відхиляйте запити з <code>Content-Encoding: br</code> уже на проксі. Третій: приберіть <code>br</code> з <code>Accept-Encoding</code> <em>і</em> відхиляйте відповіді з Brotli ще до розпакування. Змінити лише заголовок недостатньо: зловмисний сервер однаково надішле Brotli.</details></li>
-      <li>Не переходьте за посиланнями в листах про цю вразливість. Ми ніколи не надсилаємо листів. А якби й надсилали, то лише стиснуті gzip.</li>
+      <li><strong>Перевірте, чи має ваше ядро виправлення.</strong> Debian 13 має <code>6.12.113-1</code>, Debian 12 має <code>6.1.190-1</code>. Оновіть і перезавантажте, інакше працюватиме старе ядро:
+        <pre><code>uname -r
+sudo apt update &amp;&amp; sudo apt full-upgrade
+sudo reboot</code></pre></li>
+      <li><strong>Виправлення ще немає?</strong> (Ubuntu, Red Hat, стандартне ядро Amazon Linux 2023.) Тоді не пропускайте TCP-пакети з опціями IPv4. Звичайний трафік їх не використовує; <a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a> уже радить їх відфільтровувати. Це правило від <a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF</a>:
+        <pre><code>sudo nft add table ip cve_2026_98432
+sudo nft add chain ip cve_2026_98432 pre '{ type filter hook prerouting priority -300; }'
+sudo nft add rule ip cve_2026_98432 pre meta l4proto tcp ip hdrlength gt 5 counter drop</code></pre>
+        Після перезавантаження воно зникне, якщо його не зберегти. Ваша мережа використовує мітки CIPSO (SELinux або Smack із NetLabel)? Тоді не застосовуйте його, їм ці опції потрібні.</li>
+      <li><strong>Маєте сервіси на Go?</strong> Вимкніть MPTCP, доки ядро не буде оновлено, і перезапустіть сервіс:
+        <pre><code>GODEBUG=multipathtcp=0          <span class="c"># Go 1.24 і новіші</span>
+sudo ss -lnMp                   <span class="c"># які процеси слухають із MPTCP?</span></code></pre></li>
+      <li>Не натискайте на посилання в листах про цю вразливість. Ми ніколи не надсилаємо листів. А якби надсилали, то лише одним шляхом.</li>
     </ol>
   </section>
 
-  <h2 id="stand">Стан за платформами, 29 жовтня, 10:45</h2>
+  <h2 id="stand">Стан за платформами, 30 жовтня, 12:02</h2>
   <ul class="status" aria-labelledby="stand">
-    <li><b>Brotli</b><span class="pill green">Є виправлення</span><em>1.2.1, 1.1.1 і 1.0.10, з 21 жовтня.</em></li>
-    <li><b>Node.js</b><span class="pill orange">Встановіть зараз</span><em>26.12.1, 24.22.1 і 22.23.4, з 21 жовтня. Оновили? Перезапустіть.</em></li>
-    <li><b>Node.js 20 і старіші</b><span class="pill red">Виправлення немає</span><em>І не буде. Підтримку припинено 30 квітня.</em></li>
-    <li><b>Python</b><span class="pill green">Є виправлення</span><em><code>brotli</code> 1.2.1 і <code>brotlicffi</code> 1.2.1.0 на PyPI, з 22 жовтня.</em></li>
-    <li><b>Docker</b><span class="pill green">Є виправлення</span><em><code>node:24.22.1</code> та інші виправлені теги з 22 жовтня. Створіть контейнери заново.</em></li>
-    <li><b>Bun</b><span class="pill green">Є виправлення</span><em>1.4.4, з 22 жовтня.</em></li>
-    <li><b>Envoy, Istio</b><span class="pill green">Є виправлення</span><em>Envoy 1.40.0, 1.39.3, 1.38.6 і 1.37.8. Istio 1.31.2, 1.30.6 і 1.29.9, хоча підтримку самої гілки 1.29 вже припинено.</em></li>
-    <li><b>Java</b><span class="pill green">Є виправлення</span><em><a href="https://github.com/hyperxpro/Brotli4j/security/advisories/GHSA-x524-jrqf-vwq6" title="Brotli4j: GHSA-x524-jrqf-vwq6">brotli4j</a> 1.24.0 з Brotli 1.2.1, з 24 жовтня. Його використовує Netty.</em></li>
-    <li><b>.NET, PowerShell</b><span class="pill orange">Встановіть зараз</span><em>.NET SDK 8.0.427, 9.0.320 і 10.0.403, PowerShell 7.4.22, 7.5.13 і 7.6.9, з 25 жовтня, повідомляє <a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-111497" title="Microsoft Security Update Guide: CVE-2026-111497">Microsoft</a>.</em></li>
-    <li><b>Visual Studio</b><span class="pill green">Є оновлення</span><em>2019 16.11.61, 2022 17.14.43 і 2026 18.11.2, з 25 жовтня.</em></li>
-    <li><b>Ruby, PHP</b><span class="pill green">Є виправлення</span><em>Гем <code>brotli</code> 0.9.1 і PHP-розширення <code>brotli</code> 0.21.1, обидва з Brotli 1.2.1.</em></li>
-    <li><b>PHP на Windows</b><span class="pill orange">Встановіть зараз</span><em>8.5.12-1, 8.4.27-1, 8.3.36-1 і 8.2.35-1 на windows.php.net, з Brotli 1.2.1, з 26 жовтня, повідомляє <a href="https://news-web.php.net/php.announce/514" title="php.announce: Updated PHP Windows builds for Brotli security fix">PHP</a>. Та сама версія, нова збірка.</em></li>
-    <li><b>Debian 13</b><span class="pill green">Є виправлення</span><em><a href="https://lists.debian.org/debian-security-announce/2026/msg00498.html" title="DSA-6582-1: brotli security update">DSA-6582-1</a>: <code>brotli 1.1.0-2+deb13u1</code>, з 23 жовтня.</em></li>
-    <li><b>Debian 12</b><span class="pill green">Є виправлення</span><em>DLA-4855-1: <code>brotli 1.0.9-2+deb12u1</code>. Гілка unstable досі вразлива.</em></li>
-    <li><b>Alpine</b><span class="pill green">Є виправлення</span><em><code>brotli 1.2.1-r0</code> в edge, 3.24 і 3.23, <code>1.1.1-r0</code> в 3.22 і 3.21.</em></li>
-    <li><b>Amazon Linux 2023</b><span class="pill green">Є виправлення</span><em><a href="https://alas.aws.amazon.com/AL2023/ALAS2023-2026-3334.html" title="Amazon Linux: ALAS2023-2026-3334">ALAS2023-2026-3334</a>: <code>brotli 1.1.0-1.amzn2023.0.2</code>, з 24 жовтня.</em></li>
-    <li><b>Fedora</b><span class="pill orange">Частково</span><em>Brotli 1.2.1 у Rawhide та ELN, а з 26 жовтня стабільне оновлення для Fedora 45 (<a href="https://bodhi.fedoraproject.org/updates/FEDORA-2026-6a639d1308" title="Fedora: FEDORA-2026-6a639d1308, brotli-1.2.1-1.fc45">FEDORA-2026-6a639d1308</a>). Для Fedora 43 і 44 оновлення вже готове, але ще не стабільне.</em></li>
-    <li><b>Red Hat</b><span class="pill green">Є виправлення</span><em><a href="https://access.redhat.com/errata/RHSA-2026:90449" title="Red Hat: RHSA-2026:90449, brotli security update (RHEL 10)">RHSA-2026:90449</a> для RHEL 10 (<code>brotli 1.1.0-8.el10_2.1</code>), <a href="https://access.redhat.com/errata/RHSA-2026:90495" title="Red Hat: RHSA-2026:90495, brotli security update (RHEL 9)">RHSA-2026:90495</a> для RHEL 9 (<code>1.0.9-10.el9_8.1</code>) і <a href="https://access.redhat.com/errata/RHSA-2026:90501" title="Red Hat: RHSA-2026:90501, brotli security update (RHEL 8)">RHSA-2026:90501</a> для RHEL 8 (<code>1.0.6-5.el8_10</code>), з 26 жовтня. Модулів Node.js 24 і 26 на RHEL 8 і 9 це ще не стосується, див. <a href="https://access.redhat.com/security/cve/CVE-2026-111497" title="Red Hat: CVE-2026-111497">сторінку CVE</a>.</em></li>
-    <li><b>SUSE</b><span class="pill orange">Частково</span><em>openSUSE Tumbleweed вже має Brotli 1.2.1, див. <a href="https://www.suse.com/security/cve/CVE-2026-111497.html" title="SUSE: CVE-2026-111497">сторінку CVE</a>. SUSE Linux Enterprise ще ні.</em></li>
-    <li><b>Ubuntu</b><span class="pill green">Є виправлення</span><em><a href="https://ubuntu.com/security/notices/USN-8956-1" title="USN-8956-1: Brotli vulnerability">USN-8956-1</a>: 22.04, 24.04, 26.04 і 26.10, з 26 жовтня. Для 20.04 і старіших (ESM) ще немає.</em></li>
-    <li><b>Fortinet</b><span class="pill red">Виправлення немає</span><em><a href="https://fortiguard.fortinet.com/psirt/FG-IR-26-187" title="Fortinet PSIRT: FG-IR-26-187, Node2Shell CVEs">FG-IR-26-187</a>: з 26 жовтня Fortinet перевіряє понад сорок продуктів, зокрема FortiOS, FortiProxy і FortiMail. Виправлених версій ще немає.</em></li>
-    <li><b>Apache, nginx</b><span class="pill green">Працює</span><em>Вони лише стискають і нічого не розпаковують. Пакувати безпечно. Розпаковувати — ось у чому проблема. Як і під час кожного переїзду.</em></li>
+    <li><b>Linux</b><span class="pill green">Є виправлення</span><em>5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 і 7.3, з 15 жовтня.</em></li>
+    <li><b>Debian 13</b><span class="pill green">Є виправлення</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">DSA-6568-1</a>: <code>linux 6.12.113-1</code>.</em></li>
+    <li><b>Debian 12</b><span class="pill green">Є виправлення</span><em>DLA-4841-1: <code>linux 6.1.190-1</code>.</em></li>
+    <li><b>Ubuntu</b><span class="pill red">Виправлення немає</span><em>Від 20.04 до 26.10 включно позначено &laquo;work in progress&raquo;, див. <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">сторінку CVE</a>.</em></li>
+    <li><b>Red Hat</b><span class="pill red">Виправлення немає</span><em>RHEL 8, 9 і 10 позначено &laquo;Affected&raquo;, &laquo;Important&raquo; (8,1), див. <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">сторінку CVE</a>. RHEL 6 і 7 не вражено.</em></li>
+    <li><b>SUSE</b><span class="pill orange">Частково</span><em>Для більшості продуктів виправлення є, кілька ще готуються, див. <a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">сторінку CVE</a>.</em></li>
+    <li><b>Oracle Linux</b><span class="pill green">Є виправлення</span><em>Ядра UEK, <a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">ELSA-2026-500397</a> і новіші.</em></li>
+    <li><b>Amazon Linux 2023</b><span class="pill orange">Частково</span><em>Лише ядра 6.12 (ALAS2023-2026-3335) і 6.18 (ALAS2023-2026-3251), див. <a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">ALAS</a>. Стандартне ядро ще ні.</em></li>
+    <li><b>Go</b><span class="pill orange">Перезапустіть</span><em>Починаючи з 1.24, MPTCP для слухачів увімкнено за замовчуванням. <code>GODEBUG=multipathtcp=0</code> його вимикає, див. <a href="https://go.dev/doc/godebug" title="Go: GODEBUG settings">опис GODEBUG</a>.</em></li>
     <li><b>Crisus.nl</b><span class="pill green">Працює</span><em>Ні Node, ні Python. Просто HTML. Як у 1997 році.</em></li>
   </ul>
   <p class="note">Це скорочена версія. Оновлення, радар і попередні кризи є на <a href="/" title="Crisus: de actuele stand (нідерландською)">нідерландській сторінці</a>. Попередню кризу, PHP2Shell, закрито: <a href="/php/" title="Crisus: PHP2Shell, закрито (нідерландською)">crisus.nl/php</a> (нідерландською).</p>
@@ -168,18 +151,19 @@ sudo needrestart -r l          <span class="c"># що ще працює на с�
 
   <h2 id="bronnen">Джерела</h2>
   <ul class="bronnen" aria-labelledby="bronnen">
-    <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-111497" title="CVE-2026-111497 на cve.org">CVE-2026-111497</a>: &laquo;Out-of-Bounds Write in Google Brotli Decoder&raquo;, опубліковано Google 22 жовтня, CVSS v4.0 9,2.</li>
-    <li><a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">Node.js: October 2026 security releases</a>. Виправлення в 26.12.1, 24.22.1 і 22.23.4 та хто повідомив про вразливість (англійською).</li>
-    <li><a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell)</a>. Чому вразливий Python, тимчасові заходи та стан Bun, Envoy й Istio (англійською).</li>
-    <li><a href="https://www.ncsc.nl/alerts/kwetsbaarheid-in-google-brotli-decoder-in-nodejs-update-nu" title="NCSC: Kwetsbaarheid in Google Brotli-decoder in Node.js: update nu">NCSC: Kwetsbaarheid in Google Brotli-decoder in Node.js: update nu</a> (нідерландською), 23 жовтня, бюлетень <a href="https://advisories.ncsc.nl/2026/ncsc-2026-0453.html" title="NCSC-2026-0453">NCSC-2026-0453</a>.</li>
-    <li><a href="https://github.com/advisories/GHSA-9v8h-qqgm-4m35" title="GitHub advisory GHSA-9v8h-qqgm-4m35: Brotli out-of-bounds write (Node2Shell)">GitHub: GHSA-9v8h-qqgm-4m35</a>, для пакетів PyPI <code>brotli</code> і <code>brotlicffi</code>.</li>
-    <li><a href="https://github.com/google/brotli/commit/0ed4268a4401abcb44720963" title="google/brotli: коміт 0ed4268">google/brotli: виправлення</a> і <a href="https://github.com/google/brotli/releases" title="google/brotli: releases">релізи</a> 1.2.1, 1.1.1 та 1.0.10.</li>
-    <li><a href="https://en.wikipedia.org/wiki/Brotli" title="Wikipedia: Brotli">Wikipedia: Brotli</a> (англійською). Хто створив, назва, браузери і хто використовує. Стандарт: <a href="https://www.rfc-editor.org/rfc/rfc7932" title="RFC 7932: Brotli Compressed Data Format">RFC 7932</a>.</li>
-    <li><a href="https://lists.debian.org/debian-security-announce/2026/msg00498.html" title="DSA-6582-1: brotli security update">Debian DSA-6582-1</a> і <a href="https://security-tracker.debian.org/tracker/CVE-2026-111497" title="Debian security tracker: CVE-2026-111497">Debian security tracker</a>. <a href="https://ubuntu.com/security/CVE-2026-111497" title="Ubuntu: CVE-2026-111497">Ubuntu: CVE-2026-111497</a>.</li>
-    <li><a href="https://uk.wikipedia.org/wiki/Анексія_Криму_(2014)" title="Вікіпедія: Анексія Криму (2014)">Вікіпедія: Анексія Криму (2014)</a> і <a href="https://en.wikipedia.org/wiki/2014_Russian_annexation_of_Crimea" title="Wikipedia: 2014 Russian annexation of Crimea">англійською</a>. Закон 2015 року, що визначає 20 лютого 2014 року початком окупації, і медаль.</li>
-    <li><a href="https://uk.wikipedia.org/wiki/Бої_за_Слов%27янськ_(2014)" title="Вікіпедія: Бої за Словʼянськ (2014)">Вікіпедія: Бої за Словʼянськ (2014)</a>. 12 квітня 2014 року, початок війни на Донбасі.</li>
-    <li><a href="https://uk.wikipedia.org/wiki/MH17" title="Вікіпедія: MH17">Вікіпедія: MH17</a>. 17 липня 2014 року, 298 загиблих, серед них 196 громадян Нідерландів, і вирок 2022 року.</li>
-    <li><a href="https://uk.wikipedia.org/wiki/Російське_вторгнення_в_Україну_(2022)" title="Вікіпедія: Російське вторгнення в Україну (2022)">Вікіпедія: Російське вторгнення в Україну (2022)</a>. 24 лютого 2022 року, незадовго до 05:00 за київським часом.</li>
+    <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-98432" title="CVE-2026-98432 on cve.org">CVE-2026-98432</a>. Запис від команди CVE ядра, CVSS 9,8.</li>
+    <li><a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" title="Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude">Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude</a>, 27 жовтня. Експлойт на серверах із MPTCP.</li>
+    <li><a href="https://go.dev/doc/go1.24" title="Go 1.24 Release Notes">Go 1.24 Release Notes</a>. ListenConfig за замовчуванням використовує MPTCP у Linux.</li>
+    <li><a href="https://go.dev/doc/godebug" title="Go: GODEBUG settings">Go: GODEBUG</a>. <code>multipathtcp=0</code> його вимикає.</li>
+    <li><a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF: how to block the Linux TCP bug</a>. Правило nftables і його побічні ефекти.</li>
+    <li><a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a>. Чому IP-опції можна відкидати на межі мережі.</li>
+    <li><a href="https://www.rfc-editor.org/rfc/rfc8684" title="RFC 8684: TCP Extensions for Multipath Operation with Multiple Addresses">RFC 8684</a>. Що таке MPTCP.</li>
+    <li><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">Debian security tracker</a>: DSA-6568-1 і DLA-4841-1.</li>
+    <li><a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">Ubuntu: CVE-2026-98432</a>: ще work in progress.</li>
+    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Important, 8,1, виправлення ще немає.</li>
+    <li><a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">SUSE: CVE-2026-98432</a>: більшість продуктів мають виправлення.</li>
+    <li><a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">Oracle Linux: CVE-2026-98432</a>: ядра UEK.</li>
+    <li><a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">Amazon Linux: CVE-2026-98432</a>: ядра 6.12 і 6.18.</li>
   </ul>
 </main>
 
