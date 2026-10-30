@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title>Crisus · HTTP2Shell: kritiek lek in Brotli (CVE-2026-111497)</title>
+  <title>Crisus · TCP2Shell: lek in de TCP-code van Linux (CVE-2026-98432)</title>
   <link>https://crisus.nl/</link>
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Fri, 30 Oct 2026 11:17:00 +0100</lastBuildDate>
+  <lastBuildDate>Fri, 30 Oct 2026 12:01:00 +0100</lastBuildDate>
+  <item>
+    <title>30 oktober 12:01 · Een nieuwe crisus: TCP2Shell.</title>
+    <link>https://crisus.nl/#u-20261030-1201</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261030-1201</guid>
+    <pubDate>Fri, 30 Oct 2026 12:01:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>Een nieuwe crisus: TCP2Shell.</strong> In de TCP-code van de Linux-kernel zit een lek, <a href="https://www.cve.org/CVERecord?id=CVE-2026-98432" title="CVE-2026-98432 op cve.org">CVE-2026-98432</a>, waarmee volgens <a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" title="Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude">Anthropic</a> op afstand root te halen is op servers met MPTCP. Sinds Go 1.24 staat dat standaard aan. Debian, SUSE en Oracle hebben de fix, Ubuntu en Red Hat nog niet. Tot die er is: een regel in de firewall, zie hieronder. Misbruik is nog niet gezien. Het crisusniveau blijft 3: ernstig. HTTP2Shell, de vorige crisus, staat nu op <a href="/brotli/" title="Crisus: HTTP2Shell">crisus.nl/brotli</a>. Het crisusteam heeft weer een tabblad bij.</p>]]></description>
+  </item>
   <item>
     <title>30 oktober 11:17 · Alpine Linux en Cisco onder vuur.</title>
     <link>https://crisus.nl/#u-20261030-1117</link>

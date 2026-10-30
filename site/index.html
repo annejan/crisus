@@ -4,24 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<title>Crisus · HTTP2Shell: kritiek lek in Brotli (CVE-2026-111497)</title>
-<meta name="description" content="Crisus.nl: HTTP2Shell (CVE-2026-111497), een kritiek lek in de Brotli-decoder van Google. Het zit in Node.js, Python, Bun, Envoy en Istio. De patch is uit. Satire, maar de feiten kloppen.">
-<meta property="og:title" content="Crisus · HTTP2Shell: kritiek lek in Brotli">
-<meta property="og:description" content="Crisusniveau 3: ernstig. HTTP2Shell, een kritiek lek in Brotli, zit in Node.js, in Python en waarschijnlijk in uw HTTP-client. De patch is uit sinds 21 oktober.">
+<title>Crisus · TCP2Shell: lek in de TCP-code van Linux (CVE-2026-98432)</title>
+<meta name="description" content="Crisus.nl: TCP2Shell (CVE-2026-98432), een lek in de TCP-code van de Linux-kernel. Op afstand root, volgens Anthropic, op servers met MPTCP. Ubuntu en Red Hat hebben nog geen fix. Satire, maar de feiten kloppen.">
+<meta property="og:title" content="Crisus · TCP2Shell: lek in de TCP-code van Linux">
+<meta property="og:description" content="Crisusniveau 3: ernstig. TCP2Shell, een lek in de TCP-code van Linux: op afstand root op servers met MPTCP, en dat zit sinds Go 1.24 standaard aan. Ubuntu en Red Hat hebben nog geen fix.">
 <meta property="og:url" content="https://crisus.nl/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-23T22:50:00+02:00">
-<meta property="article:modified_time" content="2026-10-30T11:17:00+01:00">
-<meta property="og:image" content="https://crisus.nl/og.png?v=7">
+<meta property="article:modified_time" content="2026-10-30T12:01:00+01:00">
+<meta property="og:image" content="https://crisus.nl/og.png?v=8">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Crisus: HTTP2Shell, kritiek lek in Brotli. Crisusniveau 3 van 5: ernstig.">
+<meta property="og:image:alt" content="Crisus: TCP2Shell, lek in de TCP-code van Linux. Crisusniveau 3 van 5: ernstig.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://crisus.nl/og.png?v=7">
-<meta name="twitter:title" content="Crisus · HTTP2Shell: kritiek lek in Brotli">
-<meta name="twitter:description" content="HTTP2Shell: een kritiek lek in Brotli, in Node.js, Python en uw HTTP-client. De patch is uit. Satire, maar de feiten kloppen.">
+<meta name="twitter:image" content="https://crisus.nl/og.png?v=8">
+<meta name="twitter:title" content="Crisus · TCP2Shell: lek in de TCP-code van Linux">
+<meta name="twitter:description" content="TCP2Shell: een lek in de TCP-code van Linux, op afstand root op servers met MPTCP. Ubuntu en Red Hat hebben nog geen fix. Satire, maar de feiten kloppen.">
 <meta name="theme-color" content="#ffd400">
 <link rel="canonical" href="https://crisus.nl/">
 <link rel="alternate" hreflang="nl" href="https://crisus.nl/">
@@ -38,21 +38,22 @@
 {
   "@context": "https://schema.org",
   "@type": "LiveBlogPosting",
-  "headline": "HTTP2Shell: kritiek lek in Brotli",
-  "description": "HTTP2Shell (CVE-2026-111497): een kritiek lek in de Brotli-decoder van Google, in Node.js, Python, Bun, Envoy en Istio. Satire, maar de feiten kloppen.",
+  "headline": "TCP2Shell: lek in de TCP-code van Linux",
+  "description": "TCP2Shell (CVE-2026-98432): een lek in de TCP-code van de Linux-kernel, op afstand root op servers met MPTCP. Satire, maar de feiten kloppen.",
   "url": "https://crisus.nl/",
   "mainEntityOfPage": "https://crisus.nl/",
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-23T22:50:00+02:00",
-  "dateModified": "2026-10-30T11:17:00+01:00",
+  "dateModified": "2026-10-30T12:01:00+01:00",
   "coverageStartTime": "2026-10-23T22:50:00+02:00",
-  "about": {"@type": "Thing", "name": "CVE-2026-111497", "alternateName": ["HTTP2Shell", "Node2Shell", "Broccoli2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-111497"},
+  "about": {"@type": "Thing", "name": "CVE-2026-98432", "alternateName": ["TCP2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-98432"},
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
   "publisher": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
   "genre": "satire",
-  "keywords": ["crisus", "HTTP2Shell", "Node2Shell", "Brotli", "CVE-2026-111497", "Node.js", "Python"],
+  "keywords": ["crisus", "TCP2Shell", "CVE-2026-98432", "Linux", "kernel", "TCP", "MPTCP", "Go"],
   "liveBlogUpdate": [
+    {"@type": "BlogPosting", "headline": "Een nieuwe crisus: TCP2Shell.", "datePublished": "2026-10-30T12:01:00+01:00", "url": "https://crisus.nl/#u-20261030-1201"},
     {"@type": "BlogPosting", "headline": "Alpine Linux en Cisco onder vuur.", "datePublished": "2026-10-30T11:17:00+01:00", "url": "https://crisus.nl/#u-20261030-1117"},
     {"@type": "BlogPosting", "headline": "Binance: miljarden weg uit de hot wallets.", "datePublished": "2026-10-29T23:30:00+01:00", "url": "https://crisus.nl/#u-20261029-2330"},
     {"@type": "BlogPosting", "headline": "PHP2Shell: het waren Palo Alto-firewalls.", "datePublished": "2026-10-29T22:30:00+01:00", "url": "https://crisus.nl/#u-20261029-2230"},
@@ -83,7 +84,7 @@
 </head>
 <body>
 <a class="skip" href="#inhoud">Meteen naar de crisus</a>
-<div class="tape" aria-hidden="true"><p><span>LET OP · CRISUS · BLIJF KALM · PATCH IS UIT · UPDATEN · LET OP · CRISUS · PAK NIETS UIT · OOK GEEN PAKKETJES · LET OP · CRISUS · ZIT OOK IN PYTHON · LET OP · CRISUS · HET WERKT TWEE KANTEN OP · LET OP · CRISUS · GZIP IS OOK GOED · LET OP · CRISUS · BLIJF KALM · PATCH IS UIT · UPDATEN · LET OP · CRISUS · PAK NIETS UIT · OOK GEEN PAKKETJES · LET OP · CRISUS · ZIT OOK IN PYTHON · LET OP · CRISUS · HET WERKT TWEE KANTEN OP · LET OP · CRISUS · GZIP IS OOK GOED ·</span></p></div>
+<div class="tape" aria-hidden="true"><p><span>LET OP · CRISUS · BLIJF KALM · TCP2SHELL · LET OP · CRISUS · GEEN KERNEL VOOR UBUNTU · NOG NIET · LET OP · CRISUS · IP-OPTIES DICHT · LET OP · CRISUS · GO PRAAT MPTCP · LET OP · CRISUS · HET IS EEN RACE · LET OP · CRISUS · LET OP · CRISUS · BLIJF KALM · TCP2SHELL · LET OP · CRISUS · GEEN KERNEL VOOR UBUNTU · NOG NIET · LET OP · CRISUS · IP-OPTIES DICHT · LET OP · CRISUS · GO PRAAT MPTCP · LET OP · CRISUS · HET IS EEN RACE · LET OP · CRISUS · </span></p></div>
 
 <header>
   <div class="wrap">
@@ -115,12 +116,12 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-10-30T11:17:00+01:00">laatst bijgewerkt 30 oktober, 11:17</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
-  <h1>HTTP2Shell: kritiek lek in Brotli</h1>
-  <p class="lead">Een kritiek lek in Brotli, de compressie van Google: HTTP2Shell. Brotli zit in Node.js, in Python, in Bun, Envoy en Istio, en waarschijnlijk ook in iets van u. De patch is uit: Brotli <strong>1.2.1</strong>, Node.js <strong>26.12.1, 24.22.1 en 22.23.4</strong>. Niet in paniek raken. Wel updaten.</p>
+  <p class="kicker">Crisus · <time datetime="2026-10-30T12:01:00+01:00">laatst bijgewerkt 30 oktober, 12:01</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <h1>TCP2Shell: lek in de TCP-code van Linux</h1>
+  <p class="lead">Een lek in de manier waarop de Linux-kernel een TCP-verbinding opzet: TCP2Shell. Volgens Anthropic haalt een aanvaller er op afstand root mee, zonder in te loggen, op een server met MPTCP. Debian, SUSE en Oracle hebben de fix, Ubuntu en Red Hat <strong>nog niet</strong>. Niet in paniek raken. Wel een regel in de firewall.</p>
   <p class="vandaag" id="vandaag" hidden></p>
 
-  <p class="klok" id="klok"><b data-since="2026-10-21T21:27:00+02:00">21:27</b><span>Sinds 21 oktober 21:27 (19:27 UTC) is de fix van Brotli zelf uit. Node.js had hem dezelfde dag al. Elke minuut op deze klok is een minuut zonder update. <a href="#stand" title="Is de patch er al voor mij?">Is de patch er al voor mij?</a></span></p>
+  <p class="klok" id="klok"><b data-since="2026-10-15T00:00:00+02:00">15 oktober</b><span>Sinds 15 oktober staat de fix in de kernel. Ubuntu en Red Hat leveren hem nog niet. Elke minuut op deze klok is een minuut met een regel in de firewall. <a href="#stand" title="Is de fix er al voor mij?">Is de fix er al voor mij?</a></span></p>
 
   <section class="level" aria-labelledby="niveau">
     <h2 id="niveau">Huidig crisusniveau: 3 van 5</h2>
@@ -139,6 +140,8 @@
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261030-1201"><time datetime="2026-10-30T12:01+01:00">30 oktober 12:01</time>
+      <p><strong>Een nieuwe crisus: TCP2Shell.</strong> In de TCP-code van de Linux-kernel zit een lek, <a href="https://www.cve.org/CVERecord?id=CVE-2026-98432" title="CVE-2026-98432 op cve.org">CVE-2026-98432</a>, waarmee volgens <a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" title="Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude">Anthropic</a> op afstand root te halen is op servers met MPTCP. Sinds Go 1.24 staat dat standaard aan. Debian, SUSE en Oracle hebben de fix, Ubuntu en Red Hat nog niet. Tot die er is: een regel in de firewall, zie hieronder. Misbruik is nog niet gezien. Het crisusniveau blijft 3: ernstig. HTTP2Shell, de vorige crisus, staat nu op <a href="/brotli/" title="Crisus: HTTP2Shell">crisus.nl/brotli</a>. Het crisusteam heeft weer een tabblad bij.</p></li>
     <li id="u-20261030-1117"><time datetime="2026-10-30T11:17+01:00">30 oktober 11:17</time>
       <p><strong>Alpine Linux en Cisco onder vuur.</strong> Op 20 en 21 oktober probeerde een aanvaller binnen te komen op de GitLab-server van Alpine Linux, via CVE-2026-97229, een kritiek lek in de reguliere-expressiemotor van Ruby, <a href="https://alpinelinux.org/posts/GitLab-security-incident-CVE-2026-97229.html" title="Alpine Linux: GitLab security incident CVE-2026-97229">schrijft Alpine</a>. Alpine draaide per ongeluk nog een kwetsbare versie, en de update van 22 oktober hielp niet: de fix zit in een Ruby-patch die GitLab alleen in zijn eigen pakketten meelevert. Bewijs dat de aanvaller code draaide, vond Alpine niet, maar uitsluiten kan het ook niet. Dus is de server opnieuw opgebouwd, met nieuwe wachtwoorden en sleutels. De pakketten, de aports en de releases van 21 oktober zijn volgens Alpine niet aangetast, en de ondertekeningssleutels stonden nooit op die server. Wie zelf GitLab draait met een eigen Ruby: GitLab bijwerken is niet genoeg, ook Ruby 3.3.13, 3.4.12 of 4.0.9 is nodig. Patchen in twee lagen, zoals een ui. Daar huil je ook van.</p>
       <p>En Cisco meldt in een <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-asaftd-tunnel-dos-s6mgkb75" title="Cisco: Secure Firewall ASA and FTD Remote Access SSL VPN Denial of Service Vulnerability">advisory</a> van 28 oktober dat een lek in de SSL-vpn van Secure Firewall ASA en FTD actief wordt misbruikt (CVE-2026-76418, CVSS 8,6). Zonder in te loggen kan een aanvaller het apparaat laten herstarten, als secundaire authenticatie aanstaat in een tunnel group. Er zijn fixes voor alle versies. Een workaround is er niet, wel een noodmaatregel: secundaire authenticatie uitzetten. In augustus lag dezelfde vpn-dienst ook al onder vuur, schrijft <a href="https://www.security.nl/posting/959522/Cisco+waarschuwt+opnieuw+voor+dos-aanvallen+tegen+vpn-service+firewalls" title="Security.NL: Cisco waarschuwt opnieuw voor dos-aanvallen tegen vpn-service firewalls">Security.NL</a>. Een firewall die steeds herstart, laat in elk geval niemand binnen.</p></li>
@@ -200,82 +203,54 @@
 
   <h2 id="wat">Wat is er aan de hand?</h2>
   <dl class="feiten" aria-labelledby="wat">
-    <dt>Wat is Brotli?</dt>
-    <dd>Een manier om gegevens kleiner te maken, net als zip en gzip. Jyrki Alakuijala en Zolt&aacute;n Szabadka van Google bedachten het in 2013, eerst om webfonts kleiner te maken. Het is genoemd naar het Zwitserse broodje <i lang="gsw">Br&ouml;tli</i>. Sinds 2016 is het een internetstandaard: <a href="https://www.rfc-editor.org/rfc/rfc7932" title="RFC 7932: Brotli Compressed Data Format">RFC 7932</a>.</dd>
-    <dt>Waarom zit het overal in?</dt>
-    <dd>Omdat het werkt. Een webpagina met Brotli is meestal kleiner dan met gzip, en dus sneller binnen. Sinds 2016 en 2017 kunnen alle grote browsers het. Webservers en CDN&rsquo;s als Cloudflare en Amazon CloudFront sturen het mee, en een webfont in WOFF2 is altijd Brotli. Wie iets van internet haalt, krijgt dus vaak Brotli terug en moet het uitpakken. Daarom zit de decoder in Node.js (sinds versie 11.7), in de HTTP-clients van Python en in curl. Klein bestand, groot bereik.</dd>
     <dt>Het lek</dt>
-    <dd>Een out-of-bounds write in de Brotli-decoder van Google: <a href="https://www.cve.org/CVERecord?id=CVE-2026-111497" title="CVE-2026-111497 op cve.org">CVE-2026-111497</a>, ook wel HTTP2Shell, eerst Node2Shell, en sinds kort ook Broccoli2Shell. Brotli is de compressie achter <code>Content-Encoding: br</code>. Kleiner dan gzip. Sinds deze week ook gevaarlijker.</dd>
-    <dt>Hoe werkt het?</dt>
-    <dd>De functie <code>DecodeBlockTypeAndLength()</code> geeft alleen ja of nee terug. Nee kan twee dingen betekenen: de invoer is kapot, of er moet nog meer invoer komen. De decoder kan die twee niet uit elkaar houden en gaat door met een ongeldige toestand. Dan schrijft hij buiten zijn eigen geheugen. De <a href="https://github.com/google/brotli/commit/0ed4268a4401abcb44720963" title="google/brotli: commit 0ed4268">fix</a> geeft kapotte invoer een eigen foutcode: -17.</dd>
-    <dt>Welke kant op?</dt>
-    <dd>Allebei. Een server die Brotli uitpakt, is kwetsbaar voor een kwaadwillende client. Een client die Brotli uitpakt, is kwetsbaar voor een kwaadwillende server. Dat is bijna elke HTTP-client: die vraagt er zelf om, met <code>Accept-Encoding: br</code>.</dd>
-    <dt>Ernst</dt>
-    <dd>CVSS v4.0: <strong>9,2</strong>, van Google in het CVE-record. Node.js noemt het <em>high</em>. Ubuntu zegt <em>medium</em>. Het <a href="https://www.ncsc.nl/alerts/kwetsbaarheid-in-google-brotli-decoder-in-nodejs-update-nu" title="NCSC: Kwetsbaarheid in Google Brotli-decoder in Node.js: update nu">NCSC</a>: kans op misbruik gemiddeld, schade groot. Vier partijen, vier meningen. Bij alle vier is patchen het antwoord.</dd>
+    <dd><a href="https://www.cve.org/CVERecord?id=CVE-2026-98432" title="CVE-2026-98432 op cve.org">CVE-2026-98432</a>: een use-after-free in de TCP-code van de kernel voor IPv4. Bij het opzetten van een verbinding met IP-opties (Record Route of Timestamp) kan de kernel geheugen lezen dat net is vrijgegeven, als een opnieuw verstuurde SYN tegelijk op een andere processor wordt afgehandeld. Het zit erin sinds kernel 4.4, uit 2016. IPv6 heeft er geen last van.</dd>
+    <dt>Wat is MPTCP?</dt>
+    <dd>Multipath TCP: &eacute;&eacute;n verbinding over meerdere netwerkpaden tegelijk, bijvoorbeeld wifi en 4G op een telefoon. Valt het ene pad weg, dan loopt de verbinding over het andere door. Het is een uitbreiding van TCP (<a href="https://www.rfc-editor.org/rfc/rfc8684" title="RFC 8684: TCP Extensions for Multipath Operation with Multiple Addresses">RFC 8684</a>). Apple gebruikt het sinds 2013 op iPhones, onder meer voor Siri, en Linux kan het sinds kernel 5.6 (<a href="https://www.mptcp.dev/" title="Multipath TCP for Linux">mptcp.dev</a>, <a href="https://en.wikipedia.org/wiki/Multipath_TCP" title="Wikipedia: Multipath TCP">Wikipedia</a>). Voor de rest van het internet ziet het eruit als gewone TCP. Twee wegen naar Rome. Ook voor een aanvaller.</dd>
+    <dt>Waarom staat het aan?</dt>
+    <dd>MPTCP zit in de kernel, maar een programma moet er zelf om vragen. Bijna geen enkel programma doet dat. Behalve alles wat in Go is geschreven: sinds Go 1.24, uit februari 2025, vraagt een Go-server de kernel standaard om MPTCP, staat in de <a href="https://go.dev/doc/go1.24" title="Go 1.24 Release Notes">release notes</a> van Go. De programmeur hoeft er niets voor te doen, en weet het meestal ook niet. Go zelf is niet lek. Het doet alleen de deur open naar het stuk kernel dat lek is.</dd>
     <dt>Wat kan een aanvaller?</dt>
-    <dd>Met een gecomprimeerd bericht het geheugen beschadigen, gegevens lekken, het programma laten crashen en mogelijk eigen code uitvoeren.</dd>
+    <dd>Het Frontier Red Team van Anthropic schreef op 27 oktober dat een nog niet uitgebracht Claude-model er een werkende exploit mee bouwde: op afstand, zonder in te loggen, root op een server met een MPTCP-listener (<a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" title="Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude">Anthropic</a>). Een kernelpointer lekken duurde 48 minuten, de shell nog vijf. De exploit is niet gepubliceerd. Of het ook zonder MPTCP kan, is niet duidelijk. Ja, Claude is familie van de schrijver van deze pagina. We hebben het er thuis nog niet over gehad.</dd>
+    <dt>Ernst</dt>
+    <dd>CVSS 9,8, van het CVE-team van de kernel. Red Hat zegt 8,1, &ldquo;Important&rdquo;: de race is moeilijk te winnen. Feedly zegt 5,9. Drie partijen, drie cijfers. Alle drie: bijwerken.</dd>
     <dt>Welke versies?</dt>
-    <dd>Brotli <strong>1.0.3 tot en met 1.2.0</strong>. Elk programma met een eigen kopie van Brotli moet dus zelf updaten.</dd>
-    <dt>Wie zit erin?</dt>
-    <dd>Node.js, met een eigen kopie. De Python-pakketten <code>brotli</code> en <code>brotlicffi</code>, en via die pakketten requests, urllib3, httpx, aiohttp en Scrapy. Ook als uw code nergens <code>import brotli</code> zegt. Volgens <a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido</a> ook Bun, Envoy en Istio. Volgens <a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-111497" title="Microsoft Security Update Guide: CVE-2026-111497">Microsoft</a> ook .NET, PowerShell en Visual Studio. Volgens <a href="https://news-web.php.net/php.announce/514" title="php.announce: Updated PHP Windows builds for Brotli security fix">PHP</a> ook de Windows-builds van PHP, via cURL. En elk project met een eigen kopie, van het Ruby-gem tot 7-Zip-zstd, zie <a href="https://broccoli2shell.com/" title="Broccoli2Shell: CVE-2026-111497 in Brotli">broccoli2shell.com</a>. Niet geraakt: Apache met <code>mod_brotli</code> en nginx, want die pakken standaard niets uit. Die comprimeren alleen.</dd>
-    <dt>Wie vond het?</dt>
-    <dd>Codex Security van OpenAI, volgens de <a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">advisory van Node.js</a>, al in februari. Brotli repareerde de fout toen al, maar zag hem niet als beveiligingslek. Dus kwam er toen geen release. Wel nu.</dd>
+    <dd>Alles vanaf 4.4. De fix zit in 5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 en 7.3.</dd>
     <dt>Misbruik?</dt>
-    <dd><strong>Ja.</strong> De Amerikaanse CISA zette het lek op 27 oktober op de <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" title="CISA: Known Exploited Vulnerabilities Catalog">KEV-lijst</a>, de lijst van lekken die aantoonbaar worden misbruikt (<a href="https://www.cisa.gov/news-events/alerts/2026/10/27/cisa-adds-two-known-exploited-vulnerabilities-catalog" title="CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog">alert</a>). Ook het Italiaanse CSIRT meldt misbruik, schrijft <a href="https://www.security.nl/posting/959389/Node2Shell-kwetsbaarheid+in+Brotli-decoder+actief+misbruikt+bij+aanvallen" title="Security.NL: Node2Shell-kwetsbaarheid in Brotli-decoder actief misbruikt bij aanvallen">Security.NL</a>. Hoe en tegen wie, zegt CISA niet. Tot dan was het &ldquo;nog niet gezien&rdquo; (The Hacker News, 22 oktober; het NCSC op 23 oktober).</dd>
-    <dt>Ziet mijn scanner het?</dt>
-    <dd>Sinds kort. Op 23 oktober koppelden de databases het lek nog niet aan de Python-pakketten, aldus Aikido. Sinds 23 oktober 21:08 noemt <a href="https://github.com/advisories/GHSA-9v8h-qqgm-4m35" title="GitHub advisory GHSA-9v8h-qqgm-4m35: Brotli out-of-bounds write (Node2Shell)">GHSA-9v8h-qqgm-4m35</a> van GitHub ze wel. Dependabot zou ze nu dus moeten zien. Gebruikt u pip-audit of Safety? Kijk dan zelf.</dd>
-    <dt>Moet het eruit?</dt>
-    <dd>Bugsink, een foutentracker voor Sentry-berichten, denkt van wel. Klaas van Schelven noemt Brotli &ldquo;in such a state of disrepair&rdquo; en schrijft over de beheerders: &ldquo;they&rsquo;re not serious people&rdquo;, in <a href="https://www.bugsink.com/blog/bye-bye-brotli/" title="Bugsink: Bye Bye Brotli? Google's Compression Library Is a Security Mess">Bye Bye Brotli?</a>. Bugsink krijgt een <a href="https://github.com/bugsink/bugsink/pull/568" title="bugsink #568: FEATURE_BROTLI: allow disabling request decoding">instelling</a> om het uitpakken van Brotli uit te zetten, nog niet in een release. Sentry kreeg de <a href="https://github.com/getsentry/sentry-python/issues/8118" title="sentry-python #8118: Stop using brotli">vraag</a> om Brotli te laten vallen. Die vraag staat nog open. Wat u niet uitpakt, kan u ook niet raken.</dd>
-    <dt>De patch</dt>
-    <dd><strong>Uit sinds 21 oktober.</strong> Brotli <strong>1.2.1</strong>, voor oudere lijnen 1.1.1 en 1.0.10. Node.js <strong>26.12.1, 24.22.1 en 22.23.4</strong>. Node.js 20 of ouder? Daarvoor komt niets meer: einde levensduur sinds 30 april. Python: <code>brotli</code> 1.2.1 en <code>brotlicffi</code> 1.2.1.0. Bun: 1.4.4. Java: <code>brotli4j</code> 1.24.0. Sinds 25 oktober ook .NET, PowerShell en Visual Studio. Sinds 26 oktober de Windows-builds van PHP: 8.5.12-1, 8.4.27-1, 8.3.36-1 en 8.2.35-1.</dd>
+    <dd><strong>Nog niet gezien.</strong> Het lek staat niet op de KEV-lijst van CISA, en de exploit van Anthropic is niet openbaar.</dd>
+    <dt>Waarom TCP2Shell?</dt>
+    <dd>Het lek heeft geen naam van zichzelf. Na PHP2Shell en HTTP2Shell kon het crisusteam niet meer terug.</dd>
   </dl>
 
   <section class="doen" aria-labelledby="doen">
     <h2 id="doen">Wat moet u doen?</h2>
-    <p>Blijf binnen. Pak niets uit.</p>
+    <p>Blijf binnen. Houd de deur op slot.</p>
     <ol>
-      <li><strong>Zoek uit waar u Brotli heeft.</strong> Ook op plekken waar u het niet verwacht. Kijk in elke virtualenv en elk container-image apart.
-        <pre><code>node -v
-pip list 2&gt;/dev/null | grep -iE '^brotli'
-dpkg -l | grep -i brotli        <span class="c"># Debian, Ubuntu</span>
-rpm -qa | grep -i brotli        <span class="c"># Fedora, RHEL, openSUSE</span></code></pre></li>
-      <li><strong>Node.js:</strong> update naar 26.12.1, 24.22.1 of 22.23.4. De officiële Docker-images <code>node:24.22.1</code> en verder staan er sinds 22 oktober. Maak uw containers opnieuw aan, een herstart is niet genoeg. Nog op Node.js 20? Dan is dit een goed moment.</li>
-      <li><strong>Python:</strong> staat <code>brotli</code> of <code>brotlicffi</code> in de lijst? Werk het bij, en zet de nieuwe versie ook in uw lockfile.
-        <pre><code>pip install --upgrade 'brotli&gt;=1.2.1'           <span class="c"># als u brotli heeft</span>
-pip install --upgrade 'brotlicffi&gt;=1.2.1.0'     <span class="c"># als u brotlicffi heeft</span></code></pre></li>
-      <li><strong>Het systeempakket:</strong> Debian 13 heeft <code>1.1.0-2+deb13u1</code>, Debian 12 heeft <code>1.0.9-2+deb12u1</code>. De Node.js van Debian gebruikt die systeembibliotheek. Updaten en daarna herstarten:
-        <pre><code>sudo apt update
-sudo apt install --only-upgrade libbrotli1
-sudo needrestart -r l          <span class="c"># wat draait nog oude code?</span></code></pre></li>
-      <li><details class="nood"><summary><strong>Kunt u nog niet updaten?</strong></summary> Dan noemt <a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido</a> drie noodmaatregelen. Een: haal <code>brotli</code> en <code>brotlicffi</code> weg. HTTP-clients vallen dan terug op gzip. Twee: weiger verzoeken met <code>Content-Encoding: br</code> al in de proxy. Drie: haal <code>br</code> uit <code>Accept-Encoding</code> &eacute;n weiger Brotli-antwoorden v&oacute;&oacute;r het uitpakken. Alleen de header aanpassen is niet genoeg: een kwaadwillende server stuurt toch Brotli.</details></li>
-      <li>Klik niet op links in e-mails over dit lek. Wij mailen nooit. En als we het deden, dan met gzip.</li>
+      <li><strong>Kijk of uw kernel de fix heeft.</strong> Debian 13 heeft <code>6.12.113-1</code>, Debian 12 <code>6.1.190-1</code>. Bijwerken en herstarten, anders draait de oude kernel door:
+        <pre><code>uname -r
+sudo apt update &amp;&amp; sudo apt full-upgrade
+sudo reboot</code></pre></li>
+      <li><strong>Nog geen fix?</strong> (Ubuntu, Red Hat, de standaardkernel van Amazon Linux 2023.) Laat dan TCP-pakketten met IPv4-opties niet binnen. Normaal verkeer gebruikt die opties niet; <a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a> raadt al aan ze te weren. Deze regel komt van <a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF</a>:
+        <pre><code>sudo nft add table ip cve_2026_98432
+sudo nft add chain ip cve_2026_98432 pre '{ type filter hook prerouting priority -300; }'
+sudo nft add rule ip cve_2026_98432 pre meta l4proto tcp ip hdrlength gt 5 counter drop</code></pre>
+        Na een herstart is hij weg, tenzij u hem vastlegt. Gebruikt uw netwerk CIPSO-labels (SELinux of Smack met NetLabel)? Dan niet, die hebben de opties nodig.</li>
+      <li><strong>Draait u diensten in Go?</strong> Zet MPTCP dan uit tot de kernel bijgewerkt is, en herstart de dienst:
+        <pre><code>GODEBUG=multipathtcp=0          <span class="c"># Go 1.24 en nieuwer</span>
+sudo ss -lnMp                   <span class="c"># welke processen luisteren met MPTCP?</span></code></pre></li>
+      <li>Klik niet op links in e-mails over dit lek. Wij mailen nooit. En als we het deden, dan over &eacute;&eacute;n pad.</li>
     </ol>
   </section>
 
-  <h2 id="stand">Stand per platform, 10:45</h2>
+  <h2 id="stand">Stand per platform, 12:01</h2>
   <ul class="status" aria-labelledby="stand">
-    <li><b>Brotli</b><span class="pill green">Fix beschikbaar</span><em>1.2.1, 1.1.1 en 1.0.10, sinds 21 oktober 21:27.</em></li>
-    <li><b>Node.js</b><span class="pill orange">Nu installeren</span><em>26.12.1, 24.22.1 en 22.23.4, sinds 21 oktober. Gepatcht? Ook herstarten.</em></li>
-    <li><b>Node.js 20 en ouder</b><span class="pill red">Nog geen fix</span><em>En die komt ook niet. Einde levensduur sinds 30 april.</em></li>
-    <li><b>Python</b><span class="pill green">Fix beschikbaar</span><em><code>brotli</code> 1.2.1 en <code>brotlicffi</code> 1.2.1.0 op PyPI, sinds 22 oktober.</em></li>
-    <li><b>Docker</b><span class="pill green">Fix beschikbaar</span><em><code>node:24.22.1</code> en de andere gepatchte tags sinds 22 oktober 04:40. Containers opnieuw aanmaken.</em></li>
-    <li><b>Bun</b><span class="pill green">Fix beschikbaar</span><em>1.4.4, sinds 22 oktober.</em></li>
-    <li><b>Envoy, Istio</b><span class="pill green">Fix beschikbaar</span><em>Envoy 1.40.0, 1.39.3, 1.38.6 en 1.37.8. Istio 1.31.2, 1.30.6 en 1.29.9, al is 1.29 zelf einde levensduur.</em></li>
-    <li><b>Java</b><span class="pill green">Fix beschikbaar</span><em><a href="https://github.com/hyperxpro/Brotli4j/security/advisories/GHSA-x524-jrqf-vwq6" title="Brotli4j: GHSA-x524-jrqf-vwq6">brotli4j</a> 1.24.0, met Brotli 1.2.1, sinds 24 oktober. Netty gebruikt het.</em></li>
-    <li><b>.NET, PowerShell</b><span class="pill orange">Nu installeren</span><em>.NET SDK 8.0.427, 9.0.320 en 10.0.403, PowerShell 7.4.22, 7.5.13 en 7.6.9, sinds 25 oktober.</em></li>
-    <li><b>Visual Studio</b><span class="pill green">Update beschikbaar</span><em>2019 16.11.61, 2022 17.14.43 en 2026 18.11.2, sinds 25 oktober.</em></li>
-    <li><b>Ruby, PHP</b><span class="pill green">Fix beschikbaar</span><em>Het gem <code>brotli</code> 0.9.1 en de PHP-extensie <code>brotli</code> 0.21.1, allebei met Brotli 1.2.1.</em></li>
-    <li><b>PHP op Windows</b><span class="pill orange">Nu installeren</span><em>8.5.12-1, 8.4.27-1, 8.3.36-1 en 8.2.35-1 op windows.php.net, met Brotli 1.2.1, sinds 26 oktober. Zelfde versie, nieuwe build.</em></li>
-    <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://lists.debian.org/debian-security-announce/2026/msg00498.html" title="DSA-6582-1: brotli security update">DSA-6582-1</a>: <code>brotli 1.1.0-2+deb13u1</code>, sinds 23 oktober.</em></li>
-    <li><b>Debian 12</b><span class="pill green">Fix beschikbaar</span><em>DLA-4855-1: <code>brotli 1.0.9-2+deb12u1</code>. Unstable is nog kwetsbaar.</em></li>
-    <li><b>Alpine</b><span class="pill green">Fix beschikbaar</span><em><code>brotli 1.2.1-r0</code> in edge, 3.24 en 3.23, <code>1.1.1-r0</code> in 3.22 en 3.21.</em></li>
-    <li><b>Amazon Linux 2023</b><span class="pill green">Fix beschikbaar</span><em><a href="https://alas.aws.amazon.com/AL2023/ALAS2023-2026-3334.html" title="Amazon Linux: ALAS2023-2026-3334">ALAS2023-2026-3334</a>: <code>brotli 1.1.0-1.amzn2023.0.2</code>, sinds 24 oktober.</em></li>
-    <li><b>Fedora</b><span class="pill orange">Deels</span><em>Brotli 1.2.1 in Rawhide en ELN, en sinds 26 oktober stabiel voor Fedora 45 (<a href="https://bodhi.fedoraproject.org/updates/FEDORA-2026-6a639d1308" title="Fedora: FEDORA-2026-6a639d1308, brotli-1.2.1-1.fc45">FEDORA-2026-6a639d1308</a>). Voor Fedora 43 en 44 staat de update klaar, maar nog niet als stabiel.</em></li>
-    <li><b>Red Hat</b><span class="pill green">Fix beschikbaar</span><em><a href="https://access.redhat.com/errata/RHSA-2026:90449" title="Red Hat: RHSA-2026:90449, brotli security update (RHEL 10)">RHSA-2026:90449</a> voor RHEL 10 (<code>brotli 1.1.0-8.el10_2.1</code>), <a href="https://access.redhat.com/errata/RHSA-2026:90495" title="Red Hat: RHSA-2026:90495, brotli security update (RHEL 9)">RHSA-2026:90495</a> voor RHEL 9 (<code>1.0.9-10.el9_8.1</code>) en <a href="https://access.redhat.com/errata/RHSA-2026:90501" title="Red Hat: RHSA-2026:90501, brotli security update (RHEL 8)">RHSA-2026:90501</a> voor RHEL 8 (<code>1.0.6-5.el8_10</code>), sinds 26 oktober. Node.js 24 en 26 als module op RHEL 8 en 9 nog niet, zie de <a href="https://access.redhat.com/security/cve/CVE-2026-111497" title="Red Hat: CVE-2026-111497">CVE-pagina</a>.</em></li>
-    <li><b>SUSE</b><span class="pill orange">Deels</span><em>openSUSE Tumbleweed heeft Brotli 1.2.1, zie de <a href="https://www.suse.com/security/cve/CVE-2026-111497.html" title="SUSE: CVE-2026-111497">CVE-pagina</a>. Voor SUSE Linux Enterprise nog niet.</em></li>
-    <li><b>Ubuntu</b><span class="pill green">Fix beschikbaar</span><em><a href="https://ubuntu.com/security/notices/USN-8956-1" title="USN-8956-1: Brotli vulnerability">USN-8956-1</a>: 22.04, 24.04, 26.04 en 26.10, sinds 26 oktober. Voor 20.04 en ouder (ESM) nog niet.</em></li>
-    <li><b>Fortinet</b><span class="pill red">Nog geen fix</span><em><a href="https://fortiguard.fortinet.com/psirt/FG-IR-26-187" title="Fortinet PSIRT: FG-IR-26-187, Node2Shell CVEs">FG-IR-26-187</a>: Fortinet onderzoekt sinds 26 oktober ruim veertig producten, waaronder FortiOS, FortiProxy en FortiMail. Gefixte versies zijn er nog niet.</em></li>
-    <li><b>Apache, nginx</b><span class="pill green">Werkt</span><em>Die comprimeren alleen, ze pakken niets uit. Inpakken is veilig. Uitpakken is het probleem. Zoals bij elke verhuizing.</em></li>
+    <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">DSA-6568-1</a>: <code>linux 6.12.113-1</code>.</em></li>
+    <li><b>Debian 12</b><span class="pill green">Fix beschikbaar</span><em>DLA-4841-1: <code>linux 6.1.190-1</code>.</em></li>
+    <li><b>Ubuntu</b><span class="pill red">Nog geen fix</span><em>20.04 tot en met 26.10 staan op &ldquo;work in progress&rdquo;, zie de <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE-pagina</a>.</em></li>
+    <li><b>Red Hat</b><span class="pill red">Nog geen fix</span><em>RHEL 8, 9 en 10 staan op &ldquo;Affected&rdquo;, &ldquo;Important&rdquo; (8,1), zie de <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE-pagina</a>. RHEL 6 en 7 zijn niet geraakt.</em></li>
+    <li><b>SUSE</b><span class="pill orange">Deels</span><em>Voor de meeste producten is er een fix, een paar zijn nog onderweg, zie de <a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">CVE-pagina</a>.</em></li>
+    <li><b>Oracle Linux</b><span class="pill green">Fix beschikbaar</span><em>De UEK-kernels, <a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">ELSA-2026-500397</a> en verder.</em></li>
+    <li><b>Amazon Linux 2023</b><span class="pill orange">Deels</span><em>Alleen de kernels 6.12 (ALAS2023-2026-3335) en 6.18 (ALAS2023-2026-3251), zie <a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">ALAS</a>. De standaardkernel nog niet.</em></li>
+    <li><b>Go</b><span class="pill orange">Herstarten</span><em>Sinds 1.24 staat MPTCP op listeners standaard aan. <code>GODEBUG=multipathtcp=0</code> zet het uit, zie de <a href="https://go.dev/doc/godebug" title="Go: GODEBUG settings">GODEBUG-uitleg</a>.</em></li>
     <li><b>Crisus.nl</b><span class="pill green">Werkt</span><em>Geen Node, geen Python. Gewoon HTML. Zoals in 1997.</em></li>
     <li><b>Paniek</b><span class="pill green">Onder controle</span><em>Er is weer een spreadsheet. Dezelfde.</em></li>
   </ul>
@@ -321,39 +296,26 @@ sudo needrestart -r l          <span class="c"># wat draait nog oude code?</span
 
   <h2 id="bronnen">Bronnen</h2>
   <ul class="bronnen" aria-labelledby="bronnen">
-    <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-111497" title="CVE-2026-111497 op cve.org">CVE-2026-111497</a>: &ldquo;Out-of-Bounds Write in Google Brotli Decoder&rdquo;, gepubliceerd door Google op 22 oktober, CVSS v4.0 9,2.</li>
-    <li><a href="https://www.cisa.gov/news-events/alerts/2026/10/27/cisa-adds-two-known-exploited-vulnerabilities-catalog" title="CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog">CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog</a>, 27 oktober. HTTP2Shell op de KEV-lijst: aantoonbaar misbruikt, deadline 10 november.</li>
-    <li><a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" title="Node.js: October 2026 security releases">Node.js: October 2026 security releases</a>. De fix in 26.12.1, 24.22.1 en 22.23.4, en wie het lek meldde.</li>
-    <li><a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-111497" title="Microsoft Security Update Guide: CVE-2026-111497">Microsoft Security Update Guide: CVE-2026-111497</a>. .NET, PowerShell en Visual Studio, 25 oktober. Plus <a href="https://github.com/dotnet/runtime/issues/136422" title="dotnet/runtime #136422">dotnet/runtime #136422</a>.</li>
-    <li><a href="https://news-web.php.net/php.announce/514" title="php.announce: Updated PHP Windows builds for Brotli security fix">php.announce: Updated PHP Windows builds for Brotli security fix</a>, 26 oktober. De Windows-builds van PHP met Brotli 1.2.1.</li>
-    <li><a href="https://www.securityweek.com/industrial-vendors-check-products-for-php2shell-vulnerabilities/" title="SecurityWeek: Industrial Vendors Check Products for PHP2Shell Vulnerabilities">SecurityWeek: Industrial Vendors Check Products for PHP2Shell Vulnerabilities</a>, 26 oktober. Met de advisories van onder meer <a href="https://cert-portal.siemens.com/productcert/html/ssa-566512.html" title="Siemens SSA-566512">Siemens</a> en <a href="https://www.moxa.com/en/support/product-support/security-advisory/mpsa-260001-moxa%E2%80%99s-response-regarding-cve-2026-109618-and-cve-2026-109619-in-php" title="Moxa MPSA-260001">Moxa</a>.</li>
-    <li><a href="https://broccoli2shell.com/" title="Broccoli2Shell: CVE-2026-111497 in Brotli">broccoli2shell.com</a>: een onafhankelijk overzicht, met de projecten die een eigen kopie van Brotli hebben. Daarnaast zelf nagekeken bij <a href="https://github.com/miyucy/brotli/issues/64" title="miyucy/brotli #64">het Ruby-gem</a>, <a href="https://github.com/kjdev/php-ext-brotli/releases/tag/0.21.1" title="php-ext-brotli 0.21.1">de PHP-extensie</a> en <a href="https://github.com/mcmilk/7-Zip-zstd/issues/579" title="7-Zip-zstd #579">7-Zip-zstd</a>.</li>
-    <li><a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" title="Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell), CVE-2026-111497">Aikido: Python packages vulnerable to Node2Shell (HTTP2Shell)</a>. Waarom Python geraakt is, de noodmaatregelen en de stand bij Bun, Envoy en Istio.</li>
-    <li><a href="https://www.ncsc.nl/alerts/kwetsbaarheid-in-google-brotli-decoder-in-nodejs-update-nu" title="NCSC: Kwetsbaarheid in Google Brotli-decoder in Node.js: update nu">NCSC: Kwetsbaarheid in Google Brotli-decoder in Node.js: update nu</a>, 23 oktober, met advisory <a href="https://advisories.ncsc.nl/2026/ncsc-2026-0453.html" title="NCSC-2026-0453">NCSC-2026-0453</a>.</li>
-    <li><a href="https://github.com/advisories/GHSA-9v8h-qqgm-4m35" title="GitHub advisory GHSA-9v8h-qqgm-4m35: Brotli out-of-bounds write (Node2Shell)">GitHub: GHSA-9v8h-qqgm-4m35</a>, voor de PyPI-pakketten <code>brotli</code> en <code>brotlicffi</code>.</li>
-    <li><a href="https://github.com/google/brotli/commit/0ed4268a4401abcb44720963" title="google/brotli: commit 0ed4268">google/brotli: de fix</a> en de <a href="https://github.com/google/brotli/releases" title="google/brotli: releases">releases</a> 1.2.1, 1.1.1 en 1.0.10.</li>
-    <li><a href="https://en.wikipedia.org/wiki/Brotli" title="Wikipedia: Brotli">Wikipedia: Brotli</a>. Wie het bedacht, de naam, de browsers en wie het gebruikt. De standaard: <a href="https://www.rfc-editor.org/rfc/rfc7932" title="RFC 7932: Brotli Compressed Data Format">RFC 7932</a>.</li>
-    <li><a href="https://lists.debian.org/debian-security-announce/2026/msg00498.html" title="DSA-6582-1: brotli security update">Debian DSA-6582-1</a> en de <a href="https://security-tracker.debian.org/tracker/CVE-2026-111497" title="Debian security tracker: CVE-2026-111497">Debian security tracker</a>. <a href="https://ubuntu.com/security/CVE-2026-111497" title="Ubuntu: CVE-2026-111497">Ubuntu: CVE-2026-111497</a>.</li>
-    <li><a href="https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/" title="ruby-lang.org: Regexp fixes for GitLab CVEs">ruby-lang.org: Regexp fixes for GitLab CVEs</a>.</li>
-    <li><a href="https://en.wikipedia.org/wiki/Annexation_of_Crimea_by_the_Russian_Federation" title="Wikipedia: Annexation of Crimea by the Russian Federation">Wikipedia: Annexation of Crimea</a>. Over de wet van 2015 die 20 februari 2014 als begin van de bezetting vastlegt, en de medaille.</li>
-    <li><a href="https://en.wikipedia.org/wiki/Siege_of_Sloviansk" title="Wikipedia: Siege of Sloviansk">Wikipedia: Siege of Sloviansk</a>. 12 april 2014, het begin van de oorlog in de Donbas.</li>
-    <li><a href="https://nl.wikipedia.org/wiki/Malaysia_Airlines-vlucht_17" title="Wikipedia: Malaysia Airlines-vlucht 17">Wikipedia: Malaysia Airlines-vlucht 17</a>. 17 juli 2014, 298 doden, onder wie 196 Nederlanders, en het vonnis van 2022.</li>
-    <li><a href="https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine" title="Wikipedia: Russian invasion of Ukraine">Wikipedia: Russian invasion of Ukraine</a>. 24 februari 2022, kort voor 05:00 Kyiv-tijd.</li>
-    <li><a href="https://en.wikipedia.org/wiki/Utility_frequency" title="Wikipedia: Utility frequency">Wikipedia: Utility frequency</a>. Het Europese stroomnet draait op 50 Hz. <a href="https://en.wikipedia.org/wiki/Patch_Tuesday" title="Wikipedia: Patch Tuesday">Patch Tuesday</a>: de tweede dinsdag van de maand. <a href="https://en.wikipedia.org/wiki/Year_2038_problem" title="Wikipedia: Year 2038 problem">Het jaar-2038-probleem</a>: op 19 januari 2038 om 03:14:08 UTC loopt een 32-bits Unix-tijd over.</li>
-    <li><a href="https://cve.0xosprey.com/" title="CVE Tracker: nieuwe CVE's per dag, week en maand">CVE Tracker</a>, met de <a href="https://cve.0xosprey.com/data.json" title="CVE Tracker: de ruwe cijfers">ruwe cijfers</a> uit de officiële CVE-lijst (CVEProject/cvelistV5), stand 24 oktober. De groei per maand van mei tot en met september en de verdubbelingstijd rekenden wij zelf uit. De <a href="https://nvd.nist.gov/" title="NVD: de National Vulnerability Database van NIST">NVD</a> telt voor september 2026 15.074 nieuwe CVE&rsquo;s en voor september 2025 4.537.</li>
-    <li><a href="https://www.php.net/archive/2026.php#2026-10-23-1" title="php.net: Informational advisory: Session upload progress">php.net: Informational advisory: Session upload progress</a>. De vervolgbug van PHP2Shell.</li>
-    <li><a href="https://www.theregister.com/security/2026/10/23/theres-a-third-php2shell-bug-but-it-wont-get-an-emergency-fix/5305208" title="The Register: There's a third PHP2Shell bug, but it won't get an emergency fix">The Register: There&rsquo;s a third PHP2Shell bug</a>. De PHP Foundation en Mandiant over de stand van het misbruik.</li>
-    <li><a href="https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/" title="BleepingComputer: PHP2Shell security flaws now successfully exploited in the wild">BleepingComputer: PHP2Shell security flaws now successfully exploited in the wild</a>. De honeypots van Adel Karimi en de bevestiging door Marcus Hutchins.</li>
-    <li><a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq" title="Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026">Cisco: Vulnerabilities in PHP Affecting Cisco Products</a>, versie 1.9 (Final), 28 oktober. En <a href="https://security.paloaltonetworks.com/CVE-2026-109618" title="Palo Alto Networks: Impact of Critical Vulnerabilities in PHP on Palo Alto Networks Products">Palo Alto Networks: PHP2Shell in PAN-OS</a>, bijgewerkt 28 oktober, met misbruik van de beheerinterface. <a href="https://www.security.nl/posting/959363/Palo+Alto+Networks+meldt+misbruik+van+PHP2Shell-lekken+in+firewall-interface" title="Security.NL: Palo Alto Networks meldt misbruik van PHP2Shell-lekken in firewall-interface">Security.NL: Palo Alto Networks meldt misbruik van PHP2Shell-lekken</a>, 28 oktober. <a href="https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers" title="Dream: Chained PHP2Shell Exploit Roots 25 Servers">Dream: 25 servers overgenomen</a>, bijgewerkt 29 oktober (PAN-OS 12.1 en 12.2), bevestigd door <a href="https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/" title="Unit 42: PHP2Shell (CVE-2026-109618 en CVE-2026-109619)">Unit 42</a>.</li>
-    <li><a href="https://support.citrix.com/external/article/CTX697263" title="Citrix: Security Advisory for CVE-2026-109618 and CVE-2026-109619 (CTX697263)">Citrix: CTX697263</a>, fixes voor NetScaler ADC en Gateway op 27 oktober. <a href="https://www.wiz.io/blog/php2shell-exploitation-so-far" title="Wiz: PHP2Shell: Exploitation Attempts and Remediation Trends">Wiz: PHP2Shell: Exploitation Attempts and Remediation Trends</a>, 27 oktober.</li>
-    <li><a href="https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers" title="Dream: Chained PHP2Shell Exploit Roots 25 Servers">Dream: Chained PHP2Shell Exploit Roots 25 Servers</a>, 26 oktober. De keten met Fragnesia, de 25 servers en het netwerk dat aan de Amerikaanse overheid hangt. Overgenomen door <a href="https://thehackernews.com/2026/10/php2shell-attack-roots-25-servers.html" title="The Hacker News: PHP2Shell Attack Roots 25 Servers, Breaches U.S. Government-Affiliated Network">The Hacker News</a>, 28 oktober.</li>
-    <li><a href="https://www.cisa.gov/news-events/alerts/2026/10/28/cisa-adds-two-known-exploited-vulnerabilities-catalog" title="CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog">CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog</a>, 28 oktober. Fragnesia (CVE-2026-46300) op de KEV-lijst, volgens de catalogus te koppelen aan PHP2Shell, deadline 31 oktober. Uitgelegd door <a href="https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/" title="BleepingComputer: CISA warns of Fragnesia Linux flaw chained in PHP2Shell attacks">BleepingComputer</a>, 29 oktober.</li>
+    <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-98432" title="CVE-2026-98432 op cve.org">CVE-2026-98432</a> het record van het CVE-team van de kernel, CVSS 9,8.</li>
+    <li><a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" title="Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude">Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude</a>, 27 oktober. De exploit op servers met MPTCP.</li>
+    <li><a href="https://go.dev/doc/go1.24" title="Go 1.24 Release Notes">Go 1.24 Release Notes</a>. ListenConfig gebruikt MPTCP standaard op Linux.</li>
+    <li><a href="https://go.dev/doc/godebug" title="Go: GODEBUG settings">Go: GODEBUG</a>. <code>multipathtcp=0</code> zet het uit.</li>
+    <li><a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF: how to block the Linux TCP bug</a>. De nftables-regel en de bijwerkingen.</li>
+    <li><a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a>. Waarom IP-opties aan de rand weg mogen.</li>
+    <li><a href="https://www.rfc-editor.org/rfc/rfc8684" title="RFC 8684: TCP Extensions for Multipath Operation with Multiple Addresses">RFC 8684</a>. Wat MPTCP is.</li>
+    <li><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">Debian security tracker</a>: DSA-6568-1 en DLA-4841-1.</li>
+    <li><a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">Ubuntu: CVE-2026-98432</a>: nog work in progress.</li>
+    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Important, 8,1, nog geen fix.</li>
+    <li><a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">SUSE: CVE-2026-98432</a>: de meeste producten hebben de fix.</li>
+    <li><a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">Oracle Linux: CVE-2026-98432</a>: de UEK-kernels.</li>
+    <li><a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">Amazon Linux: CVE-2026-98432</a>: de kernels 6.12 en 6.18.</li>
   </ul>
   <p class="note">Deze pagina is een grap. De feiten hierboven zijn dat niet. Twijfelt u? Dan wint de bron.</p>
 
   <h2 id="archief">Eerdere crisussen</h2>
   <p class="note">Alles van vroeger, met de originele beelden en de 503-pagina&rsquo;s, hangt in <a href="/museum/" title="Het Crisus-museum">het Crisus-museum</a>.</p>
   <ul class="archief" aria-labelledby="archief">
+    <li><time datetime="2026-10-21">21 oktober 2026</time><b>HTTP2Shell</b><p>Een kritiek lek in Brotli, de compressie van Google, in Node.js, Python en half de HTTP-clients van de wereld. Een week later op de KEV-lijst. <a href="/brotli/" title="Crisus: HTTP2Shell">Het archief</a>.</p></li>
     <li><time datetime="2026-10-21">21 oktober 2026</time><b>PHP2Shell</b><p>Twee kritieke lekken in PHP. Half Nederland haalt uit voorzorg zijn sites offline, van DigiD tot de KNVB, en de patch komt een halfuur te vroeg. <a href="/php/" title="Crisus: PHP2Shell, afgesloten">Alles staat hier nog</a>, met alle updates.</p></li>
     <li><time datetime="2024-07-19">19 juli 2024</time><b>Het Blauwe Scherm</b><p>Een update legt de halve wereld plat. Wij draaiden Linux. We hebben het er sindsdien nooit meer over gehad. Elke dag.</p></li>
     <li><time datetime="2021-12">december 2021</time><b>Log4Shell</b><p>Een logbestand dat zelf code uitvoert. Wat kan er misgaan. Het antwoord staat op <a href="https://onlogius.nl/" title="OnLogius: de BSNk-decryptiecomponent, met broncode">OnLogius</a>.</p></li>
