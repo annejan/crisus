@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-23T22:50:00+02:00">
-<meta property="article:modified_time" content="2026-10-30T18:00:00+01:00">
+<meta property="article:modified_time" content="2026-10-30T21:00:00+01:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=8">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,7 +45,7 @@
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-23T22:50:00+02:00",
-  "dateModified": "2026-10-30T18:00:00+01:00",
+  "dateModified": "2026-10-30T21:00:00+01:00",
   "coverageStartTime": "2026-10-23T22:50:00+02:00",
   "about": {"@type": "Thing", "name": "CVE-2026-98432", "alternateName": ["TCP2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-98432"},
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
@@ -53,6 +53,7 @@
   "genre": "satire",
   "keywords": ["crisus", "TCP2Shell", "CVE-2026-98432", "Linux", "kernel", "TCP", "MPTCP", "Go"],
   "liveBlogUpdate": [
+    {"@type": "BlogPosting", "headline": "PHP2Shell: de Portal Builder is weer heel.", "datePublished": "2026-10-30T21:00:00+01:00", "url": "https://crisus.nl/#u-20261030-2100"},
     {"@type": "BlogPosting", "headline": "Een nieuwe crisus: TCP2Shell.", "datePublished": "2026-10-30T12:01:00+01:00", "url": "https://crisus.nl/#u-20261030-1201"},
     {"@type": "BlogPosting", "headline": "Alpine Linux en Cisco onder vuur.", "datePublished": "2026-10-30T11:17:00+01:00", "url": "https://crisus.nl/#u-20261030-1117"},
     {"@type": "BlogPosting", "headline": "Binance: miljarden weg uit de hot wallets.", "datePublished": "2026-10-29T23:30:00+01:00", "url": "https://crisus.nl/#u-20261029-2330"},
@@ -116,7 +117,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-10-30T18:00:00+01:00">laatst bijgewerkt 30 oktober, 18:00</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <p class="kicker">Crisus · <time datetime="2026-10-30T21:00:00+01:00">laatst bijgewerkt 30 oktober, 21:00</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
   <h1>TCP2Shell: lek in de TCP-code van Linux</h1>
   <p class="lead">Een lek in de manier waarop de Linux-kernel een TCP-verbinding opzet: TCP2Shell. Volgens Anthropic haalt een aanvaller er op afstand root mee, zonder in te loggen, op een server met MPTCP. Debian, SUSE en Oracle hebben de fix, Ubuntu en Red Hat <strong>nog niet</strong>. Niet in paniek raken. Wel een regel in de firewall.</p>
   <p class="vandaag" id="vandaag" hidden></p>
@@ -140,6 +141,8 @@
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261030-2100"><time datetime="2026-10-30T21:00+01:00">30 oktober 21:00</time>
+      <p><strong>PHP2Shell: de Portal Builder is weer heel.</strong> Cisco werkte zijn <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq" title="Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026">advisory</a> vanavond voor de tiende keer bij (versie 1.10). De Portal Builder van ISE, die &ldquo;Offline for remediation&rdquo; was, heeft nu zijn fix: &ldquo;Fix deployed, no customer action required.&rdquo; Voor Ultra-Reliable Wireless Backhaul en Unified Industrial Wireless Software is de fix nu versie 26.2.1.9, in november 2026, en niet meer 27.1.1. Webex Events staat erbij als niet geraakt. Misbruik tegen zijn eigen producten heeft Cisco nog steeds niet gezien. Een lager versienummer in dezelfde maand. Terug in de tijd, maar wel vooruit.</p></li>
     <li id="u-20261030-1201"><time datetime="2026-10-30T12:01+01:00">30 oktober 12:01</time>
       <p><strong>Een nieuwe crisus: TCP2Shell.</strong> In de TCP-code van de Linux-kernel zit een lek, <a href="https://www.cve.org/CVERecord?id=CVE-2026-98432" title="CVE-2026-98432 op cve.org">CVE-2026-98432</a>, waarmee volgens <a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" title="Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude">Anthropic</a> op afstand root te halen is op servers met MPTCP. Sinds Go 1.24 staat dat standaard aan. Debian, SUSE en Oracle hebben de fix, Ubuntu en Red Hat nog niet. Tot die er is: een regel in de firewall, zie hieronder. Misbruik is nog niet gezien. Het crisusniveau blijft 3: ernstig. HTTP2Shell, de vorige crisus, staat nu op <a href="/brotli/" title="Crisus: HTTP2Shell">crisus.nl/brotli</a>. Het crisusteam heeft weer een tabblad bij.</p></li>
     <li id="u-20261030-1117"><time datetime="2026-10-30T11:17+01:00">30 oktober 11:17</time>

@@ -6,7 +6,14 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Fri, 30 Oct 2026 12:01:00 +0100</lastBuildDate>
+  <lastBuildDate>Fri, 30 Oct 2026 21:00:00 +0100</lastBuildDate>
+  <item>
+    <title>30 oktober 21:00 · PHP2Shell: de Portal Builder is weer heel.</title>
+    <link>https://crisus.nl/#u-20261030-2100</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261030-2100</guid>
+    <pubDate>Fri, 30 Oct 2026 21:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>PHP2Shell: de Portal Builder is weer heel.</strong> Cisco werkte zijn <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq" title="Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026">advisory</a> vanavond voor de tiende keer bij (versie 1.10). De Portal Builder van ISE, die &ldquo;Offline for remediation&rdquo; was, heeft nu zijn fix: &ldquo;Fix deployed, no customer action required.&rdquo; Voor Ultra-Reliable Wireless Backhaul en Unified Industrial Wireless Software is de fix nu versie 26.2.1.9, in november 2026, en niet meer 27.1.1. Webex Events staat erbij als niet geraakt. Misbruik tegen zijn eigen producten heeft Cisco nog steeds niet gezien. Een lager versienummer in dezelfde maand. Terug in de tijd, maar wel vooruit.</p>]]></description>
+  </item>
   <item>
     <title>30 oktober 12:01 · Een nieuwe crisus: TCP2Shell.</title>
     <link>https://crisus.nl/#u-20261030-1201</link>
