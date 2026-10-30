@@ -38,7 +38,7 @@ FEEDS = {
     "php.announce": ("https://news-web.php.net/group.php?group=php.announce&format=rss", r"secur|release|cve"),
     "externals": ("https://externals.io/rss", r"secur|cve|vulnerab|exploit|php2shell|bailout|double.free|use.after"),
 }
-TOPICS = re.compile(r"\bphp|php2shell|binance|bybit|brotli|http2shell|node2shell|111497|pwnescape|gitlab|overheid\.nl|digid|qnap|synology|pan-os|palo alto|fortinet|emudhra", re.I)
+TOPICS = re.compile(r"\bphp|php2shell|tcp2shell|98432|mptcp|binance|bybit|brotli|http2shell|node2shell|111497|pwnescape|gitlab|overheid\.nl|digid|qnap|synology|pan-os|palo alto|fortinet|emudhra", re.I)
 ATOM = "{http://www.w3.org/2005/Atom}"
 
 
