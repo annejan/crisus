@@ -6,7 +6,15 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Thu, 29 Oct 2026 23:30:00 +0100</lastBuildDate>
+  <lastBuildDate>Fri, 30 Oct 2026 11:17:00 +0100</lastBuildDate>
+  <item>
+    <title>30 oktober 11:17 · Alpine Linux en Cisco onder vuur.</title>
+    <link>https://crisus.nl/#u-20261030-1117</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261030-1117</guid>
+    <pubDate>Fri, 30 Oct 2026 11:17:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>Alpine Linux en Cisco onder vuur.</strong> Op 20 en 21 oktober probeerde een aanvaller binnen te komen op de GitLab-server van Alpine Linux, via CVE-2026-97229, een kritiek lek in de reguliere-expressiemotor van Ruby, <a href="https://alpinelinux.org/posts/GitLab-security-incident-CVE-2026-97229.html" title="Alpine Linux: GitLab security incident CVE-2026-97229">schrijft Alpine</a>. Alpine draaide per ongeluk nog een kwetsbare versie, en de update van 22 oktober hielp niet: de fix zit in een Ruby-patch die GitLab alleen in zijn eigen pakketten meelevert. Bewijs dat de aanvaller code draaide, vond Alpine niet, maar uitsluiten kan het ook niet. Dus is de server opnieuw opgebouwd, met nieuwe wachtwoorden en sleutels. De pakketten, de aports en de releases van 21 oktober zijn volgens Alpine niet aangetast, en de ondertekeningssleutels stonden nooit op die server. Wie zelf GitLab draait met een eigen Ruby: GitLab bijwerken is niet genoeg, ook Ruby 3.3.13, 3.4.12 of 4.0.9 is nodig. Patchen in twee lagen, zoals een ui. Daar huil je ook van.</p>
+      <p>En Cisco meldt in een <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-asaftd-tunnel-dos-s6mgkb75" title="Cisco: Secure Firewall ASA and FTD Remote Access SSL VPN Denial of Service Vulnerability">advisory</a> van 28 oktober dat een lek in de SSL-vpn van Secure Firewall ASA en FTD actief wordt misbruikt (CVE-2026-76418, CVSS 8,6). Zonder in te loggen kan een aanvaller het apparaat laten herstarten, als secundaire authenticatie aanstaat in een tunnel group. Er zijn fixes voor alle versies. Een workaround is er niet, wel een noodmaatregel: secundaire authenticatie uitzetten. In augustus lag dezelfde vpn-dienst ook al onder vuur, schrijft <a href="https://www.security.nl/posting/959522/Cisco+waarschuwt+opnieuw+voor+dos-aanvallen+tegen+vpn-service+firewalls" title="Security.NL: Cisco waarschuwt opnieuw voor dos-aanvallen tegen vpn-service firewalls">Security.NL</a>. Een firewall die steeds herstart, laat in elk geval niemand binnen.</p>]]></description>
+  </item>
   <item>
     <title>29 oktober 23:30 · Binance: miljarden weg uit de hot wallets.</title>
     <link>https://crisus.nl/#u-20261029-2330</link>
