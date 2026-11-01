@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-23T22:50:00+02:00">
-<meta property="article:modified_time" content="2026-10-31T00:05:00+01:00">
+<meta property="article:modified_time" content="2026-11-01T22:45:00+01:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=8">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,7 +45,7 @@
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-23T22:50:00+02:00",
-  "dateModified": "2026-10-31T00:05:00+01:00",
+  "dateModified": "2026-11-01T22:45:00+01:00",
   "coverageStartTime": "2026-10-23T22:50:00+02:00",
   "about": {"@type": "Thing", "name": "CVE-2026-98432", "alternateName": ["TCP2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-98432"},
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
@@ -53,6 +53,7 @@
   "genre": "satire",
   "keywords": ["crisus", "TCP2Shell", "CVE-2026-98432", "Linux", "kernel", "TCP", "MPTCP", "Go"],
   "liveBlogUpdate": [
+    {"@type": "BlogPosting", "headline": "TCP2Shell: Amazon is klaar, Red Hat schrikt.", "datePublished": "2026-11-01T22:45:00+01:00", "url": "https://crisus.nl/#u-20261101-2245"},
     {"@type": "BlogPosting", "headline": "PHP2Shell: de Portal Builder is weer heel.", "datePublished": "2026-10-30T21:00:00+01:00", "url": "https://crisus.nl/#u-20261030-2100"},
     {"@type": "BlogPosting", "headline": "Een nieuwe crisus: TCP2Shell.", "datePublished": "2026-10-30T12:01:00+01:00", "url": "https://crisus.nl/#u-20261030-1201"},
     {"@type": "BlogPosting", "headline": "Alpine Linux en Cisco onder vuur.", "datePublished": "2026-10-30T11:17:00+01:00", "url": "https://crisus.nl/#u-20261030-1117"},
@@ -117,9 +118,9 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-10-31T00:05:00+01:00">laatst bijgewerkt 31 oktober, 00:05</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <p class="kicker">Crisus · <time datetime="2026-11-01T22:45:00+01:00">laatst bijgewerkt 1 november, 22:45</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
   <h1>TCP2Shell: lek in de TCP-code van Linux</h1>
-  <p class="lead">Een lek in de manier waarop de Linux-kernel een TCP-verbinding opzet: TCP2Shell. Volgens Anthropic haalt een aanvaller er op afstand root mee, zonder in te loggen, op een server met MPTCP. Debian, SUSE en Oracle hebben de fix, Ubuntu en Red Hat <strong>nog niet</strong>. Niet in paniek raken. Wel een regel in de firewall.</p>
+  <p class="lead">Een lek in de manier waarop de Linux-kernel een TCP-verbinding opzet: TCP2Shell. Volgens Anthropic haalt een aanvaller er op afstand root mee, zonder in te loggen, op een server met MPTCP. Debian, SUSE, Oracle en Amazon hebben de fix, Ubuntu en Red Hat <strong>nog niet</strong>. Niet in paniek raken. Wel een regel in de firewall.</p>
   <p class="vandaag" id="vandaag" hidden></p>
 
   <p class="klok" id="klok"><b data-since="2026-10-15T00:00:00+02:00">15 oktober</b><span>Sinds 15 oktober staat de fix in de kernel. Ubuntu en Red Hat leveren hem nog niet. Elke minuut op deze klok is een minuut met een regel in de firewall. <a href="#stand" title="Is de fix er al voor mij?">Is de fix er al voor mij?</a></span></p>
@@ -141,6 +142,8 @@
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261101-2245"><time datetime="2026-11-01T22:45+01:00">1 november 22:45</time>
+      <p><strong>TCP2Shell: Amazon is klaar, Red Hat schrikt.</strong> Amazon Linux heeft sinds 30 oktober ook de standaardkernel van Amazon Linux 2023 gerepareerd (<a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">ALAS2023-2026-3365</a>). Daarmee hebben alle kernels van Amazon Linux 2 en 2023 de fix. Red Hat zette de ernst dezelfde dag van &ldquo;Important&rdquo; (8,1) op &ldquo;Critical&rdquo; (9,8), maar een fix is er nog niet: RHEL 8, 9 en 10 wachten, volgens het <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">bulletin</a> &ldquo;expediting&rdquo;. Ubuntu heeft kernels voor 22.04 tot en met 26.10 in de maak, nog zonder Ubuntu Security Notice; 20.04 en ouder staan op &ldquo;needed&rdquo;. Bij AlmaLinux staat de fix nog niet in de errata. Kritiek is het dus wel. Klaar nog niet.</p></li>
     <li id="u-20261030-2100"><time datetime="2026-10-30T21:00+01:00">30 oktober 21:00</time>
       <p><strong>PHP2Shell: de Portal Builder is weer heel.</strong> Cisco werkte zijn <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq" title="Cisco: Vulnerabilities in PHP Affecting Cisco Products: October 2026">advisory</a> vanavond voor de tiende keer bij (versie 1.10). De Portal Builder van ISE, die &ldquo;Offline for remediation&rdquo; was, heeft nu zijn fix: &ldquo;Fix deployed, no customer action required.&rdquo; Voor Ultra-Reliable Wireless Backhaul en Unified Industrial Wireless Software is de fix nu versie 26.2.1.9, in november 2026, en niet meer 27.1.1. Webex Events staat erbij als niet geraakt. Misbruik tegen zijn eigen producten heeft Cisco nog steeds niet gezien. Een lager versienummer in dezelfde maand. Terug in de tijd, maar wel vooruit.</p></li>
     <li id="u-20261030-1201"><time datetime="2026-10-30T12:01+01:00">30 oktober 12:01</time>
@@ -215,7 +218,7 @@
     <dt>Wat kan een aanvaller?</dt>
     <dd>Het Frontier Red Team van Anthropic schreef op 27 oktober dat een nog niet uitgebracht Claude-model er een werkende exploit mee bouwde: op afstand, zonder in te loggen, root op een server met een MPTCP-listener (<a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" title="Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude">Anthropic</a>). Een kernelpointer lekken duurde 48 minuten, de shell nog vijf. De exploit is niet gepubliceerd. Of het ook zonder MPTCP kan, is niet duidelijk. Ja, Claude is familie van de schrijver van deze pagina. We hebben het er thuis nog niet over gehad.</dd>
     <dt>Ernst</dt>
-    <dd>CVSS 9,8, van het CVE-team van de kernel. Red Hat zegt 8,1, &ldquo;Important&rdquo;: de race is moeilijk te winnen. Feedly zegt 5,9. Drie partijen, drie cijfers. Alle drie: bijwerken.</dd>
+    <dd>CVSS 9,8, van het CVE-team van de kernel. Red Hat zei eerst 8,1, &ldquo;Important&rdquo;: de race is moeilijk te winnen. Sinds 30 oktober zegt Red Hat ook 9,8, &ldquo;Critical&rdquo;. Amazon houdt het op 8,1, Feedly op 5,9. Vier partijen, drie cijfers. Alle vier: bijwerken.</dd>
     <dt>Welke versies?</dt>
     <dd>Alles vanaf 4.4. De fix zit in 5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 en 7.3.</dd>
     <dt>Misbruik?</dt>
@@ -232,7 +235,7 @@
         <pre><code>uname -r
 sudo apt update &amp;&amp; sudo apt full-upgrade
 sudo reboot</code></pre></li>
-      <li><strong>Nog geen fix?</strong> (Ubuntu, Red Hat, de standaardkernel van Amazon Linux 2023.) Laat dan TCP-pakketten met IPv4-opties niet binnen. Normaal verkeer gebruikt die opties niet; <a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a> raadt al aan ze te weren. Deze regel komt van <a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF</a>:
+      <li><strong>Nog geen fix?</strong> (Ubuntu, Red Hat.) Laat dan TCP-pakketten met IPv4-opties niet binnen. Normaal verkeer gebruikt die opties niet; <a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a> raadt al aan ze te weren. Deze regel komt van <a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF</a>:
         <pre><code>sudo nft add table ip cve_2026_98432
 sudo nft add chain ip cve_2026_98432 pre '{ type filter hook prerouting priority -300; }'
 sudo nft add rule ip cve_2026_98432 pre meta l4proto tcp ip hdrlength gt 5 counter drop</code></pre>
@@ -244,15 +247,15 @@ sudo ss -lnMp                   <span class="c"># welke processen luisteren met 
     </ol>
   </section>
 
-  <h2 id="stand">Stand per platform, 12:01</h2>
+  <h2 id="stand">Stand per platform, 22:45</h2>
   <ul class="status" aria-labelledby="stand">
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">DSA-6568-1</a>: <code>linux 6.12.113-1</code>.</em></li>
     <li><b>Debian 12</b><span class="pill green">Fix beschikbaar</span><em>DLA-4841-1: <code>linux 6.1.190-1</code>.</em></li>
-    <li><b>Ubuntu</b><span class="pill red">Nog geen fix</span><em>20.04 tot en met 26.10 staan op &ldquo;work in progress&rdquo;, zie de <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE-pagina</a>.</em></li>
-    <li><b>Red Hat</b><span class="pill red">Nog geen fix</span><em>RHEL 8, 9 en 10 staan op &ldquo;Affected&rdquo;, &ldquo;Important&rdquo; (8,1), zie de <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE-pagina</a>. RHEL 6 en 7 zijn niet geraakt.</em></li>
+    <li><b>Ubuntu</b><span class="pill red">Nog geen fix</span><em>22.04 tot en met 26.10 staan op &ldquo;work in progress&rdquo;: de kernel is in de maak. 20.04 en ouder staan op &ldquo;needed&rdquo;. Nog geen Ubuntu Security Notice, zie de <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE-pagina</a>.</em></li>
+    <li><b>Red Hat</b><span class="pill red">Nog geen fix</span><em>RHEL 8, 9 en 10 staan op &ldquo;Affected&rdquo;, sinds 30 oktober &ldquo;Critical&rdquo; (9,8), zie de <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE-pagina</a> en het <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">bulletin</a>. RHEL 6 en 7 zijn niet geraakt.</em></li>
     <li><b>SUSE</b><span class="pill orange">Deels</span><em>Voor de meeste producten is er een fix, een paar zijn nog onderweg, zie de <a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">CVE-pagina</a>.</em></li>
     <li><b>Oracle Linux</b><span class="pill green">Fix beschikbaar</span><em>De UEK-kernels, <a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">ELSA-2026-500397</a> en verder.</em></li>
-    <li><b>Amazon Linux 2023</b><span class="pill orange">Deels</span><em>Alleen de kernels 6.12 (ALAS2023-2026-3335) en 6.18 (ALAS2023-2026-3251), zie <a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">ALAS</a>. De standaardkernel nog niet.</em></li>
+    <li><b>Amazon Linux</b><span class="pill green">Fix beschikbaar</span><em>Alle kernels van Amazon Linux 2 en 2023, de standaardkernel van 2023 sinds 30 oktober (ALAS2023-2026-3365), zie <a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">ALAS</a>.</em></li>
     <li><b>Go</b><span class="pill orange">Herstarten</span><em>Sinds 1.24 staat MPTCP op listeners standaard aan. <code>GODEBUG=multipathtcp=0</code> zet het uit, zie de <a href="https://go.dev/doc/godebug" title="Go: GODEBUG settings">GODEBUG-uitleg</a>.</em></li>
     <li><b>Crisus.nl</b><span class="pill green">Werkt</span><em>Geen Node, geen PHP en geen Go. Gewoon HTML. Zoals in 1997.</em></li>
     <li><b>Paniek</b><span class="pill green">Onder controle</span><em>Er is weer een spreadsheet. Dezelfde.</em></li>
@@ -307,11 +310,12 @@ sudo ss -lnMp                   <span class="c"># welke processen luisteren met 
     <li><a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a>. Waarom IP-opties aan de rand weg mogen.</li>
     <li><a href="https://www.rfc-editor.org/rfc/rfc8684" title="RFC 8684: TCP Extensions for Multipath Operation with Multiple Addresses">RFC 8684</a>. Wat MPTCP is.</li>
     <li><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">Debian security tracker</a>: DSA-6568-1 en DLA-4841-1.</li>
-    <li><a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">Ubuntu: CVE-2026-98432</a>: nog work in progress.</li>
-    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Important, 8,1, nog geen fix.</li>
+    <li><a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">Ubuntu: CVE-2026-98432</a>: 22.04 tot en met 26.10 work in progress, ouder needed.</li>
+    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Critical, 9,8, nog geen fix.</li>
+    <li><a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">Red Hat: RHSB-2026-016</a>: het bulletin, met de nftables-regel.</li>
     <li><a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">SUSE: CVE-2026-98432</a>: de meeste producten hebben de fix.</li>
     <li><a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">Oracle Linux: CVE-2026-98432</a>: de UEK-kernels.</li>
-    <li><a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">Amazon Linux: CVE-2026-98432</a>: de kernels 6.12 en 6.18.</li>
+    <li><a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">Amazon Linux: CVE-2026-98432</a>: alle kernels van Amazon Linux 2 en 2023.</li>
   </ul>
   <p class="note">Deze pagina is een grap. De feiten hierboven zijn dat niet. Twijfelt u? Dan wint de bron.</p>
 

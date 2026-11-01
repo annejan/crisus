@@ -68,7 +68,7 @@
 <main id="inhoud" class="wrap">
   <p class="kicker">Crisus · <time datetime="2026-10-30T12:02:00+01:00">status of 30 October, 12:02</time> · <a href="/" title="Crisus: de actuele stand (in Dutch)">hourly updates in Dutch</a></p>
   <h1>TCP2Shell: a hole in Linux&rsquo;s TCP code</h1>
-  <p class="lead">A bug in the way the Linux kernel sets up a TCP connection: TCP2Shell. According to Anthropic, an attacker can use it to get root remotely, without logging in, on a server with MPTCP. Debian, SUSE and Oracle have the fix, Ubuntu and Red Hat <strong>not yet</strong>. Don&rsquo;t panic. Do add a firewall rule.</p>
+  <p class="lead">A bug in the way the Linux kernel sets up a TCP connection: TCP2Shell. According to Anthropic, an attacker can use it to get root remotely, without logging in, on a server with MPTCP. Debian, SUSE, Oracle and Amazon have the fix, Ubuntu and Red Hat <strong>not yet</strong>. Don&rsquo;t panic. Do add a firewall rule.</p>
 
   <p class="klok" id="klok"><b data-since="2026-10-15T00:00:00+02:00">15.10.2026</b><span>Since 15 October the fix has been in the kernel. Ubuntu and Red Hat do not ship it yet. Every minute on this clock is a minute with a firewall rule. <a href="#stand" title="Is the fix there for me?">Is the fix there for me?</a></span></p>
 
@@ -96,7 +96,7 @@
     <dt>What can an attacker do?</dt>
     <dd>Anthropic&rsquo;s Frontier Red Team wrote on 27 October that an unreleased Claude model built a working exploit with it: remote, without logging in, root on a server with an MPTCP listener (<a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" title="Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude">Anthropic</a>). Leaking a kernel pointer took 48 minutes, the shell another five. The exploit has not been published. Whether it also works without MPTCP is not clear. Yes, Claude is related to the author of this page. We have not talked about it at home yet.</dd>
     <dt>Severity</dt>
-    <dd>CVSS 9.8, from the kernel&rsquo;s CVE team. Red Hat says 8.1, &ldquo;Important&rdquo;: the race is hard to win. Feedly says 5.9. Three parties, three numbers. All three: update.</dd>
+    <dd>CVSS 9.8, from the kernel&rsquo;s CVE team. Red Hat first said 8.1, &ldquo;Important&rdquo;: the race is hard to win. Since 30 October Red Hat says 9.8 too, &ldquo;Critical&rdquo;. Amazon sticks to 8.1, Feedly to 5.9. Four parties, three numbers. All four: update.</dd>
     <dt>Which versions?</dt>
     <dd>Everything from 4.4. The fix is in 5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 and 7.3.</dd>
     <dt>Exploited?</dt>
@@ -113,7 +113,7 @@
         <pre><code>uname -r
 sudo apt update &amp;&amp; sudo apt full-upgrade
 sudo reboot</code></pre></li>
-      <li><strong>No fix yet?</strong> (Ubuntu, Red Hat, the default kernel of Amazon Linux 2023.) Then keep out TCP packets with IPv4 options. Normal traffic does not use them; <a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a> already recommends filtering them. This rule comes from <a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF</a>:
+      <li><strong>No fix yet?</strong> (Ubuntu, Red Hat.) Then keep out TCP packets with IPv4 options. Normal traffic does not use them; <a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a> already recommends filtering them. This rule comes from <a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF</a>:
         <pre><code>sudo nft add table ip cve_2026_98432
 sudo nft add chain ip cve_2026_98432 pre '{ type filter hook prerouting priority -300; }'
 sudo nft add rule ip cve_2026_98432 pre meta l4proto tcp ip hdrlength gt 5 counter drop</code></pre>
@@ -125,16 +125,16 @@ sudo ss -lnMp                   <span class="c"># which processes listen with MP
     </ol>
   </section>
 
-  <h2 id="stand">Status per platform, 30 October 12:02</h2>
+  <h2 id="stand">Status per platform, 1 November 22:45</h2>
   <ul class="status" aria-labelledby="stand">
     <li><b>Linux</b><span class="pill green">Fix available</span><em>5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 and 7.3, since 15 October.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix available</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">DSA-6568-1</a>: <code>linux 6.12.113-1</code>.</em></li>
     <li><b>Debian 12</b><span class="pill green">Fix available</span><em>DLA-4841-1: <code>linux 6.1.190-1</code>.</em></li>
-    <li><b>Ubuntu</b><span class="pill red">No fix</span><em>20.04 up to and including 26.10 say &ldquo;work in progress&rdquo;, see the <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE page</a>.</em></li>
-    <li><b>Red Hat</b><span class="pill red">No fix</span><em>RHEL 8, 9 and 10 say &ldquo;Affected&rdquo;, &ldquo;Important&rdquo; (8.1), see the <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE page</a>. RHEL 6 and 7 are not affected.</em></li>
+    <li><b>Ubuntu</b><span class="pill red">No fix</span><em>22.04 up to and including 26.10 say &ldquo;work in progress&rdquo;: the kernel is being built. 20.04 and older say &ldquo;needed&rdquo;. No Ubuntu Security Notice yet, see the <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE page</a>.</em></li>
+    <li><b>Red Hat</b><span class="pill red">No fix</span><em>RHEL 8, 9 and 10 say &ldquo;Affected&rdquo;, since 30 October &ldquo;Critical&rdquo; (9.8), see the <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE page</a> and the <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">bulletin</a>. RHEL 6 and 7 are not affected.</em></li>
     <li><b>SUSE</b><span class="pill orange">Partial</span><em>Most products have a fix, a few are still on the way, see the <a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">CVE page</a>.</em></li>
     <li><b>Oracle Linux</b><span class="pill green">Fix available</span><em>The UEK kernels, <a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">ELSA-2026-500397</a> and later.</em></li>
-    <li><b>Amazon Linux 2023</b><span class="pill orange">Partial</span><em>Only the 6.12 (ALAS2023-2026-3335) and 6.18 (ALAS2023-2026-3251) kernels, see <a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">ALAS</a>. Not the default kernel yet.</em></li>
+    <li><b>Amazon Linux</b><span class="pill green">Fix available</span><em>All kernels of Amazon Linux 2 and 2023, the default 2023 kernel since 30 October (ALAS2023-2026-3365), see <a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">ALAS</a>.</em></li>
     <li><b>Go</b><span class="pill orange">Restart</span><em>Since 1.24 MPTCP is on by default for listeners. <code>GODEBUG=multipathtcp=0</code> turns it off, see the <a href="https://go.dev/doc/godebug" title="Go: GODEBUG settings">GODEBUG docs</a>.</em></li>
     <li><b>Crisus.nl</b><span class="pill green">Works</span><em>No Node, no PHP and no Go. Just HTML. Like in 1997.</em></li>
   </ul>
@@ -160,11 +160,12 @@ sudo ss -lnMp                   <span class="c"># which processes listen with MP
     <li><a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a>. Why IP options may be dropped at the edge.</li>
     <li><a href="https://www.rfc-editor.org/rfc/rfc8684" title="RFC 8684: TCP Extensions for Multipath Operation with Multiple Addresses">RFC 8684</a>. What MPTCP is.</li>
     <li><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">Debian security tracker</a>: DSA-6568-1 and DLA-4841-1.</li>
-    <li><a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">Ubuntu: CVE-2026-98432</a>: still work in progress.</li>
-    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Important, 8.1, no fix yet.</li>
+    <li><a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">Ubuntu: CVE-2026-98432</a>: 22.04 up to 26.10 work in progress, older needed.</li>
+    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Critical, 9.8, no fix yet.</li>
+    <li><a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">Red Hat: RHSB-2026-016</a>: the bulletin, with the nftables rule.</li>
     <li><a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">SUSE: CVE-2026-98432</a>: most products have the fix.</li>
     <li><a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">Oracle Linux: CVE-2026-98432</a>: the UEK kernels.</li>
-    <li><a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">Amazon Linux: CVE-2026-98432</a>: the 6.12 and 6.18 kernels.</li>
+    <li><a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">Amazon Linux: CVE-2026-98432</a>: all kernels of Amazon Linux 2 and 2023.</li>
   </ul>
 </main>
 

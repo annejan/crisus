@@ -67,7 +67,7 @@
 <main id="inhoud" class="wrap">
   <p class="kicker">Crisus · <time datetime="2026-10-30T12:02:00+01:00">стан на 30 жовтня, 12:02</time> · <a href="/" title="Crisus: de actuele stand (нідерландською)">щогодинні оновлення нідерландською</a></p>
   <h1>TCP2Shell: вразливість у TCP-коді Linux</h1>
-  <p class="lead">Вразливість у тому, як ядро Linux встановлює TCP-зʼєднання: TCP2Shell. За даними Anthropic, зловмисник може з її допомогою віддалено отримати root, без входу в систему, на сервері з MPTCP. Debian, SUSE і Oracle вже мають виправлення, Ubuntu і Red Hat <strong>ще ні</strong>. Без паніки. Але додайте правило до брандмауера.</p>
+  <p class="lead">Вразливість у тому, як ядро Linux встановлює TCP-зʼєднання: TCP2Shell. За даними Anthropic, зловмисник може з її допомогою віддалено отримати root, без входу в систему, на сервері з MPTCP. Debian, SUSE, Oracle і Amazon вже мають виправлення, Ubuntu і Red Hat <strong>ще ні</strong>. Без паніки. Але додайте правило до брандмауера.</p>
 
   <p class="klok" id="klok"><b data-since="2026-10-15T00:00:00+02:00">15.10.2026</b><span>З 15 жовтня виправлення є в ядрі. Ubuntu і Red Hat його ще не постачають. Кожна хвилина на цьому годиннику є хвилиною з правилом у брандмауері. <a href="#stand" title="Чи є виправлення для мене?">Чи є виправлення для мене?</a></span></p>
 
@@ -95,7 +95,7 @@
     <dt>Що може зловмисник?</dt>
     <dd>Frontier Red Team компанії Anthropic 27 жовтня написала, що ще не випущена модель Claude створила з її допомогою робочий експлойт: віддалено, без входу в систему, root на сервері з MPTCP-слухачем (<a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" title="Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude">Anthropic</a>). Витік вказівника ядра зайняв 48 хвилин, оболонка ще пʼять. Експлойт не опубліковано. Чи працює це без MPTCP, невідомо. Так, Claude є родичем автора цієї сторінки. Вдома ми про це ще не говорили.</dd>
     <dt>Серйозність</dt>
-    <dd>CVSS 9,8 від команди CVE ядра. Red Hat каже 8,1, &laquo;Important&raquo;: гонку важко виграти. Feedly каже 5,9. Три сторони, три числа. Усі три: оновлюйте.</dd>
+    <dd>CVSS 9,8 від команди CVE ядра. Red Hat спершу казав 8,1, &laquo;Important&raquo;: гонку важко виграти. З 30 жовтня Red Hat теж каже 9,8, &laquo;Critical&raquo;. Amazon тримається 8,1, Feedly 5,9. Чотири сторони, три числа. Усі чотири: оновлюйте.</dd>
     <dt>Які версії?</dt>
     <dd>Усе, починаючи з 4.4. Виправлення є у 5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 і 7.3.</dd>
     <dt>Чи є атаки?</dt>
@@ -112,7 +112,7 @@
         <pre><code>uname -r
 sudo apt update &amp;&amp; sudo apt full-upgrade
 sudo reboot</code></pre></li>
-      <li><strong>Виправлення ще немає?</strong> (Ubuntu, Red Hat, стандартне ядро Amazon Linux 2023.) Тоді не пропускайте TCP-пакети з опціями IPv4. Звичайний трафік їх не використовує; <a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a> уже радить їх відфільтровувати. Це правило від <a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF</a>:
+      <li><strong>Виправлення ще немає?</strong> (Ubuntu, Red Hat.) Тоді не пропускайте TCP-пакети з опціями IPv4. Звичайний трафік їх не використовує; <a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a> уже радить їх відфільтровувати. Це правило від <a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF</a>:
         <pre><code>sudo nft add table ip cve_2026_98432
 sudo nft add chain ip cve_2026_98432 pre '{ type filter hook prerouting priority -300; }'
 sudo nft add rule ip cve_2026_98432 pre meta l4proto tcp ip hdrlength gt 5 counter drop</code></pre>
@@ -124,16 +124,16 @@ sudo ss -lnMp                   <span class="c"># які процеси слух
     </ol>
   </section>
 
-  <h2 id="stand">Стан за платформами, 30 жовтня, 12:02</h2>
+  <h2 id="stand">Стан за платформами, 1 листопада, 22:45</h2>
   <ul class="status" aria-labelledby="stand">
     <li><b>Linux</b><span class="pill green">Є виправлення</span><em>5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 і 7.3, з 15 жовтня.</em></li>
     <li><b>Debian 13</b><span class="pill green">Є виправлення</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">DSA-6568-1</a>: <code>linux 6.12.113-1</code>.</em></li>
     <li><b>Debian 12</b><span class="pill green">Є виправлення</span><em>DLA-4841-1: <code>linux 6.1.190-1</code>.</em></li>
-    <li><b>Ubuntu</b><span class="pill red">Виправлення немає</span><em>Від 20.04 до 26.10 включно позначено &laquo;work in progress&raquo;, див. <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">сторінку CVE</a>.</em></li>
-    <li><b>Red Hat</b><span class="pill red">Виправлення немає</span><em>RHEL 8, 9 і 10 позначено &laquo;Affected&raquo;, &laquo;Important&raquo; (8,1), див. <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">сторінку CVE</a>. RHEL 6 і 7 не вражено.</em></li>
+    <li><b>Ubuntu</b><span class="pill red">Виправлення немає</span><em>Від 22.04 до 26.10 включно позначено &laquo;work in progress&raquo;: ядро готується. 20.04 і старіші позначено &laquo;needed&raquo;. Ubuntu Security Notice ще немає, див. <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">сторінку CVE</a>.</em></li>
+    <li><b>Red Hat</b><span class="pill red">Виправлення немає</span><em>RHEL 8, 9 і 10 позначено &laquo;Affected&raquo;, з 30 жовтня &laquo;Critical&raquo; (9,8), див. <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">сторінку CVE</a> і <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">бюлетень</a>. RHEL 6 і 7 не вражено.</em></li>
     <li><b>SUSE</b><span class="pill orange">Частково</span><em>Для більшості продуктів виправлення є, кілька ще готуються, див. <a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">сторінку CVE</a>.</em></li>
     <li><b>Oracle Linux</b><span class="pill green">Є виправлення</span><em>Ядра UEK, <a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">ELSA-2026-500397</a> і новіші.</em></li>
-    <li><b>Amazon Linux 2023</b><span class="pill orange">Частково</span><em>Лише ядра 6.12 (ALAS2023-2026-3335) і 6.18 (ALAS2023-2026-3251), див. <a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">ALAS</a>. Стандартне ядро ще ні.</em></li>
+    <li><b>Amazon Linux</b><span class="pill green">Є виправлення</span><em>Усі ядра Amazon Linux 2 і 2023, стандартне ядро 2023 з 30 жовтня (ALAS2023-2026-3365), див. <a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">ALAS</a>.</em></li>
     <li><b>Go</b><span class="pill orange">Перезапустіть</span><em>Починаючи з 1.24, MPTCP для слухачів увімкнено за замовчуванням. <code>GODEBUG=multipathtcp=0</code> його вимикає, див. <a href="https://go.dev/doc/godebug" title="Go: GODEBUG settings">опис GODEBUG</a>.</em></li>
     <li><b>Crisus.nl</b><span class="pill green">Працює</span><em>Ні Node, ні PHP, ні Go. Просто HTML. Як у 1997 році.</em></li>
   </ul>
@@ -159,11 +159,12 @@ sudo ss -lnMp                   <span class="c"># які процеси слух
     <li><a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a>. Чому IP-опції можна відкидати на межі мережі.</li>
     <li><a href="https://www.rfc-editor.org/rfc/rfc8684" title="RFC 8684: TCP Extensions for Multipath Operation with Multiple Addresses">RFC 8684</a>. Що таке MPTCP.</li>
     <li><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">Debian security tracker</a>: DSA-6568-1 і DLA-4841-1.</li>
-    <li><a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">Ubuntu: CVE-2026-98432</a>: ще work in progress.</li>
-    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Important, 8,1, виправлення ще немає.</li>
+    <li><a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">Ubuntu: CVE-2026-98432</a>: від 22.04 до 26.10 work in progress, старіші needed.</li>
+    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Critical, 9,8, виправлення ще немає.</li>
+    <li><a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">Red Hat: RHSB-2026-016</a>: бюлетень із правилом nftables.</li>
     <li><a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">SUSE: CVE-2026-98432</a>: більшість продуктів мають виправлення.</li>
     <li><a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">Oracle Linux: CVE-2026-98432</a>: ядра UEK.</li>
-    <li><a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">Amazon Linux: CVE-2026-98432</a>: ядра 6.12 і 6.18.</li>
+    <li><a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">Amazon Linux: CVE-2026-98432</a>: усі ядра Amazon Linux 2 і 2023.</li>
   </ul>
 </main>
 
