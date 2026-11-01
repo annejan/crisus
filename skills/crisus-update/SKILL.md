@@ -19,7 +19,12 @@ refused, carry on with the next step and say so at the end.
 
 1. **Check the sources.** `bash tools/check.sh` prints NOS, php.net, NCSC, Debian,
    Ubuntu, Docker (including the floating tags), Homebrew, Red Hat, SUSE, Node and a
-   sample of sites that went offline. For a site that seems back, read its content,
+   sample of sites that went offline, and for TCP2Shell (CVE-2026-98432) the trackers
+   of Ubuntu (USN), Red Hat (severity, RHSA), SUSE, Debian, Amazon (ALAS), Oracle (ELSA)
+   and AlmaLinux. Compare each line with its row under "Stand per platform": a tracker
+   that moved is news. A new crisus needs its own lines in `check.sh` (the CVE, the
+   vendors in the rows) in the same commit that starts it, or the rounds keep looking
+   at the old bug and report "niets nieuws". For a site that seems back, read its content,
    not only the title: maintenance pages often keep a normal title.
    Then `bash tools/php-deep.sh [since]`: new php-src advisories, release tags,
    security-looking commits on the release branches, php.net news, CISA KEV,
