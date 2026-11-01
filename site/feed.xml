@@ -8,11 +8,11 @@
   <language>nl</language>
   <lastBuildDate>Sun, 01 Nov 2026 22:45:00 +0100</lastBuildDate>
   <item>
-    <title>1 november 22:45 · TCP2Shell: Amazon is klaar, Red Hat schrikt.</title>
+    <title>1 november 22:45 · TCP2Shell: Amazon heeft de fix, Red Hat noemt het nu kritiek.</title>
     <link>https://crisus.nl/#u-20261101-2245</link>
     <guid isPermaLink="true">https://crisus.nl/#u-20261101-2245</guid>
     <pubDate>Sun, 01 Nov 2026 22:45:00 +0100</pubDate>
-    <description><![CDATA[<p><strong>TCP2Shell: Amazon is klaar, Red Hat schrikt.</strong> Amazon Linux heeft sinds 30 oktober ook de standaardkernel van Amazon Linux 2023 gerepareerd (<a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">ALAS2023-2026-3365</a>). Daarmee hebben alle kernels van Amazon Linux 2 en 2023 de fix. Red Hat zette de ernst dezelfde dag van &ldquo;Important&rdquo; (8,1) op &ldquo;Critical&rdquo; (9,8), maar een fix is er nog niet: RHEL 8, 9 en 10 wachten, volgens het <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">bulletin</a> &ldquo;expediting&rdquo;. Ubuntu heeft kernels voor 22.04 tot en met 26.10 in de maak, nog zonder Ubuntu Security Notice; 20.04 en ouder staan op &ldquo;needed&rdquo;. Bij AlmaLinux staat de fix nog niet in de errata. Kritiek is het dus wel. Klaar nog niet.</p>]]></description>
+    <description><![CDATA[<p><strong>TCP2Shell: Amazon heeft de fix, Red Hat noemt het nu kritiek.</strong> Amazon Linux heeft sinds 30 oktober ook de standaardkernel van Amazon Linux 2023 gerepareerd (<a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">ALAS2023-2026-3365</a>): alle kernels van Amazon Linux 2 en 2023 hebben nu de fix. Red Hat zette de ernst dezelfde dag van &ldquo;Important&rdquo; (8,1) op &ldquo;Critical&rdquo; (9,8). Een fix voor RHEL 8, 9 en 10 is er nog niet; volgens het <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">bulletin</a> werkt Red Hat er met spoed aan. Ubuntu heeft kernels voor 22.04 tot en met 26.10 in de maak, nog zonder Ubuntu Security Notice; voor 20.04 en ouder is het werk nog niet begonnen. AlmaLinux heeft de fix nog niet in de errata. Het cijfer is bijgewerkt. De kernel nog niet.</p>]]></description>
   </item>
   <item>
     <title>30 oktober 21:00 · PHP2Shell: de Portal Builder is weer heel.</title>
