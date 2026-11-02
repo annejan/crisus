@@ -6,7 +6,14 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Sun, 01 Nov 2026 22:45:00 +0100</lastBuildDate>
+  <lastBuildDate>Mon, 02 Nov 2026 02:00:00 +0100</lastBuildDate>
+  <item>
+    <title>2 november 02:00 · TCP2Shell: Red Hat heeft de fix.</title>
+    <link>https://crisus.nl/#u-20261102-0200</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261102-0200</guid>
+    <pubDate>Mon, 02 Nov 2026 02:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>TCP2Shell: Red Hat heeft de fix.</strong> Red Hat bracht op 1 november nieuwe kernels uit voor RHEL 8, 9 en 10: <a href="https://access.redhat.com/errata/RHSA-2026:93414" title="Red Hat: RHSA-2026:93414, kernel security update (RHEL 8)">RHSA-2026:93414</a> (<code>kernel 4.18.0-553.182.1.el8_10</code>), <a href="https://access.redhat.com/errata/RHSA-2026:93415" title="Red Hat: RHSA-2026:93415, kernel-rt security update (RHEL 8)">RHSA-2026:93415</a> (de realtime-kernel van RHEL 8), <a href="https://access.redhat.com/errata/RHSA-2026:93412" title="Red Hat: RHSA-2026:93412, kernel security update (RHEL 9)">RHSA-2026:93412</a> (<code>5.14.0-687.64.1.el9_8</code>) en <a href="https://access.redhat.com/errata/RHSA-2026:93413" title="Red Hat: RHSA-2026:93413, kernel security update (RHEL 10)">RHSA-2026:93413</a> (<code>6.12.0-211.72.1.el10_2</code>). Helemaal klaar is Red Hat nog niet: de realtime-kernel van RHEL 9, RHEL for NVIDIA en de CoreOS-images van OpenShift 4 en 5 staan op de <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE-pagina</a> nog op &ldquo;Affected&rdquo;. Bijwerken en herstarten. Bij Ubuntu is er nog niets veranderd: kernels voor 22.04 tot en met 26.10 in de maak, nog geen Ubuntu Security Notice. Eerst het cijfer, nu de kernel.</p>]]></description>
+  </item>
   <item>
     <title>1 november 22:45 · TCP2Shell: Amazon heeft de fix, Red Hat noemt het nu kritiek.</title>
     <link>https://crisus.nl/#u-20261101-2245</link>
