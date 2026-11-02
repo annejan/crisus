@@ -6,7 +6,14 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Mon, 02 Nov 2026 10:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Tue, 03 Nov 2026 00:00:00 +0100</lastBuildDate>
+  <item>
+    <title>3 november 00:00 · TCP2Shell: ook AlmaLinux en Oracle Linux hebben de fix.</title>
+    <link>https://crisus.nl/#u-20261103-0000</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261103-0000</guid>
+    <pubDate>Tue, 03 Nov 2026 00:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>TCP2Shell: ook AlmaLinux en Oracle Linux hebben de fix.</strong> Een dag na Red Hat is AlmaLinux 8 aan de beurt: <a href="https://errata.almalinux.org/8/ALSA-2026-93414.html" title="AlmaLinux: ALSA-2026:93414, kernel security update">ALSA-2026:93414</a> (<code>kernel 4.18.0-553.182.1.el8_10</code>) en <a href="https://errata.almalinux.org/8/ALSA-2026-93415.html" title="AlmaLinux: ALSA-2026:93415, kernel-rt security update">ALSA-2026:93415</a> (de realtime-kernel), allebei van 2 november en allebei &ldquo;Critical&rdquo;. Voor AlmaLinux 9 en 10 staat er nog niets in de errata. Oracle Linux had sinds 16 oktober alleen zijn eigen UEK-kernels gerepareerd. Sinds 2 november heeft ook de Red Hat-compatibele kernel de fix, voor Oracle Linux 8 (<a href="https://linux.oracle.com/errata/ELSA-2026-93414.html" title="Oracle Linux: ELSA-2026-93414, kernel security update (Oracle Linux 8)">ELSA-2026-93414</a>) en 10 (<a href="https://linux.oracle.com/errata/ELSA-2026-93413.html" title="Oracle Linux: ELSA-2026-93413, kernel security update (Oracle Linux 10)">ELSA-2026-93413</a>, <code>6.12.0-211.72.1.el10_2</code>). Die van Oracle Linux 9 nog niet, zie de <a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">CVE-pagina</a>. Bijwerken en herstarten. Bij Ubuntu is er nog steeds niets veranderd: kernels voor 22.04 tot en met 26.10 in de maak, nog geen Ubuntu Security Notice. Wie Red Hat nabouwt, bouwt ook de fix na. Een dag later, zoals afgesproken.</p>]]></description>
+  </item>
   <item>
     <title>2 november 10:00 · PHP2Shell: QNAP heeft de fix.</title>
     <link>https://crisus.nl/#u-20261102-1000</link>
