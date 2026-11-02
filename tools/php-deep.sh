@@ -1,8 +1,13 @@
 #!/bin/bash
 # The deeper PHP check: where news about PHP2Shell, or the next PHP bug, shows up first.
 # Prints only what is new since the given time (default: the last 26 hours).
-# Usage: tools/php-deep.sh [ISO-time, e.g. 2026-10-22T21:00:00Z]
-SINCE=${1:-$(date -u -d '26 hours ago' +%Y-%m-%dT%H:%M:%SZ)}
+# Usage: tools/php-deep.sh [time, e.g. 2026-10-22T21:00:00Z or "2 hours ago"]
+# Any time date(1) reads becomes ISO: gh api hangs on a since= with spaces in it,
+# and that stalled the hourly round until its timeout (2 Nov).
+SINCE=$(date -u -d "${1:-26 hours ago}" +%Y-%m-%dT%H:%M:%SZ) || { echo "php-deep: cannot read the time '$1'" >&2; exit 2; }
+# No source may stall the round.
+gh() { timeout 60 gh "$@"; }
+curl() { command curl --max-time 30 "$@"; }
 echo "== php-deep since $SINCE"
 
 echo "-- php-src security advisories"
