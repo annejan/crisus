@@ -6,7 +6,14 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Mon, 02 Nov 2026 02:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Mon, 02 Nov 2026 10:00:00 +0100</lastBuildDate>
+  <item>
+    <title>2 november 10:00 · PHP2Shell: QNAP heeft de fix.</title>
+    <link>https://crisus.nl/#u-20261102-1000</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261102-1000</guid>
+    <pubDate>Mon, 02 Nov 2026 10:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>PHP2Shell: QNAP heeft de fix.</strong> Op <a href="/php/#u-20261022-1100" title="PHP2Shell-archief: Heeft u een QNAP-NAS?, 22 oktober 11:00">22 oktober</a> zei QNAP nog: haal uw NAS van het internet, de updates komen. Ze zijn er, en al langer dan hier stond. Volgens advisory <a href="https://www.qnap.com/en/security-advisory/qsa-26-18" title="QNAP: QSA-26-18, PHP2Shell">QSA-26-18</a> zijn QTS, QuTS hero en QuTScloud sinds 24 oktober gerepareerd: QTS 6.1.0.3656 en 5.2.11.3661, QuTS hero h6.1.0.3656, h6.0.2.3656 en h5.2.11.3661 en QuTScloud c5.2.9.3661, allemaal build 20261023. Op 28 oktober volgde Notes Station 3 (3.9.15). Ook QVR Surveillance (3.0.3.1756) en TVR OS (1.0.5) staan erin. Vandaag meldt <a href="https://www.security.nl/posting/959932/QNAP+publiceert+PHP2Shell-patches+voor+NAS-systemen%3A+%27Meteen+installeren%27" title="Security.NL: QNAP publiceert PHP2Shell-patches voor NAS-systemen: 'Meteen installeren'">Security.NL</a> het ook: meteen installeren. Misbruik tegen zijn eigen producten is QNAP niet gemeld, staat in de advisory. De NAS mag weer aan. Aan het internet liever nog steeds niet.</p>]]></description>
+  </item>
   <item>
     <title>2 november 02:00 · TCP2Shell: Red Hat heeft de fix.</title>
     <link>https://crisus.nl/#u-20261102-0200</link>
