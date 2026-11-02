@@ -1,6 +1,8 @@
 #!/bin/bash
 # One crisus.nl round: print the current state of every source, compactly.
 S=$(mktemp -d); trap 'rm -rf "$S"' EXIT
+# No source may stall the round: every curl gets 30 s unless it asks for more.
+curl() { command curl --max-time 30 "$@"; }
 pkg() { curl -s --max-time 30 "$1" | xz -dc 2>/dev/null | awk -v p="$2" '$0=="Package: "p{f=1} f&&/^Version:/{print $2;exit}'; }
 txt() { python3 -I -c '
 import sys,re,html
