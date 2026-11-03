@@ -65,7 +65,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-11-03T05:00:00+01:00">стан на 3 листопада, 05:00</time> · <a href="/" title="Crisus: de actuele stand (нідерландською)">щогодинні оновлення нідерландською</a></p>
+  <p class="kicker">Crisus · <time datetime="2026-11-03T13:00:00+01:00">стан на 3 листопада, 13:00</time> · <a href="/" title="Crisus: de actuele stand (нідерландською)">щогодинні оновлення нідерландською</a></p>
   <h1>TCP2Shell: вразливість у TCP-коді Linux</h1>
   <p class="lead">Вразливість у тому, як ядро Linux встановлює TCP-зʼєднання: TCP2Shell. За даними Anthropic, зловмисник може з її допомогою віддалено отримати root, без входу в систему, на сервері з MPTCP. Debian, SUSE, Oracle, Amazon, Red Hat і AlmaLinux вже мають виправлення, Ubuntu <strong>ще ні</strong>. Без паніки. Але додайте правило до брандмауера.</p>
 
@@ -124,7 +124,7 @@ sudo ss -lnMp                   <span class="c"># які процеси слух
     </ol>
   </section>
 
-  <h2 id="stand">Стан за платформами, 3 листопада, 05:00</h2>
+  <h2 id="stand">Стан за платформами, 3 листопада, 13:00</h2>
   <ul class="status" aria-labelledby="stand">
     <li><b>Linux</b><span class="pill green">Є виправлення</span><em>5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 і 7.3, з 15 жовтня.</em></li>
     <li><b>Debian 13</b><span class="pill green">Є виправлення</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">DSA-6568-1</a>: <code>linux 6.12.113-1</code>.</em></li>
@@ -133,7 +133,7 @@ sudo ss -lnMp                   <span class="c"># які процеси слух
     <li><b>Red Hat</b><span class="pill green">Є виправлення</span><em>З 1 листопада для RHEL 8, 9 і 10: RHSA-2026:93412–93415. З 2 листопада також RHEL for NVIDIA 10 (RHSA-2026:93775). Ядро реального часу RHEL 9 і OpenShift досі позначено &laquo;Affected&raquo;, див. <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">сторінку CVE</a> і <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">бюлетень</a>. RHEL 6 і 7 не вражено.</em></li>
     <li><b>AlmaLinux</b><span class="pill orange">Частково</span><em>AlmaLinux 8 з 2 листопада: <a href="https://errata.almalinux.org/8/ALSA-2026-93414.html" title="AlmaLinux: ALSA-2026:93414, kernel security update">ALSA-2026:93414</a> (<code>kernel 4.18.0-553.182.1.el8_10</code>) і <a href="https://errata.almalinux.org/8/ALSA-2026-93415.html" title="AlmaLinux: ALSA-2026:93415, kernel-rt security update">ALSA-2026:93415</a> (kernel-rt). Для 9 і 10 в ерратах ще нічого немає.</em></li>
     <li><b>SUSE</b><span class="pill orange">Частково</span><em>Для більшості продуктів виправлення є, кілька ще готуються, див. <a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">сторінку CVE</a>.</em></li>
-    <li><b>Oracle Linux</b><span class="pill green">Є виправлення</span><em>Ядра UEK з 16 жовтня (ELSA-2026-500397–500399). Сумісне з Red Hat ядро з 2 листопада для Oracle Linux 8 (ELSA-2026-93414) і 10 (ELSA-2026-93413), для 9 ще ні, див. <a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">сторінку CVE</a>.</em></li>
+    <li><b>Oracle Linux</b><span class="pill green">Є виправлення</span><em>Ядра UEK з 16 жовтня (ELSA-2026-500397–500399, новіші з 2 листопада). Сумісне з Red Hat ядро з 2 листопада для Oracle Linux 8, 9 і 10 (ELSA-2026-93414, 93412 і 93413), див. <a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">сторінку CVE</a>.</em></li>
     <li><b>Amazon Linux</b><span class="pill green">Є виправлення</span><em>Усі ядра Amazon Linux 2 і 2023, стандартне ядро 2023 з 30 жовтня (ALAS2023-2026-3365), див. <a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">ALAS</a>.</em></li>
     <li><b>Go</b><span class="pill orange">Перезапустіть</span><em>Починаючи з 1.24, MPTCP для слухачів увімкнено за замовчуванням. <code>GODEBUG=multipathtcp=0</code> його вимикає, див. <a href="https://go.dev/doc/godebug" title="Go: GODEBUG settings">опис GODEBUG</a>.</em></li>
     <li><b>Crisus.nl</b><span class="pill green">Працює</span><em>Ні Node, ні PHP, ні Go. Просто HTML. Як у 1997 році.</em></li>
@@ -164,7 +164,7 @@ sudo ss -lnMp                   <span class="c"># які процеси слух
     <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Critical, 9,8, виправлення для RHEL 8, 9 і 10 (RHSA-2026:93412–93415).</li>
     <li><a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">Red Hat: RHSB-2026-016</a>: бюлетень із правилом nftables.</li>
     <li><a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">SUSE: CVE-2026-98432</a>: більшість продуктів мають виправлення.</li>
-    <li><a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">Oracle Linux: CVE-2026-98432</a>: ядра UEK, а також сумісне з Red Hat ядро Oracle Linux 8 і 10 (ELSA-2026-93414 і 93413).</li>
+    <li><a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">Oracle Linux: CVE-2026-98432</a>: ядра UEK, а також сумісне з Red Hat ядро Oracle Linux 8, 9 і 10 (ELSA-2026-93414, 93412 і 93413).</li>
     <li><a href="https://errata.almalinux.org/8/ALSA-2026-93414.html" title="AlmaLinux: ALSA-2026:93414, kernel security update">AlmaLinux: ALSA-2026:93414</a> і <a href="https://errata.almalinux.org/8/ALSA-2026-93415.html" title="AlmaLinux: ALSA-2026:93415, kernel-rt security update">ALSA-2026:93415</a>: ядра AlmaLinux 8.</li>
     <li><a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">Amazon Linux: CVE-2026-98432</a>: усі ядра Amazon Linux 2 і 2023.</li>
   </ul>

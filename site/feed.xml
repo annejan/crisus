@@ -6,7 +6,14 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Tue, 03 Nov 2026 05:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Tue, 03 Nov 2026 13:00:00 +0100</lastBuildDate>
+  <item>
+    <title>3 november 13:00 · TCP2Shell: ook Oracle Linux 9 heeft de fix.</title>
+    <link>https://crisus.nl/#u-20261103-1300</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261103-1300</guid>
+    <pubDate>Tue, 03 Nov 2026 13:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>TCP2Shell: ook Oracle Linux 9 heeft de fix.</strong> De laatste open post bij Oracle is weg. Op 2 november verscheen <a href="https://linux.oracle.com/errata/ELSA-2026-93412.html" title="Oracle Linux: ELSA-2026-93412, kernel security, bug fix, and enhancement update (Oracle Linux 9)">ELSA-2026-93412</a>: <code>kernel 5.14.0-687.64.1.el9_8</code>, dezelfde versie als Red Hat een dag eerder uitbracht in RHSA-2026:93412. Oracle noemt hem &ldquo;Important&rdquo;. Daarmee heeft de Red Hat-compatibele kernel van Oracle Linux 8, 9 en 10 de fix. Dezelfde dag kwamen er ook nieuwe UEK-kernels (ELSA-2026-500572 tot en met 500574); daar zat de fix al sinds 16 oktober in. Alles staat op de <a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">CVE-pagina</a>. Bijwerken en herstarten. Bij Ubuntu is er nog steeds niets veranderd: kernels voor 22.04 tot en met 26.10 in de maak, nog geen Ubuntu Security Notice. Eerst 8 en 10, toen 9. Oracle telt in zijn eigen volgorde.</p>]]></description>
+  </item>
   <item>
     <title>3 november 05:00 · TCP2Shell: Red Hat repareert ook RHEL for NVIDIA.</title>
     <link>https://crisus.nl/#u-20261103-0500</link>
