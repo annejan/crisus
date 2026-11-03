@@ -66,7 +66,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-11-03T00:00:00+01:00">status of 3 November, 00:00</time> · <a href="/" title="Crisus: de actuele stand (in Dutch)">hourly updates in Dutch</a></p>
+  <p class="kicker">Crisus · <time datetime="2026-11-03T05:00:00+01:00">status of 3 November, 05:00</time> · <a href="/" title="Crisus: de actuele stand (in Dutch)">hourly updates in Dutch</a></p>
   <h1>TCP2Shell: a hole in Linux&rsquo;s TCP code</h1>
   <p class="lead">A bug in the way the Linux kernel sets up a TCP connection: TCP2Shell. According to Anthropic, an attacker can use it to get root remotely, without logging in, on a server with MPTCP. Debian, SUSE, Oracle, Amazon, Red Hat and AlmaLinux have the fix, Ubuntu <strong>not yet</strong>. Don&rsquo;t panic. Do add a firewall rule.</p>
 
@@ -125,13 +125,13 @@ sudo ss -lnMp                   <span class="c"># which processes listen with MP
     </ol>
   </section>
 
-  <h2 id="stand">Status per platform, 3 November 00:00</h2>
+  <h2 id="stand">Status per platform, 3 November 05:00</h2>
   <ul class="status" aria-labelledby="stand">
     <li><b>Linux</b><span class="pill green">Fix available</span><em>5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 and 7.3, since 15 October.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix available</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">DSA-6568-1</a>: <code>linux 6.12.113-1</code>.</em></li>
     <li><b>Debian 12</b><span class="pill green">Fix available</span><em>DLA-4841-1: <code>linux 6.1.190-1</code>.</em></li>
     <li><b>Ubuntu</b><span class="pill red">No fix</span><em>22.04 up to and including 26.10 say &ldquo;work in progress&rdquo;: the kernel is being built. 20.04 and older say &ldquo;needed&rdquo;. No Ubuntu Security Notice yet, see the <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE page</a>.</em></li>
-    <li><b>Red Hat</b><span class="pill green">Fix available</span><em>Since 1 November for RHEL 8, 9 and 10: RHSA-2026:93412 to 93415. The real-time kernel of RHEL 9, RHEL for NVIDIA and OpenShift still say &ldquo;Affected&rdquo;, see the <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE page</a> and the <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">bulletin</a>. RHEL 6 and 7 are not affected.</em></li>
+    <li><b>Red Hat</b><span class="pill green">Fix available</span><em>Since 1 November for RHEL 8, 9 and 10: RHSA-2026:93412 to 93415. Since 2 November also RHEL for NVIDIA 10 (RHSA-2026:93775). The real-time kernel of RHEL 9 and OpenShift still say &ldquo;Affected&rdquo;, see the <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE page</a> and the <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">bulletin</a>. RHEL 6 and 7 are not affected.</em></li>
     <li><b>AlmaLinux</b><span class="pill orange">Partial</span><em>AlmaLinux 8 since 2 November: <a href="https://errata.almalinux.org/8/ALSA-2026-93414.html" title="AlmaLinux: ALSA-2026:93414, kernel security update">ALSA-2026:93414</a> (<code>kernel 4.18.0-553.182.1.el8_10</code>) and <a href="https://errata.almalinux.org/8/ALSA-2026-93415.html" title="AlmaLinux: ALSA-2026:93415, kernel-rt security update">ALSA-2026:93415</a> (kernel-rt). Nothing in the errata yet for 9 and 10.</em></li>
     <li><b>SUSE</b><span class="pill orange">Partial</span><em>Most products have a fix, a few are still on the way, see the <a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">CVE page</a>.</em></li>
     <li><b>Oracle Linux</b><span class="pill green">Fix available</span><em>The UEK kernels since 16 October (ELSA-2026-500397 to 500399). The Red Hat Compatible Kernel since 2 November for Oracle Linux 8 (ELSA-2026-93414) and 10 (ELSA-2026-93413), not yet for 9, see the <a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">CVE page</a>.</em></li>

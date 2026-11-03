@@ -6,7 +6,14 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Tue, 03 Nov 2026 00:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Tue, 03 Nov 2026 05:00:00 +0100</lastBuildDate>
+  <item>
+    <title>3 november 05:00 · TCP2Shell: Red Hat repareert ook RHEL for NVIDIA.</title>
+    <link>https://crisus.nl/#u-20261103-0500</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261103-0500</guid>
+    <pubDate>Tue, 03 Nov 2026 05:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>TCP2Shell: Red Hat repareert ook RHEL for NVIDIA.</strong> Van de drie open posten die Red Hat op 1 november overhield, is er &eacute;&eacute;n weg. Op 2 november verscheen <a href="https://access.redhat.com/errata/RHSA-2026:93775" title="Red Hat: RHSA-2026:93775, kernel security update (RHEL for NVIDIA 10)">RHSA-2026:93775</a>: <code>kernel 6.12.0-265.31.el10nv</code> voor RHEL for NVIDIA 10, de uitgave voor de ARM-systemen van NVIDIA (aarch64). Het lek heet bij Red Hat &ldquo;Critical&rdquo;, deze advisory &ldquo;Important&rdquo;. De realtime-kernel van RHEL 9 en de CoreOS-images van OpenShift 4 en 5 staan op de <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE-pagina</a> nog op &ldquo;Affected&rdquo;. Bijwerken en herstarten. Bij Ubuntu is er nog steeds niets veranderd: kernels voor 22.04 tot en met 26.10 in de maak, nog geen Ubuntu Security Notice. Nog twee vakjes rood op het tabblad. De groene stift ligt klaar.</p>]]></description>
+  </item>
   <item>
     <title>3 november 00:00 · TCP2Shell: ook AlmaLinux en Oracle Linux hebben de fix.</title>
     <link>https://crisus.nl/#u-20261103-0000</link>
