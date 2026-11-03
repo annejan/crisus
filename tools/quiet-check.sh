@@ -1,6 +1,4 @@
 #!/bin/bash
-# SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
-# SPDX-License-Identifier: GPL-3.0-or-later
 #
 # Pre-check for the hourly round, as the unit's ExecCondition:
 #   exit 0: something changed, run the round (claude -p /crisus-ronde);
