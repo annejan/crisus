@@ -6,7 +6,14 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Tue, 03 Nov 2026 13:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Tue, 03 Nov 2026 16:00:00 +0100</lastBuildDate>
+  <item>
+    <title>3 november 16:00 · TCP2Shell: Red Hat repareert ook de oude RHEL-versies met verlengde ondersteuning.</title>
+    <link>https://crisus.nl/#u-20261103-1600</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261103-1600</guid>
+    <pubDate>Tue, 03 Nov 2026 16:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>TCP2Shell: Red Hat repareert ook de oude RHEL-versies met verlengde ondersteuning.</strong> Wie op RHEL 8.8 of 9.4 is blijven staan en daar extra voor betaalt, krijgt nu ook een kernel. Op 2 november verscheen <a href="https://access.redhat.com/errata/RHSA-2026:94109" title="Red Hat: RHSA-2026:94109, kernel security, bug fix, and enhancement update (RHEL 9.4 EUS, AUS, SAP en ELS)">RHSA-2026:94109</a>: <code>kernel 5.14.0-427.161.1.el9_4</code> voor de uitgaven van RHEL 9.4 met verlengde ondersteuning (AUS, EUS, SAP en ELS), inclusief de realtime-kernel van 9.4. Vandaag volgde <a href="https://access.redhat.com/errata/RHSA-2026:94303" title="Red Hat: RHSA-2026:94303, kernel security update (RHEL 8.8 TUS, SAP en ELS)">RHSA-2026:94303</a>: <code>kernel 4.18.0-477.178.1.el8_8</code> voor RHEL 8.8 (TUS, SAP en ELS). Allebei &ldquo;Critical&rdquo;. De realtime-kernel van RHEL 9 en de CoreOS-images van OpenShift 4 en 5 staan op de <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE-pagina</a> nog op &ldquo;Affected&rdquo;. Bijwerken en herstarten. Bij Ubuntu is er nog steeds niets veranderd: kernels voor 22.04 tot en met 26.10 in de maak, nog geen Ubuntu Security Notice. Extra betalen om niet te hoeven upgraden, en dan toch een update. Zo werkt dat.</p>]]></description>
+  </item>
   <item>
     <title>3 november 13:00 · TCP2Shell: ook Oracle Linux 9 heeft de fix.</title>
     <link>https://crisus.nl/#u-20261103-1300</link>
