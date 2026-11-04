@@ -6,7 +6,14 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Wed, 04 Nov 2026 02:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Wed, 04 Nov 2026 02:30:00 +0100</lastBuildDate>
+  <item>
+    <title>4 november 02:30 · Binance: het begon met een sollicitatiegesprek.</title>
+    <link>https://crisus.nl/#u-20261104-0230</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261104-0230</guid>
+    <pubDate>Wed, 04 Nov 2026 02:30:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>Binance: het begon met een sollicitatiegesprek.</strong> Binance beschrijft in zijn <a href="https://www.binance.com/en/blog/community/3229153443759566763" title="Binance: incidentrapport over 29 oktober">incidentrapport</a> van 3 november hoe de diefstal van 29 oktober begon. In september benaderde iemand die zich voordeed als projectdirecteur een software-engineer van Binance via een vacaturesite. Na een gesprek met &ldquo;HR&rdquo; en een met de &ldquo;CEO&rdquo; moest de engineer een programmeeropdracht downloaden. Daarin zat malware die een onderdeel van pyenv in Homebrew verving. Op 20 oktober nam de aanvaller vanaf die laptop, met hulp van een interne AI-tool, de computers van twee collega&rsquo;s over, onder wie iemand die containers mocht uitrollen. Op 29 oktober liet de aanvaller de interne signeerdienst van de hot wallets transacties ondertekenen, en hield via EIP-7702 nog greep op een wallet nadat de opnames waren stilgezet. Binance noemt 6,34 miljard dollar, waarvan 2,85 miljard bevroren of onderschept, en zegt dat gebruikers de schade niet dragen. De FBI wijst Noord-Korea aan, de groep TraderTraitor, ook bekend als Lazarus, meldt <a href="https://www.bleepingcomputer.com/news/security/binance-says-fake-job-interview-led-to-63-billion-crypto-heist/" title="BleepingComputer: Binance says fake job interview led to $6.3 billion crypto heist">BleepingComputer</a>. De grootste cryptoroof ooit begon met een sollicitatie. De aanvaller kreeg de baan.</p>]]></description>
+  </item>
   <item>
     <title>4 november 02:00 · TCP2Shell: Red Hat repareert nog vijf oude RHEL-versies.</title>
     <link>https://crisus.nl/#u-20261104-0200</link>

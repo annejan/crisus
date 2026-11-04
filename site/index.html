@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-23T22:50:00+02:00">
-<meta property="article:modified_time" content="2026-11-04T02:00:00+01:00">
+<meta property="article:modified_time" content="2026-11-04T02:30:00+01:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=8">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,7 +45,7 @@
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-23T22:50:00+02:00",
-  "dateModified": "2026-11-04T02:00:00+01:00",
+  "dateModified": "2026-11-04T02:30:00+01:00",
   "coverageStartTime": "2026-10-23T22:50:00+02:00",
   "about": {"@type": "Thing", "name": "CVE-2026-98432", "alternateName": ["TCP2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-98432"},
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
@@ -53,6 +53,7 @@
   "genre": "satire",
   "keywords": ["crisus", "TCP2Shell", "CVE-2026-98432", "Linux", "kernel", "TCP", "MPTCP", "Go"],
   "liveBlogUpdate": [
+    {"@type": "BlogPosting", "headline": "Binance: het begon met een sollicitatiegesprek.", "datePublished": "2026-11-04T02:30:00+01:00", "url": "https://crisus.nl/#u-20261104-0230"},
     {"@type": "BlogPosting", "headline": "TCP2Shell: Red Hat repareert nog vijf oude RHEL-versies.", "datePublished": "2026-11-04T02:00:00+01:00", "url": "https://crisus.nl/#u-20261104-0200"},
     {"@type": "BlogPosting", "headline": "TCP2Shell: Red Hat repareert ook de oude RHEL-versies met verlengde ondersteuning.", "datePublished": "2026-11-03T16:00:00+01:00", "url": "https://crisus.nl/#u-20261103-1600"},
     {"@type": "BlogPosting", "headline": "TCP2Shell: ook Oracle Linux 9 heeft de fix.", "datePublished": "2026-11-03T13:00:00+01:00", "url": "https://crisus.nl/#u-20261103-1300"},
@@ -125,7 +126,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-11-04T02:00:00+01:00">laatst bijgewerkt 4 november, 02:00</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <p class="kicker">Crisus · <time datetime="2026-11-04T02:30:00+01:00">laatst bijgewerkt 4 november, 02:30</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
   <h1>TCP2Shell: lek in de TCP-code van Linux</h1>
   <p class="lead">Een lek in de manier waarop de Linux-kernel een TCP-verbinding opzet: TCP2Shell. Volgens Anthropic haalt een aanvaller er op afstand root mee, zonder in te loggen, op een server met MPTCP. Debian, SUSE, Oracle, Amazon, Red Hat en AlmaLinux hebben de fix, Ubuntu <strong>nog niet</strong>. Niet in paniek raken. Wel een regel in de firewall.</p>
   <p class="vandaag" id="vandaag" hidden></p>
@@ -149,6 +150,8 @@
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261104-0230"><time datetime="2026-11-04T02:30+01:00">4 november 02:30</time>
+      <p><strong>Binance: het begon met een sollicitatiegesprek.</strong> Binance beschrijft in zijn <a href="https://www.binance.com/en/blog/community/3229153443759566763" title="Binance: incidentrapport over 29 oktober">incidentrapport</a> van 3 november hoe de diefstal van 29 oktober begon. In september benaderde iemand die zich voordeed als projectdirecteur een software-engineer van Binance via een vacaturesite. Na een gesprek met &ldquo;HR&rdquo; en een met de &ldquo;CEO&rdquo; moest de engineer een programmeeropdracht downloaden. Daarin zat malware die een onderdeel van pyenv in Homebrew verving. Op 20 oktober nam de aanvaller vanaf die laptop, met hulp van een interne AI-tool, de computers van twee collega&rsquo;s over, onder wie iemand die containers mocht uitrollen. Op 29 oktober liet de aanvaller de interne signeerdienst van de hot wallets transacties ondertekenen, en hield via EIP-7702 nog greep op een wallet nadat de opnames waren stilgezet. Binance noemt 6,34 miljard dollar, waarvan 2,85 miljard bevroren of onderschept, en zegt dat gebruikers de schade niet dragen. De FBI wijst Noord-Korea aan, de groep TraderTraitor, ook bekend als Lazarus, meldt <a href="https://www.bleepingcomputer.com/news/security/binance-says-fake-job-interview-led-to-63-billion-crypto-heist/" title="BleepingComputer: Binance says fake job interview led to $6.3 billion crypto heist">BleepingComputer</a>. De grootste cryptoroof ooit begon met een sollicitatie. De aanvaller kreeg de baan.</p></li>
     <li id="u-20261104-0200"><time datetime="2026-11-04T02:00+01:00">4 november 02:00</time>
       <p><strong>TCP2Shell: Red Hat repareert nog vijf oude RHEL-versies.</strong> Na 9.4 en 8.8 kwamen op 3 november nog vijf advisories voor versies met verlengde ondersteuning, allemaal &ldquo;Critical&rdquo;: <a href="https://access.redhat.com/errata/RHSA-2026:94438" title="Red Hat: RHSA-2026:94438, kernel security, bug fix, and enhancement update (RHEL 9.6 EUS, AUS, SAP en ELS)">RHSA-2026:94438</a> (<code>kernel 5.14.0-570.154.1.el9_6</code>, RHEL 9.6, inclusief de realtime-kernel), <a href="https://access.redhat.com/errata/RHSA-2026:94477" title="Red Hat: RHSA-2026:94477, kernel security, bug fix, and enhancement update (RHEL 9.2 AUS, SAP en ELS)">RHSA-2026:94477</a> (<code>5.14.0-284.202.1.el9_2</code>, RHEL 9.2) met apart <a href="https://access.redhat.com/errata/RHSA-2026:94558" title="Red Hat: RHSA-2026:94558, kernel-rt security, bug fix, and enhancement update (RHEL 9.2 SAP en ELS)">RHSA-2026:94558</a> voor de realtime-kernel van 9.2, <a href="https://access.redhat.com/errata/RHSA-2026:94508" title="Red Hat: RHSA-2026:94508, kernel security, bug fix, and enhancement update (RHEL 10.0 EUS)">RHSA-2026:94508</a> (<code>6.12.0-55.117.1.el10_0</code>, RHEL 10.0, inclusief de realtime-kernel) en <a href="https://access.redhat.com/errata/RHSA-2026:94623" title="Red Hat: RHSA-2026:94623, kernel security update (RHEL 8.4 AUS en ELS)">RHSA-2026:94623</a> (<code>4.18.0-305.218.1.el8_4</code>, RHEL 8.4). Alles staat op de <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE-pagina</a>; de realtime-kernel van RHEL 9 zelf en de CoreOS-images van OpenShift 4 en 5 staan daar nog op &ldquo;Affected&rdquo;. Bijwerken en herstarten. Bij Ubuntu is er nog steeds geen Ubuntu Security Notice; de kernels in de maak hebben wel een nummer, zoals <code>6.8.0-149.149</code> voor 24.04 en <code>5.15.0-203.213</code> voor 22.04, zie de <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE-pagina</a>. En over Debian 12 stond hier te weinig: behalve <code>linux 6.1.190-1</code> is ook het nieuwere pakket <code>linux-6.12</code> gerepareerd, al sinds 22 oktober (<a href="https://lists.debian.org/debian-lts-announce/2026/10/msg00044.html" title="Debian LTS: DLA-4850-1, linux-6.12 security update">DLA-4850-1</a>, <code>6.12.113-1~deb12u1</code>). Vijf kernels op &eacute;&eacute;n dag, voor versies uit 2021 tot en met 2025. Het tabblad Red Hat heeft er een kolom bij: in welk jaar u bent blijven staan.</p></li>
     <li id="u-20261103-1600"><time datetime="2026-11-03T16:00+01:00">3 november 16:00</time>
