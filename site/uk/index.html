@@ -65,7 +65,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-11-03T16:00:00+01:00">стан на 3 листопада, 16:00</time> · <a href="/" title="Crisus: de actuele stand (нідерландською)">щогодинні оновлення нідерландською</a></p>
+  <p class="kicker">Crisus · <time datetime="2026-11-04T02:00:00+01:00">стан на 4 листопада, 02:00</time> · <a href="/" title="Crisus: de actuele stand (нідерландською)">щогодинні оновлення нідерландською</a></p>
   <h1>TCP2Shell: вразливість у TCP-коді Linux</h1>
   <p class="lead">Вразливість у тому, як ядро Linux встановлює TCP-зʼєднання: TCP2Shell. За даними Anthropic, зловмисник може з її допомогою віддалено отримати root, без входу в систему, на сервері з MPTCP. Debian, SUSE, Oracle, Amazon, Red Hat і AlmaLinux вже мають виправлення, Ubuntu <strong>ще ні</strong>. Без паніки. Але додайте правило до брандмауера.</p>
 
@@ -124,13 +124,13 @@ sudo ss -lnMp                   <span class="c"># які процеси слух
     </ol>
   </section>
 
-  <h2 id="stand">Стан за платформами, 3 листопада, 13:00</h2>
+  <h2 id="stand">Стан за платформами, 4 листопада, 02:00</h2>
   <ul class="status" aria-labelledby="stand">
     <li><b>Linux</b><span class="pill green">Є виправлення</span><em>5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 і 7.3, з 15 жовтня.</em></li>
     <li><b>Debian 13</b><span class="pill green">Є виправлення</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">DSA-6568-1</a>: <code>linux 6.12.113-1</code>.</em></li>
-    <li><b>Debian 12</b><span class="pill green">Є виправлення</span><em>DLA-4841-1: <code>linux 6.1.190-1</code>.</em></li>
-    <li><b>Ubuntu</b><span class="pill red">Виправлення немає</span><em>Від 22.04 до 26.10 включно позначено &laquo;work in progress&raquo;: ядро готується. 20.04 і старіші позначено &laquo;needed&raquo;. Ubuntu Security Notice ще немає, див. <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">сторінку CVE</a>.</em></li>
-    <li><b>Red Hat</b><span class="pill green">Є виправлення</span><em>З 1 листопада для RHEL 8, 9 і 10: RHSA-2026:93412–93415. З 2 листопада також RHEL for NVIDIA 10 (RHSA-2026:93775) і RHEL 9.4 з подовженою підтримкою (RHSA-2026:94109), з 3 листопада RHEL 8.8 з подовженою підтримкою (RHSA-2026:94303). Ядро реального часу RHEL 9 і OpenShift досі позначено &laquo;Affected&raquo;, див. <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">сторінку CVE</a> і <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">бюлетень</a>. RHEL 6 і 7 не вражено.</em></li>
+    <li><b>Debian 12</b><span class="pill green">Є виправлення</span><em>DLA-4841-1: <code>linux 6.1.190-1</code>. Новіший пакет <code>linux-6.12</code> з 22 жовтня: DLA-4850-1, <code>6.12.113-1~deb12u1</code>.</em></li>
+    <li><b>Ubuntu</b><span class="pill red">Виправлення немає</span><em>Від 22.04 до 26.10 включно позначено &laquo;work in progress&raquo;: ядро готується і вже має номер, наприклад <code>6.8.0-149.149</code> для 24.04. 20.04 і старіші позначено &laquo;needed&raquo;. Ubuntu Security Notice ще немає, див. <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">сторінку CVE</a>.</em></li>
+    <li><b>Red Hat</b><span class="pill green">Є виправлення</span><em>З 1 листопада для RHEL 8, 9 і 10: RHSA-2026:93412–93415. З 2 листопада також RHEL for NVIDIA 10 (RHSA-2026:93775) і RHEL 9.4 з подовженою підтримкою (RHSA-2026:94109), з 3 листопада RHEL 8.8 (RHSA-2026:94303), 9.6 (94438), 9.2 (94477 і 94558), 10.0 (94508) і 8.4 (94623) з подовженою підтримкою. Ядро реального часу RHEL 9 і OpenShift досі позначено &laquo;Affected&raquo;, див. <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">сторінку CVE</a> і <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">бюлетень</a>. RHEL 6 і 7 не вражено.</em></li>
     <li><b>AlmaLinux</b><span class="pill orange">Частково</span><em>AlmaLinux 8 з 2 листопада: <a href="https://errata.almalinux.org/8/ALSA-2026-93414.html" title="AlmaLinux: ALSA-2026:93414, kernel security update">ALSA-2026:93414</a> (<code>kernel 4.18.0-553.182.1.el8_10</code>) і <a href="https://errata.almalinux.org/8/ALSA-2026-93415.html" title="AlmaLinux: ALSA-2026:93415, kernel-rt security update">ALSA-2026:93415</a> (kernel-rt). Для 9 і 10 в ерратах ще нічого немає.</em></li>
     <li><b>SUSE</b><span class="pill orange">Частково</span><em>Для більшості продуктів виправлення є, кілька ще готуються, див. <a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">сторінку CVE</a>.</em></li>
     <li><b>Oracle Linux</b><span class="pill green">Є виправлення</span><em>Ядра UEK з 16 жовтня (ELSA-2026-500397–500399, новіші з 2 листопада). Сумісне з Red Hat ядро з 2 листопада для Oracle Linux 8, 9 і 10 (ELSA-2026-93414, 93412 і 93413), див. <a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">сторінку CVE</a>.</em></li>
@@ -159,9 +159,9 @@ sudo ss -lnMp                   <span class="c"># які процеси слух
     <li><a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF: how to block the Linux TCP bug</a>. Правило nftables і його побічні ефекти.</li>
     <li><a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a>. Чому IP-опції можна відкидати на межі мережі.</li>
     <li><a href="https://www.rfc-editor.org/rfc/rfc8684" title="RFC 8684: TCP Extensions for Multipath Operation with Multiple Addresses">RFC 8684</a>. Що таке MPTCP.</li>
-    <li><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">Debian security tracker</a>: DSA-6568-1 і DLA-4841-1.</li>
+    <li><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">Debian security tracker</a>: DSA-6568-1, DLA-4841-1 і DLA-4850-1.</li>
     <li><a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">Ubuntu: CVE-2026-98432</a>: від 22.04 до 26.10 work in progress, старіші needed.</li>
-    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Critical, 9,8, виправлення для RHEL 8, 9 і 10 (RHSA-2026:93412–93415), RHEL for NVIDIA 10 (RHSA-2026:93775) і RHEL 9.4 та 8.8 з подовженою підтримкою (RHSA-2026:94109 і 94303).</li>
+    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Critical, 9,8, виправлення для RHEL 8, 9 і 10 (RHSA-2026:93412–93415), RHEL for NVIDIA 10 (RHSA-2026:93775) і RHEL 9.4, 8.8, 9.6, 9.2, 10.0 та 8.4 з подовженою підтримкою (RHSA-2026:94109, 94303, 94438, 94477, 94558, 94508 і 94623).</li>
     <li><a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">Red Hat: RHSB-2026-016</a>: бюлетень із правилом nftables.</li>
     <li><a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">SUSE: CVE-2026-98432</a>: більшість продуктів мають виправлення.</li>
     <li><a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">Oracle Linux: CVE-2026-98432</a>: ядра UEK, а також сумісне з Red Hat ядро Oracle Linux 8, 9 і 10 (ELSA-2026-93414, 93412 і 93413).</li>

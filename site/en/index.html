@@ -66,7 +66,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-11-03T16:00:00+01:00">status of 3 November, 16:00</time> · <a href="/" title="Crisus: de actuele stand (in Dutch)">hourly updates in Dutch</a></p>
+  <p class="kicker">Crisus · <time datetime="2026-11-04T02:00:00+01:00">status of 4 November, 02:00</time> · <a href="/" title="Crisus: de actuele stand (in Dutch)">hourly updates in Dutch</a></p>
   <h1>TCP2Shell: a hole in Linux&rsquo;s TCP code</h1>
   <p class="lead">A bug in the way the Linux kernel sets up a TCP connection: TCP2Shell. According to Anthropic, an attacker can use it to get root remotely, without logging in, on a server with MPTCP. Debian, SUSE, Oracle, Amazon, Red Hat and AlmaLinux have the fix, Ubuntu <strong>not yet</strong>. Don&rsquo;t panic. Do add a firewall rule.</p>
 
@@ -125,13 +125,13 @@ sudo ss -lnMp                   <span class="c"># which processes listen with MP
     </ol>
   </section>
 
-  <h2 id="stand">Status per platform, 3 November 13:00</h2>
+  <h2 id="stand">Status per platform, 4 November 02:00</h2>
   <ul class="status" aria-labelledby="stand">
     <li><b>Linux</b><span class="pill green">Fix available</span><em>5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 and 7.3, since 15 October.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix available</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">DSA-6568-1</a>: <code>linux 6.12.113-1</code>.</em></li>
-    <li><b>Debian 12</b><span class="pill green">Fix available</span><em>DLA-4841-1: <code>linux 6.1.190-1</code>.</em></li>
-    <li><b>Ubuntu</b><span class="pill red">No fix</span><em>22.04 up to and including 26.10 say &ldquo;work in progress&rdquo;: the kernel is being built. 20.04 and older say &ldquo;needed&rdquo;. No Ubuntu Security Notice yet, see the <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE page</a>.</em></li>
-    <li><b>Red Hat</b><span class="pill green">Fix available</span><em>Since 1 November for RHEL 8, 9 and 10: RHSA-2026:93412 to 93415. Since 2 November also RHEL for NVIDIA 10 (RHSA-2026:93775) and RHEL 9.4 with extended support (RHSA-2026:94109), since 3 November RHEL 8.8 with extended support (RHSA-2026:94303). The real-time kernel of RHEL 9 and OpenShift still say &ldquo;Affected&rdquo;, see the <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE page</a> and the <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">bulletin</a>. RHEL 6 and 7 are not affected.</em></li>
+    <li><b>Debian 12</b><span class="pill green">Fix available</span><em>DLA-4841-1: <code>linux 6.1.190-1</code>. The newer package <code>linux-6.12</code> since 22 October: DLA-4850-1, <code>6.12.113-1~deb12u1</code>.</em></li>
+    <li><b>Ubuntu</b><span class="pill red">No fix</span><em>22.04 up to and including 26.10 say &ldquo;work in progress&rdquo;: the kernel is being built and already has a number, such as <code>6.8.0-149.149</code> for 24.04. 20.04 and older say &ldquo;needed&rdquo;. No Ubuntu Security Notice yet, see the <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE page</a>.</em></li>
+    <li><b>Red Hat</b><span class="pill green">Fix available</span><em>Since 1 November for RHEL 8, 9 and 10: RHSA-2026:93412 to 93415. Since 2 November also RHEL for NVIDIA 10 (RHSA-2026:93775) and RHEL 9.4 with extended support (RHSA-2026:94109), since 3 November RHEL 8.8 (RHSA-2026:94303), 9.6 (94438), 9.2 (94477 and 94558), 10.0 (94508) and 8.4 (94623) with extended support. The real-time kernel of RHEL 9 and OpenShift still say &ldquo;Affected&rdquo;, see the <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE page</a> and the <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">bulletin</a>. RHEL 6 and 7 are not affected.</em></li>
     <li><b>AlmaLinux</b><span class="pill orange">Partial</span><em>AlmaLinux 8 since 2 November: <a href="https://errata.almalinux.org/8/ALSA-2026-93414.html" title="AlmaLinux: ALSA-2026:93414, kernel security update">ALSA-2026:93414</a> (<code>kernel 4.18.0-553.182.1.el8_10</code>) and <a href="https://errata.almalinux.org/8/ALSA-2026-93415.html" title="AlmaLinux: ALSA-2026:93415, kernel-rt security update">ALSA-2026:93415</a> (kernel-rt). Nothing in the errata yet for 9 and 10.</em></li>
     <li><b>SUSE</b><span class="pill orange">Partial</span><em>Most products have a fix, a few are still on the way, see the <a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">CVE page</a>.</em></li>
     <li><b>Oracle Linux</b><span class="pill green">Fix available</span><em>The UEK kernels since 16 October (ELSA-2026-500397 to 500399, newer ones since 2 November). The Red Hat Compatible Kernel since 2 November for Oracle Linux 8, 9 and 10 (ELSA-2026-93414, 93412 and 93413), see the <a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">CVE page</a>.</em></li>
@@ -160,9 +160,9 @@ sudo ss -lnMp                   <span class="c"># which processes listen with MP
     <li><a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF: how to block the Linux TCP bug</a>. The nftables rule and its side effects.</li>
     <li><a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a>. Why IP options may be dropped at the edge.</li>
     <li><a href="https://www.rfc-editor.org/rfc/rfc8684" title="RFC 8684: TCP Extensions for Multipath Operation with Multiple Addresses">RFC 8684</a>. What MPTCP is.</li>
-    <li><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">Debian security tracker</a>: DSA-6568-1 and DLA-4841-1.</li>
+    <li><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">Debian security tracker</a>: DSA-6568-1, DLA-4841-1 and DLA-4850-1.</li>
     <li><a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">Ubuntu: CVE-2026-98432</a>: 22.04 up to 26.10 work in progress, older needed.</li>
-    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Critical, 9.8, fix for RHEL 8, 9 and 10 (RHSA-2026:93412 to 93415), RHEL for NVIDIA 10 (RHSA-2026:93775) and RHEL 9.4 and 8.8 with extended support (RHSA-2026:94109 and 94303).</li>
+    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Critical, 9.8, fix for RHEL 8, 9 and 10 (RHSA-2026:93412 to 93415), RHEL for NVIDIA 10 (RHSA-2026:93775) and RHEL 9.4, 8.8, 9.6, 9.2, 10.0 and 8.4 with extended support (RHSA-2026:94109, 94303, 94438, 94477, 94558, 94508 and 94623).</li>
     <li><a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">Red Hat: RHSB-2026-016</a>: the bulletin, with the nftables rule.</li>
     <li><a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">SUSE: CVE-2026-98432</a>: most products have the fix.</li>
     <li><a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">Oracle Linux: CVE-2026-98432</a>: the UEK kernels, and the Red Hat Compatible Kernel of Oracle Linux 8, 9 and 10 (ELSA-2026-93414, 93412 and 93413).</li>
