@@ -6,7 +6,14 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Wed, 04 Nov 2026 02:30:00 +0100</lastBuildDate>
+  <lastBuildDate>Wed, 04 Nov 2026 14:00:00 +0100</lastBuildDate>
+  <item>
+    <title>4 november 14:00 · TCP2Shell: Red Hat repareert ook RHEL 8.6.</title>
+    <link>https://crisus.nl/#u-20261104-1400</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261104-1400</guid>
+    <pubDate>Wed, 04 Nov 2026 14:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>TCP2Shell: Red Hat repareert ook RHEL 8.6.</strong> Vandaag verscheen <a href="https://access.redhat.com/errata/RHSA-2026:94996" title="Red Hat: RHSA-2026:94996, kernel security, bug fix, and enhancement update (RHEL 8.6 AUS en ELS)">RHSA-2026:94996</a>: <code>kernel 4.18.0-372.227.1.el8_6</code> voor RHEL 8.6 met verlengde ondersteuning (AUS en ELS), &ldquo;Critical&rdquo;. Na 9.4, 8.8, 9.6, 9.2, 10.0 en 8.4 is dat de zevende oude RHEL-versie met een kernel. Op de <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE-pagina</a> staat nu geen enkele RHEL-versie meer open: de aparte regel voor de realtime-kernel van RHEL 9 is weg. Alleen de CoreOS-images van OpenShift 4 en 5 staan nog op &ldquo;Affected&rdquo;. Bijwerken en herstarten. Bij Ubuntu is er nog steeds geen Ubuntu Security Notice: 22.04 tot en met 26.10 staan op &ldquo;work in progress&rdquo;, 20.04 en ouder op &ldquo;needed&rdquo;, zie de <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE-pagina</a>. 2021, 2023, 2024 en 2025 hadden al een kernel. Nu 2022 ook. De kolom op het tabblad is vol.</p>]]></description>
+  </item>
   <item>
     <title>4 november 02:30 · Binance: het begon met een sollicitatiegesprek.</title>
     <link>https://crisus.nl/#u-20261104-0230</link>

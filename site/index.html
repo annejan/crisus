@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-23T22:50:00+02:00">
-<meta property="article:modified_time" content="2026-11-04T09:12:00+01:00">
+<meta property="article:modified_time" content="2026-11-04T14:00:00+01:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=8">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,7 +45,7 @@
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-23T22:50:00+02:00",
-  "dateModified": "2026-11-04T09:12:00+01:00",
+  "dateModified": "2026-11-04T14:00:00+01:00",
   "coverageStartTime": "2026-10-23T22:50:00+02:00",
   "about": {"@type": "Thing", "name": "CVE-2026-98432", "alternateName": ["TCP2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-98432"},
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
@@ -53,6 +53,7 @@
   "genre": "satire",
   "keywords": ["crisus", "TCP2Shell", "CVE-2026-98432", "Linux", "kernel", "TCP", "MPTCP", "Go"],
   "liveBlogUpdate": [
+    {"@type": "BlogPosting", "headline": "TCP2Shell: Red Hat repareert ook RHEL 8.6.", "datePublished": "2026-11-04T14:00:00+01:00", "url": "https://crisus.nl/#u-20261104-1400"},
     {"@type": "BlogPosting", "headline": "Binance: het begon met een sollicitatiegesprek.", "datePublished": "2026-11-04T02:30:00+01:00", "url": "https://crisus.nl/#u-20261104-0230"},
     {"@type": "BlogPosting", "headline": "TCP2Shell: Red Hat repareert nog vijf oude RHEL-versies.", "datePublished": "2026-11-04T02:00:00+01:00", "url": "https://crisus.nl/#u-20261104-0200"},
     {"@type": "BlogPosting", "headline": "TCP2Shell: Red Hat repareert ook de oude RHEL-versies met verlengde ondersteuning.", "datePublished": "2026-11-03T16:00:00+01:00", "url": "https://crisus.nl/#u-20261103-1600"},
@@ -126,7 +127,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-11-04T09:12:00+01:00">laatst bijgewerkt 4 november, 09:12</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <p class="kicker">Crisus · <time datetime="2026-11-04T14:00:00+01:00">laatst bijgewerkt 4 november, 14:00</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
   <h1>TCP2Shell: lek in de TCP-code van Linux</h1>
   <p class="lead">Een lek in de manier waarop de Linux-kernel een TCP-verbinding opzet: TCP2Shell. Volgens Anthropic haalt een aanvaller er op afstand root mee, zonder in te loggen, op een server met MPTCP. Debian, SUSE, Oracle, Amazon, Red Hat en AlmaLinux hebben de fix, Ubuntu <strong>nog niet</strong>. Niet in paniek raken. Wel een regel in de firewall.</p>
   <p class="vandaag" id="vandaag" hidden></p>
@@ -150,6 +151,8 @@
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261104-1400"><time datetime="2026-11-04T14:00+01:00">4 november 14:00</time>
+      <p><strong>TCP2Shell: Red Hat repareert ook RHEL 8.6.</strong> Vandaag verscheen <a href="https://access.redhat.com/errata/RHSA-2026:94996" title="Red Hat: RHSA-2026:94996, kernel security, bug fix, and enhancement update (RHEL 8.6 AUS en ELS)">RHSA-2026:94996</a>: <code>kernel 4.18.0-372.227.1.el8_6</code> voor RHEL 8.6 met verlengde ondersteuning (AUS en ELS), &ldquo;Critical&rdquo;. Na 9.4, 8.8, 9.6, 9.2, 10.0 en 8.4 is dat de zevende oude RHEL-versie met een kernel. Op de <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE-pagina</a> staat nu geen enkele RHEL-versie meer open: de aparte regel voor de realtime-kernel van RHEL 9 is weg. Alleen de CoreOS-images van OpenShift 4 en 5 staan nog op &ldquo;Affected&rdquo;. Bijwerken en herstarten. Bij Ubuntu is er nog steeds geen Ubuntu Security Notice: 22.04 tot en met 26.10 staan op &ldquo;work in progress&rdquo;, 20.04 en ouder op &ldquo;needed&rdquo;, zie de <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE-pagina</a>. 2021, 2023, 2024 en 2025 hadden al een kernel. Nu 2022 ook. De kolom op het tabblad is vol.</p></li>
     <li id="u-20261104-0230"><time datetime="2026-11-04T02:30+01:00">4 november 02:30</time>
       <p><strong>Binance: het begon met een sollicitatiegesprek.</strong> Binance beschrijft in zijn <a href="https://www.binance.com/en/blog/community/3229153443759566763" title="Binance: incidentrapport over 29 oktober">incidentrapport</a> van 3 november hoe de diefstal van 29 oktober begon. In september benaderde iemand die zich voordeed als projectdirecteur een software-engineer van Binance via een vacaturesite. Na een gesprek met &ldquo;HR&rdquo; en een met de &ldquo;CEO&rdquo; moest de engineer een programmeeropdracht downloaden. Daarin zat malware die een onderdeel van pyenv in Homebrew verving. Op 20 oktober nam de aanvaller vanaf die laptop, met hulp van een interne AI-tool, de computers van twee collega&rsquo;s over, onder wie iemand die containers mocht uitrollen. Op 29 oktober liet de aanvaller de interne signeerdienst van de hot wallets transacties ondertekenen, en hield via EIP-7702 nog greep op een wallet nadat de opnames waren stilgezet. Binance noemt 6,34 miljard dollar, waarvan 2,85 miljard bevroren of onderschept, en zegt dat gebruikers de schade niet dragen. De FBI wijst Noord-Korea aan, de groep TraderTraitor, ook bekend als Lazarus, meldt <a href="https://www.bleepingcomputer.com/news/security/binance-says-fake-job-interview-led-to-63-billion-crypto-heist/" title="BleepingComputer: Binance says fake job interview led to $6.3 billion crypto heist">BleepingComputer</a>. De grootste cryptoroof ooit begon met een sollicitatie. De aanvaller kreeg de baan.</p></li>
     <li id="u-20261104-0200"><time datetime="2026-11-04T02:00+01:00">4 november 02:00</time>
@@ -271,12 +274,12 @@ sudo ss -lnMp                   <span class="c"># welke processen luisteren met 
     </ol>
   </section>
 
-  <h2 id="stand">Stand per platform, 02:00</h2>
+  <h2 id="stand">Stand per platform, 14:00</h2>
   <ul class="status" aria-labelledby="stand">
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">DSA-6568-1</a>: <code>linux 6.12.113-1</code>.</em></li>
     <li><b>Debian 12</b><span class="pill green">Fix beschikbaar</span><em>DLA-4841-1: <code>linux 6.1.190-1</code>. Het nieuwere pakket <code>linux-6.12</code> sinds 22 oktober: DLA-4850-1, <code>6.12.113-1~deb12u1</code>.</em></li>
     <li><b>Ubuntu</b><span class="pill red">Nog geen fix</span><em>22.04 tot en met 26.10 staan op &ldquo;work in progress&rdquo;: de kernel is in de maak en heeft al een nummer, zoals <code>6.8.0-149.149</code> voor 24.04. 20.04 en ouder staan op &ldquo;needed&rdquo;. Nog geen Ubuntu Security Notice, zie de <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE-pagina</a>.</em></li>
-    <li><b>Red Hat</b><span class="pill green">Fix beschikbaar</span><em>Sinds 1 november voor RHEL 8, 9 en 10: RHSA-2026:93412 tot en met 93415. Sinds 2 november ook RHEL for NVIDIA 10 (RHSA-2026:93775) en RHEL 9.4 met verlengde ondersteuning (RHSA-2026:94109), sinds 3 november RHEL 8.8 (RHSA-2026:94303), 9.6 (94438), 9.2 (94477 en 94558), 10.0 (94508) en 8.4 (94623) met verlengde ondersteuning. De realtime-kernel van RHEL 9 en OpenShift staan nog op &ldquo;Affected&rdquo;, zie de <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE-pagina</a> en het <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">bulletin</a>. RHEL 6 en 7 zijn niet geraakt.</em></li>
+    <li><b>Red Hat</b><span class="pill green">Fix beschikbaar</span><em>Sinds 1 november voor RHEL 8, 9 en 10: RHSA-2026:93412 tot en met 93415. Sinds 2 november ook RHEL for NVIDIA 10 (RHSA-2026:93775) en RHEL 9.4 met verlengde ondersteuning (RHSA-2026:94109), sinds 3 november RHEL 8.8 (RHSA-2026:94303), 9.6 (94438), 9.2 (94477 en 94558), 10.0 (94508) en 8.4 (94623) en sinds 4 november 8.6 (94996) met verlengde ondersteuning. Alleen OpenShift staat nog op &ldquo;Affected&rdquo;, zie de <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE-pagina</a> en het <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">bulletin</a>. RHEL 6 en 7 zijn niet geraakt.</em></li>
     <li><b>AlmaLinux</b><span class="pill orange">Deels</span><em>AlmaLinux 8 sinds 2 november: <a href="https://errata.almalinux.org/8/ALSA-2026-93414.html" title="AlmaLinux: ALSA-2026:93414, kernel security update">ALSA-2026:93414</a> (<code>kernel 4.18.0-553.182.1.el8_10</code>) en <a href="https://errata.almalinux.org/8/ALSA-2026-93415.html" title="AlmaLinux: ALSA-2026:93415, kernel-rt security update">ALSA-2026:93415</a> (kernel-rt). Voor 9 en 10 nog niets in de errata.</em></li>
     <li><b>SUSE</b><span class="pill orange">Deels</span><em>Voor de meeste producten is er een fix, een paar zijn nog onderweg, zie de <a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">CVE-pagina</a>.</em></li>
     <li><b>Oracle Linux</b><span class="pill green">Fix beschikbaar</span><em>De UEK-kernels sinds 16 oktober (ELSA-2026-500397 tot en met 500399, nieuwere sinds 2 november). De Red Hat-compatibele kernel sinds 2 november voor Oracle Linux 8, 9 en 10 (ELSA-2026-93414, 93412 en 93413), zie de <a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">CVE-pagina</a>.</em></li>
@@ -345,7 +348,7 @@ sudo ss -lnMp                   <span class="c"># welke processen luisteren met 
     <li><a href="https://www.rfc-editor.org/rfc/rfc8684" title="RFC 8684: TCP Extensions for Multipath Operation with Multiple Addresses">RFC 8684</a>. Wat MPTCP is.</li>
     <li><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">Debian security tracker</a>: DSA-6568-1, DLA-4841-1 en DLA-4850-1.</li>
     <li><a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">Ubuntu: CVE-2026-98432</a>: 22.04 tot en met 26.10 work in progress, ouder needed.</li>
-    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Critical, 9,8, fix voor RHEL 8, 9 en 10 (RHSA-2026:93412 tot en met 93415), RHEL for NVIDIA 10 (RHSA-2026:93775) en RHEL 9.4, 8.8, 9.6, 9.2, 10.0 en 8.4 met verlengde ondersteuning (RHSA-2026:94109, 94303, 94438, 94477, 94558, 94508 en 94623).</li>
+    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Critical, 9,8, fix voor RHEL 8, 9 en 10 (RHSA-2026:93412 tot en met 93415), RHEL for NVIDIA 10 (RHSA-2026:93775) en RHEL 9.4, 8.8, 9.6, 9.2, 10.0, 8.4 en 8.6 met verlengde ondersteuning (RHSA-2026:94109, 94303, 94438, 94477, 94558, 94508, 94623 en 94996).</li>
     <li><a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">Red Hat: RHSB-2026-016</a>: het bulletin, met de nftables-regel.</li>
     <li><a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">SUSE: CVE-2026-98432</a>: de meeste producten hebben de fix.</li>
     <li><a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">Oracle Linux: CVE-2026-98432</a>: de UEK-kernels, en de Red Hat-compatibele kernel van Oracle Linux 8, 9 en 10 (ELSA-2026-93414, 93412 en 93413).</li>
