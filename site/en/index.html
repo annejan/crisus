@@ -66,7 +66,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-11-04T14:00:00+01:00">status of 4 November, 14:00</time> · <a href="/" title="Crisus: de actuele stand (in Dutch)">hourly updates in Dutch</a></p>
+  <p class="kicker">Crisus · <time datetime="2026-11-04T18:00:00+01:00">status of 4 November, 18:00</time> · <a href="/" title="Crisus: de actuele stand (in Dutch)">hourly updates in Dutch</a></p>
   <h1>TCP2Shell: a hole in Linux&rsquo;s TCP code</h1>
   <p class="lead">A bug in the way the Linux kernel sets up a TCP connection: TCP2Shell. According to Anthropic, an attacker can use it to get root remotely, without logging in, on a server with MPTCP. Debian, SUSE, Oracle, Amazon, Red Hat and AlmaLinux have the fix, Ubuntu <strong>not yet</strong>. Don&rsquo;t panic. Do add a firewall rule.</p>
 
@@ -100,7 +100,7 @@
     <dt>Which versions?</dt>
     <dd>Everything from 4.4. The fix is in 5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 and 7.3.</dd>
     <dt>Exploited?</dt>
-    <dd><strong>Not seen yet.</strong> The bug is not in CISA&rsquo;s KEV catalog, and Anthropic&rsquo;s exploit is not public.</dd>
+    <dd><strong>Not seen yet.</strong> The bug is not in CISA&rsquo;s KEV catalog, and Anthropic&rsquo;s exploit is not public. But someone is looking: since 2 November researcher Marcus Hutchins sees internet-wide scans that knock on port 443 with MPTCP (<a href="https://infosec.exchange/@malwaretech/117551155941056123" title="Marcus Hutchins on Mastodon, 3 November">Mastodon</a>, 3 November).</dd>
     <dt>Why TCP2Shell?</dt>
     <dd>The bug has no name of its own. After PHP2Shell and HTTP2Shell, the crisis team could not go back.</dd>
   </dl>

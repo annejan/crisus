@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-10-23T22:50:00+02:00">
-<meta property="article:modified_time" content="2026-11-04T14:00:00+01:00">
+<meta property="article:modified_time" content="2026-11-04T18:00:00+01:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=8">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,7 +45,7 @@
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-10-23T22:50:00+02:00",
-  "dateModified": "2026-11-04T14:00:00+01:00",
+  "dateModified": "2026-11-04T18:00:00+01:00",
   "coverageStartTime": "2026-10-23T22:50:00+02:00",
   "about": {"@type": "Thing", "name": "CVE-2026-98432", "alternateName": ["TCP2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-98432"},
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
@@ -53,6 +53,7 @@
   "genre": "satire",
   "keywords": ["crisus", "TCP2Shell", "CVE-2026-98432", "Linux", "kernel", "TCP", "MPTCP", "Go"],
   "liveBlogUpdate": [
+    {"@type": "BlogPosting", "headline": "TCP2Shell: iemand zoekt het internet af.", "datePublished": "2026-11-04T18:00:00+01:00", "url": "https://crisus.nl/#u-20261104-1800"},
     {"@type": "BlogPosting", "headline": "TCP2Shell: Red Hat repareert ook RHEL 8.6.", "datePublished": "2026-11-04T14:00:00+01:00", "url": "https://crisus.nl/#u-20261104-1400"},
     {"@type": "BlogPosting", "headline": "Binance: het begon met een sollicitatiegesprek.", "datePublished": "2026-11-04T02:30:00+01:00", "url": "https://crisus.nl/#u-20261104-0230"},
     {"@type": "BlogPosting", "headline": "TCP2Shell: Red Hat repareert nog vijf oude RHEL-versies.", "datePublished": "2026-11-04T02:00:00+01:00", "url": "https://crisus.nl/#u-20261104-0200"},
@@ -127,7 +128,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-11-04T14:00:00+01:00">laatst bijgewerkt 4 november, 14:00</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <p class="kicker">Crisus · <time datetime="2026-11-04T18:00:00+01:00">laatst bijgewerkt 4 november, 18:00</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
   <h1>TCP2Shell: lek in de TCP-code van Linux</h1>
   <p class="lead">Een lek in de manier waarop de Linux-kernel een TCP-verbinding opzet: TCP2Shell. Volgens Anthropic haalt een aanvaller er op afstand root mee, zonder in te loggen, op een server met MPTCP. Debian, SUSE, Oracle, Amazon, Red Hat en AlmaLinux hebben de fix, Ubuntu <strong>nog niet</strong>. Niet in paniek raken. Wel een regel in de firewall.</p>
   <p class="vandaag" id="vandaag" hidden></p>
@@ -151,6 +152,9 @@
 
   <h2 id="updates">Updates</h2>
   <ol class="updates" aria-labelledby="updates">
+    <li id="u-20261104-1800"><time datetime="2026-11-04T18:00+01:00">4 november 18:00</time>
+      <p><strong>TCP2Shell: iemand zoekt het internet af.</strong> Beveiligingsonderzoeker Marcus Hutchins ziet sinds 2 november residenti&euml;le proxy&rsquo;s en vpn-servers die het hele internet afzoeken op poort 443, met MPTCP aan, schrijft Hutchins op 3 november op <a href="https://infosec.exchange/@malwaretech/117551155941056123" title="Marcus Hutchins op Mastodon, 3 november">Mastodon</a>. Gewone scanners praten geen MPTCP en er wordt niets naar de webserver gestuurd, dus Hutchins vermoedt dat dit zoeken naar CVE-2026-98432 is: een aanvaller die een lijst maakt. Een eigen scan van 30 oktober vond zo&rsquo;n 2,1 miljoen servers die op poort 443 via MPTCP bereikbaar zijn, waarvan bijna 763.000 ook een TLS-verbinding opzetten; of ze gepatcht zijn, zegt dat niet. Een openbare exploit is er volgens Hutchins nog niet, wel code die een server laat crashen. <a href="https://www.security.nl/posting/960326/%27Aanvaller+zoekt+op+internet+naar+Linux-servers+met+kritiek+TCP-lek%27" title="Security.NL: 'Aanvaller zoekt op internet naar Linux-servers met kritiek TCP-lek'">Security.NL</a> meldde het vanochtend. Red Hat schrijft intussen op zijn <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE-pagina</a> dat gewoon IPv4-TCP-verkeer genoeg is om het geheugen van de kernel te beschadigen of de server te laten crashen: MPTCP is de weg van de exploit van Anthropic, geen voorwaarde voor het lek. Bij Ubuntu kwamen op 3 november tien kernel-advisories uit, <a href="https://ubuntu.com/security/notices/USN-8959-1" title="Ubuntu: USN-8959-1, Linux kernel vulnerabilities">USN-8959-1</a> tot en met USN-8968-1, met honderden CVE&rsquo;s. Deze zit er niet bij: voor 22.04 is <code>5.15.0-202</code> uit, de fix zit in 203. Wie zoekt, die vindt. Wie wacht, staat op de lijst.</p>
+      <p><strong>En apt zelf lekt ook.</strong> Het programma waarmee u straks die kernel ophaalt, kreeg vandaag een eigen advisory: <a href="https://lists.debian.org/debian-security-announce/2026/msg00526.html" title="Debian: DSA-6607-1, apt security update">DSA-6607-1</a>, CVE-2026-109518. Wie tussen uw server en de mirror zit, een kwaadaardige mirror of proxy, kan apt na de controle van de handtekening een ander pakket laten installeren. Als root, want zo installeert apt. De fix: apt 3.0.4 voor Debian 13, 2.6.2 voor Debian 12 (<a href="https://lists.debian.org/debian-lts-announce/2026/11/msg00004.html" title="Debian LTS: DLA-4880-1, apt security update">DLA-4880-1</a>) en voor Ubuntu 22.04 tot en met 26.10 staan de pakketten sinds vanmiddag in de security-pocket, nog zonder Ubuntu Security Notice, zie <a href="https://launchpad.net/ubuntu/+source/apt" title="Launchpad: apt in Ubuntu">Launchpad</a>. Meer staat op de <a href="#radar" title="Op de radar">radar</a>. Eerst apt bijwerken, dan de rest. Dat was altijd al de volgorde. Nu met reden.</p></li>
     <li id="u-20261104-1400"><time datetime="2026-11-04T14:00+01:00">4 november 14:00</time>
       <p><strong>TCP2Shell: Red Hat repareert ook RHEL 8.6.</strong> Vandaag verscheen <a href="https://access.redhat.com/errata/RHSA-2026:94996" title="Red Hat: RHSA-2026:94996, kernel security, bug fix, and enhancement update (RHEL 8.6 AUS en ELS)">RHSA-2026:94996</a>: <code>kernel 4.18.0-372.227.1.el8_6</code> voor RHEL 8.6 met verlengde ondersteuning (AUS en ELS), &ldquo;Critical&rdquo;. Na 9.4, 8.8, 9.6, 9.2, 10.0 en 8.4 is dat de zevende oude RHEL-versie met een kernel. Op de <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE-pagina</a> staat nu geen enkele RHEL-versie meer open: de aparte regel voor de realtime-kernel van RHEL 9 is weg. Alleen de CoreOS-images van OpenShift 4 en 5 staan nog op &ldquo;Affected&rdquo;. Bijwerken en herstarten. Bij Ubuntu is er nog steeds geen Ubuntu Security Notice: 22.04 tot en met 26.10 staan op &ldquo;work in progress&rdquo;, 20.04 en ouder op &ldquo;needed&rdquo;, zie de <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE-pagina</a>. 2021, 2023, 2024 en 2025 hadden al een kernel. Nu 2022 ook. De kolom op het tabblad is vol.</p></li>
     <li id="u-20261104-0230"><time datetime="2026-11-04T02:30+01:00">4 november 02:30</time>
@@ -249,7 +253,7 @@
     <dt>Welke versies?</dt>
     <dd>Alles vanaf 4.4. De fix zit in 5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 en 7.3.</dd>
     <dt>Misbruik?</dt>
-    <dd><strong>Nog niet gezien.</strong> Het lek staat niet op de KEV-lijst van CISA, en de exploit van Anthropic is niet openbaar.</dd>
+    <dd><strong>Nog niet gezien.</strong> Het lek staat niet op de KEV-lijst van CISA, en de exploit van Anthropic is niet openbaar. Wel wordt er gezocht: sinds 2 november ziet onderzoeker Marcus Hutchins scans over het hele internet die met MPTCP op poort 443 aankloppen (<a href="https://infosec.exchange/@malwaretech/117551155941056123" title="Marcus Hutchins op Mastodon, 3 november">Mastodon</a>, 3 november).</dd>
     <dt>Waarom TCP2Shell?</dt>
     <dd>Het lek heeft geen naam van zichzelf. Na PHP2Shell en HTTP2Shell kon het crisusteam niet meer terug.</dd>
   </dl>
@@ -258,9 +262,10 @@
     <h2 id="doen">Wat moet u doen?</h2>
     <p>Blijf binnen. Houd de deur op slot.</p>
     <ol>
-      <li><strong>Kijk of uw kernel de fix heeft.</strong> Debian 13 heeft <code>6.12.113-1</code>, Debian 12 <code>6.1.190-1</code>. Bijwerken en herstarten, anders draait de oude kernel door:
+      <li><strong>Kijk of uw kernel de fix heeft.</strong> Debian 13 heeft <code>6.12.113-1</code>, Debian 12 <code>6.1.190-1</code>. Bijwerken en herstarten, anders draait de oude kernel door. Sinds 4 november eerst apt zelf (DSA-6607-1, zie <a href="#radar" title="Op de radar">de radar</a>):
         <pre><code>uname -r
-sudo apt update &amp;&amp; sudo apt full-upgrade
+sudo apt update &amp;&amp; sudo apt install apt   <span class="c"># eerst apt zelf</span>
+sudo apt full-upgrade
 sudo reboot</code></pre></li>
       <li><strong>Nog geen fix?</strong> (Ubuntu.) Laat dan TCP-pakketten met IPv4-opties niet binnen. Normaal verkeer gebruikt die opties niet; <a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a> raadt al aan ze te weren. Deze regel komt van <a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF</a>:
         <pre><code>sudo nft add table ip cve_2026_98432
@@ -274,11 +279,11 @@ sudo ss -lnMp                   <span class="c"># welke processen luisteren met 
     </ol>
   </section>
 
-  <h2 id="stand">Stand per platform, 14:00</h2>
+  <h2 id="stand">Stand per platform, 18:00</h2>
   <ul class="status" aria-labelledby="stand">
     <li><b>Debian 13</b><span class="pill green">Fix beschikbaar</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">DSA-6568-1</a>: <code>linux 6.12.113-1</code>.</em></li>
     <li><b>Debian 12</b><span class="pill green">Fix beschikbaar</span><em>DLA-4841-1: <code>linux 6.1.190-1</code>. Het nieuwere pakket <code>linux-6.12</code> sinds 22 oktober: DLA-4850-1, <code>6.12.113-1~deb12u1</code>.</em></li>
-    <li><b>Ubuntu</b><span class="pill red">Nog geen fix</span><em>22.04 tot en met 26.10 staan op &ldquo;work in progress&rdquo;: de kernel is in de maak en heeft al een nummer, zoals <code>6.8.0-149.149</code> voor 24.04. 20.04 en ouder staan op &ldquo;needed&rdquo;. Nog geen Ubuntu Security Notice, zie de <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE-pagina</a>.</em></li>
+    <li><b>Ubuntu</b><span class="pill red">Nog geen fix</span><em>22.04 tot en met 26.10 staan op &ldquo;work in progress&rdquo;: de kernel is in de maak en heeft al een nummer, zoals <code>6.8.0-149.149</code> voor 24.04. 20.04 en ouder staan op &ldquo;needed&rdquo;. Nog geen Ubuntu Security Notice, zie de <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE-pagina</a>; de kernel-advisories van 3 november (USN-8959-1 tot en met 8968-1) hebben de fix niet.</em></li>
     <li><b>Red Hat</b><span class="pill green">Fix beschikbaar</span><em>Sinds 1 november voor RHEL 8, 9 en 10: RHSA-2026:93412 tot en met 93415. Sinds 2 november ook RHEL for NVIDIA 10 (RHSA-2026:93775) en RHEL 9.4 met verlengde ondersteuning (RHSA-2026:94109), sinds 3 november RHEL 8.8 (RHSA-2026:94303), 9.6 (94438), 9.2 (94477 en 94558), 10.0 (94508) en 8.4 (94623) en sinds 4 november 8.6 (94996) met verlengde ondersteuning. Alleen OpenShift staat nog op &ldquo;Affected&rdquo;, zie de <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE-pagina</a> en het <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">bulletin</a>. RHEL 6 en 7 zijn niet geraakt.</em></li>
     <li><b>AlmaLinux</b><span class="pill orange">Deels</span><em>AlmaLinux 8 sinds 2 november: <a href="https://errata.almalinux.org/8/ALSA-2026-93414.html" title="AlmaLinux: ALSA-2026:93414, kernel security update">ALSA-2026:93414</a> (<code>kernel 4.18.0-553.182.1.el8_10</code>) en <a href="https://errata.almalinux.org/8/ALSA-2026-93415.html" title="AlmaLinux: ALSA-2026:93415, kernel-rt security update">ALSA-2026:93415</a> (kernel-rt). Voor 9 en 10 nog niets in de errata.</em></li>
     <li><b>SUSE</b><span class="pill orange">Deels</span><em>Voor de meeste producten is er een fix, een paar zijn nog onderweg, zie de <a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">CVE-pagina</a>.</em></li>
@@ -301,6 +306,7 @@ sudo ss -lnMp                   <span class="c"># welke processen luisteren met 
 
   <h2 id="radar">Op de radar</h2>
   <ul class="radar">
+    <li><b>APT</b> In apt, de pakketbeheerder van Debian en Ubuntu, zit een lek waarmee iemand tussen uw server en de mirror, een kwaadaardige mirror of proxy, een pakket kan vervangen nadat apt de handtekening heeft gecontroleerd: <a href="https://lists.debian.org/debian-security-announce/2026/msg00526.html" title="Debian: DSA-6607-1, apt security update">DSA-6607-1</a>, CVE-2026-109518, op afstand code uitvoeren als root. Apt voegt na een HTTP-redirect twee downloads met dezelfde URI samen, met een harde link; laat de aanvaller een download mislukken, dan probeert apt het opnieuw en kan die poging via de link een al gecontroleerd bestand overschrijven, legt apt-ontwikkelaar Julian Andres Klode uit op de <a href="https://lists.debian.org/deity/2026/11/msg00005.html" title="deity: APT-2026-11-01 security update">deity-lijst</a>. Het werkt alleen als <code>Acquire::Retries</code> aanstaat, en dat is sinds apt 2.3.2 standaard: Debian 12 en Ubuntu 22.04 en nieuwer. Canonical geeft het een 7,7. Gevonden door Max Justicz. De fix: 3.0.4 voor Debian 13, 2.6.2 voor Debian 12 (<a href="https://lists.debian.org/debian-lts-announce/2026/11/msg00004.html" title="Debian LTS: DLA-4880-1, apt security update">DLA-4880-1</a>), en voor Ubuntu 22.04 tot en met 26.10 staan <code>2.4.15ubuntu0.1</code>, <code>2.8.4ubuntu0.1</code>, <code>3.2.1ubuntu0.1</code> en <code>3.3.3ubuntu0.1</code> sinds vanmiddag in de security-pocket, nog zonder Ubuntu Security Notice, zie <a href="https://launchpad.net/ubuntu/+source/apt" title="Launchpad: apt in Ubuntu">Launchpad</a>. Dezelfde update dicht ook een paar geheugenfouten in het lezen van .deb-bestanden. <a href="https://www.security.nl/posting/960385/Lek+in+Debian+APT+package+manager+laat+aanvaller+code+als+root+uitvoeren" title="Security.NL: Lek in Debian APT package manager laat aanvaller code als root uitvoeren">Security.NL</a> meldt het ook. Het zit tenminste niet in de kernel. Alleen in het ding dat de kernel installeert.</li>
     <li><b>CVE&rsquo;s</b> Het aantal nieuwe CVE&rsquo;s groeit exponentieel. Sinds mei komt er elke maand zo&rsquo;n 22 procent bij: elke drie &agrave; vier maanden een verdubbeling, rekenen wij uit met de cijfers van de <a href="https://cve.0xosprey.com/" title="CVE Tracker: nieuwe CVE's per dag, week en maand">CVE Tracker</a>. Die komen uit de officiële CVE-lijst. Op een logaritmische schaal is het een rechte lijn. In september waren het er 14.934, drie keer zoveel als een jaar eerder. Dit jaar zijn het er al 86.344, bijna twee keer zoveel als in heel 2025. De <a href="https://nvd.nist.gov/" title="NVD: de National Vulnerability Database van NIST">NVD</a> telt hetzelfde. De EFF telde in oktober al 13.000 nieuwe nummers en vraagt om <a href="https://www.eff.org/deeplinks/2026/10/vulnerability-apocalypse-and-why-we-should-fund-open-source" title="EFF: The Vulnerability Apocalypse and Why We Should Fund Open Source">meer geld voor open source</a>: de makers moeten al die meldingen ook nog verwerken. Het R-getal van de bugs staat ruim boven 1. Het is een <a href="https://superspreading.party/" title="Superspreading Party">superspreading party</a>.</li>
     <li><b>curl</b> De rommelrapporten van AI zijn weg, schrijft curl-maker Daniel Stenberg op 22 oktober in <a href="https://daniel.haxx.se/blog/2026/10/22/ignore-the-slop/" title="Daniel Stenberg: ignore the slop">ignore the slop</a>. Ervoor in de plaats kwamen honderden kwetsbaarheidsrapporten, allemaal met AI gemaakt en meestal kloppend. Negeren kan niet: ze vinden echte lekken. Het probleem is nu &ldquo;high volume, high quality&rdquo;. Een te grote berg goed werk is ook een berg.</li>
     <li><b>Onderhoud</b> <a href="https://sheets.works/data-viz/holding-up-the-internet" title="sheets.works: The people holding up the internet">The people holding up the internet</a> telt wie 23 veelgebruikte opensourceprojecten bijhoudt: bij 11 doen &eacute;&eacute;n of twee mensen het vaste werk. Paul Eggert deed 218 van de 251 wijzigingen aan de tijdzonedatabase, die op zo&rsquo;n vier miljard telefoons staat en die zondag uw klok een uur terugzette. Een publieke subsidie vond de site er niet voor. De zomertijd hangt aan &eacute;&eacute;n mens, de rest van het internet aan een paar meer.</li>
@@ -341,6 +347,7 @@ sudo ss -lnMp                   <span class="c"># welke processen luisteren met 
   <ul class="bronnen" aria-labelledby="bronnen">
     <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-98432" title="CVE-2026-98432 op cve.org">CVE-2026-98432</a> het record van het CVE-team van de kernel, CVSS 9,8.</li>
     <li><a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" title="Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude">Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude</a>, 27 oktober. De exploit op servers met MPTCP.</li>
+    <li><a href="https://infosec.exchange/@malwaretech/117551155941056123" title="Marcus Hutchins op Mastodon, 3 november">Marcus Hutchins op Mastodon</a>, 3 november. De scans met MPTCP op poort 443, en de 2,1 miljoen bereikbare servers.</li>
     <li><a href="https://go.dev/doc/go1.24" title="Go 1.24 Release Notes">Go 1.24 Release Notes</a>. ListenConfig gebruikt MPTCP standaard op Linux.</li>
     <li><a href="https://go.dev/doc/godebug" title="Go: GODEBUG settings">Go: GODEBUG</a>. <code>multipathtcp=0</code> zet het uit.</li>
     <li><a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF: how to block the Linux TCP bug</a>. De nftables-regel en de bijwerkingen.</li>
