@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <title>Crisus · TCP2Shell: вразливість у TCP-коді Linux (CVE-2026-98432)</title>
-<meta name="description" content="Crisus.nl: TCP2Shell (CVE-2026-98432), вразливість у TCP-коді ядра Linux. За даними Anthropic, вона дає віддалений root на серверах із MPTCP. В Ubuntu виправлення ще немає. Сатира, але факти правдиві.">
+<meta name="description" content="Crisus.nl: TCP2Shell (CVE-2026-98432), вразливість у TCP-коді ядра Linux. За даними Anthropic, вона дає віддалений root на серверах із MPTCP. З 6 листопада Ubuntu теж має ядро з виправленням, без повідомлення. Сатира, але факти правдиві.">
 <meta property="og:title" content="Crisus · TCP2Shell: вразливість у TCP-коді Linux">
-<meta property="og:description" content="Рівень кризи 3: серйозно. TCP2Shell, вразливість у TCP-коді Linux: віддалений root на серверах із MPTCP, який Go 1.24 вмикає за замовчуванням. В Ubuntu виправлення ще немає.">
+<meta property="og:description" content="Рівень кризи 3: серйозно. TCP2Shell, вразливість у TCP-коді Linux: віддалений root на серверах із MPTCP, який Go 1.24 вмикає за замовчуванням. Ubuntu тепер теж має ядро з виправленням, без повідомлення.">
 <meta property="og:url" content="https://crisus.nl/uk/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Crisus">
@@ -36,7 +36,7 @@
 </head>
 <body>
 <a class="skip" href="#inhoud">Одразу до стану</a>
-<div class="tape" aria-hidden="true"><p><span>УВАГА · CRISUS · БЕЗ ПАНІКИ · TCP2SHELL · УВАГА · CRISUS · ЯДРА ДЛЯ UBUNTU ЩЕ НЕМАЄ · УВАГА · CRISUS · IP-ОПЦІЇ ЗАКРИТО · УВАГА · CRISUS · GO ГОВОРИТЬ MPTCP · УВАГА · CRISUS · ЦЕ ГОНКА · УВАГА · CRISUS · БЕЗ ПАНІКИ · TCP2SHELL · УВАГА · CRISUS · ЯДРА ДЛЯ UBUNTU ЩЕ НЕМАЄ · УВАГА · CRISUS · IP-ОПЦІЇ ЗАКРИТО · УВАГА · CRISUS · GO ГОВОРИТЬ MPTCP · УВАГА · CRISUS · ЦЕ ГОНКА · </span></p></div>
+<div class="tape" aria-hidden="true"><p><span>УВАГА · CRISUS · БЕЗ ПАНІКИ · TCP2SHELL · УВАГА · CRISUS · UBUNTU МАЄ ЯДРО · БЕЗ ПОВІДОМЛЕННЯ · УВАГА · CRISUS · ПЕРЕЗАВАНТАЖТЕ · УВАГА · CRISUS · GO ГОВОРИТЬ MPTCP · УВАГА · CRISUS · ЦЕ ГОНКА · УВАГА · CRISUS · БЕЗ ПАНІКИ · TCP2SHELL · УВАГА · CRISUS · UBUNTU МАЄ ЯДРО · БЕЗ ПОВІДОМЛЕННЯ · УВАГА · CRISUS · ПЕРЕЗАВАНТАЖТЕ · УВАГА · CRISUS · GO ГОВОРИТЬ MPTCP · УВАГА · CRISUS · ЦЕ ГОНКА · </span></p></div>
 
 <header>
   <div class="wrap">
@@ -65,11 +65,11 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-11-04T18:00:00+01:00">стан на 4 листопада, 18:00</time> · <a href="/" title="Crisus: de actuele stand (нідерландською)">щогодинні оновлення нідерландською</a></p>
+  <p class="kicker">Crisus · <time datetime="2026-11-07T06:00:00+01:00">стан на 7 листопада, 06:00</time> · <a href="/" title="Crisus: de actuele stand (нідерландською)">щогодинні оновлення нідерландською</a></p>
   <h1>TCP2Shell: вразливість у TCP-коді Linux</h1>
-  <p class="lead">Вразливість у тому, як ядро Linux встановлює TCP-зʼєднання: TCP2Shell. За даними Anthropic, зловмисник може з її допомогою віддалено отримати root, без входу в систему, на сервері з MPTCP. Debian, SUSE, Oracle, Amazon, Red Hat і AlmaLinux вже мають виправлення, Ubuntu <strong>ще ні</strong>. Без паніки. Але додайте правило до брандмауера.</p>
+  <p class="lead">Вразливість у тому, як ядро Linux встановлює TCP-зʼєднання: TCP2Shell. За даними Anthropic, зловмисник може з її допомогою віддалено отримати root, без входу в систему, на сервері з MPTCP. Debian, SUSE, Oracle, Amazon, Red Hat і AlmaLinux вже мають виправлення. З 6 листопада Ubuntu теж, для версій від 22.04 до 26.10: у звичайних оновленнях, <strong>без повідомлення</strong>. Без паніки. Але оновіть і перезавантажте.</p>
 
-  <p class="klok" id="klok"><b data-since="2026-10-15T00:00:00+02:00">15.10.2026</b><span>З 15 жовтня виправлення є в ядрі. Ubuntu його ще не постачає. Кожна хвилина на цьому годиннику є хвилиною з правилом у брандмауері. <a href="#stand" title="Чи є виправлення для мене?">Чи є виправлення для мене?</a></span></p>
+  <p class="klok" id="klok"><b data-since="2026-10-15T00:00:00+02:00">15.10.2026</b><span>З 15 жовтня виправлення є в ядрі. З 6 листопада воно є і в оновленнях Ubuntu, без повідомлення. Кожна хвилина на цьому годиннику є хвилиною, коли сервер без перезавантаження досі працює на старому ядрі. <a href="#stand" title="Чи є виправлення для мене?">Чи є виправлення для мене?</a></span></p>
 
   <section class="level" aria-labelledby="niveau">
     <h2 id="niveau">Поточний рівень кризи: 3 з 5</h2>
@@ -108,11 +108,11 @@
     <h2 id="doen">Що вам робити?</h2>
     <p>Залишайтеся вдома. Тримайте двері зачиненими.</p>
     <ol>
-      <li><strong>Перевірте, чи має ваше ядро виправлення.</strong> Debian 13 має <code>6.12.113-1</code>, Debian 12 має <code>6.1.190-1</code>. Оновіть і перезавантажте, інакше працюватиме старе ядро:
+      <li><strong>Перевірте, чи має ваше ядро виправлення.</strong> Debian 13 має <code>6.12.113-1</code>, Debian 12 має <code>6.1.190-1</code>. Ubuntu 22.04 має <code>5.15.0-203</code>, 24.04 має <code>6.8.0-149</code>, 26.04 має <code>7.0.0-43</code>, а 26.10 має <code>7.3.0-10</code>; ядра для версій від 22.04 до 26.04 є лише у звичайних оновленнях, а не в security-pocket, тож <code>unattended-upgrades</code> за замовчуванням їх не встановлює. Оновіть і перезавантажте, інакше працюватиме старе ядро:
         <pre><code>uname -r
 sudo apt update &amp;&amp; sudo apt full-upgrade
 sudo reboot</code></pre></li>
-      <li><strong>Виправлення ще немає?</strong> (Ubuntu.) Тоді не пропускайте TCP-пакети з опціями IPv4. Звичайний трафік їх не використовує; <a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a> уже радить їх відфільтровувати. Це правило від <a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF</a>:
+      <li><strong>Виправлення ще немає або ще не можете перезавантажити?</strong> (Ubuntu 20.04 і старіші.) Тоді не пропускайте TCP-пакети з опціями IPv4. Звичайний трафік їх не використовує; <a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a> уже радить їх відфільтровувати. Це правило від <a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF</a>:
         <pre><code>sudo nft add table ip cve_2026_98432
 sudo nft add chain ip cve_2026_98432 pre '{ type filter hook prerouting priority -300; }'
 sudo nft add rule ip cve_2026_98432 pre meta l4proto tcp ip hdrlength gt 5 counter drop</code></pre>
@@ -124,13 +124,13 @@ sudo ss -lnMp                   <span class="c"># які процеси слух
     </ol>
   </section>
 
-  <h2 id="stand">Стан за платформами, 4 листопада, 14:00</h2>
+  <h2 id="stand">Стан за платформами, 7 листопада, 06:00</h2>
   <ul class="status" aria-labelledby="stand">
     <li><b>Linux</b><span class="pill green">Є виправлення</span><em>5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 і 7.3, з 15 жовтня.</em></li>
     <li><b>Debian 13</b><span class="pill green">Є виправлення</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">DSA-6568-1</a>: <code>linux 6.12.113-1</code>.</em></li>
     <li><b>Debian 12</b><span class="pill green">Є виправлення</span><em>DLA-4841-1: <code>linux 6.1.190-1</code>. Новіший пакет <code>linux-6.12</code> з 22 жовтня: DLA-4850-1, <code>6.12.113-1~deb12u1</code>.</em></li>
-    <li><b>Ubuntu</b><span class="pill red">Виправлення немає</span><em>Від 22.04 до 26.10 включно позначено &laquo;work in progress&raquo;: ядро готується і вже має номер, наприклад <code>6.8.0-149.149</code> для 24.04. 20.04 і старіші позначено &laquo;needed&raquo;. Ubuntu Security Notice ще немає, див. <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">сторінку CVE</a>.</em></li>
-    <li><b>Red Hat</b><span class="pill green">Є виправлення</span><em>З 1 листопада для RHEL 8, 9 і 10: RHSA-2026:93412–93415. З 2 листопада також RHEL for NVIDIA 10 (RHSA-2026:93775) і RHEL 9.4 з подовженою підтримкою (RHSA-2026:94109), з 3 листопада RHEL 8.8 (RHSA-2026:94303), 9.6 (94438), 9.2 (94477 і 94558), 10.0 (94508) і 8.4 (94623), з 4 листопада 8.6 (94996) з подовженою підтримкою. Лише OpenShift досі позначено &laquo;Affected&raquo;, див. <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">сторінку CVE</a> і <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">бюлетень</a>. RHEL 6 і 7 не вражено.</em></li>
+    <li><b>Ubuntu</b><span class="pill orange">Частково</span><em>З 6 листопада у звичайних оновленнях (<code>-updates</code>, а не <code>-security</code>): <code>5.15.0-203.213</code> для 22.04, <code>6.8.0-149.149</code> для 24.04 і <code>7.0.0-43.43</code> для 26.04, див. <a href="https://launchpad.net/ubuntu/+source/linux/+publishinghistory" title="Launchpad: linux in Ubuntu, publishing history">Launchpad</a>. Для 26.10 <code>7.3.0-10.10</code>, в оновленнях з 28 жовтня і в security-pocket з 2 листопада. Ubuntu Security Notice ще немає; <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">сторінка CVE</a> позначає &laquo;Fixed&raquo; лише 26.10, а від 16.04 до 26.04 досі &laquo;work in progress&raquo;. Оновіть і перезавантажте.</em></li>
+    <li><b>Red Hat</b><span class="pill green">Є виправлення</span><em>З 1 листопада для RHEL 8, 9 і 10: RHSA-2026:93412–93415. З 2 листопада також RHEL for NVIDIA 10 (RHSA-2026:93775) і RHEL 9.4 з подовженою підтримкою (RHSA-2026:94109), з 3 листопада RHEL 8.8 (RHSA-2026:94303), 9.6 (94438), 9.2 (94477 і 94558), 10.0 (94508) і 8.4 (94623), з 4 листопада 8.6 (94996) з подовженою підтримкою. З 6 листопада також OpenShift 4.22 (RHSA-2026:95346, версія 4.22.22). OpenShift 4 на образах із RHEL 8, OpenShift 5 і RHEL AI 3 досі позначено &laquo;Affected&raquo;, див. <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">сторінку CVE</a> і <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">бюлетень</a>. RHEL 6 і 7 не вражено.</em></li>
     <li><b>AlmaLinux</b><span class="pill orange">Частково</span><em>AlmaLinux 8 з 2 листопада: <a href="https://errata.almalinux.org/8/ALSA-2026-93414.html" title="AlmaLinux: ALSA-2026:93414, kernel security update">ALSA-2026:93414</a> (<code>kernel 4.18.0-553.182.1.el8_10</code>) і <a href="https://errata.almalinux.org/8/ALSA-2026-93415.html" title="AlmaLinux: ALSA-2026:93415, kernel-rt security update">ALSA-2026:93415</a> (kernel-rt). Для 9 і 10 в ерратах ще нічого немає.</em></li>
     <li><b>SUSE</b><span class="pill orange">Частково</span><em>Для більшості продуктів виправлення є, кілька ще готуються, див. <a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">сторінку CVE</a>.</em></li>
     <li><b>Oracle Linux</b><span class="pill green">Є виправлення</span><em>Ядра UEK з 16 жовтня (ELSA-2026-500397–500399, новіші з 2 листопада). Сумісне з Red Hat ядро з 2 листопада для Oracle Linux 8, 9 і 10 (ELSA-2026-93414, 93412 і 93413), див. <a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">сторінку CVE</a>.</em></li>
@@ -160,8 +160,9 @@ sudo ss -lnMp                   <span class="c"># які процеси слух
     <li><a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a>. Чому IP-опції можна відкидати на межі мережі.</li>
     <li><a href="https://www.rfc-editor.org/rfc/rfc8684" title="RFC 8684: TCP Extensions for Multipath Operation with Multiple Addresses">RFC 8684</a>. Що таке MPTCP.</li>
     <li><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">Debian security tracker</a>: DSA-6568-1, DLA-4841-1 і DLA-4850-1.</li>
-    <li><a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">Ubuntu: CVE-2026-98432</a>: від 22.04 до 26.10 work in progress, старіші needed.</li>
-    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Critical, 9,8, виправлення для RHEL 8, 9 і 10 (RHSA-2026:93412–93415), RHEL for NVIDIA 10 (RHSA-2026:93775) і RHEL 9.4, 8.8, 9.6, 9.2, 10.0, 8.4 та 8.6 з подовженою підтримкою (RHSA-2026:94109, 94303, 94438, 94477, 94558, 94508, 94623 і 94996).</li>
+    <li><a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">Ubuntu: CVE-2026-98432</a>: 26.10 fixed у 7.3.0-10.10, від 16.04 до 26.04 work in progress, USN ще немає.</li>
+    <li><a href="https://launchpad.net/ubuntu/+source/linux/+publishinghistory" title="Launchpad: linux in Ubuntu, publishing history">Launchpad: linux в Ubuntu</a>: 5.15.0-203.213, 6.8.0-149.149 і 7.0.0-43.43 в оновленнях з 6 листопада, 7.3.0-10.10 з 28 жовтня; списки змін із виправленням.</li>
+    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Critical, 9,8, виправлення для RHEL 8, 9 і 10 (RHSA-2026:93412–93415), RHEL for NVIDIA 10 (RHSA-2026:93775), RHEL 9.4, 8.8, 9.6, 9.2, 10.0, 8.4 та 8.6 з подовженою підтримкою (RHSA-2026:94109, 94303, 94438, 94477, 94558, 94508, 94623 і 94996) та OpenShift 4.22 (RHSA-2026:95346).</li>
     <li><a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">Red Hat: RHSB-2026-016</a>: бюлетень із правилом nftables.</li>
     <li><a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">SUSE: CVE-2026-98432</a>: більшість продуктів мають виправлення.</li>
     <li><a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">Oracle Linux: CVE-2026-98432</a>: ядра UEK, а також сумісне з Red Hat ядро Oracle Linux 8, 9 і 10 (ELSA-2026-93414, 93412 і 93413).</li>
