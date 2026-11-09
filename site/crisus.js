@@ -46,11 +46,17 @@
 // An update that is no longer on the front page lives in the archive of its
 // crisis: send an old https://crisus.nl/#u-YYYYMMDD-HHMM link on to it.
 (function () {
-  var ARCHIVES = [{ from: '20261020', to: '20261023', path: '/php/' }];
-  var m = /^#u-(\d{8})-\d{4}$/.exec(location.hash);
-  if (location.pathname !== '/' || !m || document.getElementById(location.hash.slice(1))) return;
+  // A range of updates (from and to: YYYYMMDDHHMM), or single updates that moved later.
+  var ARCHIVES = [
+    { from: '202610200000', to: '202610232200', path: '/php/' },
+    { from: '202610232250', to: '202610301117', path: '/brotli/' }
+  ];
+  var MOVED = { 'u-20261030-2100': '/php/', 'u-20261102-1000': '/php/', 'u-20261106-1400': '/php/', 'u-20261106-1600': '/php/' };
+  var m = /^#u-(\d{8})-(\d{4})$/.exec(location.hash), id = location.hash.slice(1);
+  if (location.pathname !== '/' || !m || document.getElementById(id)) return;
+  if (MOVED[id]) { location.replace(MOVED[id] + location.hash); return; }
   for (var i = 0; i < ARCHIVES.length; i++) {
-    if (m[1] >= ARCHIVES[i].from && m[1] <= ARCHIVES[i].to) { location.replace(ARCHIVES[i].path + location.hash); return; }
+    if (m[1] + m[2] >= ARCHIVES[i].from && m[1] + m[2] <= ARCHIVES[i].to) { location.replace(ARCHIVES[i].path + location.hash); return; }
   }
 })();
 
