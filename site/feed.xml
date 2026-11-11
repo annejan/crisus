@@ -6,7 +6,14 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Mon, 09 Nov 2026 12:56:00 +0100</lastBuildDate>
+  <lastBuildDate>Thu, 12 Nov 2026 00:22:00 +0100</lastBuildDate>
+  <item>
+    <title>12 november 00:22 · TCP2Shell: Ubuntu heeft het briefje.</title>
+    <link>https://crisus.nl/#u-20261112-0022</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261112-0022</guid>
+    <pubDate>Thu, 12 Nov 2026 00:22:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>TCP2Shell: Ubuntu heeft het briefje. Crisusniveau 2.</strong> Op 10 november bracht Ubuntu de Ubuntu Security Notices uit bij de kernels die sinds 6 november al in de gewone updates stonden: <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011516.html" title="Ubuntu: USN-9018-1, Linux kernel vulnerabilities">USN-9018-1</a> voor 26.04 (<code>7.0.0-43.43</code>), <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011525.html" title="Ubuntu: USN-9022-1, Linux kernel vulnerabilities">USN-9022-1</a> voor 24.04 (<code>6.8.0-149.149</code>) en <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011527.html" title="Ubuntu: USN-9027-1, Linux kernel vulnerabilities">USN-9027-1</a> voor 22.04 (<code>5.15.0-203.213</code>), met daarna nog een rij voor de varianten voor Azure, AWS, NVIDIA en de Raspberry Pi. De kernels staan nu ook in <code>-security</code>, dus <code>unattended-upgrades</code> haalt ze vanzelf op. Alleen 20.04 en ouder, Ubuntu Pro, staan volgens de <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE-pagina</a> nog op &ldquo;work in progress&rdquo;. Daarmee heeft elke grote distributie de fix, met advisory. Crisusniveau 2: opletten. Wie nog niet heeft herstart, draait nog de oude kernel. Het briefje kwam vier dagen na de kernel. Bij Ubuntu heet dat op tijd.</p>]]></description>
+  </item>
   <item>
     <title>9 november 12:56 · Grote schoonmaak.</title>
     <link>https://crisus.nl/#u-20261109-1256</link>

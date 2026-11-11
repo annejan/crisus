@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <title>Crisus · TCP2Shell: a hole in Linux&rsquo;s TCP code (CVE-2026-98432)</title>
-<meta name="description" content="Crisus.nl: TCP2Shell (CVE-2026-98432), a bug in the Linux kernel's TCP code. Remote root, according to Anthropic, on servers with MPTCP. Since 6 November Ubuntu has a kernel with the fix too, without an advisory. Satire, but the facts are right.">
+<meta name="description" content="Crisus.nl: TCP2Shell (CVE-2026-98432), a bug in the Linux kernel's TCP code. Remote root, according to Anthropic, on servers with MPTCP. Since 10 November Ubuntu has the fix too, with an advisory. Satire, but the facts are right.">
 <meta property="og:title" content="Crisus · TCP2Shell: a hole in Linux&rsquo;s TCP code">
-<meta property="og:description" content="Crisis level 3: serious. TCP2Shell, a bug in Linux&rsquo;s TCP code: remote root on servers with MPTCP, which Go 1.24 turns on by default. Ubuntu now has the kernel too, without an advisory.">
+<meta property="og:description" content="Crisis level 2: alert. TCP2Shell, a bug in Linux&rsquo;s TCP code: remote root on servers with MPTCP, which Go 1.24 turns on by default. Ubuntu now has the fix too, with an advisory.">
 <meta property="og:url" content="https://crisus.nl/en/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Crisus">
@@ -36,7 +36,7 @@
 </head>
 <body>
 <a class="skip" href="#inhoud">Skip to the status</a>
-<div class="tape" aria-hidden="true"><p><span>CAUTION · CRISUS · STAY CALM · TCP2SHELL · CAUTION · CRISUS · UBUNTU HAS THE KERNEL · NO NOTICE · CAUTION · CRISUS · REBOOT · CAUTION · CRISUS · GO SPEAKS MPTCP · CAUTION · CRISUS · IT IS A RACE · CAUTION · CRISUS · STAY CALM · TCP2SHELL · CAUTION · CRISUS · UBUNTU HAS THE KERNEL · NO NOTICE · CAUTION · CRISUS · REBOOT · CAUTION · CRISUS · GO SPEAKS MPTCP · CAUTION · CRISUS · IT IS A RACE · </span></p></div>
+<div class="tape" aria-hidden="true"><p><span>CAUTION · CRISUS · STAY CALM · TCP2SHELL · CAUTION · CRISUS · UBUNTU HAS THE NOTICE · LEVEL 2 · CAUTION · CRISUS · REBOOT · CAUTION · CRISUS · GO SPEAKS MPTCP · CAUTION · CRISUS · IT IS A RACE · CAUTION · CRISUS · STAY CALM · TCP2SHELL · CAUTION · CRISUS · UBUNTU HAS THE NOTICE · LEVEL 2 · CAUTION · CRISUS · REBOOT · CAUTION · CRISUS · GO SPEAKS MPTCP · CAUTION · CRISUS · IT IS A RACE · </span></p></div>
 
 <header>
   <div class="wrap">
@@ -68,17 +68,17 @@
 <main id="inhoud" class="wrap">
   <p class="kicker">Crisus · <time datetime="2026-11-07T06:00:00+01:00">status of 7 November, 06:00</time> · <a href="/" title="Crisus: de actuele stand (in Dutch)">hourly updates in Dutch</a></p>
   <h1>TCP2Shell: a hole in Linux&rsquo;s TCP code</h1>
-  <p class="lead">A bug in the way the Linux kernel sets up a TCP connection: TCP2Shell. According to Anthropic, an attacker can use it to get root remotely, without logging in, on a server with MPTCP. Debian, SUSE, Oracle, Amazon, Red Hat and AlmaLinux have the fix. Since 6 November Ubuntu too, for 22.04 up to and including 26.10: in the regular updates, <strong>without an advisory</strong>. Don&rsquo;t panic. Do update and reboot.</p>
+  <p class="lead">A bug in the way the Linux kernel sets up a TCP connection: TCP2Shell. According to Anthropic, an attacker can use it to get root remotely, without logging in, on a server with MPTCP. Debian, SUSE, Oracle, Amazon, Red Hat and AlmaLinux have the fix. Since 10 November Ubuntu too, with an advisory, for 22.04 up to and including 26.10. Don&rsquo;t panic. Do update and reboot.</p>
 
-  <p class="klok" id="klok"><b data-since="2026-10-15T00:00:00+02:00">15.10.2026</b><span>Since 15 October the fix has been in the kernel. Since 6 November it is in Ubuntu&rsquo;s updates too, without an advisory. Every minute on this clock is a minute that a server without a reboot still runs the old kernel. <a href="#stand" title="Is the fix there for me?">Is the fix there for me?</a></span></p>
+  <p class="klok" id="klok"><b data-since="2026-10-15T00:00:00+02:00">15.10.2026</b><span>Since 15 October the fix has been in the kernel. Since 10 November Ubuntu has an advisory for it too. Every minute on this clock is a minute that a server without a reboot still runs the old kernel. <a href="#stand" title="Is the fix there for me?">Is the fix there for me?</a></span></p>
 
   <section class="level" aria-labelledby="niveau">
-    <h2 id="niveau">Current crisis level: 3 of 5</h2>
+    <h2 id="niveau">Current crisis level: 2 of 5</h2>
     <ol class="zes">
       <li class="on"><b>0 · Business as usual</b>Everything hums. 50 Hz. Always.</li>
       <li class="on"><b>1 · Calm</b>Someone reads the changelog</li>
-      <li class="on"><b>2 · Alert</b>There is a Signal group</li>
-      <li class="now" aria-current="step"><b>3 · Serious</b>Status quo since 2001</li>
+      <li class="now" aria-current="step"><b>2 · Alert</b>There is a Signal group</li>
+      <li><b>3 · Serious</b>Status quo since 2001</li>
       <li><b>4 · Very serious</b>The manager asks if it works yet</li>
       <li><b>5 · Friday afternoon</b>Someone says: &ldquo;it&rsquo;s only a small change&rdquo;</li>
     </ol>
@@ -125,12 +125,12 @@ sudo ss -lnMp                   <span class="c"># which processes listen with MP
     </ol>
   </section>
 
-  <h2 id="stand">Status per platform, 7 November 06:00</h2>
+  <h2 id="stand">Status per platform, 12 November 00:22</h2>
   <ul class="status" aria-labelledby="stand">
     <li><b>Linux</b><span class="pill green">Fix available</span><em>5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 and 7.3, since 15 October.</em></li>
     <li><b>Debian 13</b><span class="pill green">Fix available</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">DSA-6568-1</a>: <code>linux 6.12.113-1</code>.</em></li>
     <li><b>Debian 12</b><span class="pill green">Fix available</span><em>DLA-4841-1: <code>linux 6.1.190-1</code>. The newer package <code>linux-6.12</code> since 22 October: DLA-4850-1, <code>6.12.113-1~deb12u1</code>.</em></li>
-    <li><b>Ubuntu</b><span class="pill orange">Partial</span><em>Since 6 November in the regular updates (<code>-updates</code>, not <code>-security</code>): <code>5.15.0-203.213</code> for 22.04, <code>6.8.0-149.149</code> for 24.04 and <code>7.0.0-43.43</code> for 26.04, see <a href="https://launchpad.net/ubuntu/+source/linux/+publishinghistory" title="Launchpad: linux in Ubuntu, publishing history">Launchpad</a>. For 26.10 <code>7.3.0-10.10</code>, in the updates since 28 October and in the security pocket since 2 November. No Ubuntu Security Notice yet; the <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE page</a> says &ldquo;Fixed&rdquo; only for 26.10 and still &ldquo;work in progress&rdquo; for 16.04 up to 26.04. Update and reboot.</em></li>
+    <li><b>Ubuntu</b><span class="pill green">Fix available</span><em>Since 10 November with an Ubuntu Security Notice: <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011527.html" title="Ubuntu: USN-9027-1, Linux kernel vulnerabilities">USN-9027-1</a> for 22.04 (<code>5.15.0-203.213</code>), <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011525.html" title="Ubuntu: USN-9022-1, Linux kernel vulnerabilities">USN-9022-1</a> for 24.04 (<code>6.8.0-149.149</code>) and <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011516.html" title="Ubuntu: USN-9018-1, Linux kernel vulnerabilities">USN-9018-1</a> for 26.04 (<code>7.0.0-43.43</code>), now in <code>-security</code> too. For 26.10 <code>7.3.0-10.10</code>. 20.04 and older (Ubuntu Pro) are still &ldquo;work in progress&rdquo; on the <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">CVE page</a>. Update and reboot.</em></li>
     <li><b>Red Hat</b><span class="pill green">Fix available</span><em>Since 1 November for RHEL 8, 9 and 10: RHSA-2026:93412 to 93415. Since 2 November also RHEL for NVIDIA 10 (RHSA-2026:93775) and RHEL 9.4 with extended support (RHSA-2026:94109), since 3 November RHEL 8.8 (RHSA-2026:94303), 9.6 (94438), 9.2 (94477 and 94558), 10.0 (94508) and 8.4 (94623) and since 4 November 8.6 (94996) with extended support. Since 6 November also OpenShift 4.22 (RHSA-2026:95346, version 4.22.22). OpenShift 4 on the RHEL 8 images, OpenShift 5 and RHEL AI 3 still say &ldquo;Affected&rdquo;, see the <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">CVE page</a> and the <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">bulletin</a>. RHEL 6 and 7 are not affected.</em></li>
     <li><b>AlmaLinux</b><span class="pill orange">Partial</span><em>AlmaLinux 8 since 2 November: <a href="https://errata.almalinux.org/8/ALSA-2026-93414.html" title="AlmaLinux: ALSA-2026:93414, kernel security update">ALSA-2026:93414</a> (<code>kernel 4.18.0-553.182.1.el8_10</code>) and <a href="https://errata.almalinux.org/8/ALSA-2026-93415.html" title="AlmaLinux: ALSA-2026:93415, kernel-rt security update">ALSA-2026:93415</a> (kernel-rt). Nothing in the errata yet for 9 and 10.</em></li>
     <li><b>SUSE</b><span class="pill orange">Partial</span><em>Most products have a fix, a few are still on the way, see the <a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">CVE page</a>.</em></li>

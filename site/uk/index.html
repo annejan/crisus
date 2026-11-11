@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <title>Crisus · TCP2Shell: вразливість у TCP-коді Linux (CVE-2026-98432)</title>
-<meta name="description" content="Crisus.nl: TCP2Shell (CVE-2026-98432), вразливість у TCP-коді ядра Linux. За даними Anthropic, вона дає віддалений root на серверах із MPTCP. З 6 листопада Ubuntu теж має ядро з виправленням, без повідомлення. Сатира, але факти правдиві.">
+<meta name="description" content="Crisus.nl: TCP2Shell (CVE-2026-98432), вразливість у TCP-коді ядра Linux. За даними Anthropic, вона дає віддалений root на серверах із MPTCP. З 10 листопада Ubuntu теж має виправлення, з повідомленням. Сатира, але факти правдиві.">
 <meta property="og:title" content="Crisus · TCP2Shell: вразливість у TCP-коді Linux">
-<meta property="og:description" content="Рівень кризи 3: серйозно. TCP2Shell, вразливість у TCP-коді Linux: віддалений root на серверах із MPTCP, який Go 1.24 вмикає за замовчуванням. Ubuntu тепер теж має ядро з виправленням, без повідомлення.">
+<meta property="og:description" content="Рівень кризи 2: увага. TCP2Shell, вразливість у TCP-коді Linux: віддалений root на серверах із MPTCP, який Go 1.24 вмикає за замовчуванням. Ubuntu тепер теж має виправлення, з повідомленням.">
 <meta property="og:url" content="https://crisus.nl/uk/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Crisus">
@@ -36,7 +36,7 @@
 </head>
 <body>
 <a class="skip" href="#inhoud">Одразу до стану</a>
-<div class="tape" aria-hidden="true"><p><span>УВАГА · CRISUS · БЕЗ ПАНІКИ · TCP2SHELL · УВАГА · CRISUS · UBUNTU МАЄ ЯДРО · БЕЗ ПОВІДОМЛЕННЯ · УВАГА · CRISUS · ПЕРЕЗАВАНТАЖТЕ · УВАГА · CRISUS · GO ГОВОРИТЬ MPTCP · УВАГА · CRISUS · ЦЕ ГОНКА · УВАГА · CRISUS · БЕЗ ПАНІКИ · TCP2SHELL · УВАГА · CRISUS · UBUNTU МАЄ ЯДРО · БЕЗ ПОВІДОМЛЕННЯ · УВАГА · CRISUS · ПЕРЕЗАВАНТАЖТЕ · УВАГА · CRISUS · GO ГОВОРИТЬ MPTCP · УВАГА · CRISUS · ЦЕ ГОНКА · </span></p></div>
+<div class="tape" aria-hidden="true"><p><span>УВАГА · CRISUS · БЕЗ ПАНІКИ · TCP2SHELL · УВАГА · CRISUS · UBUNTU МАЄ ПОВІДОМЛЕННЯ · РІВЕНЬ 2 · УВАГА · CRISUS · ПЕРЕЗАВАНТАЖТЕ · УВАГА · CRISUS · GO ГОВОРИТЬ MPTCP · УВАГА · CRISUS · ЦЕ ГОНКА · УВАГА · CRISUS · БЕЗ ПАНІКИ · TCP2SHELL · УВАГА · CRISUS · UBUNTU МАЄ ПОВІДОМЛЕННЯ · РІВЕНЬ 2 · УВАГА · CRISUS · ПЕРЕЗАВАНТАЖТЕ · УВАГА · CRISUS · GO ГОВОРИТЬ MPTCP · УВАГА · CRISUS · ЦЕ ГОНКА · </span></p></div>
 
 <header>
   <div class="wrap">
@@ -67,17 +67,17 @@
 <main id="inhoud" class="wrap">
   <p class="kicker">Crisus · <time datetime="2026-11-07T06:00:00+01:00">стан на 7 листопада, 06:00</time> · <a href="/" title="Crisus: de actuele stand (нідерландською)">щогодинні оновлення нідерландською</a></p>
   <h1>TCP2Shell: вразливість у TCP-коді Linux</h1>
-  <p class="lead">Вразливість у тому, як ядро Linux встановлює TCP-зʼєднання: TCP2Shell. За даними Anthropic, зловмисник може з її допомогою віддалено отримати root, без входу в систему, на сервері з MPTCP. Debian, SUSE, Oracle, Amazon, Red Hat і AlmaLinux вже мають виправлення. З 6 листопада Ubuntu теж, для версій від 22.04 до 26.10: у звичайних оновленнях, <strong>без повідомлення</strong>. Без паніки. Але оновіть і перезавантажте.</p>
+  <p class="lead">Вразливість у тому, як ядро Linux встановлює TCP-зʼєднання: TCP2Shell. За даними Anthropic, зловмисник може з її допомогою віддалено отримати root, без входу в систему, на сервері з MPTCP. Debian, SUSE, Oracle, Amazon, Red Hat і AlmaLinux вже мають виправлення. З 10 листопада Ubuntu теж, з повідомленням, для версій від 22.04 до 26.10. Без паніки. Але оновіть і перезавантажте.</p>
 
-  <p class="klok" id="klok"><b data-since="2026-10-15T00:00:00+02:00">15.10.2026</b><span>З 15 жовтня виправлення є в ядрі. З 6 листопада воно є і в оновленнях Ubuntu, без повідомлення. Кожна хвилина на цьому годиннику є хвилиною, коли сервер без перезавантаження досі працює на старому ядрі. <a href="#stand" title="Чи є виправлення для мене?">Чи є виправлення для мене?</a></span></p>
+  <p class="klok" id="klok"><b data-since="2026-10-15T00:00:00+02:00">15.10.2026</b><span>З 15 жовтня виправлення є в ядрі. З 10 листопада Ubuntu теж має до нього повідомлення. Кожна хвилина на цьому годиннику є хвилиною, коли сервер без перезавантаження досі працює на старому ядрі. <a href="#stand" title="Чи є виправлення для мене?">Чи є виправлення для мене?</a></span></p>
 
   <section class="level" aria-labelledby="niveau">
-    <h2 id="niveau">Поточний рівень кризи: 3 з 5</h2>
+    <h2 id="niveau">Поточний рівень кризи: 2 з 5</h2>
     <ol class="zes">
       <li class="on"><b>0 · Усе як завжди</b>Усе гуде. 50 Гц. Завжди.</li>
       <li class="on"><b>1 · Спокійно</b>Хтось читає список змін</li>
-      <li class="on"><b>2 · Увага</b>Є група в Signal</li>
-      <li class="now" aria-current="step"><b>3 · Серйозно</b>Статус-кво з 2001 року</li>
+      <li class="now" aria-current="step"><b>2 · Увага</b>Є група в Signal</li>
+      <li><b>3 · Серйозно</b>Статус-кво з 2001 року</li>
       <li><b>4 · Дуже серйозно</b>Керівник питає, чи вже працює</li>
       <li><b>5 · Пʼятниця по обіді</b>Хтось каже: &laquo;це лише маленька зміна&raquo;</li>
     </ol>
@@ -124,12 +124,12 @@ sudo ss -lnMp                   <span class="c"># які процеси слух
     </ol>
   </section>
 
-  <h2 id="stand">Стан за платформами, 7 листопада, 06:00</h2>
+  <h2 id="stand">Стан за платформами, 12 листопада, 00:22</h2>
   <ul class="status" aria-labelledby="stand">
     <li><b>Linux</b><span class="pill green">Є виправлення</span><em>5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 і 7.3, з 15 жовтня.</em></li>
     <li><b>Debian 13</b><span class="pill green">Є виправлення</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">DSA-6568-1</a>: <code>linux 6.12.113-1</code>.</em></li>
     <li><b>Debian 12</b><span class="pill green">Є виправлення</span><em>DLA-4841-1: <code>linux 6.1.190-1</code>. Новіший пакет <code>linux-6.12</code> з 22 жовтня: DLA-4850-1, <code>6.12.113-1~deb12u1</code>.</em></li>
-    <li><b>Ubuntu</b><span class="pill orange">Частково</span><em>З 6 листопада у звичайних оновленнях (<code>-updates</code>, а не <code>-security</code>): <code>5.15.0-203.213</code> для 22.04, <code>6.8.0-149.149</code> для 24.04 і <code>7.0.0-43.43</code> для 26.04, див. <a href="https://launchpad.net/ubuntu/+source/linux/+publishinghistory" title="Launchpad: linux in Ubuntu, publishing history">Launchpad</a>. Для 26.10 <code>7.3.0-10.10</code>, в оновленнях з 28 жовтня і в security-pocket з 2 листопада. Ubuntu Security Notice ще немає; <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">сторінка CVE</a> позначає &laquo;Fixed&raquo; лише 26.10, а від 16.04 до 26.04 досі &laquo;work in progress&raquo;. Оновіть і перезавантажте.</em></li>
+    <li><b>Ubuntu</b><span class="pill green">Є виправлення</span><em>З 10 листопада з Ubuntu Security Notice: <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011527.html" title="Ubuntu: USN-9027-1, Linux kernel vulnerabilities">USN-9027-1</a> для 22.04 (<code>5.15.0-203.213</code>), <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011525.html" title="Ubuntu: USN-9022-1, Linux kernel vulnerabilities">USN-9022-1</a> для 24.04 (<code>6.8.0-149.149</code>) і <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011516.html" title="Ubuntu: USN-9018-1, Linux kernel vulnerabilities">USN-9018-1</a> для 26.04 (<code>7.0.0-43.43</code>), тепер і в <code>-security</code>. Для 26.10 <code>7.3.0-10.10</code>. 20.04 і старші (Ubuntu Pro) на <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">сторінці CVE</a> досі &laquo;work in progress&raquo;. Оновіть і перезавантажте.</em></li>
     <li><b>Red Hat</b><span class="pill green">Є виправлення</span><em>З 1 листопада для RHEL 8, 9 і 10: RHSA-2026:93412–93415. З 2 листопада також RHEL for NVIDIA 10 (RHSA-2026:93775) і RHEL 9.4 з подовженою підтримкою (RHSA-2026:94109), з 3 листопада RHEL 8.8 (RHSA-2026:94303), 9.6 (94438), 9.2 (94477 і 94558), 10.0 (94508) і 8.4 (94623), з 4 листопада 8.6 (94996) з подовженою підтримкою. З 6 листопада також OpenShift 4.22 (RHSA-2026:95346, версія 4.22.22). OpenShift 4 на образах із RHEL 8, OpenShift 5 і RHEL AI 3 досі позначено &laquo;Affected&raquo;, див. <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">сторінку CVE</a> і <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">бюлетень</a>. RHEL 6 і 7 не вражено.</em></li>
     <li><b>AlmaLinux</b><span class="pill orange">Частково</span><em>AlmaLinux 8 з 2 листопада: <a href="https://errata.almalinux.org/8/ALSA-2026-93414.html" title="AlmaLinux: ALSA-2026:93414, kernel security update">ALSA-2026:93414</a> (<code>kernel 4.18.0-553.182.1.el8_10</code>) і <a href="https://errata.almalinux.org/8/ALSA-2026-93415.html" title="AlmaLinux: ALSA-2026:93415, kernel-rt security update">ALSA-2026:93415</a> (kernel-rt). Для 9 і 10 в ерратах ще нічого немає.</em></li>
     <li><b>SUSE</b><span class="pill orange">Частково</span><em>Для більшості продуктів виправлення є, кілька ще готуються, див. <a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">сторінку CVE</a>.</em></li>
