@@ -38,5 +38,8 @@ if [ "$digest" = "$last_digest" ] && [ -n "$last_full" ] &&
 	exit 1
 fi
 echo "$digest $now" > "$STATE"
+# Keep what the sources said, so the next run can tell what changed.
+[ -f "$STATE.src" ] && mv "$STATE.src" "$STATE.src.prev"
+printf "%s\n" "$sources" > "$STATE.src"
 echo "quiet-check: sources changed (or ${max} h passed), round runs"
 exit 0
