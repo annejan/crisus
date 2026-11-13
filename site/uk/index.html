@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<title>Crisus · TCP2Shell: вразливість у TCP-коді Linux (CVE-2026-98432)</title>
-<meta name="description" content="Crisus.nl: TCP2Shell (CVE-2026-98432), вразливість у TCP-коді ядра Linux. За даними Anthropic, вона дає віддалений root на серверах із MPTCP. З 10 листопада Ubuntu теж має виправлення, з повідомленням. Сатира, але факти правдиві.">
-<meta property="og:title" content="Crisus · TCP2Shell: вразливість у TCP-коді Linux">
-<meta property="og:description" content="Рівень кризи 2: увага. TCP2Shell, вразливість у TCP-коді Linux: віддалений root на серверах із MPTCP, який Go 1.24 вмикає за замовчуванням. Ubuntu тепер теж має виправлення, з повідомленням.">
+<title>Crisus · Нової кризи немає. Але триває війна.</title>
+<meta name="description" content="Crisus.nl: нової кризи в інтернеті немає, але триває війна. Росія веде її проти України з 2014 року, годинники йдуть. Сатира, але факти правдиві.">
+<meta property="og:title" content="Crisus · Нової кризи немає. Але триває війна.">
+<meta property="og:description" content="Нової кризи немає, але триває війна. Рівень кризи 3: серйозно, статус-кво з 2001 року. Війна в Україні триває.">
 <meta property="og:url" content="https://crisus.nl/uk/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="uk_UA">
-<meta property="og:image" content="https://crisus.nl/og.png?v=8">
+<meta property="og:image" content="https://crisus.nl/og.png?v=9">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Crisus: TCP2Shell, вразливість у TCP-коді Linux. Рівень кризи 3 з 5: серйозно.">
+<meta property="og:image:alt" content="Crisus: нової кризи немає, але триває війна. Рівень кризи 3 з 5.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://crisus.nl/og.png?v=8">
+<meta name="twitter:image" content="https://crisus.nl/og.png?v=9">
 <meta name="theme-color" content="#ffd400">
 <link rel="canonical" href="https://crisus.nl/uk/">
 <link rel="alternate" hreflang="nl" href="https://crisus.nl/">
@@ -26,17 +26,17 @@
 <link rel="alternate" hreflang="x-default" href="https://crisus.nl/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/crisus.css?v=23">
-<script src="/crisus.js?v=12" defer></script>
+<script src="/crisus.js?v=13" defer></script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "TCP2Shell: вразливість у TCP-коді Linux", "url": "https://crisus.nl/uk/", "inLanguage": "uk",
- "description": "TCP2Shell (CVE-2026-98432), вразливість у TCP-коді ядра Linux: віддалений root на серверах із MPTCP, і що з цим робити. Сатира, але факти правдиві.",
+{"@context": "https://schema.org", "@type": "WebPage", "name": "Нової кризи немає. Але триває війна.", "url": "https://crisus.nl/uk/", "inLanguage": "uk",
+ "description": "Нової кризи в інтернеті немає, але триває війна Росії проти України. Сатира, але факти правдиві.",
  "isPartOf": {"@type": "WebSite", "name": "Crisus", "url": "https://crisus.nl/"},
  "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"}}
 </script>
 </head>
-<body>
+<body class="rust">
 <a class="skip" href="#inhoud">Одразу до стану</a>
-<div class="tape" aria-hidden="true"><p><span>УВАГА · CRISUS · БЕЗ ПАНІКИ · TCP2SHELL · УВАГА · CRISUS · UBUNTU МАЄ ПОВІДОМЛЕННЯ · РІВЕНЬ 2 · УВАГА · CRISUS · ПЕРЕЗАВАНТАЖТЕ · УВАГА · CRISUS · GO ГОВОРИТЬ MPTCP · УВАГА · CRISUS · ЦЕ ГОНКА · УВАГА · CRISUS · БЕЗ ПАНІКИ · TCP2SHELL · УВАГА · CRISUS · UBUNTU МАЄ ПОВІДОМЛЕННЯ · РІВЕНЬ 2 · УВАГА · CRISUS · ПЕРЕЗАВАНТАЖТЕ · УВАГА · CRISUS · GO ГОВОРИТЬ MPTCP · УВАГА · CRISUS · ЦЕ ГОНКА · </span></p></div>
+<div class="tape" aria-hidden="true"><p><span>СЕРЙОЗНО · СТАТУС-КВО З 2001 РОКУ · НОВОЇ КРИЗИ НЕМАЄ · АЛЕ ТРИВАЄ ВІЙНА · ОНОВЛЮЙТЕСЯ · РЕЗЕРВНУ КОПІЮ ТЕЖ · УВАГА · CRISUS · 50 ГЦ · ВІЙНА ТРИВАЄ · СЕРЙОЗНО · СТАТУС-КВО З 2001 РОКУ · НОВОЇ КРИЗИ НЕМАЄ · АЛЕ ТРИВАЄ ВІЙНА · ОНОВЛЮЙТЕСЯ · РЕЗЕРВНУ КОПІЮ ТЕЖ · УВАГА · CRISUS · 50 ГЦ · ВІЙНА ТРИВАЄ ·</span></p></div>
 
 <header>
   <div class="wrap">
@@ -56,89 +56,29 @@
 <nav class="spring" aria-label="На цій сторінці">
   <ul>
     <li><a href="#niveau" title="Рівень кризи">Рівень</a></li>
-    <li><a href="#wat" title="Що відбувається?">Що відбувається</a></li>
-    <li><a href="#doen" title="Що вам робити?">Що робити</a></li>
-    <li><a href="#stand" title="Стан за платформами">Платформи</a></li>
     <li><a href="#oorlog" title="Війна в Україні">Війна</a></li>
-    <li><a href="#bronnen" title="Джерела">Джерела</a></li>
+    <li><a href="#updates" title="Останнє оновлення">Оновлення</a></li>
+    <li><a href="#doen" title="Що вам робити?">Що робити</a></li>
   </ul>
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Crisus · <time datetime="2026-11-07T06:00:00+01:00">стан на 7 листопада, 06:00</time> · <a href="/" title="Crisus: de actuele stand (нідерландською)">щогодинні оновлення нідерландською</a></p>
-  <h1>TCP2Shell: вразливість у TCP-коді Linux</h1>
-  <p class="lead">Вразливість у тому, як ядро Linux встановлює TCP-зʼєднання: TCP2Shell. За даними Anthropic, зловмисник може з її допомогою віддалено отримати root, без входу в систему, на сервері з MPTCP. Debian, SUSE, Oracle, Amazon, Red Hat і AlmaLinux вже мають виправлення. З 10 листопада Ubuntu теж, з повідомленням, для версій від 22.04 до 26.10. Без паніки. Але оновіть і перезавантажте.</p>
-
-  <p class="klok" id="klok"><b data-since="2026-10-15T00:00:00+02:00">15.10.2026</b><span>З 15 жовтня виправлення є в ядрі. З 10 листопада Ubuntu теж має до нього повідомлення. Кожна хвилина на цьому годиннику є хвилиною, коли сервер без перезавантаження досі працює на старому ядрі. <a href="#stand" title="Чи є виправлення для мене?">Чи є виправлення для мене?</a></span></p>
+  <p class="kicker">Нової кризи немає · <time datetime="2026-11-13T23:30:00+01:00">оновлено 13 листопада, 23:30</time></p>
+  <h1>Нової кризи немає. Але триває війна.</h1>
+  <p class="lead">В інтернеті зараз нової кризи немає. Але триває війна: Росія веде її проти України з 2014 року. Офіційно Нідерланди не воюють. Але вони причетні, щонайпізніше від MH17. Тому рівень кризи становить 3.</p>
 
   <section class="level" aria-labelledby="niveau">
-    <h2 id="niveau">Поточний рівень кризи: 2 з 5</h2>
+    <h2 id="niveau">Поточний рівень кризи: 3 з 5</h2>
     <ol class="zes">
       <li class="on"><b>0 · Усе як завжди</b>Усе гуде. 50 Гц. Завжди.</li>
       <li class="on"><b>1 · Спокійно</b>Хтось читає список змін</li>
-      <li class="now" aria-current="step"><b>2 · Увага</b>Є група в Signal</li>
-      <li><b>3 · Серйозно</b>Статус-кво з 2001 року</li>
+      <li class="on"><b>2 · Увага</b>Є група в Signal</li>
+      <li class="now" aria-current="step"><b>3 · Серйозно</b>Статус-кво з 2001 року</li>
       <li><b>4 · Дуже серйозно</b>Керівник питає, чи вже працює</li>
       <li><b>5 · Пʼятниця по обіді</b>Хтось каже: &laquo;це лише маленька зміна&raquo;</li>
     </ol>
-    <p class="brom"><button id="brom" type="button" hidden aria-pressed="false" data-on="Вимкнути гудіння" data-off="Увімкнути гудіння">Увімкнути гудіння</button> Для тих, хто шукає спокою: 50 герц, як в електромережі. Тихо і лише після натискання.</p>
+    <p class="brom"><button id="brom" type="button" hidden aria-pressed="false" data-on="Вимкнути гудіння" data-off="Увімкнути гудіння">Увімкнути гудіння</button> Звук звичайного дня: 50 герц, як в електромережі. Тихо і лише після натискання.</p>
   </section>
-
-  <h2 id="wat">Що відбувається?</h2>
-  <dl class="feiten" aria-labelledby="wat">
-    <dt>Вразливість</dt>
-    <dd><a href="https://www.cve.org/CVERecord?id=CVE-2026-98432" title="CVE-2026-98432 on cve.org">CVE-2026-98432</a>: use-after-free у коді ядра для IPv4 TCP. Під час встановлення зʼєднання з IP-опціями (Record Route або Timestamp) ядро може прочитати памʼять, яку щойно звільнено, якщо повторно надісланий SYN одночасно обробляється на іншому процесорі. Вона існує з ядра 4.4, тобто з 2016 року. IPv6 не вражено.</dd>
-    <dt>Що таке MPTCP?</dt>
-    <dd>Multipath TCP: одне зʼєднання одразу через кілька мережевих шляхів, наприклад wifi і 4G на телефоні. Якщо один шлях зникає, зʼєднання продовжується через інший. Це розширення TCP (<a href="https://www.rfc-editor.org/rfc/rfc8684" title="RFC 8684: TCP Extensions for Multipath Operation with Multiple Addresses">RFC 8684</a>). Apple використовує його на iPhone з 2013 року, зокрема для Siri, а Linux підтримує його з ядра 5.6 (<a href="https://www.mptcp.dev/" title="Multipath TCP for Linux">mptcp.dev</a>, <a href="https://en.wikipedia.org/wiki/Multipath_TCP" title="Wikipedia: Multipath TCP">Wikipedia</a>). Для решти інтернету це виглядає як звичайний TCP. Дві дороги до Рима. І для зловмисника теж.</dd>
-    <dt>Чому воно увімкнене?</dt>
-    <dd>MPTCP є в ядрі, але програма має сама його попросити. Майже жодна програма цього не робить. Окрім усього, що написано на Go: починаючи з Go 1.24, що вийшов у лютому 2025 року, сервер на Go за замовчуванням просить у ядра MPTCP, як зазначено в <a href="https://go.dev/doc/go1.24" title="Go 1.24 Release Notes">примітках до випуску</a>. Програмісту нічого не треба робити, і зазвичай він про це навіть не знає. Сам Go не вразливий. Він лише відчиняє двері до тієї частини ядра, яка вразлива.</dd>
-    <dt>Що може зловмисник?</dt>
-    <dd>Frontier Red Team компанії Anthropic 27 жовтня написала, що ще не випущена модель Claude створила з її допомогою робочий експлойт: віддалено, без входу в систему, root на сервері з MPTCP-слухачем (<a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" title="Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude">Anthropic</a>). Витік вказівника ядра зайняв 48 хвилин, оболонка ще пʼять. Експлойт не опубліковано. Чи працює це без MPTCP, невідомо. Так, Claude є родичем автора цієї сторінки. Вдома ми про це ще не говорили.</dd>
-    <dt>Серйозність</dt>
-    <dd>CVSS 9,8 від команди CVE ядра. Red Hat спершу казав 8,1, &laquo;Important&raquo;: гонку важко виграти. З 30 жовтня Red Hat теж каже 9,8, &laquo;Critical&raquo;. Amazon тримається 8,1, Feedly 5,9. Чотири сторони, три числа. Усі чотири: оновлюйте.</dd>
-    <dt>Які версії?</dt>
-    <dd>Усе, починаючи з 4.4. Виправлення є у 5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 і 7.3.</dd>
-    <dt>Чи є атаки?</dt>
-    <dd><strong>Поки не помічено.</strong> Вразливості немає в каталозі KEV агентства CISA, а експлойт Anthropic не оприлюднено. Але хтось шукає: з 2 листопада дослідник Marcus Hutchins бачить сканування всього інтернету, що стукає на порт 443 через MPTCP (<a href="https://infosec.exchange/@malwaretech/117551155941056123" title="Marcus Hutchins on Mastodon, 3 November">Mastodon</a>, 3 листопада).</dd>
-    <dt>Чому TCP2Shell?</dt>
-    <dd>Власної назви вразливість не має. Після PHP2Shell і HTTP2Shell команда кризи вже не могла зупинитися.</dd>
-  </dl>
-
-  <section class="doen" aria-labelledby="doen">
-    <h2 id="doen">Що вам робити?</h2>
-    <p>Залишайтеся вдома. Тримайте двері зачиненими.</p>
-    <ol>
-      <li><strong>Перевірте, чи має ваше ядро виправлення.</strong> Debian 13 має <code>6.12.113-1</code>, Debian 12 має <code>6.1.190-1</code>. Ubuntu 22.04 має <code>5.15.0-203</code>, 24.04 має <code>6.8.0-149</code>, 26.04 має <code>7.0.0-43</code>, а 26.10 має <code>7.3.0-10</code>; ядра для версій від 22.04 до 26.04 є лише у звичайних оновленнях, а не в security-pocket, тож <code>unattended-upgrades</code> за замовчуванням їх не встановлює. Оновіть і перезавантажте, інакше працюватиме старе ядро:
-        <pre><code>uname -r
-sudo apt update &amp;&amp; sudo apt full-upgrade
-sudo reboot</code></pre></li>
-      <li><strong>Виправлення ще немає або ще не можете перезавантажити?</strong> (Ubuntu 20.04 і старіші.) Тоді не пропускайте TCP-пакети з опціями IPv4. Звичайний трафік їх не використовує; <a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a> уже радить їх відфільтровувати. Це правило від <a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF</a>:
-        <pre><code>sudo nft add table ip cve_2026_98432
-sudo nft add chain ip cve_2026_98432 pre '{ type filter hook prerouting priority -300; }'
-sudo nft add rule ip cve_2026_98432 pre meta l4proto tcp ip hdrlength gt 5 counter drop</code></pre>
-        Після перезавантаження воно зникне, якщо його не зберегти. Ваша мережа використовує мітки CIPSO (SELinux або Smack із NetLabel)? Тоді не застосовуйте його, їм ці опції потрібні.</li>
-      <li><strong>Маєте сервіси на Go?</strong> Вимкніть MPTCP, доки ядро не буде оновлено, і перезапустіть сервіс:
-        <pre><code>GODEBUG=multipathtcp=0          <span class="c"># Go 1.24 і новіші</span>
-sudo ss -lnMp                   <span class="c"># які процеси слухають із MPTCP?</span></code></pre></li>
-      <li>Не натискайте на посилання в листах про цю вразливість. Ми ніколи не надсилаємо листів. А якби надсилали, то лише одним шляхом.</li>
-    </ol>
-  </section>
-
-  <h2 id="stand">Стан за платформами, 12 листопада, 00:22</h2>
-  <ul class="status" aria-labelledby="stand">
-    <li><b>Linux</b><span class="pill green">Є виправлення</span><em>5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 і 7.3, з 15 жовтня.</em></li>
-    <li><b>Debian 13</b><span class="pill green">Є виправлення</span><em><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">DSA-6568-1</a>: <code>linux 6.12.113-1</code>.</em></li>
-    <li><b>Debian 12</b><span class="pill green">Є виправлення</span><em>DLA-4841-1: <code>linux 6.1.190-1</code>. Новіший пакет <code>linux-6.12</code> з 22 жовтня: DLA-4850-1, <code>6.12.113-1~deb12u1</code>.</em></li>
-    <li><b>Ubuntu</b><span class="pill green">Є виправлення</span><em>З 10 листопада з Ubuntu Security Notice: <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011527.html" title="Ubuntu: USN-9027-1, Linux kernel vulnerabilities">USN-9027-1</a> для 22.04 (<code>5.15.0-203.213</code>), <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011525.html" title="Ubuntu: USN-9022-1, Linux kernel vulnerabilities">USN-9022-1</a> для 24.04 (<code>6.8.0-149.149</code>) і <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011516.html" title="Ubuntu: USN-9018-1, Linux kernel vulnerabilities">USN-9018-1</a> для 26.04 (<code>7.0.0-43.43</code>), тепер і в <code>-security</code>. Для 26.10 <code>7.3.0-10.10</code>. 20.04 і старші (Ubuntu Pro) на <a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">сторінці CVE</a> досі &laquo;work in progress&raquo;. Оновіть і перезавантажте.</em></li>
-    <li><b>Red Hat</b><span class="pill green">Є виправлення</span><em>З 1 листопада для RHEL 8, 9 і 10: RHSA-2026:93412–93415. З 2 листопада також RHEL for NVIDIA 10 (RHSA-2026:93775) і RHEL 9.4 з подовженою підтримкою (RHSA-2026:94109), з 3 листопада RHEL 8.8 (RHSA-2026:94303), 9.6 (94438), 9.2 (94477 і 94558), 10.0 (94508) і 8.4 (94623), з 4 листопада 8.6 (94996) з подовженою підтримкою. З 6 листопада також OpenShift 4.22 (RHSA-2026:95346, версія 4.22.22). OpenShift 4 на образах із RHEL 8, OpenShift 5 і RHEL AI 3 досі позначено &laquo;Affected&raquo;, див. <a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">сторінку CVE</a> і <a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">бюлетень</a>. RHEL 6 і 7 не вражено.</em></li>
-    <li><b>AlmaLinux</b><span class="pill orange">Частково</span><em>AlmaLinux 8 з 2 листопада: <a href="https://errata.almalinux.org/8/ALSA-2026-93414.html" title="AlmaLinux: ALSA-2026:93414, kernel security update">ALSA-2026:93414</a> (<code>kernel 4.18.0-553.182.1.el8_10</code>) і <a href="https://errata.almalinux.org/8/ALSA-2026-93415.html" title="AlmaLinux: ALSA-2026:93415, kernel-rt security update">ALSA-2026:93415</a> (kernel-rt). Для 9 і 10 в ерратах ще нічого немає.</em></li>
-    <li><b>SUSE</b><span class="pill orange">Частково</span><em>Для більшості продуктів виправлення є, кілька ще готуються, див. <a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">сторінку CVE</a>.</em></li>
-    <li><b>Oracle Linux</b><span class="pill green">Є виправлення</span><em>Ядра UEK з 16 жовтня (ELSA-2026-500397–500399, новіші з 2 листопада). Сумісне з Red Hat ядро з 2 листопада для Oracle Linux 8, 9 і 10 (ELSA-2026-93414, 93412 і 93413), див. <a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">сторінку CVE</a>.</em></li>
-    <li><b>Amazon Linux</b><span class="pill green">Є виправлення</span><em>Усі ядра Amazon Linux 2 і 2023, стандартне ядро 2023 з 30 жовтня (ALAS2023-2026-3365), див. <a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">ALAS</a>.</em></li>
-    <li><b>Go</b><span class="pill orange">Перезапустіть</span><em>Починаючи з 1.24, MPTCP для слухачів увімкнено за замовчуванням. <code>GODEBUG=multipathtcp=0</code> його вимикає, див. <a href="https://go.dev/doc/godebug" title="Go: GODEBUG settings">опис GODEBUG</a>.</em></li>
-    <li><b>Crisus.nl</b><span class="pill green">Працює</span><em>Ні Node, ні PHP, ні Go. Просто HTML. Як у 1997 році.</em></li>
-  </ul>
-  <p class="note">Це скорочена версія. Оновлення, радар і попередні кризи є на <a href="/" title="Crisus: de actuele stand (нідерландською)">нідерландській сторінці</a>. Попередню кризу, PHP2Shell, закрито: <a href="/php/" title="Crisus: PHP2Shell, закрито (нідерландською)">crisus.nl/php</a> (нідерландською).</p>
 
   <h2 id="oorlog">Війна триває</h2>
   <p>Росія веде війну проти України з 2014 року. Ця війна не закінчилася. Ці годинники йдуть, доки вона не закінчиться.</p>
@@ -150,24 +90,30 @@ sudo ss -lnMp                   <span class="c"># які процеси слух
   </div>
   <p class="note">Хочете допомогти? Підтримайте Україну, наприклад через <a href="https://www.aidtoukraine.nl/en/" title="Aid to Ukraine">Aid to Ukraine</a>.</p>
 
+  <h2 id="updates">Оновлення</h2>
+  <ol class="updates">
+    <li><time datetime="2026-11-13T23:30+01:00">13 листопада, 23:30</time>
+      <p><strong>TCP2Shell закрито.</strong> Debian, SUSE, Oracle, Amazon, Red Hat і AlmaLinux мають виправлення, а з 10 листопада й Ubuntu, з бюлетенем безпеки, для версій від 22.04 до 26.10. 12 листопада TCP2Shell знизився до рівня кризи 2, тож це вже не окрема криза. Тому на crisus.nl знову ця головна сторінка. Уся криза, з усіма оновленнями, лишається на <a href="/tcp2shell/" title="Crisus: TCP2Shell, закрито (нідерландською)">crisus.nl/tcp2shell</a> (нідерландською). Використовуєте Linux і ще не оновили систему та не перезавантажили її? Це останнє нагадування.</p>
+      <p>Рівень кризи знову 3: серйозно, статус-кво з 2001 року. Триває війна.</p></li>
+  </ol>
+
+  <section class="doen" aria-labelledby="doen">
+    <h2 id="doen">Що вам робити?</h2>
+    <p>Нічого особливого. У цьому й особливість.</p>
+    <ol>
+      <li><strong>Оновлюйтеся.</strong> Будь-коли, навіть коли нічого не відбувається. Саме тоді.</li>
+      <li><strong>Зробіть резервну копію.</strong> І хоч раз відновіть її. Копія, яку ви жодного разу не відновлювали, є лише надією.</li>
+      <li><strong>Менеджер паролів і двофакторна автентифікація.</strong> Наприклад, <a href="https://qtpass.org/" title="QtPass: графічний інтерфейс для pass">QtPass</a>, з <code>pass</code> і GPG під капотом.</li>
+      <li><strong>Увімкніть гудіння.</strong> Якщо вам надто тихо.</li>
+    </ol>
+  </section>
+
   <h2 id="bronnen">Джерела</h2>
   <ul class="bronnen" aria-labelledby="bronnen">
-    <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-98432" title="CVE-2026-98432 on cve.org">CVE-2026-98432</a>. Запис від команди CVE ядра, CVSS 9,8.</li>
-    <li><a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" title="Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude">Anthropic: Discovering and exploiting vulnerabilities in critical, real-world software with Claude</a>, 27 жовтня. Експлойт на серверах із MPTCP.</li>
-    <li><a href="https://go.dev/doc/go1.24" title="Go 1.24 Release Notes">Go 1.24 Release Notes</a>. ListenConfig за замовчуванням використовує MPTCP у Linux.</li>
-    <li><a href="https://go.dev/doc/godebug" title="Go: GODEBUG settings">Go: GODEBUG</a>. <code>multipathtcp=0</code> його вимикає.</li>
-    <li><a href="https://getrff.com/blog/cve-2026-98432-linux-tcp-ip-options-block/" title="RFF: CVE-2026-98432, how to block the Linux TCP bug">RFF: how to block the Linux TCP bug</a>. Правило nftables і його побічні ефекти.</li>
-    <li><a href="https://www.rfc-editor.org/rfc/rfc7126" title="RFC 7126: Recommendations on Filtering of IPv4 Packets Containing IPv4 Options">RFC 7126</a>. Чому IP-опції можна відкидати на межі мережі.</li>
-    <li><a href="https://www.rfc-editor.org/rfc/rfc8684" title="RFC 8684: TCP Extensions for Multipath Operation with Multiple Addresses">RFC 8684</a>. Що таке MPTCP.</li>
-    <li><a href="https://security-tracker.debian.org/tracker/CVE-2026-98432" title="Debian: CVE-2026-98432">Debian security tracker</a>: DSA-6568-1, DLA-4841-1 і DLA-4850-1.</li>
-    <li><a href="https://ubuntu.com/security/CVE-2026-98432" title="Ubuntu: CVE-2026-98432">Ubuntu: CVE-2026-98432</a>: 26.10 fixed у 7.3.0-10.10, від 16.04 до 26.04 work in progress, USN ще немає.</li>
-    <li><a href="https://launchpad.net/ubuntu/+source/linux/+publishinghistory" title="Launchpad: linux in Ubuntu, publishing history">Launchpad: linux в Ubuntu</a>: 5.15.0-203.213, 6.8.0-149.149 і 7.0.0-43.43 в оновленнях з 6 листопада, 7.3.0-10.10 з 28 жовтня; списки змін із виправленням.</li>
-    <li><a href="https://access.redhat.com/security/cve/CVE-2026-98432" title="Red Hat: CVE-2026-98432">Red Hat: CVE-2026-98432</a>: Critical, 9,8, виправлення для RHEL 8, 9 і 10 (RHSA-2026:93412–93415), RHEL for NVIDIA 10 (RHSA-2026:93775), RHEL 9.4, 8.8, 9.6, 9.2, 10.0, 8.4 та 8.6 з подовженою підтримкою (RHSA-2026:94109, 94303, 94438, 94477, 94558, 94508, 94623 і 94996) та OpenShift 4.22 (RHSA-2026:95346).</li>
-    <li><a href="https://access.redhat.com/security/vulnerabilities/RHSB-2026-016" title="Red Hat: RHSB-2026-016">Red Hat: RHSB-2026-016</a>: бюлетень із правилом nftables.</li>
-    <li><a href="https://www.suse.com/security/cve/CVE-2026-98432.html" title="SUSE: CVE-2026-98432">SUSE: CVE-2026-98432</a>: більшість продуктів мають виправлення.</li>
-    <li><a href="https://linux.oracle.com/cve/CVE-2026-98432.html" title="Oracle Linux: CVE-2026-98432">Oracle Linux: CVE-2026-98432</a>: ядра UEK, а також сумісне з Red Hat ядро Oracle Linux 8, 9 і 10 (ELSA-2026-93414, 93412 і 93413).</li>
-    <li><a href="https://errata.almalinux.org/8/ALSA-2026-93414.html" title="AlmaLinux: ALSA-2026:93414, kernel security update">AlmaLinux: ALSA-2026:93414</a> і <a href="https://errata.almalinux.org/8/ALSA-2026-93415.html" title="AlmaLinux: ALSA-2026:93415, kernel-rt security update">ALSA-2026:93415</a>: ядра AlmaLinux 8.</li>
-    <li><a href="https://explore.alas.aws.amazon.com/CVE-2026-98432.html" title="Amazon Linux: CVE-2026-98432">Amazon Linux: CVE-2026-98432</a>: усі ядра Amazon Linux 2 і 2023.</li>
+    <li><a href="https://uk.wikipedia.org/wiki/Анексія_Криму_(2014)" title="Вікіпедія: Анексія Криму (2014)">Вікіпедія: Анексія Криму (2014)</a> і <a href="https://en.wikipedia.org/wiki/2014_Russian_annexation_of_Crimea" title="Wikipedia: 2014 Russian annexation of Crimea">англійською</a>. Закон 2015 року, що визначає 20 лютого 2014 року початком окупації, і медаль.</li>
+    <li><a href="https://uk.wikipedia.org/wiki/Бої_за_Слов%27янськ_(2014)" title="Вікіпедія: Бої за Словʼянськ (2014)">Вікіпедія: Бої за Словʼянськ (2014)</a>. 12 квітня 2014 року, початок війни на Донбасі.</li>
+    <li><a href="https://uk.wikipedia.org/wiki/MH17" title="Вікіпедія: MH17">Вікіпедія: MH17</a>. 17 липня 2014 року, 298 загиблих, серед них 196 громадян Нідерландів, і вирок 2022 року.</li>
+    <li><a href="https://uk.wikipedia.org/wiki/Російське_вторгнення_в_Україну_(2022)" title="Вікіпедія: Російське вторгнення в Україну (2022)">Вікіпедія: Російське вторгнення в Україну (2022)</a>. 24 лютого 2022 року, незадовго до 05:00 за київським часом.</li>
   </ul>
 </main>
 

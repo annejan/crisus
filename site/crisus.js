@@ -49,7 +49,8 @@
   // A range of updates (from and to: YYYYMMDDHHMM), or single updates that moved later.
   var ARCHIVES = [
     { from: '202610200000', to: '202610232200', path: '/php/' },
-    { from: '202610232250', to: '202610301117', path: '/brotli/' }
+    { from: '202610232250', to: '202610301117', path: '/brotli/' },
+    { from: '202610301201', to: '202611132330', path: '/tcp2shell/' }
   ];
   var MOVED = { 'u-20261030-2100': '/php/', 'u-20261102-1000': '/php/', 'u-20261106-1400': '/php/', 'u-20261106-1600': '/php/' };
   var m = /^#u-(\d{8})-(\d{4})$/.exec(location.hash), id = location.hash.slice(1);
