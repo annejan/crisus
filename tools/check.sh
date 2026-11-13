@@ -24,27 +24,6 @@ curl -s 'https://access.redhat.com/hydra/rest/securitydata/csaf.json?cve=CVE-202
   | python3 -I -c 'import json,sys; a=json.load(sys.stdin); print("rh", len(a), "RHSA:", " ".join(sorted(x["RHSA"] for x in a)))'
 curl -s https://www.suse.com/security/cve/CVE-2026-109618.html \
   | python3 -I -c 'import re,sys,collections; t=re.sub(r"<[^>]+>"," ",sys.stdin.read()); print("suse", dict(collections.Counter(re.findall(r"\b(Released|Pending|In progress)\b", t))))'
-# TCP2Shell (CVE-2026-98432, the Linux kernel): every row of "Stand per platform".
-echo "== TCP2Shell"
-curl -s --max-time 30 https://ubuntu.com/security/cves/CVE-2026-98432.json | python3 -I -c 'import json,sys,collections
-d=json.load(sys.stdin); r=collections.defaultdict(list)
-for p in d["packages"]:
-    if p["name"]=="linux":
-        for s in p["statuses"]: r[s["status"]].append(s["release_codename"])
-print("ubuntu", d.get("updated_at","")[:16], dict(r), "USN:", " ".join(n["id"] for n in d.get("notices",[])) or "-")'
-curl -s --max-time 30 'https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2026-98432.json' | python3 -I -c 'import json,sys
-d=json.load(sys.stdin); print("rh", d.get("threat_severity"), (d.get("cvss3") or {}).get("cvss3_base_score"), "RHSA:", " ".join(sorted({x.get("advisory","") for x in d.get("affected_release",[])})) or "-", "still affected:", len(d.get("package_state",[])))'
-curl -s --max-time 30 https://www.suse.com/security/cve/CVE-2026-98432.html \
-  | python3 -I -c 'import re,sys,collections; t=re.sub(r"<[^>]+>"," ",sys.stdin.read()); print("suse", dict(collections.Counter(re.findall(r"\b(Released|Pending|In progress)\b", t))))'
-curl -s --max-time 30 https://security-tracker.debian.org/tracker/CVE-2026-98432 | python3 -I -c 'import re,sys,html
-t=html.unescape(re.sub(r"<[^>]+>","\t",sys.stdin.read()))
-print("debian", " ".join(f"{a}:{b}:{c}" for a,b,c in sorted(set(re.findall(r"\t(bullseye|bookworm|trixie|forky|sid)[^\t]*\t+([0-9][^\t]*)\t+(fixed|vulnerable)",t)))))'
-curl -s --max-time 30 https://explore.alas.aws.amazon.com/CVE-2026-98432.html | python3 -I -c 'import re,sys,collections
-t=re.sub(r"<[^>]+>"," ",sys.stdin.read()); print("alas", dict(collections.Counter(re.findall(r"\b(Fixed|Pending Fix|Not Affected|Under Investigation)\b", t))), " ".join(sorted(set(re.findall(r"ALAS[0-9A-Z.-]+-2026-\d+", t)))))'
-echo "oracle $(curl -s --max-time 30 https://linux.oracle.com/cve/CVE-2026-98432.html | grep -o 'ELSA-2026-[0-9]*' | sort -u | tr '\n' ' ')"
-for v in 8 9 10; do curl -s --max-time 60 https://errata.almalinux.org/$v/errata.full.json | python3 -I -c 'import json,sys
-d=json.load(sys.stdin); d=d.get("data",d) if isinstance(d,dict) else d
-print("alma"+sys.argv[1], [e.get("updateinfo_id") or e.get("id") for e in d if "CVE-2026-98432" in json.dumps(e)][:3])' $v; done
 echo "== Node distro"; echo "debian trixie nodejs: $(pkg http://security.debian.org/debian-security/dists/trixie-security/main/binary-amd64/Packages.xz nodejs)  ubuntu resolute-security nodejs: $(pkg http://security.ubuntu.com/ubuntu/dists/resolute-security/main/binary-amd64/Packages.xz nodejs)"
 echo "== sites"
 for u in https://www.digid.nl/ https://mijn.overheid.nl/ https://www.ncsc.nl/ https://www.tweedekamer.nl/ https://www.knvb.nl/ https://www.kwf.nl/ https://www.amnesty.nl/; do
