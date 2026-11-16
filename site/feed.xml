@@ -6,7 +6,15 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Fri, 13 Nov 2026 23:30:00 +0100</lastBuildDate>
+  <lastBuildDate>Mon, 16 Nov 2026 05:00:00 +0100</lastBuildDate>
+  <item>
+    <title>16 november 05:00 · PHP2Shell op de firewall van Check Point, met root en een wiper.</title>
+    <link>https://crisus.nl/#u-20261116-0500</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261116-0500</guid>
+    <pubDate>Mon, 16 Nov 2026 05:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>PHP2Shell op de firewall van Check Point, met root en een wiper.</strong> Aanvallers kwamen via de PHP2Shell-lekken (CVE-2026-109618 en CVE-2026-109619) binnen op gateways van Check Point en werden daarna root met een tweede lek, in de DynamicCLI-interface van Gaia: CVE-2026-123039, schrijft <a href="https://research.checkpoint.com/2026/php2shell-exploitation-on-check-point-gateway/" title="Check Point Research: PHP2Shell exploitation on Check Point gateway">Check Point Research</a> op 12 november. &ldquo;The first wave, on October 30, targeted Israeli organizations and included destructive activity against some of them.&rdquo; In &eacute;&eacute;n geval gingen de aanvallers vanaf de gateway via SSH naar een VMware ESXi-host en draaiden daar de wiper destroy_v6, die bestanden overschrijft en wist. Check Point zag het lek &ldquo;against a couple of dozen customers&rdquo; misbruikt worden, staat in <a href="https://support.checkpoint.com/results/sk/sk1000362" title="Check Point: sk1000362">sk1000362</a>. Geraakt zijn gateways, management- en logservers, Multi-Domain en Maestro Orchestrator op R81 tot en met R82.20; Spark en Smart-1 Cloud niet. De fix zit in de Jumbo Hotfix Accumulator vanaf Take 174 (R81.20), Take 132 (R82), Take 52 (R82.10) en Take 14 (R82.20). Voor R81 en R81.10, allebei end-of-support, noemt Check Point geen fix, alleen de omweg: het proces <code>dynamic_server</code> stoppen en uit laten. CISA zette CVE-2026-123039 op 13 november op de <a href="https://www.cisa.gov/news-events/alerts/2026/11/13/cisa-adds-two-known-exploited-vulnerabilities-catalog" title="CISA: CISA Adds Two Known Exploited Vulnerabilities to Catalog">KEV-lijst</a>. Een patch haalt geplaatste achterdeuren niet weg: controleer de gateway met de indicatoren van Check Point, schrijft <a href="https://www.heise.de/news/Angreifer-verketteten-PHP2Shell-mit-Root-Luecke-auf-Check-Point-Gateways-11525531.html" title="heise: Angreifer verketteten PHP2Shell mit Root-L&uuml;cke auf Check-Point-Gateways">heise</a>. Wie het deed, is onduidelijk: de achterdeuren lijken volgens heise op PhiliKit, dat ESET toeschrijft aan UNC5221, een groep met banden met China, maar Check Point sluit een valse vlag niet uit.</p>
+      <p>PHP2Shell staat afgesloten in het archief. De firewall had dat niet gelezen.</p>]]></description>
+  </item>
   <item>
     <title>13 november 23:30 · TCP2Shell is afgesloten.</title>
     <link>https://crisus.nl/#u-20261113-2330</link>
