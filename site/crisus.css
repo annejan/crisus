@@ -225,6 +225,15 @@ details.patch[open] > summary { margin-bottom: 14px; }
 .radar li { margin: 0 0 10px; padding: 12px 16px; border-left: 4px solid var(--yellow); background: var(--card); border-radius: 0 10px 10px 0; }
 .radar b { display: block; }
 .radar img { display: block; width: auto; max-width: min(100%, 320px); height: auto; margin: 10px 0 4px; border-radius: 8px; border: 1px solid var(--line); }
+.radar li { display: flow-root; }
+.radar li p { margin: 6px 0 0; }
+.radar figure { margin: 10px 0 4px; }
+.radar figure img { margin: 0 0 4px; }
+.radar figcaption { color: var(--muted); font-size: 14px; }
+@media (min-width: 700px) {
+  .radar figure.rechts { float: right; width: 220px; margin: 4px 0 8px 18px; }
+  .radar figure.rechts img { max-width: 100%; }
+}
 .radar li.rood { border-left-color: var(--red); background: var(--red-bg); color: var(--red); }
 .radar li.rood b { color: var(--red); }
 .radar .nu[hidden] { display: none; }
