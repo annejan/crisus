@@ -33,6 +33,7 @@ path = [
     "site/og-brotli.png",
     "site/og-tcp2shell.png",
     "site/museum/503/*.jpg",
+    "site/vvd-40.jpg",
     "README.md",
     "CONTRIBUTING.md",
 ]
