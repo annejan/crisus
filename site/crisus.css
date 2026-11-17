@@ -170,7 +170,7 @@ footer strong { color: var(--ink); }
 .spring li { flex: none; }
 .spring a { display: block; padding: 11px 0 10px; color: var(--muted); font-size: 14px; font-weight: 600; text-decoration: none; border-bottom: 3px solid transparent; }
 .spring a:hover, .spring a:focus-visible { color: var(--ink); border-bottom-color: var(--yellow); }
-h2[id], h3[id], section[id] { scroll-margin-top: 64px; }
+h2[id], h3[id], section[id], li[id] { scroll-margin-top: 64px; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
