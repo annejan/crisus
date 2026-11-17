@@ -11,6 +11,8 @@ FEEDS = {
     "Security.NL": "https://www.security.nl/rss/headlines.xml",
     "NOS Tech": "https://feeds.nos.nl/nosnieuwstech",
     "NOS": "https://feeds.nos.nl/nosnieuwsalgemeen",
+    # The cabinet crisis (radar item "Kabinet"): politics, own topics
+    "NOS Politiek": ("https://feeds.nos.nl/nosnieuwspolitiek", r"kabinet|jetten|yesilg|van den brink|coalitie|catshuis|buma|belastingplan|heinen|denk\b|vertrouwen|ministerraad|formatie|verkiezingen"),
     "Tweakers": "https://feeds.feedburner.com/tweakers/mixed",
     "NCSC": "https://advisories.ncsc.nl/rss/advisories",
     # International security press
