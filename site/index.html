@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
 <meta property="article:published_time" content="2026-11-13T23:30:00+01:00">
-<meta property="article:modified_time" content="2026-11-18T16:36:00+01:00">
+<meta property="article:modified_time" content="2026-11-18T16:38:00+01:00">
 <meta property="og:image" content="https://crisus.nl/og.png?v=9">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,7 +45,7 @@
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
   "datePublished": "2026-11-13T23:30:00+01:00",
-  "dateModified": "2026-11-18T16:36:00+01:00",
+  "dateModified": "2026-11-18T16:38:00+01:00",
   "coverageStartTime": "2026-11-13T23:30:00+01:00",
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
   "publisher": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
@@ -96,7 +96,7 @@
 </nav>
 
 <main id="inhoud" class="wrap">
-  <p class="kicker">Geen nieuwe crisus · <time datetime="2026-11-18T16:36:00+01:00">laatst bijgewerkt 18 november, 16:36</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <p class="kicker">Geen nieuwe crisus · <time datetime="2026-11-18T16:38:00+01:00">laatst bijgewerkt 18 november, 16:38</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
   <h1>Geen nieuwe crisus. Wel een oorlog.</h1>
   <p class="lead">Op internet is er op dit moment geen nieuwe crisus. Wel is er een oorlog: Rusland voert die al sinds 2014 tegen Oekra&iuml;ne. Nederland is officieel niet in oorlog. Betrokken is het wel, en op zijn laatst sinds MH17. Daarom staat het crisusniveau op 3.</p>
   <p class="vandaag" id="vandaag" hidden></p>
@@ -140,6 +140,7 @@
     <li id="nginx" class="rood"><b>nginx</b>
     <p>Twee lekken in de HTTP/2-code van nginx maken code uitvoeren op afstand zonder inloggen mogelijk, <a href="https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities" title="Wiz: Unauthenticated Remote Code Execution in NGINX: CVE-2026-123633 and CVE-2026-123007">schrijft Wiz</a>. CVE-2026-123633 is een use-after-free bij reverse proxying als de verbindingsslots opraken. CVE-2026-123007 is een integer underflow in het HTTP/2-sendwindow, die ook nginx raakt dat gewoon statische bestanden via HTTPS serveert. Beide krijgen een CVSS 4.0-score van 9.2. Wiz voerde code uit op offici&euml;le builds, ondanks ASLR. Het tweede lek zit er sinds nginx 1.9.5 uit 2015 in, het eerste sinds 1.19.7. Ook NGINX Plus is getroffen. Rapid7, Xint en anderen vonden dezelfde lekken. Misbruik in het wild is niet bekend en Wiz publiceert de exploits voorlopig niet.</p>
     <p>De fix zit in nginx 1.30.7 (stable) en 1.31.9 (mainline), en voor NGINX Plus in 37.0.8.1 en 37.3.0.1. F5 brengt die vandaag uit; op <a href="https://nginx.org/en/security_advisories.html" title="nginx security advisories">nginx.org</a> stonden ze om 16.36 uur nog niet. Kan updaten nog niet, zet dan HTTP/2 tijdelijk uit (<code>http2 off;</code> en <code>http2</code> weg uit de <code>listen</code>-regels), en herlaad nginx. HTTP/2 was bedoeld om het web sneller te maken. Status: Fix aangekondigd.</p>
+    <p>Update 16:38: Xint noemt het geheel <a href="https://nginx2root.com/" title="NGINX2Root by Xint">NGINX2Root</a> en telt vijf lekken in nginx, <a href="https://xint.io/blog/nginx2root-remote-code-execution" title="Xint: NGINX2Root, remote code execution in nginx">schrijft Xint</a>. Naast de twee HTTP/2-lekken zijn dat use-after-frees in HTTP/3 (CVE-2026-121810, sinds 1.25.0), in de mail-proxy met <code>auth_http</code> (CVE-2026-113425, sinds 0.5.15) en bij <code>mirror</code> met een <code>proxy_pass</code>-adres uit het verzoek (CVE-2026-123634, sinds 1.13.4). HTTP/2 uitzetten helpt alleen tegen de eerste twee. Xint koppelde een lek aan een nog ongepatcht lek in de SCTP-code van de Linux-kernel en kwam zo van nginx-worker tot root op de host, ook vanuit een Docker-container. De laatste stappen en de kernel-details houdt Xint achter. Na de update moet nginx volgens Xint opnieuw starten; herladen vervangt het draaiende programma niet. Van bezoeker tot beheerder in vijf stappen. Status: Fix aangekondigd.</p>
   </li>
     <li id="forgejo" class="rood"><b>Forgejo</b>
     <p>Forgejo had vandaag een beveiligingsrelease gepland, maar die is uitgesteld door &ldquo;urgent issues with Codeberg&rdquo;, <a href="https://floss.social/@forgejo/117636334439245475" title="Forgejo op Mastodon: security release uitgesteld">meldt Forgejo</a>. De patches waren tijdens het releaseproces even openbaar te zien. Versies en CVE-nummers noemt Forgejo nog niet. Wie de ingebouwde SSH-server gebruikt (Docker met <code>ssh.START_SSH_SERVER = true</code>), moet die volgens Forgejo voorlopig uitzetten of afschermen. De fix is dus al uitgelekt, alleen de release nog niet.</p>
