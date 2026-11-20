@@ -6,7 +6,14 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Mon, 16 Nov 2026 05:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Fri, 20 Nov 2026 21:00:00 +0100</lastBuildDate>
+  <item>
+    <title>20 november 21:00 · phpAfterShell heeft geen hulp van de applicatie nodig.</title>
+    <link>https://crisus.nl/#u-20261120-2100</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261120-2100</guid>
+    <pubDate>Fri, 20 Nov 2026 21:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>phpAfterShell heeft geen hulp van de applicatie nodig.</strong> Voor code uitvoeren via CVE-2026-126714 (half overschreven sessiebestanden) leek een bruikbare gadget chain in de applicatie nodig. Volgens de onderzoekers die het lek vonden niet: &ldquo;The full chain does not depend on an application-defined gadget class&rdquo;, schrijft <a href="https://depthfirst.com/research/phpaftershell" title="depthfirst: phpAfterShell">depthfirst</a> op 19 november. Ze koppelen het lek aan een tweede geheugenfout, in een klasse die bij PHP zelf hoort. Die fout houden ze nog geheim tot een gecoördineerde bekendmaking. Een CVE-nummer staat er niet bij en of die fout in de releases van 19 november is gedicht, zeggen ze niet. Ook <a href="https://blog.cloudflare.com/phpaftershell-waf-protection/" title="Cloudflare: How Cloudflare WAF helps protect against phpAfterShell and other critical PHP flaws">Cloudflare</a> noemt dat onduidelijk. Cloudflare paste op 19 november een bestaande WAF-regel aan voor phpAfterShell, maar schrijft dat de WAF het deserialiseren binnen PHP niet ziet: bijwerken en elke worker herstarten blijft de echte fix. Misbruik is volgens Cloudflare nog niet bekend, maar Cloudflare verwacht pogingen nu de details openbaar zijn. Op de lijst van 17 fixes komt dus misschien een achttiende, maar niemand zegt nog welke.</p>]]></description>
+  </item>
   <item>
     <title>16 november 05:00 · PHP2Shell op de firewall van Check Point, met root en een wiper.</title>
     <link>https://crisus.nl/#u-20261116-0500</link>
