@@ -6,7 +6,14 @@
   <atom:link href="https://crisus.nl/feed.xml" rel="self" type="application/rss+xml"/>
   <description>De updates van crisus.nl: satire, maar de feiten kloppen.</description>
   <language>nl</language>
-  <lastBuildDate>Fri, 20 Nov 2026 21:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Tue, 24 Nov 2026 05:00:00 +0100</lastBuildDate>
+  <item>
+    <title>24 november 05:00 · phpAfterShell zit ook in Cisco Expressway, en de fix heeft nog geen datum.</title>
+    <link>https://crisus.nl/#u-20261124-0500</link>
+    <guid isPermaLink="true">https://crisus.nl/#u-20261124-0500</guid>
+    <pubDate>Tue, 24 Nov 2026 05:00:00 +0100</pubDate>
+    <description><![CDATA[<p><strong>phpAfterShell zit ook in Cisco Expressway, en de fix heeft nog geen datum.</strong> Cisco publiceerde op 23 november om 21.20 uur Nederlandse tijd een <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-phpaftershell-nov-2026-kT9pL4Xe" title="Cisco: Vulnerability in PHP Affecting Cisco Products: November 2026">kritiek advies</a> over CVE-2026-126714, het phpAfterShell-lek in de sessiebestanden van PHP. Geraakt zijn de Expressway Series en de Expressway Select Series voor spraak en video, en Ultra-Reliable Wireless Backhaul en Unified Industrial Wireless Software. Duo Access Gateway wordt nog onderzocht. Voor de draadloze software verwacht Cisco versie 26.2.1b in december en 27.1.1 in maart 2027; bij Expressway staat als fixversie &ldquo;TBD&rdquo;. Een omweg is er volgens Cisco niet: &ldquo;No workarounds available.&rdquo; Veertien kernproducten zijn niet geraakt, onder meer IOS XE, NX-OS, ISE en de firewallsoftware ASA en FTD. Misbruik is Cisco niet bekend: &ldquo;The Cisco PSIRT is not aware of any public announcements or malicious use&rdquo;. Het advies is voorlopig en Cisco zoekt verder in de productlijn, dus de lijst kan groeien. Over de tweede, nog geheime geheugenfout die depthfirst noemde, zegt Cisco niets. Expressway, met als fixdatum &ldquo;TBD&rdquo;.</p>]]></description>
+  </item>
   <item>
     <title>20 november 21:00 · phpAfterShell heeft geen hulp van de applicatie nodig.</title>
     <link>https://crisus.nl/#u-20261120-2100</link>
