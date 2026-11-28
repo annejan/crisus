@@ -1,8 +1,8 @@
 /* crisus.nl */
 :root {
   --bg: #fafaf7; --card: #fff; --ink: #18181b; --muted: #55555c; --line: #e4e4de; --code: #ececea;
-  --yellow: #ffd400; --black: #111; --red: #c8102e; --orange: #c25e00; --green: #1f7a45;
-  --red-bg: #fde8eb; --orange-bg: #fff0dd; --green-bg: #e3f4ea;
+  --yellow: #ffd400; --black: #111; --red: #c8102e; --orange: #a34f00; --green: #1f7a45;
+  --red-bg: #fde8eb; --orange-bg: #fff0dd; --green-bg: #e3f4ea; --geel: #6b5300; --geel-bg: #fff3b8;
 }
 * { box-sizing: border-box; }
 html { background: var(--bg); }
@@ -153,7 +153,7 @@ footer strong { color: var(--ink); }
   :root {
     --bg: #121214; --card: #1b1b1f; --ink: #ededee; --muted: #a8a8b0; --line: #2e2e34; --code: #26262b;
     --red: #ff6b7f; --orange: #ffa94d; --green: #5fd38e;
-    --red-bg: #3a1219; --orange-bg: #3a2408; --green-bg: #0f2e1c;
+    --red-bg: #3a1219; --orange-bg: #3a2408; --green-bg: #0f2e1c; --geel: #ffd94d; --geel-bg: #332b00;
   }
   .klok { background: #000; box-shadow: 0 0 0 1px var(--line); }
   .level { border-color: var(--yellow); box-shadow: 6px 6px 0 var(--yellow); }
@@ -212,7 +212,7 @@ details.patch[open] > summary { margin-bottom: 14px; }
 
 /* the rest page: no acute crisis, business as usual */
 .level ol.zes { grid-template-columns: repeat(6, 1fr); }
-.rust .brand svg .glow { animation-duration: 4s; }
+.rust .brand svg .glow { animation: none; }
 .brom { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 14px 0 0; color: var(--muted); font-size: 15px; }
 .brom button { padding: 6px 14px; border: 2px solid var(--black); border-radius: 8px; background: var(--yellow); color: var(--black); font: 700 14px/1.2 system-ui, sans-serif; cursor: pointer; }
 .brom button[aria-pressed="true"] { background: var(--black); color: var(--yellow); }
@@ -375,4 +375,29 @@ details.patch[open] > summary { margin-bottom: 14px; }
   .vleermuis, .bliksem { display: none; }
   .finale { opacity: 1; animation: none; }
   .spook.wiccon .munt { display: block; opacity: 1; transform: none; animation: none; }
+}
+
+/* the radar as cards: the state first, in a pill, and the colour follows the state
+   (tools/radar.py sets the pill colour, class="rood" and the short list above) */
+.geel { background: var(--geel-bg); color: var(--geel); }
+.radarlijst { margin: 0 0 18px; }
+.radarlijst a, .kaarten h3 a { text-decoration: none; }
+.radarlijst a:hover, .radarlijst a:focus-visible, .kaarten h3 a:hover, .kaarten h3 a:focus-visible { text-decoration: underline; }
+.kaarten li { overflow-wrap: anywhere; }
+.kaarten li.rood { background: var(--card); color: inherit; }
+.kaarten li.rood b { color: inherit; }
+.kaarten b { display: inline; }
+.kaarten li:has(.pill.orange) { border-left-color: var(--orange); }
+.kaarten li:has(.pill.green) { border-left-color: var(--green); }
+.kaarten h3 { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0 12px; margin: 0; font-size: 18px; line-height: 1.35; }
+.kaarten h3 time { color: var(--muted); font-size: 14px; font-weight: 400; white-space: nowrap; }
+.kaarten .stand { margin: 6px 0 8px; font-size: 16px; font-weight: 650; }
+.kaarten .stand .pill { margin-right: 6px; }
+.kaarten li:target { outline: 3px solid var(--yellow); outline-offset: 2px; }
+
+/* narrow phones: language links and RSS go under the name instead of off the screen */
+@media (max-width: 430px) {
+  header .wrap { flex-wrap: wrap; row-gap: 0; padding-bottom: 12px; }
+  .brand { flex: 1 0 100%; padding-bottom: 10px; }
+  .talen { margin-left: 0; }
 }
