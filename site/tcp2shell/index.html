@@ -6,13 +6,13 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 <title>Crisus (afgesloten) · TCP2Shell: lek in de TCP-code van Linux (CVE-2026-98432)</title>
 <meta name="description" content="Crisus.nl: TCP2Shell (CVE-2026-98432), een lek in de TCP-code van de Linux-kernel. Op afstand root, volgens Anthropic, op servers met MPTCP. Sinds 10 november heeft ook Ubuntu de fix, met advisory. Satire, maar de feiten kloppen.">
-<meta property="og:title" content="Crisus · TCP2Shell: lek in de TCP-code van Linux">
+<meta property="og:title" content="Crisus (afgesloten) · TCP2Shell: lek in de TCP-code van Linux (CVE-2026-98432)">
 <meta property="og:description" content="Crisusniveau 2: opletten. TCP2Shell, een lek in de TCP-code van Linux: op afstand root op servers met MPTCP, en dat zit sinds Go 1.24 standaard aan. Ook Ubuntu heeft nu de fix, met advisory.">
 <meta property="og:url" content="https://crisus.nl/tcp2shell/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Crisus">
 <meta property="og:locale" content="nl_NL">
-<meta property="article:published_time" content="2026-10-23T22:50:00+02:00">
+<meta property="article:published_time" content="2026-10-30T12:01:00+01:00">
 <meta property="article:modified_time" content="2026-11-13T18:32:00+01:00">
 <meta property="og:image" content="https://crisus.nl/og-tcp2shell.png">
 <meta property="og:image:width" content="1200">
@@ -20,19 +20,16 @@
 <meta property="og:image:alt" content="Crisus: TCP2Shell, lek in de TCP-code van Linux. Crisusniveau 3 van 5: ernstig.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://crisus.nl/og-tcp2shell.png">
-<meta name="twitter:title" content="Crisus · TCP2Shell: lek in de TCP-code van Linux">
+<meta name="twitter:title" content="Crisus (afgesloten) · TCP2Shell: lek in de TCP-code van Linux (CVE-2026-98432)">
 <meta name="twitter:description" content="TCP2Shell: een lek in de TCP-code van Linux, op afstand root op servers met MPTCP. Ook Ubuntu heeft nu de fix, met advisory. Satire, maar de feiten kloppen.">
 <meta name="theme-color" content="#ffd400">
 <link rel="canonical" href="https://crisus.nl/tcp2shell/">
 <link rel="alternate" hreflang="nl" href="https://crisus.nl/tcp2shell/">
-<link rel="alternate" hreflang="en" href="https://crisus.nl/en/">
-<link rel="alternate" hreflang="uk" href="https://crisus.nl/uk/">
 <link rel="alternate" hreflang="x-default" href="https://crisus.nl/tcp2shell/">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="alternate" type="application/rss+xml" title="Crisus: alle updates" href="https://crisus.nl/feed.xml">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/crisus.css?v=26">
-<script src="/controle.js" defer></script>
 <script src="/crisus.js?v=13" defer></script>
 <script type="application/ld+json">
 {
@@ -44,10 +41,10 @@
   "mainEntityOfPage": "https://crisus.nl/tcp2shell/",
   "image": {"@type": "ImageObject", "url": "https://crisus.nl/og-tcp2shell.png", "width": 1200, "height": 630},
   "inLanguage": "nl",
-  "datePublished": "2026-10-23T22:50:00+02:00",
+  "datePublished": "2026-10-30T12:01:00+01:00",
   "dateModified": "2026-11-13T18:32:00+01:00",
   "coverageEndTime": "2026-11-13T23:30:00+01:00",
-  "coverageStartTime": "2026-10-23T22:50:00+02:00",
+  "coverageStartTime": "2026-10-30T12:01:00+01:00",
   "about": {"@type": "Thing", "name": "CVE-2026-98432", "alternateName": ["TCP2Shell"], "url": "https://www.cve.org/CVERecord?id=CVE-2026-98432"},
   "author": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
   "publisher": {"@type": "Person", "name": "Anne Jan Brouwer", "url": "https://annejan.com/"},
@@ -112,7 +109,7 @@
 
 <main id="inhoud" class="wrap">
   <p class="afgesloten"><strong>Deze crisus is afgesloten.</strong> TCP2Shell is gepatcht: Debian, SUSE, Oracle, Amazon, Red Hat en AlmaLinux hebben de fix, en sinds 10 november ook Ubuntu, met advisory. Hieronder staat alles zoals het was, met alle updates. <a href="/" title="Crisus: de actuele stand">Naar de actuele stand</a>.</p>
-  <p class="kicker">Afgesloten crisus · <time datetime="2026-11-13T18:32:00+01:00">laatst bijgewerkt 13 november, 18:32</time><span id="controle" hidden> · laatste controle <time></time>, <span class="uitslag">niets nieuws</span></span></p>
+  <p class="kicker">Afgesloten crisus · <time datetime="2026-11-13T18:32:00+01:00">laatst bijgewerkt 13 november, 18:32</time></p>
   <h1>TCP2Shell: lek in de TCP-code van Linux</h1>
   <p class="lead">Een lek in de manier waarop de Linux-kernel een TCP-verbinding opzet: TCP2Shell. Volgens Anthropic haalt een aanvaller er op afstand root mee, zonder in te loggen, op een server met MPTCP. Debian, SUSE, Oracle, Amazon, Red Hat en AlmaLinux hebben de fix. Ubuntu sinds 10 november ook, met advisory, voor 22.04 tot en met 26.10. Niet in paniek raken. Wel bijwerken en herstarten.</p>
   <p class="vandaag" id="vandaag" hidden></p>
@@ -316,7 +313,7 @@ sudo ss -lnMp                   <span class="c"># welke processen luisteren met 
     <li><time datetime="2020-07">juli 2020</time><b>PKIoverheid</b><p><a href="https://pki-uh-ohverheid.nl/" title="pki-uh-ohverheid.nl: the curious case of the Dangerous Delegated Responder Cert">The curious case of the Dangerous Delegated Responder Cert.</a></p></li>
     <li><time datetime="2020-05">mei 2020</time><b>IC-vakantie</b><p>Een nep-NL-Alert met een foto van een IC-bed: &ldquo;Even lekker weg deze zomer? Wij hebben een bed voor je vrij!&rdquo; Het enige reisaanbod waar u beter niet op kon ingaan.</p></li>
     <li><time datetime="2020-03-31">31 maart 2020</time><b>Het Corona-Lied</b><p>Een nep-NL-Alert: alle radiozenders zenden het Corona-Lied uit, dus &ldquo;zet uw radio uit en haal de stekker 5 minuten uit het stopcontact&rdquo;. Het eerste advies op crisus.nl om iets uit te zetten. Niet het laatste.</p></li>
-    <li><time datetime="2019-09-27">27 september 2019</time><b>CyberBunker</b><p>De Duitse politie valt de bunker in Traben-Trarbach binnen. Op crisus.nl hangt het bord: &ldquo;Dieser Server wurde beschlagnahmt.&rdquo;</p></li>
+    <li><time datetime="2019-09-27">27 september 2019</time><b>CyberBunker</b><p><del>De Duitse politie valt de bunker in Traben-Trarbach binnen.</del> Correctie 27 november 2026: de inval was <a href="https://computerbase.de/2019-09/darknet-zweihundert-server-im-bunker-vom-netz-genommen" title="ComputerBase: Darknet: Zweihundert Server im Bunker vom Netz genommen">een dag eerder</a>, op 26 september. Op crisus.nl hangt het bord: &ldquo;Dieser Server wurde beschlagnahmt.&rdquo;</p></li>
     <li><time datetime="2019-06-24">24 juni 2019</time><b>De 112-storing</b><p>112 ligt eruit en crisus.nl gaat live, met de noodnummers voor die avond. Onze geboortedag. Die nummers staan hier bewust niet meer: bel gewoon 112.</p></li>
     <li><time datetime="2014-04">april 2014</time><b>Heartbleed</b><p>Het eerste lek met een eigen logo. Wij hebben er nog steeds een sticker van.</p></li>
     <li><time datetime="2000-01-01">1 januari 2000</time><b>De millenniumbug</b><p>Er gebeurde niets. Graag gedaan.</p></li>
