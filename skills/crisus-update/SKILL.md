@@ -118,11 +118,46 @@ ids.
 ## Between crises: the rest page
 
 Since 2026-10-23 the front page is a **rest page** when nothing acute is going on:
-crisis level 0 ("Business as usual", with an optional 50 Hz hum that only plays on a
-click), three clocks for Russia's war against Ukraine (Crimea 20 Feb 2014, Donbas
-12 Apr 2014, full-scale invasion 24 Feb 2022 05:00 Kyiv), "Op de radar", "Wat moet u
-doen?" and the list of earlier crises. It exists in Dutch (`/`), English (`/en/`) and
+the crisis level (3, "Ernstig", since the war counts; with an optional 50 Hz hum that only
+plays on a click), four clocks for Russia's war against Ukraine (Crimea 20 Feb 2014, Donbas
+12 Apr 2014, MH17 17 Jul 2014, full-scale invasion 24 Feb 2022 05:00 Kyiv), "Op de radar",
+"Wat moet u doen?" and the list of earlier crises. It exists in Dutch (`/`), English (`/en/`) and
 Ukrainian (`/uk/`); only the Dutch page has the update list, the feed and `bump.py`.
+
+### Op de radar
+
+What is not a crisus but worth watching. One `<li>` per item in `<ul class="radar kaarten">`,
+written like this, each on its own lines:
+
+```html
+    <li id="drupal" data-herzien="2026-12-10">
+      <h3><a href="#drupal" title="Vaste link naar Drupal op de radar">Drupal</a> <time datetime="2026-11-28">28 november</time></h3>
+      <p class="stand"><span class="pill">Wordt misbruikt</span> nu installeren</p>
+      <p>The facts, each with its linked source, then at most one dry closing line.</p>
+    </li>
+```
+
+- **id**: required, short, never renamed (people link to it).
+- **State**, in the pill, one of, most urgent first: `Wordt misbruikt` (on the CISA KEV
+  list, or the vendor or a government CERT confirms it), `Misbruik gemeld` ("reportedly",
+  or one researcher), `Nog geen fix`, `Fix nog niet overal`, `Fix beschikbaar`, `Datalek`,
+  `Opgelost`, `Terug`. After the pill a short free action: "nu installeren",
+  "van internet halen", "vervangen". Version numbers stay in the text.
+- **Colour follows the state, never the hand.** Do not write `class="rood"` or a pill
+  colour: `tools/radar.py` sets them (red is "Wordt misbruikt" and nothing else) and
+  rebuilds the short list above the items. `bump.py` runs it; `tools/radar.py --check`
+  only prints its notes.
+- **Date**: the `<time>` is the day of the last checked fact. A new wording does not
+  move it; a changed fact does.
+- **`data-herzien`**: the day to look again, ten days after the last changed fact unless
+  a known date comes sooner. `check.sh` names items whose day has come: check the
+  sources, then update, keep (with a new date) or drop the item.
+- **Order**: by state, in the order above; within a state the newest fact first.
+- **Size**: about 800 characters of text. An "Update HH:MM (date):" is fine for a day
+  or two; fold it into the text at the next rewrite.
+- **Leaving**: ten days after the fix when there is no news, within a week for
+  `Opgelost` and `Terug`. Above 20 items the oldest quiet one goes first. What leaves
+  goes nowhere: git is the archive.
 
 **During a crisus** `/en/` and `/uk/` carry a short version of it: title, lead, clock, level,
 "What is going on?", "What should you do?", the status per platform, then the war block

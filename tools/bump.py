@@ -20,6 +20,9 @@ off = datetime.fromisoformat(f"{day.isoformat()}T{hhmm}").replace(tzinfo=ZoneInf
 iso = f"{day.isoformat()}T{hhmm}:00{off[:3]}:{off[3:]}"
 d = Path(__file__).resolve().parent.parent / "site"
 page = d / "index.html"
+# The radar first: pill colours, class="rood" and the short list follow the items.
+import runpy
+runpy.run_path(str(Path(__file__).resolve().parent / "radar.py"), run_name="__main__")
 t = page.read_text(encoding="utf-8")
 
 subs = [
@@ -44,5 +47,4 @@ assert n == 1
 sm.write_text(s, encoding="utf-8")
 print("bumped to", iso)
 
-import runpy
 runpy.run_path(str(Path(__file__).resolve().parent / "feed.py"), run_name="__main__")
